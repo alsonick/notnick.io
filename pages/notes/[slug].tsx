@@ -1,5 +1,6 @@
 import { getAllPostSlugs, getPostData } from "../../lib/post";
 import { NOTES_DIR } from "../../lib/constants";
+import { Post as P } from "../../types/post";
 import { Post } from "../../components/Post";
 
 // Next.js
@@ -23,16 +24,7 @@ export const getStaticPaths = async () => {
 };
 
 interface Props {
-  note: {
-    title: string;
-    description: string;
-    last_updated_date: string;
-    tag: string;
-    mins: string;
-    slug: string;
-    date: string;
-    contentHtml: string;
-  };
+  note: P;
 }
 
 const Note: NextPage<Props> = ({ note }) => {

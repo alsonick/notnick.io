@@ -2,6 +2,7 @@
 title: "How I learn programming"
 date: "2022-07-09"
 description: "My notes on how I learn programming."
+finished: true
 tag: "Learn"
 mins: "5"
 last_updated_date: "2022-07-09"
@@ -11,9 +12,9 @@ last_updated_date: "2022-07-09"
 
 Learning to code can be a challenging endeavour, especially if you don't already have a computer science background. There's so many fields in software engineering such as web development, mobile development, machine learning, AI and so much more.
 
-So before learning to code ask yourself what field in software engineering interests me the most, here's a list of all the fields and positions that you could persue:
+So before learning to code ask yourself what field in software engineering interests me the most, here's a list of all the fields and positions that you could pursue:
 
-- Web Development (frontnend or backend)
+- Web Development (frontend or backend)
 - Mobile Development (iOS or Android)
 - Machine Learning
 - Game Development

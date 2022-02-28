@@ -3,6 +3,7 @@ title: "Networking Notes"
 date: "2022-09-19"
 description: "My notes on networking."
 tag: "Educational"
+finished: true
 mins: "10"
 last_updated_date: "2022-09-21"
 ---

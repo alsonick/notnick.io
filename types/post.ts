@@ -4,6 +4,8 @@ export interface Post {
   title: string;
   date: string;
   description: string;
+  contentHtml: string;
+  finished: boolean;
   cover?: string;
   tag: string;
   mins: string;
