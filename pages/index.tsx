@@ -4,6 +4,7 @@ import { NewsLetter } from "../components/Newsletter";
 import { Listening } from "../components/Listening";
 import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
+import { License } from "../components/License";
 import { Layout } from "../components/Layout";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
@@ -31,6 +32,7 @@ const Home: NextPage = () => {
           <Technologies />
           <NewsLetter />
           <Contact />
+          <License />
           <Listening setActive={setPresenceActive} />
         </Animate>
       </Layout>
