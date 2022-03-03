@@ -10,7 +10,7 @@ export const License = () => {
         Anyone is free to take inspiration from this site as long as you make
         some changes to your version and give credit to the ordinal creator.
         Credits should include my full name (<b>Nicholas Njoki</b>) and a link
-        to my site (<Link>notnick.io</Link>)
+        to my site (<Link>notnick.io</Link>).
       </Text>
       <br />
       <Text>
