@@ -2,11 +2,11 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
+import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
-import { Text } from "../components/Text";
 
 const License: NextPage = () => {
   return (
@@ -17,7 +17,7 @@ const License: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+          <div className="flex items-center my-4 min-h-[4rem] justify-between">
             <Heading style={{ marginBottom: 0 }}>License</Heading>
           </div>
           <div className="mb-4">
