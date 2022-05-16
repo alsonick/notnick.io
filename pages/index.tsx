@@ -1,21 +1,17 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { Footer } from "../components/Footer";
-import { Header } from "../components/Header";
 import { Main } from "../components/Main";
-import { What } from "../components/What";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Nicholas</title>
+        <title>Nicholas Njoki</title>
       </Head>
-      <div className="flex flex-col items-center w-screen h-screen overflow-x-hidden">
-        <Header />
-        <div className="flex flex-col w-10/12">
+      <div className="flex flex-col items-center lg:items-start px-5 lg:px-10 dark:bg-black">
+        <div className="flex flex-col h-full justify-center lg:w-[35rem]">
           <Main />
-          <What />
           <Footer />
         </div>
       </div>
