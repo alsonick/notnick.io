@@ -1,24 +1,23 @@
-import React from "react";
-import { useEffect, useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 export const Toggle = () => {
-  const [theme, setTheme] = useState<string>("dark");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    let storedTheme = localStorage.getItem("theme") as string;
+    let theme = localStorage.getItem("theme") as string;
 
-    if (!storedTheme) {
+    if (!theme) {
       localStorage.setItem("theme", theme);
     } else {
-      setTheme(storedTheme);
-      storedTheme === "dark"
+      setTheme(theme);
+      theme === "dark"
         ? document.querySelector("html")?.classList.add("dark")
         : null;
     }
   }, []);
 
-  const changeTheme = (theme: string) => {
+  const toggleTheme = (theme: string) => {
     let newTheme = theme === "light" ? "dark" : "light";
 
     localStorage.setItem("theme", newTheme);
@@ -30,11 +29,11 @@ export const Toggle = () => {
 
   return (
     <button
-      className="w-fit mt-2 bg-black text-white p-2 rounded ml-auto dark:bg-white dark:text-black"
-      onClick={() => changeTheme(theme)}
+      className="flex items-center justify-center bg-gray-100 text-black h-9 w-9 duration-300 hover:bg-gray-200 rounded-lg ml-auto dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-white"
+      onClick={() => toggleTheme(theme)}
     >
-      {theme === "light" && <FiSun />}
-      {theme === "dark" && <FiMoon />}
+      {theme === "light" && <FiMoon />}
+      {theme === "dark" && <FiSun />}
     </button>
   );
 };

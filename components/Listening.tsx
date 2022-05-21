@@ -1,5 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
 import { DISCORD_ID, WEBSOCKET_URL } from "../lib/constants";
+import { useEffect, useState, useMemo } from "react";
 import { Presence } from "../types/lanyard";
 import { FiMusic } from "react-icons/fi";
 
@@ -88,19 +88,24 @@ export const Listening: React.FC<Props> = (
 
   if (!doing || !doing.discord_status) return null;
   return (
-    <div className="flex w-full text-sm items-center mb-4 text-gray-600 dark:text-gray-400">
-      <FiMusic className="text-lg mr-2" />
+    <a className="flex items-center mb-4 text-gray-600 dark:text-gray-400 hover:opacity-50 cursor-pointer w-fit">
+      <FiMusic className="mr-2" />
       {doing?.listening_to_spotify ? (
-        <div className="max-w-lg">
+        <a
+          className="max-w-lg"
+          target="_blank"
+          rel="noreferrer"
+          href={`https://open.spotify.com/track/${doing.spotify.track_id}`}
+        >
           Listening to{" "}
           <b className="text-black dark:text-white">{doing.spotify.album}</b> by{" "}
           <b className="text-black dark:text-white">
             {doing.spotify.artist.replaceAll(";", ",")}
           </b>
-        </div>
+        </a>
       ) : (
         <div>Not listening to anything...</div>
       )}
-    </div>
+    </a>
   );
 };

@@ -1,19 +1,17 @@
-import { useState } from "react";
-import Link from "next/link";
-import { Listening } from "./Listening";
-import { Toggle } from "./Toggle";
-import { Links } from "./Links";
 import { EMAIL_ADDRESS } from "../lib/constants";
+import { Listening } from "./Listening";
+import { Heading } from "./Heading";
+import { useState } from "react";
+import { Links } from "./Links";
+
+import Link from "next/link";
 
 export const Main = () => {
   const [_, setPresenceActive] = useState(false);
 
   return (
-    <main className="flex flex-col mt-12">
-      <Toggle />
-      <h1 className="text-3xl font-bold mt-4 mb-4 dark:text-white">
-        Hey, I&apos;m Nicholas!
-      </h1>
+    <main>
+      <Heading>Hey, I&apos;m Nicholas!</Heading>
       <Listening setActive={setPresenceActive} />
       <Article>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
@@ -53,7 +51,7 @@ export const Main = () => {
         .
       </Article>
       <h3 className="dark:text-white font-bold mb-2">Contact 💌</h3>
-      <p className="text-gray-600 text-sm dark:text-gray-400 mb-2">
+      <p className="text-gray-600 dark:text-gray-400 mb-2">
         Be sure to shoot me a{" "}
         <Link href="https://twitter.com/heynickn">
           <a
@@ -65,7 +63,7 @@ export const Main = () => {
         </Link>
         .
       </p>
-      <p className="text-gray-600 text-sm dark:text-gray-400">
+      <p className="text-gray-600 dark:text-gray-400">
         For more serious matters{" "}
         <Link href={`mailto:${EMAIL_ADDRESS}`}>
           <a
@@ -84,7 +82,7 @@ export const Main = () => {
 
 const Article = ({ children }: { children: React.ReactNode }) => {
   return (
-    <article className="text-gray-600 text-sm dark:text-gray-400 mb-6">
+    <article className="text-gray-600 dark:text-gray-300 mb-6">
       {children}
     </article>
   );
@@ -99,10 +97,7 @@ interface Props {
 const LinkTag = ({ children, href, target }: Props) => {
   return (
     <Link href={href}>
-      <a
-        className="font-bold text-sm hover:underline text-[#f54bff]"
-        target={target}
-      >
+      <a className="font-bold hover:underline text-[#f54bff]" target={target}>
         {children}
       </a>
     </Link>
