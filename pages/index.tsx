@@ -1,25 +1,15 @@
 import { Layout } from "../components/Layout";
 import { Main } from "../components/Main";
+import { Seo } from "../components/Seo";
 import type { NextPage } from "next";
-
-import Head from "next/head";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Nicholas Njoki</title>
-        <meta name="theme-color" content="#f54bff" />
-        <meta
-          name="description"
-          content="Nicholas Njoki - Full-Stack Developer"
-        />
-        <meta name="twitter:title" content="Nicholas Njoki" />
-        <meta
-          name="twitter:description"
-          content="Nicholas Njoki - Full-Stack Developer"
-        />
-      </Head>
+      <Seo
+        title="Nicholas Njoki"
+        description="Nicholas Njoki - Full-Stack Developer"
+      />
       <Layout>
         <Main />
       </Layout>

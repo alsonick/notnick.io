@@ -1,7 +1,6 @@
 import { convertDate } from "../lib/date";
 import { Layout } from "./Layout";
-
-import Head from "next/head";
+import { Seo } from "./Seo";
 
 interface Props {
   type: "notes" | "blog";
@@ -16,10 +15,7 @@ interface Props {
 export const Post = ({ type, post }: Props) => {
   return (
     <>
-      <Head>
-        <title>{post.title} - Nicholas Njoki</title>
-        <meta name="description" content={post.description} />
-      </Head>
+      <Seo title={`${post.title}`} description={post.description} />
       <Layout>
         <h1 className="font-bold text-4xl mt-3  dark:text-white">
           {post.title}

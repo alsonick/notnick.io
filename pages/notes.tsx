@@ -3,8 +3,7 @@ import { getSortedNotesData } from "../lib/notes";
 import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
 import { Posts } from "../components/Posts";
-
-import Head from "next/head";
+import { Seo } from "../components/Seo";
 
 export const getStaticProps: GetStaticProps = () => {
   const notes = getSortedNotesData();
@@ -22,13 +21,10 @@ interface Props {
 const Notes: NextPage<Props> = ({ notes }) => {
   return (
     <>
-      <Head>
-        <title>Notes - Nicholas Njoki</title>
-        <meta
-          name="description"
-          content="Nicholas Njoki - Full-Stack Developer"
-        />
-      </Head>
+      <Seo
+        title="Notes - Nicholas Njoki"
+        description="Nicholas Njoki - Full-Stack Developer"
+      />
       <Layout>
         <Heading>Notes</Heading>
         <Posts type="notes" items={notes} />
