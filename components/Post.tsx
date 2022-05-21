@@ -15,7 +15,10 @@ interface Props {
 export const Post = ({ type, post }: Props) => {
   return (
     <>
-      <Seo title={`${post.title}`} description={post.description} />
+      <Seo
+        title={`${post.title} - Nicholas Njoki`}
+        description={post.description}
+      />
       <Layout>
         <h1 className="font-bold text-4xl mt-3  dark:text-white">
           {post.title}
@@ -43,5 +46,3 @@ export const Post = ({ type, post }: Props) => {
     </>
   );
 };
-
-// Last updated: {convertDate(post.date)}

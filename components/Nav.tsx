@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Nav = () => {
   return (
-    <nav className="flex top-7 px-6 fixed bg-white  border border-teal-100 dark:border-teal-900 dark:bg-black rounded-lg justify-between w-[90%] md:w-[45rem] h-14 items-center">
+    <nav className="flex top-7 px-6 fixed  border border-teal-100 dark:border-teal-900 backdrop-blur-md  rounded-lg justify-between w-[90%] md:w-[45rem] h-14 items-center">
       <div>
         <LinkTag to="/">Home</LinkTag>
         <LinkTag to="/notes">Notes</LinkTag>
