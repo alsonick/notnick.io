@@ -2,6 +2,7 @@
 title: "Learning Rust Chapter 1 Summary 🦀"
 date: "2022-05-22"
 description: "Everything I've learnt in chapter 1."
+mins: "8"
 ---
 
 ## The Rust Programming Language

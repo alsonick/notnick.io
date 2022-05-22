@@ -10,7 +10,9 @@ export const Main = () => {
 
   return (
     <>
-      <Heading style={{ marginTop: "2rem" }}>Hey, I&apos;m Nicholas!</Heading>
+      <Heading style={{ marginTop: "2rem" }}>
+        Hey, I&apos;m Nicholas! 👋
+      </Heading>
       <Listening setActive={setPresenceActive} />
       <Article>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
@@ -72,7 +74,7 @@ const ContactText = ({ children }: { children: React.ReactNode }) => {
 
 const Article = ({ children }: { children: React.ReactNode }) => {
   return (
-    <article className="text-gray-600  dark:text-gray-300 mb-6">
+    <article className="text-gray-600 dark:text-gray-300 mb-6">
       {children}
     </article>
   );

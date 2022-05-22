@@ -16,7 +16,15 @@ export const getStaticProps: GetStaticProps = () => {
 };
 
 interface Props {
-  notes: [{ slug: string; title: string; date: string; description: string }];
+  notes: [
+    {
+      slug: string;
+      title: string;
+      date: string;
+      description: string;
+      mins: string;
+    }
+  ];
 }
 
 const Notes: NextPage<Props> = ({ notes }) => {

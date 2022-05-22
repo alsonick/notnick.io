@@ -4,7 +4,15 @@ import Link from "next/link";
 
 interface Props {
   type: "notes" | "blogs";
-  items: [{ slug: string; title: string; date: string; description: string }];
+  items: [
+    {
+      slug: string;
+      title: string;
+      date: string;
+      description: string;
+      mins: string;
+    }
+  ];
 }
 
 export const Posts = ({ type, items }: Props) => {

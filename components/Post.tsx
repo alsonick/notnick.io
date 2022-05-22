@@ -1,13 +1,19 @@
+import { FiExternalLink } from "react-icons/fi";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
 import { Date } from "./Date";
 import { Seo } from "./Seo";
 
+import Image from "next/image";
+import Link from "next/link";
+
 interface Props {
   type: "notes" | "blogs";
   post: {
     title: string;
+    slug: string;
     description: string;
+    mins: string;
     date: string;
     contentHtml: string;
   };
@@ -21,14 +27,46 @@ export const Post = ({ type, post }: Props) => {
         description={post.description}
       />
       <Layout>
-        <h1 className="font-bold text-4xl mt-3  dark:text-white">
+        <h1 className="font-bold text-4xl mt-6 dark:text-white">
           {post.title}
         </h1>
-        <Date type={type} date={post.date} />
+        <div className="flex items-center mt-4 mb-6 justify-between text-sm">
+          <div className="flex items-center">
+            <div className="flex border border-teal-100 dark:border-black rounded-full">
+              <Image
+                className="rounded-full"
+                src="/me.jpeg"
+                width={24}
+                height={24}
+                quality={99}
+                alt="Me"
+              />
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 ml-2">
+              Nicholas Njoki /&nbsp;
+            </p>
+            <Date type={type} date={post.date} />
+          </div>
+          <p className="text-gray-600 dark:text-gray-300">
+            {post.mins} min read
+          </p>
+        </div>
         <article
           className="prose max-w-none dark:prose-invert prose-a:text-[#f54bff] prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800 dark:prose-code:text-white"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
+        <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
+          <Link
+            href={`https://github.com/alsonick/notnick.io/blob/main/data/notes/${post.slug}.md`}
+          >
+            <a
+              className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+              target="_blank"
+            >
+              Edit this page on Github <FiExternalLink className="ml-2" />
+            </a>
+          </Link>
+        </div>
         <LinkTag href="/notes" style={{ marginTop: "2rem" }}>
           &larr; Go back to notes
         </LinkTag>
