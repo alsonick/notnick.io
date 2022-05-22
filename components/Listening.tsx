@@ -88,7 +88,7 @@ export const Listening: React.FC<Props> = (
 
   if (!doing || !doing.discord_status) return null;
   return (
-    <a className="flex items-center mb-4 duration-300 text-gray-600 dark:text-gray-400 hover:opacity-50 cursor-pointer w-fit">
+    <a className="flex items-center mb-4 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit">
       <FiMusic className="mr-2" />
       {doing?.listening_to_spotify ? (
         <a

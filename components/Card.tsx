@@ -1,4 +1,4 @@
-import { convertDate } from "../lib/date";
+import { Date } from "./Date";
 
 import Link from "next/link";
 
@@ -17,11 +17,7 @@ export const Card = ({ type, slug, title, date }: Props) => {
           {title}
         </a>
       </Link>
-      <time dateTime={date} className="mt-2 text-gray-600 dark:text-gray-400">
-        {type === "notes"
-          ? `Last updated: ${convertDate(date)}`
-          : convertDate(date)}
-      </time>
+      <Date type={type} date={date} />
     </div>
   );
 };

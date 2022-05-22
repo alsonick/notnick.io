@@ -4,6 +4,7 @@ import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
+import { LinkTag } from "../components/LinkTag";
 
 export const getStaticProps: GetStaticProps = () => {
   const notes = getSortedNotesData();
@@ -28,6 +29,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
       <Layout>
         <Heading>Notes</Heading>
         <Posts type="notes" items={notes} />
+        <LinkTag href="/">&larr; Go Back</LinkTag>
       </Layout>
     </>
   );

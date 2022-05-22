@@ -1,9 +1,10 @@
-import { convertDate } from "../lib/date";
+import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
+import { Date } from "./Date";
 import { Seo } from "./Seo";
 
 interface Props {
-  type: "notes" | "blog";
+  type: "notes" | "blogs";
   post: {
     title: string;
     description: string;
@@ -23,25 +24,14 @@ export const Post = ({ type, post }: Props) => {
         <h1 className="font-bold text-4xl mt-3  dark:text-white">
           {post.title}
         </h1>
-        {type === "notes" ? (
-          <time
-            dateTime={post.date}
-            className="mt-2 mb-6 text-gray-600 dark:text-gray-400"
-          >
-            Last updated: {convertDate(post.date)}
-          </time>
-        ) : (
-          <time
-            dateTime={post.date}
-            className="mt-2 mb-6 text-gray-600 dark:text-gray-400"
-          >
-            {convertDate(post.date)}
-          </time>
-        )}
+        <Date type={type} date={post.date} />
         <article
-          className="prose dark:prose-invert text-gray-600 dark:text-gray-300"
+          className="prose max-w-none dark:prose-invert prose-a:text-[#f54bff] prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800 dark:prose-code:text-white"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
+        <LinkTag href="/notes" style={{ marginTop: "2rem" }}>
+          &larr; Go back to notes
+        </LinkTag>
       </Layout>
     </>
   );

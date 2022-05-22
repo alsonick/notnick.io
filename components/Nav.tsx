@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Nav = () => {
   return (
-    <nav className="flex top-7 px-6 fixed  border border-teal-100 dark:border-teal-900 backdrop-blur-md  rounded-lg justify-between w-[90%] md:w-[45rem] h-14 items-center">
+    <nav className="flex px-6 top-8 fixed border border-teal-100 w-[90%] md:w-[40rem] dark:border-teal-900 backdrop-blur-md mb-12 rounded-lg justify-between h-14 items-center">
       <div>
         <LinkTag to="/">Home</LinkTag>
         <LinkTag to="/notes">Notes</LinkTag>
@@ -24,7 +24,7 @@ const LinkTag = ({
 }) => {
   return (
     <Link href={to}>
-      <a className="mr-8 text-black dark:text-white hover:underline">
+      <a className="mr-8 text-black text-sm font-light dark:text-white hover:underline">
         {children}
       </a>
     </Link>
