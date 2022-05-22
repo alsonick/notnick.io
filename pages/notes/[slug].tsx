@@ -23,6 +23,7 @@ interface Props {
   note: {
     title: string;
     description: string;
+    mins: string;
     slug: string;
     date: string;
     contentHtml: string;
