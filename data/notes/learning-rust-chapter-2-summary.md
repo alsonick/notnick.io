@@ -6,5 +6,3 @@ mins: "10"
 ---
 
 ## Guessing Game
-
-This page is going to be a collection of all the topics I've learnt whiles going through [The Rust Programming Language Book](https://doc.rust-lang.org/book/). These notes are mainly a reference so I can look back on certain topics but anyone can use it to learn Rust.
