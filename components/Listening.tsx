@@ -99,7 +99,6 @@ export const Listening: React.FC<Props> = (
       <FaSpotify className="mr-2" />
       {doing?.listening_to_spotify ? (
         <a
-          className="max-w-lg"
           target="_blank"
           rel="noreferrer"
           href={`https://open.spotify.com/track/${doing.spotify.track_id}`}
