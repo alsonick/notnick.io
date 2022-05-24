@@ -24,6 +24,7 @@ export const Posts = ({ type, items }: Props) => {
             <Card
               title={item.title}
               date={item.date}
+              description={item.description}
               type={type}
               slug={item.slug}
             />
