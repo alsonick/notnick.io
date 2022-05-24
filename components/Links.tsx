@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const Links = () => {
   return (
-    <div className="flex mt-6">
+    <div className="flex">
       <LinkWrapper href="https://keybase.io/nick241">
         <FiKey />
       </LinkWrapper>

@@ -1,16 +1,13 @@
 import { convertDate } from "../lib/date";
 
 interface Props {
-  type: "notes" | "blogs";
   date: string;
 }
 
-export const Date = ({ type, date }: Props) => {
+export const Date = ({ date }: Props) => {
   return (
     <time dateTime={date} className="text-gray-600 dark:text-gray-300">
-      {type === "notes"
-        ? `Last updated: ${convertDate(date)}`
-        : convertDate(date)}
+      {convertDate(date)}
     </time>
   );
 };

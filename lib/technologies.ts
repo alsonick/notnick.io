@@ -1,0 +1,23 @@
+export const technologies = [
+  { id: 1, text: "React.js", link: "https://reactjs.org/" },
+  { id: 2, text: "TypeScript", link: "https://www.typescriptlang.org/" },
+  { id: 3, text: "styled-components", link: "https://styled-components.com/" },
+  { id: 4, text: "TailwindCSS", link: "https://tailwindcss.com/" },
+  { id: 5, text: "Prisma", link: "https://www.prisma.io/" },
+  { id: 6, text: "Git", link: "https://git-scm.com/" },
+  { id: 7, text: "Visual Studio Code", link: "https://code.visualstudio.com/" },
+  { id: 8, text: "Node.js", link: "https://nodejs.org/en/" },
+  { id: 9, text: "Next.js", link: "https://nextjs.org/" },
+  { id: 10, text: "Docker", link: "https://www.docker.com/" },
+  { id: 11, text: "Postgres", link: "https://www.postgresql.org/" },
+  { id: 12, text: "Yarn", link: "https://yarnpkg.com/" },
+  { id: 13, text: "NPM", link: "https://www.npmjs.com/" },
+  { id: 14, text: "Express", link: "https://expressjs.com/" },
+  { id: 15, text: "Fastify", link: "https://www.fastify.io/" },
+  {
+    id: 16,
+    text: "JavaScript",
+    link: "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
+  },
+  { id: 17, text: "Rust", link: "https://www.rust-lang.org/" },
+];

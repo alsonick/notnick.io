@@ -30,9 +30,9 @@ export const Post = ({ type, post }: Props) => {
         <h1 className="font-bold text-4xl mt-6 dark:text-white">
           {post.title}
         </h1>
-        <div className="flex items-center mt-4 mb-6 justify-between text-sm">
+        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
           <div className="flex items-center">
-            <div className="flex border border-teal-100 dark:border-black rounded-full">
+            <div className="flex border duration-300 border-teal-100 dark:border-black rounded-full">
               <Image
                 className="rounded-full"
                 src="/me.jpeg"
@@ -45,9 +45,9 @@ export const Post = ({ type, post }: Props) => {
             <p className="text-gray-600 dark:text-gray-300 ml-2">
               Nicholas Njoki /&nbsp;
             </p>
-            <Date type={type} date={post.date} />
+            <Date date={post.date} />
           </div>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 md:mt-0 mt-1 dark:text-gray-300">
             {post.mins} min read
           </p>
         </div>

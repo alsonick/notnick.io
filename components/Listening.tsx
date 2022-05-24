@@ -1,7 +1,8 @@
 import { DISCORD_ID, WEBSOCKET_URL } from "../lib/constants";
 import { useEffect, useState, useMemo } from "react";
 import { Presence } from "../types/lanyard";
-import { FiMusic } from "react-icons/fi";
+import { FaSpotify } from "react-icons/fa";
+import { Text } from "./Text";
 
 // Credit to Phineas for the lanyard implementation
 // Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx)
@@ -86,10 +87,16 @@ export const Listening: React.FC<Props> = (
     setActive(doing?.listening_to_spotify || currentActivity);
   }, [doing, currentActivity]);
 
-  if (!doing || !doing.discord_status) return null;
+  if (!doing || !doing.discord_status)
+    return (
+      <div className="flex items-center mb-6">
+        <FaSpotify className="mr-2 text-gray-600 dark:text-gray-300" />
+        <Text>Loading...</Text>
+      </div>
+    );
   return (
-    <a className="flex items-center mb-4 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit">
-      <FiMusic className="mr-2" />
+    <a className="flex items-center mb-6 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit">
+      <FaSpotify className="mr-2" />
       {doing?.listening_to_spotify ? (
         <a
           className="max-w-lg"

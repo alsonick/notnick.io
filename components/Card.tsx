@@ -17,7 +17,7 @@ export const Card = ({ type, slug, title, date }: Props) => {
           {title}
         </a>
       </Link>
-      <Date type={type} date={date} />
+      <Date date={date} />
     </div>
   );
 };
