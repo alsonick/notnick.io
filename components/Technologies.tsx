@@ -6,7 +6,7 @@ import Link from "next/link";
 export const Technologies = () => {
   return (
     <section className="flex flex-col mb-12 ">
-      <Heading>Technologies 💻</Heading>
+      <Heading>Technologies I use 💻</Heading>
       <ul className="block text-center list-disc">
         {technologies.map((tech) => (
           <Link key={tech.id} href={tech.link}>
