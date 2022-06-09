@@ -4,21 +4,18 @@ import html from "remark-html";
 import path from "path";
 import fs from "fs";
 
-let directoryPath: string;
-
 const getDirectory = (dir: string) => {
   return path.join(process.cwd(), dir);
 };
 
 export const getSortedPostData = (dir: string) => {
   const directory = getDirectory(dir);
-  directoryPath = directory;
 
   const fileNames = fs.readdirSync(directory);
   const allNotesData = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.md$/, "");
 
-    const fullPath = path.join(directoryPath, fileName);
+    const fullPath = path.join(directory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const matterResult = matter(fileContents);
@@ -41,7 +38,7 @@ export const getSortedPostData = (dir: string) => {
   });
 };
 
-export const getAllNoteSlugs = (dir: string) => {
+export const getAllPostSlugs = (dir: string) => {
   const directory = getDirectory(dir);
   const fileNames = fs.readdirSync(directory);
 

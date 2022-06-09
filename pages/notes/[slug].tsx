@@ -1,4 +1,4 @@
-import { getAllNoteSlugs, getNoteData } from "../../lib/post";
+import { getAllPostSlugs, getNoteData } from "../../lib/post";
 import { GetStaticProps, NextPage } from "next";
 import { NOTES_DIR } from "../../lib/constants";
 import { Post } from "../../components/Post";
@@ -13,7 +13,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllNoteSlugs(NOTES_DIR);
+  const paths = getAllPostSlugs(NOTES_DIR);
   return {
     paths,
     fallback: false,
