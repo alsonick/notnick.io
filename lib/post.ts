@@ -39,8 +39,7 @@ export const getSortedPostData = (dir: string) => {
 };
 
 export const getAllPostSlugs = (dir: string) => {
-  const directory = getDirectory(dir);
-  const fileNames = fs.readdirSync(directory);
+  const fileNames = fs.readdirSync(dir);
 
   return fileNames.map((fileName) => {
     return {
