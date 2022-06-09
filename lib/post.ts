@@ -1,17 +1,24 @@
-import fs from "fs";
 import matter from "gray-matter";
-import path from "path";
 import { remark } from "remark";
 import html from "remark-html";
+import path from "path";
+import fs from "fs";
 
-const notesDirectory = path.join(process.cwd(), "data/notes");
+let directoryPath: string;
 
-export const getSortedNotesData = () => {
-  const fileNames = fs.readdirSync(notesDirectory);
+const getDirectory = (dir: string) => {
+  return path.join(process.cwd(), dir);
+};
+
+export const getSortedPostData = (dir: string) => {
+  const directory = getDirectory(dir);
+  directoryPath = directory;
+
+  const fileNames = fs.readdirSync(directory);
   const allNotesData = fileNames.map((fileName) => {
     const slug = fileName.replace(/\.md$/, "");
 
-    const fullPath = path.join(notesDirectory, fileName);
+    const fullPath = path.join(directoryPath, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const matterResult = matter(fileContents);
@@ -34,8 +41,9 @@ export const getSortedNotesData = () => {
   });
 };
 
-export const getAllNoteSlugs = () => {
-  const fileNames = fs.readdirSync(notesDirectory);
+export const getAllNoteSlugs = (dir: string) => {
+  const directory = getDirectory(dir);
+  const fileNames = fs.readdirSync(directory);
 
   return fileNames.map((fileName) => {
     return {
@@ -46,8 +54,9 @@ export const getAllNoteSlugs = () => {
   });
 };
 
-export const getNoteData = async (slug: any) => {
-  const fullPath = path.join(notesDirectory, `${slug}.md`);
+export const getNoteData = async (slug: any, dir: string) => {
+  const directory = getDirectory(dir);
+  const fullPath = path.join(directory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);

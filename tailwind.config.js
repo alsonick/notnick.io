@@ -7,5 +7,9 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@headlessui/tailwindcss"),
+    require("@headlessui/tailwindcss")({ prefix: "ui" }),
+  ],
 };

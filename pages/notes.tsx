@@ -1,13 +1,18 @@
+import { FilterListBox } from "../components/FilterListBox";
+import { getSortedPostData } from "../lib/post";
+import { LinkTag } from "../components/LinkTag";
 import { GetStaticProps, NextPage } from "next";
-import { getSortedNotesData } from "../lib/notes";
 import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
+import { NoPost } from "../components/NoPost";
+import { NOTES_DIR } from "../lib/constants";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
-import { LinkTag } from "../components/LinkTag";
+import { Post } from "../types/post";
+import { useState } from "react";
 
 export const getStaticProps: GetStaticProps = () => {
-  const notes = getSortedNotesData();
+  const notes = getSortedPostData(NOTES_DIR);
   return {
     props: {
       notes,
@@ -16,18 +21,17 @@ export const getStaticProps: GetStaticProps = () => {
 };
 
 interface Props {
-  notes: [
-    {
-      slug: string;
-      title: string;
-      date: string;
-      description: string;
-      mins: string;
-    }
-  ];
+  notes: Post[];
 }
 
 const Notes: NextPage<Props> = ({ notes }) => {
+  const nte = {
+    notes: [{ tag: "" }],
+  };
+  const ntes = notes.length ? notes[0].tag : nte.notes[0].tag;
+  const [selectedTag, setSelectedTag] = useState(ntes);
+  const filteredNotesList = notes.filter((n) => n.tag === selectedTag);
+
   return (
     <>
       <Seo
@@ -35,8 +39,18 @@ const Notes: NextPage<Props> = ({ notes }) => {
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <Layout>
-        <Heading>Notes</Heading>
-        <Posts type="notes" items={notes} />
+        <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+          <Heading className="mb-0">Notes</Heading>
+          {notes.length ? (
+            <FilterListBox
+              items={notes}
+              selectedItem={selectedTag}
+              onChange={setSelectedTag}
+            />
+          ) : null}
+        </div>
+        {!notes.length && <NoPost type="notes" />}
+        <Posts type="notes" items={selectedTag ? filteredNotesList : notes} />
         <LinkTag href="/">&larr; Go Back</LinkTag>
       </Layout>
     </>

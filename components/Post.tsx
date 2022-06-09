@@ -6,20 +6,21 @@ import { Seo } from "./Seo";
 
 import Image from "next/image";
 import Link from "next/link";
+import { Tag } from "./Tag";
 
 interface Props {
-  type: "notes" | "blogs";
   post: {
     title: string;
     slug: string;
     description: string;
+    tag: string;
     mins: string;
     date: string;
     contentHtml: string;
   };
 }
 
-export const Post = ({ type, post }: Props) => {
+export const Post = ({ post }: Props) => {
   return (
     <>
       <Seo
@@ -51,8 +52,9 @@ export const Post = ({ type, post }: Props) => {
             {post.mins} min read
           </p>
         </div>
+        <Tag title={post.tag} />
         <article
-          className="prose max-w-none dark:prose-invert prose-a:text-[#f54bff] prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800 dark:prose-code:text-white"
+          className="prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff] prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800 dark:prose-code:text-white"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
         <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">

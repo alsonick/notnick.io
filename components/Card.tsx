@@ -1,5 +1,6 @@
-import { Date } from "./Date";
 import { Text } from "./Text";
+import { Date } from "./Date";
+import { Tag } from "./Tag";
 
 import Link from "next/link";
 
@@ -7,13 +8,15 @@ interface Props {
   type: "notes" | "blogs";
   slug: string;
   description: string;
+  tag: string;
   title: string;
   date: string;
 }
 
-export const Card = ({ type, slug, description, title, date }: Props) => {
+export const Card = ({ type, slug, description, tag, title, date }: Props) => {
   return (
     <div className="flex flex-col w-full mb-10">
+      <Tag title={tag} />
       <Link href={`/${type}/${slug}`}>
         <a className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">
           {title}

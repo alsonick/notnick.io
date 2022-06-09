@@ -7,7 +7,7 @@ export const About = () => {
 
   return (
     <section className="flex flex-col mb-12">
-      <Heading>About Me 💭</Heading>
+      <Heading>About 💭</Heading>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
         based in the UK, I specialize in web development and a little bit of

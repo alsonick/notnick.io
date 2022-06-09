@@ -20,4 +20,5 @@ export const technologies = [
     link: "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
   },
   { id: 17, text: "Rust", link: "https://www.rust-lang.org/" },
+  { id: 18, text: "Swift", link: "https://www.swift.org/" },
 ];

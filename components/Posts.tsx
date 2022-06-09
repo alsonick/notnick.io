@@ -2,17 +2,18 @@ import { Card } from "./Card";
 
 import Link from "next/link";
 
+interface Post {
+  slug: string;
+  title: string;
+  date: string;
+  description: string;
+  tag: string;
+  mins: string;
+}
+
 interface Props {
   type: "notes" | "blogs";
-  items: [
-    {
-      slug: string;
-      title: string;
-      date: string;
-      description: string;
-      mins: string;
-    }
-  ];
+  items: Post[];
 }
 
 export const Posts = ({ type, items }: Props) => {
@@ -25,6 +26,7 @@ export const Posts = ({ type, items }: Props) => {
               title={item.title}
               date={item.date}
               description={item.description}
+              tag={item.tag}
               type={type}
               slug={item.slug}
             />
