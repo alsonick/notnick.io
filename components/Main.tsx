@@ -23,7 +23,7 @@ export const Main = () => {
             Hey, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
           <p className="text-gray-700 font-semibold dark:text-gray-100 mb-4">
-            Web & Mobile Engineer (iOS)
+            Web &#38; Mobile Engineer (iOS)
           </p>
           <Links />
         </div>
