@@ -1,12 +1,13 @@
 import { FiExternalLink } from "react-icons/fi";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
+import { Avatar } from "./Avatar";
 import { Date } from "./Date";
 import { Seo } from "./Seo";
-
-import Image from "next/image";
-import Link from "next/link";
 import { Tag } from "./Tag";
+
+// Next.js
+import Link from "next/link";
 
 interface Props {
   post: {
@@ -34,14 +35,7 @@ export const Post = ({ post }: Props) => {
         <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
           <div className="flex items-center">
             <div className="flex border duration-300 border-teal-100 dark:border-black rounded-full">
-              <Image
-                className="rounded-full"
-                src="/me.jpeg"
-                width={24}
-                height={24}
-                quality={99}
-                alt="Me"
-              />
+              <Avatar width={24} height={24} />
             </div>
             <p className="text-gray-600 dark:text-gray-300 ml-2">
               Nicholas Njoki /&nbsp;

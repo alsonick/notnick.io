@@ -1,5 +1,6 @@
 import { FiKey, FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
 
+// Next.js
 import Link from "next/link";
 
 export const Links = () => {
@@ -22,7 +23,7 @@ export const Links = () => {
 };
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   href: string;
 }
 

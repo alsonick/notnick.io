@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { Dropdown } from "./Dropdown";
 import { Toggle } from "./Toggle";
 
+// Next.js
 import Link from "next/link";
-import { Dropdown } from "./Dropdown";
 
 export const Nav = () => {
-  const [openDropdownMenu, setOpenDropdownMenu] = useState(false);
-
   const ITEMS = [
     { id: 1, text: "Home", to: "/" },
     { id: 2, text: "Notes", to: "/notes" },

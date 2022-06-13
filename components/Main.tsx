@@ -1,8 +1,9 @@
 import { FiSend } from "react-icons/fi";
 import { Heading } from "./Heading";
+import { Avatar } from "./Avatar";
 import { Links } from "./Links";
 
-import Image from "next/image";
+// Next.js
 import Link from "next/link";
 
 export const Main = () => {
@@ -22,19 +23,12 @@ export const Main = () => {
             Hey, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
           <p className="text-gray-700 font-semibold dark:text-gray-100 mb-4">
-            Full-Stack Developer
+            Web & Mobile Engineer (iOS)
           </p>
           <Links />
         </div>
         <div className="flex border mb-8 md:mb-0 duration-300 border-teal-100 dark:border-black rounded-full">
-          <Image
-            className="rounded-full"
-            src="/me.jpeg"
-            width={122}
-            height={122}
-            quality={99}
-            alt="Me"
-          />
+          <Avatar width={122} height={122} />
         </div>
       </main>
     </>

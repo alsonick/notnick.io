@@ -2,7 +2,7 @@ export const Text = ({
   children,
   style,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   style?: React.CSSProperties | undefined;
 }) => {
   return (

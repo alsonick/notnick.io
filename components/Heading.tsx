@@ -3,7 +3,7 @@ export const Heading = ({
   children,
   style,
 }: {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   style?: React.CSSProperties | undefined;
   className?: string | undefined;
 }) => {

@@ -1,6 +1,7 @@
 import { technologies } from "../lib/technologies";
 import { Heading } from "./Heading";
 
+// Next.js
 import Link from "next/link";
 
 export const Technologies = () => {

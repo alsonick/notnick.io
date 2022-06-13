@@ -1,5 +1,6 @@
 import { Card } from "./Card";
 
+// Next.js
 import Link from "next/link";
 
 interface Post {
