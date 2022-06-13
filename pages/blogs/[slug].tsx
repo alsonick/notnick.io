@@ -1,19 +1,19 @@
 import { getAllPostSlugs, getPostData } from "../../lib/post";
 import { GetStaticProps, NextPage } from "next";
-import { NOTES_DIR } from "../../lib/constants";
+import { BLOGS_DIR } from "../../lib/constants";
 import { Post } from "../../components/Post";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const note = await getPostData(params!.slug, NOTES_DIR);
+  const blog = await getPostData(params!.slug, BLOGS_DIR);
   return {
     props: {
-      note,
+      blog,
     },
   };
 };
 
 export const getStaticPaths = async () => {
-  const paths = getAllPostSlugs(NOTES_DIR);
+  const paths = getAllPostSlugs(BLOGS_DIR);
   return {
     paths,
     fallback: false,
@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 };
 
 interface Props {
-  note: {
+  blog: {
     title: string;
     description: string;
     tag: string;
@@ -32,8 +32,8 @@ interface Props {
   };
 }
 
-const Note: NextPage<Props> = ({ note }) => {
-  return <Post post={note} />;
+const Blog: NextPage<Props> = ({ blog }) => {
+  return <Post post={blog} />;
 };
 
-export default Note;
+export default Blog;

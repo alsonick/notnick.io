@@ -62,7 +62,7 @@ export const Post = ({ post }: Props) => {
             href={`https://github.com/alsonick/notnick.io/blob/main/data/notes/${post.slug}.md`}
           >
             <a
-              className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+              className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
               target="_blank"
             >
               Edit this page on Github <FiExternalLink className="ml-2" />

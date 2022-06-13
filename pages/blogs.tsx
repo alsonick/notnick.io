@@ -31,7 +31,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
   const blgs = blogs.length ? blogs[0].tag : blg.blogs[0].tag;
   const [selectedTag, setSelectedTag] = useState(blgs);
   const filteredNotesList = blogs.filter((b) => b.tag === selectedTag);
-
+  // console.log(filteredNotesList);
   return (
     <>
       <Seo

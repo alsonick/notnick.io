@@ -51,7 +51,7 @@ export const getAllPostSlugs = (dir: string) => {
   });
 };
 
-export const getNoteData = async (slug: any, dir: string) => {
+export const getPostData = async (slug: any, dir: string) => {
   const directory = getDirectory(dir);
   const fullPath = path.join(directory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
