@@ -1,6 +1,6 @@
 ---
 title: "How I learn programming"
-date: "2022-06-13"
+date: "2022-07-09"
 description: "My notes on how I learn programming."
 tag: "Learn"
 mins: "5"
