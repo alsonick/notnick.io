@@ -9,7 +9,7 @@ export const Heading = ({
 }) => {
   return (
     <h1
-      className={`text-4xl font-bold tracking-tight mb-6 dark:text-white ${className}`}
+      className={`text-4xl font-bold mb-6 dark:text-white ${className}`}
       style={style}
     >
       {children}

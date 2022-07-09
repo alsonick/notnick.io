@@ -48,7 +48,10 @@ export const Post = ({ post }: Props) => {
         </div>
         <Tag title={post.tag} />
         <article
-          className="prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff] prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800 dark:prose-code:text-white"
+          className="prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
+          prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
+          dark:prose-code:text-white prose-img:rounded-xl prose-img:border
+          prose-img:border-teal-100 prose-img:dark:border-teal-900"
           dangerouslySetInnerHTML={{ __html: post.contentHtml }}
         />
         <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
@@ -59,7 +62,7 @@ export const Post = ({ post }: Props) => {
               className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
               target="_blank"
             >
-              Edit this page on Github <FiExternalLink className="ml-2" />
+              Edit this page on GitHub <FiExternalLink className="ml-2" />
             </a>
           </Link>
         </div>

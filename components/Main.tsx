@@ -1,3 +1,4 @@
+import { CITY, COUNTRY } from "../lib/constants";
 import { FiSend } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { Avatar } from "./Avatar";
@@ -11,19 +12,19 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <Link href="https://www.google.com/maps/place/Brighton">
+          <Link href={`https://www.google.com/maps/place/${CITY}`}>
             <a className="w-fit" target="_blank">
               <div className="flex items-center p-1 text-sm px-3 mb-2 w-fit rounded-full text-white bg-[#f54bff]">
                 <FiSend className="mr-2" />
-                Brighton, UK
+                {CITY}, {COUNTRY}
               </div>
             </a>
           </Link>
           <Heading style={{ marginBottom: "0.5rem" }}>
-            Hey, I&apos;m Nicholas! <span className="wave">👋</span>
+            Hi, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
           <p className="text-gray-700 font-semibold dark:text-gray-100 mb-4">
-            Web &#38; Mobile Engineer (iOS)
+            {new Date().getFullYear() - 2003} y/o software engineer
           </p>
           <Links />
         </div>
