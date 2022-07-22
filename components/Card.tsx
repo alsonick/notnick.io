@@ -11,13 +11,29 @@ interface Props {
   description: string;
   tag: string;
   title: string;
+  cover?: string;
   date: string;
 }
 
-export const Card = ({ type, slug, description, tag, title, date }: Props) => {
+export const Card = ({
+  type,
+  slug,
+  description,
+  tag,
+  title,
+  cover,
+  date,
+}: Props) => {
   return (
-    <div className="flex flex-col w-full mb-10">
+    <div className="flex flex-col w-full mb-10 border-b pb-4 border-teal-100 dark:border-teal-900">
       <Tag title={tag} />
+      {cover ? (
+        <img
+          className="rounded-xl border mt-2 mb-4 border-teal-100 dark:border-teal-900"
+          src={cover}
+          alt="Cover Picture"
+        />
+      ) : null}
       <Link href={`/${type}/${slug}`}>
         <a className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">
           {title}

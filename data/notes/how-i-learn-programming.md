@@ -26,7 +26,7 @@ So before learning to code ask yourself what field in software engineering inter
 
 Once you've decided what field you'd like to enter, you must research and find out what programming language best suits that field. You can always google this:
 
-![](/post/how-i-learn-programming/pic1.png)
+![](/post/how-i-learn-programming/search_query_screenshot.png)
 
 The only problem with this is that you're going to get opinionated answers from different developers, so my advice would be to experiment and try out each programming language you get from the search results and determine which one you like the best.
 

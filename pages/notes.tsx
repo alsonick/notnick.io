@@ -40,7 +40,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
       />
       <Layout>
         <div className="flex items-center mb-4 min-h-[4rem] justify-between">
-          <Heading className="mb-0">Notes</Heading>
+          <Heading style={{ marginBottom: 0 }}>Notes</Heading>
           {notes.length ? (
             <FilterListBox
               items={notes}

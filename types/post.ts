@@ -3,6 +3,7 @@ export interface Post {
   title: string;
   date: string;
   description: string;
+  cover?: string;
   tag: string;
   mins: string;
 }

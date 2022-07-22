@@ -31,7 +31,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
   const blgs = blogs.length ? blogs[0].tag : blg.blogs[0].tag;
   const [selectedTag, setSelectedTag] = useState(blgs);
   const filteredNotesList = blogs.filter((b) => b.tag === selectedTag);
-  // console.log(filteredNotesList);
+
   return (
     <>
       <Seo
@@ -40,7 +40,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
       />
       <Layout>
         <div className="flex items-center mb-4 min-h-[4rem] justify-between">
-          <Heading className="mb-0">Blogs</Heading>
+          <Heading style={{ marginBottom: 0 }}>Blogs</Heading>
           {blogs.length ? (
             <FilterListBox
               items={blogs}

@@ -9,6 +9,7 @@ interface Post {
   date: string;
   description: string;
   tag: string;
+  cover?: string;
   mins: string;
 }
 
@@ -29,6 +30,7 @@ export const Posts = ({ type, items }: Props) => {
               description={item.description}
               tag={item.tag}
               type={type}
+              cover={item.cover}
               slug={item.slug}
             />
           </Link>
