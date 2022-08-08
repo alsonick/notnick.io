@@ -33,7 +33,7 @@ interface Props {
 }
 
 const Note: NextPage<Props> = ({ note }) => {
-  return <Post post={note} />;
+  return <Post type="notes" post={note} />;
 };
 
 export default Note;

@@ -33,7 +33,7 @@ interface Props {
 }
 
 const Blog: NextPage<Props> = ({ blog }) => {
-  return <Post post={blog} />;
+  return <Post type="blogs" post={blog} />;
 };
 
 export default Blog;

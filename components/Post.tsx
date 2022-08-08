@@ -10,6 +10,7 @@ import { Tag } from "./Tag";
 import Link from "next/link";
 
 interface Props {
+  type: "notes" | "blogs";
   post: {
     title: string;
     slug: string;
@@ -21,7 +22,7 @@ interface Props {
   };
 }
 
-export const Post = ({ post }: Props) => {
+export const Post = ({ type, post }: Props) => {
   return (
     <>
       <Seo
@@ -56,7 +57,7 @@ export const Post = ({ post }: Props) => {
         />
         <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
           <Link
-            href={`https://github.com/alsonick/notnick.io/blob/main/data/notes/${post.slug}.md`}
+            href={`https://github.com/alsonick/notnick.io/blob/main/data/${type}/${post.slug}.md`}
           >
             <a
               className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
