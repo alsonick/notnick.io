@@ -25,7 +25,7 @@ const Specs: NextPage = () => {
         </Section>
         <Section>
           <Heading style={{ fontSize: "2rem", marginBottom: 0 }}>
-            M1 MacBook Pro 13"
+            M1 MacBook Pro 13&quot;
           </Heading>
           <ul className="mt-3">
             <li>
