@@ -1,10 +1,10 @@
-import { NextPage } from "next";
-import Image from "next/image";
 import { Heading } from "../components/Heading";
-import { Layout } from "../components/Layout";
 import { LinkTag } from "../components/LinkTag";
+import { Layout } from "../components/Layout";
 import { Seo } from "../components/Seo";
 import { Text } from "../components/Text";
+import { NextPage } from "next";
+import Image from "next/image";
 
 const Luffy: NextPage = () => {
   return (
