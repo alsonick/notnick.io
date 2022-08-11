@@ -45,6 +45,10 @@ export const About = () => {
         </LinkTag>
         .
       </Text>
+      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
+        If you&apos;re interested on what specs I use on a daily basis then{" "}
+        <LinkTag href="/specs">Click here</LinkTag>.
+      </Text>
     </section>
   );
 };

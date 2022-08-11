@@ -3,11 +3,13 @@ import { Heading } from "./Heading";
 
 // Next.js
 import Link from "next/link";
+import { Text } from "./Text";
 
 export const Technologies = () => {
   return (
     <section className="flex flex-col mb-12 ">
-      <Heading>Technologies 💻</Heading>
+      <Heading style={{ marginBottom: 0 }}>Technologies 💻</Heading>
+      <Text style={{ marginBottom: "24px" }}>I use on a daily basis</Text>
       <ul className="block text-center list-disc">
         {technologies.map((tech) => (
           <Link key={tech.id} href={tech.link}>
