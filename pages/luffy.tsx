@@ -25,7 +25,7 @@ const Luffy: NextPage = () => {
           <Heading style={{ marginBottom: 0 }}>Monkey D. Luffy</Heading>
           <Text>One Piece</Text>
         </div>
-        <LinkTag href="/">&larr; Go Back</LinkTag>
+        <LinkTag href="/">&larr; Go back</LinkTag>
       </Layout>
     </>
   );
