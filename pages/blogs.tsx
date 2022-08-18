@@ -25,12 +25,21 @@ interface Props {
 }
 
 const Blogs: NextPage<Props> = ({ blogs }) => {
-  const blg = {
-    blogs: [{ tag: "" }],
-  };
-  const blgs = blogs.length ? blogs[0].tag : blg.blogs[0].tag;
-  const [selectedTag, setSelectedTag] = useState(blgs);
-  const filteredNotesList = blogs.filter((b) => b.tag === selectedTag);
+  let tags = [{ tag: "All", slug: "" }];
+
+  blogs.forEach((blog) => {
+    tags.push({ tag: blog.tag, slug: blog.slug });
+  });
+
+  const [selectedTag, setSelectedTag] = useState(tags[0].tag);
+
+  for (let i = 0; i < blogs.length; i++) {
+    if (blogs[i].tag === tags[i].tag) {
+      setSelectedTag(tags[i].tag);
+    }
+  }
+
+  const filteredNotesList = blogs.filter((blog) => blog.tag === selectedTag);
 
   return (
     <>
@@ -43,14 +52,17 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
           <Heading style={{ marginBottom: 0 }}>Blogs</Heading>
           {blogs.length ? (
             <FilterListBox
-              items={blogs}
+              items={tags}
               selectedItem={selectedTag}
               onChange={setSelectedTag}
             />
           ) : null}
         </div>
         {!blogs.length && <NoPost type="blogs" />}
-        <Posts type="blogs" items={selectedTag ? filteredNotesList : blogs} />
+        <Posts
+          type="blogs"
+          items={filteredNotesList.length ? filteredNotesList : blogs}
+        />
         <LinkTag href="/">&larr; Go Back</LinkTag>
       </Layout>
     </>

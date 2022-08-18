@@ -4,9 +4,14 @@ import { Post } from "../types/post";
 import { Fragment } from "react";
 
 interface Props {
-  items: Post[];
+  items: Item[];
   selectedItem: string;
   onChange: React.Dispatch<React.SetStateAction<string>>;
+}
+
+interface Item {
+  tag: string;
+  slug: string;
 }
 
 export const FilterListBox = ({ items, selectedItem, onChange }: Props) => {
@@ -19,7 +24,13 @@ export const FilterListBox = ({ items, selectedItem, onChange }: Props) => {
         <Listbox.Options className="flex py-2 absolute w-full flex-col border bg-white border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16">
           {items.map((item) => (
             <Listbox.Option key={item.slug} value={item.tag} as={Fragment}>
-              {({ active, selected }: { active: boolean, selected: boolean }) => (
+              {({
+                active,
+                selected,
+              }: {
+                active: boolean;
+                selected: boolean;
+              }) => (
                 <li
                   className={`flex cursor-pointer font-semibold text-sm dark:bg-black dark:text-white items-center justify-between p-2 px-3 ${
                     active

@@ -67,8 +67,8 @@ export const Post = ({ type, post }: Props) => {
             </a>
           </Link>
         </div>
-        <LinkTag href="/notes" style={{ marginTop: "2rem" }}>
-          &larr; Go back to notes
+        <LinkTag href={`/${type}`} style={{ marginTop: "2rem" }}>
+          &larr; Go back to {type === "blogs" ? "blogs" : "notes"}
         </LinkTag>
       </Layout>
     </>
