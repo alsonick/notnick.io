@@ -39,7 +39,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
     }
   }
 
-  const filteredNotesList = blogs.filter((blog) => blog.tag === selectedTag);
+  const filteredBlogsList = blogs.filter((blog) => blog.tag === selectedTag);
 
   return (
     <>
@@ -61,7 +61,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
         {!blogs.length && <NoPost type="blogs" />}
         <Posts
           type="blogs"
-          items={filteredNotesList.length ? filteredNotesList : blogs}
+          items={filteredBlogsList.length ? filteredBlogsList : blogs}
         />
         <LinkTag href="/">&larr; Go Back</LinkTag>
       </Layout>

@@ -25,12 +25,21 @@ interface Props {
 }
 
 const Notes: NextPage<Props> = ({ notes }) => {
-  const nte = {
-    notes: [{ tag: "" }],
-  };
-  const ntes = notes.length ? notes[0].tag : nte.notes[0].tag;
-  const [selectedTag, setSelectedTag] = useState(ntes);
-  const filteredNotesList = notes.filter((n) => n.tag === selectedTag);
+  let tags = [{ tag: "All", slug: "" }];
+
+  notes.forEach((note) => {
+    tags.push({ tag: note.tag, slug: note.slug });
+  });
+
+  const [selectedTag, setSelectedTag] = useState(tags[0].tag);
+
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i].tag === tags[i].tag) {
+      setSelectedTag(tags[i].tag);
+    }
+  }
+
+  const filteredNotesList = notes.filter((note) => note.tag === selectedTag);
 
   return (
     <>
@@ -50,7 +59,10 @@ const Notes: NextPage<Props> = ({ notes }) => {
           ) : null}
         </div>
         {!notes.length && <NoPost type="notes" />}
-        <Posts type="notes" items={selectedTag ? filteredNotesList : notes} />
+        <Posts
+          type="notes"
+          items={filteredNotesList.length ? filteredNotesList : notes}
+        />
         <LinkTag href="/">&larr; Go Back</LinkTag>
       </Layout>
     </>
