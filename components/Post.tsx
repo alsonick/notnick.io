@@ -48,13 +48,22 @@ export const Post = ({ type, post }: Props) => {
           </p>
         </div>
         <Tag title={post.tag} />
-        <article
-          className="prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
-          prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
+        {Boolean(post.contentHtml) ? (
+          <article
+            className="
+            prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
+            prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
           dark:prose-code:text-white prose-img:rounded-xl prose-img:border
           prose-img:border-teal-100 prose-img:dark:border-teal-900"
-          dangerouslySetInnerHTML={{ __html: post.contentHtml }}
-        />
+            dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+          />
+        ) : (
+          <div className="flex items-center justify-center p-20 mt-8">
+            <h1 className="text-xl text-center font-semibold opacity-30 dark:text-white">
+              In progress... Come back and check again later.
+            </h1>
+          </div>
+        )}
         <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
           <Link
             href={`https://github.com/alsonick/notnick.io/blob/main/data/${type}/${post.slug}.md`}
