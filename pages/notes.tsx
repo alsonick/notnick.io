@@ -52,7 +52,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
           <Heading style={{ marginBottom: 0 }}>Notes</Heading>
           {notes.length ? (
             <FilterListBox
-              items={notes}
+              items={tags}
               selectedItem={selectedTag}
               onChange={setSelectedTag}
             />
