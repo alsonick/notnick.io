@@ -1,10 +1,10 @@
-import { NextPage } from "next";
-import Image from "next/image";
 import { Heading } from "../components/Heading";
-import { Layout } from "../components/Layout";
 import { LinkTag } from "../components/LinkTag";
+import { Layout } from "../components/Layout";
 import { Seo } from "../components/Seo";
 import { Text } from "../components/Text";
+import { NextPage } from "next";
+import Image from "next/image";
 
 const Luffy: NextPage = () => {
   return (
@@ -25,7 +25,7 @@ const Luffy: NextPage = () => {
           <Heading style={{ marginBottom: 0 }}>Monkey D. Luffy</Heading>
           <Text>One Piece</Text>
         </div>
-        <LinkTag href="/">&larr; Go Back</LinkTag>
+        <LinkTag href="/">&larr; Go back</LinkTag>
       </Layout>
     </>
   );

@@ -1,7 +1,8 @@
-import { NextPage } from "next";
+import { LinkTag } from "../components/LinkTag";
 import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
 import { Seo } from "../components/Seo";
+import { NextPage } from "next";
 
 const Projects: NextPage = () => {
   return (
@@ -11,7 +12,10 @@ const Projects: NextPage = () => {
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <Layout>
-        <Heading>Projects</Heading>
+        <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+          <Heading style={{ marginBottom: 0 }}>Projects</Heading>
+        </div>
+        <LinkTag href="/">&larr; Go Back</LinkTag>
       </Layout>
     </>
   );
