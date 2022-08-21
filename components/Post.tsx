@@ -35,9 +35,7 @@ export const Post = ({ type, post }: Props) => {
         </h1>
         <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
           <div className="flex items-center">
-            <div className="flex border duration-300 border-teal-100 dark:border-black rounded-full">
-              <Avatar width={24} height={24} />
-            </div>
+            <Avatar width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
               Nicholas Njoki /&nbsp;
             </p>
@@ -60,7 +58,9 @@ export const Post = ({ type, post }: Props) => {
         ) : (
           <div className="flex items-center justify-center p-20 mt-8">
             <h1 className="text-xl text-center font-semibold opacity-30 dark:text-white">
-              In progress... Come back and check again later.
+              In progress...
+              <br />
+              Come back and check again later.
             </h1>
           </div>
         )}

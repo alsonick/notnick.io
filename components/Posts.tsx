@@ -32,6 +32,7 @@ export const Posts = ({ type, items }: Props) => {
               type={type}
               cover={item.cover}
               slug={item.slug}
+              mins={item.mins}
             />
           </Link>
         ))}

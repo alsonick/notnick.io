@@ -18,7 +18,7 @@ export const FilterListBox = ({ items, selectedItem, onChange }: Props) => {
   return (
     <Listbox value={selectedItem} onChange={onChange}>
       <div className="flex duration-300 relative flex-col w-1/2">
-        <Listbox.Button className="flex p-3 font-semibold items-center text-sm justify-between dark:text-white rounded-lg bg-white border border-teal-100 dark:bg-black dark:border-teal-900">
+        <Listbox.Button className="flex p-3 font-semibold items-center text-sm justify-between dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100 dark:bg-black dark:border-teal-900">
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
         <Listbox.Options className="flex py-2 absolute w-full flex-col border bg-white border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16">
