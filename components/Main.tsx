@@ -28,7 +28,7 @@ export const Main = () => {
           </p>
           <Links />
         </div>
-        <div className="flex border mb-8 md:mb-0 duration-300 border-teal-100 dark:border-black rounded-full">
+        <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
           <Avatar width={122} height={122} />
         </div>
       </main>
