@@ -80,7 +80,8 @@ export const NewsLetter = ({ subscribers }: Subscribers) => {
           Subscribe to my newsletter
         </Heading>
         <Text>
-          Subscribe if you're interested about Rust & TypeScript content.
+          Subscribe if you&apos;re interested about Rust &#38; TypeScript
+          content.
         </Text>
         <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2">
           <div className="flex-1 md:w-fit w-full mr-3 mb-3 md:mb-0">
