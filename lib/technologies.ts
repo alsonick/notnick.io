@@ -19,4 +19,9 @@ export const technologies = [
     text: "JavaScript",
     link: "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
   },
+  {
+    id: 17,
+    text: "Rust",
+    link: "https://www.rust-lang.org/",
+  },
 ];

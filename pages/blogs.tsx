@@ -11,15 +11,6 @@ import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
 import { useState } from "react";
 
-export const getStaticProps: GetStaticProps = () => {
-  const blogs = getSortedPostData(BLOGS_DIR);
-  return {
-    props: {
-      blogs,
-    },
-  };
-};
-
 interface Props {
   blogs: Post[];
 }
@@ -63,10 +54,19 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
           type="blogs"
           items={filteredBlogsList.length ? filteredBlogsList : blogs}
         />
-        <LinkTag href="/">&larr; Go Back</LinkTag>
+        <LinkTag href="/">&larr; Go back</LinkTag>
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = () => {
+  const blogs = getSortedPostData(BLOGS_DIR);
+  return {
+    props: {
+      blogs,
+    },
+  };
 };
 
 export default Blogs;

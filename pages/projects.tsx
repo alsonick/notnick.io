@@ -15,7 +15,7 @@ const Projects: NextPage = () => {
         <div className="flex items-center mb-4 min-h-[4rem] justify-between">
           <Heading style={{ marginBottom: 0 }}>Projects</Heading>
         </div>
-        <LinkTag href="/">&larr; Go Back</LinkTag>
+        <LinkTag href="/">&larr; Go back</LinkTag>
       </Layout>
     </>
   );

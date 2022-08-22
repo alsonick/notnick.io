@@ -7,6 +7,7 @@ import Link from "next/link";
 
 export const Nav = () => {
   const ITEMS = [
+    { id: 1, text: "/", to: "/" },
     { id: 2, text: "Notes", to: "/notes" },
     { id: 3, text: "Blogs", to: "/blogs" },
     { id: 4, text: "Projects", to: "/projects" },
@@ -22,10 +23,10 @@ export const Nav = () => {
       <div className="hidden lg:flex">
         {ITEMS.map((nav) => (
           <LinkTag
+            key={nav.id}
             className={`${
               router.pathname === nav.to && "dark:bg-gray-800 bg-gray-100"
             }`}
-            key={nav.id}
             to={nav.to}
           >
             {nav.text}

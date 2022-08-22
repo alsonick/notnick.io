@@ -10,6 +10,7 @@ export const Avatar = ({ width, height }: Props) => {
     <Border>
       <Image
         className="rounded-full"
+        title="Hey, that's a drawing of me!"
         src="/me.jpeg"
         width={width}
         height={height}
@@ -22,7 +23,7 @@ export const Avatar = ({ width, height }: Props) => {
 
 const Border = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="flex border duration-300 border-teal-100 dark:border-black rounded-full">
+    <div className="flex w-fit border duration-300 border-teal-100 dark:border-teal-900 rounded-full">
       {children}
     </div>
   );

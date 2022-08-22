@@ -1,9 +1,11 @@
 import { Heading } from "../components/Heading";
 import { LinkTag } from "../components/LinkTag";
 import { Layout } from "../components/Layout";
-import { Seo } from "../components/Seo";
 import { Text } from "../components/Text";
+import { Seo } from "../components/Seo";
 import { NextPage } from "next";
+
+// Next.js
 import Image from "next/image";
 
 const Luffy: NextPage = () => {
@@ -25,7 +27,7 @@ const Luffy: NextPage = () => {
           <Heading style={{ marginBottom: 0 }}>Monkey D. Luffy</Heading>
           <Text>One Piece</Text>
         </div>
-        <LinkTag href="/">&larr; Go back</LinkTag>
+        <LinkTag href="/">&larr; Home page</LinkTag>
       </Layout>
     </>
   );

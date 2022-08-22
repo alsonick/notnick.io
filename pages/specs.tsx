@@ -11,7 +11,7 @@ const Specs: NextPage = () => {
       id: 1,
       title: "PC",
       list: [
-        { id: 1, key: "Processor", value: "Intel Core i9-11900KF" },
+        { id: 1, key: "CPU", value: "Intel Core i9-11900KF" },
         { id: 2, key: "RAM", value: "32GB" },
         { id: 3, key: "GPU", value: "NVIDIA GeForce RTX 3060" },
         { id: 4, key: "OS", value: "Windows 11" },

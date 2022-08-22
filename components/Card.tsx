@@ -1,10 +1,10 @@
+import { Avatar } from "./Avatar";
 import { Text } from "./Text";
 import { Date } from "./Date";
 import { Tag } from "./Tag";
 
 // Next.js
 import Link from "next/link";
-import { Avatar } from "./Avatar";
 
 interface Props {
   type: "notes" | "blogs";
