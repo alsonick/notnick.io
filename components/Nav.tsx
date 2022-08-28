@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const Nav = () => {
   const ITEMS = [
-    { id: 1, text: "/", to: "/" },
+    { id: 1, text: "Home", to: "/" },
     { id: 2, text: "Notes", to: "/notes" },
     { id: 3, text: "Blogs", to: "/blogs" },
     { id: 4, text: "Projects", to: "/projects" },
