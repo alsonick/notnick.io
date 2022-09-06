@@ -18,7 +18,11 @@ const Home: NextPage = () => {
         title="Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
+
       <Layout>
+        <div className="bg-black mt-12 text-white dark:bg-white dark:text-black font-semibold rounded-lg w-fit px-10 py-1">
+          Rest In Peace Queen Elizabeth II
+        </div>
         <Main />
         <About />
         <Technologies />
