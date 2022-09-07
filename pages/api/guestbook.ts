@@ -16,6 +16,8 @@ export default async function handler(
   if (req.method === "POST") {
     const body = req.body as Body;
 
+    const CHARACTER_LIMIT = 30;
+
     if (!body) {
       return res
         .status(400)
@@ -28,6 +30,15 @@ export default async function handler(
       return res
         .status(400)
         .send({ success: false, error: "Please include all the fields." });
+    }
+
+    if (text.length > CHARACTER_LIMIT) {
+      return res
+        .status(400)
+        .send({
+          success: false,
+          error: `You can only have ${CHARACTER_LIMIT} characters.`,
+        });
     }
 
     try {
