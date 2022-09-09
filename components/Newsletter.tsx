@@ -61,8 +61,13 @@ export const NewsLetter = () => {
   };
 
   const fetchSubscriberHelperCall = async () => {
-    const data = await getSubscribers();
-    if (data) return setSubs(data);
+    try {
+      const data = await getSubscribers();
+      if (data) return setSubs(data as Subscribers);
+    } catch (e) {
+      console.log(e);
+      setErrorMessage(e as string);
+    }
   };
 
   useEffect(() => {
