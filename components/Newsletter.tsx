@@ -1,61 +1,55 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
+import { getSubscribers } from "../lib/get-subscribers";
+import { Subscribers } from "../types/revue";
+import { useState, useEffect } from "react";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
-import { useState } from "react";
 import { Input } from "./Input";
 import { Text } from "./Text";
 
 // Next.js
-import { GetStaticProps } from "next";
 import Link from "next/link";
 
-interface Subscribers {
-  subscribers?: Subscriber[];
-}
-
-interface Subscriber {
-  email: string;
-  first_name: string;
-  last_name: string;
-  double_opt_in: boolean;
-}
-
-export const NewsLetter = ({ subscribers }: Subscribers) => {
-  const [email, setEmail] = useState("");
+export const NewsLetter = () => {
+  const [subs, setSubs] = useState<Subscribers | undefined>(undefined);
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [email, setEmail] = useState("");
 
   const subscribe = async () => {
     setLoading(true);
     setErrorMessage("");
 
     try {
-      const response = await fetch(
-        "https://www.getrevue.co/api/v2/subscribers",
-        {
-          method: "POST",
-          body: JSON.stringify({ email }),
-          headers: {
-            Authorization: `Token ${
-              process.env.NEXT_PUBLIC_REVUE_API_KEY as string
-            }`,
-          },
-        }
-      );
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        body: JSON.stringify({ email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
-      const data = await response.json();
+      interface DataResponse {
+        success: boolean;
+        error: string;
+      }
 
-      if (data) {
+      const data = (await response.json()) as DataResponse;
+
+      // Something went wrong
+      if (!data.success) {
+        setLoading(false);
+        return setErrorMessage(data.error);
+      }
+
+      // Success
+      if (data.success) {
         setLoading(false);
         setErrorMessage("");
         setSuccessMessage("You're set! Check your email to confirm.");
-        setEmail("");
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 2000);
-        return;
+        return setEmail("");
       }
 
       setLoading(false);
@@ -65,6 +59,15 @@ export const NewsLetter = ({ subscribers }: Subscribers) => {
       setErrorMessage("Something went wrong.");
     }
   };
+
+  const fetchSubscriberHelperCall = async () => {
+    const data = await getSubscribers();
+    if (data) return setSubs(data);
+  };
+
+  useEffect(() => {
+    fetchSubscriberHelperCall();
+  }, []);
 
   return (
     <section className="flex flex-col mb-12">
@@ -103,9 +106,9 @@ export const NewsLetter = ({ subscribers }: Subscribers) => {
         <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
           <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
             <span className="font-bold text-black dark:text-white">
-              {subscribers?.length ?? 0}&nbsp;
+              {subs?.data.length ?? 0}&nbsp;
             </span>{" "}
-            {subscribers?.length === 1 ? "subscriber" : "subscribers"}{" "}
+            {subs?.data.length === 1 ? "subscriber" : "subscribers"}{" "}
             &bull;&nbsp;
             <Link href="https://www.getrevue.co/profile/heynickn">
               <a
@@ -142,22 +145,4 @@ export const NewsLetter = ({ subscribers }: Subscribers) => {
       </form>
     </section>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch("https://www.getrevue.co/api/v2/subscribers", {
-    method: "GET",
-    headers: {
-      Authorization: `Token ${process.env.REVUE_API_KEY as string}`,
-      "Content-Type": "application/json",
-    },
-  });
-
-  const subscribers = await response.json();
-
-  return {
-    props: {
-      subscribers,
-    },
-  };
 };
