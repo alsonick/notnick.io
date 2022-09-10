@@ -63,7 +63,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
           type="notes"
           items={filteredNotesList.length ? filteredNotesList : notes}
         />
-        <LinkTag href="/">&larr; Go Back</LinkTag>
+        <LinkTag href="/">&larr; Go back</LinkTag>
       </Layout>
     </>
   );
