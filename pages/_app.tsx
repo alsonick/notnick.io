@@ -2,6 +2,7 @@ import type { AppProps } from "next/app";
 import { Router } from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
+import "tippy.js/dist/tippy.css";
 import "../styles/globals.css";
 
 Router.events.on("routeChangeStart", () => NProgress.start());

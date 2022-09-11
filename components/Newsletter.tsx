@@ -21,6 +21,7 @@ export const NewsLetter = () => {
   const subscribe = async () => {
     setLoading(true);
     setErrorMessage("");
+    setSuccessMessage("");
 
     try {
       const response = await fetch("/api/newsletter", {
@@ -47,15 +48,16 @@ export const NewsLetter = () => {
       // Success
       if (data.success) {
         setLoading(false);
-        setErrorMessage("");
         setSuccessMessage("You're set! Check your email to confirm.");
         return setEmail("");
       }
 
       setLoading(false);
+
       setErrorMessage("Something went wrong.");
     } catch (e) {
       setLoading(false);
+
       setErrorMessage("Something went wrong.");
     }
   };
