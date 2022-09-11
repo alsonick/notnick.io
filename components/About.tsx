@@ -50,7 +50,7 @@ export const About = () => {
         <LinkTag href="/specs">Click here</LinkTag>.
       </Text>
       <Text>
-        I'm currently studying{" "}
+        I&apos;m currently studying{" "}
         <LinkTag
           href="https://en.wikipedia.org/wiki/Computer_science"
           target="_blank"
