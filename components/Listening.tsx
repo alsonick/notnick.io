@@ -101,6 +101,10 @@ export const Listening: React.FC<Props> = (
       {doing?.listening_to_spotify ? (
         <a
           target="_blank"
+          title={`${doing.spotify.album} by ${doing.spotify.artist.replaceAll(
+            ";",
+            ","
+          )}`}
           rel="noreferrer"
           href={`https://open.spotify.com/track/${doing.spotify.track_id}`}
         >
