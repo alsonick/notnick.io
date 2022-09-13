@@ -9,7 +9,7 @@ export const SOCIALS = [
     id: 2,
     title: "Instagram",
     username: "heynickn",
-    link: "https://twitter.com/notnickdev",
+    link: "https://www.instagram.com/heynickn/",
   },
   {
     id: 3,
