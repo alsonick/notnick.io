@@ -42,6 +42,7 @@ const Socials: NextPage = () => {
                 <Link href={social.link}>
                   <a
                     className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300"
+                    title={social.link}
                     target="_blank"
                   >
                     {social.username}

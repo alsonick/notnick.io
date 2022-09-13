@@ -16,7 +16,7 @@ export const E = ({ heading, title, text }: Props) => {
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <div className="flex flex-col items-center justify-center w-screen h-screen">
-        <h1 className="text-4xl font-bold tracking-tight dark:text-white">
+        <h1 className="text-4xl font-bold text-center tracking-tight dark:text-white">
           {heading}
         </h1>
         <Text style={{ marginBottom: "1rem" }}>{text}</Text>
