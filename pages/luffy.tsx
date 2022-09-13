@@ -1,6 +1,6 @@
 import { Heading } from "../components/Heading";
-import { LinkTag } from "../components/LinkTag";
 import { Layout } from "../components/Layout";
+import { GoBack } from "../components/GoBack";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { NextPage } from "next";
@@ -27,7 +27,7 @@ const Luffy: NextPage = () => {
           <Heading style={{ marginBottom: 0 }}>Monkey D. Luffy</Heading>
           <Text>One Piece</Text>
         </div>
-        <LinkTag href="/">&larr; Go back</LinkTag>
+        <GoBack />
       </Layout>
     </>
   );

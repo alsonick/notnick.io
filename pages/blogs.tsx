@@ -2,7 +2,7 @@ import { FilterListBox } from "../components/FilterListBox";
 import { getSortedPostData } from "../lib/post";
 import { Heading } from "../components/Heading";
 import { GetStaticProps, NextPage } from "next";
-import { LinkTag } from "../components/LinkTag";
+import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { NoPost } from "../components/NoPost";
 import { BLOGS_DIR } from "../lib/constants";
@@ -54,7 +54,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
           type="blogs"
           items={filteredBlogsList.length ? filteredBlogsList : blogs}
         />
-        <LinkTag href="/">&larr; Go back</LinkTag>
+        <GoBack />
       </Layout>
     </>
   );

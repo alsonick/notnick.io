@@ -1,5 +1,5 @@
-import { LinkTag } from "../components/LinkTag";
 import { Heading } from "../components/Heading";
+import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Seo } from "../components/Seo";
 import { NextPage } from "next";
@@ -15,7 +15,7 @@ const Projects: NextPage = () => {
         <div className="flex items-center mb-4 min-h-[4rem] justify-between">
           <Heading style={{ marginBottom: 0 }}>Projects</Heading>
         </div>
-        <LinkTag href="/">&larr; Go back</LinkTag>
+        <GoBack />
       </Layout>
     </>
   );

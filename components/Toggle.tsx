@@ -36,6 +36,7 @@ export const Toggle = () => {
   return (
     <button
       className="flex items-center justify-center bg-gray-100 text-black h-9 w-9 duration-300 hover:bg-gray-200 hover:translate-y-1 rounded-lg ml-auto dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-white"
+      title={theme === "dark" ? "Dark Mode" : "Light Theme"}
       onClick={() => toggleTheme(theme)}
     >
       {theme === "dark" ? <FiSun /> : <FiMoon />}

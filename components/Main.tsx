@@ -14,7 +14,10 @@ export const Main = () => {
         <div className="flex flex-col">
           <Link href={`https://www.google.com/maps/place/${CITY}`}>
             <a className="w-fit font-semibold" target="_blank">
-              <div className="flex items-center p-1 text-sm px-3 mb-2 w-fit rounded-full text-white bg-[#f54bff]">
+              <div
+                className="flex items-center p-1 text-sm px-3 mb-2 w-fit rounded-full text-white bg-[#f54bff]"
+                title={`${CITY}, ${COUNTRY}`}
+              >
                 <FiSend className="mr-2" />
                 {CITY}, {COUNTRY}
               </div>

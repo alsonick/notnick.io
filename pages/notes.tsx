@@ -1,9 +1,9 @@
 import { FilterListBox } from "../components/FilterListBox";
 import { getSortedPostData } from "../lib/post";
-import { LinkTag } from "../components/LinkTag";
 import { GetStaticProps, NextPage } from "next";
 import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
+import { GoBack } from "../components/GoBack";
 import { NoPost } from "../components/NoPost";
 import { NOTES_DIR } from "../lib/constants";
 import { Posts } from "../components/Posts";
@@ -63,7 +63,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
           type="notes"
           items={filteredNotesList.length ? filteredNotesList : notes}
         />
-        <LinkTag href="/">&larr; Go back</LinkTag>
+        <GoBack />
       </Layout>
     </>
   );

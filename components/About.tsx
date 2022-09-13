@@ -63,6 +63,9 @@ export const About = () => {
         </LinkTag>
         .
       </Text>
+      <Text>
+        Connect with me on my <LinkTag href="/socials">socials</LinkTag>.
+      </Text>
     </section>
   );
 };

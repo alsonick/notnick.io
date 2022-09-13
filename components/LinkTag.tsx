@@ -1,3 +1,4 @@
+// Next.js
 import Link from "next/link";
 
 interface Props {
@@ -5,11 +6,12 @@ interface Props {
   children: React.ReactNode;
   style?: React.CSSProperties | undefined;
   target?: React.HTMLAttributeAnchorTarget | undefined;
+  onClick?: ((e: any) => void) | undefined;
 }
 
-export const LinkTag = ({ href, children, style, target }: Props) => {
+export const LinkTag = ({ href, children, style, target, onClick }: Props) => {
   return (
-    <Link href={href} rel="noreferrer">
+    <Link href={href} onClick={onClick} rel="noreferrer">
       <a
         className="font-bold w-fit text-[#f54bff] hover:underline"
         style={style}

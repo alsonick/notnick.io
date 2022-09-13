@@ -94,6 +94,7 @@ export const Listening: React.FC<Props> = (
         <Text>Loading...</Text>
       </div>
     );
+
   return (
     <a className="flex items-center mb-6 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit">
       <FaSpotify className="mr-2" />
@@ -110,7 +111,7 @@ export const Listening: React.FC<Props> = (
           </b>
         </a>
       ) : (
-        <div>Not listening to anything...</div>
+        <Text>Not listening to anything...</Text>
       )}
     </a>
   );
