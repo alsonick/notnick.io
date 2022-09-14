@@ -3,7 +3,7 @@ export const SOCIALS = [
     id: 1,
     title: "Twitter",
     username: "@heynickn",
-    link: "https://twitter.com/notnickdev",
+    link: "https://twitter.com/heynickn",
   },
   {
     id: 2,
