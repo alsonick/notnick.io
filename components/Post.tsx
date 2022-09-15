@@ -3,6 +3,7 @@ import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
 import { Date } from "./Date";
+import { Text } from "./Text";
 import { Seo } from "./Seo";
 import { Tag } from "./Tag";
 
@@ -41,9 +42,8 @@ export const Post = ({ type, post }: Props) => {
             </p>
             <Date date={post.date} />
           </div>
-          <p className="text-gray-600 md:mt-0 mt-1 dark:text-gray-300">
-            {post.mins} min read
-          </p>
+
+          <Text>{post.mins} min read</Text>
         </div>
         <Tag title={post.tag} />
         {Boolean(post.contentHtml) ? (

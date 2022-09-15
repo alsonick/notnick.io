@@ -15,6 +15,12 @@ export default async function handler(
     });
 
     const data = (await response.json()) as Subscriber[];
+
+    res.setHeader(
+      "Cache-Control",
+      "public, s-maxage=1200, stale-while-revalidate=600"
+    );
+
     return res.status(200).send({ success: true, data });
   }
 
