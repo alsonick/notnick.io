@@ -1,10 +1,12 @@
 import { Subscribers } from "../types/revue";
 
-export const getSubscribers = (): Promise<Subscribers | string> => {
+export const getSubscribers = (): Promise<number> => {
   return new Promise(async (resolve, reject) => {
     const response = await fetch("/api/newsletter");
-    const subs = await response.json();
-    if (subs) return resolve(subs);
+    const res = (await response.json()) as Subscribers;
+    if (res.success) {
+      return resolve(res.count);
+    }
     reject("Something went wrong");
   });
 };

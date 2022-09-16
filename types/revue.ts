@@ -1,5 +1,6 @@
 export interface Subscribers {
-  data: Subscriber[];
+  success: boolean;
+  count: number;
 }
 
 export interface Subscriber {

@@ -12,7 +12,7 @@ import { Text } from "./Text";
 import Link from "next/link";
 
 export const NewsLetter = () => {
-  const [subs, setSubs] = useState<Subscribers | undefined>(undefined);
+  const [subs, setSubs] = useState<number>(0);
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -65,7 +65,7 @@ export const NewsLetter = () => {
   const fetchSubscriberHelperCall = async () => {
     try {
       const data = await getSubscribers();
-      if (data) return setSubs(data as Subscribers);
+      if (data) return setSubs(data);
     } catch (e) {
       console.log(e);
       setErrorMessage(e as string);
@@ -113,10 +113,9 @@ export const NewsLetter = () => {
         <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
           <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
             <span className="font-bold text-black dark:text-white">
-              {subs?.data.length ?? 0}&nbsp;
+              {subs ?? 0}&nbsp;
             </span>{" "}
-            {subs?.data.length === 1 ? "subscriber" : "subscribers"}{" "}
-            &bull;&nbsp;
+            {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
             <Link href="https://www.getrevue.co/profile/heynickn">
               <a
                 className="hover:underline"

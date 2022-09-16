@@ -21,7 +21,7 @@ export default async function handler(
       "public, s-maxage=1200, stale-while-revalidate=600"
     );
 
-    return res.status(200).send({ success: true, data });
+    return res.status(200).send({ success: true, count: data.length });
   }
 
   if (req.method === "POST") {
