@@ -9,9 +9,8 @@ export const Avatar = ({ width, height }: Props) => {
   return (
     <Border>
       <Image
-        className="rounded-full"
-        title="Hey, that's a drawing of me!"
-        src="/me.jpeg"
+        className="rounded-full bg-red"
+        src="/pfp.png"
         width={width}
         height={height}
         quality={99}
