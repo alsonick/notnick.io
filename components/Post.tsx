@@ -43,7 +43,9 @@ export const Post = ({ type, post }: Props) => {
             <Date date={post.date} />
           </div>
 
-          <Text>{post.mins} min read</Text>
+          <div className="border-r-2 pr-2 border-teal-100 dark:border-teal-900">
+            <Text>{post.mins} min read</Text>
+          </div>
         </div>
         <Tag title={post.tag} />
         {Boolean(post.contentHtml) ? (
