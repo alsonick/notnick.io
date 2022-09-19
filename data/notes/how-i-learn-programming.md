@@ -4,6 +4,7 @@ date: "2022-07-09"
 description: "My notes on how I learn programming."
 tag: "Learn"
 mins: "5"
+last_updated_date: "2022-07-09"
 ---
 
 ## How I learn programming

@@ -23,7 +23,6 @@ export const Card = ({
   description,
   tag,
   title,
-  cover,
   date,
   mins,
 }: Props) => {
@@ -36,11 +35,11 @@ export const Card = ({
         </a>
       </Link>
       <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>{description}</Text>
-      <Text style={{ display: "flex", alignItems: "center" }}>
+      <div className="flex items-center">
         <Date date={date} />
-        &nbsp;&bull; {mins} min read &bull;&nbsp;{" "}
+        <Text>&nbsp;&bull; {mins} min read &bull;&nbsp; </Text>
         <Avatar width={22} height={22} />
-      </Text>
+      </div>
     </div>
   );
 };

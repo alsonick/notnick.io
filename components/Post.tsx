@@ -16,6 +16,7 @@ interface Props {
     title: string;
     slug: string;
     description: string;
+    last_updated_date: string;
     tag: string;
     mins: string;
     date: string;
@@ -34,7 +35,7 @@ export const Post = ({ type, post }: Props) => {
         <h1 className="font-bold text-4xl mt-6 dark:text-white">
           {post.title}
         </h1>
-        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
+        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-2 justify-between text-sm">
           <div className="flex items-center">
             <Avatar width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
@@ -42,10 +43,15 @@ export const Post = ({ type, post }: Props) => {
             </p>
             <Date date={post.date} />
           </div>
-
           <div className="border-r-2 pr-2 border-teal-100 dark:border-teal-900">
             <Text>{post.mins} min read</Text>
           </div>
+        </div>
+        <div className="flex text-sm mb-6">
+          <Text>Last Updated:&nbsp;</Text>
+          <i>
+            <Date date={post.last_updated_date} />
+          </i>
         </div>
         <Tag title={post.tag} />
         {Boolean(post.contentHtml) ? (

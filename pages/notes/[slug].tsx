@@ -24,6 +24,7 @@ interface Props {
   note: {
     title: string;
     description: string;
+    last_updated_date: string;
     tag: string;
     mins: string;
     slug: string;
