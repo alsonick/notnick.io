@@ -4,14 +4,14 @@ date: "2022-09-19"
 description: "My notes on networking."
 tag: "Educational"
 mins: "8"
-last_updated_date: "2022-09-19"
+last_updated_date: "2022-09-20"
 ---
 
 ## Networking Notes
 
 I’ve made these notes for educational purposes but anyone who’s interested in networking or anyone who needs to look back on certain topics can use these notes.
 
-New notes will be added regularly and if you’d like me to cover a certain topic in networking then [please DM on Twitter](https://twitter.com/heynickn). Notes will start from easy → intermediate → advance topics.
+New notes will be added regularly and if you’d like me to cover a certain topic in networking then [please DM me on Twitter](https://twitter.com/heynickn). Notes will start from easy → intermediate → advance topics.
 
 If you spot any grammer or spelling mistakes then feel free to [Edit this page on GitHub](https://github.com/alsonick/notnick.io).
 
