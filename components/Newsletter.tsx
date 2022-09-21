@@ -1,8 +1,9 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
+import { getIssues as getIssuesMethod } from "../lib/get-issues";
 import { getSubscribers } from "../lib/get-subscribers";
-import { Subscribers } from "../types/revue";
 import { useState, useEffect } from "react";
 import { Heading } from "./Heading";
+import Tippy from "@tippyjs/react";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Input } from "./Input";
@@ -13,6 +14,7 @@ import Link from "next/link";
 
 export const NewsLetter = () => {
   const [subs, setSubs] = useState<number>(0);
+  const [issues, getIssues] = useState<number>(0);
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -67,13 +69,22 @@ export const NewsLetter = () => {
       const data = await getSubscribers();
       if (data) return setSubs(data);
     } catch (e) {
-      console.log(e);
+      setErrorMessage(e as string);
+    }
+  };
+
+  const fetchIssuesHelperCall = async () => {
+    try {
+      const data = await getIssuesMethod();
+      if (data) return getIssues(data);
+    } catch (e) {
       setErrorMessage(e as string);
     }
   };
 
   useEffect(() => {
     fetchSubscriberHelperCall();
+    fetchIssuesHelperCall();
   }, []);
 
   return (
@@ -117,13 +128,15 @@ export const NewsLetter = () => {
             </span>{" "}
             {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
             <Link href="https://www.getrevue.co/profile/heynickn">
-              <a
-                className="hover:underline"
-                target="_blank"
-                title="View my published issues"
-              >
-                View all issues&nbsp;
-              </a>
+              <Tippy content={`${issues} Issues`}>
+                <a
+                  className="hover:underline cursor-pointer"
+                  target="_blank"
+                  title="View my published issues"
+                >
+                  View all issues&nbsp;
+                </a>
+              </Tippy>
             </Link>
             &bull;&nbsp;
             <Avatar width={20} height={20} />

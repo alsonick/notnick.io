@@ -3,8 +3,8 @@ title: "Networking Notes"
 date: "2022-09-19"
 description: "My notes on networking."
 tag: "Educational"
-mins: "8"
-last_updated_date: "2022-09-20"
+mins: "10"
+last_updated_date: "2022-09-21"
 ---
 
 ## Networking Notes
@@ -93,3 +93,29 @@ A network that extends over a large geographical distance.
 
 - The Internet
 - Google Offices
+
+### Network Architectures
+
+#### Examples:
+
+- **Peer-to-Peer (Decentralized)**
+  - All computers on the network are peers.
+    - No dedicated servers
+  - All computers can act as either a client or a server.
+  - Common in homes and businesses.
+  - Easy to set-up.
+- **Client-Server (Centralized)**
+  - A network composed of client and servers.
+    - Servers provide resources
+    - Clients receive resources
+  - The servers provide a centralized control over network resources.
+  - Accounts, security, and access control to administration tools are typically centralized.
+  - Requires an IT administrator.
+
+### The OSI Model
+
+The Open System Interconnection (OSI) Model
+
+- A conceptual framework showing us how data moves throughout a network.
+- Gives us a clear understanding of how networks operate.
+- It’s not implemented in the **real world**.

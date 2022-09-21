@@ -3,6 +3,11 @@ export interface Subscribers {
   count: number;
 }
 
+export interface Issues {
+  success: boolean;
+  count: number;
+}
+
 export interface Subscriber {
   id: number;
   list_id: number;

@@ -47,9 +47,9 @@ export const Post = ({ type, post }: Props) => {
             <Text>{post.mins} min read</Text>
           </div>
         </div>
-        <div className="flex text-sm mb-6">
-          <Text>Last Updated:&nbsp;</Text>
-          <i>
+        <div className="text-sm mb-6">
+          <i className="flex">
+            <Text>Last Updated:&nbsp;</Text>
             <Date date={post.last_updated_date} />
           </i>
         </div>
