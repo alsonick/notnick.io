@@ -2,6 +2,8 @@ import { Heading } from "../components/Heading";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Seo } from "../components/Seo";
+
+// Next.js
 import { NextPage } from "next";
 
 const Projects: NextPage = () => {

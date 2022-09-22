@@ -3,17 +3,14 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { Key } from "../components/Key";
 import { SPECS } from "../lib/specs";
+
+// Next.js
 import { NextPage } from "next";
 
 const Section = ({ children }: { children?: React.ReactNode }) => {
   return <div className="flex flex-col w-full mb-8">{children}</div>;
-};
-
-const Key = ({ children }: { children?: React.ReactNode }) => {
-  return (
-    <span className="text-black dark:text-white font-bold">{children}</span>
-  );
 };
 
 const Specs: NextPage = () => {
