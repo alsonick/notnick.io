@@ -19,6 +19,9 @@ const Socials: NextPage = () => {
   const copyToClipboard = (text: string) => {
     setCopyText("Copied");
     copy(text, { debug: true });
+    setTimeout(() => {
+      setCopyText("Copy");
+    }, 3000);
   };
 
   return (
