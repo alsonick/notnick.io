@@ -7,6 +7,7 @@ import { NextPage } from "next";
 
 // Next.js
 import Image from "next/image";
+import { Tag } from "../components/Tag";
 
 const Luffy: NextPage = () => {
   return (
@@ -24,7 +25,8 @@ const Luffy: NextPage = () => {
           />
         </div>
         <div className="flex flex-col mt-4 items-center mb-4 min-h-[4rem]">
-          <Heading style={{ marginBottom: 0 }}>Monkey D. Luffy</Heading>
+          <Tag title="idk lol" />
+          <Heading style={{ marginBottom: "0.5rem" }}>Monkey D. Luffy</Heading>
           <Text>One Piece</Text>
         </div>
         <GoBack />

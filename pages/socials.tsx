@@ -3,6 +3,7 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Text } from "../components/Text";
 import { SOCIALS } from "../lib/socials";
+import { Tag } from "../components/Tag";
 import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/Seo";
 import copy from "copy-to-clipboard";
@@ -40,7 +41,12 @@ const Socials: NextPage = () => {
               key={social.id}
               className="flex w-full items-center justify-between p-1 h-12 border-b border-teal-100 dark:border-teal-900"
             >
-              <Text style={{ fontWeight: 600 }}>{social.title}</Text>
+              <div className="flex items-center">
+                <Text style={{ fontWeight: 600, marginRight: "1rem" }}>
+                  {social.title}
+                </Text>
+                <Tag title={social.type} />
+              </div>
               <div className="flex items-center">
                 <Link href={social.link}>
                   <a
