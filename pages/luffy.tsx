@@ -3,11 +3,11 @@ import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { Tag } from "../components/Tag";
 import { NextPage } from "next";
 
 // Next.js
 import Image from "next/image";
-import { Tag } from "../components/Tag";
 
 const Luffy: NextPage = () => {
   return (

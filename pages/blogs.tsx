@@ -1,7 +1,6 @@
 import { FilterListBox } from "../components/FilterListBox";
 import { getSortedPostData } from "../lib/post";
 import { Heading } from "../components/Heading";
-import { GetStaticProps, NextPage } from "next";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { NoPost } from "../components/NoPost";
@@ -10,6 +9,9 @@ import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
 import { useState } from "react";
+
+// Next.js
+import { GetStaticProps, NextPage } from "next";
 
 interface Props {
   blogs: Post[];

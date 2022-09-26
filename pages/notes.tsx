@@ -1,6 +1,5 @@
 import { FilterListBox } from "../components/FilterListBox";
 import { getSortedPostData } from "../lib/post";
-import { GetStaticProps, NextPage } from "next";
 import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
@@ -10,6 +9,9 @@ import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
 import { useState } from "react";
+
+// Next.js
+import { GetStaticProps, NextPage } from "next";
 
 export const getStaticProps: GetStaticProps = () => {
   const notes = getSortedPostData(NOTES_DIR);

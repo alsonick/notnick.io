@@ -1,7 +1,9 @@
 import { getAllPostSlugs, getPostData } from "../../lib/post";
-import { GetStaticProps, NextPage } from "next";
 import { BLOGS_DIR } from "../../lib/constants";
 import { Post } from "../../components/Post";
+
+// Next.js
+import { GetStaticProps, NextPage } from "next";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const blog = await getPostData(params!.slug, BLOGS_DIR);
