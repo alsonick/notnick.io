@@ -1,7 +1,7 @@
 import { Heading } from "../components/Heading";
 import { Layout } from "../components/Layout";
-import { GoBack } from "../components/GoBack";
 import { Button } from "../components/Button";
+import { GoBack } from "../components/GoBack";
 import { useEffect, useState } from "react";
 import { Text } from "../components/Text";
 import { Tag } from "../components/Tag";
@@ -28,8 +28,8 @@ const Quote: NextPage<Quote> = () => {
   }, []);
 
   return (
-    <>
-      <Layout>
+    <Layout>
+      <div className="flex flex-col h-full items-center justify-center">
         {quote && !loading ? (
           <>
             <Seo title={quote.content} description={quote.author} />
@@ -58,9 +58,9 @@ const Quote: NextPage<Quote> = () => {
             <Heading>Loading...</Heading>
           </div>
         )}
-        <GoBack />
-      </Layout>
-    </>
+      </div>
+      <GoBack />
+    </Layout>
   );
 };
 
