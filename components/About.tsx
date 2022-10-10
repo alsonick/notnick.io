@@ -11,7 +11,18 @@ export const About = () => {
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
         based in the UK, I specialize in web development and a little bit of
-        mobile development.
+        mobile development. I&apos;m currently studying{" "}
+        <LinkTag
+          href="https://en.wikipedia.org/wiki/Computer_science"
+          target="_blank"
+        >
+          Computer Science
+        </LinkTag>{" "}
+        at the{" "}
+        <LinkTag href="https://www.kent.ac.uk/" target="_blank">
+          University of Kent
+        </LinkTag>
+        .
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I use a variety of technologies to ease my development process, when
@@ -49,20 +60,7 @@ export const About = () => {
         If you&apos;re interested on what specs I use on a daily basis then{" "}
         <LinkTag href="/specs">Click here</LinkTag>.
       </Text>
-      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I&apos;m currently studying{" "}
-        <LinkTag
-          href="https://en.wikipedia.org/wiki/Computer_science"
-          target="_blank"
-        >
-          Computer Science
-        </LinkTag>{" "}
-        at the{" "}
-        <LinkTag href="https://www.kent.ac.uk/" target="_blank">
-          University of Kent
-        </LinkTag>
-        .
-      </Text>
+
       <Text>
         Connect with me on my <LinkTag href="/socials">socials</LinkTag>.
       </Text>
