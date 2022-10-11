@@ -53,11 +53,13 @@ const Notes: NextPage<Props> = ({ notes }) => {
         <div className="flex items-center mb-4 min-h-[4rem] justify-between">
           <Heading style={{ marginBottom: 0 }}>Notes</Heading>
           {notes.length ? (
-            <FilterListBox
-              items={tags}
-              selectedItem={selectedTag}
-              onChange={setSelectedTag}
-            />
+            <div className="w-1/2">
+              <FilterListBox
+                items={tags}
+                selectedItem={selectedTag}
+                onChange={setSelectedTag}
+              />
+            </div>
           ) : null}
         </div>
         {!notes.length && <NoPost type="notes" />}

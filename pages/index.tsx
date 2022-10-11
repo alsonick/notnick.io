@@ -2,6 +2,7 @@ import { Technologies } from "../components/Technologies";
 import { NewsLetter } from "../components/Newsletter";
 import { Listening } from "../components/Listening";
 import { Contact } from "../components/Contact";
+
 import { Layout } from "../components/Layout";
 import { About } from "../components/About";
 import { Main } from "../components/Main";

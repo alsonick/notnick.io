@@ -44,11 +44,13 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
         <div className="flex items-center mb-4 min-h-[4rem] justify-between">
           <Heading style={{ marginBottom: 0 }}>Blogs</Heading>
           {blogs.length ? (
-            <FilterListBox
-              items={tags}
-              selectedItem={selectedTag}
-              onChange={setSelectedTag}
-            />
+            <div className="w-1/2">
+              <FilterListBox
+                items={tags}
+                selectedItem={selectedTag}
+                onChange={setSelectedTag}
+              />
+            </div>
           ) : null}
         </div>
         {!blogs.length && <NoPost type="blogs" />}
