@@ -95,4 +95,10 @@ export const technologies = [
     link: "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
     desc: "A programming language for the web.",
   },
+  {
+    id: 17,
+    text: "Rust",
+    link: "https://www.rust-lang.org/",
+    desc: "A systems programming language.",
+  },
 ];
