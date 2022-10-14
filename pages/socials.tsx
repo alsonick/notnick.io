@@ -41,12 +41,9 @@ const Socials: NextPage = () => {
               key={social.id}
               className="flex w-full items-center justify-between p-1 h-12 border-b border-teal-100 dark:border-teal-900"
             >
-              <div className="flex items-center">
-                <Text style={{ fontWeight: 600, marginRight: "1rem" }}>
-                  {social.title}
-                </Text>
-                <Tag title={social.type} />
-              </div>
+              <Text style={{ fontWeight: 600, marginRight: "1rem" }}>
+                {social.title}
+              </Text>
               <div className="flex items-center">
                 <Link href={social.link}>
                   <a

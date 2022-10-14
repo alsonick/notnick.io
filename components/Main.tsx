@@ -1,3 +1,4 @@
+import { TypeAnimation } from "react-type-animation";
 import { CITY, COUNTRY } from "../lib/constants";
 import { FiSend } from "react-icons/fi";
 import { Heading } from "./Heading";
@@ -26,9 +27,22 @@ export const Main = () => {
           <Heading style={{ marginBottom: "0.5rem" }}>
             Hi, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
-          <p className="text-gray-700 font-semibold dark:text-gray-100 mb-4">
-            {new Date().getFullYear() - 2003} y/o software engineer
-          </p>
+          <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">
+            {new Date().getFullYear() - 2003} y/o&nbsp;
+            <TypeAnimation
+              sequence={[
+                "software engineer",
+                2000,
+                "rustacean",
+                2000,
+                "student",
+                2000,
+              ]}
+              wrapper="p"
+              cursor={true}
+              repeat={Infinity}
+            />
+          </div>
           <Links />
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
