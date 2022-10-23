@@ -24,7 +24,7 @@ export const ArticleCard = ({ title, link, type, authors }: Props) => {
         >
           <Tag title={type} />
           <h3
-            className="text-black mb-1 underline dark:text-white
+            className="text-black underline dark:text-white
           font-semibold text-2xl tracking-tight hover:no-underline"
           >
             {title}

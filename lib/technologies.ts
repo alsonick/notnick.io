@@ -101,4 +101,10 @@ export const technologies = [
     link: "https://www.rust-lang.org/",
     desc: "A systems programming language.",
   },
+  {
+    id: 18,
+    text: "React Native",
+    link: "https://reactnative.dev/",
+    desc: "A JavaScript library for building user interfaces on mobile devices.",
+  },
 ];
