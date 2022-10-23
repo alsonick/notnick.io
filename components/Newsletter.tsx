@@ -131,6 +131,8 @@ export const NewsLetter = () => {
               <Tippy content={`${issues} Issues`}>
                 <a
                   className="hover:underline cursor-pointer"
+                  href="https://www.getrevue.co/profile/heynickn"
+                  rel="noreferrer"
                   target="_blank"
                   title="View my published issues"
                 >

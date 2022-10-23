@@ -72,6 +72,7 @@ export const Listening: React.FC<Props> = (
     socket.onclose = () => {
       setSocket(null);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socket]);
 
   useEffect(() => {
@@ -85,6 +86,7 @@ export const Listening: React.FC<Props> = (
 
   useEffect(() => {
     setActive(doing?.listening_to_spotify || currentActivity);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doing, currentActivity]);
 
   if (!doing || !doing.discord_status)

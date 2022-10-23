@@ -60,7 +60,10 @@ export const About = () => {
         If you&apos;re interested on what specs I use on a daily basis then{" "}
         <LinkTag href="/specs">Click here</LinkTag>.
       </Text>
-
+      <Text>
+        View the collection of articles that I&apos;ve found interesting{" "}
+        <LinkTag href="/articles">over here</LinkTag>.
+      </Text>
       <Text>
         Connect with me on my <LinkTag href="/socials">socials</LinkTag>.
       </Text>
