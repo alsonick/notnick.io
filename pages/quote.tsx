@@ -1,4 +1,5 @@
 import { Heading } from "../components/Heading";
+import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
 import { GoBack } from "../components/GoBack";
@@ -29,37 +30,39 @@ const Quote: NextPage<Quote> = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col h-full items-center justify-center">
-        {quote && !loading ? (
-          <>
-            <Seo title={quote.content} description={quote.author} />
-            <div className="flex flex-col mt-4 items-center mb-4 min-h-[4rem]">
-              <Tag title={quote.tags[0]} />
-              <Heading
-                style={{
-                  marginBottom: "0.5rem",
-                  marginTop: "0.5rem",
-                  textAlign: "center",
-                }}
-              >
-                {`"${quote.content}"`}
-              </Heading>
-              <Text>{quote.author}</Text>
-              <Button
-                onClick={() => fetchQuote()}
-                style={{ marginTop: "1.5rem" }}
-              >
-                Reload
-              </Button>
+      <Animate>
+        <div className="flex flex-col h-full items-center justify-center">
+          {quote && !loading ? (
+            <>
+              <Seo title={quote.content} description={quote.author} />
+              <div className="flex flex-col mt-4 items-center mb-4 min-h-[4rem]">
+                <Tag title={quote.tags[0]} />
+                <Heading
+                  style={{
+                    marginBottom: "0.5rem",
+                    marginTop: "0.5rem",
+                    textAlign: "center",
+                  }}
+                >
+                  {`"${quote.content}"`}
+                </Heading>
+                <Text>{quote.author}</Text>
+                <Button
+                  onClick={() => fetchQuote()}
+                  style={{ marginTop: "1.5rem" }}
+                >
+                  Reload
+                </Button>
+              </div>
+            </>
+          ) : (
+            <div className="min-h-[4rem] text-center">
+              <Heading>Loading...</Heading>
             </div>
-          </>
-        ) : (
-          <div className="min-h-[4rem] text-center">
-            <Heading>Loading...</Heading>
-          </div>
-        )}
-      </div>
-      <GoBack />
+          )}
+        </div>
+        <GoBack />
+      </Animate>
     </Layout>
   );
 };

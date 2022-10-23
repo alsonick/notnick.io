@@ -2,7 +2,7 @@ import { Technologies } from "../components/Technologies";
 import { NewsLetter } from "../components/Newsletter";
 import { Listening } from "../components/Listening";
 import { Contact } from "../components/Contact";
-
+import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
@@ -23,12 +23,14 @@ const Home: NextPage = () => {
       />
 
       <Layout>
-        <Main />
-        <About />
-        <Technologies />
-        <NewsLetter />
-        <Contact />
-        <Listening setActive={setPresenceActive} />
+        <Animate>
+          <Main />
+          <About />
+          <Technologies />
+          <NewsLetter />
+          <Contact />
+          <Listening setActive={setPresenceActive} />
+        </Animate>
       </Layout>
     </>
   );

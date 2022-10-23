@@ -1,6 +1,7 @@
 import { FilterListBox } from "../components/FilterListBox";
 import { getSortedPostData } from "../lib/post";
 import { Heading } from "../components/Heading";
+import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
 import { NoPost } from "../components/NoPost";
@@ -50,24 +51,24 @@ const Notes: NextPage<Props> = ({ notes }) => {
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <Layout>
-        <div className="flex items-center mb-4 min-h-[4rem] justify-between">
-          <Heading style={{ marginBottom: 0 }}>Notes</Heading>
-          {notes.length ? (
-            <div className="w-1/2">
+        <Animate>
+          <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+            <Heading style={{ marginBottom: 0 }}>Notes</Heading>
+            {notes.length ? (
               <FilterListBox
                 items={tags}
                 selectedItem={selectedTag}
                 onChange={setSelectedTag}
               />
-            </div>
-          ) : null}
-        </div>
-        {!notes.length && <NoPost type="notes" />}
-        <Posts
-          type="notes"
-          items={filteredNotesList.length ? filteredNotesList : notes}
-        />
-        <GoBack />
+            ) : null}
+          </div>
+          {!notes.length && <NoPost type="notes" />}
+          <Posts
+            type="notes"
+            items={filteredNotesList.length ? filteredNotesList : notes}
+          />
+          <GoBack />
+        </Animate>
       </Layout>
     </>
   );
