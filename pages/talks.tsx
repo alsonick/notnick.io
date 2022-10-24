@@ -7,17 +7,17 @@ import { Seo } from "../components/Seo";
 // Next.js
 import { NextPage } from "next";
 
-const Projects: NextPage = () => {
+const Talks: NextPage = () => {
   return (
     <>
       <Seo
-        title="Projects - Nicholas Njoki"
+        title="Talks - Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <Layout>
         <Animate>
           <div className="flex items-center mb-4 min-h-[4rem] justify-between">
-            <Heading style={{ marginBottom: 0 }}>Projects</Heading>
+            <Heading style={{ marginBottom: 0 }}>Talks</Heading>
           </div>
           <GoBack />
         </Animate>
@@ -26,4 +26,4 @@ const Projects: NextPage = () => {
   );
 };
 
-export default Projects;
+export default Talks;

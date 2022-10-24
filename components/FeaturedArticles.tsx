@@ -27,9 +27,9 @@ export const FeaturedArticles = () => {
   }, []);
 
   return (
-    <section className="flex flex-col mb-12">
+    <section className="flex justify-between flex-col mb-12">
       <Heading>Featured Articles 📝</Heading>
-      <div className="flex flex-col justify-between">
+      <div className="flex flex-col lg:flex-row">
         {shuffledArticles.map((article) => (
           <ArticleCard
             key={article.id}

@@ -1,3 +1,4 @@
+import { Authors } from "../components/Authors";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
@@ -5,6 +6,7 @@ import { Layout } from "../components/Layout";
 import { ARTICLES } from "../lib/articles";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { Tag } from "../components/Tag";
 
 // Next.js
 import { NextPage } from "next";
@@ -30,6 +32,7 @@ const Articles: NextPage = () => {
               hover:no-underline py-4 w-full"
                 key={article.id}
               >
+                <Tag title={article.type} />
                 <Link href={article.link}>
                   <a
                     className="text-3xl font-bold cursor-pointer underline
@@ -50,17 +53,11 @@ const Articles: NextPage = () => {
                         className="flex"
                         style={{ margin: "0.5rem 0 0.25rem 0" }}
                       >
-                        <Text>By&nbsp;</Text>
-                        {article.authors.map((author, index) => (
-                          <>
-                            {article.authors[article.authors.length - 1]
-                              .length !== article.authors[index].length ? (
-                              <Text key={article.id}>{author},&nbsp;</Text>
-                            ) : (
-                              <Text key={article.id}>{author}&nbsp;</Text>
-                            )}
-                          </>
-                        ))}
+                        <Authors
+                          type="article"
+                          authors={article.authors}
+                          style="long"
+                        />
                       </div>
                     </>
                   )}
