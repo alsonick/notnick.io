@@ -1,10 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const discriminator = req.query.discriminator;
-
   const redirect = encodeURIComponent(
-    `${"http://localhost:3000"}/api/oauth2/discord/callback`
+    `${
+      process.env.NODE_ENV === "development"
+        ? "http://localhost:3000"
+        : "https://notnick.io"
+    }/api/oauth2/discord/callback`
   );
 
   res.redirect(
