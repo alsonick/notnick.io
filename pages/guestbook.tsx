@@ -280,24 +280,22 @@ const Guestbook: NextPage<Props> = (props) => {
             />
           </div>
           <div className="mb-10 w-full h-full">
-            {messages.length && message.length > 0 ? (
-              <div>
-                <div>
-                  {messages.map((message) => (
-                    <Message
-                      key={message.id}
-                      id={message.id!}
-                      text={message.text}
-                      messageUserId={message.userId}
-                      sender={message.sender}
-                      avatar={message.avatar}
-                      userId={props.user?.id!}
-                      deleteMessage={deleteMessage}
-                      date={message.date}
-                    />
-                  ))}
-                </div>
-              </div>
+            {messages.length ? (
+              <>
+                {messages.map((message) => (
+                  <Message
+                    key={message.id}
+                    id={message.id!}
+                    text={message.text}
+                    messageUserId={message.userId}
+                    sender={message.sender}
+                    avatar={message.avatar}
+                    userId={props.user?.id!}
+                    deleteMessage={deleteMessage}
+                    date={message.date}
+                  />
+                ))}
+              </>
             ) : (
               <>
                 {loading ? (
