@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { CACHE_TOKEN } from "../../lib/constants";
 import { rateLimit } from "../../lib/rate-limit";
 import { Body } from "../../types/guestbook";
-import { primsa } from "../../lib/prisma";
+import prisma from "../../lib/prisma";
 
 const limiter = rateLimit({
   interval: 10800 * 1000, // 3 hours
@@ -39,7 +39,7 @@ export default async function handler(
     }
 
     try {
-      const message = await primsa.message.create({
+      const message = await prisma.message.create({
         data: {
           id: body.id,
           userId: body.userId,
@@ -60,7 +60,7 @@ export default async function handler(
 
   if (req.method === "GET") {
     try {
-      const messages = await primsa.message.findMany();
+      const messages = await prisma.message.findMany();
 
       if (messages.length > 0) {
         const sortedMessage = messages.sort((a, b) => {
@@ -85,7 +85,7 @@ export default async function handler(
     }
 
     try {
-      const deletedMessage = await primsa.message.delete({
+      const deletedMessage = await prisma.message.delete({
         where: {
           id: id as string,
         },

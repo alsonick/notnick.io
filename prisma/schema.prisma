@@ -11,16 +11,10 @@ datasource db {
 }
 
 model Message {
-  id        String      @unique
-  text      String
-  userId    String
-  sender    String
-  avatar    String
-  date      DateTime
-}
-
-model Remaining {
-  id       Int      @id @default(autoincrement()) 
-  userId  String 
-  remaining Int
+  id     String   @unique
+  text   String
+  userId String
+  sender String
+  avatar String
+  date   DateTime
 }
