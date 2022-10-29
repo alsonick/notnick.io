@@ -63,6 +63,7 @@ export default async function handler(
       const messages = await prisma.message.findMany();
 
       if (messages.length > 0) {
+        //@ts-ignore
         const sortedMessage = messages.sort((a, b) => {
           return new Date(b.date).getTime() - new Date(a.date).getTime();
         });
