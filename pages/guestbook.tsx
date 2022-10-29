@@ -181,21 +181,17 @@ const Guestbook: NextPage<Props> = (props) => {
                     className="flex flex-col items-center justify-center text-black
                 dark:text-white duration-300 font-semibold"
                   >
-                    <div className="flex flex-col">
-                      <Link href="/api/oauth2/discord/logout">
-                        <Button>
-                          <div className="mr-3 flex items-center justify-center">
-                            <Image
-                              className="rounded-full"
-                              src={props.user.avatar}
-                              width={27}
-                              height={27}
-                              alt="Avatar"
-                            />
-                          </div>
-                          {props.user.username}
-                        </Button>
-                      </Link>
+                    <div className="sm:flex hidden items-center bg-gray-100 dark:bg-gray-800 p-2 px-3 rounded-lg justify-center">
+                      <div className="mr-3 flex items-center justify-center">
+                        <Image
+                          className="rounded-full"
+                          src={props.user.avatar}
+                          width={27}
+                          height={27}
+                          alt="Avatar"
+                        />
+                      </div>
+                      {props.user.username}
                     </div>
                   </div>
                 ) : (
