@@ -1,11 +1,10 @@
-import { LinkTag } from "./LinkTag";
+import { Link } from "./Link";
 
 // Next.js
 import { useRouter } from "next/router";
-import { Link } from "./Link";
 
 export const GoBack = () => {
   const router = useRouter();
 
-  return <Link onClick={() => router.back()}>Go back</Link>;
+  return <Link onClick={() => router.back()}>&larr; Go back</Link>;
 };
