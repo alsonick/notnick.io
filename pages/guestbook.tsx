@@ -52,11 +52,11 @@ const Guestbook: NextPage<Props> = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => res.json())
+    }).then((res) => res.json());
 
     if (data.success) {
       setMessages(data.messages);
-      if(error && error.length > 0) {
+      if (error && error.length > 0) {
         setError("");
       }
       setLoading(false);
@@ -106,7 +106,7 @@ const Guestbook: NextPage<Props> = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => res.json())
+    }).then((res) => res.json());
 
     const sortedMessage = msg.sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -137,8 +137,7 @@ const Guestbook: NextPage<Props> = (props) => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((res) => res.json())
-
+    }).then((res) => res.json());
 
     if (!data.success) {
       setError(data.error!);
@@ -154,11 +153,11 @@ const Guestbook: NextPage<Props> = (props) => {
     }
   };
 
-  if (!loadedMessages.length) {
+  if (!messages.length) {
     setTimeout(() => {
       setError("This is taking longer than expected!");
-    }
-  }, 7000);
+    }, 7000);
+  }
 
   useEffect(() => {
     loadMessages();
