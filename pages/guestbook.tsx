@@ -73,6 +73,10 @@ const Guestbook: NextPage<Props> = (props) => {
       return setError("Please login with Discord.");
     }
 
+    if(!message || message.length < 1) {
+      return setError(`Please supply an actual message.`);
+    }
+
     if (message.length > CHARACTER_LIMIT) {
       return setError(`You can only have ${CHARACTER_LIMIT} characters.`);
     }
