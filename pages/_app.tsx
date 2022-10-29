@@ -2,7 +2,6 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import "tippy.js/dist/tippy.css";
 import "../styles/globals.css";
-
 // Next.js
 import type { AppProps } from "next/app";
 import { Router } from "next/router";

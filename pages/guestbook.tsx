@@ -1,5 +1,6 @@
 import { MessagesResponse, Response } from "../types/guestbook";
 import { CharacterLimit } from "../components/CharacterLimit";
+import { Skeleton } from "../components/Skeleton";
 import { parseCookie } from "../lib/parse-cookie";
 import { Message } from "../components/Message";
 import { Heading } from "../components/Heading";
@@ -28,6 +29,7 @@ const Guestbook: NextPage<Props> = (props) => {
   const [loadedMessages, setLoadedMessages] = useState<Message[]>([]);
   const [messages, setMessages] = useState<Message[]>([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [enabled, setEnabled] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -46,6 +48,7 @@ const Guestbook: NextPage<Props> = (props) => {
   }
 
   const loadMessages = async () => {
+    setLoading(true);
     const response = await fetch("/api/guestbook", {
       method: "GET",
       headers: {
@@ -57,6 +60,9 @@ const Guestbook: NextPage<Props> = (props) => {
 
     if (data.success) {
       setMessages(data.messages);
+      setError("");
+      setLoading(true);
+      return;
     }
   };
 
@@ -162,6 +168,10 @@ const Guestbook: NextPage<Props> = (props) => {
       setLoadedMessages([...sortedMessages]);
     }
   };
+
+  setTimeout(() => {
+    setError("This is taking longer than expected!");
+  }, 7000);
 
   useEffect(() => {
     if (props.user) {
@@ -309,9 +319,17 @@ const Guestbook: NextPage<Props> = (props) => {
                 ) : null}
               </div>
             ) : (
-              <h2 className="text-xl font-semibold opacity-30 dark:text-white my-5">
-                No messages found!
-              </h2>
+              <>
+                {loading ? (
+                  <div className="mt-4">
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                    <Skeleton />
+                  </div>
+                ) : null}
+              </>
             )}
           </div>
         </Animate>
