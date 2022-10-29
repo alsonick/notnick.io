@@ -169,9 +169,11 @@ const Guestbook: NextPage<Props> = (props) => {
     }
   };
 
-  setTimeout(() => {
-    setError("This is taking longer than expected!");
-  }, 7000);
+  if (!props.user && !loadedMessages.length) {
+    setTimeout(() => {
+      setError("This is taking longer than expected!");
+    }, 7000);
+  }
 
   useEffect(() => {
     if (props.user) {
