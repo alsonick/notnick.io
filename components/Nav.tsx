@@ -7,10 +7,11 @@ import Link from "next/link";
 
 export const Nav = () => {
   const ITEMS = [
-    { id: 1, text: "home", to: "/" },
-    { id: 2, text: "notes", to: "/notes" },
-    { id: 3, text: "blogs", to: "/blogs" },
-    { id: 4, text: "projects", to: "/projects" },
+    { id: 1, text: "Home", to: "/", dropdown: "/" },
+    { id: 2, text: "Notes", to: "/notes" },
+    { id: 3, text: "Blogs", to: "/blogs" },
+    { id: 4, text: "Projects", to: "/projects" },
+    { id: 5, text: "Guestbook", to: "/guestbook" },
   ];
 
   const router = useRouter();
@@ -29,7 +30,7 @@ export const Nav = () => {
             }`}
             to={nav.to}
           >
-            /{nav.text}
+            {nav.text}
           </LinkTag>
         ))}
       </div>

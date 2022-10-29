@@ -1,4 +1,3 @@
-import { MessagesResponse, Response } from "../types/guestbook";
 import { CharacterLimit } from "../components/CharacterLimit";
 import { Skeleton } from "../components/Skeleton";
 import { parseCookie } from "../lib/parse-cookie";
@@ -153,7 +152,7 @@ const Guestbook: NextPage<Props> = (props) => {
     }
   };
 
-  if (!messages.length) {
+  if (!messages.length && !loading) {
     setTimeout(() => {
       setError("This is taking longer than expected!");
     }, 7000);
@@ -179,7 +178,7 @@ const Guestbook: NextPage<Props> = (props) => {
                 {props.user ? (
                   <div
                     className="flex flex-col items-center justify-center text-black
-                dark:text-white duration-300 font-semibold"
+                  dark:text-white duration-300 font-semibold"
                   >
                     <div className="sm:flex hidden items-center bg-gray-100 dark:bg-gray-800 p-2 px-3 rounded-lg justify-center">
                       <div className="mr-3 flex items-center justify-center">

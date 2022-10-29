@@ -41,7 +41,7 @@ export const FeaturedArticles = () => {
           />
         ))}
       </div>
-      <Link href="/articles">View all articles {">>"}</Link>
+      <Link href="/articles">View all articles &#8594;</Link>
       <div className="ml-auto">
         <Button onClick={shuffleArticles}>Shuffle</Button>
       </div>
