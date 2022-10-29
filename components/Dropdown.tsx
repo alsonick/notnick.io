@@ -7,7 +7,6 @@ import Link from "next/link";
 interface Item {
   id: number;
   text: string;
-  dropdown?: string | undefined;
   to: string;
 }
 
@@ -35,7 +34,7 @@ export const Dropdown = ({ items }: Props) => {
                           : " "
                       }`}
                     >
-                      {item.dropdown ? item.dropdown : item.text}
+                      {item.text}
                     </a>
                   </Link>
                 )}

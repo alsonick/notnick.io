@@ -26,10 +26,8 @@ import Link from "next/link";
 type Props = { user: ClientUser | null };
 
 const Guestbook: NextPage<Props> = (props) => {
-  const [loadedMessages, setLoadedMessages] = useState<Message[]>([]);
   const [messages, setMessages] = useState<Message[]>([]);
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [enabled, setEnabled] = useState(false);
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
@@ -49,19 +47,19 @@ const Guestbook: NextPage<Props> = (props) => {
 
   const loadMessages = async () => {
     setLoading(true);
-    const response = await fetch("/api/guestbook", {
+    const data = await fetch("/api/guestbook", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-    });
-
-    const data: MessagesResponse = await response.json();
+    }).then((res) => res.json())
 
     if (data.success) {
       setMessages(data.messages);
-      setError("");
-      setLoading(true);
+      if(error && error.length > 0) {
+        setError("");
+      }
+      setLoading(false);
       return;
     }
   };
@@ -72,10 +70,6 @@ const Guestbook: NextPage<Props> = (props) => {
     let msg: Message[] = [];
 
     if (!props.user) {
-      setLoggedIn(false);
-    }
-
-    if (!loggedIn) {
       return setError("Please login with Discord.");
     }
 
@@ -87,7 +81,9 @@ const Guestbook: NextPage<Props> = (props) => {
       return setError("Please don't send inappropriate messages.");
     }
 
-    setError("");
+    if (error && error.length > 0) {
+      setError("");
+    }
 
     msg.push({
       id: `${
@@ -102,26 +98,15 @@ const Guestbook: NextPage<Props> = (props) => {
 
     const last = msg.length === 1 ? msg[0] : msg[messages.length - 1];
 
-    const lastMessage = {
-      id: last.id,
-      userId: last.userId,
-      text: last.text,
-      sender: last.sender,
-      avatar: last.avatar,
-      date: last.date,
-    };
-
-    const response = await fetch("/api/guestbook", {
+    const data = await fetch("/api/guestbook", {
       method: "POST",
       body: JSON.stringify({
-        ...lastMessage,
+        ...last,
       }),
       headers: {
         "Content-Type": "application/json",
       },
-    });
-
-    const data: Response = await response.json();
+    }).then((res) => res.json())
 
     const sortedMessage = msg.sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -129,7 +114,9 @@ const Guestbook: NextPage<Props> = (props) => {
 
     if (data.success) {
       setMessages([...sortedMessage, ...messages]);
-      setMessage("");
+      if (message && message.length > 0) {
+        setMessage("");
+      }
       return;
     } else {
       setError(data.error!);
@@ -145,14 +132,13 @@ const Guestbook: NextPage<Props> = (props) => {
       (loadedMessage) => loadedMessage.id !== messageId
     );
 
-    const response = await fetch(`/api/guestbook?id=${deletedMessage?.id}`, {
+    const data = await fetch(`/api/guestbook?id=${deletedMessage?.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
-    });
+    }).then((res) => res.json())
 
-    const data: Response = await response.json();
 
     if (!data.success) {
       setError(data.error!);
@@ -165,20 +151,16 @@ const Guestbook: NextPage<Props> = (props) => {
       });
 
       setMessages([...sortedMessages]);
-      setLoadedMessages([...sortedMessages]);
     }
   };
 
-  if (!props.user && !loadedMessages.length) {
-    setTimeout(() => {
+  setTimeout(() => {
+    if(!messages) {
       setError("This is taking longer than expected!");
-    }, 7000);
-  }
+    }
+  }, 7000);
 
   useEffect(() => {
-    if (props.user) {
-      setLoggedIn(true);
-    }
     loadMessages();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -200,17 +182,21 @@ const Guestbook: NextPage<Props> = (props) => {
                     className="flex flex-col items-center justify-center text-black
                 dark:text-white duration-300 font-semibold"
                   >
-                    <div className="sm:flex hidden items-center bg-gray-100 dark:bg-gray-800 p-2 px-3 rounded-lg justify-center">
-                      <div className="mr-3 flex items-center justify-center">
-                        <Image
-                          className="rounded-full"
-                          src={props.user.avatar}
-                          width={27}
-                          height={27}
-                          alt="Avatar"
-                        />
-                      </div>
-                      {props.user.username}
+                    <div className="flex flex-col">
+                      <Link href="/api/oauth2/discord/logout">
+                        <Button>
+                          <div className="mr-3 flex items-center justify-center">
+                            <Image
+                              className="rounded-full"
+                              src={props.user.avatar}
+                              width={27}
+                              height={27}
+                              alt="Avatar"
+                            />
+                          </div>
+                          {props.user.username}
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 ) : (
@@ -300,25 +286,23 @@ const Guestbook: NextPage<Props> = (props) => {
             />
           </div>
           <div className="mb-10 w-full h-full">
-            {loadedMessages.length || messages.length ? (
+            {messages.length && message.length > 0 ? (
               <div>
-                {messages.length ? (
-                  <div>
-                    {messages.map((message) => (
-                      <Message
-                        key={message.id}
-                        id={message.id!}
-                        text={message.text}
-                        messageUserId={message.userId}
-                        sender={message.sender}
-                        avatar={message.avatar}
-                        userId={props.user?.id!}
-                        deleteMessage={deleteMessage}
-                        date={message.date}
-                      />
-                    ))}
-                  </div>
-                ) : null}
+                <div>
+                  {messages.map((message) => (
+                    <Message
+                      key={message.id}
+                      id={message.id!}
+                      text={message.text}
+                      messageUserId={message.userId}
+                      sender={message.sender}
+                      avatar={message.avatar}
+                      userId={props.user?.id!}
+                      deleteMessage={deleteMessage}
+                      date={message.date}
+                    />
+                  ))}
+                </div>
               </div>
             ) : (
               <>
@@ -345,10 +329,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async function (
   ctx
 ) {
   const authenticatedDiscordUser = parseCookie(ctx);
-
-  if (!authenticatedDiscordUser) {
-    return { props: { user: null } };
-  }
 
   return {
     props: { user: authenticatedDiscordUser },
