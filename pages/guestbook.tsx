@@ -285,7 +285,7 @@ const Guestbook: NextPage<Props> = (props) => {
             />
           </div>
           <div className="mb-10 w-full h-full">
-            {messages.length && message.length > 0 ? (
+            {messages.length && messages.length > 0 ? (
               <div>
                 <div>
                   {messages.map((message) => (
