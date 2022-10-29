@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Article } from "../types/articles";
+import { Article } from "../types/article";
 import { ArticleCard } from "./ArticleCard";
 import { ARTICLES } from "../lib/articles";
 import { Heading } from "./Heading";

@@ -1,6 +1,5 @@
 import { FiChevronDown, FiCheck } from "react-icons/fi";
 import { Listbox } from "@headlessui/react";
-import { Post } from "../types/post";
 import { Fragment } from "react";
 
 interface Props {

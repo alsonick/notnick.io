@@ -10,7 +10,14 @@ interface Props {
 export const Authors = ({ type, authors, style }: Props) => {
   return (
     <div className="flex text-gray-600 dark:text-gray-300">
-      {type === "article" ? "By" : "Talk by"}&nbsp;
+      <>
+        {authors.length >= 1 ? (
+          <>{type === "article" ? "By" : "Talk by"}&nbsp;</>
+        ) : (
+          "No authors or talkers were provided."
+        )}
+      </>
+
       {authors.map((author, index) => (
         <div key={author}>
           {authors[authors.length - 1].length !==
