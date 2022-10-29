@@ -139,8 +139,6 @@ const Guestbook: NextPage<Props> = (props) => {
       (loadedMessage) => loadedMessage.id !== messageId
     );
 
-    console.log(deletedMessage?.userId, userId);
-
     const response = await fetch(`/api/guestbook?id=${deletedMessage?.id}`, {
       method: "DELETE",
       headers: {
