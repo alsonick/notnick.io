@@ -10,8 +10,9 @@ import { Button } from "./Button";
 import { useState } from "react";
 import { Input } from "./Input";
 import { Label } from "./Label";
-import { Text } from "./Text";
 import { Error } from "./Error";
+import Filter from "bad-words";
+import { Text } from "./Text";
 
 export const Contact = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +23,8 @@ export const Contact = () => {
 
   const CHARACTER_LIMIT = 500;
 
+  const filter = new Filter();
+
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -30,6 +33,10 @@ export const Contact = () => {
 
     if (message.length > CHARACTER_LIMIT) {
       return setError(`You can only have ${CHARACTER_LIMIT} characters.`);
+    }
+
+    if (filter.isProfane(message)) {
+      return setError("Please don't send inappropriate messages.");
     }
 
     setLoading(true);
