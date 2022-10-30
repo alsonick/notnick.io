@@ -21,6 +21,7 @@
     "bad-words": "^3.0.4",
     "cookie": "^0.5.0",
     "copy-to-clipboard": "^3.3.2",
+    "date-fns": "^2.29.3",
     "dayjs": "^1.11.2",
     "framer-motion": "^7.6.1",
     "gray-matter": "^4.0.3",

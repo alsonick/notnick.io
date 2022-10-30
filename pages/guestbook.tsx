@@ -1,7 +1,8 @@
 import { CharacterLimit } from "../components/CharacterLimit";
+import { Message } from "../components/message/Message";
+import { RoundedBox } from "../components/RoundedBox";
 import { Skeleton } from "../components/Skeleton";
 import { parseCookie } from "../lib/parse-cookie";
-import { Message } from "../components/Message";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { LinkTag } from "../components/LinkTag";
@@ -205,9 +206,9 @@ const Guestbook: NextPage<Props> = (props) => {
                     </div>
                     <div className="flex sm:hidden items-center justify-center">
                       <Link href="/api/oauth2/discord/login">
-                        <button className="flex items-center justify-center focus:ring-2 ring-[#f54bff] outline-none bg-gray-100 text-black h-9 w-9 duration-300 hover:bg-gray-200 hover:translate-y-1 rounded-lg ml-auto dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-white">
+                        <RoundedBox>
                           <FaDiscord className="text-xl" />
-                        </button>
+                        </RoundedBox>
                       </Link>
                     </div>
                   </div>
@@ -293,15 +294,15 @@ const Guestbook: NextPage<Props> = (props) => {
               <>
                 {messages.map((message) => (
                   <Message
-                    key={message.id}
-                    id={message.id!}
-                    text={message.text}
                     messageUserId={message.userId}
+                    deleteMessage={deleteMessage}
+                    userId={props.user?.id!}
                     sender={message.sender}
                     avatar={message.avatar}
-                    userId={props.user?.id!}
-                    deleteMessage={deleteMessage}
+                    text={message.text}
                     date={message.date}
+                    key={message.id}
+                    id={message.id!}
                   />
                 ))}
               </>

@@ -25,7 +25,7 @@ const LinkWrapper = ({ href, children, title }: Props) => {
   return (
     <Link href={href} rel="noreferrer">
       <a
-        className="text-2xl duration-100 focus:ring-2 ring-[#f54bff] outline-none rounded-lg p-1 cursor-pointer mr-6 hover:text-black dark:hover:text-white text-gray-600 dark:text-gray-300"
+        className="text-2xl duration-100 focus:ring-2 ring-[#f54bff] outline-none rounded cursor-pointer mr-6 hover:text-black dark:hover:text-white text-gray-600 dark:text-gray-300"
         title={title}
         target="_blank"
       >
