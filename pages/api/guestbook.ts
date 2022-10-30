@@ -54,7 +54,9 @@ export default async function handler(
         return res.status(201).send({ success: true });
       }
     } catch (e) {
-      console.log(e);
+      return res
+        .status(500)
+        .send({ success: false, error: "Something went wrong." });
     }
   }
 
@@ -72,7 +74,10 @@ export default async function handler(
       }
       return res.status(200).send({ success: true, messages });
     } catch (e) {
-      console.log(e);
+      return res.status(500).send({
+        success: false,
+        error: "Something went wrong whiles fetching messages",
+      });
     }
   }
 
@@ -100,7 +105,6 @@ export default async function handler(
         .status(400)
         .send({ success: false, error: "Message was not found." });
     } catch (e: any) {
-      console.log(e);
       return res.status(500).send({ success: false, error: e.meta.cause });
     }
   }

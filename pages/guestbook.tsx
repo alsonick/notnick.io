@@ -1,3 +1,4 @@
+import { Response, MessagesResponse, Message as M } from "../types/guestbook";
 import { CharacterLimit } from "../components/CharacterLimit";
 import { Message } from "../components/message/Message";
 import { RoundedBox } from "../components/RoundedBox";
@@ -26,7 +27,7 @@ import Link from "next/link";
 type Props = { user: ClientUser | null };
 
 const Guestbook: NextPage<Props> = (props) => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<M[]>([]);
   const [loading, setLoading] = useState(true);
   const [enabled, setEnabled] = useState(false);
   const [message, setMessage] = useState("");
@@ -36,18 +37,10 @@ const Guestbook: NextPage<Props> = (props) => {
 
   const filter = new Filter();
 
-  interface Message {
-    id?: string;
-    userId: string;
-    text: string;
-    sender: string;
-    avatar: string;
-    date: Date;
-  }
-
   const loadMessages = async () => {
     setLoading(true);
-    const data = await fetch("/api/guestbook", {
+
+    const data: MessagesResponse = await fetch("/api/guestbook", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -62,12 +55,15 @@ const Guestbook: NextPage<Props> = (props) => {
       setLoading(false);
       return;
     }
+
+    setLoading(false);
+    setError(data.error!);
   };
 
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let msg: Message[] = [];
+    let msg: M[] = [];
 
     if (!props.user) {
       return setError("Please login with Discord.");
@@ -98,7 +94,7 @@ const Guestbook: NextPage<Props> = (props) => {
 
     const last = msg.length === 1 ? msg[0] : msg[messages.length - 1];
 
-    const data = await fetch("/api/guestbook", {
+    const data: Response = await fetch("/api/guestbook", {
       method: "POST",
       body: JSON.stringify({
         ...last,
@@ -118,9 +114,9 @@ const Guestbook: NextPage<Props> = (props) => {
         setMessage("");
       }
       return;
-    } else {
-      setError(data.error!);
     }
+
+    setError(data.error!);
   };
 
   const deleteMessage = async (userId: string, messageId: string) => {
@@ -132,12 +128,15 @@ const Guestbook: NextPage<Props> = (props) => {
       (loadedMessage) => loadedMessage.id !== messageId
     );
 
-    const data = await fetch(`/api/guestbook?id=${deletedMessage?.id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => res.json());
+    const data: Response = await fetch(
+      `/api/guestbook?id=${deletedMessage?.id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => res.json());
 
     if (!data.success) {
       setError(data.error!);

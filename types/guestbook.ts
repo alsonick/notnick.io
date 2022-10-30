@@ -1,4 +1,4 @@
-import { Message } from "@prisma/client";
+import { Message as M } from "@prisma/client";
 
 export interface Body {
   id: string;
@@ -16,5 +16,15 @@ export interface Response {
 
 export interface MessagesResponse {
   success: boolean;
-  messages: Message[];
+  messages: M[];
+  error?: string | undefined;
+}
+
+export interface Message {
+  id?: string;
+  userId: string;
+  text: string;
+  sender: string;
+  avatar: string;
+  date: Date;
 }
