@@ -194,13 +194,22 @@ const Guestbook: NextPage<Props> = (props) => {
                     </div>
                   </div>
                 ) : (
-                  <div className="flex flex-col">
-                    <Link href="/api/oauth2/discord/login">
-                      <Button>
-                        <FaDiscord className="text-xl mr-2" />
-                        Login with Discord
-                      </Button>
-                    </Link>
+                  <div className="flex items-center justify-center">
+                    <div className="hidden sm:flex items-center justify-center">
+                      <Link href="/api/oauth2/discord/login">
+                        <Button>
+                          <FaDiscord className="text-xl mr-2" />
+                          Login with Discord
+                        </Button>
+                      </Link>
+                    </div>
+                    <div className="flex sm:hidden items-center justify-center">
+                      <Link href="/api/oauth2/discord/login">
+                        <button className="flex items-center justify-center focus:ring-2 ring-[#f54bff] outline-none bg-gray-100 text-black h-9 w-9 duration-300 hover:bg-gray-200 hover:translate-y-1 rounded-lg ml-auto dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-white">
+                          <FaDiscord className="text-xl" />
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
