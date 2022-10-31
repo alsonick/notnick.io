@@ -24,7 +24,11 @@ export const Authors = ({ type, authors, style }: Props) => {
           authors[index].length ? null : (
             <>
               {style === "long" ? (
-                <Text>{author}</Text>
+                <div className="flex">
+                  {authors.map((a) => (
+                    <Text key={a}>{a}, </Text>
+                  ))}
+                </div>
               ) : (
                 <>
                   {authors.length > 1 ? (
