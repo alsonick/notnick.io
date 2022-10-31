@@ -78,7 +78,7 @@ const Guestbook: NextPage<Props> = (props) => {
     }
 
     if (/[^a-zA-Z]/.test(message)) {
-      return setError("Please don't special characters.");
+      return setError("Please don't use special characters.");
     }
 
     if (error && error.length > 0) {
