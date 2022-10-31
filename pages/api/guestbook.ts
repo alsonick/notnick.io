@@ -3,11 +3,14 @@ import { CACHE_TOKEN } from "../../lib/constants";
 import { rateLimit } from "../../lib/rate-limit";
 import { Body } from "../../types/guestbook";
 import prisma from "../../lib/prisma";
+import Filter from "bad-words";
 
 const limiter = rateLimit({
   interval: 10800 * 1000, // 3 hours
   uniqueTokenPerInterval: 500, // Max 500 users per second
 });
+
+const filter = new Filter();
 
 export default async function handler(
   req: NextApiRequest,
@@ -32,12 +35,26 @@ export default async function handler(
         .send({ success: false, error: "Please include all the fields." });
     }
 
+    if (/[^a-zA-Z]/.test(text)) {
+      return res.status(400).send({
+        success: false,
+        error: "Please don't use special characters.",
+      });
+    }
+
     if (text.length > CHARACTER_LIMIT) {
+      return res.status(400).send({
+        success: false,
+        error: `You can only have ${CHARACTER_LIMIT} characters.`,
+      });
+    }
+
+    if (filter.isProfane(text)) {
       return res
         .status(400)
         .send({
           success: false,
-          error: `You can only have ${CHARACTER_LIMIT} characters.`,
+          error: "Please don't send inappropriate messages.",
         });
     }
 
