@@ -1,7 +1,9 @@
 import { FiExternalLink } from "react-icons/fi";
+import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
+import { Notice } from "./Notice";
 import { Date } from "./Date";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
@@ -12,16 +14,7 @@ import Link from "next/link";
 
 interface Props {
   type: "notes" | "blogs";
-  post: {
-    title: string;
-    slug: string;
-    description: string;
-    last_updated_date: string;
-    tag: string;
-    mins: string;
-    date: string;
-    contentHtml: string;
-  };
+  post: P;
 }
 
 export const Post = ({ type, post }: Props) => {
@@ -54,7 +47,7 @@ export const Post = ({ type, post }: Props) => {
           </i>
         </div>
         <Tag title={post.tag} />
-        {Boolean(post.contentHtml) ? (
+        {Boolean(post.contentHtml) && post.finished ? (
           <article
             className="
             prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
@@ -64,13 +57,7 @@ export const Post = ({ type, post }: Props) => {
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
         ) : (
-          <div className="flex items-center justify-center p-20 mt-8">
-            <h1 className="text-xl text-center font-semibold opacity-30 dark:text-white">
-              In progress...
-              <br />
-              Come back and check again later.
-            </h1>
-          </div>
+          <ProgressNotice />
         )}
         <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
           <Link
@@ -89,5 +76,17 @@ export const Post = ({ type, post }: Props) => {
         </LinkTag>
       </Layout>
     </>
+  );
+};
+
+const ProgressNotice = () => {
+  return (
+    <div className="flex items-center justify-center p-20 mt-8">
+      <Notice>
+        In progress...
+        <br />
+        Come back and check again later.
+      </Notice>
+    </div>
   );
 };

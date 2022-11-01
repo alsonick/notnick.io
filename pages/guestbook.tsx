@@ -60,6 +60,12 @@ const Guestbook: NextPage<Props> = (props) => {
     setError(data.error!);
   };
 
+  const isAsciiOnly = (string: string) => {
+    for (var i = 0; i < string.length; i++)
+      if (string.charCodeAt(i) > 127) return false;
+    return true;
+  };
+
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -77,7 +83,7 @@ const Guestbook: NextPage<Props> = (props) => {
       return setError("Please don't send inappropriate messages.");
     }
 
-    if (/^[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/.test(message)) {
+    if (!isAsciiOnly(message)) {
       return setError("Please don't use special characters.");
     }
 
