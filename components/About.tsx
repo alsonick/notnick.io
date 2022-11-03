@@ -10,8 +10,9 @@ export const About = () => {
       <Heading>About 💭</Heading>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
-        based in the UK, I specialize in web development and a little bit of
-        mobile development. I&apos;m currently studying{" "}
+        based in the UK, I greatly specialize in web development (
+        <b>full-stack</b>) and a little bit of mobile development. I&apos;m
+        currently studying{" "}
         <LinkTag
           href="https://en.wikipedia.org/wiki/Computer_science"
           target="_blank"
@@ -25,34 +26,31 @@ export const About = () => {
         .
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I use a variety of technologies to ease my development process, when
-        working on the client I use{" "}
-        <LinkTag href="https://www.typescriptlang.org/" target="_blank">
-          TypeScript
-        </LinkTag>{" "}
-        &#38;{" "}
-        <LinkTag href="https://reactjs.org/" target="_blank">
-          React
-        </LinkTag>{" "}
-        and for the serverside I use{" "}
-        <LinkTag href="https://nodejs.org/en/" target="_blank">
-          Node
-        </LinkTag>
-        .
+        I use a variety of technologies to ease the development process, when
+        working on the client I use <b>TypeScript</b> &#38; <b>React</b> and for
+        the backend I use either <b>NodeJS</b> or <b>Rust</b>. For databases I
+        have the most experience in <b>PostgreSQL</b> and <b>MySQL</b>.
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m also very passionate about systems programming and networking,
-        recently I&apos;ve been picking up the{" "}
-        <LinkTag href="https://www.rust-lang.org/" target="_blank">
-          Rust Programming Language
-        </LinkTag>{" "}
-        and so far I&apos;m loving it.
+        recently I&apos;ve been picking up <b>Rust</b> and so far I&apos;m
+        loving it. I also have some{" "}
+        <LinkTag href="/notes/networking-notes">networking notes</LinkTag> so If
+        you&apos;re interested about getting into networking then be sure to
+        check those out!
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         Aside from programming I also love to travel and watch anime in my spare
-        time, currently my favourite anime is{" "}
+        time, currently my favorite anime shows are{" "}
         <LinkTag href="https://en.wikipedia.org/wiki/One_Piece" target="_blank">
-          One Piece
+          One Piece{" "}
+        </LinkTag>
+        and{" "}
+        <LinkTag
+          href="https://en.wikipedia.org/wiki/Attack_on_Titan_(TV_series)"
+          target="_blank"
+        >
+          Attack on Titan
         </LinkTag>
         .
       </Text>

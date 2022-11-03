@@ -107,4 +107,10 @@ export const technologies = [
     link: "https://reactnative.dev/",
     desc: "A JavaScript library for building user interfaces on mobile devices.",
   },
+  {
+    id: 19,
+    text: "MySQL",
+    link: "",
+    desc: "An open-source relational database.",
+  },
 ];
