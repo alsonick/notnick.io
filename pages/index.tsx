@@ -23,7 +23,6 @@ const Home: NextPage = () => {
         title="Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
-
       <Layout>
         <Animate>
           <Main />

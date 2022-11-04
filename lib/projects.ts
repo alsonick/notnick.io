@@ -2,7 +2,7 @@ export const PROJECTS = [
   {
     id: 1,
     name: "notnick.io",
-    ative: true,
+    active: true,
     oss: true,
     site: "https://notnick.io/",
   },

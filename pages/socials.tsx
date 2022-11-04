@@ -1,9 +1,9 @@
 import { Heading } from "../components/Heading";
+import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Text } from "../components/Text";
 import { SOCIALS } from "../lib/socials";
-import { Tag } from "../components/Tag";
 import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/Seo";
 import copy from "copy-to-clipboard";
@@ -13,7 +13,6 @@ import { useState } from "react";
 // Next.js
 import { NextPage } from "next";
 import Link from "next/link";
-import { Animate } from "../components/Animate";
 
 const Socials: NextPage = () => {
   const [copyText, setCopyText] = useState<string>("Copy");
