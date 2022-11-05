@@ -1,4 +1,4 @@
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiTwitter } from "react-icons/fi";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
@@ -36,8 +36,19 @@ export const Post = ({ type, post }: Props) => {
             </p>
             <Date date={post.date} />
           </div>
-          <div className="border-r-2 pr-2 border-teal-100 dark:border-teal-900">
-            <Text>{post.mins} min read</Text>
+          <div className="flex items-center justify-center">
+            <div className="border-r-2 pr-2 border-teal-100 dark:border-teal-900">
+              <Text>{post.mins} min read</Text>
+            </div>
+            {post.finished ? (
+              <Link
+                href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://notnick.io/${type}/${post.slug}`}
+              >
+                <a target="_blank">
+                  <FiTwitter className="text-gray-600 dark:text-gray-300 cursor-pointer text-xl ml-2 hover:text-black hover:dark:text-white duration-300" />
+                </a>
+              </Link>
+            ) : null}
           </div>
         </div>
         <div className="text-sm mb-6">

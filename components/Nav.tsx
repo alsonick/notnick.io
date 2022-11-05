@@ -26,11 +26,11 @@ export const Nav = () => {
           <LinkTag
             key={nav.id}
             className={`${
-              router.pathname === nav.to && "dark:bg-gray-800 bg-gray-100"
+              router.pathname.includes(nav.to) && "dark:bg-gray-800 bg-gray-100"
             }`}
             to={nav.to}
           >
-            {nav.text}
+            {nav.text.toLowerCase()}
           </LinkTag>
         ))}
       </div>
