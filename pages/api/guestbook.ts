@@ -35,13 +35,6 @@ export default async function handler(
         .send({ success: false, error: "Please include all the fields." });
     }
 
-    if (/[^a-zA-Z]/.test(text)) {
-      return res.status(400).send({
-        success: false,
-        error: "Please don't use special characters.",
-      });
-    }
-
     if (text.length > CHARACTER_LIMIT) {
       return res.status(400).send({
         success: false,
@@ -50,12 +43,10 @@ export default async function handler(
     }
 
     if (filter.isProfane(text)) {
-      return res
-        .status(400)
-        .send({
-          success: false,
-          error: "Please don't send inappropriate messages.",
-        });
+      return res.status(400).send({
+        success: false,
+        error: "Please don't send inappropriate messages.",
+      });
     }
 
     try {
