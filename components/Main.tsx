@@ -1,14 +1,25 @@
 import { TypeAnimation } from "react-type-animation";
 import { CITY, COUNTRY } from "../lib/constants";
-import { FiSend } from "react-icons/fi";
+import { FiSend, FiClock } from "react-icons/fi";
+import { useEffect, useState } from "react";
 import { Heading } from "./Heading";
+import Tippy from "@tippyjs/react";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
+import { Text } from "./Text";
 
 // Next.js
 import Link from "next/link";
 
 export const Main = () => {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+  }, []);
+
   return (
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
@@ -27,6 +38,24 @@ export const Main = () => {
               </div>
             </a>
           </Link>
+
+          <div className="flex  items-center mb-4">
+            <Tippy animation="fade" content="GMT+1">
+              <div className="flex items-center">
+                <FiClock className="mr-1 text-lg text-gray-600 dark:text-gray-300" />
+                <Text>
+                  {" "}
+                  {time.toLocaleString("en-US", {
+                    hour: "numeric",
+                    minute: "numeric",
+                    second: "numeric",
+                    hour12: true,
+                  })}{" "}
+                </Text>
+              </div>
+            </Tippy>
+          </div>
+
           <Heading style={{ marginBottom: "0.5rem" }}>
             Hi, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
