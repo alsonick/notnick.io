@@ -11,7 +11,6 @@ export const Nav = () => {
     { id: 2, text: "Notes", to: "/notes" },
     { id: 3, text: "Blogs", to: "/blogs" },
     { id: 4, text: "Projects", to: "/projects" },
-    { id: 5, text: "Guestbook", to: "/guestbook" },
   ];
 
   const router = useRouter();

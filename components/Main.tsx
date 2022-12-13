@@ -1,12 +1,10 @@
 import { TypeAnimation } from "react-type-animation";
 import { CITY, COUNTRY } from "../lib/constants";
-import { FiSend, FiClock } from "react-icons/fi";
+import { FiSend } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { Heading } from "./Heading";
-import Tippy from "@tippyjs/react";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
-import { Text } from "./Text";
 
 // Next.js
 import Link from "next/link";
@@ -39,23 +37,6 @@ export const Main = () => {
             </a>
           </Link>
 
-          <div className="flex  items-center mb-4">
-            <Tippy animation="fade" content="GMT+1">
-              <div className="flex items-center">
-                <FiClock className="mr-1 text-lg text-gray-600 dark:text-gray-300" />
-                <Text>
-                  {" "}
-                  {time.toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                    second: "numeric",
-                    hour12: true,
-                  })}{" "}
-                </Text>
-              </div>
-            </Tippy>
-          </div>
-
           <Heading style={{ marginBottom: "0.5rem" }}>
             Hi, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
@@ -65,7 +46,7 @@ export const Main = () => {
               sequence={[
                 "software engineer",
                 2000,
-                "rustacean",
+                "entrepreneur",
                 2000,
                 "student",
                 2000,
