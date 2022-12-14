@@ -35,7 +35,7 @@ const TZTT = () => {
         </Item>
         <Item completed={false}>Learn PHP and master JavaScript.</Item>
         <Item completed={false}>
-          Make at least 3000 contributions on GitHub
+          Make at least 3000 contributions on GitHub.
         </Item>
         <Item completed={false}>
           Ship products like{" "}
