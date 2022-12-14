@@ -31,7 +31,10 @@ const TZTT = () => {
         <Item completed={false}>Contribute more to open source.</Item>
         <Item completed={false}>
           Become a TS god and surpass{" "}
-          <Link href="https://twitter.com/alistaiir">Alistair</Link>.
+          <Link href="https://twitter.com/alistaiir" target="_blank">
+            Alistair
+          </Link>
+          .
         </Item>
         <Item completed={false}>Learn PHP and master JavaScript.</Item>
         <Item completed={false}>
