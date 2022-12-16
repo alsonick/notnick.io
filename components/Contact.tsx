@@ -92,6 +92,7 @@ export const Contact = () => {
             <Input
               id="email"
               name="email"
+              type="email"
               value={email}
               required={true}
               onChange={(e) => setEmail(e.target.value)}
