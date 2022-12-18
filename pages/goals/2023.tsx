@@ -1,8 +1,8 @@
 import { Heading } from "../../components/Heading";
 import { Toggle } from "../../components/Toggle";
 import { Link } from "../../components/Link";
-import React from "react";
 import { Seo } from "../../components/Seo";
+import React from "react";
 
 const Item = ({
   children,
@@ -48,6 +48,7 @@ const TZTT = () => {
           .
         </Item>
         <Item completed={false}>Meet more like-minded people.</Item>
+        <Item completed={false}>Write more blogs.</Item>
       </ul>
     </div>
   );
