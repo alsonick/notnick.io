@@ -49,6 +49,8 @@ const TZTT = () => {
         </Item>
         <Item completed={false}>Meet more like-minded people.</Item>
         <Item completed={false}>Write more blogs.</Item>
+        <Item completed={true}>Spend less time on social media.</Item>
+        <Item completed={false}>Listen to more podcasts.</Item>
       </ul>
     </div>
   );
