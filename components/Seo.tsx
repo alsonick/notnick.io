@@ -7,6 +7,8 @@ interface Props {
 }
 
 export const Seo = ({ title, description }: Props) => {
+  const date = new Date();
+
   return (
     <>
       <Head>
@@ -16,7 +18,9 @@ export const Seo = ({ title, description }: Props) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
       </Head>
-      <Script src="https://app.embed.im/snow.js" defer />
+      {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
+        <Script src="https://app.embed.im/snow.js" defer />
+      ) : null}
     </>
   );
 };
