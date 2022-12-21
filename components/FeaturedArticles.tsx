@@ -4,7 +4,7 @@ import { ArticleCard } from "./ArticleCard";
 import { ARTICLES } from "../lib/articles";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
-import { Link } from "./Link";
+import { LinkT } from "./Link";
 
 export const FeaturedArticles = () => {
   const [shuffledArticles, setShuffledArticles] = useState<Article[]>([]);
@@ -41,7 +41,7 @@ export const FeaturedArticles = () => {
           />
         ))}
       </div>
-      <Link href="/articles">View all articles &#8594;</Link>
+      <LinkT href="/articles">View all articles &#8594;</LinkT>
       <div className="ml-auto">
         <Button onClick={shuffleArticles}>Shuffle</Button>
       </div>

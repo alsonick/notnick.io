@@ -29,10 +29,11 @@ export const Card = ({
   return (
     <div className="flex flex-col w-full mb-10 border-b pb-4 border-teal-100 dark:border-teal-900">
       <Tag title={tag} />
-      <Link href={`/${type}/${slug}`}>
-        <a className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">
-          {title}
-        </a>
+      <Link
+        className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit"
+        href={`/${type}/${slug}`}
+      >
+        {title}
       </Link>
       <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>{description}</Text>
       <div className="flex items-center">

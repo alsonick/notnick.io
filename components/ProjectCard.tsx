@@ -1,6 +1,6 @@
 import { FiGithub } from "react-icons/fi";
 import { Text } from "./Text";
-import { Link } from "./Link";
+import { LinkT } from "./Link";
 import { Tag } from "./Tag";
 
 interface Props {
@@ -25,7 +25,7 @@ export const ProjectCard = ({ title, desc, active, site }: Props) => {
           </div>
         </div>
       </div>
-      {site ? <Link>Visit</Link> : null}
+      {site ? <LinkT>Visit</LinkT> : null}
     </div>
   );
 };

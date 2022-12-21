@@ -17,6 +17,14 @@ export const Seo = ({ title, description }: Props) => {
         <meta name="description" content={description} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <meta
+          property="og:image"
+          content={
+            process.env.NODE_ENV === "production"
+              ? `https://notnick.io/api/og?title=${title}`
+              : `http://localhost:3000/api/og?title=${title}`
+          }
+        />
       </Head>
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
         <Script src="https://app.embed.im/snow.js" defer />

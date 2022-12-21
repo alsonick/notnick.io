@@ -22,19 +22,18 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <Link href={`https://www.google.com/maps/place/${CITY}`}>
-            <a
-              className="w-fit focus:ring-2 ring-[#f54bff] rounded-lg outline-none font-semibold"
-              target="_blank"
+          <Link
+            className="w-fit focus:ring-2 ring-[#f54bff] rounded-lg outline-none font-semibold"
+            target="_blank"
+            href={`https://www.google.com/maps/place/${CITY}`}
+          >
+            <div
+              className="flex items-center p-1 text-sm px-3 my-2 w-fit rounded-full text-white bg-[#f54bff]"
+              title={`${CITY}, ${COUNTRY}`}
             >
-              <div
-                className="flex items-center p-1 text-sm px-3 my-2 w-fit rounded-full text-white bg-[#f54bff]"
-                title={`${CITY}, ${COUNTRY}`}
-              >
-                <FiSend className="mr-2" />
-                {CITY}, {COUNTRY}
-              </div>
-            </a>
+              <FiSend className="mr-2" />
+              {CITY}, {COUNTRY}
+            </div>
           </Link>
 
           <Heading style={{ marginBottom: "0.5rem" }}>

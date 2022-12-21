@@ -13,23 +13,21 @@ interface Props {
 
 export const ArticleCard = ({ title, link, type, authors }: Props) => {
   return (
-    <Link href={link}>
-      <a target="_blank" title={link}>
-        <div
-          className="flex flex-col justify-center w-full
+    <Link href={link} target="_blank" title={link}>
+      <div
+        className="flex flex-col justify-center w-full
          text-left hover:cursor-pointer mb-7 lg:mb-3
         hover:translate-y-2 duration-300"
-        >
-          <Tag title={type} />
-          <h3
-            className="text-black underline dark:text-white
+      >
+        <Tag title={type} />
+        <h3
+          className="text-black underline dark:text-white
           font-bold text-2xl tracking-tight hover:no-underline"
-          >
-            {title}
-          </h3>
-          <Authors type="article" authors={authors} style="short" />
-        </div>
-      </a>
+        >
+          {title}
+        </h3>
+        <Authors type="article" authors={authors} style="short" />
+      </div>
     </Link>
   );
 };

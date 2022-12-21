@@ -11,14 +11,15 @@ interface Props {
 
 export const LinkTag = ({ href, children, style, target, onClick }: Props) => {
   return (
-    <Link href={href} onClick={onClick} rel="noreferrer">
-      <a
-        className="font-bold w-fit text-[#f54bff] hover:underline"
-        style={style}
-        target={target}
-      >
-        {children}
-      </a>
+    <Link
+      className="font-bold w-fit text-[#f54bff] hover:underline"
+      style={style}
+      target={target}
+      href={href}
+      onClick={onClick}
+      rel="noreferrer"
+    >
+      {children}
     </Link>
   );
 };

@@ -1,5 +1,5 @@
 import { Heading } from "./Heading";
-import { Link } from "./Link";
+import { LinkT } from "./Link";
 import { Text } from "./Text";
 
 export const License = () => {
@@ -10,15 +10,15 @@ export const License = () => {
         Anyone is free to take inspiration from this site as long as you make
         some changes to your version and give credit to the ordinal creator.
         Credits should include my full name (<b>Nicholas Njoki</b>) and a link
-        to my site (<Link>notnick.io</Link>).
+        to my site (<LinkT>notnick.io</LinkT>).
       </Text>
       <br />
       <Text>
         The source code is under the{" "}
-        <Link href="https://mit-license.org/" target="_blank">
+        <LinkT href="https://mit-license.org/" target="_blank">
           MIT License
-        </Link>
-        , read more <Link href="/license">here</Link>.
+        </LinkT>
+        , read more <LinkT href="/license">here</LinkT>.
       </Text>
     </section>
   );

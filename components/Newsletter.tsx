@@ -127,19 +127,17 @@ export const NewsLetter = () => {
               {subs ?? 0}&nbsp;
             </span>{" "}
             {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
-            <Link href="https://www.getrevue.co/profile/heynickn">
-              <Tippy content={`${issues} Issues`}>
-                <a
-                  className="hover:underline cursor-pointer"
-                  href="https://www.getrevue.co/profile/heynickn"
-                  rel="noreferrer"
-                  target="_blank"
-                  title="View my published issues"
-                >
-                  View all issues&nbsp;
-                </a>
-              </Tippy>
-            </Link>
+            <Tippy content={`${issues} Issues`}>
+              <Link
+                className="hover:underline cursor-pointer"
+                href="https://www.getrevue.co/profile/heynickn"
+                rel="noreferrer"
+                target="_blank"
+                title="View my published issues"
+              >
+                View all issues&nbsp;
+              </Link>
+            </Tippy>
             &bull;&nbsp;
             <Avatar width={20} height={20} />
           </div>

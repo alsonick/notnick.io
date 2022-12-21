@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface Props {
   href?: string | undefined;
   children: React.ReactNode;
@@ -6,16 +8,16 @@ interface Props {
   onClick?: ((e: any) => void) | undefined;
 }
 
-export const Link = ({ href, style, target, children, onClick }: Props) => {
+export const LinkT = ({ href, style, target, children, onClick }: Props) => {
   return (
-    <a
-      href={href}
+    <Link
+      href={href || ""}
       className="font-bold w-fit cursor-pointer text-[#f54bff] hover:underline"
       onClick={onClick}
       style={style}
       target={target}
     >
       {children}
-    </a>
+    </Link>
   );
 };

@@ -3,6 +3,7 @@ import { useEffect, useState, useMemo } from "react";
 import { Presence } from "../types/lanyard";
 import { FaSpotify } from "react-icons/fa";
 import { Text } from "./Text";
+import Link from "next/link";
 
 // Credit to Phineas for the lanyard implementation
 // Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx)
@@ -101,7 +102,7 @@ export const Listening: React.FC<Props> = (
     <a className="flex items-center mb-6 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit">
       <FaSpotify className="mr-2" />
       {doing?.listening_to_spotify ? (
-        <a
+        <Link
           target="_blank"
           title={`${doing.spotify.album} by ${doing.spotify.artist.replaceAll(
             ";",
@@ -115,7 +116,7 @@ export const Listening: React.FC<Props> = (
           <b className="text-black dark:text-white">
             {doing.spotify.artist.replaceAll(";", ",")}
           </b>
-        </a>
+        </Link>
       ) : (
         <Text>Not listening to anything...</Text>
       )}

@@ -12,10 +12,8 @@ export const Talk = ({ title, link, type, authors }: T) => {
   return (
     <div className="flex flex-col w-full border-b mb-5 dark:border-teal-900 pb-4">
       <Tag title={type} />
-      <Link href={url}>
-        <a target="_blank">
-          <Heading style={{ marginBottom: 0 }}>{title}</Heading>
-        </a>
+      <Link target="_blank" href={url}>
+        <Heading style={{ marginBottom: 0 }}>{title}</Heading>
       </Link>
       <div className="my-3">
         <iframe

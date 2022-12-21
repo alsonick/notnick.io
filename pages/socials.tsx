@@ -46,14 +46,13 @@ const Socials: NextPage = () => {
                   {social.title}
                 </Text>
                 <div className="flex items-center">
-                  <Link href={social.link}>
-                    <a
-                      className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300"
-                      title={social.link}
-                      target="_blank"
-                    >
-                      {social.username}
-                    </a>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300"
+                    title={social.link}
+                    target="_blank"
+                    href={social.link}
+                  >
+                    {social.username}
                   </Link>
                   <Tippy
                     content={copyText}

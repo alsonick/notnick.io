@@ -43,10 +43,9 @@ export const Post = ({ type, post }: Props) => {
             {post.finished ? (
               <Link
                 href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://notnick.io/${type}/${post.slug}`}
+                target="_blank"
               >
-                <a target="_blank">
-                  <FiTwitter className="text-gray-600 dark:text-gray-300 cursor-pointer text-xl ml-2 hover:text-black hover:dark:text-white duration-300" />
-                </a>
+                <FiTwitter className="text-gray-600 dark:text-gray-300 cursor-pointer text-xl ml-2 hover:text-black hover:dark:text-white duration-300" />
               </Link>
             ) : null}
           </div>
@@ -72,14 +71,11 @@ export const Post = ({ type, post }: Props) => {
         )}
         <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
           <Link
+            className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
+            target="_blank"
             href={`https://github.com/alsonick/notnick.io/blob/main/data/${type}/${post.slug}.md`}
           >
-            <a
-              className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
-              target="_blank"
-            >
-              Edit this page on GitHub <FiExternalLink className="ml-2" />
-            </a>
+            Edit this page on GitHub <FiExternalLink className="ml-2" />
           </Link>
         </div>
         <LinkTag href={`/${type}`} style={{ marginTop: "2rem" }}>
