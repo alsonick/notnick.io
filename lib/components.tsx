@@ -14,7 +14,7 @@ import { Switch } from "../components/Switch";
 import { Error } from "../components/Error";
 import { Input } from "../components/Input";
 import { Label } from "../components/Label";
-import { Link } from "../components/Link";
+import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
@@ -48,7 +48,7 @@ export const COMPONENTS = [
   {
     id: 6,
     text: "Link",
-    component: <Link href="">Example</Link>,
+    component: <LinkT href="">Example</LinkT>,
   },
   {
     id: 7,
