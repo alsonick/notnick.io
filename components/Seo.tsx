@@ -15,8 +15,25 @@ export const Seo = ({ title, description }: Props) => {
         <title>{title}</title>
         <meta name="theme-color" content="#f54bff" />
         <meta name="description" content={description} />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:creator" content="@heynickn" />
+        <meta property="twitter:site" content="@nick" />
+        <meta property="og:title" content={title} />
+        <meta property="og:url" content="https://notnick.io/" />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="twitter:image"
+          content={
+            process.env.NODE_ENV === "production"
+              ? `https://notnick.io/api/og?title=${title}`
+              : `http://localhost:3000/api/og?title=${title}`
+          }
+        />
         <meta
           property="og:image"
           content={
