@@ -30,16 +30,28 @@ export const Seo = ({ title, description }: Props) => {
           property="twitter:image"
           content={
             process.env.NODE_ENV === "production"
-              ? `https://notnick.io/api/og?title=${title}`
-              : `http://localhost:3000/api/og?title=${title}`
+              ? `https://notnick.io/api/og?title=${title.substring(
+                  0,
+                  title.indexOf(" -")
+                )}`
+              : `http://localhost:3000/api/og?title=${title.substring(
+                  0,
+                  title.indexOf(" -")
+                )}`
           }
         />
         <meta
           property="og:image"
           content={
             process.env.NODE_ENV === "production"
-              ? `https://notnick.io/api/og?title=${title}`
-              : `http://localhost:3000/api/og?title=${title}`
+              ? `https://notnick.io/api/og?title=${title.substring(
+                  0,
+                  title.indexOf(" -")
+                )}`
+              : `http://localhost:3000/api/og?title=${title.substring(
+                  0,
+                  title.indexOf(" -")
+                )}`
           }
         />
       </Head>
