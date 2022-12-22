@@ -1,6 +1,6 @@
 import { Heading } from "../../components/Heading";
 import { Toggle } from "../../components/Toggle";
-import { Link } from "../../components/Link";
+import { LinkT } from "../../components/Link";
 import { Seo } from "../../components/Seo";
 import React from "react";
 
@@ -31,9 +31,9 @@ const TZTT = () => {
         <Item completed={false}>Contribute more to open source.</Item>
         <Item completed={false}>
           Become a TS god and surpass{" "}
-          <Link href="https://twitter.com/alistaiir" target="_blank">
+          <LinkT href="https://twitter.com/alistaiir" target="_blank">
             Alistair
-          </Link>
+          </LinkT>
           .
         </Item>
         <Item completed={false}>Learn PHP and master JavaScript.</Item>
@@ -42,9 +42,9 @@ const TZTT = () => {
         </Item>
         <Item completed={false}>
           Ship products like{" "}
-          <Link href="https://twitter.com/levelsio" target="_blank">
+          <LinkT href="https://twitter.com/levelsio" target="_blank">
             @levelsio
-          </Link>
+          </LinkT>
           .
         </Item>
         <Item completed={false}>Meet more like-minded people.</Item>
