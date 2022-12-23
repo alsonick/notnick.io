@@ -1,12 +1,13 @@
+import { dynamicTitle } from "../lib/dynamic-title";
 import Script from "next/script";
 import Head from "next/head";
 
 interface Props {
-  title: string;
   description: string;
+  title: string;
 }
 
-export const Seo = ({ title, description }: Props) => {
+export const Seo = ({ description, title }: Props) => {
   const date = new Date();
 
   return (
@@ -26,34 +27,8 @@ export const Seo = ({ title, description }: Props) => {
         <meta property="og:url" content="https://notnick.io/" />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta
-          property="twitter:image"
-          content={
-            process.env.NODE_ENV === "production"
-              ? `https://notnick.io/api/og?title=${title.substring(
-                  0,
-                  title.indexOf(" -")
-                )}`
-              : `http://localhost:3000/api/og?title=${title.substring(
-                  0,
-                  title.indexOf(" -")
-                )}`
-          }
-        />
-        <meta
-          property="og:image"
-          content={
-            process.env.NODE_ENV === "production"
-              ? `https://notnick.io/api/og?title=${title.substring(
-                  0,
-                  title.indexOf(" -")
-                )}`
-              : `http://localhost:3000/api/og?title=${title.substring(
-                  0,
-                  title.indexOf(" -")
-                )}`
-          }
-        />
+        <meta property="twitter:image" content={dynamicTitle(title)} />
+        <meta property="og:image" content={dynamicTitle(title)} />
       </Head>
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
         <Script src="https://app.embed.im/snow.js" defer />
