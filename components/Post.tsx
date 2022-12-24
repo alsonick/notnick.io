@@ -63,7 +63,7 @@ export const Post = ({ type, post }: Props) => {
             prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
           dark:prose-code:text-white prose-img:rounded-xl prose-img:border
-          prose-img:border-teal-100 prose-img:dark:border-teal-900"
+          prose-img:border-teal-100 prose-img:dark:border-teal-900 prose-a:font-bold"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
         ) : (

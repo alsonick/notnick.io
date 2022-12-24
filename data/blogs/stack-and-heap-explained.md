@@ -3,7 +3,7 @@ title: "The stack and the heap explained"
 date: "2022-10-31"
 description: "An overall explanation on the stack and the heap."
 tag: "Technical"
-finished: false
+finished: true
 mins: "8"
 last_updated_date: "2022-10-31"
 ---
@@ -49,10 +49,16 @@ If you're following along with rust then run the following command in your termi
 $ cargo new stack_and_heap_example
 ```
 
+#### Navigate and open your project
+
 Once you've created the project navigate to the directory and open it when your favorite editor of choice.
 
 ```
 $ cd new stack_and_heap_example/
+```
+
+```
+$ code .
 ```
 
 Once you've navigated and opened the directory, create a simple program that contains a single variable and assign it an integer value, you can pick any integer value of your choice.
@@ -65,4 +71,25 @@ fn main() {
 }
 ```
 
-![](/post/stack-and-heap-explained/figure_one.png)
+When we create the variable `x` it gets pushed onto the stack. When the `main` runs, the allocator allocates a single 32-bit integer for our stack frame.
+
+```
+[Address] [Name] [Value]
+[0]       [x]    [5]
+```
+
+When the `main` function exits, `x` gets popped off the stack.
+
+#### Heap example
+
+Delete the `x` variable declaration and copy the following example.
+
+```rs
+fn main() {
+    let name: String = String::from("Nicholas");
+}
+```
+
+If you're familiar with [Rust](https://www.rust-lang.org/) then this should be familiar to you. If not, essentially we're creating a String using the [String](https://doc.rust-lang.org/std/string/struct.String.html) type and calling the [from](https://doc.rust-lang.org/std/convert/trait.From.html#tymethod.from) method to gives us a string.
+
+It's important to know that the [String]() type can mutate during runtime, so the allocator doesn't know how much memory to allocate it at compile that. Since the [String]() can be a growable piece of text, the allocator allocates memory on the heap which unknown at compile time.

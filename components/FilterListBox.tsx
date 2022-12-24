@@ -3,21 +3,25 @@ import { Listbox } from "@headlessui/react";
 import { Fragment } from "react";
 
 interface Props {
-  items: Item[];
-  selectedItem: string;
   onChange: React.Dispatch<React.SetStateAction<string>>;
+  selectedItem: string;
+  items: Item[];
 }
 
 interface Item {
-  tag: string;
   slug: string;
+  tag: string;
 }
 
-export const FilterListBox = ({ items, selectedItem, onChange }: Props) => {
+export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
   return (
     <Listbox value={selectedItem} onChange={onChange}>
       <div className="flex duration-300 relative flex-col w-1/2">
-        <Listbox.Button className="flex p-3 font-semibold items-center text-sm justify-between dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100 dark:bg-black dark:border-teal-900">
+        <Listbox.Button
+          className="flex p-3 font-semibold items-center text-sm justify-between 
+        dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100
+        dark:bg-black dark:border-teal-900"
+        >
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
         <Listbox.Options className="flex py-2 absolute w-full flex-col border bg-white border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16">
