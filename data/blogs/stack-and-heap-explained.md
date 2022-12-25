@@ -3,7 +3,7 @@ title: "The stack and the heap explained"
 date: "2022-10-31"
 description: "An overall explanation on the stack and the heap."
 tag: "Technical"
-finished: true
+finished: false
 mins: "8"
 last_updated_date: "2022-10-31"
 ---
