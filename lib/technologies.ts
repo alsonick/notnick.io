@@ -97,9 +97,9 @@ export const technologies = [
   },
   {
     id: 17,
-    text: "Rust",
-    link: "https://www.rust-lang.org/",
-    desc: "A systems programming language.",
+    text: "PHP",
+    link: "https://www.php.net/",
+    desc: "A scripting language geared towards server-side development.",
   },
   {
     id: 18,
