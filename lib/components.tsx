@@ -16,6 +16,7 @@ import { Input } from "../components/Input";
 import { Label } from "../components/Label";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
+import { Note } from "../components/Note";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
 
@@ -125,5 +126,10 @@ export const COMPONENTS = [
     id: 20,
     text: "Key",
     component: <Key>Example</Key>,
+  },
+  {
+    id: 21,
+    text: "Note",
+    component: <Note text="Example" />,
   },
 ];
