@@ -4,12 +4,13 @@ import Tippy from "@tippyjs/react";
 
 // Next.js
 import Link from "next/link";
+import { Note } from "./Note";
 
 export const Technologies = () => {
   return (
     <section className="flex flex-col mb-12">
       <Heading>Technologies 💻</Heading>
-      <ul className="block text-center list-disc">
+      <ul className="block text-center list-disc mb-6">
         {technologies.map((tech) => (
           <Link
             key={tech.id}
@@ -26,6 +27,7 @@ export const Technologies = () => {
           </Link>
         ))}
       </ul>
+      <Note text="I may use certain technologies more frequently than others." />
     </section>
   );
 };
