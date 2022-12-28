@@ -19,10 +19,10 @@ interface Props {
 }
 
 const Blogs: NextPage<Props> = ({ blogs }) => {
-  let tags = [{ tag: "All", slug: "" }];
+  let tags = [{ tag: "All", slug: "", finished: false }];
 
   blogs.forEach((blog) => {
-    tags.push({ tag: blog.tag, slug: blog.slug });
+    tags.push({ tag: blog.tag, slug: blog.slug, finished: blog.finished });
   });
 
   const [selectedTag, setSelectedTag] = useState(tags[0].tag);

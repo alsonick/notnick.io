@@ -27,16 +27,15 @@ export const Dropdown = ({ items }: Props) => {
             {items.map((item) => (
               <Menu.Item key={item.id}>
                 {({ active }) => (
-                  <Link href={item.to}>
-                    <a
-                      className={`p-2 px-3 text-gray-600 dark:text-gray-300 ${
-                        active
-                          ? "bg-[#f54bff] dark:bg-[#f54bff] duration-300 text-white"
-                          : " "
-                      }`}
-                    >
-                      {item.dropdown ? item.dropdown : item.text}
-                    </a>
+                  <Link
+                    className={`p-2 px-3 text-gray-600 dark:text-gray-300 ${
+                      active
+                        ? "bg-[#f54bff] dark:bg-[#f54bff] duration-300 text-white"
+                        : " "
+                    }`}
+                    href={item.to}
+                  >
+                    {item.dropdown ? item.dropdown : item.text}
                   </Link>
                 )}
               </Menu.Item>

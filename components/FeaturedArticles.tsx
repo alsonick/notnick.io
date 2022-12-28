@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { Article } from "../types/article";
 import { ArticleCard } from "./ArticleCard";
+import { useEffect, useState } from "react";
 import { ARTICLES } from "../lib/articles";
+import { Article } from "../types/article";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { LinkT } from "./Link";
@@ -18,7 +18,6 @@ export const FeaturedArticles = () => {
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
     s.push(shuffled);
-    console.log(s[0]);
     setShuffledArticles(s[0]);
   };
 

@@ -28,10 +28,10 @@ interface Props {
 }
 
 const Notes: NextPage<Props> = ({ notes }) => {
-  let tags = [{ tag: "All", slug: "" }];
+  let tags = [{ tag: "All", slug: "", finished: false }];
 
   notes.forEach((note) => {
-    tags.push({ tag: note.tag, slug: note.slug });
+    tags.push({ tag: note.tag, slug: note.slug, finished: note.finished });
   });
 
   const [selectedTag, setSelectedTag] = useState(tags[0].tag);
