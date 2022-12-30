@@ -2,6 +2,7 @@ import { ArticleCard } from "./ArticleCard";
 import { useEffect, useState } from "react";
 import { ARTICLES } from "../lib/articles";
 import { Article } from "../types/article";
+import { FiArrowRight } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { LinkT } from "./Link";
@@ -40,7 +41,9 @@ export const FeaturedArticles = () => {
           />
         ))}
       </div>
-      <LinkT href="/articles">View all articles &#8594;</LinkT>
+      <LinkT href="/articles">
+        View all articles <FiArrowRight className="text-lg ml-1" />
+      </LinkT>
       <div className="ml-auto">
         <Button onClick={shuffleArticles}>Shuffle</Button>
       </div>
