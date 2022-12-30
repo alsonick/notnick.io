@@ -1,8 +1,8 @@
+import { FiArrowRight } from "react-icons/fi";
 import { ArticleCard } from "./ArticleCard";
 import { useEffect, useState } from "react";
 import { ARTICLES } from "../lib/articles";
 import { Article } from "../types/article";
-import { FiArrowRight } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { LinkT } from "./Link";

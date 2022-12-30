@@ -24,7 +24,7 @@ export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
         >
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
-        <Listbox.Options className="flex py-2 absolute w-full flex-col border bg-white border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16">
+        <Listbox.Options className="flex z-10 absolute w-full flex-col border bg-white border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16">
           {items.map((item) => (
             <Listbox.Option key={item.slug} value={item.tag} as={Fragment}>
               {({
@@ -35,9 +35,9 @@ export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
                 selected: boolean;
               }) => (
                 <li
-                  className={`flex cursor-pointer font-semibold text-sm dark:bg-black dark:text-white items-center justify-between p-2 px-3 ${
+                  className={`flex cursor-pointer font-semibold text-sm dark:bg-black  dark:text-white items-center justify-between p-3 rounded-lg ${
                     active
-                      ? "bg-[#f54bff] dark:bg-[#f54bff] duration-300 text-white"
+                      ? "bg-[#f54bff] dark:bg-[#f54bff]  duration-300 text-white"
                       : "bg-white text-black"
                   }`}
                 >

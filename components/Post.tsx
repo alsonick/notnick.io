@@ -1,4 +1,5 @@
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
+import { FiArrowLeft } from "react-icons/fi";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
@@ -79,7 +80,8 @@ export const Post = ({ type, post }: Props) => {
           </Link>
         </div>
         <LinkTag href={`/${type}`} style={{ marginTop: "2rem" }}>
-          &larr; Go back to {type === "blogs" ? "blogs" : "notes"}
+          <FiArrowLeft className="text-lg mr-1" /> Go back to{" "}
+          {type === "blogs" ? "blogs" : "notes"}
         </LinkTag>
       </Layout>
     </>

@@ -1,10 +1,10 @@
 interface Props {
-  text: string;
-  limit: number;
   style?: React.CSSProperties | undefined;
+  limit: number;
+  text: string;
 }
 
-export const CharacterLimit = ({ text, limit, style }: Props) => {
+export const CharacterLimit = ({ style, limit, text }: Props) => {
   return (
     <p
       className={`text-sm ${

@@ -2,6 +2,7 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
+import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { SOCIALS } from "../lib/socials";
 import { FiCopy } from "react-icons/fi";
@@ -33,9 +34,9 @@ const Socials: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+          <Header singleItem={true}>
             <Heading style={{ marginBottom: 0 }}>Socials</Heading>
-          </div>
+          </Header>
           <div className="flex flex-col mb-4">
             {SOCIALS.map((social) => (
               <div

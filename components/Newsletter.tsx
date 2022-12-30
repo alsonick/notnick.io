@@ -3,24 +3,29 @@ import { getIssues as getIssuesMethod } from "../lib/get-issues";
 import { getSubscribers } from "../lib/get-subscribers";
 import { useState, useEffect } from "react";
 import { Heading } from "./Heading";
+import { Success } from "./Success";
 import Tippy from "@tippyjs/react";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Input } from "./Input";
+import { Error } from "./Error";    
 import { Text } from "./Text";
+import { Form } from "./Form";
 
 // Next.js
 import Link from "next/link";
 
 export const NewsLetter = () => {
-  const [subs, setSubs] = useState<number>(0);
-  const [issues, getIssues] = useState<number>(0);
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [issues, getIssues] = useState<number>(0);
+  const [subs, setSubs] = useState<number>(0);
   const [email, setEmail] = useState("");
 
-  const subscribe = async () => {
+  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     setLoading(true);
     setErrorMessage("");
     setSuccessMessage("");
@@ -90,18 +95,12 @@ export const NewsLetter = () => {
   return (
     <section className="flex flex-col mb-12">
       <Heading>Newsletter 📰</Heading>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          subscribe();
-        }}
-        className="flex flex-col dark:bg-[#10161a]/50 rounded-lg p-4 duration-300 border border-teal-100 dark:border-teal-900"
-      >
+      <Form onSubmit={subscribe} action="POST">
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
           Subscribe to my newsletter
         </Heading>
         <Text>
-          Subscribe if you&apos;re interested about Rust &#38; TypeScript
+          Subscribe if you&apos;re interested about PHP &#38; TypeScript
           content.
         </Text>
         <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2">
@@ -142,26 +141,20 @@ export const NewsLetter = () => {
             <Avatar width={20} height={20} />
           </div>
           {successMessage && (
-            <p
-              className="flex items-center text-green-500 font-semibold"
-              style={{ fontSize: "0.9rem" }}
-            >
-              <HiBadgeCheck className="mr-1 mt-[1px]" />
-              {successMessage}
-            </p>
+            <div className="flex items-center">
+              <HiBadgeCheck className="mr-1 mt-[1px] text-green-500" />
+              <Success message={successMessage} />
+            </div>
           )}
           {errorMessage && (
-            <p
-              className="flex items-center text-red-500 font-semibold"
-              style={{ fontSize: "0.9rem" }}
-            >
-              <HiExclamationCircle className="mr-1 mt-[1px]" />
-              {errorMessage}
-            </p>
+            <div className="flex items-center">
+              <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
+              <Error message={errorMessage} />
+            </div>
           )}
           {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}
         </div>
-      </form>
+      </Form>
     </section>
   );
 };

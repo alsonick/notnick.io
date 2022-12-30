@@ -10,9 +10,8 @@ export const About = () => {
       <Heading>About 💭</Heading>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
-        based in the UK, I greatly specialize in web development (
-        <b>full-stack</b>) and a little bit of mobile development. I&apos;m
-        currently studying{" "}
+        based in the UK, I mostly specialize in web development, mainly backend
+        development. I&apos;m currently studying{" "}
         <LinkTag
           href="https://en.wikipedia.org/wiki/Computer_science"
           target="_blank"
@@ -27,9 +26,10 @@ export const About = () => {
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I use a variety of technologies to ease the development process, when
-        working on the client I use <b>TypeScript</b> &#38; <b>React</b> and for
-        the backend I use either <b>NodeJS</b> or <b>Rust</b>. For databases I
-        have the most experience in <b>PostgreSQL</b> and <b>MySQL</b>.
+        working on the client I use <b>TypeScript</b> &#38; <b>Next.js</b> and
+        for the backend development I use either <b>NodeJS</b> or <b>PHP</b>.
+        For databases I have the most experience in <b>PostgreSQL</b> and{" "}
+        <b>SQL</b>.
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m also very passionate about systems programming and networking,
@@ -42,12 +42,19 @@ export const About = () => {
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         Aside from programming I also love to travel and watch anime in my spare
         time, currently my favorite anime shows are{" "}
-        <LinkTag href="https://en.wikipedia.org/wiki/One_Piece" target="_blank">
+        <LinkTag href="https://anilist.co/anime/21/ONE-PIECE/" target="_blank">
           One Piece{" "}
         </LinkTag>
+        ,{" "}
+        <LinkTag
+          href="https://anilist.co/anime/223/Dragon-Ball/"
+          target="_blank"
+        >
+          Dragon Ball
+        </LinkTag>{" "}
         and{" "}
         <LinkTag
-          href="https://en.wikipedia.org/wiki/Attack_on_Titan_(TV_series)"
+          href="https://anilist.co/anime/16498/Shingeki-no-Kyojin/"
           target="_blank"
         >
           Attack on Titan

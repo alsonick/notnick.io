@@ -3,6 +3,7 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
+import { Header } from "../components/Header";
 import { ARTICLES } from "../lib/articles";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
@@ -21,10 +22,10 @@ const Articles: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <div className="flex flex-col mb-4 min-h-[4rem] justify-between">
+          <Header singleItem={true} column={true}>
             <Heading style={{ marginBottom: 0 }}>Articles</Heading>
             <Text>A list of interesting articles I found on the internet.</Text>
-          </div>
+          </Header>
           <div className="flex flex-col mb-4">
             {ARTICLES.map((article) => (
               <div
@@ -33,14 +34,13 @@ const Articles: NextPage = () => {
                 key={article.id}
               >
                 <Tag title={article.type} />
-                <Link href={article.link}>
-                  <a
-                    className="text-3xl font-bold cursor-pointer underline
+                <Link
+                  className="text-3xl font-bold cursor-pointer underline
                   dark:text-white hover:no-underline"
-                    target="_blank"
-                  >
-                    {article.title}
-                  </a>
+                  href={article.link}
+                  target="_blank"
+                >
+                  {article.title}
                 </Link>
                 <div className="flex w-full">
                   {article.authors.length === 1 ? (

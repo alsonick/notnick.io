@@ -4,6 +4,7 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
+import { Header } from "../components/Header";
 import { NoPost } from "../components/NoPost";
 import { NOTES_DIR } from "../lib/constants";
 import { Posts } from "../components/Posts";
@@ -52,7 +53,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
       />
       <Layout>
         <Animate>
-          <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+          <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>Notes</Heading>
             {notes.length ? (
               <FilterListBox
@@ -61,11 +62,11 @@ const Notes: NextPage<Props> = ({ notes }) => {
                 onChange={setSelectedTag}
               />
             ) : null}
-          </div>
+          </Header>
           {!notes.length && <NoPost type="notes" />}
           <Posts
+            posts={filteredNotesList.length ? filteredNotesList : notes}
             type="notes"
-            items={filteredNotesList.length ? filteredNotesList : notes}
           />
           <GoBack />
         </Animate>

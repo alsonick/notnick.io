@@ -29,6 +29,7 @@ export const Seo = ({ description, title }: Props) => {
         <meta property="og:type" content="website" />
         <meta property="twitter:image" content={dynamicTitle(title)} />
         <meta property="og:image" content={dynamicTitle(title)} />
+        <script async defer src="https://buttons.github.io/buttons.js" />
       </Head>
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
         <Script src="https://app.embed.im/snow.js" defer />

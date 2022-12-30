@@ -1,3 +1,4 @@
+import { Post } from "../types/post";
 import { Avatar } from "./Avatar";
 import { Text } from "./Text";
 import { Date } from "./Date";
@@ -8,37 +9,23 @@ import Link from "next/link";
 
 interface Props {
   type: "notes" | "blogs";
-  slug: string;
-  description: string;
-  tag: string;
-  title: string;
-  cover?: string;
-  date: string;
-  mins: string;
+  post: Post;
 }
 
-export const Card = ({
-  type,
-  slug,
-  description,
-  tag,
-  title,
-  date,
-  mins,
-}: Props) => {
+export const Card = ({ type, post }: Props) => {
   return (
     <div className="flex flex-col w-full mb-10 border-b pb-4 border-teal-100 dark:border-teal-900">
-      <Tag title={tag} />
+      <Tag title={post.tag} />
       <Link
         className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit"
-        href={`/${type}/${slug}`}
+        href={`/${type}/${post.slug}`}
       >
-        {title}
+        {post.title}
       </Link>
-      <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>{description}</Text>
+      <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>{post.description}</Text>
       <div className="flex items-center">
-        <Date date={date} />
-        <Text>&nbsp;&bull; {mins} min read &bull;&nbsp; </Text>
+        <Date date={post.date} />
+        <Text>&nbsp;&bull; {post.mins} min read &bull;&nbsp; </Text>
         <Avatar width={22} height={22} />
       </div>
     </div>

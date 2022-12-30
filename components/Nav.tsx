@@ -8,9 +8,9 @@ import Link from "next/link";
 export const Nav = () => {
   const ITEMS = [
     { id: 1, text: "/", to: "/", dropdown: "Home" },
-    { id: 2, text: "Notes", to: "/notes" },
-    { id: 3, text: "Blogs", to: "/blogs" },
-    { id: 4, text: "Projects", to: "/projects" },
+    { id: 2, text: "Projects", to: "/projects" },
+    { id: 3, text: "Notes", to: "/notes" },
+    { id: 4, text: "Blogs", to: "/blogs" },
   ];
 
   const router = useRouter();

@@ -7,6 +7,7 @@ import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
+import { Header } from "../components/Header";
 
 const License: NextPage = () => {
   return (
@@ -17,9 +18,9 @@ const License: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <div className="flex items-center my-4 min-h-[4rem] justify-between">
+          <Header singleItem={true}>
             <Heading style={{ marginBottom: 0 }}>License</Heading>
-          </div>
+          </Header>
           <div className="mb-4">
             <Text>
               MIT License <br />

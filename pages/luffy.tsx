@@ -2,13 +2,13 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
+import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Tag } from "../components/Tag";
-import { NextPage } from "next";
 
 // Next.js
-import Image from "next/image";
+import { NextPage } from "next";
 
 const Luffy: NextPage = () => {
   return (
@@ -17,22 +17,22 @@ const Luffy: NextPage = () => {
       <Layout>
         <Animate>
           <div className="mt-10">
-            <Image
-              className="rounded-lg"
-              src="/assets/luffy.gif"
-              alt="Monkey D. Luffy"
-              width={498}
-              height={280}
-              layout="responsive"
-            />
+            <picture>
+              <img
+                className="rounded-lg"
+                src="/assets/luffy.gif"
+                alt="Monkey D. Luffy"
+                style={{width: "100%"}}
+              />
+            </picture>
           </div>
-          <div className="flex flex-col mt-4 items-center mb-4 min-h-[4rem]">
+          <Header column={true} singleItem={false}>
             <Tag title="idk lol" />
             <Heading style={{ marginBottom: "0.5rem" }}>
               Monkey D. Luffy
             </Heading>
             <Text>One Piece</Text>
-          </div>
+          </Header>
           <GoBack />
         </Animate>
       </Layout>

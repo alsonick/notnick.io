@@ -1,5 +1,6 @@
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
+import { Header } from "../components/Header";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Text } from "../components/Text";
@@ -10,21 +11,17 @@ import { SPECS } from "../lib/specs";
 // Next.js
 import { NextPage } from "next";
 
-const Section = ({ children }: { children?: React.ReactNode }) => {
-  return <div className="flex flex-col w-full mb-8">{children}</div>;
-};
-
 const Specs: NextPage = () => {
   return (
     <>
       <Seo title="My Specs" description="" />
       <Layout>
         <Animate>
-          <div className="flex flex-col mt-4 mb-4 min-h-[4rem]">
+          <Header singleItem={true}>
             <Heading style={{ marginBottom: 0 }}>My Specs</Heading>
-          </div>
+          </Header>
           {SPECS.map((spec) => (
-            <Section key={spec.id}>
+            <div className="flex flex-col w-full mb-8" key={spec.id}>
               <Heading style={{ fontSize: "2rem", marginBottom: 0 }}>
                 {spec.title}
               </Heading>
@@ -37,7 +34,7 @@ const Specs: NextPage = () => {
                   </li>
                 ))}
               </ul>
-            </Section>
+            </div>
           ))}
           <GoBack />
         </Animate>

@@ -3,6 +3,7 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
+import { Header } from "../components/Header";
 import { Button } from "../components/Button";
 import { PROJECTS } from "../lib/projects";
 import { Seo } from "../components/Seo";
@@ -26,9 +27,9 @@ const Projects: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <div className="flex items-center my-4 min-h-[4rem] justify-between">
+          <Header singleItem={true}>
             <Heading style={{ marginBottom: 0 }}>Projects</Heading>
-          </div>
+          </Header>
           {/* <div className="my-4">
             {PROJECTS.map((project) => (
               <ProjectCard

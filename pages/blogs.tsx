@@ -5,6 +5,7 @@ import { Heading } from "../components/Heading";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { NoPost } from "../components/NoPost";
+import { Header } from "../components/Header";
 import { BLOGS_DIR } from "../lib/constants";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
@@ -43,7 +44,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
       />
       <Layout>
         <Animate>
-          <div className="flex items-center mb-4 min-h-[4rem] justify-between">
+          <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>Blogs</Heading>
             {blogs.length ? (
               <FilterListBox
@@ -52,13 +53,15 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
                 onChange={setSelectedTag}
               />
             ) : null}
-          </div>
+          </Header>
           {!blogs.length && <NoPost type="blogs" />}
-          <Posts
-            type="blogs"
-            items={filteredBlogsList.length ? filteredBlogsList : blogs}
-          />
-          <GoBack />
+          <div className="relative">
+            <Posts
+              posts={filteredBlogsList.length ? filteredBlogsList : blogs}
+              type="blogs"
+            />
+            <GoBack />
+          </div>
         </Animate>
       </Layout>
     </>

@@ -2,6 +2,7 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
+import { Header } from "../components/Header";
 import { GoBack } from "../components/GoBack";
 import { useEffect, useState } from "react";
 import { Text } from "../components/Text";
@@ -14,7 +15,7 @@ import { NextPage } from "next";
 
 const Quote: NextPage<Quote> = () => {
   const [quote, setQuote] = useState<Quote | undefined>(undefined);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const fetchQuote = async () => {
     setLoading(true);
@@ -31,37 +32,39 @@ const Quote: NextPage<Quote> = () => {
   return (
     <Layout>
       <Animate>
-        <div className="flex flex-col h-full items-center justify-center">
-          {quote && !loading ? (
-            <>
-              <Seo title={quote.content} description={quote.author} />
-              <div className="flex flex-col mt-4 items-center mb-4 min-h-[4rem]">
-                <Tag title={quote.tags[0]} />
-                <Heading
-                  style={{
-                    marginBottom: "0.5rem",
-                    marginTop: "0.5rem",
-                    textAlign: "center",
-                  }}
-                >
-                  {`"${quote.content}"`}
-                </Heading>
-                <Text>{quote.author}</Text>
-                <Button
-                  onClick={() => fetchQuote()}
-                  style={{ marginTop: "1.5rem" }}
-                >
-                  Reload
-                </Button>
+        <div className="flex flex-col h-full justify-center">
+          <div className="mb-4">
+            {quote && !loading ? (
+              <div className="flex flex-col">
+                <Seo title={quote.content} description={quote.author} />
+                <Header column={true} singleItem={false}>
+                  <Tag title={quote.tags[0]} />
+                  <Heading
+                    style={{
+                      marginBottom: "0.5rem",
+                      marginTop: "0.5rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    {`"${quote.content}"`}
+                  </Heading>
+                  <Text>{quote.author}</Text>
+                  <Button
+                    onClick={() => fetchQuote()}
+                    style={{ marginTop: "1.5rem" }}
+                  >
+                    Reload
+                  </Button>
+                </Header>
               </div>
-            </>
-          ) : (
-            <div className="min-h-[4rem] text-center">
-              <Heading>Loading...</Heading>
-            </div>
-          )}
+            ) : (
+              <div className="min-h-[4rem] mb-4 text-center">
+                <Heading>Loading...</Heading>
+              </div>
+            )}
+          </div>
+          <GoBack />
         </div>
-        <GoBack />
       </Animate>
     </Layout>
   );

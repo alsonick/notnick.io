@@ -3,24 +3,24 @@ import { Post } from "../types/post";
 
 interface Props {
   type: "notes" | "blogs";
-  items: Post[];
+  posts: Post[];
 }
 
-export const Posts = ({ type, items }: Props) => {
+export const Posts = ({ type, posts }: Props) => {
   return (
     <div className="flex flex-col w-full">
       <ul>
-        {items.map((item) => (
+        {posts.map((post) => (
           <>
             {process.env.NODE_ENV === "development" ? (
               <>
-                {item.finished || !item.finished ? (
-                  <PostsCard item={item} type={type} />
+                {post.finished || !post.finished ? (
+                  <PostsCard post={post} type={type} />
                 ) : null}
               </>
             ) : (
               <>
-                {item.finished ? <PostsCard item={item} type={type} /> : null}
+                {post.finished ? <PostsCard post={post} type={type} /> : null}
               </>
             )}
           </>

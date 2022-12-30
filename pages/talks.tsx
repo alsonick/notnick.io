@@ -2,6 +2,7 @@ import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
+import { Header } from "../components/Header";
 import { Talk } from "../components/Talk";
 import { Text } from "../components/Text";
 import { Talk as T } from "../types/talk";
@@ -20,19 +21,19 @@ const Talks: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <div className="flex flex-col mb-4 min-h-[4rem] justify-between">
+          <Header singleItem={true}>
             <Heading style={{ marginBottom: 0 }}>Talks</Heading>
             <Text>A list of interesting talks I found on the internet.</Text>
-          </div>
+          </Header>
           <div className="flex flex-col mb-4">
             {TALKS.map((talk: T) => (
               <Talk
-                key={talk.id}
-                id={talk.id}
+                authors={talk.authors}
                 title={talk.title}
                 link={talk.link}
                 type={talk.type}
-                authors={talk.authors}
+                key={talk.id}
+                id={talk.id}
               />
             ))}
           </div>

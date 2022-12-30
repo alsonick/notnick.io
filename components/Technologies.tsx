@@ -1,10 +1,10 @@
 import { technologies } from "../lib/technologies";
 import { Heading } from "./Heading";
 import Tippy from "@tippyjs/react";
+import { Note } from "./Note";
 
 // Next.js
 import Link from "next/link";
-import { Note } from "./Note";
 
 export const Technologies = () => {
   return (
@@ -27,7 +27,7 @@ export const Technologies = () => {
           </Link>
         ))}
       </ul>
-      <Note text="I may use certain technologies more frequently than others." />
+      <Note>I may use certain technologies more frequently than others on a daily basis.</Note>
     </section>
   );
 };

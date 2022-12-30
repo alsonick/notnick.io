@@ -5,6 +5,7 @@ import { Skeleton } from "../components/Skeleton";
 import { Dropdown } from "../components/Dropdown";
 import { Heading } from "../components/Heading";
 import { Loading } from "../components/Loading";
+import { Warning } from "../components/Warning";
 import { Success } from "../components/Success";
 import { Date as D } from "../components/Date";
 import { Toggle } from "../components/Toggle";
@@ -68,11 +69,16 @@ export const COMPONENTS = [
   },
   {
     id: 10,
+    text: "Warning",
+    component: <Warning message="Example" />,
+  },
+  {
+    id: 11,
     text: "Error",
     component: <Error message="Example" />,
   },
   {
-    id: 11,
+    id: 12,
     text: "Filter Box",
     component: (
       <FilterListBox
@@ -83,53 +89,53 @@ export const COMPONENTS = [
     ),
   },
   {
-    id: 12,
+    id: 13,
     text: "Loading",
     component: <Loading text="Loading..." loading={true} />,
   },
   {
-    id: 13,
+    id: 14,
     text: "Skeleton",
     component: <Skeleton style={{ marginBottom: 0, marginRight: 0 }} />,
   },
   {
-    id: 14,
+    id: 15,
     text: "Text",
     component: <Text>Example</Text>,
   },
   {
-    id: 15,
+    id: 16,
     text: "Textarea",
     component: <TextArea placeholder="Example" />,
   },
   {
-    id: 16,
+    id: 17,
     text: "Switch",
     component: <Switch enabled={false} setEnabled={() => {}} />,
   },
   {
-    id: 17,
+    id: 18,
     text: "Date",
     component: <D date={new Date().toString()} />,
   },
   {
-    id: 18,
+    id: 19,
     text: "Toggle",
     component: <Toggle />,
   },
   {
-    id: 19,
+    id: 20,
     text: "Dropdown",
     component: <Dropdown items={[]} />,
   },
   {
-    id: 20,
+    id: 21,
     text: "Key",
     component: <Key>Example</Key>,
   },
   {
-    id: 21,
+    id: 22,
     text: "Note",
-    component: <Note text="Example" />,
+    component: <Note>Example</Note>,
   },
 ];

@@ -12,7 +12,7 @@ interface Props {
 export const LinkTag = ({ href, children, style, target, onClick }: Props) => {
   return (
     <Link
-      className="font-bold w-fit text-[#f54bff] hover:underline"
+      className="font-bold inline-flex items-center w-fit text-[#f54bff] hover:underline"
       style={style}
       target={target}
       href={href}
