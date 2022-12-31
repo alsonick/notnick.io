@@ -1,4 +1,6 @@
-import { dynamicTitle } from "../lib/dynamic-title";
+import { fireworks } from "../lib/fireworks";
+
+// Next.js
 import Script from "next/script";
 import Head from "next/head";
 
@@ -9,6 +11,13 @@ interface Props {
 
 export const Seo = ({ description, title }: Props) => {
   const date = new Date();
+
+  if (typeof window === "object") {
+    if (date.getMonth() + 1 === 1) {
+        // Happy new year!
+        fireworks();
+    }
+  }
 
   return (
     <>
@@ -29,7 +38,6 @@ export const Seo = ({ description, title }: Props) => {
         <meta property="og:type" content="website" />
         <meta property="twitter:image" content="/cover.png" />
         <meta property="og:image" content="/cover.png" />
-        <script async defer src="https://buttons.github.io/buttons.js" />
       </Head>
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
         <Script src="https://app.embed.im/snow.js" defer />
