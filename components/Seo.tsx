@@ -27,8 +27,8 @@ export const Seo = ({ description, title }: Props) => {
         <meta property="og:url" content="https://notnick.io/" />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="twitter:image" content={dynamicTitle(title)} />
-        <meta property="og:image" content={dynamicTitle(title)} />
+        <meta property="twitter:image" content="/cover.png" />
+        <meta property="og:image" content="/cover.png" />
         <script async defer src="https://buttons.github.io/buttons.js" />
       </Head>
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
