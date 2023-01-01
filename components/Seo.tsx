@@ -13,8 +13,11 @@ export const Seo = ({ description, title }: Props) => {
   const date = new Date();
 
   if (typeof window === "object") {
-    if (date.getMonth() + 1 === 1 && date.getDate() === 1) {
-      // Happy new year!
+    if (
+      (date.getMonth() + 1 === 1 && date.getDate() === 1) ||
+      (date.getMonth() + 1 === 3 && date.getDate() === 4)
+    ) {
+      // Happy new year & Happy birthday!
       fireworks();
     }
   }

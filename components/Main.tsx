@@ -1,8 +1,9 @@
 import { TypeAnimation } from "react-type-animation";
 import { CITY, COUNTRY } from "../lib/constants";
+import { fireworks } from "../lib/fireworks";
 import { FiSend } from "react-icons/fi";
-import { useEffect, useState } from "react";
 import { Heading } from "./Heading";
+import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
 
@@ -10,13 +11,19 @@ import { Links } from "./Links";
 import Link from "next/link";
 
 export const Main = () => {
-  const [time, setTime] = useState(new Date());
+  const date = new Date();
 
-  useEffect(() => {
-    setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-  }, []);
+  const confetti = () => {
+    if (typeof window === "object") {
+      if (
+        (date.getMonth() + 1 === 1 && date.getDate() === 1) ||
+        (date.getMonth() + 1 === 3 && date.getDate() === 4)
+      ) {
+        // Happy new year & Happy birthday!
+        fireworks();
+      }
+    }
+  };
 
   return (
     <>
@@ -56,6 +63,12 @@ export const Main = () => {
             />
           </div>
           <Links />
+          {(date.getMonth() + 1 === 1 && date.getDate() === 1) ||
+          (date.getMonth() + 1 === 3 && date.getDate() === 4) ? (
+            <div className="mt-4">
+              <Button onClick={() => confetti()}>🎉</Button>
+            </div>
+          ) : null}
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
           <Avatar width={122} height={122} />
