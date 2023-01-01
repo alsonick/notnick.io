@@ -42,6 +42,7 @@ export const Seo = ({ description, title }: Props) => {
         <meta property="twitter:image" content="/cover.png" />
         <meta property="og:image" content="/cover.png" />
       </Head>
+      <Script async defer src="https://buttons.github.io/buttons.js" />
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
         <Script src="https://app.embed.im/snow.js" defer />
       ) : null}
