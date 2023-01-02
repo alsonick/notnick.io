@@ -23,14 +23,18 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
   let tags = [{ tag: "All", slug: "", finished: false }];
 
   blogs.forEach((blog) => {
-    tags.push({ tag: blog.tag, slug: blog.slug, finished: blog.finished });
+    if (blog.finished) {
+      tags.push({ tag: blog.tag, slug: blog.slug, finished: blog.finished });
+    }
   });
 
   const [selectedTag, setSelectedTag] = useState(tags[0].tag);
 
   for (let i = 0; i < blogs.length; i++) {
-    if (blogs[i].tag === tags[i].tag) {
-      setSelectedTag(tags[i].tag);
+    if (blogs[i].finished) {
+      if (blogs[i].tag === tags[i].tag) {
+        setSelectedTag(tags[i].tag);
+      }
     }
   }
 

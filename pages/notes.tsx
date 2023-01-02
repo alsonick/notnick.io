@@ -32,14 +32,18 @@ const Notes: NextPage<Props> = ({ notes }) => {
   let tags = [{ tag: "All", slug: "", finished: false }];
 
   notes.forEach((note) => {
-    tags.push({ tag: note.tag, slug: note.slug, finished: note.finished });
+    if (note.finished) {
+      tags.push({ tag: note.tag, slug: note.slug, finished: note.finished });
+    }
   });
 
   const [selectedTag, setSelectedTag] = useState(tags[0].tag);
 
   for (let i = 0; i < notes.length; i++) {
-    if (notes[i].tag === tags[i].tag) {
-      setSelectedTag(tags[i].tag);
+    if (notes[i].finished) {
+      if (notes[i].tag === tags[i].tag) {
+        setSelectedTag(tags[i].tag);
+      }
     }
   }
 
