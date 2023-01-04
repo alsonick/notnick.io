@@ -65,11 +65,18 @@ export const About = () => {
         If you&apos;re interested on what specs I use on a daily basis then{" "}
         <LinkTag href="/specs">Click here</LinkTag>.
       </Text>
-      <Text>
+      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         View the collection of articles that I&apos;ve found interesting{" "}
         <LinkTag href="/articles">over here</LinkTag>.
       </Text>
       <Text>
+        <Text>
+          View some random pictures I&apos;ve taken{" "}
+          <LinkTag href="https://pics.notnick.io" target="_blank">
+            here
+          </LinkTag>
+          .
+        </Text>
         Connect with me on my <LinkTag href="/socials">socials</LinkTag>.
       </Text>
     </section>
