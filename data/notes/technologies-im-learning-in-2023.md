@@ -4,7 +4,7 @@ date: "2023-01-05"
 description: "The list of technologies that I'm going to be learning throughout this year."
 finished: true
 tag: "Technology"
-mins: "5"
+mins: "2"
 last_updated_date: "2023-01-05"
 ---
 
