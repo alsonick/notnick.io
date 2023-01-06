@@ -22,7 +22,9 @@ export const Card = ({ type, post }: Props) => {
       >
         {post.title}
       </Link>
-      <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>{post.description}</Text>
+      <div className="max-w-lg">
+        <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>{post.description}</Text>
+      </div>
       <div className="flex items-center">
         <Date date={post.date} />
         <Text>&nbsp;&bull; {post.mins} min read &bull;&nbsp; </Text>
