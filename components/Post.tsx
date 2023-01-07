@@ -12,6 +12,7 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Link from "next/link";
+import { Label } from "./Label";
 
 interface Props {
   type: "notes" | "blogs";
@@ -58,6 +59,20 @@ export const Post = ({ type, post }: Props) => {
           </i>
         </div>
         <Tag title={post.tag} />
+        <div className="my-4 border-b border-teal-100 dark:border-teal-900">
+          <Label text="Description" />
+          <div className="text-gray-600 dark:text-gray-300 duration-300 mb-4 dark:bg-gray-800 p-3 bg-gray-100 rounded-lg">
+            {post.description}
+          </div>
+          {process.env.NODE_ENV === "development" ? (
+            <>
+              <Label text="Status" />
+              <div className="text-gray-600 dark:text-gray-300 duration-300 mb-8 dark:bg-gray-800 p-3 bg-gray-100 rounded-lg">
+                {post.finished ? "Complete" : "Not Complete"}
+              </div>
+            </>
+          ) : null}
+        </div>
         {Boolean(post.contentHtml) && post.finished ? (
           <article
             className="
@@ -94,7 +109,7 @@ const ProgressNotice = () => {
       <Notice>
         In progress...
         <br />
-        Come back and check again later.
+        Come back and check <br />again later.
       </Notice>
     </div>
   );
