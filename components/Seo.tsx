@@ -31,9 +31,7 @@ export const Seo = ({ description, title }: Props) => {
 
   const validPostPath = () => {
     const pathname = router.pathname;
-
     if (pathname.includes("notes") || pathname.includes("blogs")) {
-      console.log("includes note or blog");
       setValidPostPathState(true);
       return;
     }
@@ -44,7 +42,7 @@ export const Seo = ({ description, title }: Props) => {
   useEffect(() => {
     validPostPath();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router]);
 
   return (
     <>
