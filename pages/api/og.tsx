@@ -28,7 +28,7 @@ export default async function handler(req: NextRequest) {
     console.log(description);
 
     const fontData = await font;
-    // px - 15;
+
     return new ImageResponse(
       (
         <div tw="flex w-full items-center bg-black py-30 text-white text-2xl h-full">

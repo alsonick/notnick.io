@@ -4,15 +4,17 @@ import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
+import { useEffect } from "react";
 import { Notice } from "./Notice";
+import { Label } from "./Label";
 import { Date } from "./Date";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
 import { Tag } from "./Tag";
 
 // Next.js
+import { useRouter } from "next/router";
 import Link from "next/link";
-import { Label } from "./Label";
 
 interface Props {
   type: "notes" | "blogs";
@@ -20,6 +22,15 @@ interface Props {
 }
 
 export const Post = ({ type, post }: Props) => {
+  const { push, query } = useRouter();
+
+  useEffect(() => {
+    push({ query: { ...query, description: post.description } }, undefined, {
+      shallow: true,
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Seo
@@ -110,7 +121,8 @@ const ProgressNotice = () => {
       <Notice>
         In progress...
         <br />
-        Come back and check <br />again later.
+        Come back and check <br />
+        again later.
       </Notice>
     </div>
   );
