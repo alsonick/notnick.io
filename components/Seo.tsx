@@ -65,8 +65,8 @@ export const Seo = ({ description, title }: Props) => {
           {validPostPathState ? (
             <>
               <meta property="twitter:card" content="summary_large_image" />
-              <meta property="twitter:image" content={dynamicTitle(title)} />
-              <meta property="og:image" content={dynamicTitle(title)} />
+              <meta property="twitter:image" content={dynamicTitle(title, description)} />
+              <meta property="og:image" content={dynamicTitle(title, description)} />
             </>
           ) : (
             <>
