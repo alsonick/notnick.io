@@ -1,6 +1,6 @@
 import { dynamicTitle } from "../lib/dynamic-title";
 import { fireworks } from "../lib/fireworks";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // Next.js
 import { useRouter } from "next/router";
@@ -13,11 +13,8 @@ interface Props {
 }
 
 export const Seo = ({ description, title }: Props) => {
-  const [validPostPathState, setValidPostPathState] = useState<boolean>(false);
-
-  const date = new Date();
-
   const router = useRouter();
+  const date = new Date();
 
   if (typeof window === "object") {
     if (
@@ -28,21 +25,6 @@ export const Seo = ({ description, title }: Props) => {
       fireworks();
     }
   }
-
-  const validPostPath = () => {
-    const pathname = router.pathname;
-    if (pathname.includes("notes") || pathname.includes("blogs")) {
-      setValidPostPathState(true);
-      return;
-    }
-
-    setValidPostPathState(false);
-  };
-
-  useEffect(() => {
-    validPostPath();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router]);
 
   return (
     <>
@@ -62,11 +44,18 @@ export const Seo = ({ description, title }: Props) => {
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <>
-          {validPostPathState ? (
+          {router.pathname.includes("notes") ||
+          router.pathname.includes("blogs") ? (
             <>
               <meta property="twitter:card" content="summary_large_image" />
-              <meta property="twitter:image" content={dynamicTitle(title, description)} />
-              <meta property="og:image" content={dynamicTitle(title, description)} />
+              <meta
+                property="twitter:image"
+                content={dynamicTitle(title, description)}
+              />
+              <meta
+                property="og:image"
+                content={dynamicTitle(title, description)}
+              />
             </>
           ) : (
             <>

@@ -7,5 +7,7 @@ export const dynamicTitle = (title: string, description: string) => {
     ? `https://notnick.io/api/og?title=${removeTitle(
         title
       )}&description=${description}`
-    : `http://localhost:3000/api/og?title=${removeTitle(title)}`;
+    : `http://localhost:3000/api/og?title=${removeTitle(
+        title
+      )}&description=${description}`;
 };
