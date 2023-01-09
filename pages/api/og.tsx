@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
-import { Tag } from "../../components/Tag";
+
 export const config = {
   runtime: "edge",
 };
 
+// https://github.com/vercel/next.js/discussions/44719
 const font = fetch(
-  new URL("../../assets/Inter-Bold.ttf", import.meta.url)
+  new URL("../../assets/Inter-Bold.ttf", import.meta.url).toString()
 ).then((res) => res.arrayBuffer());
 
 export default async function handler(req: NextRequest) {
