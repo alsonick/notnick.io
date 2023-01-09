@@ -30,7 +30,7 @@ export const Post = ({ type, post }: Props) => {
         <h1 className="font-bold text-4xl mt-6 dark:text-white">
           {post.title}
         </h1>
-        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-2 justify-between text-sm">
+        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
           <div className="flex items-center">
             <Avatar width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
@@ -52,12 +52,7 @@ export const Post = ({ type, post }: Props) => {
             ) : null}
           </div>
         </div>
-        <div className="text-sm mb-6">
-          <i className="flex">
-            <Text>Last Updated:&nbsp;</Text>
-            <Date date={post.last_updated_date} />
-          </i>
-        </div>
+
         <Tag title={post.tag} />
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
@@ -73,7 +68,7 @@ export const Post = ({ type, post }: Props) => {
             </>
           ) : null}
         </div>
-        {Boolean(post.contentHtml) && post.finished ? (
+        {Boolean(post.contentHtml) || post.finished ? (
           <article
             className="
             prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
@@ -85,7 +80,7 @@ export const Post = ({ type, post }: Props) => {
         ) : (
           <ProgressNotice />
         )}
-        <div className="pt-8 mt-8 border-t border-teal-100 dark:border-teal-900">
+        <div className="pt-8 mt-8 flex items-center justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
             className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
             target="_blank"
@@ -93,6 +88,12 @@ export const Post = ({ type, post }: Props) => {
           >
             Edit this page on GitHub <FiExternalLink className="ml-2" />
           </Link>
+          <div className="text-sm">
+            <span className="flex">
+              <Text>Last Updated:&nbsp;</Text>
+              <Date date={post.last_updated_date} />
+            </span>
+          </div>
         </div>
         <LinkTag href={`/${type}`} style={{ marginTop: "2rem" }}>
           <FiArrowLeft className="text-lg mr-1" /> Go back to{" "}
