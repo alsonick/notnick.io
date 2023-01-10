@@ -10,14 +10,18 @@ export const Talk = ({ title, link, type, authors }: T) => {
   const url = `https://www.youtube.com/embed/${link.id}`;
 
   return (
-    <div className="flex flex-col w-full border-b mb-5 dark:border-teal-900 pb-4">
+    <div className="flex flex-col w-full border-b mb-5  dark:border-teal-900 pb-4">
       <Tag title={type} />
-      <Link target="_blank" href={url}>
+      <Link
+        className="focus:ring-4 mt-2 ring-[#f54bff] outline-none duration-300"
+        target="_blank"
+        href={url}
+      >
         <Heading style={{ marginBottom: 0 }}>{title}</Heading>
       </Link>
       <div className="my-3">
         <iframe
-          className="rounded-lg  border border-teal-100 dark:border-teal-900"
+          className="rounded-lg border border-teal-100 dark:border-teal-900"
           width="100%"
           height="330"
           src={url}

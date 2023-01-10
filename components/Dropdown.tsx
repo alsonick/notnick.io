@@ -14,13 +14,13 @@ interface Item {
 interface Props {
   items: Item[];
 }
-
+//focus:ring-4 ring-[#f54bff] outline-none duration-300
 export const Dropdown = ({ items }: Props) => {
   return (
     <div className="flex relative items-center justify-center">
       <Menu>
-        <Menu.Button>
-          <FiMenu className="text-xl text-gray-600  dark:text-gray-300 cursor-pointer hover:text-black dark:hover:text-white duration-300" />
+        <Menu.Button className="focus:ring-4 ring-[#f54bff] outline-none duration-300">
+          <FiMenu className="text-xl text-gray-600 dark:text-gray-300 cursor-pointer hover:text-black dark:hover:text-white duration-300" />
         </Menu.Button>
         <Menu.Items>
           <div className="flex flex-col absolute top-8 w-36 text-sm justify-between left-0 py-2  rounded-lg bg-white border border-teal-100 dark:bg-[#10161a]/100 dark:border-teal-900">

@@ -11,11 +11,8 @@ interface Props {
 
 export const PostsCard = ({ type, post }: Props) => {
   return (
-    <Link key={post.slug} href={`${type}/${post.slug}`}>
-      <Card
-      type={type}
-        post={post}
-      />
-    </Link>
+    <div>
+      <Card type={type} post={post} />
+    </div>
   );
 };

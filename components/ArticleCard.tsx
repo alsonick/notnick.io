@@ -13,7 +13,12 @@ interface Props {
 
 export const ArticleCard = ({ title, link, type, authors }: Props) => {
   return (
-    <Link href={link} target="_blank" title={link}>
+    <Link
+      className="focus:ring-4 ring-[#f54bff] p-2 outline-none duration-300"
+      href={link}
+      target="_blank"
+      title={link}
+    >
       <div
         className="flex flex-col justify-center w-full
          text-left hover:cursor-pointer mb-7 lg:mb-3

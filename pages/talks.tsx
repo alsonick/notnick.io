@@ -21,7 +21,7 @@ const Talks: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={true}>
+          <Header singleItem={true} column={true}>
             <Heading style={{ marginBottom: 0 }}>Talks</Heading>
             <Text>A list of interesting talks I found on the internet.</Text>
           </Header>

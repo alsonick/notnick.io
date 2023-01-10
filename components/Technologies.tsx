@@ -12,22 +12,28 @@ export const Technologies = () => {
       <Heading>Technologies 💻</Heading>
       <ul className="block text-center list-disc mb-6">
         {technologies.map((tech) => (
-          <Link
-            key={tech.id}
-            href={tech.link}
-            title={tech.text}
-            rel="noreferrer"
-            target="_blank"
-          >
+          <div key={tech.id} className="mr-4 inline-block">
             <Tippy animation="fade" content={tech.desc}>
-              <li className="mr-4 cursor-pointer hover:translate-y-1 text-sm inline-block rounded-full mb-4 duration-300 font-semibold py-2 px-8 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-white">
+              <Link
+                href={tech.link}
+                className="cursor-pointer inline-block py-2 px-8 focus:ring-4 ring-[#f54bff] outline-none
+                  hover:translate-y-1 text-sm rounded-full mb-4 duration-300
+                  font-semibold  bg-gray-100 hover:bg-gray-200 dark:bg-gray-800
+                dark:hover:bg-gray-900 dark:text-white"
+                title={tech.text}
+                rel="noreferrer"
+                target="_blank"
+              >
                 {tech.text}
-              </li>
+              </Link>
             </Tippy>
-          </Link>
+          </div>
         ))}
       </ul>
-      <Note>I may use certain technologies more frequently than others on a daily basis.</Note>
+      <Note>
+        I may use certain technologies more frequently than others on a daily
+        basis.
+      </Note>
     </section>
   );
 };

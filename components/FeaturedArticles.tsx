@@ -41,9 +41,11 @@ export const FeaturedArticles = () => {
           />
         ))}
       </div>
-      <LinkT href="/articles">
-        View all articles <FiArrowRight className="text-lg ml-1" />
-      </LinkT>
+      <div className="p-2">
+        <LinkT href="/articles">
+          View all articles <FiArrowRight className="text-lg ml-1" />
+        </LinkT>
+      </div>
       <div className="ml-auto">
         <Button onClick={shuffleArticles}>Shuffle</Button>
       </div>

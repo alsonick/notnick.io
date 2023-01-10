@@ -30,7 +30,7 @@ export const Main = () => {
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
           <Link
-            className="w-fit focus:ring-2 ring-[#f54bff] rounded-lg outline-none font-semibold"
+            className="w-fit focus:ring-4 ring-[#f54bff] duration-300 outline-none font-semibold"
             target="_blank"
             href={`https://www.google.com/maps/place/${CITY}`}
           >

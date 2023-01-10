@@ -43,12 +43,15 @@ export const Post = ({ type, post }: Props) => {
               <Text>{post.mins} min read</Text>
             </div>
             {post.finished ? (
-              <Link
-                href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://notnick.io/${type}/${post.slug}`}
-                target="_blank"
-              >
-                <FiTwitter className="text-gray-600 dark:text-gray-300 cursor-pointer text-xl ml-2 hover:text-black hover:dark:text-white duration-300" />
-              </Link>
+              <div className="ml-2 outline-none flex">
+                <Link
+                  className="focus:ring-4 ring-[#f54bff] outline-none duration-300"
+                  href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://notnick.io/${type}/${post.slug}`}
+                  target="_blank"
+                >
+                  <FiTwitter className="text-gray-600 dark:text-gray-300 cursor-pointer text-xl hover:text-black hover:dark:text-white duration-300" />
+                </Link>
+              </div>
             ) : null}
           </div>
         </div>
@@ -74,7 +77,9 @@ export const Post = ({ type, post }: Props) => {
             prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
           dark:prose-code:text-white prose-img:rounded-xl prose-img:border
-          prose-img:border-teal-100 prose-img:dark:border-teal-900 prose-a:font-bold"
+          prose-img:border-teal-100 prose-img:dark:border-teal-900 prose-a:font-bold
+            prose-a:focus:ring-4 prose-a:ring-[#f54bff] prose-a:outline-none
+            prose-a:duration-300"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
         ) : (
@@ -82,7 +87,7 @@ export const Post = ({ type, post }: Props) => {
         )}
         <div className="pt-8 mt-8 flex items-center justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
-            className="text-sm flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
+            className="text-sm focus:ring-4 ring-[#f54bff] outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
             target="_blank"
             href={`https://github.com/alsonick/notnick.io/blob/main/data/${type}/${post.slug}.md`}
           >

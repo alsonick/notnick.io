@@ -12,7 +12,7 @@ export const LinkT = ({ href, style, target, children, onClick }: Props) => {
   return (
     <Link
       href={href || ""}
-      className="font-bold items-center inline-flex w-fit cursor-pointer text-[#f54bff] hover:underline"
+      className="font-bold focus:ring-4 outline-none ring-[#f54bff] items-center inline-flex w-fit duration-300 cursor-pointer text-[#f54bff] hover:underline"
       onClick={onClick}
       style={style}
       target={target}

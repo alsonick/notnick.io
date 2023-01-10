@@ -39,14 +39,6 @@ const Notes: NextPage<Props> = ({ notes }) => {
 
   const [selectedTag, setSelectedTag] = useState(tags[0].tag);
 
-//   for (let i = 0; i < notes.length; i++) {
-//     if (notes[i].finished) {
-//       if (notes[i].tag === tags[i].tag) {
-//         setSelectedTag(tags[i].tag);
-//       }
-//     }
-//   }
-
   const filteredNotesList = notes.filter((note) => note.tag === selectedTag);
 
   return (
