@@ -14,6 +14,7 @@ const font = fetch(
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
+    
     const hasDescription = searchParams.has("description");
     const hasTitle = searchParams.has("title");
 
