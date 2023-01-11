@@ -20,7 +20,8 @@ export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
         <Listbox.Button
           className="flex p-3 font-semibold items-center text-sm justify-between 
         dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100
-        dark:bg-black dark:border-teal-900 focus:ring-4 ring-[#f54bff] outline-none duration-300"
+        dark:bg-black dark:border-teal-900 focus:ring-4 ring-[#f54bff] outline-none duration-300
+        focus:ring-offset-2 dark:ring-offset-black"
         >
           {selectedItem} <FiChevronDown />
         </Listbox.Button>

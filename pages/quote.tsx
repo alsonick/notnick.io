@@ -38,7 +38,7 @@ const Quote: NextPage<Quote> = () => {
               <div className="flex flex-col">
                 <Seo title={quote.content} description={quote.author} />
                 <Header column={true} singleItem={false}>
-                  <Tag title={quote.tags[0]} />
+                  <Tag title={!quote.tags[0] ? "No tag" : quote.tags[0]} />
                   <Heading
                     style={{
                       marginBottom: "0.5rem",

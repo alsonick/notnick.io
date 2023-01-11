@@ -17,7 +17,7 @@ export const Technologies = () => {
               <Link
                 href={tech.link}
                 className="cursor-pointer inline-block py-2 px-8 focus:ring-4 ring-[#f54bff] outline-none
-                  hover:translate-y-1 text-sm rounded-full mb-4 duration-300
+                  hover:translate-y-1 text-sm rounded-full mb-4 duration-300 focus:ring-offset-2 dark:ring-offset-black
                   font-semibold  bg-gray-100 hover:bg-gray-200 dark:bg-gray-800
                 dark:hover:bg-gray-900 dark:text-white"
                 title={tech.text}

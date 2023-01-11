@@ -19,7 +19,7 @@ export const Dropdown = ({ items }: Props) => {
   return (
     <div className="flex relative items-center justify-center">
       <Menu>
-        <Menu.Button className="focus:ring-4 ring-[#f54bff] outline-none duration-300">
+        <Menu.Button className="focus:ring-4 ring-[#f54bff] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300">
           <FiMenu className="text-xl text-gray-600 dark:text-gray-300 cursor-pointer hover:text-black dark:hover:text-white duration-300" />
         </Menu.Button>
         <Menu.Items>

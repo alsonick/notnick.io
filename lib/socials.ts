@@ -1,3 +1,5 @@
+import { DISCORD_ID } from "./constants";
+
 export const SOCIALS = [
   {
     id: 1,
@@ -39,12 +41,18 @@ export const SOCIALS = [
     id: 7,
     title: "Discord",
     username: "Nicholas#0050",
-    link: "",
+    link: `https://discord.com/users/${DISCORD_ID}`,
   },
   {
     id: 8,
     title: "Mastadon",
     username: "@alsonick@phpc.social",
     link: "https://phpc.social/@alsonick",
+  },
+  {
+    id: 9,
+    title: "TikTok",
+    username: "heynick010",
+    link: "https://www.tiktok.com/@heynick010",
   },
 ];

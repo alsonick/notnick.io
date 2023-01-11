@@ -128,7 +128,7 @@ export const NewsLetter = () => {
             {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
             <Tippy content={`${issues} Issues`}>
               <Link
-                className="hover:underline cursor-pointer focus:ring-4 ring-[#f54bff] outline-none duration-300"
+                className="hover:underline cursor-pointer focus:ring-4 ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black rounded"
                 href="https://www.getrevue.co/profile/heynickn"
                 rel="noreferrer"
                 target="_blank"

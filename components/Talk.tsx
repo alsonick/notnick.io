@@ -1,6 +1,6 @@
 import { Talk as T } from "../types/talk";
-import { Authors } from "./Authors";
 import { Heading } from "./Heading";
+import { Authors } from "./Authors";
 import { Tag } from "./Tag";
 
 // Next.js
@@ -13,7 +13,7 @@ export const Talk = ({ title, link, type, authors }: T) => {
     <div className="flex flex-col w-full border-b mb-5  dark:border-teal-900 pb-4">
       <Tag title={type} />
       <Link
-        className="focus:ring-4 mt-2 ring-[#f54bff] outline-none duration-300"
+        className="focus:ring-4 my-4 ring-[#f54bff] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300"
         target="_blank"
         href={url}
       >

@@ -49,7 +49,7 @@ const LinkTag = ({
 }) => {
   return (
     <Link
-      className={`mr-8 text-gray-600 focus:ring-4 ring-[#f54bff] outline-none dark:text-gray-300 text-sm duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded-lg ${className}`}
+      className={`mr-8 text-gray-600 focus:ring-offset-2 dark:ring-offset-black focus:ring-4 ring-[#f54bff] outline-none dark:text-gray-300 text-sm duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 p-2 rounded-lg ${className}`}
       href={to}
     >
       {children}

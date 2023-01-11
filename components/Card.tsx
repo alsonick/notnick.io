@@ -16,7 +16,7 @@ export const Card = ({ type, post }: Props) => {
   return (
     <Link
       href={`/${type}/${post.slug}`}
-      className="flex flex-col w-full mb-10 focus:ring-4 ring-[#f54bff] outline-none duration-300 p-2 border-b pb-4 border-teal-100 dark:border-teal-900 "
+      className="flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black mb-10 focus:ring-4 rounded ring-[#f54bff] outline-none duration-300 p-2 border-b pb-4 border-teal-100 dark:border-teal-900 "
     >
       <Tag title={post.tag} />
       <h1 className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">

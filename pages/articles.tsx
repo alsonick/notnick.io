@@ -12,7 +12,7 @@ import { Tag } from "../components/Tag";
 // Next.js
 import { NextPage } from "next";
 import Link from "next/link";
-
+//focus:ring-4 ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black
 const Articles: NextPage = () => {
   return (
     <>
@@ -20,6 +20,7 @@ const Articles: NextPage = () => {
         title="Articles - Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
+
       <Layout>
         <Animate>
           <Header singleItem={true} column={true}>
@@ -28,20 +29,20 @@ const Articles: NextPage = () => {
           </Header>
           <div className="flex flex-col mb-4">
             {ARTICLES.map((article) => (
-              <div
+              <Link
+                href={article.link}
                 className="border-b border-teal-100 dark:border-teal-900
-              hover:no-underline py-4 w-full"
+              hover:no-underline my-4 w-full pb-4 focus:ring-4 rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
                 key={article.id}
+                target="_blank"
               >
                 <Tag title={article.type} />
-                <Link
+                <h1
                   className="text-3xl font-bold cursor-pointer underline
                   dark:text-white hover:no-underline"
-                  href={article.link}
-                  target="_blank"
                 >
                   {article.title}
-                </Link>
+                </h1>
                 <div className="flex w-full">
                   {article.authors.length === 1 ? (
                     <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>
@@ -62,7 +63,7 @@ const Articles: NextPage = () => {
                     </>
                   )}
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <GoBack />

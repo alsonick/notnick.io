@@ -45,7 +45,7 @@ export const Post = ({ type, post }: Props) => {
             {post.finished ? (
               <div className="ml-2 outline-none flex">
                 <Link
-                  className="focus:ring-4 ring-[#f54bff] outline-none duration-300"
+                  className="focus:ring-4 ring-[#f54bff] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300"
                   href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://notnick.io/${type}/${post.slug}`}
                   target="_blank"
                 >
@@ -55,7 +55,6 @@ export const Post = ({ type, post }: Props) => {
             ) : null}
           </div>
         </div>
-
         <Tag title={post.tag} />
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
@@ -64,9 +63,9 @@ export const Post = ({ type, post }: Props) => {
           </div>
           {process.env.NODE_ENV === "development" ? (
             <>
-              <Label text="Status" />
+              <Label text="Complete" />
               <div className="text-gray-600 dark:text-gray-300 duration-300 mb-8 dark:bg-gray-800 p-3 bg-gray-100 rounded-lg">
-                {post.finished ? "Complete" : "Not Complete"}
+                {post.finished ? "✅" : "❌"}
               </div>
             </>
           ) : null}
@@ -78,8 +77,8 @@ export const Post = ({ type, post }: Props) => {
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
           dark:prose-code:text-white prose-img:rounded-xl prose-img:border
           prose-img:border-teal-100 prose-img:dark:border-teal-900 prose-a:font-bold
-            prose-a:focus:ring-4 prose-a:ring-[#f54bff] prose-a:outline-none
-            prose-a:duration-300"
+            focus:prose-a:ring-4 focus:prose-a:ring-[#f54bff] prose-a:outline-none
+            prose-a:duration-300 prose-a:rounded focus:prose-a:ring-offset-2 focus:prose-a:dark:ring-offset-black"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
         ) : (
@@ -87,7 +86,7 @@ export const Post = ({ type, post }: Props) => {
         )}
         <div className="pt-8 mt-8 flex items-center justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
-            className="text-sm focus:ring-4 ring-[#f54bff] outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
+            className="text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-[#f54bff] outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
             target="_blank"
             href={`https://github.com/alsonick/notnick.io/blob/main/data/${type}/${post.slug}.md`}
           >
