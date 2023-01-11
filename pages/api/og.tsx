@@ -26,8 +26,6 @@ export default async function handler(req: NextRequest) {
       ? searchParams.get("description")?.slice(0, 100)
       : "No description.";
 
-    console.log(description);
-
     const fontData = await font;
 
     return new ImageResponse(
