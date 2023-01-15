@@ -14,7 +14,6 @@ import { Text } from "./Text";
 import { Form } from "./Form";
 
 export const ContactForm = () => {
-
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");

@@ -4,9 +4,9 @@ import { LinkT } from "./Link";
 import { Tag } from "./Tag";
 
 interface Props {
+  active: boolean;
   title: string;
   desc: string;
-  active: boolean;
   site: string;
 }
 

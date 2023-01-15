@@ -1,6 +1,5 @@
 import { dynamicTitle } from "../lib/dynamic-title";
 import { fireworks } from "../lib/fireworks";
-import { useState } from "react";
 
 // Next.js
 import { useRouter } from "next/router";

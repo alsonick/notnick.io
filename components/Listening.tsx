@@ -3,6 +3,8 @@ import { useEffect, useState, useMemo } from "react";
 import { Presence } from "../types/lanyard";
 import { FaSpotify } from "react-icons/fa";
 import { Text } from "./Text";
+
+// Next.js
 import Link from "next/link";
 
 // Credit to Phineas for the lanyard implementation
@@ -13,21 +15,21 @@ type Props = {
 };
 
 enum Operation {
-  Event,
-  Hello,
   Initialize,
   Heartbeat,
+  Event,
+  Hello,
 }
 
 enum EventType {
-  INIT_STATE = "INIT_STATE",
   PRESENCE_UPDATE = "PRESENCE_UPDATE",
+  INIT_STATE = "INIT_STATE",
 }
 
 type SocketEvent = {
+  d: Presence | unknown;
   op: Operation;
   t?: EventType;
-  d: Presence | unknown;
 };
 
 const logLanyardEvent = (eventName: string, data: any) => {

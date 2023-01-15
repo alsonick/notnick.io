@@ -1,11 +1,14 @@
 import { Heading } from "./Heading";
+import { Header } from "./Header";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
 
 export const License = () => {
   return (
     <section className="flex flex-col border-t border-teal-100 dark:border-teal-900 pt-5 mb-12">
-      <Heading>License 📜</Heading>
+      <Header singleItem={false}>
+        <Heading>License 📜</Heading>
+      </Header>
       <Text>
         Anyone is free to take inspiration from this site as long as you make
         some changes to your version and give credit to the ordinal creator.

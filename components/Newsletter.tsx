@@ -8,7 +8,7 @@ import Tippy from "@tippyjs/react";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Input } from "./Input";
-import { Error } from "./Error";    
+import { Error } from "./Error";
 import { Text } from "./Text";
 import { Form } from "./Form";
 
@@ -26,9 +26,9 @@ export const NewsLetter = () => {
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setLoading(true);
-    setErrorMessage("");
     setSuccessMessage("");
+    setErrorMessage("");
+    setLoading(true);
 
     try {
       const response = await fetch("/api/newsletter", {

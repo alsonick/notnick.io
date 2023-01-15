@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+
 
 export const Button = (
-  props: DetailedHTMLProps<
-    ButtonHTMLAttributes<HTMLButtonElement>,
+  props: React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   >
 ) => {
