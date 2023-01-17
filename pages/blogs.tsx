@@ -29,7 +29,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
   });
 
   const [selectedTag, setSelectedTag] = useState(tags[0].tag);
-  
+
   const filteredBlogsList = blogs.filter((blog) => blog.tag === selectedTag);
 
   return (
