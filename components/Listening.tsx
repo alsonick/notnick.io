@@ -15,10 +15,10 @@ type Props = {
 };
 
 enum Operation {
-  Initialize,
-  Heartbeat,
   Event,
   Hello,
+  Initialize,
+  Heartbeat,
 }
 
 enum EventType {
@@ -91,6 +91,8 @@ export const Listening: React.FC<Props> = (
     setActive(doing?.listening_to_spotify || currentActivity);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doing, currentActivity]);
+
+  console.log(doing);
 
   if (!doing || !doing.discord_status)
     return (
