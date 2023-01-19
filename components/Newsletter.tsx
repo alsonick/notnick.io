@@ -14,6 +14,7 @@ import { Form } from "./Form";
 
 // Next.js
 import Link from "next/link";
+import { Note } from "./Note";
 
 export const NewsLetter = () => {
   const [successMessage, setSuccessMessage] = useState<string>("");
@@ -155,6 +156,12 @@ export const NewsLetter = () => {
           {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}
         </div>
       </Form>
+      <div className="mt-6">
+        <Note>
+          Revue has shut down so you won&apos;t be able to subscribe. I&apos;ll
+          make sure to find another newsletter alternative in the meantime. 👍{" "}
+        </Note>
+      </div>
     </section>
   );
 };
