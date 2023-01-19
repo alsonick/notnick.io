@@ -11,10 +11,10 @@ import { Input } from "./Input";
 import { Error } from "./Error";
 import { Text } from "./Text";
 import { Form } from "./Form";
+import { Note } from "./Note";
 
 // Next.js
 import Link from "next/link";
-import { Note } from "./Note";
 
 export const NewsLetter = () => {
   const [successMessage, setSuccessMessage] = useState<string>("");
