@@ -61,12 +61,11 @@ export const NewsLetter = () => {
       }
 
       setLoading(false);
-
-      setErrorMessage("Something went wrong.");
+      setErrorMessage("Revue is not in operation.");
     } catch (e) {
-      setLoading(false);
-
-      setErrorMessage("Something went wrong.");
+        setLoading(false);
+        
+      setErrorMessage("Revue is not in operation.");
     }
   };
 

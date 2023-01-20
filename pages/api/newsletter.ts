@@ -21,7 +21,9 @@ export default async function handler(
       "public, s-maxage=1200, stale-while-revalidate=600"
     );
 
-    return res.status(200).send({ success: true, count: data.length });
+    return res
+      .status(200)
+      .send({ success: false, error: "Revue is not in operation." });
   }
 
   if (req.method === "GET" && req.query.data === "issues") {
@@ -73,7 +75,9 @@ export default async function handler(
         .send({ success: false, error: data.error.email[0] });
     }
 
-    return res.status(201).send({ success: true });
+    return res
+      .status(201)
+      .send({ success: false, error: "Revue is not in operation." });
   }
 
   return res
