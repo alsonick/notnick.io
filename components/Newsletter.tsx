@@ -63,8 +63,8 @@ export const NewsLetter = () => {
       setLoading(false);
       setErrorMessage("Revue is not in operation.");
     } catch (e) {
-        setLoading(false);
-        
+      setLoading(false);
+
       setErrorMessage("Revue is not in operation.");
     }
   };

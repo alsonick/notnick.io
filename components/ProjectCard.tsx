@@ -1,28 +1,33 @@
-import { FiGithub } from "react-icons/fi";
+import { DiGithubBadge } from "react-icons/di";
 import { Text } from "./Text";
 import { LinkT } from "./Link";
-import { Tag } from "./Tag";
+import Link from "next/link";
 
 interface Props {
   active: boolean;
+  githubLink: string;
   title: string;
   desc: string;
-  site: string;
+  oss: boolean;
+  site?: string;
 }
 
-export const ProjectCard = ({ title, desc, active, site }: Props) => {
+// TODO: clean this up
+
+export const ProjectCard = ({ title, desc, githubLink, oss, site }: Props) => {
   return (
-    <div className="flex items-center mb-8 justify-between rounded w-full">
+    <div className="flex items-center mb-8 justify-between dark:bg-gray-800 bg-gray-100 rounded-lg p-5 w-full">
       <div>
-        <Tag title={active ? "Active" : "Not active"} />
         <h1 className="text-3xl text-black dark:text-white font-bold leading-tight">
           {title}
         </h1>
         <div className="max-w-sm">
           <Text>{desc}</Text>
-          <div>
-            <FiGithub className="text-gray-600 dark:text-gray-300 mt-2 text-2xl cursor-pointer" />
-          </div>
+          {oss && (
+            <Link href={githubLink} target="_blank">
+              <DiGithubBadge className="text-gray-600 dark:text-gray-300 mt-2 text-3xl cursor-pointer" />
+            </Link>
+          )}
         </div>
       </div>
       {site ? <LinkT>Visit</LinkT> : null}

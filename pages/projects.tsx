@@ -5,7 +5,9 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Button } from "../components/Button";
+import { LinkT } from "../components/Link";
 import { PROJECTS } from "../lib/projects";
+import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
 // Next.js
@@ -27,21 +29,28 @@ const Projects: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={true}>
+          <Header singleItem={true} column={true}>
             <Heading style={{ marginBottom: 0 }}>Projects</Heading>
+            <Text style={{ marginTop: "15px" }}>
+              Here&apos;s a showcase of my projects & startups I&apos;ve worked
+              for, you can always view my <LinkT href="s">GitHub</LinkT> page to
+              view more of my projects.
+            </Text>
           </Header>
-          {/* <div className="my-4">
+          <div className="my-4">
             {PROJECTS.map((project) => (
               <ProjectCard
-                key={project.id}
+                githubLink={project.githubLink}
+                active={project.active}
                 title={project.name}
                 desc={project.desc}
-                active={project.active}
                 site={project.site}
+                oss={project.oss}
+                key={project.id}
               />
             ))}
-          </div> */}
-          {/* <Button onClick={() => shuffleArray(PROJECTS)}>Shuffle</Button> */}
+            <Button onClick={() => {}}>Shuffle</Button>
+          </div>
           <GoBack />
         </Animate>
       </Layout>
