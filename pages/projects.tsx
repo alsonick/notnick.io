@@ -1,25 +1,40 @@
-import { ProjectCard } from "../components/ProjectCard";
+import { ProjectCardWrapper } from "../components/ProjectCardWrapper";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Button } from "../components/Button";
+import { Label } from "../components/Label";
+import { Input } from "../components/Input";
 import { LinkT } from "../components/Link";
 import { PROJECTS } from "../lib/projects";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { useState } from "react";
 
 // Next.js
 import { NextPage } from "next";
 
 const Projects: NextPage = () => {
-  const shuffleArray = (array: any[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
+    const [projectInput, setProjectInput] = useState("");
+  const [projects, setProjects] = useState(PROJECTS);
+
+  const shuffleProjects = () => {
+    let s = [];
+    const shuffled = PROJECTS.map((project) => ({
+      project,
+      sort: Math.random(),
+    }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ project }) => project);
+    s.push(shuffled);
+    setProjects(s[0]);
   };
+
+  const filteredProjectArray = projects.filter((project) =>
+    project.name.includes(projectInput)
+  );
 
   return (
     <>
@@ -33,23 +48,85 @@ const Projects: NextPage = () => {
             <Heading style={{ marginBottom: 0 }}>Projects</Heading>
             <Text style={{ marginTop: "15px" }}>
               Here&apos;s a showcase of my projects & startups I&apos;ve worked
-              for, you can always view my <LinkT href="s">GitHub</LinkT> page to
-              view more of my projects.
+              for, you can always view my{" "}
+              <LinkT href="https://github.com/alsonick" target="_blank">
+                GitHub
+              </LinkT>{" "}
+              page to view more of my projects.
             </Text>
           </Header>
-          <div className="my-4">
-            {PROJECTS.map((project) => (
-              <ProjectCard
-                githubLink={project.githubLink}
-                active={project.active}
-                title={project.name}
-                desc={project.desc}
-                site={project.site}
-                oss={project.oss}
-                key={project.id}
+          <div style={{ marginBottom: "15px" }}>
+            <Button onClick={shuffleProjects}>Shuffle</Button>
+          </div>
+          <div className="flex items-center justify-between w-full">
+            <div className="w-full">
+              <div className="mb-1">
+                <Label text="Title" />
+              </div>
+              <Input
+                placeholder="Search for a project..."
+                style={{ width: "100%" }}
+                value={projectInput}
+                onChange={(e) => setProjectInput(e.target.value)}
+                type="text"
               />
-            ))}
-            <Button onClick={() => {}}>Shuffle</Button>
+            </div>
+          </div>
+          <div className="my-4">
+            <>
+              {filteredProjectArray.length && projectInput ? (
+                <>
+                  {filteredProjectArray.map((project) => (
+                    <ProjectCardWrapper
+                      github={project.github}
+                      active={project.active}
+                      name={project.name}
+                      desc={project.desc}
+                      site={project.site}
+                      oss={project.oss}
+                      key={project.id}
+                      id={project.id}
+                    />
+                  ))}
+                </>
+              ) : (
+                <>
+                  <>
+                    {!projectInput ? (
+                      <div>
+                        {projects.map((project) => (
+                          <ProjectCardWrapper
+                            github={project.github}
+                            active={project.active}
+                            name={project.name}
+                            desc={project.desc}
+                            site={project.site}
+                            oss={project.oss}
+                            key={project.id}
+                            id={project.id}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <h2 className="text-xl font-semibold opacity-30 dark:text-white text-center my-24">
+                        No projects with the title{" "}
+                        {`"${projectInput
+                          .trim()
+                          .split("", 15)
+                          .reduce(
+                            (o, c) =>
+                              o.length === 14 ? `${o}${c}...` : `${o}${c}`,
+                            ""
+                          )}"`}{" "}
+                        was found.
+                        <br />
+                        Try a different search with a different title.
+                      </h2>
+                    )}
+                  </>
+                </>
+              )}
+            </>
           </div>
           <GoBack />
         </Animate>

@@ -12,7 +12,7 @@ import { Tag } from "../components/Tag";
 // Next.js
 import { NextPage } from "next";
 import Link from "next/link";
-//focus:ring-4 ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black
+
 const Articles: NextPage = () => {
   return (
     <>
