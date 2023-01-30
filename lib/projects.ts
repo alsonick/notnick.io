@@ -8,6 +8,15 @@ export const PROJECTS = [
     oss: true,
     site: "https://notnick.io/",
   },
+//   {
+//     id: 2,
+//     name: "Aviato",
+//     desc: "",
+//     active: true,
+//     github: "",
+//     oss: false,
+//     site: "https://www.joinaviato.com/",
+//   },
   {
     id: 2,
     name: "blog-tags-generator",
