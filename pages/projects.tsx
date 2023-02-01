@@ -17,20 +17,8 @@ import { useState } from "react";
 import { NextPage } from "next";
 
 const Projects: NextPage = () => {
-    const [projectInput, setProjectInput] = useState("");
+  const [projectInput, setProjectInput] = useState("");
   const [projects, setProjects] = useState(PROJECTS);
-
-  const shuffleProjects = () => {
-    let s = [];
-    const shuffled = PROJECTS.map((project) => ({
-      project,
-      sort: Math.random(),
-    }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ project }) => project);
-    s.push(shuffled);
-    setProjects(s[0]);
-  };
 
   const filteredProjectArray = projects.filter((project) =>
     project.name.includes(projectInput)
@@ -55,9 +43,7 @@ const Projects: NextPage = () => {
               page to view more of my projects.
             </Text>
           </Header>
-          <div style={{ marginBottom: "15px" }}>
-            <Button onClick={shuffleProjects}>Shuffle</Button>
-          </div>
+
           <div className="flex items-center justify-between w-full">
             <div className="w-full">
               <div className="mb-1">
