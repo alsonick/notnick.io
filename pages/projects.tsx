@@ -21,7 +21,7 @@ const Projects: NextPage = () => {
   const [projects, setProjects] = useState(PROJECTS);
 
   const filteredProjectArray = projects.filter((project) =>
-    project.name.includes(projectInput)
+    project.name.toLowerCase().includes(projectInput.toLowerCase())
   );
 
   return (
