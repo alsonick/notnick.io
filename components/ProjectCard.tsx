@@ -39,7 +39,11 @@ export const ProjectCard = ({ title, desc, githubLink, oss, site }: Props) => {
           )}
         </div>
       </div>
-      {site ? <LinkT>Visit</LinkT> : null}
+      {site ? (
+        <LinkT href={site} target="_blank">
+          Visit
+        </LinkT>
+      ) : null}
     </div>
   );
 };
