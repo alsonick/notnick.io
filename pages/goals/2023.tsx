@@ -37,7 +37,7 @@ const TZTT = () => {
         <Item completed={false}>Get my driving license.</Item>
         <Item completed={false}>Learn and get more into networking.</Item>
         <Item completed={false}>Meet more like-minded people.</Item>
-        <Item completed={false}>Hit the gym more consistently.</Item>
+        <Item completed={true}>Hit the gym more consistently.</Item>
         <Item completed={false}>
           Make at least 3000 contributions on GitHub.
         </Item>
