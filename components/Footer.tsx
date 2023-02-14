@@ -1,5 +1,19 @@
 import Link from "next/link";
 
+const FooterLink = ({
+  children,
+  link,
+}: {
+  children: React.ReactNode;
+  link: string;
+}) => {
+  return (
+    <Link className="hover:underline" href={link} target="_blank">
+      <b>{children}</b>
+    </Link>
+  );
+};
+
 export const Footer = () => {
   return (
     <footer className="flex items-center justify-between pb-12 border-t mt-6 border-teal-100 dark:border-teal-900 pt-10">
@@ -9,6 +23,11 @@ export const Footer = () => {
         </h2>
         <p className="text-gray-500 opacity-50 text-xs">
           &copy; {new Date().getFullYear()} | All rights reserved
+        </p>
+        <p className="text-gray-500 opacity-50 text-xs">
+          Made with <FooterLink link="https://nextjs.org/">Next.js</FooterLink>,{" "}
+          <FooterLink link="https://tailwindcss.com/">Tailwind</FooterLink> &
+          <FooterLink link="https://vercel.com/"> Vercel</FooterLink>.
         </p>
       </div>
 
