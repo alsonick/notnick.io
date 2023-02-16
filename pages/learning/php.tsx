@@ -2,10 +2,10 @@ import { Heading } from "../../components/Heading";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { Toggle } from "../../components/Toggle";
+import { TOPICS } from "../../lib/learning/php";
 import { LinkT } from "../../components/Link";
 import { Text } from "../../components/Text";
 import { Seo } from "../../components/Seo";
-import { TOPICS } from "./learning/php";
 
 const PHP = () => {
   return (
