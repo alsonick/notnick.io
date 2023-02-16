@@ -9,7 +9,7 @@ import { Seo } from "../../components/Seo";
 
 const PHP = () => {
   return (
-    <div className="p-20">
+    <div className="md:p-20 p-8 duration-300">
       <Seo title="PHP Learning" description="" />
       <Toggle />
       <Header singleItem={true} column={true}>
