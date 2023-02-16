@@ -98,4 +98,44 @@ export const TOPICS = [
     completed: true,
     link: "https://www.w3schools.com/php/php_variables_scope.asp",
   },
+  {
+    id: 7,
+    name: "echo and print Statements",
+    learned: [
+      {
+        id: 1,
+        text: "In PHP we can use either the `echo` or `print` statements to output text to the screen.",
+      },
+      {
+        id: 2,
+        text: "The `echo` statement has no return value while `print` has a return value of 1.",
+      },
+      {
+        id: 3,
+        text: "`echo` can take multiple parameters while `print` can only accept one argument.",
+      },
+      {
+        id: 4,
+        text: "You can use either the `echo` or `print` statements with or without parentheses.",
+      },
+    ],
+    completed: true,
+    link: "https://www.w3schools.com/php/php_echo_print.asp",
+  },
+  {
+    id: 8,
+    name: "Data Types",
+    learned: [
+      {
+        id: 1,
+        text: "PHP supports strings, integers, floats, booleans, arrays, objects, null, and resource.",
+      },
+      {
+        id: 2,
+        text: "The resource type is not an actual type. It's meant for storing references to functions.",
+      },
+    ],
+    completed: true,
+    link: "https://www.w3schools.com/php/php_datatypes.asp",
+  },
 ];
