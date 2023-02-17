@@ -138,4 +138,17 @@ export const TOPICS = [
     completed: true,
     link: "https://www.w3schools.com/php/php_datatypes.asp",
   },
+  {
+    id: 9,
+    name: "Strings",
+    learned: [
+      { id: 1, text: "Strings in PHP are just a sequence of characters." },
+      {
+        id: 2,
+        text: "Some common string methods are -> `strlen()`, `strrev()` and `str_replace()`.",
+      },
+    ],
+    completed: true,
+    link: "https://www.w3schools.com/php/php_string.asp",
+  },
 ];

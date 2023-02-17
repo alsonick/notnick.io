@@ -1,3 +1,4 @@
+import { OtherPageContainer } from "../../components/OtherPageContainer";
 import { Heading } from "../../components/Heading";
 import { Toggle } from "../../components/Toggle";
 import { LinkT } from "../../components/Link";
@@ -19,7 +20,7 @@ const Item = ({
 
 const TZTT = () => {
   return (
-    <div className="p-20">
+    <OtherPageContainer>
       <Seo title="Goals for 2023" description="" />
       <Toggle />
       <Heading>Goals for 2023</Heading>
@@ -53,7 +54,7 @@ const TZTT = () => {
         <Item completed={true}>Improve my sleep schedule.</Item>
         <Item completed={true}>Listen to more podcasts.</Item>
       </ul>
-    </div>
+    </OtherPageContainer>
   );
 };
 
