@@ -9,6 +9,7 @@ export const SPECS = [
       { id: 4, key: "OS", value: "Windows 11" },
       { id: 5, key: "Storage", value: "1TB SSD" },
     ],
+    sellingSoon: false,
   },
   {
     id: 2,
@@ -19,9 +20,21 @@ export const SPECS = [
       { id: 3, key: "Memory", value: "8GB" },
       { id: 4, key: "Storage", value: "256GB SSD" },
     ],
+    sellingSoon: true,
   },
   {
     id: 3,
+    title: 'M2 Pro MacBook Pro 16"',
+    list: [
+      { id: 1, key: "Display", value: "16-inch Liquid Retina XDR display" },
+      { id: 2, key: "Chip", value: "Apple M2 Pro Chip" },
+      { id: 3, key: "Memory", value: "16GB" },
+      { id: 4, key: "Storage", value: "512GB SSD" },
+    ],
+    sellingSoon: false,
+  },
+  {
+    id: 4,
     title: "Gear",
     list: [
       { id: 1, key: "Monitor", value: "Samsung UR55 4K IPS HDR10" },
