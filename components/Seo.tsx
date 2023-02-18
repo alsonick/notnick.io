@@ -1,4 +1,5 @@
 import { dynamicTitle } from "../lib/dynamic-title";
+import { seoKeywords } from "../lib/seo-keywords";
 import { fireworks } from "../lib/fireworks";
 
 // Next.js
@@ -37,6 +38,7 @@ export const Seo = ({ description, title }: Props) => {
         <meta name="twitter:description" content={description} />
         <meta property="twitter:creator" content="@heynickn" />
         <meta property="twitter:site" content="@nick" />
+        <meta name="keywords" content={seoKeywords} />
         <meta property="og:title" content={title} />
         <meta property="og:site_name" content="Nicholas Njoki" />
         <meta property="og:url" content="https://notnick.io/" />

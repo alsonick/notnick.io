@@ -1,0 +1,2 @@
+export const seoKeywords =
+  "nicholas, nicholas njoki, njoki, @heynickn, notnick.io, hi@notnick.io, alsonick_, nicholas dev, developer, aviato, heynickn twitter, nick dev, dev, nicholas github, pics.notnick.io, notnick.io website, blogs-tags-generator, ai, nick ai, bachmanity inc, open source, oss, nick open source, nicholas oss, nicholas open source, code, typescript, javascript, php, nicholas njoki resume, nick twitter";
