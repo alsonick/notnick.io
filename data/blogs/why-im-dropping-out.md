@@ -10,14 +10,24 @@ last_updated_date: "2023-02-08"
 
 ## Why I'm dropping out
 
-Last year I decided that I'd try out university and see If it was a fit for me, before I even joined university I wasn't too excited about it because deep down I always knew uni just wasn't for me, but I joined anyway to to really verify it for myself and to tell people that I gave it a show at least.
+I made the decision to give university a try last year, despite feeling somewhat disinterested from the outset. Deep down, I always suspected that it wasn't the right fit for me, but I enrolled anyway, both to verify my intuition and to be able to tell people that I had given it a fair chance.
 
 ### Starting university
 
-I joined university on september of last year (2022), I didn't really care which uni I went to but I chose the [University of Kent](https://www.kent.ac.uk/) because It was close to home. So fast forward to December and everything was going alright so far, I was doing well in my assignments, attending all my classes and overall just working hard.
-
-In December I also went back home for the christmas break and around that time is when I started to question If I really wanted to take this path of going to university. So fast forward to January and university opens again classes start, our schedule was a lot heavier compared to last term meaning that we'd have to spend a lot more time with class work and assignments.
+I enrolled at the University of Kent in September of last year (2022), not particularly caring where I went to university as long as it was close to home. For the first few months, everything was going well. I was working hard, attending all my classes, and doing well in my assignments. However, during the Christmas break, I began to question whether I truly wanted to pursue this path. By the time January rolled around and classes resumed, I realized that our schedule had become much more demanding, requiring us to devote significantly more time to class work and assignments than in the previous term.
 
 ### Going downhill
 
-I started the year with adapting good habits into my life, like waking up early, getting 8 hours of sleep, hitting the gym and eating healthy. When I joined university again I was able to be consistent with my good habits for about 3 weeks. After I stopped my good habits it dawned on me that university wasn't for me and I hated it so much, I hated how I was learning, going into a lecture to just sit there listening to lecturer read off the slides just isn't for me.
+At the beginning of the year, I made a concerted effort to adopt healthy habits such as waking up early, getting a full 8 hours of sleep, going to the gym regularly, and eating a nutritious diet. I was able to maintain my new routine for about three weeks after returning to university, but then I fell off the wagon. It was only then that I realized how much I detested being back at school, with its mind-numbing lectures where I simply sat and listened to the professor read off the slides. It became clear to me that university wasn't the right fit for me.
+
+### Life in university
+
+Although life at uni was tolerable, if I'm being truthful, I spent the majority of my time either in my room or in the library, honing my coding skills and taking on some freelance work to earn extra cash. This wasn't the norm for most university students, who preferred to spend their time partying and enjoying themselves. I don't fault them for that; let's face it, spending most of your time coding isn't exactly thrilling.
+
+The reason why I devote all of my time to work is because achieving my life goals is so important to me. Every day, I give it my all in pursuit of those goals. While some people might view me as a loner, I choose to ignore their opinions. After all, no one can truly understand the unique aspirations and desires of another person. I realize that when you do things that deviate from the social norm, people tend to judge you, but I don't let that discourage me from staying focused on my objectives.
+
+### Education continues
+
+The most common misconception about dropping out of university is that it means the end of one's learning journey. However, the reality is quite different. Many people drop out of university because they realize that it isn't the right path for their personal and professional development. While this may not be the case for certain fields that require a degree, the important thing is that people are able to pursue the path that best facilitates their learning. For some, a self-taught approach may be more effective than learning in a university setting.
+
+As one of my lecturers pointed out, companies aren't interested in degrees as much as they are interested in a candidate's skills and abilities. Obtaining a degree with minimal effort does not necessarily demonstrate one's capabilities. In many fields, it is possible to land top positions at major companies, including FAANG (Facebook, Amazon, Apple, Netflix, and Google), without a degree. There are numerous stories of individuals who have achieved career success in these companies and others without a formal education.
