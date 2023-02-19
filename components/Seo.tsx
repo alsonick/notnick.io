@@ -31,14 +31,9 @@ export const Seo = ({ description, title }: Props) => {
       <Head>
         <title>{title}</title>
         <meta name="theme-color" content="#f54bff" />
-        <meta name="description" content={description} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta
-          name="description"
-          content={description}
-          key="desc"
-        />
+        <meta name="description" content={description} key="desc" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="twitter:creator" content="@heynickn" />
