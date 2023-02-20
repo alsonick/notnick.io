@@ -10,19 +10,8 @@ export const About = () => {
       <Heading>About 💭</Heading>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
-        based in the UK, I mostly specialize in web development, mainly backend
-        development. I&apos;m currently studying{" "}
-        <LinkTag
-          href="https://en.wikipedia.org/wiki/Computer_science"
-          target="_blank"
-        >
-          Computer Science
-        </LinkTag>{" "}
-        at the{" "}
-        <LinkTag href="https://www.kent.ac.uk/" target="_blank">
-          University of Kent
-        </LinkTag>
-        .
+        based in the UK, I mostly specialize in web development, mainly frontend
+        development. .
       </Text>
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I use a variety of technologies to ease the development process, when

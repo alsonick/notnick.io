@@ -49,14 +49,7 @@ export const Main = () => {
           <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">
             {new Date().getFullYear() - 2003} y/o&nbsp;
             <TypeAnimation
-              sequence={[
-                "software engineer",
-                2000,
-                "entrepreneur",
-                2000,
-                "student",
-                2000,
-              ]}
+              sequence={["software engineer", 2000, "entrepreneur", 2000]}
               wrapper="p"
               cursor={true}
               repeat={Infinity}
