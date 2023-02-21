@@ -55,4 +55,10 @@ export const SOCIALS = [
     username: "heynick010",
     link: "https://www.tiktok.com/@heynick010",
   },
+  {
+    id: 10,
+    title: "Stackoverflow",
+    username: "",
+    link: "https://stackoverflow.com/users/17204801/nicholas",
+  },
 ];
