@@ -190,5 +190,7 @@ export const TOPICS = [
         text: "Constants are global across the entire script.",
       },
     ],
+    completed: true,
+    link: "https://www.w3schools.com/php/php_constants.asp",
   },
 ];
