@@ -151,4 +151,44 @@ export const TOPICS = [
     completed: true,
     link: "https://www.w3schools.com/php/php_string.asp",
   },
+  {
+    id: 10,
+    name: "Numbers",
+    learned: [
+      { id: 1, text: "Integers in PHP cannot contain decimal parts." },
+      { id: 2, text: "An integer can be either positive or negative." },
+    ],
+    completed: true,
+    link: "https://www.w3schools.com/php/php_numbers.asp",
+  },
+  {
+    id: 11,
+    name: "Math",
+    learned: [
+      {
+        id: 1,
+        text: "PHP offers a set math functions that allows your to perform mathematical tasks. Some commonly used functions are - `pi()`, `min()`, `max()`, `abs()` & `sqrt()`.",
+      },
+    ],
+    completed: true,
+    link: "https://www.w3schools.com/php/php_math.asp",
+  },
+  {
+    id: 12,
+    name: "Constants",
+    learned: [
+      {
+        id: 1,
+        text: "Constants are like variables except that once you assign it a value, they cannot be changed.",
+      },
+      {
+        id: 2,
+        text: "You don't need the $ sign before the constant name.",
+      },
+      {
+        id: 3,
+        text: "Constants are global across the entire script.",
+      },
+    ],
+  },
 ];
