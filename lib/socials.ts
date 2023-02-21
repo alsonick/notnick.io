@@ -58,7 +58,7 @@ export const SOCIALS = [
   {
     id: 10,
     title: "Stackoverflow",
-    username: "",
+    username: "user:17204801",
     link: "https://stackoverflow.com/users/17204801/nicholas",
   },
 ];
