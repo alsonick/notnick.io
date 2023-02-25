@@ -16,10 +16,6 @@ I made the decision to give university a try last year, despite feeling somewhat
 
 I enrolled at the University of Kent in September of last year (2022), not particularly caring where I went to university as long as it was close to home. For the first few months, everything was going well. I was working hard, attending all my classes, and doing well in my assignments. However, during the Christmas break, I began to question whether I truly wanted to pursue this path. By the time January rolled around and classes resumed, I realized that our schedule had become much more demanding, requiring us to devote significantly more time to class work and assignments than in the previous term.
 
-### Going downhill
-
-At the beginning of the year, I made a concerted effort to adopt healthy habits such as waking up early, getting a full 8 hours of sleep, going to the gym regularly, and eating a nutritious diet. I was able to maintain my new routine for about three weeks after returning to university, but then I fell off the wagon. It was only then that I realized how much I detested being back at school, with its mind-numbing lectures where I simply sat and listened to the professor read off the slides. It became clear to me that university wasn't the right fit for me.
-
 ### Life in university
 
 Although life at uni was tolerable, if I'm being truthful, I spent the majority of my time either in my room or in the library, honing my coding skills and taking on some freelance work to earn extra cash. This wasn't the norm for most university students, who preferred to spend their time partying and enjoying themselves. I don't fault them for that; let's face it, spending most of your time coding isn't exactly thrilling.
