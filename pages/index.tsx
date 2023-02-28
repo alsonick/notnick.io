@@ -1,6 +1,7 @@
 import { FeaturedArticles } from "../components/FeaturedArticles";
 import { Technologies } from "../components/Technologies";
 import { NewsLetter } from "../components/Newsletter";
+import { Community } from "../components/Community";
 import { Listening } from "../components/Listening";
 import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
           <Main />
           <About />
           <FeaturedArticles />
+          <Community />
           <Technologies />
           <NewsLetter />
           <Contact />
