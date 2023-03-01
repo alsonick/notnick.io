@@ -18,7 +18,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       website: "notnick.io",
       avatar: "https://notnick.io/pfp.png",
       domains: ["notnick.io", "pics.notnick.io"],
-      redirects: ["notnick.io/gh"],
+      redirects: ["notnick.io/gh", "notnick.io/community"],
       domain: {
         whois: {
           "registrar-info": {

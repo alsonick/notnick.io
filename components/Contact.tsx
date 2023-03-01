@@ -47,7 +47,7 @@ export const Contact = () => {
       </Text>
       <div className="flex flex-col justify-center border-t border-teal-100 dark:border-teal-900 mt-10 pt-5 w-full">
         <ContactForm />
-        <div className="mt-4">
+        <div className="mt-6">
           <Note>
             It&apos;s currently <span className="font-bold">{time}</span> for
             me, so I&apos;m probably{" "}

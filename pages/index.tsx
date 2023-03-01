@@ -1,5 +1,6 @@
 import { FeaturedArticles } from "../components/FeaturedArticles";
 import { Technologies } from "../components/Technologies";
+import { Experience } from "../components/Experience";
 import { NewsLetter } from "../components/Newsletter";
 import { Community } from "../components/Community";
 import { Listening } from "../components/Listening";
@@ -30,6 +31,7 @@ const Home: NextPage = () => {
           <About />
           <FeaturedArticles />
           <Community />
+          {/* <Experience /> */}
           <Technologies />
           <NewsLetter />
           <Contact />

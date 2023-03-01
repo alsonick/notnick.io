@@ -5,5 +5,5 @@ export const BLOGS_URL_PATH = "/blogs";
 export const NOTES_DIR = "data/notes";
 export const BLOGS_DIR = "data/blogs";
 export const CACHE_TOKEN = "nas-dsf";
-export const CITY = "Canterbury";
+export const CITY = "Brighton";
 export const COUNTRY = "UK";
