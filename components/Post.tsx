@@ -32,7 +32,7 @@ export const Post = ({ type, post }: Props) => {
         </h1>
         <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
           <div className="flex items-center">
-            <Avatar width={24} height={24} />
+            <Avatar border={true} width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
               Nicholas Njoki /&nbsp;
             </p>

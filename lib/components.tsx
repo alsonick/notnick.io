@@ -55,7 +55,7 @@ export const COMPONENTS = [
   {
     id: 7,
     text: "Avatar",
-    component: <Avatar width={50} height={50} />,
+    component: <Avatar border={true} width={50} height={50} />,
   },
   {
     id: 8,

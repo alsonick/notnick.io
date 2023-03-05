@@ -138,7 +138,7 @@ export const NewsLetter = () => {
               </Link>
             </Tippy>
             &bull;&nbsp;
-            <Avatar width={20} height={20} />
+            <Avatar border={true} width={20} height={20} />
           </div>
           {successMessage && (
             <div className="flex items-center">

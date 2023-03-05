@@ -64,7 +64,7 @@ export const Main = () => {
           ) : null}
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
-          <Avatar width={122} height={122} />
+          <Avatar border={true} width={122} height={122} />
         </div>
       </main>
     </>

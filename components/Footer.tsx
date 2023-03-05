@@ -1,3 +1,6 @@
+import { Avatar } from "./Avatar";
+
+// Next.js
 import Link from "next/link";
 
 const FooterLink = ({
@@ -29,8 +32,14 @@ export const Footer = () => {
           <FooterLink link="https://tailwindcss.com/">Tailwind</FooterLink> &
           <FooterLink link="https://vercel.com/"> Vercel</FooterLink>.
         </p>
+        <div className="flex items-center">
+          <p className="text-gray-500 opacity-50 text-xs mr-1 ">
+            Built with ❤️ by{" "}
+            <FooterLink link="https://github.com/alsonick">Nicholas</FooterLink>{" "}
+          </p>
+          <Avatar border={false} width={15} height={15} />
+        </div>
       </div>
-
       <Link
         className="github-button"
         href="https://github.com/alsonick/notnick.io"

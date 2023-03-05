@@ -1,23 +1,36 @@
 import Image from "next/image";
 
 interface Props {
+  border: boolean;
   height: number;
   width: number;
 }
 
-export const Avatar = ({ height, width }: Props) => {
+export const Avatar = ({ border, height, width }: Props) => {
   return (
-    <Border>
-      <Image
-        className="rounded-full bg-red"
-        title="My Memoji"
-        alt="My Memoji"
-        height={height}
-        src="/pfp.png"
-        width={width}
-        quality={99}
-      />
-    </Border>
+    <>
+      {border ? (
+        <Border>
+          <Img height={height} width={width} />
+        </Border>
+      ) : (
+        <Img height={height} width={width} />
+      )}
+    </>
+  );
+};
+
+const Img = ({ height, width }: { height: number; width: number }) => {
+  return (
+    <Image
+      className="rounded-full bg-red"
+      title="My Memoji"
+      src="/memoji.png"
+      height={height}
+      alt="My Memoji"
+      width={width}
+      quality={100}
+    />
   );
 };
 

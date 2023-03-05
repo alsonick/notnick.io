@@ -30,7 +30,7 @@ export const Card = ({ type, post }: Props) => {
       <div className="flex items-center">
         <Date date={post.date} />
         <Text>&nbsp;&bull; {post.mins} min read &bull;&nbsp; </Text>
-        <Avatar width={22} height={22} />
+        <Avatar border={true} width={22} height={22} />
       </div>
     </Link>
   );
