@@ -1,8 +1,8 @@
+import { ExperienceCard } from "./ExperienceCard";
+import { EXPERIENCE } from "../lib/experience";
 import { Heading } from "./Heading";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
-
-// TODO: Finish this
 
 export const Experience = () => {
   return (
@@ -19,6 +19,22 @@ export const Experience = () => {
         </LinkT>{" "}
         page.
       </Text>
+      <div>
+        {EXPERIENCE.map((experience) => (
+          <ExperienceCard
+            key={experience.id}
+            name={experience.name}
+            description={experience.description}
+            partTime={experience.partTime}
+            remote={experience.remote}
+            location={experience.location}
+            current={experience.current}
+            year={experience.year}
+            logo={experience.logo}
+            task={experience.task}
+          />
+        ))}
+      </div>
     </section>
   );
 };

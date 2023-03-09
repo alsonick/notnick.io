@@ -12,7 +12,7 @@ const FooterLink = ({
 }) => {
   return (
     <Link
-      className="hover:underline focus:ring-4 dark:ring-offset-black opacity-100 ring-[#f54bff] focus:ring-offset-2 outline-none rounded border-none duration-300"
+      className="hover:underline dark:hover:text-white hover:text-black focus:ring-4 dark:ring-offset-black opacity-100 ring-[#f54bff] focus:ring-offset-2 outline-none rounded border-none duration-300"
       href={link}
       target="_blank"
     >
@@ -39,7 +39,9 @@ export const Footer = () => {
         <div className="flex items-center">
           <p className="text-gray-500 opacity-50 text-xs mr-1 ">
             Built with ❤️ by{" "}
-            <FooterLink link="https://github.com/alsonick">Nicholas</FooterLink>{" "}
+            <FooterLink link="https://github.com/alsonick">
+              Nicholas Njoki
+            </FooterLink>{" "}
           </p>
           <Avatar border={false} width={15} height={15} />
         </div>

@@ -21,8 +21,8 @@ export const NewsLetter = () => {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [issues, getIssues] = useState<number>(0);
+  const [email, setEmail] = useState<string>("");
   const [subs, setSubs] = useState<number>(0);
-  const [email, setEmail] = useState("");
 
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
