@@ -19,7 +19,7 @@ interface Props {
   blogs: Post[];
 }
 
-const Blogs: NextPage<Props> = ({ blogs }) => {
+const Blog: NextPage<Props> = ({ blogs }) => {
   let tags = [{ tag: "All", slug: "", finished: false }];
 
   blogs.forEach((blog) => {
@@ -35,13 +35,13 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
   return (
     <>
       <Seo
-        title="Blogs - Nicholas Njoki"
+        title="Blog - Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Blogs</Heading>
+            <Heading style={{ marginBottom: 0 }}>Blog</Heading>
             {blogs.length ? (
               <FilterListBox
                 items={tags}
@@ -54,7 +54,7 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
           <div className="relative">
             <Posts
               posts={filteredBlogsList.length ? filteredBlogsList : blogs}
-              type="blogs"
+              type="blog"
             />
             <GoBack />
           </div>
@@ -73,4 +73,4 @@ export const getStaticProps: GetStaticProps = () => {
   };
 };
 
-export default Blogs;
+export default Blog;

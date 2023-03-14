@@ -1,10 +1,10 @@
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
+import { ProgressNotice } from "./ProgressNotice";
 import { FiArrowLeft } from "react-icons/fi";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
-import { Notice } from "./Notice";
 import { Label } from "./Label";
 import { Date } from "./Date";
 import { Text } from "./Text";
@@ -15,7 +15,7 @@ import { Tag } from "./Tag";
 import Link from "next/link";
 
 interface Props {
-  type: "notes" | "blogs";
+  type: "note" | "blog";
   post: P;
 }
 
@@ -58,16 +58,15 @@ export const Post = ({ type, post }: Props) => {
         <Tag title={post.tag} />
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
-          <div className="text-gray-600 dark:text-gray-300 duration-300 mb-4 dark:bg-gray-800 p-3 bg-gray-100 rounded-lg">
-            {post.description}
+          <div className="duration-300 mb-4 mt-1">
+            <Text>{post.description}</Text>
           </div>
           {process.env.NODE_ENV === "development" ? (
-            <>
-              <Label text="Complete" />
-              <div className="text-gray-600 dark:text-gray-300 duration-300 mb-8 dark:bg-gray-800 p-3 bg-gray-100 rounded-lg">
-                {post.finished ? "✅" : "❌"}
-              </div>
-            </>
+            <div className="flex items-center mb-4">
+              <Label text="Status:" />
+              &nbsp;
+              <Text>{post.finished ? "Completed" : "Not Completed"}</Text>
+            </div>
           ) : null}
         </div>
         {Boolean(post.contentHtml) || post.finished ? (
@@ -88,7 +87,7 @@ export const Post = ({ type, post }: Props) => {
           <Link
             className="text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-[#f54bff] outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black hover:underline dark:hover:text-white"
             target="_blank"
-            href={`https://github.com/alsonick/notnick.io/blob/main/data/${type}/${post.slug}.md`}
+            href={`https://github.com/alsonick/notnick.io/blob/main/posts/${type}/${post.slug}.md`}
           >
             Edit this page on GitHub <FiExternalLink className="ml-2" />
           </Link>
@@ -101,22 +100,9 @@ export const Post = ({ type, post }: Props) => {
         </div>
         <LinkTag href={`/${type}`} style={{ marginTop: "2rem" }}>
           <FiArrowLeft className="text-lg mr-1" /> Go back to{" "}
-          {type === "blogs" ? "blogs" : "notes"}
+          {type === "blog" ? "blog" : "note"}
         </LinkTag>
       </Layout>
     </>
-  );
-};
-
-const ProgressNotice = () => {
-  return (
-    <div className="flex items-center justify-center p-20 mt-8">
-      <Notice>
-        In progress...
-        <br />
-        Come back and check <br />
-        again later.
-      </Notice>
-    </div>
   );
 };

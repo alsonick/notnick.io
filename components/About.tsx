@@ -12,7 +12,7 @@ export const About = () => {
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
         based in the UK, I mostly specialize in web development, mainly frontend
-        development. .
+        development.
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>

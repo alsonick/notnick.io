@@ -1,4 +1,5 @@
 import { OtherPageContainer } from "./OtherPageContainer";
+import { Topic } from "../types/topic";
 import { Heading } from "./Heading";
 import { Toggle } from "./Toggle";
 import { Header } from "./Header";
@@ -6,28 +7,16 @@ import { LinkT } from "./Link";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
 
-interface Topic {
-  id?: number;
-  language?: string;
-  name: string;
-  learned: {
-    id: number;
-    text: string;
-  }[];
-  completed: boolean;
-  link: string;
-}
-
 interface Props {
   description: string;
   language: string;
-  topics: Topic[];
+  topics: Topic[] & { language?: string };
 }
 
 export const Learning = ({ description, language, topics }: Props) => {
   return (
     <OtherPageContainer>
-      <Seo title={`${language} Learning`} description="" />
+      <Seo title={`${language} Learning`} description={description} />
       <Toggle />
       <Header singleItem={true} column={true}>
         <Heading style={{ marginBottom: 0 }}>{language} Learning</Heading>
@@ -51,12 +40,18 @@ export const Learning = ({ description, language, topics }: Props) => {
   );
 };
 
-const Topic = ({ name, learned, language, completed, link }: Topic) => {
-  console.log(learned)
+const Topic = ({
+  name,
+  learned,
+  language,
+  completed,
+  link,
+}: Topic & { language?: string }) => {
+  console.log(learned);
   return (
     <div className="mb-10 border-b border-teal-100 dark:border-teal-900 pb-5">
       <Heading style={{ marginBottom: 0 }}>
-       {language} {name} {completed ? "✅" : "❌"}
+        {language} {name} {completed ? "✅" : "❌"}
       </Heading>
       <ul className="list-disc ml-6 mt-3">
         {learned.map((learn) => (

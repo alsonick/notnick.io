@@ -1,12 +1,12 @@
 import { FiExternalLink } from "react-icons/fi";
 import { Heading } from "./Heading";
-import { Button } from "./Button";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
 import { Note } from "./Note";
 
 // Next.js
 import Link from "next/link";
+import { LinkButton } from "./LinkButton";
 
 export const Community = () => {
   return (
@@ -28,9 +28,9 @@ export const Community = () => {
           href="https://notnick.io/community"
           target="_blank"
         >
-          <Button>
+          <LinkButton href="https://notnick.io/community" target="_blank">
             Join Server <FiExternalLink className="text-xl ml-2" />
-          </Button>
+          </LinkButton>
         </Link>
       </div>
       <div className="mt-6">

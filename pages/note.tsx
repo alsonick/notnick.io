@@ -28,7 +28,7 @@ interface Props {
   notes: Post[];
 }
 
-const Notes: NextPage<Props> = ({ notes }) => {
+const Note: NextPage<Props> = ({ notes }) => {
   let tags = [{ tag: "All", slug: "", finished: false }];
 
   notes.forEach((note) => {
@@ -41,16 +41,18 @@ const Notes: NextPage<Props> = ({ notes }) => {
 
   const filteredNotesList = notes.filter((note) => note.tag === selectedTag);
 
+  const heading = "Note";
+
   return (
     <>
       <Seo
-        title="Notes - Nicholas Njoki"
+        title={`${heading} - Nicholas Njoki`}
         description="Nicholas Njoki - Full-Stack Developer"
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Notes</Heading>
+            <Heading style={{ marginBottom: 0 }}>{heading}</Heading>
             {notes.length ? (
               <FilterListBox
                 items={tags}
@@ -62,7 +64,7 @@ const Notes: NextPage<Props> = ({ notes }) => {
           {!notes.length && <NoPost type="notes" />}
           <Posts
             posts={filteredNotesList.length ? filteredNotesList : notes}
-            type="notes"
+            type="note"
           />
           <GoBack />
         </Animate>
@@ -71,4 +73,4 @@ const Notes: NextPage<Props> = ({ notes }) => {
   );
 };
 
-export default Notes;
+export default Note;

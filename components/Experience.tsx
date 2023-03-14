@@ -3,6 +3,7 @@ import { EXPERIENCE } from "../lib/experience";
 import { Heading } from "./Heading";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
+import { LinkTag } from "./LinkTag";
 
 export const Experience = () => {
   return (
@@ -29,12 +30,16 @@ export const Experience = () => {
             remote={experience.remote}
             location={experience.location}
             current={experience.current}
+            link={experience.link}
             year={experience.year}
             logo={experience.logo}
             task={experience.task}
           />
         ))}
       </div>
+      <Text>
+        Click <LinkTag href="/experience">here</LinkTag> to view the full list.
+      </Text>
     </section>
   );
 };

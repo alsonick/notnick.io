@@ -7,6 +7,7 @@ export interface Experience {
   remote: boolean;
   location: string;
   current: boolean;
+  link: string;
   task: string;
   logo?: string;
 }

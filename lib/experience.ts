@@ -11,6 +11,7 @@ export const EXPERIENCE: Experience[] = [
     location: "Carmel, Indiana - United States",
     remote: true,
     current: true,
+    link: "https://www.joinaviato.com/",
     task: "Helped out with building, maintaining, implementing, and improving the user experience on Aviato.",
   },
   {
@@ -23,6 +24,20 @@ export const EXPERIENCE: Experience[] = [
     location: "Mississauga, Ontario - Canada",
     remote: true,
     current: false,
+    link: "https://watchou.com/",
     task: "One primary task was to convert the React app to from consuming a RESTful API to a GraphQL API.",
+  },
+  {
+    id: 3,
+    name: "Drop Zone",
+    description: "Manager",
+    year: 2019,
+    logo: "/companies/logo/DropZone.jpeg",
+    partTime: true,
+    location: "United States",
+    remote: true,
+    current: false,
+    link: "https://www.youtube.com/channel/UCYFjrIHMnYmQRm1IGMS9pAw",
+    task: "Helped up with uploads on the channel, social media, and managing the Drop Zone community.",
   },
 ];

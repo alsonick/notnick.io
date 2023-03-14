@@ -2,7 +2,7 @@ import { PostsCard } from "./PostsCard";
 import { Post } from "../types/post";
 
 interface Props {
-  type: "notes" | "blogs";
+  type: "note" | "blog";
   posts: Post[];
 }
 
