@@ -3,6 +3,7 @@ import { FilterListBox } from "../components/FilterListBox";
 import { TextArea } from "../components/TextArea";
 import { Skeleton } from "../components/Skeleton";
 import { Dropdown } from "../components/Dropdown";
+import { Components } from "../types/components";
 import { Heading } from "../components/Heading";
 import { Loading } from "../components/Loading";
 import { Warning } from "../components/Warning";
@@ -20,8 +21,11 @@ import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
+import { PostCardTag } from "../components/PostCardTag";
+import { LinkButton } from "../components/LinkButton";
+import { Form } from "../components/Form";
 
-export const COMPONENTS = [
+export const COMPONENTS: Components[] = [
   {
     id: 1,
     text: "Tag",
@@ -137,5 +141,36 @@ export const COMPONENTS = [
     id: 22,
     text: "Note",
     component: <Note>Example</Note>,
+  },
+  {
+    id: 23,
+    text: "Post Card Tag",
+    component: <PostCardTag title="Example" />,
+  },
+  {
+    id: 24,
+    text: "Link Button",
+    component: (
+      <LinkButton href="" target="_self">
+        Example
+      </LinkButton>
+    ),
+  },
+  {
+    id: 25,
+    text: "Form",
+    component: (
+      <div>
+        <Form
+          style={{ marginTop: 0 }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Submitted!");
+          }}
+        >
+          <Button>Submit</Button>
+        </Form>
+      </div>
+    ),
   },
 ];

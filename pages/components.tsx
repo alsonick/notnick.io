@@ -21,7 +21,12 @@ const Components: NextPage = () => {
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>Components</Heading>
-            <Text>{COMPONENTS.length} components</Text>
+            <Text>
+              <b className="text-gray-500 dark:text-gray-200">
+                {COMPONENTS.length}
+              </b>{" "}
+              components
+            </Text>
           </Header>
           <div className="mb-4 flex flex-col">
             {COMPONENTS.map((component) => (

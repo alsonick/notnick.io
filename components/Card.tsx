@@ -1,8 +1,8 @@
+import { PostCardTag } from "./PostCardTag";
 import { Post } from "../types/post";
 import { Avatar } from "./Avatar";
 import { Text } from "./Text";
 import { Date } from "./Date";
-import { Tag } from "./Tag";
 
 // Next.js
 import Link from "next/link";
@@ -31,9 +31,12 @@ export const Card = ({ type, post }: Props) => {
         <Text>&nbsp;&bull; {post.mins} min read &bull;&nbsp; </Text>
         <Avatar border={true} width={22} height={22} />
       </div>
-      <span className="text-sm border rounded duration-300 w-fit p-[3px] mt-3 border-teal-100 dark:border-teal-900 px-3 text-gray-600 dark:text-gray-300">
-        {post.tag}
-      </span>
+      <div className="flex items-center">
+        <PostCardTag title={post.tag} />{" "}
+        <div className="ml-2">
+          <PostCardTag title="All" />
+        </div>
+      </div>
     </Link>
   );
 };

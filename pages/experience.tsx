@@ -1,10 +1,10 @@
-import { PageUnderConstruction } from "../components/PageUnderConstruction";
+import { ExperienceCard } from "../components/ExperienceCard";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
+import { EXPERIENCE } from "../lib/experience";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
-// import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
 // Next.js
@@ -19,11 +19,24 @@ const Experience: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={true} column={true}>
-            <Heading style={{ marginBottom: 0 }}>Experience</Heading>
-            {/* <Text style={{ marginTop: "15px" }}></Text> */}
+          <Header singleItem={true} column={false}>
+            <Heading>Experience</Heading>
           </Header>
-          <PageUnderConstruction />
+          {EXPERIENCE.map((experience) => (
+            <ExperienceCard
+              key={experience.id}
+              name={experience.name}
+              description={experience.description}
+              partTime={experience.partTime}
+              remote={experience.remote}
+              location={experience.location}
+              current={experience.current}
+              link={experience.link}
+              year={experience.year}
+              logo={experience.logo}
+              task={experience.task}
+            />
+          ))}
           <GoBack />
         </Animate>
       </Layout>
