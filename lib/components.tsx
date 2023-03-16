@@ -1,5 +1,7 @@
 import { CharacterLimit } from "../components/CharacterLimit";
 import { FilterListBox } from "../components/FilterListBox";
+import { PostCardTag } from "../components/PostCardTag";
+import { LinkButton } from "../components/LinkButton";
 import { TextArea } from "../components/TextArea";
 import { Skeleton } from "../components/Skeleton";
 import { Dropdown } from "../components/Dropdown";
@@ -21,8 +23,6 @@ import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
-import { PostCardTag } from "../components/PostCardTag";
-import { LinkButton } from "../components/LinkButton";
 import { Form } from "../components/Form";
 
 export const COMPONENTS: Components[] = [

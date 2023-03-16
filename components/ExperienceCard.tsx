@@ -1,9 +1,12 @@
 import { FiExternalLink, FiMapPin } from "react-icons/fi";
 import { Experience } from "../types/experience";
 import { LinkButton } from "./LinkButton";
-import Image from "next/image";
+import { Border } from "./Border";
 import { Text } from "./Text";
 import { Tag } from "./Tag";
+
+// Next.js
+import Image from "next/image";
 
 export const ExperienceCard = (props: Experience) => {
   return (
@@ -12,19 +15,21 @@ export const ExperienceCard = (props: Experience) => {
       duration-300 border border-teal-100 dark:border-teal-900 mb-6"
     >
       {props.logo ? (
-        <Image
-          className="rounded-full h-fit mb-5 sm:mb-0"
-          src={props.logo}
-          width={80}
-          height={80}
-          alt={`${props.name} Logo`}
-          title={props.name}
-          quality={99}
-        />
+        <Border>
+          <Image
+            className="rounded-full h-fit mb-5 sm:mb-0"
+            src={props.logo}
+            width={100}
+            height={100}
+            alt={`${props.name} Logo`}
+            title={`${props.name} Logo`}
+            quality={99}
+          />
+        </Border>
       ) : (
         <div></div>
       )}
-      <div className="ml-6 w-full text-center sm:text-left">
+      <div className="ml-8 w-full text-center sm:text-left">
         <div className="flex items-center justify-center sm:justify-start mb-3 sm:mb-0">
           <h1 className="text-2xl font-bold dark:text-white mr-3">
             {props.name}

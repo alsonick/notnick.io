@@ -1,3 +1,6 @@
+import { Border } from "./Border";
+
+// Next.js
 import Image from "next/image";
 
 interface Props {
@@ -23,7 +26,7 @@ export const Avatar = ({ border, height, width }: Props) => {
 const Img = ({ height, width }: { height: number; width: number }) => {
   return (
     <Image
-      className="rounded-full bg-red"
+      className="rounded-full"
       title="My Memoji"
       src="/memoji.png"
       height={height}
@@ -31,13 +34,5 @@ const Img = ({ height, width }: { height: number; width: number }) => {
       width={width}
       quality={100}
     />
-  );
-};
-
-const Border = ({ children }: { children?: React.ReactNode }) => {
-  return (
-    <div className="flex w-fit border duration-300 border-teal-100 dark:border-teal-900 rounded-full">
-      {children}
-    </div>
   );
 };
