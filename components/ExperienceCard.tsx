@@ -15,17 +15,19 @@ export const ExperienceCard = (props: Experience) => {
       duration-300 border border-teal-100 dark:border-teal-900 mb-6"
     >
       {props.logo ? (
-        <Border>
-          <Image
-            className="rounded-full h-fit mb-5 sm:mb-0"
-            src={props.logo}
-            width={100}
-            height={100}
-            alt={`${props.name} Logo`}
-            title={`${props.name} Logo`}
-            quality={99}
-          />
-        </Border>
+        <div className="mb-5">
+          <Border>
+            <Image
+              className="rounded-full h-fit sm:mb-0"
+              src={props.logo}
+              width={100}
+              height={100}
+              alt={`${props.name} Logo`}
+              title={`${props.name} Logo`}
+              quality={99}
+            />
+          </Border>
+        </div>
       ) : (
         <div></div>
       )}

@@ -1,6 +1,7 @@
 import { DISCORD_ID } from "./constants";
+import { Social } from "../types/social";
 
-export const SOCIALS = [
+export const SOCIALS: Social[] = [
   {
     id: 1,
     title: "Twitter",
@@ -60,5 +61,11 @@ export const SOCIALS = [
     title: "Stackoverflow",
     username: "user:17204801",
     link: "https://stackoverflow.com/users/17204801/nicholas",
+  },
+  {
+    id: 11,
+    title: "YouTube",
+    username: "@alsonick",
+    link: "https://www.youtube.com/@alsonick",
   },
 ];

@@ -31,12 +31,7 @@ export const Card = ({ type, post }: Props) => {
         <Text>&nbsp;&bull; {post.mins} min read &bull;&nbsp; </Text>
         <Avatar border={true} width={22} height={22} />
       </div>
-      <div className="flex items-center">
-        <PostCardTag title={post.tag} />{" "}
-        <div className="ml-2">
-          <PostCardTag title="All" />
-        </div>
-      </div>
+      <PostCardTag title={post.tag} />{" "}
     </Link>
   );
 };
