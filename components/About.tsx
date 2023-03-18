@@ -27,7 +27,7 @@ export const About = () => {
         I&apos;m also very passionate about systems programming and networking,
         recently I&apos;ve been picking up <b>Rust</b> and so far I&apos;m
         loving it. I also have some{" "}
-        <LinkTag href="/notes/networking-notes">networking notes</LinkTag> so If
+        <LinkTag href="/note/networking-notes">networking notes</LinkTag> so If
         you&apos;re interested about getting into networking then be sure to
         check those out!
       </Text>
