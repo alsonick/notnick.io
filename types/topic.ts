@@ -8,3 +8,12 @@ export interface Topic {
   completed: boolean;
   link: string;
 }
+
+export interface Topics {
+  id?: number;
+  name: string;
+  slug: string;
+  link: string;
+  description: string;
+  language: string;
+}

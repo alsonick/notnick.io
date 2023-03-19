@@ -8,12 +8,12 @@ import { Text } from "./Text";
 import { Seo } from "./Seo";
 
 interface Props {
+  topics: Topic[] & { language?: string };
   description: string;
   language: string;
-  topics: Topic[] & { language?: string };
 }
 
-export const Learning = ({ description, language, topics }: Props) => {
+export const Learning = ({ topics, description, language }: Props) => {
   return (
     <OtherPageContainer>
       <Seo title={`${language} Learning`} description={description} />
@@ -47,7 +47,6 @@ const Topic = ({
   completed,
   link,
 }: Topic & { language?: string }) => {
-  console.log(learned);
   return (
     <div className="mb-10 border-b border-teal-100 dark:border-teal-900 pb-5">
       <Heading style={{ marginBottom: 0 }}>
