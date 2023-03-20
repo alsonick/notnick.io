@@ -1,4 +1,5 @@
 import { Topics } from "../../types/topic";
+import { ONE_HUNDRED_DAYS_OF_SWIFT } from "./100-days-of-swift";
 
 export const TOPICS: Topics[] = [
   {
@@ -9,5 +10,6 @@ export const TOPICS: Topics[] = [
     description:
       "Welcome to the 100 Days of Swift! This is a free collection of videos, tutorials, tests, and more, all drawn from around my existing work here on Hacking with Swift, and all designed to help you learn Swift.",
     language: "",
+    content: ONE_HUNDRED_DAYS_OF_SWIFT,
   },
 ];

@@ -1,5 +1,13 @@
 export interface Topic {
   id?: number;
+  language: string;
+  description: string;
+  cover: string;
+  learn: Learn[];
+}
+
+export interface Learn {
+  id?: number;
   name: string;
   learned: {
     id: number;
@@ -16,4 +24,5 @@ export interface Topics {
   link: string;
   description: string;
   language: string;
+  content: Topic;
 }
