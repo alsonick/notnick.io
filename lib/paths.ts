@@ -71,4 +71,9 @@ export const PATHS: Path[] = [
     path: "/articles",
     link: "/articles",
   },
+  {
+    id: 15,
+    path: "/learning",
+    link: "/learning",
+  },
 ];
