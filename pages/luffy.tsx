@@ -22,7 +22,7 @@ const Luffy: NextPage = () => {
                 className="rounded-lg"
                 src="/assets/luffy.gif"
                 alt="Monkey D. Luffy"
-                style={{width: "100%"}}
+                style={{ width: "100%" }}
               />
             </picture>
           </div>
