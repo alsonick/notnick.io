@@ -23,15 +23,9 @@ export const Community = () => {
         like-minded individuals.
       </Text>
       <div className="mt-4">
-        <Link
-          className="outline-none"
-          href="https://notnick.io/community"
-          target="_blank"
-        >
-          <LinkButton href="https://notnick.io/community" target="_blank">
-            Join Server <FiExternalLink className="text-xl ml-2" />
-          </LinkButton>
-        </Link>
+        <LinkButton href="https://notnick.io/community" target="_blank">
+          Join Server <FiExternalLink className="text-xl ml-2" />
+        </LinkButton>
       </div>
       <div className="mt-6">
         <Note>
