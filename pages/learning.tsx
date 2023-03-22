@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Learning = () => {
   return (
-    <OtherPageContainer>
+    <OtherPageContainer footer={true}>
       <Seo title="Learning" description="" />
       {TOPICS.map((topic) => (
         <Link
