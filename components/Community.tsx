@@ -1,12 +1,9 @@
 import { FiExternalLink } from "react-icons/fi";
+import { LinkButton } from "./LinkButton";
 import { Heading } from "./Heading";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
 import { Note } from "./Note";
-
-// Next.js
-import Link from "next/link";
-import { LinkButton } from "./LinkButton";
 
 export const Community = () => {
   return (
