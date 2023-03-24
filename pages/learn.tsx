@@ -1,6 +1,7 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { TOPICS } from "../lib/learning/topics";
 import { GoBack } from "../components/GoBack";
+import { Toggle } from "../components/Toggle";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
@@ -11,6 +12,7 @@ const Learn = () => {
   return (
     <OtherPageContainer footer={true}>
       <Seo title="Learn" description="" />
+      <Toggle />
       {TOPICS.map((topic) => (
         <Link
           className="focus:ring-4 flex mb-5 rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
