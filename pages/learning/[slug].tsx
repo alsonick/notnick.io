@@ -8,8 +8,6 @@ import { useRouter } from "next/router";
 export const LearningSlugPage = () => {
   const router = useRouter();
 
-  console.log(router.asPath);
-
   const topic = TOPICS.find(
     (topic) => `/learning/${topic.slug}` === router.asPath
   );

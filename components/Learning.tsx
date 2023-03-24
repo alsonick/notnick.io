@@ -10,10 +10,10 @@ import { Seo } from "./Seo";
 export const Learning = ({ learn, language, description, cover }: Topic) => {
   return (
     <OtherPageContainer footer={true}>
-      <Seo title={`${language} Learning`} description={description} />
+      <Seo title={`${language} - Learning`} description={description} />
       <Toggle />
       <Header singleItem={true} column={true}>
-        <Heading style={{ marginBottom: 0 }}>{language} Learning</Heading>
+        <Heading style={{ marginBottom: 0 }}>{language}</Heading>
         <div className="max-w-lg mt-3">
           <Text>{description}</Text>
         </div>
@@ -35,7 +35,6 @@ export const Learning = ({ learn, language, description, cover }: Topic) => {
 };
 
 const Topic = ({
-  language,
   completed,
   name,
   learned,
@@ -45,7 +44,7 @@ const Topic = ({
     <div className="mb-10 border-b border-teal-100 dark:border-teal-900 pb-5">
       <Heading style={{ marginBottom: 0 }}>
         <>
-          {language} {name} {completed ? "✅" : "❌"}
+          {name} {completed ? "✅" : "❌"}
         </>
       </Heading>
       <ul className="list-disc ml-6 mt-3">
