@@ -9,10 +9,11 @@ import Head from "next/head";
 
 interface Props {
   description: string;
+  cover?: string;
   title: string;
 }
 
-export const Seo = ({ description, title }: Props) => {
+export const Seo = ({ description, cover, title }: Props) => {
   const router = useRouter();
   const date = new Date();
 
@@ -45,17 +46,32 @@ export const Seo = ({ description, title }: Props) => {
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <>
-          {router.pathname.includes("notes") ||
-          router.pathname.includes("blogs") ? (
+          {router.pathname.includes("note") ||
+          router.pathname.includes("blog") ||
+          router.pathname.includes("learning") ? (
             <>
               <meta property="twitter:card" content="summary_large_image" />
               <meta
                 property="twitter:image"
-                content={dynamicTitle(title, description)}
+                content={
+                  router.pathname.includes("note") ||
+                  router.pathname.includes("blog")
+                    ? dynamicTitle(title, description)
+                    : cover
+                    ? cover
+                    : ""
+                }
               />
               <meta
                 property="og:image"
-                content={dynamicTitle(title, description)}
+                content={
+                  router.pathname.includes("note") ||
+                  router.pathname.includes("blog")
+                    ? dynamicTitle(title, description)
+                    : cover
+                    ? cover
+                    : ""
+                }
               />
             </>
           ) : (

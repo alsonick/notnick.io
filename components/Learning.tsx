@@ -5,12 +5,10 @@ import { Toggle } from "./Toggle";
 import { Header } from "./Header";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
-import { Seo } from "./Seo";
 
-export const Learning = ({ learn, language, description, cover }: Topic) => {
+export const Learning = ({ learn, language, description }: Topic) => {
   return (
     <OtherPageContainer footer={true}>
-      <Seo title={`${language} - Learning`} description={description} />
       <Toggle />
       <Header singleItem={true} column={true}>
         <Heading style={{ marginBottom: 0 }}>{language}</Heading>
