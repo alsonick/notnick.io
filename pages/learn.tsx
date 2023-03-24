@@ -13,7 +13,7 @@ const Learn = () => {
       {TOPICS.map((topic) => (
         <Link
           className="focus:ring-4 flex rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
-          href={`/learning/${topic.slug}`}
+          href={`/learn/${topic.slug}`}
           key={topic.id}
         >
           <div className="max-w-2xl">
