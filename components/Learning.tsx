@@ -9,14 +9,16 @@ import { Text } from "./Text";
 export const Learning = ({ learn, language, description }: Topic) => {
   return (
     <OtherPageContainer footer={true}>
-      <Toggle />
-      <Header singleItem={true} column={true}>
-        <Heading style={{ marginBottom: 0 }}>{language}</Heading>
-        <div className="max-w-lg mt-3">
-          <Text>{description}</Text>
-        </div>
-      </Header>
-      <div className="mt-10 border-t border-teal-100 dark:border-teal-900 pt-5">
+      <div className="flex flex-col">
+        <Toggle />
+        <Header singleItem={true} column={true}>
+          <Heading style={{ marginBottom: 0 }}>{language}</Heading>
+          <div className="max-w-lg mt-3">
+            <Text>{description}</Text>
+          </div>
+        </Header>
+      </div>
+      <div className="mt-2 border-t border-teal-100 dark:border-teal-900 pt-8">
         {learn.map((topic) => (
           <Topic
             key={topic.id}
@@ -45,19 +47,26 @@ const Topic = ({
           {name} {completed ? "✅" : "❌"}
         </>
       </Heading>
-      <ul className="list-disc ml-6 mt-3">
+      <div className="mt-12">
         {learned.map((learn) => (
-          <li
-            key={learn.id}
-            className="text-gray-600 dark:text-gray-300 max-w-xl mb-2"
-          >
-            {learn.text}
-          </li>
+          <div className="ml-5" key={learn.id}>
+            <Heading style={{ marginTop: "3.5rem" }}>{learn.title}</Heading>
+            <ul className="list-disc ml-10  leading-tight">
+              {learn.points.map((point) => (
+                <li
+                  key={point.id}
+                  className="text-gray-600 dark:text-gray-300 max-w-xl mb-4"
+                >
+                  {point.text}
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
       <div className="mt-5">
         <LinkT href={link} target="_blank">
-          Visit webpage
+          Visit
         </LinkT>
       </div>
     </div>

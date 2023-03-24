@@ -11,7 +11,8 @@ export interface Learn {
   name: string;
   learned: {
     id: number;
-    text: string;
+    title: string;
+    points: Point[];
   }[];
   completed: boolean;
   link: string;
@@ -25,4 +26,9 @@ export interface Topics {
   description: string;
   language: string;
   content: Topic;
+}
+
+export interface Point {
+  id: number;
+  text: string;
 }

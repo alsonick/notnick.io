@@ -10,7 +10,7 @@ export const LearningSlugPage = () => {
   const router = useRouter();
 
   const topic = TOPICS.find(
-    (topic) => `/learning/${topic.slug}` === router.asPath
+    (topic) => `/learn/${topic.slug}` === router.asPath
   );
 
   if (!topic) {

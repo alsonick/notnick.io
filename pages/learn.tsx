@@ -6,10 +6,10 @@ import { Seo } from "../components/Seo";
 // Next.js
 import Link from "next/link";
 
-const Learning = () => {
+const Learn = () => {
   return (
     <OtherPageContainer footer={true}>
-      <Seo title="Learning" description="" />
+      <Seo title="Learn" description="" />
       {TOPICS.map((topic) => (
         <Link
           className="focus:ring-4 flex rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
@@ -28,4 +28,4 @@ const Learning = () => {
   );
 };
 
-export default Learning;
+export default Learn;

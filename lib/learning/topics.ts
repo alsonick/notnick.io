@@ -1,5 +1,5 @@
-import { Topics } from "../../types/topic";
 import { ONE_HUNDRED_DAYS_OF_SWIFT } from "./100-days-of-swift";
+import { Topics } from "../../types/topic";
 
 export const TOPICS: Topics[] = [
   {
