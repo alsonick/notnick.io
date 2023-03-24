@@ -20,7 +20,7 @@ export const LearningSlugPage = () => {
   return (
     <OtherPageContainer footer={false}>
       <Seo
-        title={`${topic.content.language} - Learning`}
+        title={`${topic.content.language} - Learn`}
         description={topic.content.description}
         cover={topic.content.cover}
       />
