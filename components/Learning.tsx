@@ -3,6 +3,7 @@ import { Learn, Topic } from "../types/topic";
 import { Heading } from "./Heading";
 import { Toggle } from "./Toggle";
 import { Header } from "./Header";
+import { GoBack } from "./GoBack";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
 
@@ -30,6 +31,7 @@ export const Learning = ({ learn, language, description }: Topic) => {
           />
         ))}
       </div>
+      <GoBack />
     </OtherPageContainer>
   );
 };

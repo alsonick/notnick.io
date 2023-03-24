@@ -1,5 +1,6 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { TOPICS } from "../lib/learning/topics";
+import { GoBack } from "../components/GoBack";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
@@ -12,7 +13,7 @@ const Learn = () => {
       <Seo title="Learn" description="" />
       {TOPICS.map((topic) => (
         <Link
-          className="focus:ring-4 flex rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
+          className="focus:ring-4 flex mb-5 rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
           href={`/learn/${topic.slug}`}
           key={topic.id}
         >
@@ -24,6 +25,7 @@ const Learn = () => {
           </div>
         </Link>
       ))}
+      <GoBack />
     </OtherPageContainer>
   );
 };
