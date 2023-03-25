@@ -157,3 +157,8 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
     },
   ],
 };
+
+let condition = false;
+
+if (!condition) {
+}
