@@ -48,7 +48,7 @@ export const Seo = ({ description, cover, title }: Props) => {
         <>
           {router.pathname.includes("note") ||
           router.pathname.includes("blog") ||
-          router.pathname.includes("learning") ? (
+          router.pathname.includes("learn") ? (
             <>
               <meta property="twitter:card" content="summary_large_image" />
               <meta
