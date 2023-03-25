@@ -31,7 +31,7 @@ export const Learning = ({ learn, language, description }: Topic) => {
           />
         ))}
       </div>
-      <GoBack />
+      <GoBack location="/learn" />
     </OtherPageContainer>
   );
 };
