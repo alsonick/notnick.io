@@ -369,5 +369,173 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/2",
     },
+    {
+      id: 3,
+      name: "100 Days of Swift - Day 3",
+      learned: [
+        {
+          id: 1,
+          title: "Arithmetic operators",
+          points: [
+            {
+              id: 1,
+              text: "Covered all the arithmetic operators in Swift.",
+            },
+            {
+              id: 2,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Operator overloading",
+          points: [
+            {
+              id: 1,
+              text: "Swift supports operator overloading.",
+            },
+            {
+              id: 2,
+              text: "You can't mix types in Swift.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Compound assignment operators",
+          points: [
+            {
+              id: 1,
+              text: "Swift has shorthand operators that combine one operator with an assignment.",
+            },
+            {
+              id: 2,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Comparison operators",
+          points: [
+            {
+              id: 1,
+              text: "Just like in mathematics Swift also several operators.",
+            },
+            {
+              id: 2,
+              text: "You can use comparison operators on strings since they have a natural alphabetical order.",
+            },
+            {
+              id: 3,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Conditions",
+          points: [
+            {
+              id: 1,
+              text: "In Swift you can use an if statement to evaluate conditions.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Combining conditions",
+          points: [
+            {
+              id: 1,
+              text: "You can the && (and) and || (or) operators to combine conditions.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "The ternary operator",
+          points: [
+            {
+              id: 1,
+              text: "Just like in JavaScript, Swift also has the ternary operator.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Switch statements",
+          points: [
+            {
+              id: 1,
+              text: "You can use switch statements in Swift.",
+            },
+            {
+              id: 2,
+              text: "The default case is required because you need to make sure you cover all possible cases.",
+            },
+            {
+              id: 3,
+              text: "If your want execution to continue on the next case, use the fallthrough keyword.",
+            },
+            {
+              id: 4,
+              text: "Results: 5/6",
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "Range operators",
+          points: [
+            {
+              id: 1,
+              text: "You can use the range operator in Swift.",
+            },
+            {
+              id: 2,
+              text: "The half-open range operator ..< creates ranges up to but excluding the final value.",
+            },
+            {
+              id: 3,
+              text: "The closed range operator ... creates ranges up and including the final value.",
+            },
+            {
+              id: 4,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "Operators and conditions: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/3",
+    },
   ],
 };
