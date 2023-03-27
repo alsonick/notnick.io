@@ -537,5 +537,129 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/3",
     },
+    {
+      id: 4,
+      name: "100 Days of Swift - Day 4",
+      learned: [
+        {
+          id: 1,
+          title: "For loops",
+          points: [
+            {
+              id: 1,
+              text: "The most common loop in Swift is the for loop.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "While loops",
+          points: [
+            {
+              id: 1,
+              text: "Swift also has a while loop.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Repeat loops",
+          points: [
+            {
+              id: 1,
+              text: "There's also a repeat loop which is identical to a while loop except the condition to check comes at the end.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Exiting loops",
+          points: [
+            {
+              id: 1,
+              text: "To exit a loop you must use the break keyword.",
+            },
+            {
+              id: 2,
+              text: "Results: 7/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Exiting multiple loops",
+          points: [
+            {
+              id: 1,
+              text: "A loop inside a loop is called a nested loop.",
+            },
+            {
+              id: 2,
+              text: "It's common to want to break out of both the inner loop and the outer loop.",
+            },
+            {
+              id: 3,
+              text: "To exit part-way through a loop you need to give the outside loop a label then use break [OUTER LOOP LABEL] to exit both loops at the same time.",
+            },
+            {
+              id: 4,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Skipping items",
+          points: [
+            {
+              id: 1,
+              text: "To skip items in a collection you continue keyword.",
+            },
+            {
+              id: 2,
+              text: "Results: 7/12",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Infinite loops",
+          points: [
+            {
+              id: 1,
+              text: "Using true as your condition will result in an infinite loop.",
+            },
+            {
+              id: 1,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Looping: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 9/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/4",
+    },
   ],
 };
