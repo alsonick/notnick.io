@@ -661,5 +661,203 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/4",
     },
+    {
+      id: 5,
+      name: "100 Days of Swift - Day 5",
+      learned: [
+        {
+          id: 1,
+          title: "Writing functions",
+          points: [
+            {
+              id: 1,
+              text: "In Swift you can use functions to re-use code.",
+            },
+            {
+              id: 2,
+              text: "Swift functions start with the func keyword.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Accepting parameters",
+          points: [
+            {
+              id: 1,
+              text: "Functions in swift can accept parameters.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Returning values",
+          points: [
+            {
+              id: 1,
+              text: "Functions can also return data.",
+            },
+            {
+              id: 2,
+              text: "You must use the return keyword to return a value.",
+            },
+            {
+              id: 3,
+              text: "You can return multiple types using a tuple.",
+            },
+            {
+              id: 4,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Parameter labels",
+          points: [
+            {
+              id: 1,
+              text: "Swift allows us to provide two name for each parameter.",
+            },
+            {
+              id: 2,
+              text: "The first name is the external purposes and the second one is for internal purposes.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Omitting parameter label",
+          points: [
+            {
+              id: 1,
+              text: "You can omit the external parameter by using the _ underscore syntax.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Default parameters",
+          points: [
+            {
+              id: 1,
+              text: "You can give your own parameters a default value just by writing an = sign after its type followed by the default you want to give it.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Variadic functions",
+          points: [
+            {
+              id: 1,
+              text: "Variadic functions can accept any number of parameters.",
+            },
+            {
+              id: 2,
+              text: "The print() function uis variadic.",
+            },
+            {
+              id: 3,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Writing throwing functions",
+          points: [
+            {
+              id: 1,
+              text: "Functions can fail sometimes if they have bad input or if something went wrong internally.",
+            },
+            {
+              id: 2,
+              text: "Swift lets us throw error from functions by marking them as throws before their return type.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "Running throwing functions",
+          points: [
+            {
+              id: 1,
+              text: "Functions that can throw errors must be wrapped inside the do code block.",
+            },
+            {
+              id: 2,
+              text: "You must use the try keyword before every function that might throw an error.",
+            },
+            {
+              id: 3,
+              text: "The catch block lets you handle errors gracefully.",
+            },
+            {
+              id: 4,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "inout parameters",
+          points: [
+            {
+              id: 1,
+              text: "Parameters passed into a Swift function are constants by default.",
+            },
+            {
+              id: 2,
+              text: "If you want to change the function's parameter values then you must mark then as inout before the type.",
+            },
+            {
+              id: 3,
+              text: "Changes are reflected outside the function.",
+            },
+            {
+              id: 4,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "Functions: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/5",
+    },
   ],
 };
