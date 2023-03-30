@@ -3,7 +3,15 @@ export interface Experience {
   name: string;
   description: string;
   year: number;
-  partTime: boolean;
+  employmentType:
+    | "contract"
+    | "full-time"
+    | "part-time"
+    | "self-employed"
+    | "freelance"
+    | "internship"
+    | "apprenticeship"
+    | "temporary";
   remote: boolean;
   location: string;
   current: boolean;

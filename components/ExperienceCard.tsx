@@ -9,6 +9,27 @@ import { Tag } from "./Tag";
 import Image from "next/image";
 
 export const ExperienceCard = (props: Experience) => {
+  const getEmploymentTypeString = () => {
+    switch (props.employmentType) {
+      case "apprenticeship":
+        return "Apprenticeship";
+      case "contract":
+        return "Contract";
+      case "freelance":
+        return "Freelance";
+      case "full-time":
+        return "Full-Time";
+      case "internship":
+        return "Internship";
+      case "part-time":
+        return "Part-Time";
+      case "self-employed":
+        return "Self-Employed";
+      default:
+        return "Temporary";
+    }
+  };
+
   return (
     <div
       className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6 mt-5 
@@ -40,8 +61,7 @@ export const ExperienceCard = (props: Experience) => {
         </div>
         <Text>
           {props.description} &bull; {props.year} &bull;{" "}
-          {props.partTime ? "Part-time" : "Full-time"} &bull;{" "}
-          {props.remote && "Remote"}
+          {getEmploymentTypeString()} &bull; {props.remote && "Remote"}
         </Text>
         <div className="relative mt-2">
           <Text>{props.task}</Text>

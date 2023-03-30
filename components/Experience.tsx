@@ -1,9 +1,9 @@
 import { ExperienceCard } from "./ExperienceCard";
 import { EXPERIENCE } from "../lib/experience";
 import { Heading } from "./Heading";
+import { LinkTag } from "./LinkTag";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
-import { LinkTag } from "./LinkTag";
 
 export const Experience = () => {
   return (
@@ -26,7 +26,7 @@ export const Experience = () => {
             key={experience.id}
             name={experience.name}
             description={experience.description}
-            partTime={experience.partTime}
+            employmentType={experience.employmentType}
             remote={experience.remote}
             location={experience.location}
             current={experience.current}

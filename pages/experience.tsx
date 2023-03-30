@@ -27,7 +27,7 @@ const Experience: NextPage = () => {
               key={experience.id}
               name={experience.name}
               description={experience.description}
-              partTime={experience.partTime}
+              employmentType={experience.employmentType}
               remote={experience.remote}
               location={experience.location}
               current={experience.current}
