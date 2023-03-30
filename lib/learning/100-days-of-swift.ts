@@ -859,5 +859,205 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/5",
     },
+    {
+      id: 6,
+      name: "100 Days of Swift - Day 6",
+      learned: [
+        {
+          id: 1,
+          title: "Creating basic closures",
+          points: [
+            {
+              id: 1,
+              text: "Functions with no name are called closures.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Accepting parameters in a closure",
+          points: [
+            {
+              id: 1,
+              text: "Closures in Swift can also accept parameters.",
+            },
+            {
+              id: 2,
+              text: "Closures that accept parameters cannot use external parameter labels.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Returning values from a closure",
+          points: [
+            {
+              id: 1,
+              text: "You can return values from closures in Swift.",
+            },
+            {
+              id: 2,
+              text: "To return the value, we need to use -> String before the in keyword.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Closures as parameters",
+          points: [
+            {
+              id: 1,
+              text: "You can pass closures into functions in Swift.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Trailing closure syntax",
+          points: [
+            {
+              id: 1,
+              text: "If the last parameter to a function is a closure, Swift lets you use special syntax called trailing closure syntax.",
+            },
+            {
+              id: 2,
+              text: "Rather than pass in your closure as a parameter, you pass it directly after the function inside braces.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/6",
+    },
+    {
+      id: 7,
+      name: "100 Days of Swift - Day 7",
+      learned: [
+        {
+          id: 1,
+          title: "Using closures as parameters when they accept parameters",
+          points: [
+            {
+              id: 1,
+              text: "Closures can also accept parameters.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Using closures as parameters when they return values",
+          points: [
+            {
+              id: 1,
+              text: "Closures can also return values.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Shorthand parameter names",
+          points: [
+            {
+              id: 1,
+              text: "If a closure only accepts a single value then you can exclude the return type.",
+            },
+            {
+              id: 2,
+              text: "If a closure only returns a single value then Swift can infer the return type and we can remove the return keyword.",
+            },
+            {
+              id: 3,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Closures with multiple parameters",
+          points: [
+            {
+              id: 1,
+              text: "Closures can also accept multiple parameters.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Returning closures from functions",
+          points: [
+            {
+              id: 1,
+              text: "In Swift functions can also return closures.",
+            },
+            {
+              id: 2,
+              text: "You need to mark the closures's after the -> symbol.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Capturing values",
+          points: [
+            {
+              id: 1,
+              text: "If you use any external values inside your closure, Swift captures them - stores them alongside the closure, so they can be modified even if they don't exist any more.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Closures: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/7",
+    },
   ],
 };
