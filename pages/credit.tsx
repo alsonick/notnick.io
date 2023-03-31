@@ -13,8 +13,10 @@ const Credit = () => {
         description="The source code to this site is open source so anyone is free to take a copy and make modifications. Whiles this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
       />
       <OtherPageContainer footer={true}>
-        <Toggle />
-        <Heading>Credit</Heading>
+        <div className="flex flex-col">
+          <Toggle />
+          <Heading>Credit</Heading>
+        </div>
         <Text>
           The source code to this site is{" "}
           <LinkT href="https://github.com/alsonick/notnick.io" target="_blank">
@@ -25,8 +27,8 @@ const Credit = () => {
           is given to the original creator.
         </Text>
         <br />
-        <br />
-        <Text>How do i give credit?</Text>
+
+        <Text>How do I give credit?</Text>
         <br />
         <Text>
           You can give credit anywhere on the site but it&apos;s common to add
