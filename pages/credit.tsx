@@ -1,9 +1,9 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { Heading } from "../components/Heading";
+import { Toggle } from "../components/Toggle";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
-import { Toggle } from "../components/Toggle";
 
 const Credit = () => {
   return (
