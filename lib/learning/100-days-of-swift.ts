@@ -1059,5 +1059,119 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/7",
     },
+    {
+      id: 8,
+      name: "100 Days of Swift - Day 8",
+      learned: [
+        {
+          id: 1,
+          title: "Creating your own structs",
+          points: [
+            {
+              id: 1,
+              text: "You can design on your own types using structures, or more commonly known as just structs.",
+            },
+            {
+              id: 2,
+              text: "You use the struct keyword to define a struct.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Computed properties",
+          points: [
+            {
+              id: 1,
+              text: "Computed properties in Swift are properties that can run code and return values.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Property observers",
+          points: [
+            {
+              id: 1,
+              text: "Property observers let you run code before or after any property changes.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Methods",
+          points: [
+            {
+              id: 1,
+              text: "Functions inside structs are called methods.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Mutating methods",
+          points: [
+            {
+              id: 1,
+              text: "If a struct has a variable property but the instance of the struct was created as a constant, that property cannot be changed.",
+            },
+            {
+              id: 2,
+              text: "When you need to change a property inside a method, you need to mark it using the mutating keyword.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Properties and methods of strings",
+          points: [
+            {
+              id: 1,
+              text: "Strings are structs.",
+            },
+            {
+              id: 2,
+              text: "Results: 5/6",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Properties and methods of arrays",
+          points: [
+            {
+              id: 1,
+              text: "Arrays are also structs.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/8",
+    },
   ],
 };
