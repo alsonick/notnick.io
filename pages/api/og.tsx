@@ -14,7 +14,7 @@ const font = fetch(
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    
+
     const hasDescription = searchParams.has("description");
     const hasTitle = searchParams.has("title");
 
@@ -40,7 +40,7 @@ export default async function handler(req: NextRequest) {
             <div tw="flex items-center">
               <img
                 tw="rounded-full mr-5"
-                src="https://notnick.io/pfp.png"
+                src="https://notnick.io/memoji.png"
                 width={90}
                 height={90}
                 alt="sd"
