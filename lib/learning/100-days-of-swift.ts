@@ -1269,5 +1269,145 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/9",
     },
+    {
+      id: 10,
+      name: "100 Days of Swift - Day 10",
+      learned: [
+        {
+          id: 1,
+          title: "Creating your own classes",
+          points: [
+            {
+              id: 1,
+              text: "Classes are similar to structs in that they allow you to create new types with properties and methods.",
+            },
+            {
+              id: 2,
+              text: "Classes never come with a memberwise initializer.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Class inheritance",
+          points: [
+            {
+              id: 1,
+              text: "The second difference between classes and structs is that you can create a class based on an existing class, this is called inheritance.",
+            },
+            {
+              id: 2,
+              text: 'The class you inherit from is called the "parent" or "super" class, and the new class is called the "child" class.',
+            },
+            {
+              id: 3,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Overriding methods",
+          points: [
+            {
+              id: 1,
+              text: "Chid classes can replace parent methods with their own implementations.",
+            },
+            {
+              id: 2,
+              text: "This process is known as overriding.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Final classes",
+          points: [
+            {
+              id: 1,
+              text: "You can disallow other developers from inheriting from your classes by marking them as final before the class declaration.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Copying objects",
+          points: [
+            {
+              id: 1,
+              text: "When you copy a struct, both the original and the copy are different things - changing one won't change the other.",
+            },
+            {
+              id: 2,
+              text: "When you copy a class, both the original and the copy point to the same thing in memory, so changing one does change the other.",
+            },
+            {
+              id: 3,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Deinitializers",
+          points: [
+            {
+              id: 1,
+              text: "Classes can have deinitializers - code that gets executed when an instance of a class is destroyed.",
+            },
+            {
+              id: 2,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Mutability",
+          points: [
+            {
+              id: 1,
+              text: "If you have a constant struct with a variable property, that property can't be changed because the struct itself is constant.",
+            },
+            {
+              id: 2,
+              text: "If you have a constant class with a variable property, that property can be changed.",
+            },
+            {
+              id: 3,
+              text: "Classes don't need the mutating keyword with methods that change properties.",
+            },
+            {
+              id: 4,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Classes: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/10",
+    },
   ],
 };
