@@ -1173,5 +1173,101 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/8",
     },
+    {
+      id: 9,
+      name: "100 Days of Swift - Day 9",
+      learned: [
+        {
+          id: 1,
+          title: "Initializers",
+          points: [
+            {
+              id: 1,
+              text: "Initializers are special methods that provide different ways to crate your struct.",
+            },
+            {
+              id: 2,
+              text: "All structs come with one by default, called their memberwise initializer.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Referring to the current instance",
+          points: [
+            {
+              id: 1,
+              text: "You can refer to the current instance of a struct using the self keyword.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Lazy properties",
+          points: [
+            {
+              id: 1,
+              text: "Swift lets you create some properties only when they are needed.",
+            },
+            {
+              id: 2,
+              text: "Lazy properties are created using the lazy keyword.",
+            },
+            {
+              id: 3,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Static properties and methods",
+          points: [
+            {
+              id: 1,
+              text: "You can access a property or struct without initializing it by making them as static.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Access control",
+          points: [
+            {
+              id: 1,
+              text: "Access control lets you restrict which code can use properties and methods.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Structs: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/9",
+    },
   ],
 };
