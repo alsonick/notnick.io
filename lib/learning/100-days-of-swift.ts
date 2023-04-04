@@ -1409,5 +1409,97 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/10",
     },
+    {
+      id: 11,
+      name: "100 Days of Swift - Day 11",
+      learned: [
+        {
+          id: 1,
+          title: "Creating your own classes",
+          points: [
+            {
+              id: 1,
+              text: "Protocols are used to describe what properties and methods something must have.",
+            },
+            {
+              id: 2,
+              text: "Protocols are defined using the protocol keyword.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Protocol inheritance",
+          points: [
+            {
+              id: 1,
+              text: "Protocols can inherit from other protocols",
+            },
+            {
+              id: 2,
+              text: "Results: 9/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Extensions",
+          points: [
+            {
+              id: 1,
+              text: "Extensions allow you to add methods to existing types.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Protocol extensions",
+          points: [
+            {
+              id: 1,
+              text: "You can add extensions to already defined protocols.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Protocol-oriented programming",
+          points: [
+            {
+              id: 1,
+              text: "You can add protocols to custom types.",
+            },
+            {
+              id: 4,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Protocols and extensions: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 9/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/11",
+    },
   ],
 };
