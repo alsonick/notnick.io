@@ -1501,5 +1501,183 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/11",
     },
+    {
+      id: 12,
+      name: "100 Days of Swift - Day 12",
+      learned: [
+        {
+          id: 1,
+          title: "Handling missing data",
+          points: [
+            {
+              id: 1,
+              text: "In Swift you can make any type an optional.",
+            },
+            {
+              id: 2,
+              text: "An optional value might be missing - in which case the value will be nil.",
+            },
+            {
+              id: 3,
+              text: "Results: 5/6",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Unwrapping optionals",
+          points: [
+            {
+              id: 1,
+              text: "A common way of unwrapping optionals is with if let syntax, which unwraps with a condition.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Unwrapping with guard",
+          points: [
+            {
+              id: 1,
+              text: "An alternative to if let is guard let, which also unwraps optionals.",
+            },
+            {
+              id: 2,
+              text: "guard let will unwrap an optional for you, but if it finds nil inside it expects you to exit the function.",
+            },
+            {
+              id: 3,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Force unwrapping",
+          points: [
+            {
+              id: 1,
+              text: "You can force unwrap optionals if you're certain the value exists.",
+            },
+            {
+              id: 2,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Implicitly unwrapped optionals",
+          points: [
+            {
+              id: 1,
+              text: "Implicitly unwrapped optionals might contain a value or they might be nil.",
+            },
+            {
+              id: 2,
+              text: "Unlike regular optionals you don't need to unwrap them in order to use them: you can use them as if they weren't optional at all.",
+            },
+            {
+              id: 3,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 6,
+          title: "Nil coalescing",
+          points: [
+            {
+              id: 1,
+              text: "The nil coalescing operator unwraps an optional and returns the value inside if there is one.",
+            },
+            {
+              id: 2,
+              text: "If there isn't a value - then a default value is used instead.",
+            },
+            {
+              id: 3,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 7,
+          title: "Optional chaining",
+          points: [
+            {
+              id: 1,
+              text: "Optional chaining is the short hand way of dealing with optionals.",
+            },
+            {
+              id: 2,
+              text: "Optional chaining is used with the ? question mark operator.",
+            },
+            {
+              id: 3,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+        {
+          id: 8,
+          title: "Optional try",
+          points: [
+            {
+              id: 1,
+              text: "You use optionals with functions that could throw an error.",
+            },
+            {
+              id: 2,
+              text: "Results: 6/6",
+            },
+          ],
+        },
+        {
+          id: 9,
+          title: "Failable initializers",
+          points: [
+            {
+              id: 1,
+              text: "Structs or classes can have failable initializers - initializers that can return nil.",
+            },
+            {
+              id: 2,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+        {
+          id: 10,
+          title: "Typecasting",
+          points: [
+            {
+              id: 1,
+              text: "Swift supports typecasting.",
+            },
+            {
+              id: 2,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+        {
+          id: 11,
+          title: "Optionals: Summary",
+          points: [
+            {
+              id: 1,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/12",
+    },
   ],
 };
