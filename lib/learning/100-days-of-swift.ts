@@ -1730,7 +1730,45 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
         },
       ],
       completed: true,
-      link: "https://www.hackingwithswift.com/100/13xcv ",
+      link: "https://www.hackingwithswift.com/100/13",
+    },
+    {
+      id: 14,
+      name: "100 Days of Swift - Day 14",
+      learned: [
+        {
+          id: 1,
+          title: "Functions",
+          points: [],
+        },
+        {
+          id: 2,
+          title: "Optionals",
+          points: [],
+        },
+        {
+          id: 3,
+          title: "Optional chaining",
+          points: [],
+        },
+        {
+          id: 4,
+          title: "Enumerations",
+          points: [],
+        },
+        {
+          id: 5,
+          title: "Structs",
+          points: [],
+        },
+        {
+          id: 6,
+          title: "Classes",
+          points: [],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/14",
     },
   ],
 };
