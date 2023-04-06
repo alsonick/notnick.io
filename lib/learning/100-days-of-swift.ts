@@ -1679,5 +1679,58 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/12",
     },
+    {
+      id: 13,
+      name: "100 Days of Swift - Day 13",
+      learned: [
+        {
+          id: 1,
+          title: "Variables and constants",
+          points: [],
+        },
+        {
+          id: 2,
+          title: "Types of Data",
+          points: [],
+        },
+        {
+          id: 3,
+          title: "Operators",
+          points: [],
+        },
+        {
+          id: 4,
+          title: "String interpolation",
+          points: [],
+        },
+        {
+          id: 5,
+          title: "Arrays",
+          points: [],
+        },
+        {
+          id: 6,
+          title: "Dictionaries",
+          points: [],
+        },
+        {
+          id: 7,
+          title: "Conditional statements",
+          points: [],
+        },
+        {
+          id: 8,
+          title: "Loops",
+          points: [],
+        },
+        {
+          id: 9,
+          title: "Switch case",
+          points: [],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/13xcv ",
+    },
   ],
 };

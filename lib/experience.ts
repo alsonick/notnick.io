@@ -38,6 +38,6 @@ export const EXPERIENCE: Experience[] = [
     remote: true,
     current: false,
     link: "https://www.youtube.com/channel/UCYFjrIHMnYmQRm1IGMS9pAw",
-    task: "Helped up with uploads on the channel, social media, and managing the Drop Zone community.",
+    task: "Helped up with uploads on the channel, and social media, and managed the Drop Zone community.",
   },
 ];
