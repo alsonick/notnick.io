@@ -1770,5 +1770,38 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/14",
     },
+    {
+      id: 15,
+      name: "100 Days of Swift - Day 15",
+      learned: [
+        {
+          id: 1,
+          title: "Properties",
+          points: [],
+        },
+        {
+          id: 2,
+          title: "Static properties and methods",
+          points: [],
+        },
+        {
+          id: 3,
+          title: "Access control",
+          points: [],
+        },
+        {
+          id: 4,
+          title: "Polymorphism and typecasting",
+          points: [],
+        },
+        {
+          id: 5,
+          title: "Closures",
+          points: [],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/15",
+    },
   ],
 };
