@@ -15,6 +15,7 @@ export interface Learn {
     points: Point[];
   }[];
   completed: boolean;
+  image?: string;
   link: string;
 }
 

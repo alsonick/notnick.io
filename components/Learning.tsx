@@ -1,4 +1,5 @@
 import { OtherPageContainer } from "./OtherPageContainer";
+// import { SecondaryFilterBox } from "./SecondaryFilterBox";
 import { Learn, Topic } from "../types/topic";
 import { Heading } from "./Heading";
 import { Toggle } from "./Toggle";
@@ -20,12 +21,18 @@ export const Learning = ({ learn, language, description }: Topic) => {
         </Header>
       </div>
       <div className="mt-2 border-t border-teal-100 dark:border-teal-900 pt-8">
+        {/* <div className="mb-6 w-full flex items-center">
+          <div className="ml-auto w-fit">
+            <SecondaryFilterBox items={learn} />
+          </div>
+        </div> */}
         {learn.map((topic) => (
           <Topic
             key={topic.id}
             name={topic.name}
             language={language}
             learned={topic.learned}
+            image={topic.image}
             completed={topic.completed}
             link={topic.link}
           />
@@ -40,6 +47,7 @@ const Topic = ({
   completed,
   name,
   learned,
+  image,
   link,
 }: Learn & { language: string }) => {
   return (
@@ -66,6 +74,11 @@ const Topic = ({
           </div>
         ))}
       </div>
+      {image && (
+        <picture>
+          <img className="w-2/3" src={image} alt="Showcase" />
+        </picture>
+      )}
       <div className="mt-5">
         <LinkT href={link} target="_blank">
           Visit

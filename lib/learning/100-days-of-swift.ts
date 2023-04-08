@@ -1686,47 +1686,92 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
         {
           id: 1,
           title: "Variables and constants",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 2,
           title: "Types of Data",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 3,
           title: "Operators",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 4,
           title: "String interpolation",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 5,
           title: "Arrays",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 6,
           title: "Dictionaries",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 7,
           title: "Conditional statements",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 8,
           title: "Loops",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 9,
           title: "Switch case",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
       ],
       completed: true,
@@ -1739,32 +1784,62 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
         {
           id: 1,
           title: "Functions",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 2,
           title: "Optionals",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 3,
           title: "Optional chaining",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 4,
           title: "Enumerations",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 5,
           title: "Structs",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 6,
           title: "Classes",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
       ],
       completed: true,
@@ -1777,31 +1852,95 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
         {
           id: 1,
           title: "Properties",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 2,
           title: "Static properties and methods",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 3,
           title: "Access control",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 4,
           title: "Polymorphism and typecasting",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
         {
           id: 5,
           title: "Closures",
-          points: [],
+          points: [
+            {
+              id: 1,
+              text: "Review",
+            },
+          ],
         },
       ],
       completed: true,
       link: "https://www.hackingwithswift.com/100/15",
+    },
+    {
+      id: 16,
+      name: "100 Days of Swift - Day 16",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Got the Xcode project setup.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Listing images with FileManager",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to load images using the FileManager.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Designing our interface",
+          points: [
+            {
+              id: 1,
+              text: "Designed the interface and used some of the UITableViewController data source methods.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day16/Day-16-Image.png",
+      link: "https://www.hackingwithswift.com/100/16",
     },
   ],
 };
