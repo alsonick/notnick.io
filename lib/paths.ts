@@ -81,4 +81,9 @@ export const PATHS: Path[] = [
     path: "/credit",
     link: "/credit",
   },
+  {
+    id: 17,
+    path: "/contributors",
+    link: "/contributors",
+  },
 ];
