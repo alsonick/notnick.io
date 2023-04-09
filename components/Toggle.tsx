@@ -24,6 +24,20 @@ export const Toggle = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const keydownHandler = (e: KeyboardEvent) => {
+      if (e.key.toLowerCase() === "t") {
+        toggleTheme(localStorage.getItem("theme"));
+      }
+    };
+
+    document.addEventListener("keydown", keydownHandler);
+
+    return () => {
+      document.removeEventListener("keydown", keydownHandler);
+    };
+  }, []);
+
   const toggleTheme = (theme: string | null) => {
     let newThemeToToggle = theme === "light" ? "dark" : "light";
     localStorage.setItem("theme", newThemeToToggle);
@@ -36,7 +50,7 @@ export const Toggle = () => {
 
   return (
     <RoundedBox
-      title={theme === "dark" ? "Dark Mode" : "Light Theme"}
+      title={`Toggle ${theme === "dark" ? "Dark Mode" : "Light Theme"} (T)`}
       onClick={() => toggleTheme(theme)}
     >
       {theme === "dark" ? <FiSun /> : <FiMoon />}

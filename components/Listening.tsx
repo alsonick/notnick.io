@@ -92,8 +92,6 @@ export const Listening: React.FC<Props> = (
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doing, currentActivity]);
 
-  console.log(doing);
-
   if (!doing || !doing.discord_status)
     return (
       <div className="flex items-center mb-6">
