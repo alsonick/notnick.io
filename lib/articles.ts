@@ -3,7 +3,7 @@ export const ARTICLES = [
     id: 1,
     title: "Why Google stores billions of lines of code in a single repository",
     link: "https://dl.acm.org/doi/fullHtml/10.1145/2854146",
-    type: "Techincal Writing",
+    type: "Technical Writing",
     authors: ["Rachel Potvin", "Josh Levenberg", "Eric"],
   },
   {
