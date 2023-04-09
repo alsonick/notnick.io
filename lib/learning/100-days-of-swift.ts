@@ -1942,5 +1942,56 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day16/Day-16-Image.png",
       link: "https://www.hackingwithswift.com/100/16",
     },
+    {
+      id: 17,
+      name: "100 Days of Swift - Day 17",
+      learned: [
+        {
+          id: 1,
+          title: "Building a detail screen",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to use the UIImageView.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Loading images with UIImage",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to load images with UIIMage.",
+            },
+            {
+              id: 2,
+              text: "Used the tableView(_, didSelectRowAt:) method to navigate to a different view controller.",
+            },
+            {
+              id: 3,
+              text: "Covered auto layout.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Final tweaks: hidesBarsOnTap, safe area margins",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to use the UIImageView.",
+            },
+            {
+              id: 2,
+              text: "Covered the viewWillAppear & viewWillDisappear life cycle methods.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day17/Day-17-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/17",
+    },
   ],
 };

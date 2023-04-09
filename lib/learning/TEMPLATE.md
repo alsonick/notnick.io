@@ -21,6 +21,7 @@
                 }
             ],
             completed: COMPLETED_VALUE,
+            image?: IMAGE_VALUE,
             link: LINK_VALUE
         }
     ]
