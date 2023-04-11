@@ -1993,5 +1993,34 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day17/Day-17-Gif.gif",
       link: "https://www.hackingwithswift.com/100/17",
     },
+    {
+      id: 18,
+      name: "100 Days of Swift - Day 18",
+      learned: [
+        {
+          id: 1,
+          title: "Wrap up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Review for Project 1: Storm Viewer",
+          points: [
+            {
+              id: 1,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day18/Day-18-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/18",
+    },
   ],
 };
