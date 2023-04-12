@@ -2061,5 +2061,34 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day19/Day-19-Image.png",
       link: "https://www.hackingwithswift.com/100/19",
     },
+    {
+      id: 20,
+      name: "100 Days of Swift - Day 20",
+      learned: [
+        {
+          id: 1,
+          title: "Guess which flag: random numbers",
+          points: [
+            {
+              id: 1,
+              text: "Get the random generation functionality with the flags.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "From outlets to actions: creating an IBAction",
+          points: [
+            {
+              id: 1,
+              text: "Completed most of the game logic.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day20/Day-20-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/20",
+    },
   ],
 };
