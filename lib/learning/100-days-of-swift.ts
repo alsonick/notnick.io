@@ -2022,5 +2022,44 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day18/Day-18-Gif.gif",
       link: "https://www.hackingwithswift.com/100/18",
     },
+    {
+      id: 19,
+      name: "100 Days of Swift - Day 19",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Got the Xcode project setup.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Designing your layout",
+          points: [
+            {
+              id: 1,
+              text: "Designed the ui and added auto layout.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Making the basic game work: UIButton and CALayer",
+          points: [
+            {
+              id: 1,
+              text: "Covered UIButton and CALayer.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day19/Day-19-Image.png",
+      link: "https://www.hackingwithswift.com/100/19",
+    },
   ],
 };
