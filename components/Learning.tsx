@@ -1,14 +1,26 @@
 import { OtherPageContainer } from "./OtherPageContainer";
-// import { SecondaryFilterBox } from "./SecondaryFilterBox";
+import { SecondaryFilterBox } from "./SecondaryFilterBox";
 import { Learn, Topic } from "../types/topic";
+import { FiDownload } from "react-icons/fi";
+import { saveAs } from "file-saver";
 import { Heading } from "./Heading";
 import { Toggle } from "./Toggle";
 import { Header } from "./Header";
 import { GoBack } from "./GoBack";
+import { Button } from "./Button";
+import { useState } from "react";
+import { Label } from "./Label";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
 
 export const Learning = ({ learn, language, description }: Topic) => {
+  const [learnData, setLearnData] = useState<Learn[]>(learn);
+
+  const filter = (name: string) => {
+    const filtered = learn.filter((learn) => learn.name === name);
+    setLearnData(filtered);
+  };
+
   return (
     <OtherPageContainer footer={true}>
       <div className="flex flex-col">
@@ -21,12 +33,15 @@ export const Learning = ({ learn, language, description }: Topic) => {
         </Header>
       </div>
       <div className="mt-2 border-t border-teal-100 dark:border-teal-900 pt-8">
-        {/* <div className="mb-6 w-full flex items-center">
-          <div className="ml-auto w-fit">
-            <SecondaryFilterBox items={learn} />
+        <div className="mb-6 w-full flex items-center">
+          <div className="ml-auto flex flex-col items-center w-fit">
+            <div className="ml-auto mb-1">
+              <Label text="filter by name" />
+            </div>
+            <SecondaryFilterBox items={learn} filter={filter} />
           </div>
-        </div> */}
-        {learn.map((topic) => (
+        </div>
+        {learnData.map((topic) => (
           <Topic
             key={topic.id}
             name={topic.name}
@@ -76,12 +91,29 @@ const Topic = ({
       </div>
       {image && (
         <picture>
-          <img className="w-2/3" src={image} alt="Showcase" />
+          <img
+            className="w-2/3"
+            src={image}
+            alt={`${name} Simulator Showcase`}
+            title={`${name} Simulator Showcase`}
+          />
         </picture>
+      )}
+      {image && (
+        <div className="mt-4">
+          <Button
+            title={`Download ${name} Simulator Showcase`}
+            onClick={() => {
+              saveAs(`${name} Simulator Showcase`, name);
+            }}
+          >
+            Download <FiDownload className="text-xl ml-2" />
+          </Button>
+        </div>
       )}
       <div className="mt-5">
         <LinkT href={link} target="_blank">
-          Visit
+          Visit Page
         </LinkT>
       </div>
     </div>

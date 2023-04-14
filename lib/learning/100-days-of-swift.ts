@@ -642,7 +642,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
               text: "Using true as your condition will result in an infinite loop.",
             },
             {
-              id: 1,
+              id: 2,
               text: "Results: 11/12",
             },
           ],
@@ -1482,7 +1482,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
               text: "You can add protocols to custom types.",
             },
             {
-              id: 4,
+              id: 2,
               text: "Results: 6/6",
             },
           ],
@@ -2088,6 +2088,35 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       ],
       completed: true,
       image: "/learn/100-days-of-swift/images/Day20/Day-20-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/20",
+    },
+    {
+      id: 21,
+      name: "100 Days of Swift - Day 21",
+      learned: [
+        {
+          id: 1,
+          title: "Wrap up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Review for Project 2: Guess the Flag",
+          points: [
+            {
+              id: 1,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day21/Day-21-Gif.gif",
       link: "https://www.hackingwithswift.com/100/20",
     },
   ],
