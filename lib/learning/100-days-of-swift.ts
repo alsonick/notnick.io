@@ -2117,7 +2117,56 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       ],
       completed: true,
       image: "/learn/100-days-of-swift/images/Day21/Day-21-Gif.gif",
-      link: "https://www.hackingwithswift.com/100/20",
+      link: "https://www.hackingwithswift.com/100/21",
+    },
+    {
+      id: 22,
+      name: "100 Days of Swift - Day 22",
+      learned: [
+        {
+          id: 1,
+          title: "About technique projects",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "UIActivityViewController explained",
+          points: [
+            {
+              id: 1,
+              text: "Covered how to use UIActivityViewController.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Wrap up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Review for Project 3: Social media",
+          points: [
+            {
+              id: 1,
+              text: "Results: 12/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day22/Day-22-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/22",
     },
   ],
 };
