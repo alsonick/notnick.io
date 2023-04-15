@@ -2168,5 +2168,44 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day22/Day-22-Gif.gif",
       link: "https://www.hackingwithswift.com/100/22",
     },
+    {
+      id: 23,
+      name: "100 Days of Swift - Day 23",
+      learned: [
+        {
+          id: 1,
+          title: "What you learned",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Key points",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Challenge",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day23/Day-23-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/23",
+    },
   ],
 };
