@@ -2207,5 +2207,52 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day23/Day-23-Gif.gif",
       link: "https://www.hackingwithswift.com/100/23",
     },
+    {
+      id: 24,
+      name: "100 Days of Swift - Day 24",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "We setup the Xcode project.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Creating a simple browser with WKWebView",
+          points: [
+            {
+              id: 1,
+              text: "Covered how to use WebKit to load websites in our app.",
+            },
+            {
+              id: 2,
+              text: "Touched on the delegate pattern.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Choosing a website: UIAlertController action sheets",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to use the UIAlertController class to show action sheets.",
+            },
+            {
+              id: 2,
+              text: "Used the (_ webView: WKWebView, didFinish navigation: WKNavigation!) delegate method from WKNavigationDelegate.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day24/Day-24-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/23",
+    },
   ],
 };
