@@ -2205,7 +2205,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       ],
       completed: true,
       image: "/learn/100-days-of-swift/images/Day23/Day-23-Gif.gif",
-      link: "https://www.hackingwithswift.com/100/23",
+      link: "https://www.hackingwithswift.com/100/22",
     },
   ],
 };
