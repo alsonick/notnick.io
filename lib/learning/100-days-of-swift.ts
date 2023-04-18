@@ -2282,5 +2282,34 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/25",
     },
+    {
+      id: 26,
+      name: "100 Days of Swift - Day 26",
+      learned: [
+        {
+          id: 1,
+          title: "Wrap up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Review for Project 4: Easy Browser",
+          points: [
+            {
+              id: 1,
+              text: "Results: 11/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day26/Day-26-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/26",
+    },
   ],
 };
