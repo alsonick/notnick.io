@@ -2252,7 +2252,35 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       ],
       completed: true,
       image: "/learn/100-days-of-swift/images/Day24/Day-24-Gif.gif",
-      link: "https://www.hackingwithswift.com/100/23",
+      link: "https://www.hackingwithswift.com/100/24",
+    },
+    {
+      id: 25,
+      name: "100 Days of Swift - Day 25",
+      learned: [
+        {
+          id: 1,
+          title: "Monitoring page loads: UIToolbar and UIProgressView",
+          points: [
+            {
+              id: 1,
+              text: "Covered how to use the UIToolbar and UIProgressView.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Refactoring for the win",
+          points: [
+            {
+              id: 1,
+              text: "Refactored the code so the web view would only open websites that we wanted.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/25",
     },
   ],
 };
