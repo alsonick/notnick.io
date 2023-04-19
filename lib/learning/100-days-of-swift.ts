@@ -2311,5 +2311,55 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day26/Day-26-Gif.gif",
       link: "https://www.hackingwithswift.com/100/26",
     },
+    {
+      id: 27,
+      name: "100 Days of Swift - Day 27",
+      learned: [
+        {
+          id: 1,
+          title:
+            "Capture lists in Swift: what's the difference between weak, strong, and unowned references?",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Reading from disk: contentsOfFile",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to read the contents of a file.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Pick a word, any word: UIAlertController",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to add a text field to the UIAlertController.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day27/Day-27-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/27",
+    },
   ],
 };
