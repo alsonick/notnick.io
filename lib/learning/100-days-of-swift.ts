@@ -2361,5 +2361,44 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day27/Day-27-Gif.gif",
       link: "https://www.hackingwithswift.com/100/27",
     },
+    {
+      id: 28,
+      name: "100 Days of Swift - Day 28",
+      learned: [
+        {
+          id: 1,
+          title: "Prepare for submission: lowercased() and IndexPath",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Checking for valid answers",
+          points: [
+            {
+              id: 1,
+              text: "Implemented most of the game logic.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Or else what?",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day28/Day-28-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/28",
+    },
   ],
 };
