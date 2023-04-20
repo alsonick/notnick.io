@@ -2398,7 +2398,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       ],
       completed: true,
       image: "/learn/100-days-of-swift/images/Day28/Day-28-Gif.gif",
-      link: "https://www.hackingwithswift.com/100/27",
+      link: "https://www.hackingwithswift.com/100/28",
     },
   ],
 };
