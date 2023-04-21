@@ -2400,5 +2400,34 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day28/Day-28-Gif.gif",
       link: "https://www.hackingwithswift.com/100/28",
     },
+    {
+      id: 29,
+      name: "100 Days of Swift - Day 29",
+      learned: [
+        {
+          id: 1,
+          title: "Wrap up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Review for Project 5: Word Scramble",
+          points: [
+            {
+              id: 1,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day29/Day-29-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/29",
+    },
   ],
 };
