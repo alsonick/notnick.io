@@ -2429,5 +2429,45 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day29/Day-29-Gif.gif",
       link: "https://www.hackingwithswift.com/100/29",
     },
+    {
+      id: 30,
+      name: "100 Days of Swift - Day 30",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Advanced Auto Layout",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title:
+            "Auto Layout in code: addConstraints() with Visual Format Language",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day30/Day-30-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/30",
+    },
   ],
 };
