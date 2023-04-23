@@ -2469,5 +2469,54 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day30/Day-30-Gif.gif",
       link: "https://www.hackingwithswift.com/100/30",
     },
+    {
+      id: 31,
+      name: "100 Days of Swift - Day 31",
+      learned: [
+        {
+          id: 1,
+          title:
+            "Auto Layout metrics and priorities: constraints(withVisualFormat:)",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Auto Layout anchors",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Wrap up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Review for Project 6: Auto Layout",
+          points: [
+            {
+              id: 1,
+              text: "Results: 10/12",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/31",
+    },
   ],
 };
