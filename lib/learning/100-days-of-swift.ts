@@ -2518,5 +2518,44 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/31",
     },
+    {
+      id: 32,
+      name: "100 Days of Swift - Day 32",
+      learned: [
+        {
+          id: 1,
+          title: "What you learned",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Key points",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Challenge",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day32/Day-32-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/31",
+    },
   ],
 };
