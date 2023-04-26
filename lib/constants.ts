@@ -1,3 +1,7 @@
+export const API_URL =
+  process.env.NODE_ENV === "development"
+    ? "https://localhost:3000/api"
+    : "https://notnick.io/api";
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
 export const DISCORD_ID = "463449066672619520";
 export const EMAIL_ADDRESS = "hi@notnick.io";

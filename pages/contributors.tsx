@@ -11,12 +11,14 @@ import { NextPage } from "next";
 import Link from "next/link";
 
 const Contributors: NextPage = () => {
+  const heading = "Contributors";
+
   return (
     <OtherPageContainer footer={true}>
-      <Seo title="Contributors" description="Thank you contributors!" />
+      <Seo title={heading} description="Thank you contributors!" />
       <Toggle />
       <Header singleItem={true} column={true}>
-        <Heading style={{ marginBottom: 0 }}>Contributors</Heading>
+        <Heading style={{ marginBottom: 0 }}>{heading}</Heading>
         <Text style={{ marginTop: "8px" }}>Thank you contributors! ❤️</Text>
       </Header>
       <Link
