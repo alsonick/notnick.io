@@ -2596,5 +2596,33 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day33/Day-33-Gif.gif",
       link: "https://www.hackingwithswift.com/100/33",
     },
+    {
+      id: 34,
+      name: "100 Days of Swift - Day 34",
+      learned: [
+        {
+          id: 1,
+          title: "Rendering a petition: loadHTMLString",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to render HTML content using WebKit.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Finishing touches: didFinishLaunchingWithOptions",
+          points: [
+            {
+              id: 1,
+              text: "Covered the didFinishLaunchingWithOptions lifecycle method.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/34",
+    },
   ],
 };
