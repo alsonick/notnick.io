@@ -2555,7 +2555,46 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       ],
       completed: true,
       image: "/learn/100-days-of-swift/images/Day32/Day-32-Gif.gif",
-      link: "https://www.hackingwithswift.com/100/31",
+      link: "https://www.hackingwithswift.com/100/32",
+    },
+    {
+      id: 33,
+      name: "100 Days of Swift - Day 33",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Creating the basic UI: UITabBarController",
+          points: [
+            {
+              id: 1,
+              text: "Learned how to use the UITabBarController.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Parsing JSON using the Codable protocol",
+          points: [
+            {
+              id: 1,
+              text: "Covered how to parse JSON data from an external API.",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day33/Day-33-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/33",
     },
   ],
 };
