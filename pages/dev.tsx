@@ -3,17 +3,29 @@ import { Heading } from "../components/Heading";
 import { Toggle } from "../components/Toggle";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
-import { API_URL } from "../lib/constants";
+import { useEffect, useState } from "react";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Dev as D } from "../types/dev";
 import { Key } from "../components/Key";
 
 // Next.js
-import { GetStaticProps, NextPage } from "next";
+import { NextPage } from "next";
 
-const Dev: NextPage<{ dev: D }> = ({ dev }) => {
+const Dev: NextPage = () => {
+  const [dev, setDev] = useState<D | null>(null);
+
   const heading = "dev";
+
+  const fetchDevData = async () => {
+    const response = await fetch(`/api/dev`);
+    const data: D = await response.json();
+    setDev(data);
+  };
+
+  useEffect(() => {
+    fetchDevData();
+  }, []);
 
   return (
     <OtherPageContainer footer={true}>
@@ -23,27 +35,22 @@ const Dev: NextPage<{ dev: D }> = ({ dev }) => {
         <Heading>{heading}</Heading>
       </Header>
       <div className="mb-6">
-        {Object.entries(dev).map((d) => (
-          <div key={d[0]} className="flex items-center">
-            <Key>{d[0]}:</Key>&nbsp;
-            <Text key={d[0]}>{typeof d[1] === "boolean" ? "true" : d[1]}</Text>
-          </div>
-        ))}
+        {dev ? (
+          Object.entries(dev).map((d) => (
+            <div key={d[0]} className="flex items-center">
+              <Key>{d[0]}:</Key>&nbsp;
+              <Text key={d[0]}>
+                {typeof d[1] === "boolean" ? "true" : d[1]}
+              </Text>
+            </div>
+          ))
+        ) : (
+          <Text>Loading...</Text>
+        )}
       </div>
       <GoBack />
     </OtherPageContainer>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${API_URL}/dev`);
-  const data: D = await response.json();
-
-  return {
-    props: {
-      dev: data,
-    },
-  };
 };
 
 export default Dev;
