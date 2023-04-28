@@ -2653,5 +2653,34 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day35/Day-35-Gif.gif",
       link: "https://www.hackingwithswift.com/100/35",
     },
+    {
+      id: 36,
+      name: "100 Days of Swift - Day 36",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day36/Day-36-Image.png",
+      link: "https://www.hackingwithswift.com/100/36",
+    },
   ],
 };
