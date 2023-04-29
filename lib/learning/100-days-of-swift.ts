@@ -2682,5 +2682,44 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day36/Day-36-Image.png",
       link: "https://www.hackingwithswift.com/100/36",
     },
+    {
+      id: 37,
+      name: "100 Days of Swift - Day 37",
+      learned: [
+        {
+          id: 1,
+          title: "Loading a level and adding button targets",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "It's play time: firstIndex(of:) and joined()",
+          points: [
+            {
+              id: 1,
+              text: "Completed the game logic.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Property observers: didSet",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      image: "/learn/100-days-of-swift/images/Day37/Day-37-Gif.gif",
+      link: "https://www.hackingwithswift.com/100/37",
+    },
   ],
 };
