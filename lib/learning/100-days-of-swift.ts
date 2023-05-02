@@ -2750,5 +2750,63 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       image: "/learn/100-days-of-swift/images/Day38/Day-38-Gif.gif",
       link: "https://www.hackingwithswift.com/100/38",
     },
+    {
+      id: 39,
+      name: "100 Days of Swift - Day 39",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Why is locking the UI bad?",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "GCD 101: async()",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Back to the main thread: DispatchQueue.main",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Easy GCD using performSelector(inBackground:)",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/39",
+    },
   ],
 };
