@@ -97,20 +97,14 @@ export const technologies = [
   },
   {
     id: 17,
-    text: "PHP",
-    link: "https://www.php.net/",
-    desc: "A scripting language geared towards server-side development.",
+    text: "Swift",
+    link: "https://www.swift.org/",
+    desc: "Swift is a powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS.",
   },
   {
     id: 18,
     text: "React Native",
     link: "https://reactnative.dev/",
     desc: "A JavaScript library for building user interfaces on mobile devices.",
-  },
-  {
-    id: 19,
-    text: "MySQL",
-    link: "",
-    desc: "An open-source relational database.",
   },
 ];

@@ -10,7 +10,7 @@ export const EXPERIENCE: Experience[] = [
     employmentType: "contract",
     location: "Carmel, Indiana - United States",
     remote: true,
-    current: true,
+    current: false,
     link: "https://www.joinaviato.com/",
     task: "Helped out with building, maintaining, implementing, and improving the user experience on Aviato.",
   },
