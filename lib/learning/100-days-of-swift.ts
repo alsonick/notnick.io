@@ -2836,5 +2836,83 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/40",
     },
+    {
+      id: 41,
+      name: "100 Days of Swift - Day 41",
+      learned: [
+        {
+          id: 1,
+          title: "What you learned",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Key points",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Challenge",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      image: "/learn/100-days-of-swift/images/Day41/Day-41-Gif.gif",
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/41",
+    },
+    {
+      id: 42,
+      name: "100 Days of Swift - Day 42",
+      learned: [
+        {
+          id: 1,
+          title: "Setting up",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Designing UICollectionView cells",
+          points: [
+            {
+              id: 1,
+              text: "Covered how to use collection views.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "UICollectionView data sources",
+          points: [
+            {
+              id: 1,
+              text: "Covered UICollectionView data source methods.",
+            },
+          ],
+        },
+      ],
+      image: "/learn/100-days-of-swift/images/Day42/Day-42-Image.png",
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/42",
+    },
   ],
 };
