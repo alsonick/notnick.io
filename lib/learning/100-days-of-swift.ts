@@ -2914,5 +2914,44 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Topic = {
       completed: true,
       link: "https://www.hackingwithswift.com/100/42",
     },
+    {
+      id: 43,
+      name: "100 Days of Swift - Day 43",
+      learned: [
+        {
+          id: 1,
+          title: "Importing photos with UIImagePickerController",
+          points: [
+            {
+              id: 1,
+              text: "Covered how to use the image picker.",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Custom subclasses of NSObject",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Connecting up the people",
+          points: [
+            {
+              id: 1,
+              text: "Completed",
+            },
+          ],
+        },
+      ],
+      image: "/learn/100-days-of-swift/images/Day43/Day-43-Gif.gif",
+      completed: true,
+      link: "https://www.hackingwithswift.com/100/43",
+    },
   ],
 };
