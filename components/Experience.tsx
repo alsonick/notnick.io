@@ -21,7 +21,7 @@ export const Experience = () => {
         page.
       </Text>
       <div>
-        {EXPERIENCE.map((experience) => (
+        {EXPERIENCE.slice(0, 3).map((experience) => (
           <ExperienceCard
             key={experience.id}
             name={experience.name}

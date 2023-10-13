@@ -85,26 +85,14 @@ export const technologies = [
   },
   {
     id: 15,
-    text: "Fastify",
-    link: "https://www.fastify.io/",
-    desc: "A framework that allows developers to create backend services.",
-  },
-  {
-    id: 16,
     text: "JavaScript",
     link: "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
     desc: "A programming language for the web.",
   },
   {
-    id: 17,
-    text: "Swift",
-    link: "https://www.swift.org/",
-    desc: "Swift is a powerful and intuitive programming language for iOS, iPadOS, macOS, tvOS, and watchOS.",
-  },
-  {
-    id: 18,
-    text: "React Native",
-    link: "https://reactnative.dev/",
-    desc: "A JavaScript library for building user interfaces on mobile devices.",
+    id: 16,
+    text: "Java",
+    link: "https://www.java.com/en/",
+    desc: "Java is a high-level object-oriented programming language.",
   },
 ];

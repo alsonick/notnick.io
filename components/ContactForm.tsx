@@ -51,7 +51,7 @@ export const ContactForm = () => {
 
     if (response.success) {
       setLoading(false);
-      setSuccess("Thanks! I've received the message, expect a response soon.");
+      setSuccess("Thanks! I've received the message.");
       setMessage("");
       setEmail("");
       return;
@@ -59,8 +59,6 @@ export const ContactForm = () => {
 
     setError(response.error!);
   };
-
-
 
   return (
     <Form onSubmit={sendMessage} action="POST">

@@ -29,27 +29,19 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <Link
-            className="w-fit focus:ring-4 rounded-full focus:ring-offset-2 dark:ring-offset-black border-none my-2 ring-[#f54bff] duration-300 outline-none font-semibold"
-            target="_blank"
-            href={`https://www.google.com/maps/place/${CITY}`}
-          >
-            <div
-              className="flex items-center p-1 text-sm px-3  w-fit rounded-full text-white bg-[#f54bff]"
-              title={`${CITY}, ${COUNTRY}`}
-            >
-              <FiSend className="mr-2" />
-              {CITY}, {COUNTRY}
-            </div>
-          </Link>
-
           <Heading style={{ marginBottom: "0.5rem" }}>
             Hi, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
           <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">
-            {new Date().getFullYear() - 2003} y/o&nbsp;
             <TypeAnimation
-              sequence={["Software Engineer", 2000, "iOS Engineer", 2000]}
+              sequence={[
+                "Software Engineer",
+                2000,
+                "Student",
+                2000,
+                "Entrepreneur",
+                2000,
+              ]}
               wrapper="p"
               cursor={true}
               repeat={Infinity}

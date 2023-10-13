@@ -4,7 +4,7 @@ import { Social } from "../types/social";
 export const SOCIALS: Social[] = [
   {
     id: 1,
-    title: "Twitter",
+    title: "X",
     username: "@heynickn",
     link: "https://twitter.com/heynickn",
   },
@@ -41,7 +41,7 @@ export const SOCIALS: Social[] = [
   {
     id: 7,
     title: "Discord",
-    username: "Nicholas#0050",
+    username: "alsonick_",
     link: `https://discord.com/users/${DISCORD_ID}`,
   },
   {
@@ -67,5 +67,11 @@ export const SOCIALS: Social[] = [
     title: "YouTube",
     username: "@alsonick",
     link: "https://www.youtube.com/@alsonick",
+  },
+  {
+    id: 12,
+    title: "Threads",
+    username: "@heynickn",
+    link: "https://threads.net/@heynickn",
   },
 ];

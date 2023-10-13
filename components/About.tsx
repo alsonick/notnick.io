@@ -10,26 +10,22 @@ export const About = () => {
       <Heading>About 💭</Heading>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I&apos;m a {new Date().getFullYear() - 2003} year old software engineer
-        based in the UK, I mostly specialize in web development, mainly frontend
-        development.
-      </Text>
-
-      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I use a variety of technologies to ease the development process, when
-        working on the client I use <b>TypeScript</b> &#38; <b>Next.js</b> and
-        for the backend development I use either <b>NodeJS</b> or <b>PHP</b>.
-        For databases I have the most experience in <b>PostgreSQL</b> and{" "}
-        <b>SQL</b>.
-      </Text>
-
-      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I&apos;m also very passionate about systems programming and networking,
-        recently I&apos;ve been picking up <b>Rust</b> and so far I&apos;m
-        loving it. I also have some{" "}
-        <LinkTag href="/note/networking-notes">networking notes</LinkTag> so If
-        you&apos;re interested about getting into networking then be sure to
-        check those out!
+        I&apos;m a {new Date().getFullYear() - 2003} software engineer based in
+        the United Kingdom. I mostly specialize in backend development utilizing{" "}
+        <LinkTag
+          href="https://en.wikipedia.org/wiki/Java_(programming_language)"
+          target="_blank"
+        >
+          Java
+        </LinkTag>{" "}
+        &{" "}
+        <LinkTag
+          href="https://en.wikipedia.org/wiki/TypeScript"
+          target="_blank"
+        >
+          TypeScript
+        </LinkTag>
+        .
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
@@ -52,7 +48,11 @@ export const About = () => {
         >
           Attack on Titan
         </LinkTag>
-        .
+        . I also love playing the piano,{" "}
+        <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
+          ragtime
+        </LinkTag>{" "}
+        is my favorite genre to play.
       </Text>
 
       <Text>
