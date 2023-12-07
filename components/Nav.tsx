@@ -8,7 +8,7 @@ import Link from "next/link";
 export const Nav = () => {
   const ITEMS = [
     { id: 1, text: "/", to: "/", dropdown: "Home" },
-    { id: 2, text: "work", to: "/work", dropdown: "Work" },
+    { id: 2, text: "exp", to: "/experience", dropdown: "Experience" },
     { id: 3, text: "note", to: "/note", dropdown: "Note" },
     { id: 4, text: "blog", to: "/blog", dropdown: "Blog" },
   ];

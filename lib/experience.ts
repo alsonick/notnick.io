@@ -40,17 +40,4 @@ export const EXPERIENCE: Experience[] = [
     link: "https://www.youtube.com/channel/UCYFjrIHMnYmQRm1IGMS9pAw",
     task: "Helped up with uploads on the channel, and social media, and managed the Drop Zone community.",
   },
-  {
-    id: 4,
-    name: "SavourTunes",
-    description: "Founder",
-    year: 2022,
-    logo: "/companies/logo/SavourTunes.png",
-    employmentType: "self-employed",
-    location: "Brighton, United Kingdom",
-    remote: true,
-    current: true,
-    link: "https://www.youtube.com/@savourtunes",
-    task: "A showcase of popular music with lyrics.",
-  },
 ];
