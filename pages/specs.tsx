@@ -16,7 +16,7 @@ const Specs: NextPage = () => {
   return (
     <>
       <Seo
-        title="My Specs"
+        title="Specs - Nicholas Njoki"
         description="The equipment I use on a daily basis."
       />
       <Layout>
