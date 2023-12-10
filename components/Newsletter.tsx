@@ -88,8 +88,8 @@ export const NewsLetter = () => {
   };
 
   useEffect(() => {
-    fetchSubscriberHelperCall();
-    fetchIssuesHelperCall();
+    // fetchSubscriberHelperCall();
+    // fetchIssuesHelperCall();
   }, []);
 
   return (
@@ -113,9 +113,13 @@ export const NewsLetter = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="flex md:w-fit w-full">
-            <Button style={{ width: "100%" }}>Subscribe</Button>
-          </div>
+          <Tippy content={"Disabled"}>
+            <div className="flex md:w-fit w-full">
+              <Button disabled style={{ width: "100%" }}>
+                Subscribe
+              </Button>
+            </div>
+          </Tippy>
         </div>
         <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
           <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
@@ -123,16 +127,18 @@ export const NewsLetter = () => {
               {subs ?? 0}&nbsp;
             </span>{" "}
             {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
-            <Tippy content={`${issues} Issues`}>
-              <Link
-                className="hover:underline cursor-pointer focus:ring-4 ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black rounded"
-                href="https://www.getrevue.co/profile/heynickn"
-                rel="noreferrer"
-                target="_blank"
-                title="View my published issues"
-              >
-                View all issues&nbsp;
-              </Link>
+            <Tippy content={"Disabled"}>
+              <div>
+                <Link
+                  className="hover:underline pointer-events-none focus:ring-4 ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black rounded"
+                  href="https://www.getrevue.co/profile/heynickn"
+                  rel="noreferrer"
+                  target="_blank"
+                  title="View my published issues"
+                >
+                  View all issues&nbsp;
+                </Link>
+              </div>
             </Tippy>
             &bull;&nbsp;
             <Avatar border={true} width={20} height={20} />

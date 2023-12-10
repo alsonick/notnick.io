@@ -14,7 +14,7 @@ const Contributors: NextPage = () => {
   const heading = "Contributors";
 
   return (
-    <OtherPageContainer footer={true}>
+    <OtherPageContainer footer={false}>
       <Seo title={heading} description="Thank you contributors!" />
       <Toggle />
       <Header singleItem={true} column={true}>

@@ -1,4 +1,6 @@
-export const technologies = [
+import { Technologies } from "../types/technologies";
+
+export const technologies: Technologies[] = [
   {
     id: 1,
     text: "React.js",
@@ -55,44 +57,50 @@ export const technologies = [
   },
   {
     id: 10,
-    text: "Docker",
-    link: "https://www.docker.com/",
-    desc: "An open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly.",
-  },
-  {
-    id: 11,
     text: "Postgres",
     link: "https://www.postgresql.org/",
     desc: "An open source object-relational database system that uses and extends the SQL language.",
   },
   {
-    id: 12,
+    id: 11,
     text: "Yarn",
     link: "https://yarnpkg.com/",
     desc: "A package manager developed by Facebook for the Node.js JavaScript runtime environment.",
   },
   {
-    id: 13,
+    id: 12,
     text: "npm",
     link: "https://www.npmjs.com/",
     desc: "A package manager for the JavaScript programming language.",
   },
   {
-    id: 14,
+    id: 13,
     text: "Express",
     link: "https://expressjs.com/",
     desc: "A framework that runs within Node.js that allows developers to create backend services.",
   },
   {
-    id: 15,
+    id: 14,
     text: "JavaScript",
     link: "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/",
     desc: "A programming language for the web.",
   },
   {
+    id: 15,
+    text: "Swift",
+    link: "https://www.swift.org/",
+    desc: "Swift is a general-purpose programming language used to create applications that run on Apple devices.",
+  },
+  {
     id: 16,
-    text: "Java",
-    link: "https://www.java.com/en/",
-    desc: "Java is a high-level object-oriented programming language.",
+    text: "UIKit",
+    link: "https://developer.apple.com/documentation/uikit",
+    desc: "A user interface framework.",
+  },
+  {
+    id: 17,
+    text: "SwiftUI",
+    link: "https://developer.apple.com/xcode/swiftui/",
+    desc: "A declarative Swift user interface framework",
   },
 ];

@@ -1,7 +1,6 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { Heading } from "../components/Heading";
 import { Toggle } from "../components/Toggle";
-import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
 import { Text } from "../components/Text";
@@ -28,7 +27,7 @@ const Dev: NextPage = () => {
   }, []);
 
   return (
-    <OtherPageContainer footer={true}>
+    <OtherPageContainer footer={false}>
       <Seo title={heading} description="" />
       <Toggle />
       <Header singleItem={true} column={true}>
@@ -48,7 +47,6 @@ const Dev: NextPage = () => {
           <Text>Loading...</Text>
         )}
       </div>
-      <GoBack />
     </OtherPageContainer>
   );
 };

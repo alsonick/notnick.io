@@ -4,7 +4,7 @@ import { Social } from "../types/social";
 export const SOCIALS: Social[] = [
   {
     id: 1,
-    title: "X",
+    title: "X (Previously Twitter)",
     username: "@heynickn",
     link: "https://twitter.com/heynickn",
   },

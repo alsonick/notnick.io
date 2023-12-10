@@ -12,7 +12,7 @@ const Credit = () => {
         title="Credit"
         description="The source code to this site is open source so anyone is free to take a copy and make modifications. Whiles this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
       />
-      <OtherPageContainer footer={true}>
+      <OtherPageContainer footer={false}>
         <div className="flex flex-col">
           <Toggle />
           <Heading>Credit</Heading>

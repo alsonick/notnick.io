@@ -32,6 +32,7 @@ const Home: NextPage = () => {
           <FeaturedArticles />
           <Experience />
           <Technologies />
+          {/* <Community />  Uncomment this out when you've set up your server */}
           <NewsLetter />
           <Contact />
           <License />
