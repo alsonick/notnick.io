@@ -12,10 +12,11 @@ export const FeaturedArticles = () => {
 
   const shuffleArticles = () => {
     let s = [];
-    const shuffled = ARTICLES.map((value) => ({
-      value,
-      sort: Math.random(),
-    }))
+    const shuffled = ARTICLES.slice(0, 3)
+      .map((value) => ({
+        value,
+        sort: Math.random(),
+      }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ value }) => value);
     s.push(shuffled);

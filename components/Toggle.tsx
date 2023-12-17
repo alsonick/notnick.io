@@ -24,11 +24,24 @@ export const Toggle = () => {
     }
   }, []);
 
+  // Figure this out later lol
   useEffect(() => {
+    var map: any = {};
     const keydownHandler = (e: KeyboardEvent) => {
-      if (e.key.toLowerCase() === "t") {
+      // e = e || e;
+      // map[e.key] = e.type == "keydown";
+      // console.log(map);
+      // if (map.Control && map.t) {
+      //   toggleTheme(localStorage.getItem("theme"));
+      // }
+      // map = {
+      //   Control: false,
+      //   t: false,
+      // };
+      if (e.key.toLowerCase() === "t" && e.key.toLowerCase() === "control") {
         toggleTheme(localStorage.getItem("theme"));
       }
+      // console.log(e.key);
     };
 
     document.addEventListener("keydown", keydownHandler);

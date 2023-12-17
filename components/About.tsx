@@ -10,22 +10,24 @@ export const About = () => {
       <Heading>About 💭</Heading>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I&apos;m a {new Date().getFullYear() - 2003} software engineer based in
-        the United Kingdom. I mostly specialize in backend development utilizing{" "}
+        I&apos;m a {new Date().getFullYear() - 2003} software engineer mainly
+        focused on the field of mobile app development, more specifically iOS
+        development. I&apos;m also a huge{" "}
         <LinkTag
-          href="https://en.wikipedia.org/wiki/Java_(programming_language)"
+          href="https://developer.apple.com/xcode/swiftui/"
           target="_blank"
         >
-          Java
+          SwiftUI
         </LinkTag>{" "}
-        &{" "}
-        <LinkTag
-          href="https://en.wikipedia.org/wiki/TypeScript"
-          target="_blank"
-        >
-          TypeScript
-        </LinkTag>
-        .
+        enthusiast so If you&apos;d like to geek about{" "}
+        <LinkTag href="https://www.swift.org/" target="_blank">
+          Swift
+        </LinkTag>{" "}
+        be sure to{" "}
+        <LinkTag href="https://twitter.com/heynickn" target="_blank">
+          tweet
+        </LinkTag>{" "}
+        me.
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
