@@ -6,6 +6,7 @@ tag: "Thoughts"
 mins: "3"
 finished: true
 last_updated_date: "2023-03-25"
+filter: "Thoughts"
 ---
 
 ## My thoughts on Artificial Intelligence

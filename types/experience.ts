@@ -18,4 +18,5 @@ export interface Experience {
   link: string;
   task: string;
   logo?: string;
+  filter: string;
 }

@@ -13,6 +13,7 @@ export const EXPERIENCE: Experience[] = [
     current: false,
     link: "https://www.joinaviato.com/",
     task: "Helped out with building, maintaining, implementing, and improving the user experience on Aviato.",
+    filter: "engineering",
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const EXPERIENCE: Experience[] = [
     current: false,
     link: "https://watchou.com/",
     task: "One primary task was to convert the React app to from consuming a RESTful API to a GraphQL API.",
+    filter: "engineering",
   },
   {
     id: 3,
@@ -39,5 +41,20 @@ export const EXPERIENCE: Experience[] = [
     current: false,
     link: "https://www.youtube.com/channel/UCYFjrIHMnYmQRm1IGMS9pAw",
     task: "Helped up with uploads on the channel, and social media, and managed the Drop Zone community.",
+    filter: "music",
+  },
+  {
+    id: 4,
+    name: "Aquila",
+    description: "Channel Manager",
+    year: 2023,
+    logo: "/companies/logo/Aquila.jpeg",
+    employmentType: "part-time",
+    location: "England, United Kingdom",
+    remote: true,
+    current: true,
+    link: "https://www.youtube.com/@Aquila-xl3vg",
+    task: "Primary focus was to provide daily content.",
+    filter: "music",
   },
 ];

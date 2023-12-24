@@ -2,18 +2,17 @@ import { FiChevronDown, FiCheck } from "react-icons/fi";
 import { Listbox } from "@headlessui/react";
 import { Fragment } from "react";
 
-interface Props {
+interface Props<T> {
   onChange: React.Dispatch<React.SetStateAction<string>>;
   selectedItem: string;
-  items: Item[];
+  items: T[];
 }
 
-interface Item {
-  slug: string;
-  tag: string;
-}
-
-export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
+export const FilterListBox = <T extends unknown>({
+  onChange,
+  selectedItem,
+  items,
+}: Props<T>) => {
   return (
     <Listbox value={selectedItem} onChange={onChange}>
       <div className="flex duration-300 relative flex-col w-1/2">
@@ -26,8 +25,8 @@ export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
         <Listbox.Options className="flex z-10 absolute w-full flex-col border bg-white border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16">
-          {items.map((item) => (
-            <Listbox.Option key={item.slug} value={item.tag} as={Fragment}>
+          {items.map((item: any) => (
+            <Listbox.Option key={item.id} value={item.filter} as={Fragment}>
               {({
                 active,
                 selected,
@@ -42,7 +41,7 @@ export const FilterListBox = ({ onChange, selectedItem, items }: Props) => {
                       : "bg-white text-black"
                   }`}
                 >
-                  {item.tag}
+                  {item.filter}
                   {selected && <FiCheck />}
                 </li>
               )}

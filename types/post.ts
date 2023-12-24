@@ -9,4 +9,5 @@ export interface Post {
   cover?: string;
   tag: string;
   mins: string;
+  filter: string;
 }

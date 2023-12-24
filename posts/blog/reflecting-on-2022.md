@@ -6,6 +6,7 @@ tag: "Thoughts"
 mins: "2"
 finished: true
 last_updated_date: "2023-01-02"
+filter: "Thoughts"
 ---
 
 ## Reflecting on 2022
@@ -25,6 +26,5 @@ I'm now more confident in my skills as a developer and I've also fallen in love 
 - Improved my dev skills significantly ✅
 - Met some cool folks ✅
 - Made over 700+ commits on GitHub ✅
-
 
 If you're curious about my 2023 goals then check them out [here](https://notnick.io/goals/2023), as always I wish you the best, stay healthy, work hard and always dream big!

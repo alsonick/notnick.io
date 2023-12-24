@@ -6,6 +6,7 @@ finished: true
 tag: "Learn"
 mins: "5"
 last_updated_date: "2022-07-09"
+filter: "Learn"
 ---
 
 ## How I learn programming

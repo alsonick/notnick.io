@@ -1,4 +1,7 @@
+import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
+import { generateRandomId } from "../lib/generate-random-id";
 import { FilterListBox } from "../components/FilterListBox";
+import { removeDuplicates } from "../lib/remove-duplicates";
 import { getSortedPostData } from "../lib/post";
 import { Animate } from "../components/Animate";
 import { Heading } from "../components/Heading";
@@ -20,17 +23,29 @@ interface Props {
 }
 
 const Blog: NextPage<Props> = ({ blogs }) => {
-  let tags = [{ tag: "All", slug: "", finished: false }];
+  let tags = [
+    {
+      filter: capitalizeFirstLetter("all"),
+      slug: "",
+      finished: false,
+      id: generateRandomId(),
+    },
+  ];
 
   blogs.forEach((blog) => {
     if (blog.finished) {
-      tags.push({ tag: blog.tag, slug: blog.slug, finished: blog.finished });
+      tags.push({
+        filter: blog.filter,
+        slug: blog.slug,
+        finished: blog.finished,
+        id: generateRandomId(),
+      });
     }
   });
 
-  const [selectedTag, setSelectedTag] = useState(tags[0].tag);
+  const [selected, setSelected] = useState(tags[0].filter);
 
-  const filteredBlogsList = blogs.filter((blog) => blog.tag === selectedTag);
+  const filteredBlogsList = blogs.filter((blog) => blog.filter === selected);
 
   return (
     <>
@@ -44,9 +59,9 @@ const Blog: NextPage<Props> = ({ blogs }) => {
             <Heading style={{ marginBottom: 0 }}>Blog</Heading>
             {blogs.length ? (
               <FilterListBox
-                items={tags}
-                selectedItem={selectedTag}
-                onChange={setSelectedTag}
+                items={removeDuplicates(tags)}
+                selectedItem={selected}
+                onChange={setSelected}
               />
             ) : null}
           </Header>

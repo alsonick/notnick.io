@@ -6,6 +6,7 @@ finished: true
 tag: "Technology"
 mins: "2"
 last_updated_date: "2023-01-05"
+filter: "Technology"
 ---
 
 ## Technologies I'm learning in 2023

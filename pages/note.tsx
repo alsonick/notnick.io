@@ -1,3 +1,6 @@
+import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
+import { generateRandomId } from "../lib/generate-random-id";
+import { removeDuplicates } from "../lib/remove-duplicates";
 import { FilterListBox } from "../components/FilterListBox";
 import { getSortedPostData } from "../lib/post";
 import { Heading } from "../components/Heading";
@@ -29,17 +32,29 @@ interface Props {
 }
 
 const Note: NextPage<Props> = ({ notes }) => {
-  let tags = [{ tag: "All", slug: "", finished: false }];
+  let tags = [
+    {
+      filter: capitalizeFirstLetter("all"),
+      slug: "",
+      finished: false,
+      id: generateRandomId(),
+    },
+  ];
 
   notes.forEach((note) => {
     if (note.finished) {
-      tags.push({ tag: note.tag, slug: note.slug, finished: note.finished });
+      tags.push({
+        filter: note.filter,
+        slug: note.slug,
+        finished: note.finished,
+        id: generateRandomId(),
+      });
     }
   });
 
-  const [selectedTag, setSelectedTag] = useState(tags[0].tag);
+  const [selected, setSelected] = useState(tags[0].filter);
 
-  const filteredNotesList = notes.filter((note) => note.tag === selectedTag);
+  const filteredNotesList = notes.filter((note) => note.filter === selected);
 
   const heading = "Note";
 
@@ -55,9 +70,9 @@ const Note: NextPage<Props> = ({ notes }) => {
             <Heading style={{ marginBottom: 0 }}>{heading}</Heading>
             {notes.length ? (
               <FilterListBox
-                items={tags}
-                selectedItem={selectedTag}
-                onChange={setSelectedTag}
+                items={removeDuplicates(tags)}
+                selectedItem={selected}
+                onChange={setSelected}
               />
             ) : null}
           </Header>
