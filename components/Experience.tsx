@@ -34,6 +34,7 @@ export const Experience = () => {
             year={experience.year}
             logo={experience.logo}
             task={experience.task}
+            filter={experience.filter}
           />
         ))}
       </div>
