@@ -8,4 +8,5 @@ export interface Branding {
     height: number;
   };
   size: string;
+  resolution: number;
 }

@@ -9,6 +9,7 @@ import { BRANDING } from "../lib/branding";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { Key } from "../components/Key";
 import { saveAs } from "file-saver";
 
 // Next.js
@@ -34,6 +35,14 @@ const Branding: NextPage = () => {
               <br />
               Click <LinkT href="/socials">here</LinkT> to check out my socials.
             </Text>
+            <br />
+            <Text>
+              Signatures are drawn by{" "}
+              <LinkT href="https://twitter.com/thesigboy" target="_blank">
+                PedroC
+              </LinkT>
+              . Hit him up!
+            </Text>
           </Header>
           <div className="flex flex-col border-t border-teal-100 dark:border-teal-900 pt-5">
             {BRANDING.map((branding) => (
@@ -50,10 +59,16 @@ const Branding: NextPage = () => {
                 <div className="flex items-center justify-between mt-4">
                   <div className="flex justify-center flex-col">
                     <Text>
-                      Dimensions: {branding.dimensions.width}x
+                      <Key>Dimensions:</Key> {branding.dimensions.width}x
                       {branding.dimensions.height}
                     </Text>
-                    <Text>Size: {branding.size}</Text>
+                    <Text>
+                      <Key>Resolution:</Key> {branding.resolution}x
+                      {branding.resolution}
+                    </Text>
+                    <Text>
+                      <Key>Size:</Key> {branding.size}
+                    </Text>
                   </div>
                   <Button
                     onClick={() => {
