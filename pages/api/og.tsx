@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { THEME } from "../../lib/constants";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
@@ -31,7 +32,7 @@ export default async function handler(req: NextRequest) {
     return new ImageResponse(
       (
         <div tw="flex w-full items-center bg-black py-30 text-white text-2xl h-full">
-          <div tw="absolute top-0 bg-[#f54bff] h-5 w-full z-20"></div>
+          <div tw={`absolute top-0 bg-[${THEME}] h-5 w-full z-20`}></div>
           <div tw="px-30 flex flex-col h-full justify-between">
             <div tw="flex flex-col my-10">
               <h1 tw="text-7xl tracking-tight m-0 mb-5">{title}</h1>

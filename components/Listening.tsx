@@ -1,4 +1,4 @@
-import { DISCORD_ID, WEBSOCKET_URL } from "../lib/constants";
+import { DISCORD_ID, THEME, WEBSOCKET_URL } from "../lib/constants";
 import { useEffect, useState, useMemo } from "react";
 import { Presence } from "../types/lanyard";
 import { FaSpotify } from "react-icons/fa";
@@ -7,7 +7,7 @@ import { Text } from "./Text";
 // Next.js
 import Link from "next/link";
 
-// Credit to Phineas for the lanyard implementation
+// Credit to Phineas (https://github.com/phineas) for the lanyard implementation
 // Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx)
 
 type Props = {
@@ -36,7 +36,7 @@ const logLanyardEvent = (eventName: string, data: any) => {
   console.log(
     `%cLanyard%c <~ ${eventName} %o`,
     "background-color: #f54bff; border-radius: 5px; padding: 3px; color: #5050ff;",
-    "background: none; color: #f54bff;",
+    `background: none; color: ${THEME};`,
     data
   );
 };

@@ -1,6 +1,7 @@
 import { dynamicTitle } from "../lib/dynamic-title";
 import { seoKeywords } from "../lib/seo-keywords";
 import { fireworks } from "../lib/fireworks";
+import { THEME } from "../lib/constants";
 
 // Next.js
 import { useRouter } from "next/router";
@@ -22,7 +23,7 @@ export const Seo = ({ description, cover, title }: Props) => {
       (date.getMonth() + 1 === 1 && date.getDate() === 1) ||
       (date.getMonth() + 1 === 3 && date.getDate() === 4)
     ) {
-      // Happy new year & Happy birthday!
+      // Happy new yea! or Happy birthday!
       fireworks();
     }
   }
@@ -31,7 +32,7 @@ export const Seo = ({ description, cover, title }: Props) => {
     <>
       <Head>
         <title>{title}</title>
-        <meta name="theme-color" content="#f54bff" />
+        <meta name="theme-color" content={THEME} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="description" content={description} key="desc" />

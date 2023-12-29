@@ -34,7 +34,10 @@ const Components: NextPage = () => {
                 className="flex items-center my-4 w-full justify-between"
                 key={component.id}
               >
-                <div className="text-black dark:text-white items-center bg-gray-100 dark:bg-gray-800 p-2 px-3 rounded-lg justify-center">
+                <div
+                  className="text-black dark:text-white items-center bg-gray-100 dark:bg-gray-800
+                p-2 px-3 rounded-lg justify-center"
+                >
                   <Text>{component.text}</Text>
                 </div>
                 {component.component}

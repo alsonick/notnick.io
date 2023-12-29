@@ -32,11 +32,9 @@ const TZTT = () => {
           </LinkT>
           .
         </Item>
-        <Item completed={false}>Learn PHP and master JavaScript.</Item>
         <Item completed={true}>Spend less time on social media.</Item>
-        <Item completed={false}>Contribute more to open source.</Item>
+        <Item completed={true}>Contribute more to open source.</Item>
         <Item completed={false}>Get my driving license.</Item>
-        <Item completed={false}>Learn and get more into networking.</Item>
         <Item completed={false}>Meet more like-minded people.</Item>
         <Item completed={true}>Hit the gym more consistently.</Item>
         <Item completed={false}>

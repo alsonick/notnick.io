@@ -1,5 +1,6 @@
 import { FiChevronDown, FiCheck } from "react-icons/fi";
 import { Listbox } from "@headlessui/react";
+import { THEME } from "../lib/constants";
 import { Fragment } from "react";
 
 interface Props<T> {
@@ -17,10 +18,10 @@ export const FilterListBox = <T extends unknown>({
     <Listbox value={selectedItem} onChange={onChange}>
       <div className="flex duration-300 relative flex-col w-1/2">
         <Listbox.Button
-          className="flex p-3 font-semibold items-center text-sm justify-between 
+          className={`flex p-3 font-semibold items-center text-sm justify-between 
         dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100
-        dark:bg-black dark:border-teal-900 focus:ring-4 ring-[#f54bff] outline-none duration-300
-        focus:ring-offset-2 dark:ring-offset-black"
+        dark:bg-black dark:border-teal-900 focus:ring-4 ring-[${THEME}] outline-none duration-300
+        focus:ring-offset-2 dark:ring-offset-black`}
         >
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
@@ -37,7 +38,7 @@ export const FilterListBox = <T extends unknown>({
                 <li
                   className={`flex cursor-pointer font-semibold text-sm dark:bg-black  dark:text-white items-center justify-between p-3 rounded-lg ${
                     active
-                      ? "bg-[#f54bff] dark:bg-[#f54bff]  duration-300 text-white"
+                      ? `bg-[${THEME}] dark:bg-[#f54bff]  duration-300 text-white`
                       : "bg-white text-black"
                   }`}
                 >

@@ -1,5 +1,6 @@
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
+import { Header } from "../components/Header";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Text } from "../components/Text";
@@ -7,7 +8,6 @@ import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
-import { Header } from "../components/Header";
 
 const License: NextPage = () => {
   return (

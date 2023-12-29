@@ -1,4 +1,5 @@
 import { Switch as S } from "@headlessui/react";
+import { THEME } from "../lib/constants";
 
 interface Props {
   setEnabled: () => void;
@@ -11,8 +12,8 @@ export const Switch = ({ setEnabled, enabled }: Props) => {
       checked={enabled}
       onChange={setEnabled}
       className={`${
-        enabled ? "bg-[#f54bff]" : "bg-gray-400 dark:bg-gray-600"
-      } relative inline-flex h-6 w-11 items-center rounded-full focus:ring-4 ring-[#f54bff] outline-none duration-300
+        enabled ? `bg-[${THEME}]` : "bg-gray-400 dark:bg-gray-600"
+      } relative inline-flex h-6 w-11 items-center rounded-full focus:ring-4 ring-[${THEME}] outline-none duration-300
       focus:ring-offset-2 dark:ring-offset-black`}
     >
       <span className="sr-only">Enable notifications</span>

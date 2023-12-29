@@ -2,6 +2,7 @@ import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { getIssues as getIssuesMethod } from "../lib/get-issues";
 import { getSubscribers } from "../lib/get-subscribers";
 import { useState, useEffect } from "react";
+import { THEME } from "../lib/constants";
 import { Heading } from "./Heading";
 import { Success } from "./Success";
 import Tippy from "@tippyjs/react";
@@ -130,7 +131,8 @@ export const NewsLetter = () => {
             <Tippy content={"Disabled"}>
               <div>
                 <Link
-                  className="hover:underline pointer-events-none focus:ring-4 ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black rounded"
+                  className={`hover:underline pointer-events-none focus:ring-4 ring-[${THEME}] outline-none duration-300
+                  focus:ring-offset-2 dark:ring-offset-black rounded`}
                   href="https://www.getrevue.co/profile/heynickn"
                   rel="noreferrer"
                   target="_blank"

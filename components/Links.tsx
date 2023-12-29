@@ -1,3 +1,4 @@
+import { THEME } from "../lib/constants";
 import { LINKS } from "../lib/links";
 
 // Next.js
@@ -25,7 +26,9 @@ const LinkWrapper = ({ href, children, title }: Props) => {
   return (
     <Link
       href={href}
-      className="text-2xl duration-300 focus:ring-4 focus:ring-offset-4 dark:ring-offset-black rounded ring-[#f54bff] outline-none cursor-pointer mr-6 hover:text-black dark:hover:text-white text-gray-600 dark:text-gray-300 hover:scale-110"
+      className={`text-2xl duration-300 focus:ring-4 focus:ring-offset-4 dark:ring-offset-black rounded
+      ring-[${THEME}] outline-none cursor-pointer mr-6 hover:text-black dark:hover:text-white text-gray-600
+      dark:text-gray-300 hover:scale-110`}
       title={title}
       target="_blank"
       rel="noreferrer"

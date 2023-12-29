@@ -5,6 +5,7 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { SOCIALS } from "../lib/socials";
+import { THEME } from "../lib/constants";
 import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/Seo";
 import copy from "copy-to-clipboard";
@@ -48,7 +49,8 @@ const Socials: NextPage = () => {
                 </Text>
                 <div className="flex items-center">
                   <Link
-                    className="text-gray-600 focus:ring-4 focus:ring-offset-2 dark:ring-offset-black rounded ring-[#f54bff] outline-none dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300"
+                    className={`text-gray-600 focus:ring-4 focus:ring-offset-2 dark:ring-offset-black rounded ring-[${THEME}]
+                    outline-none dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300`}
                     title={social.link}
                     target="_blank"
                     href={social.link}

@@ -6,6 +6,7 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { ARTICLES } from "../lib/articles";
 import { Text } from "../components/Text";
+import { THEME } from "../lib/constants";
 import { Seo } from "../components/Seo";
 
 // Next.js
@@ -30,7 +31,8 @@ const Articles: NextPage = () => {
               <Link
                 href={article.link}
                 title={article.title}
-                className="hover:no-underline my-4 w-full pb-4 focus:ring-4 rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
+                className={`hover:no-underline my-4 w-full pb-4 focus:ring-4 rounded ring-[${THEME}] outline-none
+                duration-300 focus:ring-offset-2 dark:ring-offset-black`}
                 key={article.id}
                 target="_blank"
               >

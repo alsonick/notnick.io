@@ -9,5 +9,6 @@ export const BLOGS_URL_PATH = "/blog";
 export const NOTES_DIR = "posts/note";
 export const BLOGS_DIR = "posts/blog";
 export const CACHE_TOKEN = "nas-dsf";
+export const THEME = "#f54bff";
 export const CITY = "Brighton";
 export const COUNTRY = "UK";
