@@ -9,6 +9,7 @@ export const GoBack = ({ location }: { location?: string }) => {
 
   return (
     <LinkT
+      title="Go back"
       href={location ? location : undefined}
       onClick={() => {
         !location && router.back();

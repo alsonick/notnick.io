@@ -17,10 +17,10 @@ export const ARTICLES: Article[] = [
   },
   {
     id: 3,
-    title: "The 50/30/20 rule: how to budget your money more efficiently",
-    type: "Finance",
-    link: "https://n26.com/en-eu/blog/50-30-20-rule",
-    authors: ["N26"],
+    title: "Implementing Dark Mode in iOS 13",
+    type: "Technical Writing",
+    link: "https://instagram-engineering.com/instagram-darkmode-58802b43c0f2",
+    authors: ["Tim Johnsen"],
   },
   {
     id: 4,
@@ -28,5 +28,26 @@ export const ARTICLES: Article[] = [
     type: "Language Talk",
     link: "https://leerob.io/blog/rust",
     authors: ["Lee Robinson"],
+  },
+  {
+    id: 5,
+    title: "How Discord Modernized MFA with WebAuthn",
+    type: "Technical Writing",
+    link: "https://discord.com/blog/how-discord-modernized-mfa-with-webauthn",
+    authors: ["Nathan Walsh"],
+  },
+  {
+    id: 6,
+    title: "Instant Feedback in iOS Engineering Workflows",
+    type: "Technical Writing",
+    link: "https://instagram-engineering.com/instant-feedback-in-ios-engineering-workflows-c3f6508c76c8",
+    authors: ["Instagram Engineering"],
+  },
+  {
+    id: 7,
+    title: "The 50/30/20 rule: how to budget your money more efficiently",
+    type: "Finance",
+    link: "https://n26.com/en-eu/blog/50-30-20-rule",
+    authors: ["N26"],
   },
 ];

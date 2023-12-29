@@ -7,7 +7,6 @@ import { Header } from "../components/Header";
 import { ARTICLES } from "../lib/articles";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
-import { Tag } from "../components/Tag";
 
 // Next.js
 import { NextPage } from "next";
@@ -25,18 +24,16 @@ const Articles: NextPage = () => {
         <Animate>
           <Header singleItem={true} column={true}>
             <Heading style={{ marginBottom: 0 }}>Articles</Heading>
-            <Text>A list of interesting articles I found on the internet.</Text>
           </Header>
           <div className="flex flex-col mb-4">
             {ARTICLES.map((article) => (
               <Link
                 href={article.link}
-                className="border-b border-teal-100 dark:border-teal-900
-              hover:no-underline my-4 w-full pb-4 focus:ring-4 rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
+                title={article.title}
+                className="hover:no-underline my-4 w-full pb-4 focus:ring-4 rounded ring-[#f54bff] outline-none duration-300 focus:ring-offset-2 dark:ring-offset-black"
                 key={article.id}
                 target="_blank"
               >
-                <Tag title={article.type} />
                 <h1
                   className="text-3xl font-bold cursor-pointer underline
                   dark:text-white hover:no-underline"
@@ -57,7 +54,7 @@ const Articles: NextPage = () => {
                         <Authors
                           type="article"
                           authors={article.authors}
-                          style="long"
+                          style="short"
                         />
                       </div>
                     </>
