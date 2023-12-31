@@ -22,7 +22,7 @@ export const LinkTag = ({ href, children, style, target, onClick }: Props) => {
       onClick={onClick}
       rel="noreferrer"
     >
-      {children}a
+      {children}
     </Link>
   );
 };
