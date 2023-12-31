@@ -20,7 +20,7 @@ const Item = ({
 
 const TZTT = () => {
   return (
-    <OtherPageContainer footer={true}>
+    <OtherPageContainer footer={false}>
       <Seo title="Goals for 2023" description="" />
       <Toggle />
       <Heading>Goals for 2023</Heading>
