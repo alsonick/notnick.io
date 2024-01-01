@@ -19,7 +19,7 @@ Before I answer this question, I highly urge you try out [ChatGPT](https://chat.
 
 ![](/post/my-thoughts-on-ai/gpt-screenshot-example-1.png)
 
-In the screenshot above I asked ChatGPT to "Generate a [React]() component that renders a list of items" and it did so perfectly, it even generates a description so you can understand underlying logic. Obviously this is a simple example but ChatGPT is more than capable of generating more complex code.
+In the screenshot above I asked ChatGPT to "Generate a [React](https://react.dev/) component that renders a list of items" and it did so perfectly, it even generates a description so you can understand underlying logic. Obviously this is a simple example but ChatGPT is more than capable of generating more complex code.
 
 So should you care? Yes. I think using tools such as ChatGPT doing for doing really niche tasks is great for productivity, for example, I use ChatGPT to write most of my emails and to improve my grammar and punctuation.
 
