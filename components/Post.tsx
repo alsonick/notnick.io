@@ -73,11 +73,11 @@ export const Post = ({ type, post }: Props) => {
         {Boolean(post.contentHtml) || post.finished ? (
           <article
             className={`
-            prose max-w-none mt-2 dark:prose-invert prose-a:text-[${THEME}]
+            prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
           dark:prose-code:text-white prose-img:rounded-xl prose-img:border
           prose-img:border-teal-100 prose-img:dark:border-teal-900 prose-a:font-bold
-            focus:prose-a:ring-4 focus:prose-a:ring-[${THEME}] prose-a:outline-none
+            focus:prose-a:ring-4 focus:prose-a:ring-[#f54bff] prose-a:outline-none
             prose-a:duration-300 prose-a:rounded focus:prose-a:ring-offset-2
             focus:prose-a:dark:ring-offset-black`}
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}

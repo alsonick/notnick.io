@@ -30,6 +30,8 @@ const TZTT = () => {
         <Item completed={false}>Contribute more to the Swift ecosystem.</Item>
         <Item completed={false}>Get my driving license (Hopefully).</Item>
         <Item completed={false}>Build on more muscle.</Item>
+        <Item completed={false}>Learn to play the piano.</Item>
+        <Item completed={false}>Read more books.</Item>
         <Item completed={false}>
           Ship products like{" "}
           <LinkT href="https://twitter.com/levelsio" target="_blank">
