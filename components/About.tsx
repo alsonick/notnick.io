@@ -1,3 +1,4 @@
+import Tippy from "@tippyjs/react";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
 import { Text } from "./Text";
@@ -10,9 +11,12 @@ export const About = () => {
       <Heading>About 💭</Heading>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        I&apos;m a {new Date().getFullYear() - 2003} software engineer mainly
-        focused on the field of mobile app development, more specifically iOS
-        development. I&apos;m also a huge{" "}
+        I&apos;m a{" "}
+        <Tippy animation="fade" content={"4th March 2003"}>
+          <p className="inline">{new Date().getFullYear() - 2003}</p>
+        </Tippy>{" "}
+        software engineer mainly focused on the field of mobile app development,
+        more specifically iOS development. I&apos;m also a huge{" "}
         <LinkTag
           href="https://developer.apple.com/xcode/swiftui/"
           target="_blank"

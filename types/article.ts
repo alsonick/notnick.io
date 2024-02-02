@@ -4,4 +4,10 @@ export interface Article {
   type: string;
   link: string;
   authors: string[];
+  tags: Tag[];
+}
+
+export interface Tag {
+  id: number;
+  filter: string;
 }

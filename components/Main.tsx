@@ -1,11 +1,13 @@
 import { TypeAnimation } from "react-type-animation";
 import { CITY, COUNTRY } from "../lib/constants";
+import { FiNavigation } from "react-icons/fi";
 import { fireworks } from "../lib/fireworks";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
 import { Tag } from "./Tag";
+import { LinkTag } from "./LinkTag";
 
 export const Main = () => {
   const date = new Date();
@@ -26,8 +28,16 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <Tag title={`${CITY}, ${COUNTRY}`} />
-          <Heading style={{ marginBottom: "0.5rem" }}>
+          <LinkTag
+            href={`https://www.google.com/maps/search/${CITY}`}
+            target="_blank"
+          >
+            <Tag
+              title={`${CITY}, ${COUNTRY}`}
+              icon={<FiNavigation className="ml-1" size={17} />}
+            />
+          </LinkTag>
+          <Heading style={{ marginBottom: "0.5rem", marginTop: "8px" }}>
             Hi, I&apos;m Nicholas! <span className="wave">👋</span>
           </Heading>
           <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">

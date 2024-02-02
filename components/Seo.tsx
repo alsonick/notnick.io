@@ -46,48 +46,8 @@ export const Seo = ({ description, cover, title }: Props) => {
         <meta property="og:url" content="https://notnick.io/" />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <>
-          {router.pathname.includes("note") ||
-          router.pathname.includes("blog") ||
-          router.pathname.includes("learn") ? (
-            <>
-              <meta property="twitter:card" content="summary_large_image" />
-              <meta
-                property="twitter:image"
-                content={
-                  router.pathname.includes("note") ||
-                  router.pathname.includes("blog")
-                    ? dynamicTitle(title, description)
-                    : cover
-                    ? cover
-                    : ""
-                }
-              />
-              <meta
-                property="og:image"
-                content={
-                  router.pathname.includes("note") ||
-                  router.pathname.includes("blog")
-                    ? dynamicTitle(title, description)
-                    : cover
-                    ? cover
-                    : ""
-                }
-              />
-            </>
-          ) : (
-            <>
-              <meta
-                property="twitter:image"
-                content={"https://notnick.io/pfp.png"}
-              />
-              <meta
-                property="og:image"
-                content={"https://notnick.io/pfp.png"}
-              />
-            </>
-          )}
-        </>
+        <meta property="twitter:image" content={"https://notnick.io/pfp.png"} />
+        <meta property="og:image" content={"https://notnick.io/pfp.png"} />
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
