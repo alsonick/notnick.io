@@ -5,7 +5,7 @@ export const Tag = ({
   icon,
 }: {
   title: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
 }) => {
   return (
     <div
