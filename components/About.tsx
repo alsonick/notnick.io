@@ -13,7 +13,7 @@ export const About = () => {
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         I&apos;m a{" "}
         <Tippy animation="fade" content={"4th March 2003"}>
-          <p className="inline">{new Date().getFullYear() - 2003}</p>
+          <span className="inline">{new Date().getFullYear() - 2003}</span>
         </Tippy>{" "}
         software engineer mainly focused on the field of mobile app development,
         more specifically iOS development. I&apos;m also a huge{" "}

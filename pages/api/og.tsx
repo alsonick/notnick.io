@@ -3,6 +3,12 @@ import { THEME } from "../../lib/constants";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
+/*
+
+  NOTE: This file is not in use.
+
+*/
+
 export const config = {
   runtime: "edge",
 };
@@ -44,7 +50,7 @@ export default async function handler(req: NextRequest) {
                 src="https://notnick.io/memoji.png"
                 width={90}
                 height={90}
-                alt="sd"
+                alt="My memoji"
               />
               <div tw="flex flex-col justify-center">
                 <h2 tw="text-4xl m-0 tracking-tight">Nicholas Njoki</h2>

@@ -1,5 +1,5 @@
 import { DISCORD_ID, THEME, WEBSOCKET_URL } from "../lib/constants";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, CSSProperties } from "react";
 import { Presence } from "../types/lanyard";
 import { FaSpotify } from "react-icons/fa";
 import { Text } from "./Text";
@@ -12,6 +12,7 @@ import Link from "next/link";
 
 type Props = {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
+  style?: CSSProperties | undefined;
 };
 
 enum Operation {
@@ -42,7 +43,14 @@ const logLanyardEvent = (eventName: string, data: any) => {
 };
 
 export const Listening: React.FC<Props> = (
-  { setActive, ...props }: { setActive: (active: boolean) => void } & any,
+  {
+    setActive,
+    style,
+    ...props
+  }: {
+    setActive: (active: boolean) => void;
+    style?: CSSProperties | undefined;
+  } & any,
   ref: any
 ) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
@@ -94,14 +102,17 @@ export const Listening: React.FC<Props> = (
 
   if (!doing || !doing.discord_status)
     return (
-      <div className="flex items-center mb-6">
-        <FaSpotify className="mr-2 text-gray-600 dark:text-gray-300" />
-        <Text>Loading...</Text>
+      <div className="flex items-center mb-6" style={style}>
+        <FaSpotify style={style} className="text-gray-600 dark:text-gray-300" />
+        <Text style={{ ...style, marginLeft: "8px" }}>Loading...</Text>
       </div>
     );
 
   return (
-    <a className="flex items-center mb-6 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit">
+    <a
+      className="flex items-center mb-6 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit"
+      style={style}
+    >
       <FaSpotify className="mr-2" />
       {doing?.listening_to_spotify ? (
         <Link
@@ -114,13 +125,16 @@ export const Listening: React.FC<Props> = (
           href={`https://open.spotify.com/track/${doing.spotify.track_id}`}
         >
           Listening to{" "}
-          <b className="text-black dark:text-white">{doing.spotify.album}</b> by{" "}
-          <b className="text-black dark:text-white">
+          <b className="text-black dark:text-white" style={style}>
+            {doing.spotify.album}
+          </b>{" "}
+          by{" "}
+          <b className="text-black dark:text-white" style={style}>
             {doing.spotify.artist.replaceAll(";", ",")}
           </b>
         </Link>
       ) : (
-        <Text>Not listening to anything...</Text>
+        <Text style={style}>Not listening to anything...</Text>
       )}
     </a>
   );

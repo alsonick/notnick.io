@@ -25,14 +25,20 @@ const Home: NextPage = () => {
         title="Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
-      <Layout>
+      <div className="flex items-center justify-center h-8 w-full bg-[#1DB954] z-50 fixed top-0 p-2">
+        <Listening
+          setActive={setPresenceActive}
+          style={{ margin: 0, color: "white" }}
+        />
+      </div>
+      <Layout isDisplaySpotify={true}>
         <Animate>
           <Main />
           <About />
           <FeaturedArticles />
           <Experience />
           <Technologies />
-          {/* <Community />  Uncomment this out when you've set up your server */}
+          <Community />
           <NewsLetter />
           <Contact />
           <License />
