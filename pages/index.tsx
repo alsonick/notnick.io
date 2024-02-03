@@ -15,8 +15,10 @@ import { useState } from "react";
 
 // Next.js
 import type { NextPage } from "next";
+import { FiX } from "react-icons/fi";
 
 const Home: NextPage = () => {
+  const [isDisplaySpotify, setIsDisplaySpotify] = useState(true);
   const [_, setPresenceActive] = useState(false);
 
   return (
@@ -25,13 +27,21 @@ const Home: NextPage = () => {
         title="Nicholas Njoki"
         description="Nicholas Njoki - Full-Stack Developer"
       />
-      <div className="flex items-center justify-center h-8 w-full bg-[#1DB954] z-50 fixed top-0 p-2">
-        <Listening
-          setActive={setPresenceActive}
-          style={{ margin: 0, color: "white" }}
-        />
-      </div>
-      <Layout isDisplaySpotify={true}>
+      {isDisplaySpotify ? (
+        <div className="md:flex hidden items-center justify-center h-8 w-full bg-[#1DB954] z-50 fixed top-0 p-2">
+          <Listening
+            setActive={setPresenceActive}
+            style={{ margin: 0, color: "white" }}
+          />
+          <FiX
+            className="text-white hover:cursor-pointer text-xl absolute right-2"
+            onClick={() => {
+              setIsDisplaySpotify(false);
+            }}
+          />
+        </div>
+      ) : null}
+      <Layout isDisplaySpotify={isDisplaySpotify}>
         <Animate>
           <Main />
           <About />

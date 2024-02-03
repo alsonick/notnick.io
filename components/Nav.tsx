@@ -19,7 +19,7 @@ export const Nav = ({ isDisplaySpotify }: { isDisplaySpotify?: boolean }) => {
   return (
     <nav
       className={`flex px-6 ${
-        isDisplaySpotify ? "top-16" : "top-8"
+        isDisplaySpotify ? "md:top-16 top-8" : "top-8"
       } fixed border dark:bg-[#10161a]/50 z-10 w-[90%] md:w-[40rem] border-teal-100
     dark:border-teal-900 backdrop-blur-md mb-12 rounded-lg justify-between h-14 items-center`}
     >
