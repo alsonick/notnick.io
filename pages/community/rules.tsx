@@ -38,7 +38,6 @@ const Rules: NextPage = () => {
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>Community Rules</Heading>
-            <Text>{data?.count}</Text>
           </Header>
           {data ? (
             <div className="mb-4">
@@ -52,7 +51,9 @@ const Rules: NextPage = () => {
               ))}
             </div>
           ) : (
-            <Loading text="Loading..." loading={loading} />
+            <div className="my-40 flex items-center justify-center">
+              <Loading text="Loading..." loading={loading} />
+            </div>
           )}
           <GoBack />
         </Animate>
