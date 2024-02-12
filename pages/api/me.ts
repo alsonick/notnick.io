@@ -1,49 +1,71 @@
+import {
+  AVATAR,
+  COUNTRY,
+  FIRST_NAME,
+  FULL_NAME,
+  LAST_NAME,
+} from "../../lib/constants";
+import { generateRandomId } from "../../lib/generate-random-id";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
     success: true,
     data: {
-      fullName: "Nicholas Njoki",
-      firstName: "Nicholas",
-      lastName: "Njoki",
+      fullName: `${FULL_NAME}`,
+      firstName: `${FIRST_NAME}`,
+      lastName: `${LAST_NAME}`,
       age: new Date().getFullYear() - 2003,
       dob: {
         day: 4,
         month: 3,
         year: 2003,
       },
-      country: "United Kingdom",
+      country: `${COUNTRY}`,
       email: "hi@notnick.io",
       website: "notnick.io",
-      avatar: "https://notnick.io/pfp.png",
+      avatar: `https://notnick.io/${AVATAR}.png`,
       domains: ["notnick.io", "pics.notnick.io"],
-      redirects: ["notnick.io/gh", "notnick.io/community"],
+      redirects: [
+        {
+          id: generateRandomId(),
+          redirect: "notnick.io/gh",
+          destination: "https://github.com/alsonick",
+        },
+        {
+          id: generateRandomId(),
+          redirect: "notnick.io/community",
+          destination: "notnick.io/community",
+        },
+      ],
       domain: {
         whois: {
           "registrar-info": {
             name: "NameCheap, Inc",
             "whois-server": "whois.namecheap.com",
             "referral-url": "https://www.namecheap.com/",
-          },
-          "name-servers": {
-            "alla.ns.cloudflare.com": "172.64.32.62",
-            "guy.ns.cloudflare.com": "173.245.59.173",
+            domain: "notnick.io",
           },
         },
       },
       skills: [
-        "JavaScript",
-        "TypeScript",
         "React.js",
-        "React Native",
+        "TypeScript",
+        "styled-components",
         "TailwindCSS",
         "Prisma",
-        "Postgres",
         "Git",
-        "HTML5",
-        "CSS3",
-        "SQL",
+        "Visual Studio Code",
+        "Node.js",
+        "Next.js",
+        "Postgres",
+        "Yarn",
+        "npm",
+        "Express",
+        "JavaScript",
+        "Swift",
+        "UIKit",
+        "SwiftUI",
       ],
       specs: {
         pc: {
@@ -53,11 +75,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           os: "Windows 11",
           storage: "1TB SSD",
         },
-        'M1 MacBook Pro 13"': {
-          display: "Retina display",
-          chip: "Apple M1 chip",
-          memory: "8GB",
-          storage: "256GB SSD",
+        'M2 Pro MacBook Pro 16"': {
+          display: "16-inch Liquid Retina XDR display",
+          chip: "Apple M2 Pro Chip",
+          memory: "16GB",
+          storage: "512GB SSD",
         },
         gear: {
           monitor: "Samsung UR55 4K IPS HDR10",
@@ -66,52 +88,65 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           headset: "HyperX Cloud II 7.1",
           earbuds: "AirPods Pro",
           watch: "Apple Watch Series 3",
-          phone: "iPhone XR",
+          "primary phone": "iPhone 15",
+          "secondary phone": "iPhone XR",
         },
       },
       socials: {
-        twitter: {
+        "x (previously twitter)": {
           link: "https://twitter.com/heynickn",
           username: "heynickn",
-        },
-        github: {
-          link: "https://github.com/alsonick",
-          username: "alsonick",
         },
         instagram: {
           link: "https://www.instagram.com/heynickn/",
           username: "heynickn",
         },
+        snapchat: {
+          link: "https://www.snapchat.com/add/notnick14",
+          username: "notnick14",
+        },
         linkedin: {
           link: "https://www.linkedin.com/in/nicholas-n-5a9187195/",
           username: "https://www.linkedin.com/in/nicholas-n-5a9187195/",
-        },
-        mastadon: {
-          link: "https://phpc.social/@alsonick",
-          username: "@alsonick@phpc.social",
-        },
-        twitch: {
-          link: "https://www.twitch.tv/alsonick_",
-          username: "alsonick_",
         },
         reddit: {
           link: "https://www.reddit.com/user/thisnotnicholas",
           username: "thisnotnicholas",
         },
-        snapchat: {
-          link: "https://www.snapchat.com/add/notnick14",
-          username: "notnick14",
+        twitch: {
+          link: "https://www.twitch.tv/alsonick_",
+          username: "alsonick_",
+        },
+        discord: {
+          link: "https://discord.com/users/463449066672619520",
+          username: "alsonick_",
+        },
+        mastadon: {
+          link: "https://phpc.social/@alsonick",
+          username: "@alsonick@phpc.social",
         },
         tiktok: {
           link: "https://www.tiktok.com/@heynick010",
           username: "heynick010",
         },
-        discord: {
-          link: "https://discord.com/users/463449066672619520",
-          username: "Nicholas#0050",
+        github: {
+          link: "https://github.com/alsonick",
+          username: "alsonick",
+        },
+        stackoverflow: {
+          link: "https://stackoverflow.com/users/17204801/nicholas",
+          username: "user:17204801",
+        },
+        youtube: {
+          link: "https://www.youtube.com/@alsonick",
+          username: "@alsonick",
+        },
+        threads: {
+          link: "https://threads.net/@heynickn",
+          username: "@heynickn",
         },
       },
-      hobbies: ["Traveling", "Anime"],
+      hobbies: ["Traveling", "Anime", "Playing Piano"],
     },
   });
 }

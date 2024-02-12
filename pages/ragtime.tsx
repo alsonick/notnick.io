@@ -1,8 +1,8 @@
+import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
@@ -31,15 +31,12 @@ const Ragtime: NextPage = () => {
   return (
     <>
       <Seo
-        title="Ragtime - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Ragtime - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
-          <Header singleItem={true}>
-            <Heading>Ragtime</Heading>
-          </Header>
-          <div className="mb-4 flex w-full flex-col">
+          <div className="mb-4 mt-8 flex w-full flex-col">
             <div className="flex flex-col w-full items-center mb-10">
               <picture className="w-full mb-2 flex justify-center">
                 <img
@@ -51,7 +48,7 @@ const Ragtime: NextPage = () => {
               </picture>
               <Text>Scott Joplin (1868-1917)</Text>
               <Text>
-                <strong>King of Ragtime</strong>
+                <strong>King of Ragtime 👑</strong>
               </Text>
             </div>
             <Section title="What is Ragtime?">

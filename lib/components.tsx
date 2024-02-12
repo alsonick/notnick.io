@@ -1,6 +1,8 @@
+import { SpotifyPlaylistLinkButton } from "../components/SpotifyPlaylistLinkButton";
 import { CharacterLimit } from "../components/CharacterLimit";
 import { FilterListBox } from "../components/FilterListBox";
 import { PostCardTag } from "../components/PostCardTag";
+import { generateRandomId } from "./generate-random-id";
 import { LinkButton } from "../components/LinkButton";
 import { TextArea } from "../components/TextArea";
 import { Skeleton } from "../components/Skeleton";
@@ -10,10 +12,13 @@ import { Heading } from "../components/Heading";
 import { Loading } from "../components/Loading";
 import { Warning } from "../components/Warning";
 import { Success } from "../components/Success";
+import { LinkTag } from "../components/LinkTag";
 import { Date as D } from "../components/Date";
 import { Toggle } from "../components/Toggle";
+import { GoBack } from "../components/GoBack";
 import { Avatar } from "../components/Avatar";
 import { Button } from "../components/Button";
+import { Border } from "../components/Border";
 import { Switch } from "../components/Switch";
 import { Error } from "../components/Error";
 import { Input } from "../components/Input";
@@ -21,68 +26,73 @@ import { Label } from "../components/Label";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Note } from "../components/Note";
+import { Form } from "../components/Form";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
-import { Form } from "../components/Form";
 
 export const COMPONENTS: Components[] = [
   {
-    id: 1,
+    id: generateRandomId(),
     text: "Tag",
     component: <Tag title="Example" />,
   },
   {
-    id: 2,
+    id: generateRandomId(),
     text: "Heading",
     component: <Heading>Example</Heading>,
   },
   {
-    id: 3,
+    id: generateRandomId(),
     text: "Button",
     component: <Button>Example</Button>,
   },
   {
-    id: 4,
+    id: generateRandomId(),
     text: "Label",
     component: <Label text="Example" />,
   },
   {
-    id: 5,
+    id: generateRandomId(),
     text: "Input",
     component: <Input placeholder="Example" />,
   },
   {
-    id: 6,
-    text: "Link",
+    id: generateRandomId(),
+    text: "Link T",
     component: <LinkT href="">Example</LinkT>,
   },
   {
-    id: 7,
+    id: generateRandomId(),
+    text: "Link Tag",
+    component: <LinkTag href="">Example</LinkTag>,
+  },
+  {
+    id: generateRandomId(),
     text: "Avatar",
     component: <Avatar border={true} width={50} height={50} />,
   },
   {
-    id: 8,
+    id: generateRandomId(),
     text: "Character Limit",
     component: <CharacterLimit text="" limit={100} />,
   },
   {
-    id: 9,
+    id: generateRandomId(),
     text: "Success",
     component: <Success message="Example" />,
   },
   {
-    id: 10,
+    id: generateRandomId(),
     text: "Warning",
     component: <Warning message="Example" />,
   },
   {
-    id: 11,
+    id: generateRandomId(),
     text: "Error",
     component: <Error message="Example" />,
   },
   {
-    id: 12,
+    id: generateRandomId(),
     text: "Filter Box",
     component: (
       <FilterListBox
@@ -93,62 +103,70 @@ export const COMPONENTS: Components[] = [
     ),
   },
   {
-    id: 13,
+    id: generateRandomId(),
     text: "Loading",
     component: <Loading text="Loading..." loading={true} />,
   },
   {
-    id: 14,
+    id: generateRandomId(),
     text: "Skeleton",
     component: <Skeleton style={{ marginBottom: 0, marginRight: 0 }} />,
   },
   {
-    id: 15,
+    id: generateRandomId(),
     text: "Text",
     component: <Text>Example</Text>,
   },
   {
-    id: 16,
+    id: generateRandomId(),
     text: "Textarea",
     component: <TextArea placeholder="Example" />,
   },
   {
-    id: 17,
+    id: generateRandomId(),
     text: "Switch",
     component: <Switch enabled={false} setEnabled={() => {}} />,
   },
   {
-    id: 18,
+    id: generateRandomId(),
     text: "Date",
     component: <D date={new Date().toString()} />,
   },
   {
-    id: 19,
+    id: generateRandomId(),
     text: "Toggle",
     component: <Toggle />,
   },
   {
-    id: 20,
+    id: generateRandomId(),
     text: "Dropdown",
-    component: <Dropdown items={[]} />,
+    component: (
+      <Dropdown
+        items={[
+          { id: 1, text: "Example1", to: "/api/example" },
+          { id: 2, text: "Example2", to: "/api/example" },
+          { id: 3, text: "Example3", to: "/api/example" },
+        ]}
+      />
+    ),
   },
   {
-    id: 21,
+    id: generateRandomId(),
     text: "Key",
     component: <Key>Example</Key>,
   },
   {
-    id: 22,
+    id: generateRandomId(),
     text: "Note",
     component: <Note>Example</Note>,
   },
   {
-    id: 23,
+    id: generateRandomId(),
     text: "Post Card Tag",
     component: <PostCardTag title="Example" />,
   },
   {
-    id: 24,
+    id: generateRandomId(),
     text: "Link Button",
     component: (
       <LinkButton href="" target="_self">
@@ -157,7 +175,7 @@ export const COMPONENTS: Components[] = [
     ),
   },
   {
-    id: 25,
+    id: generateRandomId(),
     text: "Form",
     component: (
       <div>
@@ -172,5 +190,24 @@ export const COMPONENTS: Components[] = [
         </Form>
       </div>
     ),
+  },
+  {
+    id: generateRandomId(),
+    text: "Border",
+    component: (
+      <Border>
+        <Text style={{ padding: "1rem" }}>Example</Text>
+      </Border>
+    ),
+  },
+  {
+    id: generateRandomId(),
+    text: "Spotify Playlist Link Button",
+    component: <SpotifyPlaylistLinkButton name="Example" />,
+  },
+  {
+    id: generateRandomId(),
+    text: "Go Back",
+    component: <GoBack />,
   },
 ];

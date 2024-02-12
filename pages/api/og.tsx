@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { THEME } from "../../lib/constants";
+import { FULL_NAME, PROFESSION, THEME } from "../../lib/constants";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
@@ -27,7 +27,7 @@ export default async function handler(req: NextRequest) {
 
     const title = hasTitle
       ? searchParams.get("title")?.slice(0, 100)
-      : "Nicholas Njoki";
+      : `${FULL_NAME}`;
 
     const description = hasDescription
       ? searchParams.get("description")?.slice(0, 100)
@@ -53,8 +53,8 @@ export default async function handler(req: NextRequest) {
                 alt="My memoji"
               />
               <div tw="flex flex-col justify-center">
-                <h2 tw="text-4xl m-0 tracking-tight">Nicholas Njoki</h2>
-                <p tw="text-gray-600 text-lg m-0">Full-Stack Developer</p>
+                <h2 tw="text-4xl m-0 tracking-tight">{FULL_NAME}</h2>
+                <p tw="text-gray-600 text-lg m-0">{PROFESSION}</p>
               </div>
             </div>
           </div>

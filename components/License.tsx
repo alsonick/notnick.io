@@ -1,3 +1,4 @@
+import { FULL_NAME } from "../lib/constants";
 import { Heading } from "./Heading";
 import { Header } from "./Header";
 import { LinkT } from "./Link";
@@ -12,8 +13,8 @@ export const License = () => {
       <Text>
         Anyone is free to take inspiration from this site as long as you make
         some changes to your version and give credit to the ordinal creator.
-        Credits should include my full name (<b>Nicholas Njoki</b>) and a link
-        to my site (<LinkT>notnick.io</LinkT>).
+        Credits should include my full name (<b>{FULL_NAME}</b>) and a link to
+        my site (<LinkT>notnick.io</LinkT>).
       </Text>
       <br />
       <Text>

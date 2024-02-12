@@ -1,5 +1,5 @@
 import { TypeAnimation } from "react-type-animation";
-import { CITY, COUNTRY } from "../lib/constants";
+import { CITY, COUNTRY, FIRST_NAME, THEME } from "../lib/constants";
 import { FiNavigation } from "react-icons/fi";
 import { fireworks } from "../lib/fireworks";
 import { Heading } from "./Heading";
@@ -7,7 +7,9 @@ import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
 import { Tag } from "./Tag";
-import { LinkTag } from "./LinkTag";
+
+// Next.js
+import Link from "next/link";
 
 export const Main = () => {
   const date = new Date();
@@ -28,7 +30,8 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <LinkTag
+          <Link
+            className={`cursor-pointer p-[2px] mr-[2px] w-fit focus:ring-4 ring-[${THEME}] outline-none rounded-full duration-300`}
             href={`https://www.google.com/maps/search/${CITY}`}
             target="_blank"
           >
@@ -36,9 +39,9 @@ export const Main = () => {
               title={`${CITY}, ${COUNTRY}`}
               icon={<FiNavigation className="ml-1" size={17} />}
             />
-          </LinkTag>
+          </Link>
           <Heading style={{ marginBottom: "0.5rem", marginTop: "8px" }}>
-            Hi, I&apos;m Nicholas! <span className="wave">👋</span>
+            Hi, I&apos;m {FIRST_NAME}! <span className="wave">👋</span>
           </Heading>
           <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">
             <TypeAnimation

@@ -1,7 +1,9 @@
 import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
+import { generateRandomId } from "../lib/generate-random-id";
 import { removeDuplicates } from "../lib/remove-duplicates";
 import { FilterListBox } from "../components/FilterListBox";
 import { ArticlesList } from "../components/ArticlesList";
+import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Article, Tag } from "../types/article";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
@@ -18,7 +20,7 @@ import { NextPage } from "next";
 const Articles: NextPage = () => {
   let tags: Tag[] = [
     {
-      id: 434653,
+      id: generateRandomId(),
       filter: capitalizeFirstLetter("all"),
     },
   ];
@@ -44,8 +46,8 @@ const Articles: NextPage = () => {
   return (
     <>
       <Seo
-        title="Articles - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Articles - ${FULL_NAME}`}
+        description={`Nicholas Njoki - ${PROFESSION}`}
       />
 
       <Layout>

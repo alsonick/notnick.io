@@ -1,6 +1,7 @@
 import { OtherPageContainer } from "../../components/OtherPageContainer";
 import { Heading } from "../../components/Heading";
 import { Toggle } from "../../components/Toggle";
+import { FULL_NAME } from "../../lib/constants";
 import { LinkT } from "../../components/Link";
 import { Seo } from "../../components/Seo";
 
@@ -21,7 +22,7 @@ const Item = ({
 const TZTT = () => {
   return (
     <OtherPageContainer footer={false}>
-      <Seo title="Goals for 2023" description="" />
+      <Seo title={`Goals for 2023 - ${FULL_NAME}`} description="" />
       <Toggle />
       <Heading>Goals for 2023</Heading>
       <ul className="pl-10">

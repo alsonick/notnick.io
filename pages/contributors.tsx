@@ -3,6 +3,7 @@ import { Heading } from "../components/Heading";
 import { Toggle } from "../components/Toggle";
 import { Header } from "../components/Header";
 import { GoBack } from "../components/GoBack";
+import { FULL_NAME } from "../lib/constants";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
@@ -11,14 +12,15 @@ import { NextPage } from "next";
 import Link from "next/link";
 
 const Contributors: NextPage = () => {
-  const heading = "Contributors";
-
   return (
     <OtherPageContainer footer={false}>
-      <Seo title={heading} description="Thank you contributors!" />
+      <Seo
+        title={`Contributors - ${FULL_NAME}`}
+        description="Thank you contributors!"
+      />
       <Toggle />
       <Header singleItem={true} column={true}>
-        <Heading style={{ marginBottom: 0 }}>{heading}</Heading>
+        <Heading style={{ marginBottom: 0 }}>Contributors</Heading>
         <Text style={{ marginTop: "8px" }}>Thank you contributors! ❤️</Text>
       </Header>
       <Link

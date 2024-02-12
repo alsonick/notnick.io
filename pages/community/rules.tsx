@@ -1,3 +1,4 @@
+import { FULL_NAME, PROFESSION } from "../../lib/constants";
 import { Heading } from "../../components/Heading";
 import { Animate } from "../../components/Animate";
 import { Loading } from "../../components/Loading";
@@ -31,8 +32,8 @@ const Rules: NextPage = () => {
   return (
     <>
       <Seo
-        title="Community Rules - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Community Rules - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

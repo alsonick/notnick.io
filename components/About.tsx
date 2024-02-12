@@ -1,6 +1,7 @@
-import Tippy from "@tippyjs/react";
+import { PROFESSION } from "../lib/constants";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
+import Tippy from "@tippyjs/react";
 import { Text } from "./Text";
 
 export const About = () => {
@@ -15,19 +16,12 @@ export const About = () => {
         <Tippy animation="fade" content={"4th March 2003"}>
           <span className="inline">{new Date().getFullYear() - 2003}</span>
         </Tippy>{" "}
-        software engineer mainly focused on the field of mobile app development,
-        more specifically iOS development. I&apos;m also a huge{" "}
-        <LinkTag
-          href="https://developer.apple.com/xcode/swiftui/"
-          target="_blank"
-        >
-          SwiftUI
-        </LinkTag>{" "}
-        enthusiast so If you&apos;d like to geek about{" "}
-        <LinkTag href="https://www.swift.org/" target="_blank">
-          Swift
-        </LinkTag>{" "}
-        be sure to{" "}
+        year old {PROFESSION.toLowerCase()} based in the <b>UK</b>. I mostly
+        focus in developing for Apple platforms, more specifically for{" "}
+        <b>iOS</b> and <b>macOS</b>. I also have past experience in web
+        development and I&apos;m familiar with modern web technologies such as{" "}
+        <b>React</b> & <b>TypeScript</b>. I&apos;m also a huge <b>SwiftUI</b>{" "}
+        enthusiast so If you&apos;d like to geek about <b>Swift</b> be sure to{" "}
         <LinkTag href="https://twitter.com/heynickn" target="_blank">
           tweet
         </LinkTag>{" "}
@@ -35,8 +29,9 @@ export const About = () => {
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        Aside from programming I also love to travel and watch anime in my spare
-        time, currently my favorite anime shows are{" "}
+        Aside from programming I also love to travel (when I have the time and
+        money) and watch anime in my spare time, currently my favorite anime
+        shows are{" "}
         <LinkTag href="https://anilist.co/anime/21/ONE-PIECE/" target="_blank">
           One Piece{" "}
         </LinkTag>
@@ -54,21 +49,26 @@ export const About = () => {
         >
           Attack on Titan
         </LinkTag>
-        . I also love playing the piano,{" "}
+        . I also love playing piano,{" "}
         <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
           ragtime
         </LinkTag>{" "}
-        is my favorite genre to play.
+        & <LinkTag href="">classic</LinkTag> is my favorite genre to play.
       </Text>
 
       <Text>
         If you&apos;re interested on what specs I use on a daily basis then{" "}
-        <LinkTag href="/specs">Click here</LinkTag>.
+        <LinkTag href="/specs">click here</LinkTag>.
+      </Text>
+
+      <Text>
+        View the collection of articles that I&apos;ve found interesting{" "}
+        <LinkTag href="/articles">over here</LinkTag>.
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        View the collection of articles that I&apos;ve found interesting{" "}
-        <LinkTag href="/articles">over here</LinkTag>.
+        Like music? <LinkTag href="/music">View</LinkTag> my Spotify playlist
+        collection.
       </Text>
 
       <Text>

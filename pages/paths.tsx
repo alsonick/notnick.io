@@ -1,4 +1,5 @@
 import { Toggle } from "../components/Toggle";
+import { FULL_NAME } from "../lib/constants";
 import { LinkT } from "../components/Link";
 import { Seo } from "../components/Seo";
 import { PATHS } from "../lib/paths";
@@ -9,7 +10,7 @@ import { NextPage } from "next";
 export const Paths: NextPage = () => {
   return (
     <>
-      <Seo title="Paths" description="" />
+      <Seo title={`Paths - ${FULL_NAME}`} description="" />
       <div className="p-10">
         <Toggle />
         <div className="flex flex-col">

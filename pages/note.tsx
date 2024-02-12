@@ -1,4 +1,5 @@
 import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
+import { FULL_NAME, NOTES_DIR, PROFESSION } from "../lib/constants";
 import { generateRandomId } from "../lib/generate-random-id";
 import { removeDuplicates } from "../lib/remove-duplicates";
 import { FilterListBox } from "../components/FilterListBox";
@@ -9,7 +10,6 @@ import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
 import { NoPost } from "../components/NoPost";
-import { NOTES_DIR } from "../lib/constants";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
@@ -56,18 +56,16 @@ const Note: NextPage<Props> = ({ notes }) => {
 
   const filteredNotesList = notes.filter((note) => note.filter === selected);
 
-  const heading = "Note";
-
   return (
     <>
       <Seo
-        title={`${heading} - Nicholas Njoki`}
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Note - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>{heading}</Heading>
+            <Heading style={{ marginBottom: 0 }}>Note</Heading>
             {notes.length ? (
               <FilterListBox
                 items={removeDuplicates(tags)}

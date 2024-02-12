@@ -1,15 +1,18 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { Heading } from "../components/Heading";
 import { Toggle } from "../components/Toggle";
+import { GoBack } from "../components/GoBack";
+import { FULL_NAME } from "../lib/constants";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { Key } from "../components/Key";
 
 const Credit = () => {
   return (
     <>
       <Seo
-        title="Credit"
+        title={`Credit - ${FULL_NAME}`}
         description="The source code to this site is open source so anyone is free to take a copy and make modifications. Whiles this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
       />
       <OtherPageContainer footer={false}>
@@ -22,13 +25,14 @@ const Credit = () => {
           <LinkT href="https://github.com/alsonick/notnick.io" target="_blank">
             open source
           </LinkT>{" "}
-          so anyone is free to take a copy and make modifications. Whiles this
-          is not absolutely necessary it would be greatly appreciated if credit
-          is given to the original creator.
+          and it&apos;s under the <LinkT href="/license">MIT License</LinkT>, so
+          this means anyone is allowed to take a copy and make modifications.
+          Whiles this is not absolutely necessary it would be greatly
+          appreciated if credit is given to the original creator.
         </Text>
         <br />
 
-        <Text>How do I give credit?</Text>
+        <Key>How do I give credit?</Key>
         <br />
         <Text>
           You can give credit anywhere on the site but it&apos;s common to add
@@ -55,6 +59,9 @@ const Credit = () => {
           </LinkT>{" "}
           on the GitHub repository and I&apos;ll be able to assist you there.
         </Text>
+        <div className="mt-4">
+          <GoBack />
+        </div>
       </OtherPageContainer>
     </>
   );

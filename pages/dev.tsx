@@ -1,7 +1,9 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { Heading } from "../components/Heading";
+import { GoBack } from "../components/GoBack";
 import { Toggle } from "../components/Toggle";
 import { Header } from "../components/Header";
+import { FULL_NAME } from "../lib/constants";
 import { useEffect, useState } from "react";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
@@ -13,8 +15,6 @@ import { NextPage } from "next";
 
 const Dev: NextPage = () => {
   const [dev, setDev] = useState<D | null>(null);
-
-  const heading = "dev";
 
   const fetchDevData = async () => {
     const response = await fetch(`/api/dev`);
@@ -28,10 +28,10 @@ const Dev: NextPage = () => {
 
   return (
     <OtherPageContainer footer={false}>
-      <Seo title={heading} description="" />
+      <Seo title={`Dev - ${FULL_NAME}`} description="" />
       <Toggle />
       <Header singleItem={true} column={true}>
-        <Heading>{heading}</Heading>
+        <Heading>dev</Heading>
       </Header>
       <div className="mb-6">
         {dev ? (
@@ -46,6 +46,9 @@ const Dev: NextPage = () => {
         ) : (
           <Text>Loading...</Text>
         )}
+      </div>
+      <div className="mt-4">
+        <GoBack />
       </div>
     </OtherPageContainer>
   );

@@ -1,3 +1,4 @@
+import { FULL_NAME, PROFESSION, THEME } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
@@ -5,7 +6,6 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { SOCIALS } from "../lib/socials";
-import { THEME } from "../lib/constants";
 import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/Seo";
 import copy from "copy-to-clipboard";
@@ -30,8 +30,8 @@ const Socials: NextPage = () => {
   return (
     <>
       <Seo
-        title="Socials - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Socials - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

@@ -4,6 +4,7 @@ import { Button } from "../components/Button";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
 import { Layout } from "../components/Layout";
+import { FULL_NAME } from "../lib/constants";
 import { FiDownload } from "react-icons/fi";
 import { BRANDING } from "../lib/branding";
 import { LinkT } from "../components/Link";
@@ -25,7 +26,7 @@ const Branding: NextPage = () => {
 
   return (
     <>
-      <Seo title="Branding - Nicholas Njoki" description={description} />
+      <Seo title={`Branding - ${FULL_NAME}`} description={description} />
       <Layout>
         <Animate>
           <Header singleItem={true} column={true}>

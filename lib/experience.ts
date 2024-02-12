@@ -1,8 +1,9 @@
+import { generateRandomId } from "./generate-random-id";
 import { Experience } from "./../types/experience";
 
 export const EXPERIENCE: Experience[] = [
   {
-    id: 1,
+    id: generateRandomId(),
     name: "Aviato",
     description: "React Engineer",
     year: 2023,
@@ -16,7 +17,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "engineering",
   },
   {
-    id: 2,
+    id: generateRandomId(),
     name: "Watchou",
     description: "Frontend Engineer",
     year: 2021,
@@ -30,7 +31,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "engineering",
   },
   {
-    id: 3,
+    id: generateRandomId(),
     name: "Drop Zone",
     description: "Manager",
     year: 2019,
@@ -44,7 +45,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "music",
   },
   {
-    id: 4,
+    id: generateRandomId(),
     name: "Aquila",
     description: "Channel Manager",
     year: 2023,

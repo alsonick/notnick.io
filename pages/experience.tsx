@@ -1,9 +1,9 @@
+import { EMAIL_ADDRESS, FULL_NAME, PROFESSION } from "../lib/constants";
 import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
 import { ExperienceCard } from "../components/ExperienceCard";
 import { generateRandomId } from "../lib/generate-random-id";
 import { FilterListBox } from "../components/FilterListBox";
 import { removeDuplicates } from "../lib/remove-duplicates";
-import { EMAIL_ADDRESS } from "../lib/constants";
 import { Experience } from "../types/experience";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
@@ -64,8 +64,8 @@ const Experience: NextPage = () => {
   return (
     <>
       <Seo
-        title="Experience - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Experience - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

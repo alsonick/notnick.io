@@ -1,4 +1,5 @@
 import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
+import { BLOGS_DIR, FULL_NAME, PROFESSION } from "../lib/constants";
 import { generateRandomId } from "../lib/generate-random-id";
 import { FilterListBox } from "../components/FilterListBox";
 import { removeDuplicates } from "../lib/remove-duplicates";
@@ -9,7 +10,6 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { NoPost } from "../components/NoPost";
 import { Header } from "../components/Header";
-import { BLOGS_DIR } from "../lib/constants";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
@@ -50,8 +50,8 @@ const Blog: NextPage<Props> = ({ blogs }) => {
   return (
     <>
       <Seo
-        title="Blog - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Blog - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

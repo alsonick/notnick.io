@@ -3,6 +3,7 @@ import { Animate } from "../components/Animate";
 import { Header } from "../components/Header";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
+import { FULL_NAME } from "../lib/constants";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Tag } from "../components/Tag";
@@ -16,7 +17,7 @@ const Specs: NextPage = () => {
   return (
     <>
       <Seo
-        title="Specs - Nicholas Njoki"
+        title={`Specs - ${FULL_NAME}`}
         description="The equipment I use on a daily basis."
       />
       <Layout>

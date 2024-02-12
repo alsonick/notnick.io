@@ -3,6 +3,7 @@ import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
+import { FULL_NAME } from "../lib/constants";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Tag } from "../components/Tag";
@@ -13,7 +14,7 @@ import { NextPage } from "next";
 const Luffy: NextPage = () => {
   return (
     <>
-      <Seo title="Monkey D. Luffy" description="" />
+      <Seo title={`Monkey D. Luffy - ${FULL_NAME}`} description="" />
       <Layout>
         <Animate>
           <div className="mt-10">

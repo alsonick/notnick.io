@@ -1,3 +1,4 @@
+import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Header } from "../components/Header";
@@ -13,8 +14,8 @@ const License: NextPage = () => {
   return (
     <>
       <Seo
-        title="License - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`License - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
@@ -24,7 +25,7 @@ const License: NextPage = () => {
           <div className="mb-4">
             <Text>
               MIT License <br />
-              <br /> Copyright (c) {new Date().getFullYear()} Nicholas Njoki
+              <br /> Copyright (c) {new Date().getFullYear()} {FULL_NAME}
               <br />
               <br /> Permission is hereby granted, free of charge, to any person
               obtaining a copy of this software and associated documentation

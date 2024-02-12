@@ -1,3 +1,4 @@
+import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { COMPONENTS } from "../lib/components";
@@ -14,8 +15,8 @@ const Components: NextPage = () => {
   return (
     <>
       <Seo
-        title="Components - Nicholas Njoki"
-        description="Nicholas Njoki - Full-Stack Developer"
+        title={`Components - ${FULL_NAME}`}
+        description={`Nicholas Njoki - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

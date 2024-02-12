@@ -1,93 +1,99 @@
+import { generateRandomId } from "./generate-random-id";
 import { Path } from "../types/path";
 
 export const PATHS: Path[] = [
   {
-    id: 1,
+    id: generateRandomId(),
     path: "/",
     link: "/",
   },
   {
-    id: 2,
+    id: generateRandomId(),
     path: "/blog",
     link: "/blog",
   },
   {
-    id: 3,
+    id: generateRandomId(),
     path: "/note",
     link: "/note",
   },
   {
-    id: 4,
-    path: "/work",
-    link: "/work",
-  },
-  {
-    id: 5,
+    id: generateRandomId(),
     path: "/branding",
     link: "/branding",
   },
   {
-    id: 6,
+    id: generateRandomId(),
     path: "/luffy",
     link: "/luffy",
   },
   {
-    id: 7,
+    id: generateRandomId(),
     path: "/paths",
     link: "/paths",
   },
   {
-    id: 8,
+    id: generateRandomId(),
     path: "/components",
     link: "/components",
   },
   {
-    id: 9,
+    id: generateRandomId(),
     path: "/experience",
     link: "/experience",
   },
   {
-    id: 10,
+    id: generateRandomId(),
     path: "/license",
     link: "/license",
   },
   {
-    id: 11,
+    id: generateRandomId(),
     path: "/quote",
     link: "/quote",
   },
   {
-    id: 12,
+    id: generateRandomId(),
     path: "/socials",
     link: "/socials",
   },
   {
-    id: 13,
+    id: generateRandomId(),
     path: "/specs",
     link: "/specs",
   },
   {
-    id: 14,
+    id: generateRandomId(),
     path: "/articles",
     link: "/articles",
   },
   {
-    id: 15,
-    path: "/learn",
-    link: "/learn",
-  },
-  {
-    id: 16,
+    id: generateRandomId(),
     path: "/credit",
     link: "/credit",
   },
   {
-    id: 17,
+    id: generateRandomId(),
+    path: "/challenge",
+    link: "/challenge",
+  },
+  {
+    id: generateRandomId(),
+    path: "/community/rules",
+    link: "/community/rules",
+  },
+  {
+    id: generateRandomId(),
     path: "/contributors",
     link: "/contributors",
   },
   {
-    id: 18,
+    id: generateRandomId(),
+    path: "/music",
+    link: "/music",
+  },
+  {
+    id: generateRandomId(),
     path: "/dev",
     link: "/dev",
   },

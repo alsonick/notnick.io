@@ -27,7 +27,7 @@ const Img = ({ height, width }: { height: number; width: number }) => {
   return (
     <Image
       className="rounded-full"
-      title="My Memoji"
+      title="My Apple Memoji"
       src="/memoji.png"
       height={height}
       alt="My Memoji"

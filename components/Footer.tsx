@@ -1,4 +1,4 @@
-import { THEME } from "../lib/constants";
+import { FULL_NAME, THEME } from "../lib/constants";
 import { Avatar } from "./Avatar";
 
 // Next.js
@@ -28,7 +28,7 @@ export const Footer = () => {
     <footer className="flex items-center justify-between pb-12 border-t mt-6 border-teal-100 dark:border-teal-900 pt-10">
       <div className="flex flex-col">
         <h2 className="text-xl opacity-50 font-bold dark:text-white">
-          Nicholas Njoki
+          {FULL_NAME}
         </h2>
         <p className="text-gray-500 opacity-50 text-xs">
           &copy; {new Date().getFullYear()} | All rights reserved
@@ -42,7 +42,7 @@ export const Footer = () => {
           <p className="text-gray-500 opacity-50 text-xs mr-1 ">
             Built with ❤️ by{" "}
             <FooterLink link="https://github.com/alsonick">
-              Nicholas Njoki
+              {FULL_NAME}
             </FooterLink>{" "}
           </p>
           <Avatar border={false} width={15} height={15} />
