@@ -1,6 +1,0 @@
-| Day | Description
-
----
-
-| |
-| |
