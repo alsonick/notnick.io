@@ -47,7 +47,7 @@ export const MUSIC: Music[] = [
     type: "rap",
     name: "Rap",
     path: "/spotify/rap.jpg",
-    link: "https://open.spotify.com/playlist/3rbuHFPd34pKchnj82JQNq?si=2af981fe67a24a6b ",
+    link: "https://open.spotify.com/playlist/3rbuHFPd34pKchnj82JQNq?si=2af981fe67a24a6b",
     feature: true,
   },
   {

@@ -1,4 +1,5 @@
 import { CharacterLimit } from "./CharacterLimit";
+import { EMAIL_ADDRESS } from "../lib/constants";
 import { FiSend } from "react-icons/fi";
 import { TextArea } from "./TextArea";
 import { Loading } from "./Loading";
@@ -78,7 +79,7 @@ export const ContactForm = () => {
           required={true}
           onChange={(e) => setEmail(e.target.value)}
           style={{ width: "100%" }}
-          placeholder="hi@notnick.io"
+          placeholder={`${EMAIL_ADDRESS}`}
         />
         <div className="mb-1 mt-2">
           <Label text="message" />

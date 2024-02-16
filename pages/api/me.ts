@@ -1,6 +1,8 @@
 import {
   AVATAR,
   COUNTRY,
+  DOMAIN,
+  EMAIL_ADDRESS,
   FIRST_NAME,
   FULL_NAME,
   LAST_NAME,
@@ -22,20 +24,20 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         year: 2003,
       },
       country: `${COUNTRY}`,
-      email: "hi@notnick.io",
-      website: "notnick.io",
-      avatar: `https://notnick.io/${AVATAR}.png`,
-      domains: ["notnick.io", "pics.notnick.io"],
+      email: `${EMAIL_ADDRESS}`,
+      website: `${DOMAIN}`,
+      avatar: `https://${DOMAIN}/${AVATAR}.png`,
+      domains: [`${DOMAIN}`, `pics.${DOMAIN}`],
       redirects: [
         {
           id: generateRandomId(),
-          redirect: "notnick.io/gh",
+          redirect: `${DOMAIN}/gh`,
           destination: "https://github.com/alsonick",
         },
         {
           id: generateRandomId(),
-          redirect: "notnick.io/community",
-          destination: "notnick.io/community",
+          redirect: `${DOMAIN}/community`,
+          destination: `${DOMAIN}/community`,
         },
       ],
       domain: {
@@ -44,8 +46,26 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
             name: "NameCheap, Inc",
             "whois-server": "whois.namecheap.com",
             "referral-url": "https://www.namecheap.com/",
-            domain: "notnick.io",
+            domain: `${DOMAIN}`,
           },
+        },
+      },
+      spotify: {
+        playlists: {
+          anime:
+            "https://open.spotify.com/playlist/0Wtm1mJRMoW0NeX8OnuBUj?si=aa5098fa12b3461a",
+          chill:
+            "https://open.spotify.com/playlist/3gBVUEwwgS8CRy8H3hv8Bf?si=efebd638974b4a54",
+          coding:
+            "https://open.spotify.com/playlist/1TOUK6GycbdQqUIQHCV1aX?si=06e5e6b5e46b4694",
+          edm: "https://open.spotify.com/playlist/3lGZDsozMDEXVTyFo8nQxd?si=e64f0ddc4d484ab4",
+          ragtime:
+            "https://open.spotify.com/playlist/3dbVsPqJjfHSvXYNKyYUtl?si=21cb6a88d5c843ce",
+          rap: "https://open.spotify.com/playlist/3rbuHFPd34pKchnj82JQNq?si=2af981fe67a24a6b",
+          summer:
+            "https://open.spotify.com/playlist/2D61TAYDwu29oECg3dpJX4?si=6635afc33e644203",
+          travel:
+            "https://open.spotify.com/playlist/3c2Ag0wboNkpOfUlNKmVoh?si=31e4ccb9257d48f0",
         },
       },
       skills: [
@@ -93,7 +113,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
       },
       socials: {
-        "x (previously twitter)": {
+        x: {
           link: "https://twitter.com/heynickn",
           username: "heynickn",
         },

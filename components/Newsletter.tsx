@@ -2,7 +2,7 @@ import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { getIssues as getIssuesMethod } from "../lib/get-issues";
 import { getSubscribers } from "../lib/get-subscribers";
 import { useState, useEffect } from "react";
-import { THEME } from "../lib/constants";
+import { EMAIL_ADDRESS, THEME } from "../lib/constants";
 import { Heading } from "./Heading";
 import { Success } from "./Success";
 import Tippy from "@tippyjs/react";
@@ -110,7 +110,7 @@ export const NewsLetter = () => {
               type="email"
               style={{ width: "100%" }}
               required={true}
-              placeholder="hi@notnick.io"
+              placeholder={`${EMAIL_ADDRESS}`}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
