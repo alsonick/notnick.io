@@ -6,7 +6,13 @@ import { Toggle } from "./Toggle";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-export const Nav = ({ isDisplaySpotify }: { isDisplaySpotify?: boolean }) => {
+export const Nav = ({
+  isDisplaySpotify,
+  longLayoutFormat,
+}: {
+  isDisplaySpotify?: boolean;
+  longLayoutFormat?: boolean;
+}) => {
   const ITEMS = [
     { id: 1, text: "/", to: "/", dropdown: "Home" },
     { id: 2, text: "exp", to: "/experience", dropdown: "Exp" },
@@ -20,7 +26,9 @@ export const Nav = ({ isDisplaySpotify }: { isDisplaySpotify?: boolean }) => {
     <nav
       className={`flex px-6 ${
         isDisplaySpotify ? "md:top-16 top-8" : "top-8"
-      } fixed border dark:bg-[#10161a]/50 z-10 w-[90%] md:w-[40rem] border-teal-100
+      } fixed border dark:bg-[#10161a]/50 z-10 w-[90%] md:w-[${
+        longLayoutFormat ? "60rem" : "40rem"
+      }] border-teal-100
     dark:border-teal-900 backdrop-blur-md mb-12 duration-300 rounded-lg justify-between h-14 items-center`}
     >
       <div className="flex lg:hidden">

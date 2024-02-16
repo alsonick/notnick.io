@@ -1,19 +1,22 @@
 export interface Challenge {
+  completedDays: number;
+  content: Content[][];
   description: string;
-  content: Content[];
+  daysLeft: number;
   name: string;
   path: string;
   slug: string;
+  goal: number;
   id: number;
 }
 
 export interface Content {
-  contentCoveredDescription: string;
-  daysToComplete: number;
-  completedDays: number;
   description: string;
+  previewPath: string;
   completed: boolean;
-  preview: boolean;
+  preview: Preview;
+  slug: string;
+  day: number;
   id: number;
 }
 

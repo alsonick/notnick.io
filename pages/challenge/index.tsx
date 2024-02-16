@@ -17,7 +17,7 @@ const Challenge: NextPage = () => {
     <>
       <Seo
         title={`Challenge - ${FULL_NAME}`}
-        description={`Nicholas Njoki - ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
