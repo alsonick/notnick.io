@@ -1,7 +1,7 @@
 import { generateRandomId } from "./generate-random-id";
 import { Technologies } from "../types/technologies";
 
-export const technologies: Technologies[] = [
+export const TECHNOLOGIES: Technologies[] = [
   {
     id: generateRandomId(),
     text: "React.js",

@@ -1,4 +1,4 @@
-import { technologies } from "../lib/technologies";
+import { TECHNOLOGIES } from "../lib/technologies";
 import { THEME } from "../lib/constants";
 import { Heading } from "./Heading";
 import Tippy from "@tippyjs/react";
@@ -12,7 +12,7 @@ export const Technologies = () => {
     <section className="flex flex-col mb-12">
       <Heading>Technologies 💻</Heading>
       <ul className="block text-center list-disc mb-6">
-        {technologies.map((tech) => (
+        {TECHNOLOGIES.map((tech) => (
           <div key={tech.id} className="mr-4 inline-block">
             <Tippy animation="fade" content={tech.desc}>
               <Link

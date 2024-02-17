@@ -9,6 +9,10 @@ import {
 } from "../../lib/constants";
 import { generateRandomId } from "../../lib/generate-random-id";
 import type { NextApiRequest, NextApiResponse } from "next";
+import { TECHNOLOGIES } from "./../../lib/technologies";
+import { SOCIALS } from "../../lib/socials";
+import { MUSIC } from "./../../lib/music";
+import { SPECS } from "../../lib/specs";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
@@ -51,121 +55,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
       },
       spotify: {
-        playlists: {
-          anime:
-            "https://open.spotify.com/playlist/0Wtm1mJRMoW0NeX8OnuBUj?si=aa5098fa12b3461a",
-          chill:
-            "https://open.spotify.com/playlist/3gBVUEwwgS8CRy8H3hv8Bf?si=efebd638974b4a54",
-          coding:
-            "https://open.spotify.com/playlist/1TOUK6GycbdQqUIQHCV1aX?si=06e5e6b5e46b4694",
-          edm: "https://open.spotify.com/playlist/3lGZDsozMDEXVTyFo8nQxd?si=e64f0ddc4d484ab4",
-          ragtime:
-            "https://open.spotify.com/playlist/3dbVsPqJjfHSvXYNKyYUtl?si=21cb6a88d5c843ce",
-          rap: "https://open.spotify.com/playlist/3rbuHFPd34pKchnj82JQNq?si=2af981fe67a24a6b",
-          summer:
-            "https://open.spotify.com/playlist/2D61TAYDwu29oECg3dpJX4?si=6635afc33e644203",
-          travel:
-            "https://open.spotify.com/playlist/3c2Ag0wboNkpOfUlNKmVoh?si=31e4ccb9257d48f0",
-        },
+        playlists: MUSIC,
       },
-      skills: [
-        "React.js",
-        "TypeScript",
-        "styled-components",
-        "TailwindCSS",
-        "Prisma",
-        "Git",
-        "Visual Studio Code",
-        "Node.js",
-        "Next.js",
-        "Postgres",
-        "Yarn",
-        "npm",
-        "Express",
-        "JavaScript",
-        "Swift",
-        "UIKit",
-        "SwiftUI",
-      ],
-      specs: {
-        pc: {
-          cpu: "Intel Core i9-11900KF",
-          ram: "32GB",
-          gpu: "NVIDIA GeForce RTX 3060",
-          os: "Windows 11",
-          storage: "1TB SSD",
-        },
-        'M2 Pro MacBook Pro 16"': {
-          display: "16-inch Liquid Retina XDR display",
-          chip: "Apple M2 Pro Chip",
-          memory: "16GB",
-          storage: "512GB SSD",
-        },
-        gear: {
-          monitor: "Samsung UR55 4K IPS HDR10",
-          keyboard: "Keychron K4 Wireless Mechanical Keyboard",
-          mouse: "TECKNET RGB Gaming Mouse",
-          headset: "HyperX Cloud II 7.1",
-          earbuds: "AirPods Pro",
-          watch: "Apple Watch Series 3",
-          "primary phone": "iPhone 15",
-          "secondary phone": "iPhone XR",
-        },
-      },
-      socials: {
-        x: {
-          link: "https://twitter.com/heynickn",
-          username: "heynickn",
-        },
-        instagram: {
-          link: "https://www.instagram.com/heynickn/",
-          username: "heynickn",
-        },
-        snapchat: {
-          link: "https://www.snapchat.com/add/notnick14",
-          username: "notnick14",
-        },
-        linkedin: {
-          link: "https://www.linkedin.com/in/nicholas-n-5a9187195/",
-          username: "https://www.linkedin.com/in/nicholas-n-5a9187195/",
-        },
-        reddit: {
-          link: "https://www.reddit.com/user/thisnotnicholas",
-          username: "thisnotnicholas",
-        },
-        twitch: {
-          link: "https://www.twitch.tv/alsonick_",
-          username: "alsonick_",
-        },
-        discord: {
-          link: "https://discord.com/users/463449066672619520",
-          username: "alsonick_",
-        },
-        mastadon: {
-          link: "https://phpc.social/@alsonick",
-          username: "@alsonick@phpc.social",
-        },
-        tiktok: {
-          link: "https://www.tiktok.com/@heynick010",
-          username: "heynick010",
-        },
-        github: {
-          link: "https://github.com/alsonick",
-          username: "alsonick",
-        },
-        stackoverflow: {
-          link: "https://stackoverflow.com/users/17204801/nicholas",
-          username: "user:17204801",
-        },
-        youtube: {
-          link: "https://www.youtube.com/@alsonick",
-          username: "@alsonick",
-        },
-        threads: {
-          link: "https://threads.net/@heynickn",
-          username: "@heynickn",
-        },
-      },
+      specs: SPECS,
+      socials: SOCIALS,
+      technologies: TECHNOLOGIES,
       hobbies: ["Traveling", "Anime", "Playing Piano"],
     },
   });
