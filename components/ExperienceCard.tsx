@@ -1,3 +1,4 @@
+import { getEmploymentTypeString } from "../lib/get-employment-type-string";
 import { FiExternalLink, FiMapPin } from "react-icons/fi";
 import { Experience } from "../types/experience";
 import { LinkButton } from "./LinkButton";
@@ -7,29 +8,9 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Image from "next/image";
+import { PostCardTag } from "./PostCardTag";
 
 export const ExperienceCard = (props: Experience) => {
-  const getEmploymentTypeString = () => {
-    switch (props.employmentType) {
-      case "apprenticeship":
-        return "Apprenticeship";
-      case "contract":
-        return "Contract";
-      case "freelance":
-        return "Freelance";
-      case "full-time":
-        return "Full-Time";
-      case "internship":
-        return "Internship";
-      case "part-time":
-        return "Part-Time";
-      case "self-employed":
-        return "Self-Employed";
-      default:
-        return "Temporary";
-    }
-  };
-
   return (
     <div
       className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6 mt-5 
@@ -52,12 +33,17 @@ export const ExperienceCard = (props: Experience) => {
       ) : (
         <div></div>
       )}
-      <div className="ml-8 w-full text-center sm:text-left">
-        <div className="flex items-center justify-center sm:justify-start mb-3 sm:mb-0">
-          <h1 className="text-2xl font-bold dark:text-white mr-3">
-            {props.name}
-          </h1>
-          <Tag title={props.current ? "Current" : "Past"} />
+      <div className="sm:ml-8 ml-0 w-full text-center sm:text-left">
+        <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start mb-3 sm:mb-0">
+          <div className="flex items-center justify-center mr-3 sm:mb-0 mb-3">
+            <h1 className="text-2xl font-bold dark:text-white mr-3">
+              {props.name}
+            </h1>
+            <div>
+              <Tag title={props.current ? "Current" : "Past"} />
+            </div>
+          </div>
+          <PostCardTag title={props.filter} style={{ margin: 0 }} />
         </div>
         <Text>
           {props.description} &bull; {props.year} &bull;{" "}

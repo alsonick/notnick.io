@@ -19,6 +19,7 @@ import { useState } from "react";
 
 // Next.js
 import { NextPage } from "next";
+import { Key } from "../components/Key";
 
 const Experience: NextPage = () => {
   var types: Experience[] = [
@@ -103,9 +104,11 @@ const Experience: NextPage = () => {
           </div>
           <div className="w-full flex">
             <Text style={{ marginLeft: "auto" }}>
-              {selected !== capitalizeFirstLetter("all")
-                ? filteredBlogsList.length
-                : EXPERIENCE.length}{" "}
+              <Key>
+                {selected !== capitalizeFirstLetter("all")
+                  ? filteredBlogsList.length
+                  : EXPERIENCE.length}
+              </Key>{" "}
               items
             </Text>
           </div>
