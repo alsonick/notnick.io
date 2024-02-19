@@ -1,11 +1,14 @@
+import { ContentUnavailable } from "./ContentUnavailable";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 
 export const Layout = ({
-  children,
+  supportLargeScreen = true,
   isDisplaySpotify,
   longLayoutFormat,
+  children,
 }: {
+  supportLargeScreen?: boolean;
   children?: React.ReactNode;
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
@@ -24,7 +27,22 @@ export const Layout = ({
           isDisplaySpotify={isDisplaySpotify}
           longLayoutFormat={longLayoutFormat}
         />
-        {children}
+        {!supportLargeScreen && (
+          <div
+            className={`${
+              supportLargeScreen ? "lg:hidden block" : "lg:hidden block"
+            }  w-full h-full items-center justify-center flex`}
+          >
+            <ContentUnavailable />
+          </div>
+        )}
+        <div
+          className={`${
+            supportLargeScreen ? "lg:block w-full" : "lg:block hidden"
+          }`}
+        >
+          {children}
+        </div>
         <Footer />
       </div>
     </div>

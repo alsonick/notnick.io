@@ -196,7 +196,7 @@ export const COMPONENTS: Components[] = [
     text: "Border",
     component: (
       <Border>
-        <Text style={{ padding: "1rem" }}>Example</Text>
+        <Text style={{ padding: "0.5rem" }}>Example</Text>
       </Border>
     ),
   },

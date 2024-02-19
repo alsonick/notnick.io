@@ -31,7 +31,7 @@ const Slug: NextPage = () => {
         } - ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
-      <Layout longLayoutFormat={false}>
+      <Layout longLayoutFormat={true} supportLargeScreen={false}>
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>
