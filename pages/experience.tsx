@@ -15,11 +15,11 @@ import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Seo } from "../components/Seo";
+import { Key } from "../components/Key";
 import { useState } from "react";
 
 // Next.js
 import { NextPage } from "next";
-import { Key } from "../components/Key";
 
 const Experience: NextPage = () => {
   var types: Experience[] = [
