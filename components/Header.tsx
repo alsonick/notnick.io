@@ -1,16 +1,23 @@
 interface Props {
+  mobileColumnLayout?: boolean;
   children?: React.ReactNode;
   singleItem: boolean;
   column?: boolean;
 }
 
-export const Header = ({ children, singleItem, column }: Props) => {
+export const Header = ({
+  mobileColumnLayout,
+  children,
+  singleItem,
+  column,
+}: Props) => {
   return (
     <header
-      className={`flex ${
+      className={`flex ${mobileColumnLayout && "sm:flex-row flex-col w-full"} ${
         column ? "flex-col" : "flex-row"
       } my-4 mt-5 min-h-[4rem] ${
-        !singleItem && "justify-between items-center"
+        !singleItem &&
+        `justify-between ${mobileColumnLayout ? "items-start" : "items-center"}`
       }`}
     >
       {children}

@@ -6,17 +6,23 @@ import { Fragment } from "react";
 interface Props<T> {
   onChange: React.Dispatch<React.SetStateAction<string>>;
   selectedItem: string;
+  fullWidth?: boolean;
   items: T[];
 }
 
 export const FilterListBox = <T extends unknown>({
   onChange,
   selectedItem,
+  fullWidth = false,
   items,
 }: Props<T>) => {
   return (
     <Listbox value={selectedItem} onChange={onChange}>
-      <div className="flex duration-300 relative flex-col w-1/2">
+      <div
+        className={`flex duration-300 relative flex-col ${
+          fullWidth ? "w-full" : "w-1/2"
+        }`}
+      >
         <Listbox.Button
           className={`flex p-3 font-semibold items-center text-sm justify-between 
         dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100

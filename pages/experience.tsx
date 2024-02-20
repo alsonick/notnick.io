@@ -1,10 +1,11 @@
+import { ResponsiveFilterListBoxWrapper } from "../components/ResponsiveFilterListBoxWrapper";
+import { MappedExperienceCardList } from "../components/MappedExperienceCardList";
 import { EMAIL_ADDRESS, FULL_NAME, PROFESSION } from "../lib/constants";
 import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
-import { ExperienceCard } from "../components/ExperienceCard";
 import { generateRandomId } from "../lib/generate-random-id";
 import { FilterListBox } from "../components/FilterListBox";
 import { removeDuplicates } from "../lib/remove-duplicates";
-import { Experience } from "../types/experience";
+import { Experience as E } from "../types/experience";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { LinkTag } from "../components/LinkTag";
@@ -22,7 +23,7 @@ import { useState } from "react";
 import { NextPage } from "next";
 
 const Experience: NextPage = () => {
-  var types: Experience[] = [
+  var types: E[] = [
     {
       id: generateRandomId(),
       name: "",
@@ -70,13 +71,16 @@ const Experience: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={false}>
+          <Header singleItem={false} mobileColumnLayout={true}>
             <Heading style={{ marginBottom: 0 }}>Experience</Heading>
-            <FilterListBox
-              items={removeDuplicates(types)}
-              selectedItem={selected}
-              onChange={setSelected}
-            />
+            <ResponsiveFilterListBoxWrapper>
+              <FilterListBox
+                items={removeDuplicates(types)}
+                selectedItem={selected}
+                onChange={setSelected}
+                fullWidth={true}
+              />
+            </ResponsiveFilterListBoxWrapper>
           </Header>
           <div className="mb-5">
             <Text style={{ marginTop: "10px" }}>
@@ -126,29 +130,6 @@ const Experience: NextPage = () => {
           <GoBack />
         </Animate>
       </Layout>
-    </>
-  );
-};
-
-const MappedExperienceCardList = ({ list }: { list: Experience[] }) => {
-  return (
-    <>
-      {list.map((experience) => (
-        <ExperienceCard
-          key={experience.id}
-          name={experience.name}
-          description={experience.description}
-          employmentType={experience.employmentType}
-          remote={experience.remote}
-          location={experience.location}
-          current={experience.current}
-          link={experience.link}
-          year={experience.year}
-          logo={experience.logo}
-          task={experience.task}
-          filter={experience.filter}
-        />
-      ))}
     </>
   );
 };
