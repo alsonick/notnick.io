@@ -1,8 +1,8 @@
+import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
 import { ProgressNotice } from "./ProgressNotice";
 import { FiArrowLeft } from "react-icons/fi";
 import { Post as P } from "../types/post";
-import { THEME } from "../lib/constants";
 import { LinkTag } from "./LinkTag";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
@@ -24,7 +24,7 @@ export const Post = ({ type, post }: Props) => {
   return (
     <>
       <Seo
-        title={`${post.title} - Nicholas Njoki`}
+        title={`${post.title} - ${FULL_NAME}`}
         description={post.description}
       />
       <Layout>
@@ -35,11 +35,11 @@ export const Post = ({ type, post }: Props) => {
           <div className="flex items-center">
             <Avatar border={true} width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
-              Nicholas Njoki /&nbsp;
+              {FULL_NAME} /&nbsp;
             </p>
             <Date date={post.date} />
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center sm:mt-2 mt-0">
             <div className="border-r-2 pr-2 border-teal-100 dark:border-teal-900">
               <Text>{post.mins} min read</Text>
             </div>
@@ -47,10 +47,13 @@ export const Post = ({ type, post }: Props) => {
               <div className="ml-2 outline-none flex">
                 <Link
                   className={`focus:ring-4 ring-[${THEME}] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300`}
-                  href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://notnick.io/${type}/${post.slug}`}
+                  href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://${DOMAIN}/${type}/${post.slug}`}
                   target="_blank"
                 >
-                  <FiTwitter className="text-gray-600 dark:text-gray-300 cursor-pointer text-xl hover:text-black hover:dark:text-white duration-300" />
+                  <FiTwitter
+                    className="text-gray-600 dark:text-gray-300 cursor-pointer
+                    text-xl hover:text-black hover:dark:text-white duration-300"
+                  />
                 </Link>
               </div>
             ) : null}
@@ -85,13 +88,13 @@ export const Post = ({ type, post }: Props) => {
         ) : (
           <ProgressNotice />
         )}
-        <div className="pt-8 mt-8 flex items-center justify-between border-t border-teal-100 dark:border-teal-900">
+        <div className="pt-8 mt-8 flex sm:flex-row flex-col sm:items-center items-start justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
             className={`text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-[${THEME}]
             outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black
             hover:underline dark:hover:text-white`}
             target="_blank"
-            href={`https://github.com/alsonick/notnick.io/blob/main/posts/${type}/${post.slug}.md`}
+            href={`https://github.com/alsonick/${DOMAIN}/blob/main/posts/${type}/${post.slug}.md`}
           >
             Edit this page on GitHub <FiExternalLink className="ml-2" />
           </Link>

@@ -22,7 +22,7 @@ export const ArticlesList = ({ articles }: { articles: Article[] }) => {
           rounded ring-[${THEME}] outline-none duration-300`}
             target="_blank"
           >
-            <div className="flex mb-2">
+            <div className="flex-wrap flex h-auto w-full text-wrap mb-2">
               {article.tags.map((tag) => (
                 <div key={tag.id} className="mr-2">
                   <PostCardTag title={tag.filter} />
