@@ -22,5 +22,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     ipv6,
   };
 
-  res.status(200).json(data);
+  res.status(200).json({ success: true, dev: data });
 }
