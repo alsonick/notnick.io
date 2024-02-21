@@ -4,11 +4,11 @@ import { THEME } from "../lib/constants";
 import Link from "next/link";
 
 interface Props {
-  href: string;
-  children: React.ReactNode;
-  style?: React.CSSProperties | undefined;
   target?: React.HTMLAttributeAnchorTarget | undefined;
   onClick?: ((e: any) => void) | undefined;
+  style?: React.CSSProperties | undefined;
+  children: React.ReactNode;
+  href: string;
 }
 
 export const LinkTag = ({ href, children, style, target, onClick }: Props) => {

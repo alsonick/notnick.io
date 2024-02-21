@@ -4,7 +4,11 @@ import { LinkT } from "./Link";
 // Next.js
 import { useRouter } from "next/router";
 
-export const GoBack = ({ location }: { location?: string }) => {
+interface Props {
+  location?: string;
+}
+
+export const GoBack = ({ location }: Props) => {
   const router = useRouter();
 
   return (

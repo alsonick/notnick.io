@@ -21,6 +21,7 @@ import { useState } from "react";
 
 // Next.js
 import { NextPage } from "next";
+import { SOCIAL_LINKS } from "../lib/social-links";
 
 const Experience: NextPage = () => {
   var types: E[] = [
@@ -86,10 +87,7 @@ const Experience: NextPage = () => {
             <Text style={{ marginTop: "10px" }}>
               Not all my professional experience is listed below here, If
               you&apos;d like to find out more then please visit my{" "}
-              <LinkTag
-                href="https://www.linkedin.com/in/nicholas-n-5a9187195/"
-                target="_blank"
-              >
+              <LinkTag href={`${SOCIAL_LINKS.linkedin.link}`} target="_blank">
                 LinkedIn
               </LinkTag>{" "}
               page. For details on my past experience please drop an email to me

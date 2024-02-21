@@ -1,8 +1,5 @@
-import { THEME } from "../lib/constants";
+import { LinkWrapper } from "./LinkWrapper";
 import { LINKS } from "../lib/links";
-
-// Next.js
-import Link from "next/link";
 
 export const Links = () => {
   return (
@@ -13,27 +10,5 @@ export const Links = () => {
         </LinkWrapper>
       ))}
     </div>
-  );
-};
-
-interface Props {
-  children?: React.ReactNode;
-  title: string;
-  href: string;
-}
-
-const LinkWrapper = ({ href, children, title }: Props) => {
-  return (
-    <Link
-      href={href}
-      className={`text-2xl duration-300 focus:ring-4 focus:ring-offset-4 dark:ring-offset-black rounded
-      ring-[${THEME}] outline-none cursor-pointer mr-6 hover:text-black dark:hover:text-white text-gray-600
-      dark:text-gray-300 hover:scale-110`}
-      title={title}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {children}
-    </Link>
   );
 };

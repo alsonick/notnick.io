@@ -1,4 +1,6 @@
+import { LoadingPageContainer } from "../components/LoadingPageContainer";
 import { Heading } from "../components/Heading";
+import { Loading } from "../components/Loading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
@@ -62,9 +64,9 @@ const Quote: NextPage<Quote> = () => {
                 </Header>
               </div>
             ) : (
-              <div className="min-h-[4rem] mb-4 text-center">
-                <Heading>Loading...</Heading>
-              </div>
+              <LoadingPageContainer>
+                <Loading text="Loading..." loading={loading} />
+              </LoadingPageContainer>
             )}
           </div>
           <GoBack />

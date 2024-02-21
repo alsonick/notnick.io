@@ -1,12 +1,13 @@
 import { dynamicTitle } from "../lib/dynamic-title";
 import { seoKeywords } from "../lib/seo-keywords";
 import { fireworks } from "../lib/fireworks";
-import { THEME } from "../lib/constants";
+import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
 
 // Next.js
 import { useRouter } from "next/router";
 import Script from "next/script";
 import Head from "next/head";
+import { SOCIAL_LINKS } from "../lib/social-links";
 
 interface Props {
   description: string;
@@ -38,16 +39,22 @@ export const Seo = ({ description, cover, title }: Props) => {
         <meta name="description" content={description} key="desc" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta property="twitter:creator" content="@heynickn" />
+        <meta
+          property="twitter:creator"
+          content={`@${SOCIAL_LINKS.x.username}`}
+        />
         <meta property="twitter:site" content="@nick" />
         <meta name="keywords" content={seoKeywords} />
         <meta property="og:title" content={title} />
-        <meta property="og:site_name" content="Nicholas Njoki" />
-        <meta property="og:url" content="https://notnick.io/" />
+        <meta property="og:site_name" content={`${FULL_NAME}`} />
+        <meta property="og:url" content={`https://${DOMAIN}/`} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="twitter:image" content={"https://notnick.io/pfp.png"} />
-        <meta property="og:image" content={"https://notnick.io/pfp.png"} />
+        <meta
+          property="twitter:image"
+          content={`https://${DOMAIN}/Avatar.png`}
+        />
+        <meta property="og:image" content={`https://${DOMAIN}/Avatar.png`} />
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (

@@ -1,5 +1,9 @@
 import React from "react";
 
-export const TdChildren = ({ children }: { children: React.ReactNode }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const TdChildren = ({ children }: Props) => {
   return <td>{children}</td>;
 };

@@ -1,7 +1,10 @@
 import { FULL_NAME } from "../lib/constants";
 import { E } from "../components/E";
 
-const NotFound = () => {
+// Next.js
+import { NextPage } from "next";
+
+const NotFound: NextPage = () => {
   return (
     <E
       heading="404 - Not Found"

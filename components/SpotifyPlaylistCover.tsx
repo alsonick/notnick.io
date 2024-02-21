@@ -1,7 +1,15 @@
-// Net.js
 import { Music } from "../types/music";
 
+// Next.js
 import Image from "next/image";
+
+interface Props {
+  playlist?: Music;
+  height?: number;
+  width?: number;
+  name: string;
+  path: string;
+}
 
 export const SpotifyPlaylistCover = ({
   playlist,
@@ -9,13 +17,7 @@ export const SpotifyPlaylistCover = ({
   width,
   path,
   name,
-}: {
-  playlist?: Music;
-  height?: number;
-  width?: number;
-  name: string;
-  path: string;
-}) => {
+}: Props) => {
   return (
     <Image
       className="rounded-xl border w-full border-teal-100 dark:border-teal-900"

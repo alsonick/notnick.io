@@ -1,3 +1,4 @@
+import { SOCIAL_LINKS } from "../lib/social-links";
 import { ExperienceCard } from "./ExperienceCard";
 import { EXPERIENCE } from "../lib/experience";
 import { Heading } from "./Heading";
@@ -12,10 +13,7 @@ export const Experience = () => {
       <Text>
         If you want to find out more about my professional experience and the
         work I&apos;ve done then please head over to my{" "}
-        <LinkT
-          href="https://www.linkedin.com/in/nicholas-n-5a9187195/"
-          target="_blank"
-        >
+        <LinkT href={SOCIAL_LINKS.linkedin.link} target="_blank">
           LinkedIn
         </LinkT>{" "}
         page.

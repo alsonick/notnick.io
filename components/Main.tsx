@@ -1,5 +1,5 @@
-import { TypeAnimation } from "react-type-animation";
 import { CITY, COUNTRY, FIRST_NAME, THEME } from "../lib/constants";
+import { TypeAnimation } from "react-type-animation";
 import { FiNavigation } from "react-icons/fi";
 import { fireworks } from "../lib/fireworks";
 import { Heading } from "./Heading";

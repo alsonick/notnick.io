@@ -1,3 +1,4 @@
+import { SOCIAL_LINKS } from "../lib/social-links";
 import { EMAIL_ADDRESS } from "../lib/constants";
 import { ContactForm } from "./ContactForm";
 import { useState, useEffect } from "react";
@@ -36,7 +37,7 @@ export const Contact = () => {
       <Heading>Contact 💌</Heading>
       <Text>
         Be sure to shoot me a{" "}
-        <LinkTag href="https://twitter.com/heynickn" target="_blank">
+        <LinkTag href={SOCIAL_LINKS.x.link} target="_blank">
           DM on Twitter
         </LinkTag>
         .

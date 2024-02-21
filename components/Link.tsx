@@ -1,24 +1,21 @@
-import { THEME } from "../lib/constants";
-
-// Next.js
 import Link from "next/link";
 
 interface Props {
-  href?: string | undefined;
-  children: React.ReactNode;
-  style?: React.CSSProperties | undefined;
-  title?: string | undefined;
   target?: React.HTMLAttributeAnchorTarget | undefined;
   onClick?: ((e: any) => void) | undefined;
+  style?: React.CSSProperties | undefined;
+  title?: string | undefined;
+  href?: string | undefined;
+  children: React.ReactNode;
 }
 
 export const LinkT = ({
-  href,
-  style,
-  title,
-  target,
   children,
   onClick,
+  target,
+  style,
+  title,
+  href,
 }: Props) => {
   return (
     <Link

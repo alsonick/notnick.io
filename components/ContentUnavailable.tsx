@@ -1,4 +1,8 @@
-export const ContentUnavailable = ({ message }: { message?: string }) => {
+interface Props {
+  message?: string;
+}
+
+export const ContentUnavailable = ({ message }: Props) => {
   return (
     <div className="text-center items-center flex flex-col w-fit">
       <h2 className="text-xl font-semibold opacity-30 dark:text-white">

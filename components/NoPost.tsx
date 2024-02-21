@@ -1,4 +1,8 @@
-export const NoPost = ({ type }: { type: "notes" | "blogs" }) => {
+interface Props {
+  type: "notes" | "blogs";
+}
+
+export const NoPost = ({ type }: Props) => {
   return (
     <div className="text-center h-full items-center justify-center flex mb-4">
       <h2 className="text-xl font-semibold opacity-30 dark:text-white">

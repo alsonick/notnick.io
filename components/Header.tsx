@@ -7,8 +7,8 @@ interface Props {
 
 export const Header = ({
   mobileColumnLayout,
-  children,
   singleItem,
+  children,
   column,
 }: Props) => {
   return (

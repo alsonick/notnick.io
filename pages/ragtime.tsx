@@ -1,5 +1,5 @@
+import { RagtimeSection } from "../components/RagtimeSection";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
@@ -10,22 +10,6 @@ import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
-
-const Section = ({
-  children,
-  title,
-}: {
-  children: React.ReactNode;
-  title: string;
-}) => {
-  return (
-    <section className="mb-10">
-      <Heading>{title}</Heading>
-      {children}
-      <hr className="mt-5 border-teal-100 dark:border-teal-900" />
-    </section>
-  );
-};
 
 const Ragtime: NextPage = () => {
   return (
@@ -51,7 +35,7 @@ const Ragtime: NextPage = () => {
                 <strong>King of Ragtime 👑</strong>
               </Text>
             </div>
-            <Section title="What is Ragtime?">
+            <RagtimeSection title="What is Ragtime?">
               <Text>
                 A genre of musical composition for the piano, generally in duple
                 meter and containing a highly syncopated treble lead over a
@@ -59,19 +43,19 @@ const Ragtime: NextPage = () => {
                 composed three or four contrasting sections or strains, each one
                 being 16 or 32 measures in length.
               </Text>
-            </Section>
-            <Section title="Who is Scott Joplin?">
+            </RagtimeSection>
+            <RagtimeSection title="Who is Scott Joplin?">
               <Text>
                 Scott Joplin was an American composer and pianist. Dubbed the
                 &quot;King of Ragtime&quot;, he composed more than 40 ragtime
                 pieces, one ragtime ballet, and two operas.
               </Text>
-            </Section>
-            <Section title="What is syncopation?">
+            </RagtimeSection>
+            <RagtimeSection title="What is syncopation?">
               <picture>
                 <img src="/assets/syncopation.png" alt="" />
               </picture>
-            </Section>
+            </RagtimeSection>
           </div>
           <GoBack />
         </Animate>

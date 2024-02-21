@@ -14,7 +14,7 @@ interface Item {
 interface Props {
   items: Item[];
 }
-//focus:ring-4 ring-[#f54bff] outline-none duration-300
+
 export const Dropdown = ({ items }: Props) => {
   return (
     <div className="flex relative items-center justify-center">

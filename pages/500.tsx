@@ -1,7 +1,10 @@
 import { FULL_NAME } from "../lib/constants";
 import { E } from "../components/E";
 
-const InternalServerError = () => {
+// Next.js
+import { NextPage } from "next";
+
+const InternalServerError: NextPage = () => {
   return (
     <E
       heading="500 - Internal Server Error"

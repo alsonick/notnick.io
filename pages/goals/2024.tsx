@@ -1,48 +1,43 @@
 import { OtherPageContainer } from "../../components/OtherPageContainer";
+import { GoalsPageContainer } from "../../components/GoalsPageContainer";
+import { FULL_NAME, PROFESSION } from "../../lib/constants";
+import { GoalItem } from "../../components/GoalItem";
 import { Heading } from "../../components/Heading";
 import { Toggle } from "../../components/Toggle";
-import { FULL_NAME } from "../../lib/constants";
 import { LinkT } from "../../components/Link";
 import { Seo } from "../../components/Seo";
-
-const Item = ({
-  children,
-  completed,
-}: {
-  children: React.ReactNode;
-  completed: boolean;
-}) => {
-  return (
-    <li className="text-gray-600 dark:text-gray-300 list-disc">
-      {children} {completed ? "✅" : "❌"}
-    </li>
-  );
-};
 
 const TZTT = () => {
   return (
     <OtherPageContainer footer={false}>
-      <Seo title={`Goals for 2024 - ${FULL_NAME}`} description="" />
+      <Seo
+        title={`Goals for 2024 - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
+      />
       <Toggle />
       <Heading>Goals for 2024</Heading>
-      <ul className="pl-10">
-        <Item completed={false}>Become proficient in Swift.</Item>
-        <Item completed={false}>Spend less time on social media.</Item>
-        <Item completed={false}>Contribute more to the Swift ecosystem.</Item>
-        <Item completed={false}>Get my driving license (Hopefully).</Item>
-        <Item completed={false}>Build on more muscle.</Item>
-        <Item completed={false}>Learn to play the piano.</Item>
-        <Item completed={false}>Read more books.</Item>
-        <Item completed={false}>Get closer to god.</Item>
-        <Item completed={false}>
+      <GoalsPageContainer>
+        <GoalItem completed={false}>Become proficient in Swift.</GoalItem>
+        <GoalItem completed={false}>Spend less time on social media.</GoalItem>
+        <GoalItem completed={false}>
+          Contribute more to the Swift ecosystem.
+        </GoalItem>
+        <GoalItem completed={false}>
+          Get my driving license (Hopefully).
+        </GoalItem>
+        <GoalItem completed={false}>Build on more muscle.</GoalItem>
+        <GoalItem completed={false}>Learn to play the piano.</GoalItem>
+        <GoalItem completed={false}>Read more books.</GoalItem>
+        <GoalItem completed={false}>Get closer to god.</GoalItem>
+        <GoalItem completed={false}>
           Ship products like{" "}
           <LinkT href="https://twitter.com/levelsio" target="_blank">
             @levelsio
           </LinkT>
           .
-        </Item>
-        <Item completed={false}>Write more blogs.</Item>
-      </ul>
+        </GoalItem>
+        <GoalItem completed={false}>Write more blogs.</GoalItem>
+      </GoalsPageContainer>
     </OtherPageContainer>
   );
 };

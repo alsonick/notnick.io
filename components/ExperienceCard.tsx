@@ -1,6 +1,7 @@
 import { getEmploymentTypeString } from "../lib/get-employment-type-string";
 import { FiExternalLink, FiMapPin } from "react-icons/fi";
 import { Experience } from "../types/experience";
+import { PostCardTag } from "./PostCardTag";
 import { LinkButton } from "./LinkButton";
 import { Border } from "./Border";
 import { Text } from "./Text";
@@ -8,7 +9,6 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Image from "next/image";
-import { PostCardTag } from "./PostCardTag";
 
 export const ExperienceCard = (props: Experience) => {
   return (

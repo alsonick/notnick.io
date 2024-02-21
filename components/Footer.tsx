@@ -1,16 +1,16 @@
-import { FULL_NAME, THEME } from "../lib/constants";
+import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
+import { SOCIAL_LINKS } from "../lib/social-links";
 import { Avatar } from "./Avatar";
 
 // Next.js
 import Link from "next/link";
 
-const FooterLink = ({
-  children,
-  link,
-}: {
+interface Props {
   children: React.ReactNode;
   link: string;
-}) => {
+}
+
+const FooterLink = ({ children, link }: Props) => {
   return (
     <Link
       className={`hover:underline dark:hover:text-white hover:text-black focus:ring-4 dark:ring-offset-black opacity-100
@@ -41,21 +41,19 @@ export const Footer = () => {
         <div className="flex items-center">
           <p className="text-gray-500 opacity-50 text-xs mr-1 ">
             Built with ❤️ by{" "}
-            <FooterLink link="https://github.com/alsonick">
-              {FULL_NAME}
-            </FooterLink>{" "}
+            <FooterLink link={SOCIAL_LINKS.github.link}>{FULL_NAME}</FooterLink>{" "}
           </p>
           <Avatar border={false} width={15} height={15} />
         </div>
       </div>
       <Link
         className="github-button"
-        href="https://github.com/alsonick/notnick.io"
+        href={`https://github.com/${SOCIAL_LINKS.github.username}/${DOMAIN}`}
         target="_blank"
         data-color-scheme="no-preference: dark; light: dark; dark: dark;"
         data-size="large"
         data-show-count="true"
-        aria-label="Star alsonick/notnick.io on GitHub"
+        aria-label={`Star ${SOCIAL_LINKS.github.username}/${DOMAIN} on ${SOCIAL_LINKS.github.name}`}
       >
         Star
       </Link>

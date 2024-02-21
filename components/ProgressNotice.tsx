@@ -1,11 +1,11 @@
 import { CSSProperties } from "react";
 import { Notice } from "./Notice";
 
-export const ProgressNotice = ({
-  style,
-}: {
+interface Props {
   style?: CSSProperties | undefined;
-}) => {
+}
+
+export const ProgressNotice = ({ style }: Props) => {
   return (
     <div className="flex items-center justify-center p-20 mt-8" style={style}>
       <Notice>

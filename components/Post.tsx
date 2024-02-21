@@ -1,5 +1,6 @@
 import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
+import { SOCIAL_LINKS } from "../lib/social-links";
 import { ProgressNotice } from "./ProgressNotice";
 import { FiArrowLeft } from "react-icons/fi";
 import { Post as P } from "../types/post";
@@ -47,7 +48,7 @@ export const Post = ({ type, post }: Props) => {
               <div className="ml-2 outline-none flex">
                 <Link
                   className={`focus:ring-4 ring-[${THEME}] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300`}
-                  href={`https://twitter.com/intent/tweet?text=${post.title} by @heynickn: https://${DOMAIN}/${type}/${post.slug}`}
+                  href={`https://twitter.com/intent/tweet?text=${post.title} by @${SOCIAL_LINKS.x.username}: https://${DOMAIN}/${type}/${post.slug}`}
                   target="_blank"
                 >
                   <FiTwitter
@@ -94,9 +95,10 @@ export const Post = ({ type, post }: Props) => {
             outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black
             hover:underline dark:hover:text-white`}
             target="_blank"
-            href={`https://github.com/alsonick/${DOMAIN}/blob/main/posts/${type}/${post.slug}.md`}
+            href={`${SOCIAL_LINKS.github.link}/${DOMAIN}/blob/main/posts/${type}/${post.slug}.md`}
           >
-            Edit this page on GitHub <FiExternalLink className="ml-2" />
+            Edit this page on {SOCIAL_LINKS.github.name}{" "}
+            <FiExternalLink className="ml-2" />
           </Link>
           <div className="text-sm">
             <span className="flex">

@@ -1,8 +1,9 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { getIssues as getIssuesMethod } from "../lib/get-issues";
-import { getSubscribers } from "../lib/get-subscribers";
-import { useState, useEffect } from "react";
 import { EMAIL_ADDRESS, THEME } from "../lib/constants";
+import { getSubscribers } from "../lib/get-subscribers";
+import { SOCIAL_LINKS } from "../lib/social-links";
+import { useState, useEffect } from "react";
 import { Heading } from "./Heading";
 import { Success } from "./Success";
 import Tippy from "@tippyjs/react";
@@ -133,7 +134,7 @@ export const NewsLetter = () => {
                 <Link
                   className={`hover:underline pointer-events-none focus:ring-4 ring-[${THEME}] outline-none duration-300
                   focus:ring-offset-2 dark:ring-offset-black rounded`}
-                  href="https://www.getrevue.co/profile/heynickn"
+                  href={SOCIAL_LINKS.revue.link}
                   rel="noreferrer"
                   target="_blank"
                   title="View my published issues"
@@ -162,8 +163,9 @@ export const NewsLetter = () => {
       </Form>
       <div className="mt-6">
         <Note>
-          Revue has shut down so you won&apos;t be able to subscribe. I&apos;ll
-          make sure to find another newsletter alternative in the meantime. 👍{" "}
+          {SOCIAL_LINKS.revue.name} has shut down so you won&apos;t be able to
+          subscribe. I&apos;ll make sure to find another newsletter alternative
+          in the meantime. 👍{" "}
         </Note>
       </div>
     </section>

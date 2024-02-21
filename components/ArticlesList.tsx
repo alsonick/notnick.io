@@ -7,7 +7,11 @@ import { THEME } from "../lib/constants";
 // Next.js
 import Link from "next/link";
 
-export const ArticlesList = ({ articles }: { articles: Article[] }) => {
+interface Props {
+  articles: Article[];
+}
+
+export const ArticlesList = ({ articles }: Props) => {
   return (
     <>
       {articles.map((article) => (

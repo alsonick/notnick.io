@@ -1,8 +1,9 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
+import { DOMAIN, FULL_NAME } from "../lib/constants";
+import { SOCIAL_LINKS } from "../lib/social-links";
 import { Heading } from "../components/Heading";
 import { Toggle } from "../components/Toggle";
 import { GoBack } from "../components/GoBack";
-import { FULL_NAME } from "../lib/constants";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
@@ -22,7 +23,7 @@ const Credit = () => {
         </div>
         <Text>
           The source code to this site is{" "}
-          <LinkT href="https://github.com/alsonick/notnick.io" target="_blank">
+          <LinkT href={`${SOCIAL_LINKS.github.link}/${DOMAIN}`} target="_blank">
             open source
           </LinkT>{" "}
           and it&apos;s under the <LinkT href="/license">MIT License</LinkT>, so
@@ -52,7 +53,7 @@ const Credit = () => {
         <Text>
           If you have troubles with this then please feel free to{" "}
           <LinkT
-            href="https://github.com/alsonick/notnick.io/issues/new"
+            href={`${SOCIAL_LINKS.github.link}/${DOMAIN}/issues/new`}
             target="_blank"
           >
             raise an issue

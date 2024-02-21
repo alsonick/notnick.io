@@ -1,58 +1,49 @@
 import { OtherPageContainer } from "../../components/OtherPageContainer";
+import { GoalsPageContainer } from "../../components/GoalsPageContainer";
+import { FULL_NAME, PROFESSION } from "../../lib/constants";
+import { GoalItem } from "../../components/GoalItem";
 import { Heading } from "../../components/Heading";
 import { Toggle } from "../../components/Toggle";
-import { FULL_NAME } from "../../lib/constants";
 import { LinkT } from "../../components/Link";
 import { Seo } from "../../components/Seo";
-
-const Item = ({
-  children,
-  completed,
-}: {
-  children: React.ReactNode;
-  completed: boolean;
-}) => {
-  return (
-    <li className="text-gray-600 dark:text-gray-300 list-disc">
-      {children} {completed ? "✅" : "❌"}
-    </li>
-  );
-};
 
 const TZTT = () => {
   return (
     <OtherPageContainer footer={false}>
-      <Seo title={`Goals for 2023 - ${FULL_NAME}`} description="" />
+      <Seo
+        title={`Goals for 2023 - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
+      />
       <Toggle />
       <Heading>Goals for 2023</Heading>
-      <ul className="pl-10">
-        <Item completed={false}>
+      <GoalsPageContainer>
+        <GoalItem completed={false}>
           Become a TS god and surpass{" "}
           <LinkT href="https://twitter.com/alistaiir" target="_blank">
             Alistair
           </LinkT>
           .
-        </Item>
-        <Item completed={true}>Spend less time on social media.</Item>
-        <Item completed={true}>Contribute more to open source.</Item>
-        <Item completed={false}>Get my driving license.</Item>
-        <Item completed={false}>Meet more like-minded people.</Item>
-        <Item completed={true}>Hit the gym more consistently.</Item>
-        <Item completed={false}>
+        </GoalItem>
+        <GoalItem completed={true}>Spend less time on social media.</GoalItem>
+        <GoalItem completed={true}>Contribute more to open source.</GoalItem>
+        <GoalItem completed={false}>Get my driving license.</GoalItem>
+        <GoalItem completed={false}>Meet more like-minded people.</GoalItem>
+        <GoalItem completed={true}>Hit the gym more consistently.</GoalItem>
+        <GoalItem completed={false}>
           Make at least 3000 contributions on GitHub.
-        </Item>
-        <Item completed={true}>Spend less time on my phone.</Item>
-        <Item completed={false}>
+        </GoalItem>
+        <GoalItem completed={true}>Spend less time on my phone.</GoalItem>
+        <GoalItem completed={false}>
           Ship products like{" "}
           <LinkT href="https://twitter.com/levelsio" target="_blank">
             @levelsio
           </LinkT>
           .
-        </Item>
-        <Item completed={true}>Write more blogs.</Item>
-        <Item completed={true}>Improve my sleep schedule.</Item>
-        <Item completed={true}>Listen to more podcasts.</Item>
-      </ul>
+        </GoalItem>
+        <GoalItem completed={true}>Write more blogs.</GoalItem>
+        <GoalItem completed={true}>Improve my sleep schedule.</GoalItem>
+        <GoalItem completed={true}>Listen to more podcasts.</GoalItem>
+      </GoalsPageContainer>
     </OtherPageContainer>
   );
 };

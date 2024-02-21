@@ -2,17 +2,19 @@ import { ContentUnavailable } from "./ContentUnavailable";
 import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 
+interface Props {
+  supportLargeScreen?: boolean;
+  children?: React.ReactNode;
+  isDisplaySpotify?: boolean;
+  longLayoutFormat?: boolean;
+}
+
 export const Layout = ({
   supportLargeScreen = true,
   isDisplaySpotify,
   longLayoutFormat,
   children,
-}: {
-  supportLargeScreen?: boolean;
-  children?: React.ReactNode;
-  isDisplaySpotify?: boolean;
-  longLayoutFormat?: boolean;
-}) => {
+}: Props) => {
   return (
     <div
       className="flex flex-col items-center justify-center h-screen scrollbar-thin scrollbar-thumb-gray-700

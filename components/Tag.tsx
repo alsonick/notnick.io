@@ -1,12 +1,11 @@
 import { THEME } from "../lib/constants";
 
-export const Tag = ({
-  title,
-  icon,
-}: {
-  title: string;
+interface Props {
   icon?: React.ReactNode;
-}) => {
+  title: string;
+}
+
+export const Tag = ({ title, icon }: Props) => {
   return (
     <div
       title={title}
