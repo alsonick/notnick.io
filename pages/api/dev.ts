@@ -16,10 +16,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     arch,
     platform,
     node,
-    v8,
     NODE_ENV: NODE_ENV,
     lts,
     ipv6,
+    v8,
   };
 
   res.status(200).json({ success: true, dev: data });
