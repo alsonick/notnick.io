@@ -32,10 +32,12 @@ export const ContactForm = () => {
     setError("");
 
     if (message.length > CHARACTER_LIMIT) {
+      setLoading(false);
       return setError(`You can only have ${CHARACTER_LIMIT} characters.`);
     }
 
     if (filter.isProfane(message)) {
+      setLoading(false);
       return setError("Please don't send inappropriate messages.");
     }
 
@@ -72,31 +74,37 @@ export const ContactForm = () => {
           <Label text="email" />
         </div>
         <Input
-          id="email"
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={`${EMAIL_ADDRESS}`}
+          style={{ width: "100%" }}
+          required={true}
+          value={email}
           name="email"
           type="email"
-          value={email}
-          required={true}
-          onChange={(e) => setEmail(e.target.value)}
-          style={{ width: "100%" }}
-          placeholder={`${EMAIL_ADDRESS}`}
+          id="email"
         />
         <div className="mb-1 mt-2">
           <Label text="message" />
         </div>
         <TextArea
-          rows={8}
+          onChange={(e) => {
+            setMessage(e.target.value);
+
+            if (message.length === CHARACTER_LIMIT) {
+              setLoading(false);
+            }
+          }}
           placeholder="Amazing website, let's connect!"
-          required={true}
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          required={true}
+          rows={8}
         />
       </div>
       <CharacterLimit text={message} limit={CHARACTER_LIMIT} />
       <div className="w-full flex items-center justify-between mt-2">
         <Loading loading={loading} text="Sending..." />
-        {error ? <Error message={error} /> : null}
-        {success ? <Success message={success} /> : null}
+        {error && !loading ? <Error message={error} /> : null}
+        {success && !loading ? <Success message={success} /> : null}
         <div className="ml-auto pl-1">
           <Button>
             Send <FiSend className="text-xl ml-2" />

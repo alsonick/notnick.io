@@ -1,6 +1,6 @@
 export interface Challenge {
   completedDays: number;
-  content: Content[][];
+  content: Content[];
   description: string;
   daysLeft: number;
   name: string;
@@ -15,7 +15,6 @@ export interface Content {
   previewPath: string;
   completed: boolean;
   preview: Preview;
-  slug: string;
   day: number;
   id: number;
 }

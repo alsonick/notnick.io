@@ -15,6 +15,7 @@ import { Seo } from "../../components/Seo";
 import { Key } from "../../components/Key";
 import { Th } from "../../components/Th";
 import { Td } from "../../components/Td";
+import { page } from "../../lib/page";
 
 // Next.js
 import { useRouter } from "next/router";
@@ -31,7 +32,12 @@ const Slug: NextPage = () => {
         } - ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
-      <Layout longLayoutFormat={true} supportLargeScreen={false}>
+      <Layout
+        longLayoutFormat={true}
+        supportLargeScreen={false}
+        backButtonLocation={page.challenge.link}
+        showBackButton={true}
+      >
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>
@@ -46,7 +52,7 @@ const Slug: NextPage = () => {
             <Table>
               <thead>
                 <tr>
-                  {["Name", "Days Completed", "Days Left"].map((k) => (
+                  {["Name", "Days Completed", "Days Left", "Goal"].map((k) => (
                     <Th key={k} text={k} />
                   ))}
                 </tr>
@@ -54,21 +60,24 @@ const Slug: NextPage = () => {
               <tbody>
                 <tr>
                   <Td
-                    text={challenge?.name ?? "No 'name' was provided"}
+                    text={challenge?.name ?? "No 'name' was provided."}
                     center={true}
                   />
                   <Td
                     text={`${
                       challenge?.completedDays ??
-                      "No 'completed days' was provided"
+                      "No 'completed days' was provided."
                     }`}
                     center={true}
                   />
                   <Td
                     text={`${
-                      challenge?.daysLeft ?? "No 'days left' was provided"
+                      challenge?.daysLeft ?? "No 'days left' was provided."
                     }`}
                     center={true}
+                  />
+                  <Td
+                    text={`${challenge?.goal ?? "No 'goal' was provided."}`}
                   />
                 </tr>
               </tbody>
@@ -87,31 +96,29 @@ const Slug: NextPage = () => {
               <tbody>
                 {challenge?.content.map((c) => (
                   <tr key={generateRandomId()}>
-                    {c.map((x) => (
-                      <>
-                        <Td text={`${x.day}`} center={true} />
-                        <Td text={x.description} center={false} />
-                        <Td text={x.completed ? "✅" : "❌"} center={true} />
-                        {x.preview.available ? (
-                          <TdChildren>
-                            <picture>
-                              <img
-                                src={`${x.preview.previewContent?.path}.${x.preview.previewContent?.extension}`}
-                                alt={x.preview.previewContent?.alt}
-                              />
-                            </picture>
-                          </TdChildren>
-                        ) : (
-                          <Td text="Preview not available" center={true} />
-                        )}
-                      </>
-                    ))}
+                    <>
+                      <Td text={`${c.day}`} center={true} />
+                      <Td text={c.description} center={false} />
+                      <Td text={c.completed ? "✅" : "❌"} center={true} />
+                      {c.preview.available ? (
+                        <TdChildren>
+                          <picture>
+                            <img
+                              src={`${c.preview.previewContent?.path}.${c.preview.previewContent?.extension}`}
+                              alt={c.preview.previewContent?.alt}
+                            />
+                          </picture>
+                        </TdChildren>
+                      ) : (
+                        <Td text="Preview not available." center={true} />
+                      )}
+                    </>
                   </tr>
                 ))}
               </tbody>
             </Table>
           </div>
-          <GoBack location="/challenge" />
+          <GoBack location={page.challenge.link} />
         </Animate>
       </Layout>
     </>

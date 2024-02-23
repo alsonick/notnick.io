@@ -4,15 +4,19 @@ import { Nav } from "./Nav";
 
 interface Props {
   supportLargeScreen?: boolean;
+  backButtonLocation?: string;
   children?: React.ReactNode;
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
+  showBackButton?: boolean;
 }
 
 export const Layout = ({
   supportLargeScreen = true,
+  backButtonLocation,
   isDisplaySpotify,
   longLayoutFormat,
+  showBackButton,
   children,
 }: Props) => {
   return (
@@ -33,9 +37,12 @@ export const Layout = ({
           <div
             className={`${
               supportLargeScreen ? "lg:hidden block" : "lg:hidden block"
-            }  w-full h-full items-center justify-center flex`}
+            }  w-full h-full items-center justify-center flex flex-col`}
           >
-            <ContentUnavailable />
+            <ContentUnavailable
+              showBackButton={showBackButton}
+              backButtonLocation={backButtonLocation}
+            />
           </div>
         )}
         <div

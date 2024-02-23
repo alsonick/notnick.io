@@ -7,6 +7,7 @@ import { Layout } from "../../components/Layout";
 import { Header } from "../../components/Header";
 import { Text } from "../../components/Text";
 import { Seo } from "../../components/Seo";
+import { page } from "../../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -28,7 +29,7 @@ const Challenge: NextPage = () => {
             {CHALLENGES.map((challenge) => (
               <Link
                 className={`focus:ring-4 ring-[${THEME}] focus:ring-offset-4 outline-none duration-300 rounded p-2 dark:ring-offset-black`}
-                href={`challenge/${challenge.slug}`}
+                href={`${page.challenge.name}/${challenge.slug}`}
                 key={challenge.id}
               >
                 <h1

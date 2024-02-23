@@ -10,6 +10,7 @@ import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
+import { PlainTag } from "../components/PlainTag";
 
 const Components: NextPage = () => {
   return (
@@ -22,12 +23,14 @@ const Components: NextPage = () => {
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>Components</Heading>
-            <Text>
-              <b className="text-gray-500 dark:text-gray-200">
-                {COMPONENTS.length}
-              </b>{" "}
-              components
-            </Text>
+            <div className="sm:flex hidden">
+              <Text>
+                <b className="text-gray-500 dark:text-gray-200">
+                  {COMPONENTS.length}
+                </b>{" "}
+                components
+              </Text>
+            </div>
           </Header>
           <div className="mb-4 flex flex-col">
             {COMPONENTS.map((component) => (
@@ -35,12 +38,7 @@ const Components: NextPage = () => {
                 className="flex items-center my-4 w-full justify-between"
                 key={component.id}
               >
-                <div
-                  className="text-black dark:text-white items-center bg-gray-100 dark:bg-gray-800
-                p-2 px-3 rounded-lg justify-center"
-                >
-                  <Text>{component.text}</Text>
-                </div>
+                <PlainTag text={component.text} />
                 {component.component}
               </div>
             ))}

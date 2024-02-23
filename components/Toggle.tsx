@@ -66,7 +66,11 @@ export const Toggle = () => {
       title={`Toggle ${theme === "dark" ? "Dark Mode" : "Light Theme"} (T)`}
       onClick={() => toggleTheme(theme)}
     >
-      {theme === "dark" ? <FiSun /> : <FiMoon />}
+      {theme === "dark" ? (
+        <FiSun className="hover:scale-110 duration-150" />
+      ) : (
+        <FiMoon className="hover:scale-110 duration-150" />
+      )}
     </RoundedBox>
   );
 };

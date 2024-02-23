@@ -1,9 +1,10 @@
-import { SpotifyPlaylistLinkButton } from "./SpotifyPlaylistLinkButton";
+import { SpotifyPlaylistLinkButton } from "./SpotifyLinkButton";
 import { SpotifyPlaylistCover } from "./SpotifyPlaylistCover";
 import { THEME } from "../lib/constants";
 import { MUSIC } from "../lib/music";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
+import { page } from "../lib/page";
 import { Text } from "./Text";
 
 // Net.js
@@ -45,8 +46,8 @@ export const Music = () => {
         })}
       </div>
       <Text>
-        Click <LinkTag href="/music">here</LinkTag> to view the entire playlist
-        collection.
+        Click <LinkTag href={page.music.link}>here</LinkTag> to view the entire
+        playlist collection.
       </Text>
     </section>
   );

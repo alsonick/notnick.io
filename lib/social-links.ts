@@ -1,6 +1,6 @@
 import { DISCORD_ID } from "./constants";
 
-export const SOCIAL_LINKS = {
+export const social = {
   x: {
     link: "https://twitter.com/heynickn",
     username: "heynickn",
@@ -10,6 +10,11 @@ export const SOCIAL_LINKS = {
     link: "https://www.instagram.com/heynickn",
     username: "heynickn",
     name: "Instagram",
+  },
+  keybase: {
+    link: "https://keybase.io/nick241",
+    username: "nick241",
+    name: "Keybase",
   },
   snapchat: {
     link: "https://www.snapchat.com/add/notnick14",

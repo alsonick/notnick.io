@@ -1,7 +1,7 @@
 import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
-import { SOCIAL_LINKS } from "../lib/social-links";
 import { ProgressNotice } from "./ProgressNotice";
+import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
@@ -34,7 +34,7 @@ export const Post = ({ type, post }: Props) => {
         </h1>
         <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
           <div className="flex items-center">
-            <Avatar border={true} width={24} height={24} />
+            <Avatar border={false} width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
               {FULL_NAME} /&nbsp;
             </p>
@@ -47,8 +47,8 @@ export const Post = ({ type, post }: Props) => {
             {post.finished ? (
               <div className="ml-2 outline-none flex">
                 <Link
-                  className={`focus:ring-4 ring-[${THEME}] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300`}
-                  href={`https://twitter.com/intent/tweet?text=${post.title} by @${SOCIAL_LINKS.x.username}: https://${DOMAIN}/${type}/${post.slug}`}
+                  className={`focus:ring-4 hover:scale-110 ring-[${THEME}] focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300`}
+                  href={`https://twitter.com/intent/tweet?text=${post.title} by @${social.x.username}: https://${DOMAIN}/${type}/${post.slug}`}
                   target="_blank"
                 >
                   <FiTwitter
@@ -95,9 +95,9 @@ export const Post = ({ type, post }: Props) => {
             outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black
             hover:underline dark:hover:text-white`}
             target="_blank"
-            href={`${SOCIAL_LINKS.github.link}/${DOMAIN}/blob/main/posts/${type}/${post.slug}.md`}
+            href={`${social.github.link}/${DOMAIN}/blob/main/posts/${type}/${post.slug}.md`}
           >
-            Edit this page on {SOCIAL_LINKS.github.name}{" "}
+            Edit this page on {social.github.name}{" "}
             <FiExternalLink className="ml-2" />
           </Link>
           <div className="text-sm">

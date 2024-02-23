@@ -1,3 +1,4 @@
+import { LoadingPageContainer } from "../../components/LoadingPageContainer";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
 import { Heading } from "../../components/Heading";
 import { Animate } from "../../components/Animate";
@@ -52,9 +53,9 @@ const Rules: NextPage = () => {
               ))}
             </div>
           ) : (
-            <div className="my-40 flex items-center justify-center">
+            <LoadingPageContainer>
               <Loading text="Loading..." loading={loading} />
-            </div>
+            </LoadingPageContainer>
           )}
           <GoBack />
         </Animate>

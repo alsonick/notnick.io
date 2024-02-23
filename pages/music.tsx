@@ -1,4 +1,4 @@
-import { SpotifyPlaylistLinkButton } from "../components/SpotifyPlaylistLinkButton";
+import { SpotifyPlaylistLinkButton } from "../components/SpotifyLinkButton";
 import { SpotifyPlaylistCover } from "../components/SpotifyPlaylistCover";
 import { FULL_NAME, PROFESSION, THEME } from "../lib/constants";
 import { Listening } from "../components/Listening";

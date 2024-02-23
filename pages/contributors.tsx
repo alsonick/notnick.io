@@ -1,9 +1,10 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
+import { DOMAIN, FULL_NAME } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Toggle } from "../components/Toggle";
 import { Header } from "../components/Header";
 import { GoBack } from "../components/GoBack";
-import { FULL_NAME } from "../lib/constants";
+import { social } from "../lib/social-links";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 
@@ -25,12 +26,12 @@ const Contributors: NextPage = () => {
       </Header>
       <Link
         className="mb-6 mt-4"
-        href="https://github.com/alsonick/notnick.io/graphs/contributors"
+        href={`${social.github.link}/${DOMAIN}/graphs/contributors`}
         target="_blank"
       >
         <picture>
           <img
-            src="https://contrib.rocks/image?repo=alsonick/notnick.io"
+            src={`https://contrib.rocks/image?repo=${social.github.username}/${DOMAIN}`}
             alt=""
           />
         </picture>

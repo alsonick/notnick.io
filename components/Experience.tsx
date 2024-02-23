@@ -1,8 +1,9 @@
-import { SOCIAL_LINKS } from "../lib/social-links";
 import { ExperienceCard } from "./ExperienceCard";
 import { EXPERIENCE } from "../lib/experience";
+import { social } from "../lib/social-links";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
+import { page } from "../lib/page";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
 
@@ -13,7 +14,7 @@ export const Experience = () => {
       <Text>
         If you want to find out more about my professional experience and the
         work I&apos;ve done then please head over to my{" "}
-        <LinkT href={SOCIAL_LINKS.linkedin.link} target="_blank">
+        <LinkT href={social.linkedin.link} target="_blank">
           LinkedIn
         </LinkT>{" "}
         page.
@@ -21,23 +22,24 @@ export const Experience = () => {
       <div>
         {EXPERIENCE.slice(0, 3).map((experience) => (
           <ExperienceCard
-            key={experience.id}
-            name={experience.name}
-            description={experience.description}
             employmentType={experience.employmentType}
-            remote={experience.remote}
+            description={experience.description}
             location={experience.location}
             current={experience.current}
+            filter={experience.filter}
+            remote={experience.remote}
+            name={experience.name}
             link={experience.link}
             year={experience.year}
             logo={experience.logo}
             task={experience.task}
-            filter={experience.filter}
+            key={experience.id}
           />
         ))}
       </div>
       <Text>
-        Click <LinkTag href="/experience">here</LinkTag> to view the full list.
+        Click <LinkTag href={page.experience.link}>here</LinkTag> to view the
+        full list.
       </Text>
     </section>
   );

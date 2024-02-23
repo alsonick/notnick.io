@@ -1,5 +1,6 @@
 import { DOMAIN, FULL_NAME } from "../lib/constants";
 import { Heading } from "./Heading";
+import { page } from "../lib/page";
 import { Header } from "./Header";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
@@ -22,7 +23,7 @@ export const License = () => {
         <LinkT href="https://mit-license.org/" target="_blank">
           MIT License
         </LinkT>
-        , read more <LinkT href="/license">here</LinkT>.
+        , read more <LinkT href={page.license.link}>here</LinkT>.
       </Text>
     </section>
   );

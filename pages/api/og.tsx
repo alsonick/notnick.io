@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { FULL_NAME, PROFESSION, THEME } from "../../lib/constants";
+import { DOMAIN, FULL_NAME, PROFESSION, THEME } from "../../lib/constants";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
@@ -47,10 +47,10 @@ export default async function handler(req: NextRequest) {
             <div tw="flex items-center">
               <img
                 tw="rounded-full mr-5"
-                src="https://notnick.io/memoji.png"
+                src={`https://${DOMAIN}/Avatar.png`}
                 width={90}
                 height={90}
-                alt="My memoji"
+                alt="My Apple Memoji"
               />
               <div tw="flex flex-col justify-center">
                 <h2 tw="text-4xl m-0 tracking-tight">{FULL_NAME}</h2>

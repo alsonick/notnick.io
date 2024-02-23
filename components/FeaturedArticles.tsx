@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ARTICLES } from "../lib/articles";
 import { Article } from "../types/article";
 import { Heading } from "./Heading";
+import { page } from "../lib/page";
 import { Button } from "./Button";
 import { LinkT } from "./Link";
 
@@ -34,16 +35,16 @@ export const FeaturedArticles = () => {
       <div className="flex flex-col lg:flex-row">
         {shuffledArticles.map((article) => (
           <ArticleCard
-            key={article.id}
-            type={article.type}
-            title={article.title}
-            link={article.link}
             authors={article.authors}
+            title={article.title}
+            type={article.type}
+            link={article.link}
+            key={article.id}
           />
         ))}
       </div>
       <div className="p-2">
-        <LinkT href="/articles" title="View all articles">
+        <LinkT href={page.articles.link} title="View all articles">
           View all articles <FiArrowRight className="text-lg ml-1" />
         </LinkT>
       </div>

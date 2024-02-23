@@ -1,11 +1,10 @@
 import { TECHNOLOGIES } from "../lib/technologies";
-import { THEME } from "../lib/constants";
 import { Heading } from "./Heading";
-import Tippy from "@tippyjs/react";
 import { Note } from "./Note";
 
 // Next.js
 import Link from "next/link";
+import { TechnologyCard } from "./TechnologyCard";
 
 export const Technologies = () => {
   return (
@@ -14,20 +13,11 @@ export const Technologies = () => {
       <ul className="block text-center list-disc mb-6">
         {TECHNOLOGIES.map((tech) => (
           <div key={tech.id} className="mr-4 inline-block">
-            <Tippy animation="fade" content={tech.desc}>
-              <Link
-                href={tech.link}
-                className={`cursor-pointer inline-block py-2 px-8 focus:ring-4 ring-[${THEME}] outline-none
-                  hover:translate-y-1 text-sm rounded-full mb-4 duration-300 focus:ring-offset-2 dark:ring-offset-black
-                  font-semibold  bg-gray-100 hover:bg-gray-200 dark:bg-gray-800
-                dark:hover:bg-gray-900 dark:text-white`}
-                title={tech.text}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {tech.text}
-              </Link>
-            </Tippy>
+            <TechnologyCard
+              link={tech.link}
+              text={tech.text}
+              desc={tech.desc}
+            />
           </div>
         ))}
       </ul>

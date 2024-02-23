@@ -1,5 +1,5 @@
-import { SOCIAL_LINKS } from "../lib/social-links";
 import { EMAIL_ADDRESS } from "../lib/constants";
+import { social } from "../lib/social-links";
 import { ContactForm } from "./ContactForm";
 import { useState, useEffect } from "react";
 import { Heading } from "./Heading";
@@ -37,13 +37,13 @@ export const Contact = () => {
       <Heading>Contact 💌</Heading>
       <Text>
         Be sure to shoot me a{" "}
-        <LinkTag href={SOCIAL_LINKS.x.link} target="_blank">
+        <LinkTag href={social.x.link} target="_blank">
           DM on Twitter
         </LinkTag>
         .
       </Text>
       <Text>
-        For more serious matters{" "}
+        For more <b>serious</b> matters{" "}
         <LinkTag href={`mailto:${EMAIL_ADDRESS}`}>shoot me an email</LinkTag>.
       </Text>
       <div className="flex flex-col justify-center border-t border-teal-100 dark:border-teal-900 mt-10 pt-5 w-full">

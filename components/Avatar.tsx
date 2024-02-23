@@ -26,11 +26,11 @@ export const Avatar = ({ border, height, width }: Props) => {
 const Img = ({ height, width }: { height: number; width: number }) => {
   return (
     <Image
-      className="rounded-full"
+      className="rounded-full sm:hover:scale-105 duration-300 hover:scale-100"
       title="My Apple Memoji"
-      src="/memoji.png"
+      src="/Avatar.png"
       height={height}
-      alt="My Memoji"
+      alt="My Apple Memoji"
       width={width}
       quality={100}
     />

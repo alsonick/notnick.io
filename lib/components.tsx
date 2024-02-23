@@ -1,10 +1,13 @@
-import { SpotifyPlaylistLinkButton } from "../components/SpotifyPlaylistLinkButton";
+import { SpotifyPlaylistLinkButton } from "../components/SpotifyLinkButton";
+import { GitHubStarButton } from "../components/GitHubStarButton";
+import { TechnologyCard } from "../components/TechnologyCard";
 import { CharacterLimit } from "../components/CharacterLimit";
 import { FilterListBox } from "../components/FilterListBox";
 import { PostCardTag } from "../components/PostCardTag";
 import { generateRandomId } from "./generate-random-id";
 import { LinkButton } from "../components/LinkButton";
 import { TextArea } from "../components/TextArea";
+import { PlainTag } from "../components/PlainTag";
 import { Skeleton } from "../components/Skeleton";
 import { Dropdown } from "../components/Dropdown";
 import { Components } from "../types/components";
@@ -29,6 +32,7 @@ import { Note } from "../components/Note";
 import { Form } from "../components/Form";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
+import { Listening } from "../components/Listening";
 
 export const COMPONENTS: Components[] = [
   {
@@ -59,12 +63,12 @@ export const COMPONENTS: Components[] = [
   {
     id: generateRandomId(),
     text: "Link T",
-    component: <LinkT href="">Example</LinkT>,
+    component: <LinkT href="/api/example">Example</LinkT>,
   },
   {
     id: generateRandomId(),
     text: "Link Tag",
-    component: <LinkTag href="">Example</LinkTag>,
+    component: <LinkTag href="/api/example">Example</LinkTag>,
   },
   {
     id: generateRandomId(),
@@ -143,9 +147,9 @@ export const COMPONENTS: Components[] = [
     component: (
       <Dropdown
         items={[
-          { id: 1, text: "Example1", to: "/api/example" },
-          { id: 2, text: "Example2", to: "/api/example" },
-          { id: 3, text: "Example3", to: "/api/example" },
+          { id: generateRandomId(), text: "Example1", to: "/api/example?e=1" },
+          { id: generateRandomId(), text: "Example2", to: "/api/example?e=2" },
+          { id: generateRandomId(), text: "Example3", to: "/api/example?e=3" },
         ]}
       />
     ),
@@ -157,8 +161,25 @@ export const COMPONENTS: Components[] = [
   },
   {
     id: generateRandomId(),
+    text: "Listening",
+    component: <Listening setActive={() => {}} />,
+  },
+  {
+    id: generateRandomId(),
     text: "Note",
     component: <Note>Example</Note>,
+  },
+  {
+    id: generateRandomId(),
+    text: "Technology Card",
+    component: (
+      <TechnologyCard
+        style={{ margin: 0 }}
+        desc="Swift is a general-purpose programming language used to create applications that run on Apple devices."
+        link="https://www.swift.org/"
+        text="Swift"
+      />
+    ),
   },
   {
     id: generateRandomId(),
@@ -196,14 +217,33 @@ export const COMPONENTS: Components[] = [
     text: "Border",
     component: (
       <Border>
-        <Text style={{ padding: "0.5rem" }}>Example</Text>
+        <Text
+          style={{
+            paddingLeft: "2.5rem",
+            paddingRight: "2.5rem",
+            paddingTop: "0.5rem",
+            paddingBottom: "0.5rem",
+          }}
+        >
+          Example
+        </Text>
       </Border>
     ),
   },
   {
     id: generateRandomId(),
-    text: "Spotify Playlist Link Button",
-    component: <SpotifyPlaylistLinkButton name="Example" />,
+    text: "Spotify Link Button",
+    component: <SpotifyPlaylistLinkButton name="Rap" />,
+  },
+  {
+    id: generateRandomId(),
+    text: "GitHub Star Button",
+    component: <GitHubStarButton />,
+  },
+  {
+    id: generateRandomId(),
+    text: "Plain Tag",
+    component: <PlainTag text="Example" />,
   },
   {
     id: generateRandomId(),

@@ -1,13 +1,11 @@
-import { dynamicTitle } from "../lib/dynamic-title";
+import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
 import { seoKeywords } from "../lib/seo-keywords";
 import { fireworks } from "../lib/fireworks";
-import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
+import { social } from "../lib/social-links";
 
 // Next.js
-import { useRouter } from "next/router";
 import Script from "next/script";
 import Head from "next/head";
-import { SOCIAL_LINKS } from "../lib/social-links";
 
 interface Props {
   description: string;
@@ -16,7 +14,6 @@ interface Props {
 }
 
 export const Seo = ({ description, cover, title }: Props) => {
-  const router = useRouter();
   const date = new Date();
 
   if (typeof window === "object") {
@@ -39,10 +36,7 @@ export const Seo = ({ description, cover, title }: Props) => {
         <meta name="description" content={description} key="desc" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta
-          property="twitter:creator"
-          content={`@${SOCIAL_LINKS.x.username}`}
-        />
+        <meta property="twitter:creator" content={`@${social.x.username}`} />
         <meta property="twitter:site" content="@nick" />
         <meta name="keywords" content={seoKeywords} />
         <meta property="og:title" content={title} />

@@ -1,5 +1,5 @@
-import { DISCORD_ID, THEME, WEBSOCKET_URL } from "../lib/constants";
 import { useEffect, useState, useMemo, CSSProperties } from "react";
+import { DISCORD_ID, THEME, WEBSOCKET_URL } from "../lib/constants";
 import { Presence } from "../types/lanyard";
 import { FaSpotify } from "react-icons/fa";
 import { Text } from "./Text";
@@ -103,8 +103,13 @@ export const Listening: React.FC<Props> = (
   if (!doing || !doing.discord_status)
     return (
       <div className="flex items-center mb-6" style={style}>
-        <FaSpotify style={style} className="text-gray-600 dark:text-gray-300" />
-        <Text style={{ ...style, marginLeft: "8px" }}>Loading...</Text>
+        <FaSpotify
+          style={style}
+          className="text-gray-600 dark:text-gray-300 hover:scale-110 duration-300"
+        />
+        <Text style={{ ...style, marginLeft: "8px", fontWeight: "bold" }}>
+          Loading...
+        </Text>
       </div>
     );
 

@@ -1,8 +1,16 @@
+import { GoBack } from "./GoBack";
+
 interface Props {
+  backButtonLocation?: string;
+  showBackButton?: boolean;
   message?: string;
 }
 
-export const ContentUnavailable = ({ message }: Props) => {
+export const ContentUnavailable = ({
+  backButtonLocation,
+  showBackButton,
+  message,
+}: Props) => {
   return (
     <div className="text-center items-center flex flex-col w-fit">
       <h2 className="text-xl font-semibold opacity-30 dark:text-white">
@@ -13,6 +21,11 @@ export const ContentUnavailable = ({ message }: Props) => {
           ? message
           : "The page is not supported on small mobile devices."}
       </p>
+      {showBackButton && (
+        <div className="mt-2">
+          <GoBack location={backButtonLocation} />
+        </div>
+      )}
     </div>
   );
 };

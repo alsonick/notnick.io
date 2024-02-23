@@ -32,8 +32,8 @@ export const FilterListBox = <T extends unknown>({
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
         <Listbox.Options
-          className="flex z-10 absolute w-full flex-col border bg-white
-        border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16"
+          className={`flex z-10 outline-none absolute w-full p-1 focus:ring-4 ring-[${THEME}] flex-col border bg-white
+        border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16`}
         >
           {items.map((item: any) => (
             <Listbox.Option key={item.id} value={item.filter} as={Fragment}>
@@ -48,7 +48,7 @@ export const FilterListBox = <T extends unknown>({
                   className={`flex cursor-pointer font-semibold text-sm dark:bg-black
                   dark:text-white items-center justify-between p-3 rounded-lg ${
                     active
-                      ? `bg-[${THEME}] dark:bg-[#f54bff]  duration-300 text-white`
+                      ? `bg-[${THEME}] dark:bg-[#f54bff] duration-300 text-white`
                       : "bg-white text-black"
                   }`}
                 >

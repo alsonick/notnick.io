@@ -1,29 +1,30 @@
 import { FiKey, FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
 import { generateRandomId } from "./generate-random-id";
+import { social } from "./social-links";
 
 export const LINKS = [
   {
     id: generateRandomId(),
-    title: "Keybase",
-    href: "https://keybase.io/nick241",
+    title: social.keybase.name,
+    href: social.keybase.link,
     icon: <FiKey />,
   },
   {
     id: generateRandomId(),
-    title: "GitHub",
-    href: "https://github.com/alsonick",
+    title: social.github.name,
+    href: social.github.link,
     icon: <FiGithub />,
   },
   {
     id: generateRandomId(),
-    title: "Twitter",
-    href: "https://twitter.com/heynickn",
+    title: social.x.name,
+    href: social.x.link,
     icon: <FiTwitter />,
   },
   {
     id: generateRandomId(),
-    title: "LinkedIn",
-    href: "https://www.linkedin.com/in/nicholas-n-5a9187195/",
+    title: social.linkedin.name,
+    href: social.linkedin.link,
     icon: <FiLinkedin />,
   },
 ];

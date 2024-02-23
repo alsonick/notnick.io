@@ -7,6 +7,7 @@ export const DISCORD_ID = "463449066672619520";
 export const PROFESSION = "Software Engineer";
 export const EMAIL_ADDRESS = "hi@notnick.io";
 export const FULL_NAME = "Nicholas Njoki";
+export const LOCATED = "United Kingdom";
 export const BLOGS_URL_PATH = "/blog";
 export const NOTES_DIR = "posts/note";
 export const BLOGS_DIR = "posts/blog";

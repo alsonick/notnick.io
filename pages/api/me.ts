@@ -10,6 +10,7 @@ import {
 import { generateRandomId } from "../../lib/generate-random-id";
 import type { NextApiRequest, NextApiResponse } from "next";
 import { TECHNOLOGIES } from "./../../lib/technologies";
+import { social } from "../../lib/social-links";
 import { SOCIALS } from "../../lib/socials";
 import { MUSIC } from "./../../lib/music";
 import { SPECS } from "../../lib/specs";
@@ -36,7 +37,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         {
           id: generateRandomId(),
           redirect: `${DOMAIN}/gh`,
-          destination: "https://github.com/alsonick",
+          destination: social.github.link,
         },
         {
           id: generateRandomId(),

@@ -23,7 +23,7 @@ const Specs: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>My Specs</Heading>
+            <Heading style={{ marginBottom: 0 }}>Specs</Heading>
           </Header>
           {SPECS.map((spec) => (
             <div className="flex flex-col w-full mb-8" key={spec.id}>

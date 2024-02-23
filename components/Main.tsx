@@ -48,9 +48,9 @@ export const Main = () => {
               sequence={[
                 "Software Engineer",
                 2000,
-                "Student",
-                2000,
                 "Entrepreneur",
+                2000,
+                "Student",
                 2000,
               ]}
               wrapper="p"
@@ -67,7 +67,7 @@ export const Main = () => {
           ) : null}
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
-          <Avatar border={true} width={122} height={122} />
+          <Avatar border={false} width={122} height={122} />
         </div>
       </main>
     </>

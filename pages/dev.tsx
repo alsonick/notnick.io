@@ -38,7 +38,7 @@ const Dev: NextPage = () => {
       </Header>
       <div className="mb-6">
         {dev ? (
-          Object.entries(dev).map((d) => (
+          Object.entries(dev.dev).map((d) => (
             <div key={d[0]} className="flex items-center">
               <Key>{d[0]}:</Key>&nbsp;
               <Text key={d[0]}>

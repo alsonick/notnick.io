@@ -9,7 +9,7 @@ export const CharacterLimit = ({ style, limit, text }: Props) => {
     <p
       className={`text-sm ${
         text.length > limit
-          ? "text-red-500"
+          ? "text-red-500 font-semibold"
           : "text-gray-600 dark:text-gray-300"
       }`}
       style={style}

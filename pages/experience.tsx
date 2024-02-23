@@ -13,6 +13,7 @@ import { EXPERIENCE } from "../lib/experience";
 import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
+import { social } from "../lib/social-links";
 import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Seo } from "../components/Seo";
@@ -21,7 +22,6 @@ import { useState } from "react";
 
 // Next.js
 import { NextPage } from "next";
-import { SOCIAL_LINKS } from "../lib/social-links";
 
 const Experience: NextPage = () => {
   var types: E[] = [
@@ -87,7 +87,7 @@ const Experience: NextPage = () => {
             <Text style={{ marginTop: "10px" }}>
               Not all my professional experience is listed below here, If
               you&apos;d like to find out more then please visit my{" "}
-              <LinkTag href={`${SOCIAL_LINKS.linkedin.link}`} target="_blank">
+              <LinkTag href={`${social.linkedin.link}`} target="_blank">
                 LinkedIn
               </LinkTag>{" "}
               page. For details on my past experience please drop an email to me
