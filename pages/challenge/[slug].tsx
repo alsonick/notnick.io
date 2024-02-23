@@ -78,6 +78,7 @@ const Slug: NextPage = () => {
                   />
                   <Td
                     text={`${challenge?.goal ?? "No 'goal' was provided."}`}
+                    center={true}
                   />
                 </tr>
               </tbody>
