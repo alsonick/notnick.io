@@ -102,4 +102,9 @@ export const page = {
     path: "/dev",
     link: "/dev",
   },
+  blm: {
+    name: "/blm",
+    path: "/blm",
+    link: "/blm",
+  },
 };

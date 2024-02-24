@@ -103,4 +103,9 @@ export const PATHS: Path[] = [
     path: page.dev.path,
     link: page.dev.link,
   },
+  {
+    id: generateRandomId(),
+    path: page.blm.path,
+    link: page.blm.link,
+  },
 ];
