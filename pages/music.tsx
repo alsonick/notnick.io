@@ -10,6 +10,8 @@ import { Header } from "../components/Header";
 import { Seo } from "../components/Seo";
 import { MUSIC } from "../lib/music";
 import { useState } from "react";
+
+// Next.js
 import Link from "next/link";
 
 const Music = () => {

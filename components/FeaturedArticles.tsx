@@ -3,6 +3,7 @@ import { ArticleCard } from "./ArticleCard";
 import { useEffect, useState } from "react";
 import { ARTICLES } from "../lib/articles";
 import { Article } from "../types/article";
+import { FiRepeat } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { page } from "../lib/page";
 import { Button } from "./Button";
@@ -49,7 +50,9 @@ export const FeaturedArticles = () => {
         </LinkT>
       </div>
       <div className="ml-auto">
-        <Button onClick={shuffleArticles}>Shuffle</Button>
+        <Button onClick={shuffleArticles}>
+          Shuffle <FiRepeat className="text-xl ml-2" />
+        </Button>
       </div>
     </section>
   );

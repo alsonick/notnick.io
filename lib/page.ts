@@ -49,6 +49,11 @@ export const page = {
     path: "/quote",
     link: "/quote",
   },
+  anime: {
+    name: "anime",
+    path: "/anime",
+    link: "/anime",
+  },
   socials: {
     socials: "socials",
     path: "/socials",
