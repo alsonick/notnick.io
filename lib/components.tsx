@@ -162,7 +162,7 @@ export const COMPONENTS: Components[] = [
   {
     id: generateRandomId(),
     text: "Listening",
-    component: <Listening setActive={() => {}} />,
+    component: <Listening setActive={() => {}} style={{ margin: 0 }} />,
   },
   {
     id: generateRandomId(),
