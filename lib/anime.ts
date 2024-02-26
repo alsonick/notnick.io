@@ -116,4 +116,15 @@ export const ANIME: Anime[] = [
     slug: "Yakusoku-no-Neverland",
     english: "The Promised Neverland",
   },
+  {
+    id: generateRandomId(),
+    name: "Deadman Wonderland",
+    path: "/anime/deadman-wonderland.png",
+    anilistId: 6880,
+    watch: "https://9animetv.to/watch/deadman-wonderland-2555?ep=28287",
+    description:
+      "Ganta is the only survivor after a mysterious man in red slaughters a classroom full of teenagers. He's framed for the carnage, sentenced to die, and locked away in the most twisted prison ever built: Deadman Wonderland. And then it gets worse. At Deadman Wonderland, convicts are forced into brutal deathmatches for the amusement of the masses, the cheers of the crowd drowning out the screams of the dismembered. Even when Ganta befriends Shiro, an unusual female inmate, his dark fate crushes all hope —until he discovers the strange ability to wield his spilled blood as a weapon. Ganta learns his new skill might be related to the murderous man in red and uncovers disturbing secrets that could expose those who stole his freedom. He's determined to see justice served —but first he'll have to fight for his life in a prison that holds a million ways to die.",
+    filter: "horror",
+    slug: "Deadman-Wonderland",
+  },
 ];
