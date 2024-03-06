@@ -1,4 +1,5 @@
 import { findSlugAndAssociatedContent } from "../../lib/find-slug-and-associated-content";
+import { ContentUnavailable } from "../../components/ContentUnavailable";
 import { generateRandomId } from "../../lib/generate-random-id";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
 import { CHALLENGE_KEYS } from "../../lib/challenge-keys";
@@ -9,13 +10,17 @@ import { CHALLENGES } from "../../lib/challenges";
 import { GoBack } from "../../components/GoBack";
 import { Header } from "../../components/Header";
 import { Layout } from "../../components/Layout";
+import { Button } from "../../components/Button";
 import { Table } from "../../components/Table";
+import { LinkT } from "../../components/Link";
 import { Text } from "../../components/Text";
+import { FiDownload } from "react-icons/fi";
 import { Seo } from "../../components/Seo";
 import { Key } from "../../components/Key";
 import { Th } from "../../components/Th";
 import { Td } from "../../components/Td";
 import { page } from "../../lib/page";
+import { saveAs } from "file-saver";
 
 // Next.js
 import { useRouter } from "next/router";
@@ -42,13 +47,9 @@ const Slug: NextPage = () => {
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>
           </Header>
+          <Text>{challenge?.description}</Text>
           <div className="my-8">
-            <div className="flex w-full justify-between">
-              <Key>Status</Key>
-              <Text>
-                <Key>{challenge?.goal ?? 0}</Key> Days
-              </Text>
-            </div>
+            <Key>Status</Key>
             <Table>
               <thead>
                 <tr>
@@ -77,7 +78,9 @@ const Slug: NextPage = () => {
                     center={true}
                   />
                   <Td
-                    text={`${challenge?.goal ?? "No 'goal' was provided."}`}
+                    text={`${
+                      `${challenge?.goal} Days` ?? "No 'goal' was provided."
+                    }`}
                     center={true}
                   />
                 </tr>
@@ -103,15 +106,70 @@ const Slug: NextPage = () => {
                       <Td text={c.completed ? "✅" : "❌"} center={true} />
                       {c.preview.available ? (
                         <TdChildren>
-                          <picture>
-                            <img
-                              src={`${c.preview.previewContent?.path}.${c.preview.previewContent?.extension}`}
-                              alt={c.preview.previewContent?.alt}
-                            />
-                          </picture>
+                          <div className="flex flex-col text-center items-center my-4">
+                            {c.preview.previewContent ? (
+                              <picture className="mb-2">
+                                <img
+                                  src={`${c.preview.previewContent.path}.${c.preview.previewContent.extension}`}
+                                  alt={c.preview.previewContent.alt}
+                                />
+                              </picture>
+                            ) : null}
+                            {c.preview.previewContent ? (
+                              <Button
+                                title={`Download Day ${c.day} Preview`}
+                                onClick={() => {
+                                  if (c.preview.previewContent) {
+                                    saveAs(
+                                      `${c.preview.previewContent.path}.${c.preview.previewContent.extension}`,
+                                      `Day ${c.day} Preview`
+                                    );
+                                  }
+                                }}
+                              >
+                                Download <FiDownload className="text-xl ml-2" />
+                              </Button>
+                            ) : (
+                              <ContentUnavailable message="No preview content was found." />
+                            )}
+                          </div>
                         </TdChildren>
                       ) : (
-                        <Td text="Preview not available." center={true} />
+                        <>
+                          {c.code ? (
+                            <TdChildren>
+                              <div className="text-center flex justify-center">
+                                <LinkT href={c.code.link} target="_blank">
+                                  <picture>
+                                    <img
+                                      className="w-7 mr-1"
+                                      src={`/assets/${
+                                        c.code.icon === "xcode"
+                                          ? "xcode"
+                                          : "vscode"
+                                      }.${c.code.image.extension}`}
+                                      title={`${
+                                        c.code.icon === "xcode"
+                                          ? "Xcode"
+                                          : "Vscode"
+                                      } icon`}
+                                      alt={`${
+                                        c.code.icon === "xcode"
+                                          ? "Xcode"
+                                          : "Vscode"
+                                      } icon`}
+                                    />
+                                  </picture>
+                                  Download the{" "}
+                                  {c.code.icon === "xcode" ? "Xcode" : "Vscode"}{" "}
+                                  project on GitHub.
+                                </LinkT>
+                              </div>
+                            </TdChildren>
+                          ) : (
+                            <Td text="Preview not available." center={true} />
+                          )}
+                        </>
                       )}
                     </>
                   </tr>

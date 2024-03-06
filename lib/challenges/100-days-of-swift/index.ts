@@ -7,6 +7,13 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     description: "variables, simple data types, and string interpolation",
     previewPath: "",
     completed: false,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: "",
+    },
     preview: {
       available: false,
     },
@@ -28,7 +35,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     previewPath: "",
     completed: false,
     preview: {
-      available: false,
+      available: true,
     },
     day: 2,
   },

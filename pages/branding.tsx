@@ -1,10 +1,11 @@
+import { computedAltTitleTag } from "../lib/computed-alt-title-tag";
+import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Button } from "../components/Button";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
 import { Layout } from "../components/Layout";
-import { FULL_NAME } from "../lib/constants";
 import { FiDownload } from "react-icons/fi";
 import { BRANDING } from "../lib/branding";
 import { LinkT } from "../components/Link";
@@ -17,22 +18,18 @@ import { saveAs } from "file-saver";
 import { NextPage } from "next";
 
 const Branding: NextPage = () => {
-  const computedAltTitleTag = (name: string) => {
-    return name.toLowerCase().includes("banner") ? name : `${name} Logo`;
-  };
-
-  const description =
-    "The personal branding I use throughout my social media platforms.";
-
   return (
     <>
-      <Seo title={`Branding - ${FULL_NAME}`} description={description} />
+      <Seo
+        title={`Branding - ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
+      />
       <Layout>
         <Animate>
           <Header singleItem={true} column={true}>
             <Heading style={{ marginBottom: 0 }}>Branding</Heading>
             <Text style={{ marginTop: "15px" }}>
-              {description}
+              The personal branding I use throughout my social media platforms.
               <br />
               Click <LinkT href="/socials">here</LinkT> to check out my socials.
             </Text>

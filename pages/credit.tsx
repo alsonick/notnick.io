@@ -33,6 +33,7 @@ const Credit: NextPage = () => {
           Whiles this is not absolutely necessary it would be greatly
           appreciated if credit is given to the original creator.
         </Text>
+
         <br />
 
         <Key>How do I give credit?</Key>
@@ -44,6 +45,7 @@ const Credit: NextPage = () => {
           You can give credit anywhere on the site but it&apos;s common to add
           it in the footer, here&apos;s an example:
         </Text>
+
         <br />
 
         <picture className="mt-10 mb-2">

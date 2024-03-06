@@ -16,6 +16,7 @@ export interface Content {
   completed: boolean;
   preview: Preview;
   day: number;
+  code?: Code;
   id: number;
 }
 
@@ -28,4 +29,12 @@ export interface PreviewContent {
   extension: string;
   path: string;
   alt: string;
+}
+
+export interface Code {
+  icon: "xcode" | "vscode";
+  image: {
+    extension: string;
+  };
+  link: string;
 }
