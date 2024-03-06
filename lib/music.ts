@@ -36,14 +36,6 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "ragtime",
-    name: "Ragtime",
-    path: "/spotify/ragtime.jpg",
-    link: "https://open.spotify.com/playlist/3dbVsPqJjfHSvXYNKyYUtl?si=21cb6a88d5c843ce",
-    feature: false,
-  },
-  {
-    id: generateRandomId(),
     type: "rap",
     name: "Rap",
     path: "/spotify/rap.jpg",
