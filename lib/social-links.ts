@@ -41,6 +41,11 @@ export const social = {
     username: "thisnotnicholas",
     name: "Reddit",
   },
+  bluesky: {
+    link: "https://bsky.app/profile/notnick.io",
+    username: "@notnick.io",
+    name: "Bluesky",
+  },
   twitch: {
     link: "https://www.twitch.tv/alsonick_",
     username: "alsonick_",

@@ -47,6 +47,12 @@ export const SOCIALS: Social[] = [
   },
   {
     id: generateRandomId(),
+    title: social.bluesky.name,
+    username: social.bluesky.username,
+    link: social.bluesky.link,
+  },
+  {
+    id: generateRandomId(),
     title: social.twitch.name,
     username: social.twitch.username,
     link: social.twitch.link,
