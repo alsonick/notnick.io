@@ -10,7 +10,8 @@ export const CHALLENGES: Challenge[] = [
     content: ONE_HUNDRED_DAYS_OF_SWIFT,
     path: "/100-days-of-swift",
     slug: "100-days-of-swift",
-    description: "dkfjkggj",
+    description:
+      "This repository is a collection of all the projects and solutions from Paul Hudson's 100 days of swift challenge.",
     usefulLinks: [
       `${social.github.link}/100-days-of-swift`,
       "https://www.hackingwithswift.com/100",

@@ -27,7 +27,27 @@ import { useRouter } from "next/router";
 import { NextPage } from "next";
 
 const Slug: NextPage = () => {
-  const challenge = findSlugAndAssociatedContent(useRouter(), CHALLENGES);
+  const router = useRouter();
+
+  const challenge = findSlugAndAssociatedContent(router, CHALLENGES);
+  const query = router.query;
+  const d = query.day;
+
+  let mapped = challenge?.content;
+  const day = Number(d);
+
+  if (day !== undefined) {
+    if (Number.isNaN(day)) {
+      mapped = challenge?.content;
+    } else {
+      // The number is valid
+      const challengeQuery = challenge?.content.find((c) => c.day === day);
+
+      if (challengeQuery) {
+        mapped = [challengeQuery];
+      }
+    }
+  }
 
   return (
     <>
@@ -108,7 +128,7 @@ const Slug: NextPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {challenge?.content.map((c) => (
+                {mapped?.map((c) => (
                   <tr key={generateRandomId()}>
                     <>
                       <Td text={`${c.day}`} center={true} />
