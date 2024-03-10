@@ -1,4 +1,5 @@
 export interface Challenge {
+  usefulLinks?: string[];
   completedDays: number;
   content: Content[];
   description: string;

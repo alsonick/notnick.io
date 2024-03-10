@@ -48,6 +48,16 @@ const Slug: NextPage = () => {
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>
           </Header>
           <Text>{challenge?.description}</Text>
+          {challenge?.usefulLinks ? (
+            <div className="flex flex-col mt-4">
+              <Key>Useful links:</Key>
+              {challenge.usefulLinks.map((link) => (
+                <LinkT key={link} href={link} target="_blank">
+                  {link}
+                </LinkT>
+              ))}
+            </div>
+          ) : null}
           <div className="my-8">
             <Key>Status</Key>
             <Table>
