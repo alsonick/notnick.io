@@ -7,7 +7,7 @@ import Link from "next/link";
 export const GitHubStarButton = () => {
   return (
     <Link
-      className="github-button text-gray-600 dark:text-gray-300"
+      className="github-button text-gray-600 dark:text-gray-300 hover:scale-110 duration-150"
       href={`https://github.com/${social.github.username}/${DOMAIN}`}
       target="_blank"
       data-color-scheme="no-preference: dark; light: dark; dark: dark;"

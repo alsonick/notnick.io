@@ -38,7 +38,7 @@ export const FeaturedArticles = () => {
           <ArticleCard
             authors={article.authors}
             title={article.title}
-            type={article.type}
+            tags={article.tags}
             link={article.link}
             key={article.id}
           />
@@ -51,7 +51,8 @@ export const FeaturedArticles = () => {
       </div>
       <div className="ml-auto">
         <Button onClick={shuffleArticles}>
-          Shuffle <FiRepeat className="text-xl ml-2" />
+          Shuffle{" "}
+          <FiRepeat className="text-xl ml-2 hover:scale-110 duration-150" />
         </Button>
       </div>
     </section>

@@ -23,7 +23,8 @@ export const Community = () => {
       </Text>
       <div className="mt-4">
         <LinkButton href={`https://${DOMAIN}/community`} target="_blank">
-          Join Server <FiExternalLink className="text-xl ml-2" />
+          Join Server{" "}
+          <FiExternalLink className="text-xl ml-2 hover:scale-110 duration-150" />
         </LinkButton>
       </div>
       <div className="mt-6">

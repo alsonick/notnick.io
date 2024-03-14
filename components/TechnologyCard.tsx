@@ -27,7 +27,8 @@ export const TechnologyCard = ({ style, text, link, desc }: Props) => {
         rel="noreferrer"
         target="_blank"
       >
-        {text} <FiExternalLink className="text-xl ml-1" />
+        {text}{" "}
+        <FiExternalLink className="text-xl ml-1 hover:scale-110 duration-150" />
       </Link>
     </Tippy>
   );

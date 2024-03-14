@@ -16,8 +16,10 @@ import { Form } from "./Form";
 
 export const ContactForm = () => {
   const [loading, setLoading] = useState(false);
+
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
+
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
@@ -50,7 +52,19 @@ export const ContactForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-      }).then((res) => res.json());
+      })
+        .then((res) => res.json())
+        .catch((error) => {
+          setLoading(false);
+          setError(error);
+          return;
+        });
+
+    if (!response) {
+      setLoading(false);
+      setError("Unable to connect to the internet.");
+      return;
+    }
 
     if (response.success) {
       setLoading(false);
@@ -107,7 +121,8 @@ export const ContactForm = () => {
         {success && !loading ? <Success message={success} /> : null}
         <div className="ml-auto pl-1">
           <Button>
-            Send <FiSend className="text-xl ml-2" />
+            Send{" "}
+            <FiSend className="text-xl ml-2 hover:scale-110 duration-150" />
           </Button>
         </div>
       </div>

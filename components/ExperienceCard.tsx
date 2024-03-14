@@ -21,12 +21,12 @@ export const ExperienceCard = (props: Experience) => {
           <Border>
             <Image
               className="rounded-full h-fit sm:mb-0"
-              src={props.logo}
-              width={100}
-              height={100}
-              alt={`${props.name} Logo`}
               title={`${props.name} Logo`}
+              alt={`${props.name} Logo`}
+              src={props.logo}
               quality={99}
+              height={100}
+              width={100}
             />
           </Border>
         </div>
@@ -58,7 +58,8 @@ export const ExperienceCard = (props: Experience) => {
             <Text>{props.location}</Text>
           </div>
           <LinkButton href={props.link} target="_blank">
-            Visit <FiExternalLink className="text-xl ml-2" />
+            Visit{" "}
+            <FiExternalLink className="text-xl ml-2 hover:scale-110 duration-150" />
           </LinkButton>
         </div>
       </div>

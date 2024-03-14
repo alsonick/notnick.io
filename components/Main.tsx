@@ -37,7 +37,12 @@ export const Main = () => {
           >
             <Tag
               title={`${CITY}, ${COUNTRY}`}
-              icon={<FiNavigation className="ml-1" size={17} />}
+              icon={
+                <FiNavigation
+                  className="ml-1 hover:scale-110 duration-150"
+                  size={17}
+                />
+              }
             />
           </Link>
           <Heading style={{ marginBottom: "0.5rem", marginTop: "8px" }}>

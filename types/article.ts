@@ -1,10 +1,10 @@
 export interface Article {
-  id: number;
+  authors: string[];
   title: string;
   type: string;
   link: string;
-  authors: string[];
   tags: Tag[];
+  id: number;
 }
 
 export interface Tag {
