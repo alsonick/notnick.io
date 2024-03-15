@@ -16,8 +16,8 @@ export const CHALLENGES: Challenge[] = [
       `${social.github.link}/100-days-of-swift`,
       "https://www.hackingwithswift.com/100",
     ],
-    completedDays: 0,
-    daysLeft: 100,
+    completedDays: 1,
+    daysLeft: 99,
     goal: 100,
   },
 ];

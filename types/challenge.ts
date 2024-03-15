@@ -1,8 +1,8 @@
 export interface Challenge {
   usefulLinks?: string[];
   completedDays: number;
-  content: Content[];
   description: string;
+  content: Content[];
   daysLeft: number;
   name: string;
   path: string;
@@ -16,6 +16,7 @@ export interface Content {
   previewPath: string;
   completed: boolean;
   preview: Preview;
+  slug: string;
   day: number;
   code?: Code;
   id: number;
