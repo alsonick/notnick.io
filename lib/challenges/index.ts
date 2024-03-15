@@ -14,9 +14,12 @@ export const CHALLENGES: Challenge[] = [
       "This repository is a collection of all the projects and solutions from Paul Hudson's 100 days of swift challenge.",
     usefulLinks: [
       `${social.github.link}/100-days-of-swift`,
+      "https://developer.apple.com/documentation",
       "https://www.hackingwithswift.com/100",
+      "https://www.swift.org",
     ],
     completedDays: 1,
+    note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: 99,
     goal: 100,
   },

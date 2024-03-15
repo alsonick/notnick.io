@@ -4,6 +4,7 @@ export interface Challenge {
   description: string;
   content: Content[];
   daysLeft: number;
+  note?: string;
   name: string;
   path: string;
   slug: string;
@@ -13,7 +14,6 @@ export interface Challenge {
 
 export interface Content {
   description: string;
-  previewPath: string;
   completed: boolean;
   preview: Preview;
   slug: string;

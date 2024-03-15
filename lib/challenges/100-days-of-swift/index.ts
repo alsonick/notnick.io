@@ -6,8 +6,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
   {
     id: generateRandomId(),
     description: "variables, simple data types, and string interpolation",
-    previewPath: "",
-    slug: "pog",
+    slug: "100-days-of-swift",
     completed: true,
     code: {
       icon: "xcode",

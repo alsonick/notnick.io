@@ -13,6 +13,7 @@ import { Layout } from "../../components/Layout";
 import { Button } from "../../components/Button";
 import { Table } from "../../components/Table";
 import { LinkT } from "../../components/Link";
+import { Note } from "../../components/Note";
 import { Text } from "../../components/Text";
 import { FiDownload } from "react-icons/fi";
 import { Seo } from "../../components/Seo";
@@ -68,12 +69,17 @@ const Slug: NextPage = () => {
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>
           </Header>
           <Text>{challenge?.description}</Text>
+          {challenge?.note ? (
+            <div className="my-4">
+              <Note>{challenge.note}</Note>
+            </div>
+          ) : null}
           {challenge?.usefulLinks ? (
             <div className="flex flex-col mt-4">
               <Key>Useful links:</Key>
               {challenge.usefulLinks.map((link) => (
                 <LinkT key={link} href={link} target="_blank">
-                  {link}
+                  {link.slice(8).replaceAll("www.", "")}
                 </LinkT>
               ))}
             </div>
