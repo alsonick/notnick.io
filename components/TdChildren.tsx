@@ -5,5 +5,7 @@ interface Props {
 }
 
 export const TdChildren = ({ children }: Props) => {
-  return <td>{children}</td>;
+  return (
+    <td className="border border-teal-100 dark:border-teal-900">{children}</td>
+  );
 };
