@@ -18,9 +18,9 @@ export const CHALLENGES: Challenge[] = [
       "https://www.hackingwithswift.com/100",
       "https://www.swift.org",
     ],
-    completedDays: 1,
+    completedDays: 2,
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
-    daysLeft: 99,
+    daysLeft: 98,
     goal: 100,
   },
 ];
