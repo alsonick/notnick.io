@@ -54,4 +54,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 3,
   },
+  {
+    id: generateRandomId(),
+    description: "loops, loops, and more loops",
+    slug: "100-days-of-swift",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/blob/main/Day4/MyPlayground.playground/Contents.swift`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 4,
+  },
 ];
