@@ -139,4 +139,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 8,
   },
+  {
+    id: generateRandomId(),
+    description: "access control, static properties, and laziness",
+    slug: "100-days-of-swift",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/blob/main/Day9/MyPlayground.playground/Contents.swift`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 9,
+  },
 ];
