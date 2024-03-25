@@ -1,9 +1,11 @@
 export interface Challenge {
   usefulLinks?: string[];
   completedDays: number;
+  statusKeys: string[];
   description: string;
   content: Content[];
   daysLeft: number;
+  keys: string[];
   note?: string;
   name: string;
   path: string;

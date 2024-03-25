@@ -6,7 +6,9 @@ import { social } from "../social-links";
 export const CHALLENGES: Challenge[] = [
   {
     id: generateRandomId(),
+    keys: ["Day", "Topic", "Completed", "Preview"],
     name: "100 Days of Swift (HackingWithSwift)",
+    statusKeys: ["Name", "Days Completed", "Days Left", "Goal"],
     content: ONE_HUNDRED_DAYS_OF_SWIFT,
     path: "/100-days-of-swift",
     slug: "100-days-of-swift",

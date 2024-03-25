@@ -41,7 +41,6 @@ const Slug: NextPage = () => {
     if (Number.isNaN(day)) {
       mapped = challenge?.content;
     } else {
-      // The number is valid
       const challengeQuery = challenge?.content.find((c) => c.day === day);
 
       if (challengeQuery) {
@@ -89,7 +88,7 @@ const Slug: NextPage = () => {
             <Table>
               <thead>
                 <tr>
-                  {["Name", "Days Completed", "Days Left", "Goal"].map((k) => (
+                  {challenge?.statusKeys.map((k) => (
                     <Th key={k} text={k} />
                   ))}
                 </tr>
@@ -128,8 +127,8 @@ const Slug: NextPage = () => {
             <Table>
               <thead>
                 <tr>
-                  {CHALLENGE_KEYS.map((key) => (
-                    <Th key={key.id} text={key.text} />
+                  {challenge?.keys.map((key) => (
+                    <Th key={key} text={key} />
                   ))}
                 </tr>
               </thead>
