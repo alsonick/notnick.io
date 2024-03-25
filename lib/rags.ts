@@ -1,0 +1,280 @@
+import { generateRandomId } from "./generate-random-id";
+import { Rag } from "../types/rag";
+
+export const RAGS: Rag[] = [
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Great Crush Collision March",
+    date: 1896,
+    path: {
+      composer: "joplin",
+      file: "crush",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Elite Syncopations",
+    date: 1902,
+    path: {
+      composer: "joplin",
+      file: "elitesyn",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Euphonic Sounds",
+    date: 1909,
+    path: {
+      composer: "joplin",
+      file: "euphonic",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "The Favorite",
+    date: 1904,
+    path: {
+      composer: "joplin",
+      file: "favorite",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin & Scott Hayden",
+    title: "Felicity Rag",
+    date: 1911,
+    path: {
+      composer: "joplin",
+      file: "felicity",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Gladiolus Rag",
+    date: 1907,
+    path: {
+      composer: "joplin",
+      file: "gldiolus",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Harmony Club Waltz",
+    date: 1896,
+    path: {
+      composer: "joplin",
+      file: "harmonyc",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin & Louis Chauvin",
+    title: "Heliotrope Bouquet",
+    date: 1907,
+    path: {
+      composer: "joplin",
+      file: "helitrop",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Kismet Rag",
+    date: 1913,
+    path: {
+      composer: "joplin",
+      file: "kismet",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Magnetic Rag",
+    date: 1914,
+    path: {
+      composer: "joplin",
+      file: "magnetic",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Maple Leaf Rag",
+    date: 1899,
+    path: {
+      composer: "joplin",
+      file: "maplea",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "The Nonpareil (None To Equal)",
+    date: 1907,
+    path: {
+      composer: "joplin",
+      file: "nonparil",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Peacherine Rag",
+    date: 1901,
+    path: {
+      composer: "joplin",
+      file: "peacheri",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Stoptime Rag",
+    date: 1910,
+    path: {
+      composer: "joplin",
+      file: "stoptime",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin",
+    title: "Sugar Cane",
+    date: 1908,
+    path: {
+      composer: "joplin",
+      file: "sugarcne",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Scott Joplin & Scott Hayden",
+    title: "Sunflower Slow Drag",
+    date: 1901,
+    path: {
+      composer: "joplin",
+      file: "sunflowr",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Joseph Lamb",
+    title: "Champagne Rag",
+    date: 1910,
+    path: {
+      composer: "lamb",
+      file: "champagn",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Joseph Lamb",
+    title: "Excelsior Rag",
+    date: 1909,
+    path: {
+      composer: "lamb",
+      file: "exclsior",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Joseph Lamb",
+    title: "Reindeer Rag",
+    date: 1915,
+    path: {
+      composer: "lamb",
+      file: "reindeer",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "Joseph Lamb",
+    title: "Sensation Rag",
+    date: 1908,
+    path: {
+      composer: "lamb",
+      file: "sensatin",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    title: "Efficiency Rag",
+    date: 1917,
+    path: {
+      composer: "scott",
+      file: "efficncy",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    title: "Frog Legs Rag",
+    date: 1906,
+    path: {
+      composer: "scott",
+      file: "froglegs",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    title: "Hilarity Rag",
+    date: 1910,
+    path: {
+      composer: "scott",
+      file: "hilarity",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    title: "Honey Moon Rag",
+    date: 1916,
+    path: {
+      composer: "scott",
+      file: "honymoon",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    title: "Ragtime Oriole",
+    date: 1911,
+    path: {
+      composer: "scott",
+      file: "oriole",
+      ext: "mp3",
+    },
+  },
+];
