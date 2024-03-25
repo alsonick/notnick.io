@@ -173,4 +173,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 10,
   },
+  {
+    id: generateRandomId(),
+    description: "protocols, extensions, and protocol extensions",
+    slug: "100-days-of-swift",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/blob/main/Day11/MyPlayground.playground/Contents.swift`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 11,
+  },
 ];
