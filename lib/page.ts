@@ -102,10 +102,10 @@ export const page = {
     path: "/music",
     link: "/music",
   },
-  rag: {
-    name: "rag",
-    path: "/rag",
-    link: "/rag",
+  rags: {
+    name: "rags",
+    path: "/rags",
+    link: "/rags",
   },
   dev: {
     name: "dev",

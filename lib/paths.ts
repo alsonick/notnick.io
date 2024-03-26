@@ -105,8 +105,8 @@ export const PATHS: Path[] = [
   },
   {
     id: generateRandomId(),
-    path: page.rag.path,
-    link: page.rag.link,
+    path: page.rags.path,
+    link: page.rags.link,
   },
   {
     id: generateRandomId(),
