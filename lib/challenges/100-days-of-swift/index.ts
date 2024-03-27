@@ -207,4 +207,14 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 12,
   },
+  {
+    id: generateRandomId(),
+    description: "Swift review, day one",
+    slug: "100-days-of-swift",
+    completed: true,
+    preview: {
+      available: false,
+    },
+    day: 13,
+  },
 ];
