@@ -54,7 +54,7 @@ export const EXPERIENCE: Experience[] = [
     location: "England, United Kingdom",
     remote: true,
     current: true,
-    link: "https://www.youtube.com/@Aquila-xl3vg",
+    link: "https://www.youtube.com/@aquila",
     task: "Primary focus was to provide daily content.",
     filter: "YouTube",
   },
