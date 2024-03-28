@@ -37,21 +37,6 @@ const ISRC: NextPage = () => {
   const URL = "https://api.spotify.com/v1/search";
   const CHARACTER_LIMIT = 100;
 
-  const fetchToken = async () => {
-    await fetch("/api/tools/yt/isrc", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data: SpotifyAccessToken) => setToken(data));
-  };
-
-  useEffect(() => {
-    fetchToken();
-  }, []);
-
   const sendSpotifyIsrcRequest = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
@@ -67,37 +52,48 @@ const ISRC: NextPage = () => {
 
     setLoading(true);
 
-    const response: ISRCResponse = await fetch(
-      `${URL}?q=${encodeURIComponent(soundtrackTitle)}&type=track&limit=1`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `${token?.token_type} ${token?.access_token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    )
+    fetch("/api/tools/yt/isrc", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
-      .catch((error) => {
-        setLoading(false);
-        setError(error);
-        return;
+      .then(async (data: SpotifyAccessToken) => {
+        setToken(data);
+
+        const response: ISRCResponse = await fetch(
+          `${URL}?q=${encodeURIComponent(soundtrackTitle)}&type=track&limit=1`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `${token?.token_type} ${token?.access_token}`,
+              "Content-Type": "application/json",
+            },
+          }
+        )
+          .then((res) => res.json())
+          .catch((error) => {
+            setLoading(false);
+            setError(error);
+            return;
+          });
+
+        if (response.error) {
+          setLoading(false);
+          setError(response.error.message);
+        }
+
+        if (response.tracks) {
+          console.log(response);
+          setSoundtrackTitle("");
+          setData(response);
+          setLoading(false);
+          setSuccess(
+            `Successfully found the track '${response.tracks.items[0].name}'.`
+          );
+        }
       });
-
-    if (response.error) {
-      setLoading(false);
-      setError(response.error.message);
-    }
-
-    if (response.tracks) {
-      console.log(response);
-      setSoundtrackTitle("");
-      setData(response);
-      setLoading(false);
-      setSuccess(
-        `Successfully found the track '${response.tracks.items[0].name}'.`
-      );
-    }
   };
 
   return (
