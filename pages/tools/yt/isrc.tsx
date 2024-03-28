@@ -59,7 +59,6 @@ const ISRC: NextPage = () => {
     })
       .then((res) => res.json())
       .then((t: { token: SpotifyAccessToken }) => {
-        console.log(`${t.token.token_type} ${t.token.access_token}`);
         fetch(
           `${URL}?q=${encodeURIComponent(soundtrackTitle)}&type=track&limit=1`,
           {
