@@ -85,7 +85,6 @@ const ISRC: NextPage = () => {
         }
 
         if (response.tracks) {
-          console.log(response);
           setSoundtrackTitle("");
           setData(response);
           setLoading(false);
