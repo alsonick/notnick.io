@@ -58,13 +58,14 @@ const ISRC: NextPage = () => {
       },
     })
       .then((res) => res.json())
-      .then((token: SpotifyAccessToken) => {
+      .then((t: { token: SpotifyAccessToken }) => {
+        console.log(`${t.token.token_type} ${t.token.access_token}`);
         fetch(
           `${URL}?q=${encodeURIComponent(soundtrackTitle)}&type=track&limit=1`,
           {
             method: "GET",
             headers: {
-              Authorization: `${token.token_type} ${token.access_token}`,
+              Authorization: `${t.token.token_type} ${t.token.access_token}`,
               "Content-Type": "application/json",
             },
           }
