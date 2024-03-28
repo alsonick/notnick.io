@@ -27,7 +27,6 @@ import Image from "next/image";
 
 const ISRC: NextPage = () => {
   const [soundtrackTitle, setSoundtrackTitle] = useState("");
-  const [token, setToken] = useState<SpotifyAccessToken>();
   const [data, setData] = useState<ISRCResponse>();
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -59,39 +58,38 @@ const ISRC: NextPage = () => {
       },
     })
       .then((res) => res.json())
-      .then(async (data: SpotifyAccessToken) => {
-        setToken(data);
-
-        const response: ISRCResponse = await fetch(
+      .then((token: SpotifyAccessToken) => {
+        fetch(
           `${URL}?q=${encodeURIComponent(soundtrackTitle)}&type=track&limit=1`,
           {
             method: "GET",
             headers: {
-              Authorization: `${token?.token_type} ${token?.access_token}`,
+              Authorization: `${token.token_type} ${token.access_token}`,
               "Content-Type": "application/json",
             },
           }
         )
           .then((res) => res.json())
+          .then((response: ISRCResponse) => {
+            if (response.error) {
+              setLoading(false);
+              setError(response.error.message);
+            }
+
+            if (response.tracks) {
+              setSoundtrackTitle("");
+              setData(response);
+              setLoading(false);
+              setSuccess(
+                `Successfully found the track '${response.tracks.items[0].name}'.`
+              );
+            }
+          })
           .catch((error) => {
             setLoading(false);
             setError(error);
             return;
           });
-
-        if (response.error) {
-          setLoading(false);
-          setError(response.error.message);
-        }
-
-        if (response.tracks) {
-          setSoundtrackTitle("");
-          setData(response);
-          setLoading(false);
-          setSuccess(
-            `Successfully found the track '${response.tracks.items[0].name}'.`
-          );
-        }
       });
   };
 
@@ -149,7 +147,7 @@ const ISRC: NextPage = () => {
                 developer.spotify.com
               </LinkT>
             </div>
-            {data && !loading && (
+            {data && !loading && !error && (
               <div className="flex flex-col mt-24">
                 <div className="flex items-center justify-between w-full mb-12">
                   <Text style={{ fontSize: "2rem" }}>
