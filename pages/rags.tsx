@@ -23,7 +23,11 @@ const Rags: NextPage = () => {
         title={`Rags - ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
-      <Layout longLayoutFormat={false} supportLargeScreen={false}>
+      <Layout
+        longLayoutFormat={false}
+        supportLargeScreen={false}
+        showBackButton={true}
+      >
         <Animate>
           <Header column={false} singleItem={false}>
             <Heading style={{ marginBottom: "0.5rem" }}>Rags</Heading>
