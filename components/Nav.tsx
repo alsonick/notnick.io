@@ -18,7 +18,7 @@ export const Nav = ({ isDisplaySpotify, longLayoutFormat }: Props) => {
     <nav
       className={`flex px-6 ${
         isDisplaySpotify ? "md:top-16 top-8" : "top-8"
-      } fixed border dark:bg-[#10161a]/50 z-10 w-[90%] md:w-[${
+      } fixed border dark:bg-[#10161a]/50 z-10 w-[70%] md:w-[${
         longLayoutFormat ? "60rem" : "40rem"
       }] border-teal-100
     dark:border-teal-900 backdrop-blur-md mb-12 duration-300 rounded-lg justify-between h-14 items-center`}

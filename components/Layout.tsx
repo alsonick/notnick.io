@@ -25,14 +25,10 @@ export const Layout = ({
     scrollbar-track-gray-800 scrollbar-thumb-rounded-full"
     >
       <div
-        className={`flex flex-col h-full py-20 w-[90%] md:w-[${
+        className={`flex flex-col h-full py-20 w-[70%] md:w-[${
           longLayoutFormat ? "60rem" : "40rem"
         }] mt-12`}
       >
-        <Nav
-          isDisplaySpotify={isDisplaySpotify}
-          longLayoutFormat={longLayoutFormat}
-        />
         {!supportLargeScreen && (
           <div
             className={`${
@@ -50,9 +46,13 @@ export const Layout = ({
             supportLargeScreen ? "lg:block w-full" : "lg:block hidden"
           }`}
         >
+          <Nav
+            isDisplaySpotify={isDisplaySpotify}
+            longLayoutFormat={longLayoutFormat}
+          />
           {children}
+          <Footer />
         </div>
-        <Footer />
       </div>
     </div>
   );

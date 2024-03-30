@@ -32,7 +32,6 @@ export interface Preview {
 export interface PreviewContent {
   extension: string;
   path: string;
-  alt: string;
 }
 
 export interface Code {

@@ -1,8 +1,8 @@
 import { findSlugAndAssociatedContent } from "../../lib/find-slug-and-associated-content";
+import { DownloadXCodeProject } from "../../components/DownloadXcodeProject";
 import { ContentUnavailable } from "../../components/ContentUnavailable";
 import { generateRandomId } from "../../lib/generate-random-id";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
-import { CHALLENGE_KEYS } from "../../lib/challenge-keys";
 import { TdChildren } from "../../components/TdChildren";
 import { Heading } from "../../components/Heading";
 import { Animate } from "../../components/Animate";
@@ -141,22 +141,29 @@ const Slug: NextPage = () => {
                       <Td text={c.completed ? "✅" : "❌"} center={true} />
                       {c.preview.available ? (
                         <TdChildren>
-                          <div className="flex flex-col text-center items-center my-4">
+                          <div className="flex justify-center text-center items-center my-4">
                             {c.preview.previewContent ? (
                               <picture className="mb-2">
                                 <img
-                                  src={`${c.preview.previewContent.path}.${c.preview.previewContent.extension}`}
-                                  alt={c.preview.previewContent.alt}
+                                  className="w-80"
+                                  src={`${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
+                                  alt={`Day ${c.day} Preview`}
                                 />
                               </picture>
                             ) : null}
-                            {c.preview.previewContent ? (
+                            {!c.preview.previewContent && (
+                              <ContentUnavailable message="No preview content was found." />
+                            )}
+                          </div>
+                          <div className="flex items-center flex-col">
+                            {c.code && <DownloadXCodeProject c={c} />}
+                            <div className="mb-3 mt-1">
                               <Button
                                 title={`Download Day ${c.day} Preview`}
                                 onClick={() => {
                                   if (c.preview.previewContent) {
                                     saveAs(
-                                      `${c.preview.previewContent.path}.${c.preview.previewContent.extension}`,
+                                      `${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`,
                                       `Day ${c.day} Preview`
                                     );
                                   }
@@ -164,42 +171,14 @@ const Slug: NextPage = () => {
                               >
                                 Download <FiDownload className="text-xl ml-2" />
                               </Button>
-                            ) : (
-                              <ContentUnavailable message="No preview content was found." />
-                            )}
+                            </div>
                           </div>
                         </TdChildren>
                       ) : (
                         <>
                           {c.code ? (
                             <TdChildren>
-                              <div className="text-center flex justify-center">
-                                <LinkT href={c.code.link} target="_blank">
-                                  <picture>
-                                    <img
-                                      className="w-7 mr-1"
-                                      src={`/assets/${
-                                        c.code.icon === "xcode"
-                                          ? "xcode"
-                                          : "vscode"
-                                      }.${c.code.image.extension}`}
-                                      title={`${
-                                        c.code.icon === "xcode"
-                                          ? "Xcode"
-                                          : "Vscode"
-                                      } icon`}
-                                      alt={`${
-                                        c.code.icon === "xcode"
-                                          ? "Xcode"
-                                          : "Vscode"
-                                      } icon`}
-                                    />
-                                  </picture>
-                                  Download the{" "}
-                                  {c.code.icon === "xcode" ? "Xcode" : "Vscode"}{" "}
-                                  project on GitHub.
-                                </LinkT>
-                              </div>
+                              <DownloadXCodeProject c={c} />
                             </TdChildren>
                           ) : (
                             <Td text="Preview not available." center={true} />
