@@ -141,11 +141,11 @@ const Slug: NextPage = () => {
                       <Td text={c.completed ? "✅" : "❌"} center={true} />
                       {c.preview.available ? (
                         <TdChildren>
-                          <div className="flex justify-center text-center items-center my-4">
+                          <div className="flex justify-center text-center items-center my-3">
                             {c.preview.previewContent ? (
                               <picture className="mb-2">
                                 <img
-                                  className="w-80"
+                                  className="w-72"
                                   src={`${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
                                   alt={`Day ${c.day} Preview`}
                                 />
@@ -154,24 +154,6 @@ const Slug: NextPage = () => {
                             {!c.preview.previewContent && (
                               <ContentUnavailable message="No preview content was found." />
                             )}
-                          </div>
-                          <div className="flex items-center flex-col">
-                            {c.code && <DownloadXCodeProject c={c} />}
-                            <div className="mb-3 mt-1">
-                              <Button
-                                title={`Download Day ${c.day} Preview`}
-                                onClick={() => {
-                                  if (c.preview.previewContent) {
-                                    saveAs(
-                                      `${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`,
-                                      `Day ${c.day} Preview`
-                                    );
-                                  }
-                                }}
-                              >
-                                Download <FiDownload className="text-xl ml-2" />
-                              </Button>
-                            </div>
                           </div>
                         </TdChildren>
                       ) : (
