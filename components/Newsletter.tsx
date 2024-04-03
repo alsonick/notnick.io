@@ -4,6 +4,7 @@ import { EMAIL_ADDRESS, THEME } from "../lib/constants";
 import { getSubscribers } from "../lib/get-subscribers";
 import { social } from "../lib/social-links";
 import { useState, useEffect } from "react";
+import { FiMail } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { Success } from "./Success";
 import Tippy from "@tippyjs/react";
@@ -118,7 +119,8 @@ export const NewsLetter = () => {
           <Tippy content={"Disabled"}>
             <div className="flex md:w-fit w-full">
               <Button disabled style={{ width: "100%" }}>
-                Subscribe
+                Subscribe{" "}
+                <FiMail className="text-xl ml-2 hover:scale-110 duration-150" />
               </Button>
             </div>
           </Tippy>

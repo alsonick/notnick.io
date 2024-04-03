@@ -8,7 +8,7 @@ export const MUSIC: Music[] = [
     name: "Anime",
     path: "/spotify/anime.jpg",
     link: "https://open.spotify.com/playlist/0Wtm1mJRMoW0NeX8OnuBUj?si=aa5098fa12b3461a",
-    feature: false,
+    feature: true,
   },
   {
     id: generateRandomId(),
@@ -40,7 +40,7 @@ export const MUSIC: Music[] = [
     name: "Rap",
     path: "/spotify/rap.jpg",
     link: "https://open.spotify.com/playlist/3rbuHFPd34pKchnj82JQNq?si=2af981fe67a24a6b",
-    feature: true,
+    feature: false,
   },
   {
     id: generateRandomId(),
