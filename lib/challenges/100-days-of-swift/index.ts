@@ -337,7 +337,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       available: true,
       previewContent: {
         path: "/challenge/100-days-of-swift/Day",
-        extension: "png",
+        extension: "gif",
       },
     },
     day: 20,
