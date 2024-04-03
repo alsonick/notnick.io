@@ -2,6 +2,7 @@ import { ONE_HUNDRED_DAYS_OF_SWIFT } from "./100-days-of-swift";
 import { generateRandomId } from "../generate-random-id";
 import { Challenge } from "../../types/challenge";
 import { social } from "../social-links";
+import { WAKING_UP_AT_5_AM } from "./waking-up-at-5am";
 
 export const CHALLENGES: Challenge[] = [
   {
@@ -24,5 +25,23 @@ export const CHALLENGES: Challenge[] = [
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: 100 - ONE_HUNDRED_DAYS_OF_SWIFT.length,
     goal: 100,
+  },
+  {
+    id: generateRandomId(),
+    keys: ["Day", "Thoughts", "Completed", "Proof"],
+    name: "Waking up at 5AM for 30 days",
+    statusKeys: ["Title", "Days Completed", "Days Left", "Goal"],
+    content: WAKING_UP_AT_5_AM,
+    path: "/waking-up-at-5am",
+    slug: "waking-up-at-5am",
+    description: "Waking up at 5AM to make this a daily habit in my life.",
+    usefulLinks: [
+      "https://medium.com/mind-cafe/10-reasons-you-should-wake-up-at-5am-for-30-days-straight-6cb052ae54b9",
+      "https://www.youtube.com/watch?v=4fsgqnat758",
+    ],
+    completedDays: WAKING_UP_AT_5_AM.length,
+    note: "And yes, I'm actually waking up at 5AM instead of waking up and taking a screenshot on my phone lol.",
+    daysLeft: 30 - WAKING_UP_AT_5_AM.length,
+    goal: 30,
   },
 ];
