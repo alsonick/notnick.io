@@ -252,7 +252,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "png",
       },
     },
@@ -273,7 +273,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "gif",
       },
     },
@@ -294,7 +294,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "gif",
       },
     },
@@ -315,7 +315,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "png",
       },
     },
@@ -336,7 +336,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "gif",
       },
     },
@@ -357,7 +357,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "gif",
       },
     },
@@ -378,7 +378,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     preview: {
       available: true,
       previewContent: {
-        path: "/challenge/100-days-of-swift/Day",
+        path: "Day",
         extension: "gif",
       },
     },

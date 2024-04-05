@@ -146,7 +146,7 @@ const Slug: NextPage = () => {
                               <picture className="mb-2">
                                 <img
                                   className="w-72"
-                                  src={`${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
+                                  src={`/challenge/${c.slug}/${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
                                   alt={`Day ${c.day} Preview`}
                                 />
                               </picture>
