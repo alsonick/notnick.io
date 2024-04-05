@@ -3,6 +3,7 @@ import { generateRandomId } from "../generate-random-id";
 import { Challenge } from "../../types/challenge";
 import { social } from "../social-links";
 import { WAKING_UP_AT_5_AM } from "./waking-up-at-5am";
+import { WALKING_FOR_100_DAYS } from "./walking-for-100-days";
 
 export const CHALLENGES: Challenge[] = [
   {
@@ -24,6 +25,19 @@ export const CHALLENGES: Challenge[] = [
     completedDays: ONE_HUNDRED_DAYS_OF_SWIFT.length,
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: 100 - ONE_HUNDRED_DAYS_OF_SWIFT.length,
+    goal: 100,
+  },
+  {
+    id: generateRandomId(),
+    keys: ["Day", "Thoughts", "Completed", "Proof"],
+    name: "Walking for 100 Days",
+    statusKeys: ["Title", "Days Completed", "Days Left", "Goal"],
+    content: WALKING_FOR_100_DAYS,
+    path: "/walking-for-100-days",
+    slug: "walking-for-100-days",
+    description: "Lately I've not been active so it's time to change that.",
+    completedDays: WALKING_FOR_100_DAYS.length,
+    daysLeft: 100 - WALKING_FOR_100_DAYS.length,
     goal: 100,
   },
   {
