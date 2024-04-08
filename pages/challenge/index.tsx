@@ -12,6 +12,7 @@ import { page } from "../../lib/page";
 // Next.js
 import { NextPage } from "next";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Challenge: NextPage = () => {
   return (

@@ -6,22 +6,24 @@ import { FULL_NAME, PROFESSION } from "../../lib/constants";
 import { TdChildren } from "../../components/TdChildren";
 import { Heading } from "../../components/Heading";
 import { Animate } from "../../components/Animate";
+import { Success } from "../../components/Success";
 import { CHALLENGES } from "../../lib/challenges";
 import { GoBack } from "../../components/GoBack";
 import { Header } from "../../components/Header";
 import { Layout } from "../../components/Layout";
 import { Button } from "../../components/Button";
+import { fireworks } from "../../lib/fireworks";
 import { Table } from "../../components/Table";
 import { LinkT } from "../../components/Link";
 import { Note } from "../../components/Note";
 import { Text } from "../../components/Text";
 import { FiDownload } from "react-icons/fi";
+import { Tag } from "../../components/Tag";
 import { Seo } from "../../components/Seo";
 import { Key } from "../../components/Key";
 import { Th } from "../../components/Th";
 import { Td } from "../../components/Td";
 import { page } from "../../lib/page";
-import { saveAs } from "file-saver";
 
 // Next.js
 import { useRouter } from "next/router";
@@ -65,7 +67,8 @@ const Slug: NextPage = () => {
       >
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>
+            <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>{" "}
+            <Tag title={challenge?.active ? "Active" : "Not Active"} />
           </Header>
           <Text>{challenge?.description}</Text>
           {challenge?.note ? (
@@ -81,6 +84,12 @@ const Slug: NextPage = () => {
                   {link.slice(8).replaceAll("www.", "")}
                 </LinkT>
               ))}
+            </div>
+          ) : null}
+          {challenge?.completed ? (
+            <div className="my-6 flex justify-between items-center">
+              <Button onClick={() => fireworks()}>🎉</Button>
+              <Success message="Completed" />
             </div>
           ) : null}
           <div className="my-8">

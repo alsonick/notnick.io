@@ -4,7 +4,9 @@ export interface Challenge {
   statusKeys: string[];
   description: string;
   content: Content[];
+  completed: boolean;
   daysLeft: number;
+  active: boolean;
   keys: string[];
   note?: string;
   name: string;

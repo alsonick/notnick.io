@@ -1,9 +1,9 @@
 import { ONE_HUNDRED_DAYS_OF_SWIFT } from "./100-days-of-swift";
+import { WALKING_FOR_100_DAYS } from "./walking-for-100-days";
 import { generateRandomId } from "../generate-random-id";
+import { WAKING_UP_AT_5_AM } from "./waking-up-at-5am";
 import { Challenge } from "../../types/challenge";
 import { social } from "../social-links";
-import { WAKING_UP_AT_5_AM } from "./waking-up-at-5am";
-import { WALKING_FOR_100_DAYS } from "./walking-for-100-days";
 
 export const CHALLENGES: Challenge[] = [
   {
@@ -25,6 +25,8 @@ export const CHALLENGES: Challenge[] = [
     completedDays: ONE_HUNDRED_DAYS_OF_SWIFT.length,
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: 100 - ONE_HUNDRED_DAYS_OF_SWIFT.length,
+    completed: true,
+    active: true,
     goal: 100,
   },
   {
@@ -38,6 +40,8 @@ export const CHALLENGES: Challenge[] = [
     description: "Lately I've not been active so it's time to change that.",
     completedDays: WALKING_FOR_100_DAYS.length,
     daysLeft: 100 - WALKING_FOR_100_DAYS.length,
+    completed: false,
+    active: true,
     goal: 100,
   },
   {
@@ -56,6 +60,8 @@ export const CHALLENGES: Challenge[] = [
     completedDays: WAKING_UP_AT_5_AM.length,
     note: "And yes, I'm actually waking up at 5AM instead of waking up and taking a screenshot on my phone lol.",
     daysLeft: 30 - WAKING_UP_AT_5_AM.length,
+    completed: false,
+    active: false,
     goal: 30,
   },
 ];
