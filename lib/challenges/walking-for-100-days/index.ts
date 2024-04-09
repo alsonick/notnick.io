@@ -61,4 +61,19 @@ export const WALKING_FOR_100_DAYS: Content[] = [
     },
     day: 4,
   },
+  {
+    id: generateRandomId(),
+    description:
+      "Back and biceps day, also did some walking on the treadmill on an incline of 15.",
+    slug: "walking-for-100-days",
+    completed: true,
+    preview: {
+      available: true,
+      previewContent: {
+        path: "Day",
+        extension: "jpeg",
+      },
+    },
+    day: 5,
+  },
 ];
