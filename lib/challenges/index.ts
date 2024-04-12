@@ -25,7 +25,7 @@ export const CHALLENGES: Challenge[] = [
     completedDays: ONE_HUNDRED_DAYS_OF_SWIFT.length,
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: 100 - ONE_HUNDRED_DAYS_OF_SWIFT.length,
-    completed: true,
+    completed: false,
     active: true,
     goal: 100,
   },
