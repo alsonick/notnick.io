@@ -132,4 +132,18 @@ export const WALKING_FOR_100_DAYS: Content[] = [
     },
     day: 9,
   },
+  {
+    id: generateRandomId(),
+    description: "Leg day + long walk. My legs are KILLING me!",
+    slug: "walking-for-100-days",
+    completed: true,
+    preview: {
+      available: true,
+      previewContent: {
+        path: "Day",
+        extension: "jpeg",
+      },
+    },
+    day: 10,
+  },
 ];
