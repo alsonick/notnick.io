@@ -1,5 +1,6 @@
 import { SpotifyPlaylistLinkButton } from "./SpotifyLinkButton";
 import { SpotifyPlaylistCover } from "./SpotifyPlaylistCover";
+import { FiArrowRight } from "react-icons/fi";
 import { THEME } from "../lib/constants";
 import { MUSIC } from "../lib/music";
 import { Heading } from "./Heading";
@@ -20,7 +21,7 @@ export const Music = () => {
         If you&apos;re curios about the type of music I like to listen to, be
         sure to check out some of my spotify playlists below.
       </Text>
-      <div className="flex mt-8 mb-6 flex-col md:flex-row justify-between">
+      <div className="sm:flex hidden mt-8 mb-6 flex-col md:flex-row justify-between">
         {featured.map((playlist, index) => {
           return (
             <Link
@@ -45,10 +46,18 @@ export const Music = () => {
           );
         })}
       </div>
-      <Text>
-        Click <LinkTag href={page.music.link}>here</LinkTag> to view the entire
-        playlist collection.
-      </Text>
+      <div className="sm:hidden flex mt-4">
+        <LinkTag href={page.music.link}>
+          Click here to view playlist collection.{" "}
+          <FiArrowRight className="text-lg ml-1" />
+        </LinkTag>
+      </div>
+      <div className="sm:flex hidden">
+        <Text>
+          Click <LinkTag href={page.music.link}>here</LinkTag> to view the
+          entire playlist collection.
+        </Text>
+      </div>
     </section>
   );
 };

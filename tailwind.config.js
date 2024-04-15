@@ -11,7 +11,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@headlessui/tailwindcss"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
-    require("tailwind-scrollbar"),
   ],
   variants: {
     scrollbar: ["rounded"],

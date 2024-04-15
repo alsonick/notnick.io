@@ -16,6 +16,8 @@ export const getEmploymentTypeString = (props?: Experience) => {
       return "Part-Time";
     case "self-employed":
       return "Self-Employed";
+    case "voluntary":
+      return "Voluntary";
     default:
       return "Temporary";
   }

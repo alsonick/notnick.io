@@ -11,7 +11,8 @@ export interface Experience {
     | "freelance"
     | "internship"
     | "apprenticeship"
-    | "temporary";
+    | "temporary"
+    | "voluntary";
   remote: boolean;
   location: string;
   current: boolean;

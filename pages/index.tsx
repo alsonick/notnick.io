@@ -26,20 +26,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo title={FULL_NAME} description={`${FULL_NAME} - ${PROFESSION}`} />
-      {isDisplaySpotify ? (
-        <div className="md:flex hidden items-center justify-center h-8 w-full bg-[#1DB954] z-50 fixed top-0 p-2">
-          <Listening
-            setActive={setPresenceActive}
-            style={{ margin: 0, color: "white" }}
-          />
-          <FiX
-            className="text-white hover:cursor-pointer text-xl absolute right-2"
-            onClick={() => {
-              setIsDisplaySpotify(false);
-            }}
-          />
-        </div>
-      ) : null}
       <Layout isDisplaySpotify={isDisplaySpotify}>
         <Animate>
           <Main />

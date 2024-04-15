@@ -25,9 +25,9 @@ export const Layout = ({
     scrollbar-track-gray-800 scrollbar-thumb-rounded-full"
     >
       <div
-        className={`flex flex-col h-full py-20 w-[70%] md:w-[${
-          longLayoutFormat ? "60rem" : "40rem"
-        }] mt-12`}
+        className={`flex flex-col h-full py-20 w-[${
+          longLayoutFormat ? "55" : "95"
+        }%] md:w-[${longLayoutFormat ? "w-[95%]" : "40rem"}] mt-12`}
       >
         {!supportLargeScreen && (
           <div

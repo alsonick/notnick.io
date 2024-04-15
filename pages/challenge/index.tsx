@@ -12,7 +12,6 @@ import { page } from "../../lib/page";
 // Next.js
 import { NextPage } from "next";
 import Link from "next/link";
-import { useEffect } from "react";
 
 const Challenge: NextPage = () => {
   return (
@@ -27,28 +26,30 @@ const Challenge: NextPage = () => {
             <Heading style={{ marginBottom: 0 }}>Challenge</Heading>
           </Header>
           <div className="flex flex-col mb-4">
-            {CHALLENGES.map((challenge) => (
-              <div
-                className="border-b border-teal-100 dark:border-teal-900 mb-4 pb-4"
-                key={challenge.id}
-              >
-                <Link
-                  className={`flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black focus:ring-4
-                  rounded ring-[${THEME}] outline-none duration-300`}
-                  href={`${page.challenge.name}/${challenge.slug}`}
+            {CHALLENGES.filter((challenge) => challenge.active).map(
+              (challenge) => (
+                <div
+                  className="border-b border-teal-100 dark:border-teal-900 mb-4 pb-4"
+                  key={challenge.id}
                 >
-                  <h1
-                    className="text-3xl font-bold cursor-pointer underline
-                  dark:text-white hover:no-underline"
+                  <Link
+                    className={`flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black focus:ring-4
+                  rounded ring-[${THEME}] outline-none duration-300`}
+                    href={`${page.challenge.name}/${challenge.slug}`}
                   >
-                    {challenge.name}
-                  </h1>
-                  <Text style={{ margin: "0.5rem 0px 0.25rem" }}>
-                    {challenge.description}
-                  </Text>
-                </Link>
-              </div>
-            ))}
+                    <h1
+                      className="text-3xl font-bold cursor-pointer underline
+                  dark:text-white hover:no-underline"
+                    >
+                      {challenge.name}
+                    </h1>
+                    <Text style={{ margin: "0.5rem 0px 0.25rem" }}>
+                      {challenge.description}
+                    </Text>
+                  </Link>
+                </div>
+              )
+            )}
           </div>
           <GoBack />
         </Animate>
