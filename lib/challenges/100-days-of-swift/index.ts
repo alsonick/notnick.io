@@ -568,7 +568,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       available: true,
       previewContent: {
         path: "Day",
-        extension: "gif",
+        extension: "png",
       },
     },
     day: 30,
