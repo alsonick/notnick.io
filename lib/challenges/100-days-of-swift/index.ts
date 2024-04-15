@@ -571,6 +571,6 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
         extension: "png",
       },
     },
-    day: 30,
+    day: 31,
   },
 ];
