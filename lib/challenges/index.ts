@@ -7,15 +7,15 @@ import {
   WALKING_FOR_100_DAYS_SLUG,
 } from "./walking-for-100-days/constants";
 import { ONE_HUNDRED_DAYS_OF_SWIFT } from "./100-days-of-swift";
+import {
+  WAKING_UP_AT_5_AM_GOAL,
+  WAKING_UP_AT_5_AM_SLUG,
+} from "./waking-up-at-5am/constants";
 import { WALKING_FOR_100_DAYS } from "./walking-for-100-days";
 import { generateRandomId } from "../generate-random-id";
 import { WAKING_UP_AT_5_AM } from "./waking-up-at-5am";
 import { Challenge } from "../../types/challenge";
 import { social } from "../social-links";
-import {
-  WAKING_UP_AT_5_AM_GOAL,
-  WAKING_UP_AT_5_AM_SLUG,
-} from "./waking-up-at-5am/constants";
 
 export const CHALLENGES: Challenge[] = [
   {

@@ -26,6 +26,7 @@ export const Experience = () => {
             description={experience.description}
             location={experience.location}
             current={experience.current}
+            feature={experience.feature}
             filter={experience.filter}
             remote={experience.remote}
             name={experience.name}
