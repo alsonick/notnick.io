@@ -69,7 +69,7 @@ export const EXPERIENCE: Experience[] = [
     remote: true,
     current: false,
     link: "https://www.youtube.com/@savourtunes",
-    task: "A lyrical music channel I founded in 2019. I had to discontinue the project since It was nearly impossible to monetize or get the channel into a MCN (Multi-Channel Network).",
+    task: "A lyrical music channel I founded in 2019. I had to discontinue the project since it was nearly impossible to monetize or get the channel into a MCN (Multi-Channel Network).",
     filter: "YouTube",
   },
 ];
