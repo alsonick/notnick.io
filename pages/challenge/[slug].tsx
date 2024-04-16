@@ -1,5 +1,5 @@
 import { findSlugAndAssociatedContent } from "../../lib/find-slug-and-associated-content";
-import { DownloadXCodeProject } from "../../components/DownloadXcodeProject";
+import { DownloadCodeProject } from "../../components/DownloadCodeProject";
 import { ContentUnavailable } from "../../components/ContentUnavailable";
 import { generateRandomId } from "../../lib/generate-random-id";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
@@ -169,7 +169,7 @@ const Slug: NextPage = () => {
                         <>
                           {c.code ? (
                             <TdChildren>
-                              <DownloadXCodeProject c={c} />
+                              <DownloadCodeProject c={c} />
                             </TdChildren>
                           ) : (
                             <Td text="Preview not available." center={true} />

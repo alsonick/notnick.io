@@ -5,7 +5,7 @@ interface Props {
   c: Content;
 }
 
-export const DownloadXCodeProject = ({ c }: Props) => {
+export const DownloadCodeProject = ({ c }: Props) => {
   return (
     <div className="text-center flex justify-center">
       <LinkT
@@ -15,7 +15,7 @@ export const DownloadXCodeProject = ({ c }: Props) => {
       >
         <picture>
           <img
-            className="w-7 mr-1"
+            className="w-6 mr-1"
             src={`/assets/${c.code?.icon === "xcode" ? "xcode" : "vscode"}.${
               c.code?.image.extension
             }`}

@@ -99,6 +99,16 @@ const Experience: NextPage = () => {
               </LinkTag>
               .
             </Text>
+            <br />
+            <Text>
+              This is a only a few select of things I&apos;ve worked on that
+              I&apos;ve decided to showcase. If you&apos;d like to know more,
+              please shoot me an{" "}
+              <LinkTag href={`mailto:${EMAIL_ADDRESS}`} target="_blank">
+                email
+              </LinkTag>{" "}
+              and I&apos;ll get back to you with my complete CV.
+            </Text>
           </div>
           <div className="mb-5">
             <Note>

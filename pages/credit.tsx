@@ -56,11 +56,15 @@ const Credit: NextPage = () => {
           />
         </picture>
 
-        <LinkT href="https://sahil.lol/" target="_blank">
-          sahil.lol
-        </LinkT>
+        <div className="flex">
+          <LinkT href="https://sahil.lol/" target="_blank">
+            sahil.lol
+          </LinkT>
+          <Text style={{ marginLeft: "5.5px" }}>
+            <i>(site currently inactive)</i>
+          </Text>
+        </div>
 
-        <br />
         <br />
 
         <Text>
