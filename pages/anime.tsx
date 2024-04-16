@@ -61,8 +61,8 @@ const Anime = () => {
   return (
     <>
       <Seo
-        title={`Anime - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Anime • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

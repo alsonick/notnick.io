@@ -40,7 +40,7 @@ const Quote: NextPage<Quote> = () => {
             {quote && !loading ? (
               <div className="flex flex-col">
                 <Seo
-                  title={`Quote - ${FULL_NAME}`}
+                  title={`Quote • ${FULL_NAME}`}
                   description={quote.author}
                 />
                 <Header column={true} singleItem={false}>

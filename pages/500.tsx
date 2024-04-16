@@ -7,8 +7,8 @@ import { NextPage } from "next";
 const InternalServerError: NextPage = () => {
   return (
     <E
-      heading="500 - Internal Server Error"
-      title={`Internal Server Error - ${FULL_NAME}`}
+      heading="500 • Internal Server Error"
+      title={`Internal Server Error • ${FULL_NAME}`}
       text="Oops! Something went wrong."
     />
   );

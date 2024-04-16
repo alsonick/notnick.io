@@ -11,8 +11,8 @@ export const Paths: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Paths - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Paths • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <div className="p-10">
         <Toggle />

@@ -17,8 +17,8 @@ const Challenge: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Challenge - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Challenge • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

@@ -15,8 +15,8 @@ const Luffy: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Monkey D. Luffy - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Monkey D. Luffy • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

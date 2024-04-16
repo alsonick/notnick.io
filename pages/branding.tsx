@@ -21,8 +21,8 @@ const Branding: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Branding - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Branding • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

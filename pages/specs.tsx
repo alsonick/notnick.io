@@ -17,7 +17,7 @@ const Specs: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Specs - ${FULL_NAME}`}
+        title={`Specs • ${FULL_NAME}`}
         description="The equipment I use on a daily basis."
       />
       <Layout>

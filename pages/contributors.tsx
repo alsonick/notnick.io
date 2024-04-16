@@ -16,7 +16,7 @@ const Contributors: NextPage = () => {
   return (
     <OtherPageContainer footer={false}>
       <Seo
-        title={`Contributors - ${FULL_NAME}`}
+        title={`Contributors • ${FULL_NAME}`}
         description="Thank you contributors!"
       />
       <Toggle />

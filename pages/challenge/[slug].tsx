@@ -56,8 +56,8 @@ const Slug: NextPage = () => {
       <Seo
         title={`${
           !challenge?.name ? "Loading..." : challenge.name
-        } - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        } • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout
         longLayoutFormat={true}

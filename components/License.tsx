@@ -13,9 +13,10 @@ export const License = () => {
       </Header>
       <Text>
         Anyone is free to take inspiration from this site as long as you make
-        some changes to your version and give credit to the ordinal creator.
-        Credits should include my full name (<b>{FULL_NAME}</b>) and a link to
-        my site (<LinkT>{DOMAIN}</LinkT>).
+        some changes (<LinkT href={page.credit.link}>read more here</LinkT>) to
+        your version and give credit to the ordinal creator. Credits should
+        include my full name (<b>{FULL_NAME}</b>) and a link to my site (
+        <LinkT>{DOMAIN}</LinkT>).
       </Text>
       <br />
       <Text>

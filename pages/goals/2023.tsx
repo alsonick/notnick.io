@@ -11,8 +11,8 @@ const TZTT = () => {
   return (
     <OtherPageContainer footer={false}>
       <Seo
-        title={`Goals for 2023 - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Goals for 2023 • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Toggle />
       <Heading>Goals for 2023</Heading>

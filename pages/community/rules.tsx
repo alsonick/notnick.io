@@ -33,8 +33,8 @@ const Rules: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Community Rules - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Community Rules • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

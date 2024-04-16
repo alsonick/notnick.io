@@ -20,8 +20,8 @@ const Music = () => {
   return (
     <>
       <Seo
-        title={`Music - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Music • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

@@ -16,7 +16,7 @@ const Credit: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Credit - ${FULL_NAME}`}
+        title={`Credit • ${FULL_NAME}`}
         description="The source code to this site is open source so anyone is free to take a copy and make modifications. Whiles this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
       />
       <Layout>

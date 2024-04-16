@@ -38,6 +38,7 @@ const Experience: NextPage = () => {
       link: "",
       task: "",
       filter: capitalizeFirstLetter("all"),
+      feature: true,
     },
   ];
 
@@ -55,6 +56,7 @@ const Experience: NextPage = () => {
       link: experience.link,
       task: experience.task,
       filter: capitalizeFirstLetter(experience.filter),
+      feature: experience.feature,
     });
   });
 
@@ -67,8 +69,8 @@ const Experience: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Experience - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Experience • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>
@@ -117,11 +119,15 @@ const Experience: NextPage = () => {
           {selected !== capitalizeFirstLetter("all") ? (
             <>
               {" "}
-              <MappedExperienceCardList list={filteredBlogsList} />
+              <MappedExperienceCardList
+                list={filteredBlogsList.filter((exp) => exp.feature)}
+              />
             </>
           ) : (
             <>
-              <MappedExperienceCardList list={EXPERIENCE} />
+              <MappedExperienceCardList
+                list={EXPERIENCE.filter((exp) => exp.feature)}
+              />
             </>
           )}
 

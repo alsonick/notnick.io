@@ -59,8 +59,8 @@ const Note: NextPage<Props> = ({ notes }) => {
   return (
     <>
       <Seo
-        title={`Note - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Note • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

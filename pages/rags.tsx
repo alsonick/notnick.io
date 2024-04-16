@@ -20,8 +20,8 @@ const Rags: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Rags - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Rags • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout
         longLayoutFormat={false}

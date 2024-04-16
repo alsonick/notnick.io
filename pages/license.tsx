@@ -14,8 +14,8 @@ const License: NextPage = () => {
   return (
     <>
       <Seo
-        title={`License - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`License • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>

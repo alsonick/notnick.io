@@ -15,8 +15,8 @@ const Ragtime: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Ragtime - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`Ragtime • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <Layout>
         <Animate>
