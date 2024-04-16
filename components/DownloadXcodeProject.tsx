@@ -23,8 +23,7 @@ export const DownloadXCodeProject = ({ c }: Props) => {
             alt={`${c.code?.icon === "xcode" ? "Xcode" : "Vscode"} icon`}
           />
         </picture>
-        Download the {c.code?.icon === "xcode" ? "Xcode" : "Vscode"} project on
-        GitHub.
+        Download {c.code?.icon === "xcode" ? "Xcode" : "Vscode"} project
       </LinkT>
     </div>
   );

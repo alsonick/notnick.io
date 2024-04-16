@@ -44,7 +44,7 @@ export const FeaturedArticles = () => {
           />
         ))}
       </div>
-      <div className="p-2">
+      <div className="p-0 sm:p-2 sm:mt-0 mt-2">
         <LinkT href={page.articles.link} title="View all articles">
           View all articles <FiArrowRight className="text-lg ml-1" />
         </LinkT>

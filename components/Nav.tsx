@@ -17,11 +17,9 @@ export const Nav = ({ isDisplaySpotify, longLayoutFormat }: Props) => {
   return (
     <nav
       className={`flex px-6 ${
-        isDisplaySpotify ? "md:top-16 top-8" : "top-8"
-      } fixed border dark:bg-[#10161a]/50 z-10 w-[${
-        longLayoutFormat ? "55" : "95"
-      }%] md:w-[${longLayoutFormat ? "60rem" : "40rem"}] border-teal-100
-    dark:border-teal-900 backdrop-blur-md mb-12 duration-300 rounded-lg justify-between h-14 items-center`}
+        isDisplaySpotify ? "md:top-18 top-8" : "top-8"
+      } fixed border dark:bg-[#10161a]/50 z-10  border-teal-100
+    dark:border-teal-900 backdrop-blur-md mb-12 duration-300 sm:w-[40rem] w-[95%] rounded-lg justify-between h-14 items-center`}
     >
       <div className="flex lg:hidden">
         <Dropdown items={ITEMS} />

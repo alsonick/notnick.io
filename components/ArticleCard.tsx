@@ -16,7 +16,7 @@ interface Props {
 export const ArticleCard = ({ title, link, authors, tags }: Props) => {
   return (
     <Link
-      className={`focus:ring-4 ring-[${THEME}] focus:ring-offset-4 dark:ring-offset-black rounded p-2 outline-none duration-300`}
+      className={`focus:ring-4 ring-[${THEME}] focus:ring-offset-4 dark:ring-offset-black rounded p-0 sm:p-2 outline-none duration-300`}
       href={link}
       target="_blank"
       title={link}
