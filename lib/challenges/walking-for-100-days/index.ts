@@ -174,4 +174,19 @@ export const WALKING_FOR_100_DAYS: Content[] = [
     },
     day: 12,
   },
+  {
+    id: generateRandomId(),
+    description:
+      "Today's workout wasn't the best at least I was able get in 8k steps.",
+    slug: "walking-for-100-days",
+    completed: true,
+    preview: {
+      available: true,
+      previewContent: {
+        path: "Day",
+        extension: "jpeg",
+      },
+    },
+    day: 13,
+  },
 ];
