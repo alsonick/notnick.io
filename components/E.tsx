@@ -28,7 +28,7 @@ export const E = ({ heading, title, text, code }: Props) => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      if (path === "luna" || path === "gxthmxm" || path === "coronux") {
+      if (path === "/luna" || path === "/gxthmxm" || path === "/coronux") {
         alert("Thanks Luna for the http.cat site lol!");
       }
     }
