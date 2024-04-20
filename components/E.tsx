@@ -1,26 +1,64 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { useEffect, useState } from "react";
+import { Switch } from "./Switch";
 import { GoBack } from "./GoBack";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
+
+// Next.js
+import { useRouter } from "next/router";
 
 interface Props {
   heading: string;
   title: string;
   text: string;
+  code: number;
 }
 
-export const E = ({ heading, title, text }: Props) => {
+export const E = ({ heading, title, text, code }: Props) => {
+  const router = useRouter();
+
+  const [enabled, setEnabled] = useState(false);
+
+  const toggle = () => {
+    setEnabled(!enabled);
+  };
+
+  const path = router.asPath;
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (path == "luna" || "gxthmxm" || "coronux") {
+        alert("Thanks Luna for the http.cat site lol!");
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Seo
-        title={`${title} - ${FULL_NAME}`}
-        description={`${FULL_NAME} - ${PROFESSION}`}
+        title={`${title} • ${FULL_NAME}`}
+        description={`${FULL_NAME} • ${PROFESSION}`}
       />
       <div className="flex flex-col items-center justify-center w-screen h-screen">
-        <h1 className="text-4xl font-bold text-center tracking-tight dark:text-white">
-          {heading}
-        </h1>
-        <Text style={{ marginBottom: "1rem" }}>{text}</Text>
+        {enabled ? (
+          <picture>
+            <img className="w-72" src={`https://http.cat/${code}.jpg`} alt="" />
+          </picture>
+        ) : (
+          <>
+            {" "}
+            <h1 className="text-4xl font-bold text-center tracking-tight dark:text-white">
+              {heading}
+            </h1>
+            <Text style={{ marginBottom: "1rem" }}>{text}</Text>
+          </>
+        )}
+        <div className="flex justify-between mb-6 w-52 items-center">
+          <Text>Toggle! 🐱</Text>
+          <Switch enabled={enabled} setEnabled={toggle} />
+        </div>
         <GoBack />
       </div>
     </>

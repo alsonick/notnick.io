@@ -7,9 +7,10 @@ import { NextPage } from "next";
 const NotFound: NextPage = () => {
   return (
     <E
-      heading="404 • Not Found"
-      title={`Not Found • ${FULL_NAME}`}
       text="Oops! We couldn't find this page."
+      title={`Not Found • ${FULL_NAME}`}
+      heading="404 • Not Found"
+      code={404}
     />
   );
 };
