@@ -37,10 +37,7 @@ export const E = ({ heading, title, text, code }: Props) => {
 
   return (
     <>
-      <Seo
-        title={`${title} • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
-      />
+      <Seo title={title} description={`${FULL_NAME} • ${PROFESSION}`} />
       <div className="flex flex-col items-center justify-center w-screen h-screen">
         {enabled ? (
           <picture>
