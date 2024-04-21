@@ -233,7 +233,7 @@ export const WALKING_FOR_100_DAYS: Content[] = [
   },
   {
     id: generateRandomId(),
-    description: "Leg day today so wish me luck for tm! :sob:",
+    description: "",
     slug: "walking-for-100-days",
     completed: true,
     preview: {
