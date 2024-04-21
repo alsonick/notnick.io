@@ -680,7 +680,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
   },
   {
     id: generateRandomId(),
-    description: "Project 8, part one",
+    description: "Project 8, part two",
     slug: "100-days-of-swift",
     completed: true,
     code: {
