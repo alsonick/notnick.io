@@ -25,7 +25,7 @@ const Snippets: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Challenge</Heading>
+            <Heading style={{ marginBottom: 0 }}>Snippets</Heading>
           </Header>
           <div className="flex flex-col mb-4">
             {SNIPPETS.snippets.map((snippet) => (
