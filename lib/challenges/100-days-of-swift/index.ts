@@ -750,4 +750,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 40,
   },
+  {
+    id: generateRandomId(),
+    description: "Milestone: Projects 7-9",
+    slug: "100-days-of-swift",
+    completed: false,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/tree/main/Day39-40/Project9`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 41,
+  },
 ];
