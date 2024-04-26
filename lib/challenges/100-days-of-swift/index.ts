@@ -788,4 +788,25 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 42,
   },
+  {
+    id: generateRandomId(),
+    description: "Project 10, part one",
+    slug: "100-days-of-swift",
+    completed: false,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/tree/main/Day42-43-44/Project10`,
+    },
+    preview: {
+      available: true,
+      previewContent: {
+        path: "Day",
+        extension: "gif",
+      },
+    },
+    day: 43,
+  },
 ];
