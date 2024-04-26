@@ -780,7 +780,11 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       link: `${social.github.link}/100-days-of-swift/tree/main/Day42-43-44/Project10`,
     },
     preview: {
-      available: false,
+      available: true,
+      previewContent: {
+        path: "Day",
+        extension: "png",
+      },
     },
     day: 42,
   },
