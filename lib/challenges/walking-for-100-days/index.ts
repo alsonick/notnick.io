@@ -301,4 +301,19 @@ export const WALKING_FOR_100_DAYS: Content[] = [
     },
     day: 21,
   },
+  {
+    id: generateRandomId(),
+    description:
+      "Could've gotten more steps in but at least I was able to hit back today!",
+    slug: "walking-for-100-days",
+    completed: true,
+    preview: {
+      available: true,
+      previewContent: {
+        path: "Day",
+        extension: "jpeg",
+      },
+    },
+    day: 22,
+  },
 ];
