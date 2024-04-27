@@ -27,9 +27,8 @@ export const About = () => {
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        Aside from programming I also love to travel (when I have the time and
-        money) and watch <b>anime</b> in my spare time, currently my favorite
-        anime shows are{" "}
+        Aside from programming I also love to travel and watch <b>anime</b> in
+        my spare time, currently my favorite anime shows are{" "}
         <LinkTag href="https://anilist.co/anime/21/ONE-PIECE/" target="_blank">
           One Piece{" "}
         </LinkTag>
