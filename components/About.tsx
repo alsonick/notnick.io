@@ -48,9 +48,10 @@ export const About = () => {
         </LinkTag>
         . I also love playing <b>piano</b>,{" "}
         <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
-          ragtime
+          Ragtime
         </LinkTag>{" "}
-        & <LinkTag href="">classic</LinkTag> is my favorite genre to play.
+        & <LinkTag href="">Classical</LinkTag> music is my favorite genre to
+        play.
       </Text>
 
       <Text>
@@ -75,7 +76,7 @@ export const About = () => {
         </LinkTag>
         .
         <br /> Connect with me on my{" "}
-        <LinkTag href={page.socials.link}>Socials</LinkTag>.
+        <LinkTag href={page.socials.link}>socials</LinkTag>.
       </Text>
     </section>
   );
