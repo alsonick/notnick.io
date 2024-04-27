@@ -18,8 +18,8 @@ export const Music = () => {
     <section className="flex flex-col mb-12">
       <Heading>Music 🎶</Heading>
       <Text>
-        If you&apos;re curios about the type of music I like to listen to, be
-        sure to check out some of my spotify playlists below.
+        If you&apos;re curious about the type of music I listen to, be sure to
+        check out some of my Spotify playlists below.
       </Text>
       <div className="sm:flex hidden mt-8 mb-6 flex-col md:flex-row justify-between">
         {featured.map((playlist, index) => {
