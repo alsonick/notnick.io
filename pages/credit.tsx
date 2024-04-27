@@ -17,7 +17,7 @@ const Credit: NextPage = () => {
     <>
       <Seo
         title={`Credit • ${FULL_NAME}`}
-        description="The source code to this site is open source so anyone is free to take a copy and make modifications. Whiles this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
+        description="The source code to this site is open source so anyone is free to take a copy and make modifications. While this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
       />
       <Layout>
         <Header singleItem={true}>
@@ -30,8 +30,8 @@ const Credit: NextPage = () => {
           </LinkT>{" "}
           and it&apos;s under the <LinkT href="/license">MIT License</LinkT>, so
           this means anyone is allowed to take a copy and make modifications.
-          Whiles this is not absolutely necessary it would be greatly
-          appreciated if credit is given to the original creator.
+          While this is not absolutely necessary it would be greatly appreciated
+          if credit is given.
         </Text>
 
         <br />
@@ -68,7 +68,7 @@ const Credit: NextPage = () => {
         <br />
 
         <Text>
-          If you have troubles with this then please feel free to{" "}
+          If you run into any issues with this then please feel free to{" "}
           <LinkT
             href={`${social.github.link}/${DOMAIN}/issues/new`}
             target="_blank"

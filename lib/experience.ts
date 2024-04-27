@@ -58,7 +58,7 @@ export const EXPERIENCE: Experience[] = [
     remote: true,
     current: true,
     link: "https://www.youtube.com/@aquila",
-    task: "Primary focus was to provide daily content.",
+    task: "Primary focus is to provide daily uploads.",
     filter: "YouTube",
     feature: true,
   },

@@ -1,7 +1,7 @@
 ---
 title: "My thoughts on Artificial Intelligence"
 date: "2023-03-25"
-description: "Just some thoughts on My thoughts on artificial intelligence and what I think it means for us and how we can use it to improve our daily lives."
+description: "My thoughts on artificial intelligence and what I think it means for us and how we can use it to improve our daily lives."
 tag: "Thoughts"
 mins: "3"
 finished: true
