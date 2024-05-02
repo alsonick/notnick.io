@@ -813,7 +813,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     id: generateRandomId(),
     description: "Project 10, part three",
     slug: "100-days-of-swift",
-    completed: false,
+    completed: true,
     code: {
       icon: "xcode",
       image: {
@@ -834,7 +834,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     id: generateRandomId(),
     description: "Project 11, part one",
     slug: "100-days-of-swift",
-    completed: false,
+    completed: true,
     code: {
       icon: "xcode",
       image: {
@@ -855,7 +855,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     id: generateRandomId(),
     description: "Project 11, part two",
     slug: "100-days-of-swift",
-    completed: false,
+    completed: true,
     code: {
       icon: "xcode",
       image: {
@@ -876,7 +876,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     id: generateRandomId(),
     description: "Project 11, part three",
     slug: "100-days-of-swift",
-    completed: false,
+    completed: true,
     code: {
       icon: "xcode",
       image: {
@@ -897,7 +897,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     id: generateRandomId(),
     description: "Project 12, part two",
     slug: "100-days-of-swift",
-    completed: false,
+    completed: true,
     code: {
       icon: "xcode",
       image: {
@@ -909,5 +909,22 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       available: false,
     },
     day: 48,
+  },
+  {
+    id: generateRandomId(),
+    description: "Project 12, part two",
+    slug: "100-days-of-swift",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/tree/main/Day48-49/Project12`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 49,
   },
 ];
