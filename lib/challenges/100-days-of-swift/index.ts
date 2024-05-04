@@ -948,4 +948,14 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 50,
   },
+  {
+    id: generateRandomId(),
+    description: "Expanding your horizons",
+    slug: "100-days-of-swift",
+    completed: true,
+    preview: {
+      available: false,
+    },
+    day: 51,
+  },
 ];
