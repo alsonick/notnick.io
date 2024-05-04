@@ -40,7 +40,10 @@ export const ExperienceCard = (props: Experience) => {
               {props.name}
             </h1>
             <div>
-              <Tag title={props.current ? "Current" : "Past"} />
+              <Tag
+                title={props.current ? "Current" : "Past"}
+                type={props.current ? "success" : "error"}
+              />
             </div>
           </div>
           <PostCardTag title={props.filter} style={{ margin: 0 }} />

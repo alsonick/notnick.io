@@ -1,5 +1,5 @@
 ---
-title: "Trip to Kenya 🇰🇪"
+title: "Trip to Kenya"
 date: "2024-02-08"
 description: "My notes on how I learn programming."
 finished: true

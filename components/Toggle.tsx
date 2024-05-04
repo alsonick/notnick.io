@@ -62,10 +62,7 @@ export const Toggle = () => {
   };
 
   return (
-    <RoundedBox
-      title={`Toggle ${theme === "dark" ? "Dark Mode" : "Light Theme"} (T)`}
-      onClick={() => toggleTheme(theme)}
-    >
+    <RoundedBox onClick={() => toggleTheme(theme)}>
       {theme === "dark" ? (
         <FiSun className="hover:scale-110 duration-150" />
       ) : (

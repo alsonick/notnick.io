@@ -38,6 +38,10 @@ export const CHALLENGES: Challenge[] = [
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: ONE_HUNDRED_DAYS_OF_SWIFT_GOAL - ONE_HUNDRED_DAYS_OF_SWIFT.length,
     completed: false,
+    toggle: {
+      text: "Download preview toggle?",
+      value: true,
+    },
     active: ONE_HUNDRED_DAYS_OF_SWIFT.length > 1,
     goal: ONE_HUNDRED_DAYS_OF_SWIFT_GOAL,
   },
@@ -53,6 +57,10 @@ export const CHALLENGES: Challenge[] = [
     completedDays: WALKING_FOR_100_DAYS.length,
     daysLeft: WALKING_FOR_100_DAYS_GOAL - WALKING_FOR_100_DAYS.length,
     completed: false,
+    toggle: {
+      text: "Download iPhone screenshots?",
+      value: true,
+    },
     active: WALKING_FOR_100_DAYS.length > 1,
     goal: WALKING_FOR_100_DAYS_GOAL,
   },

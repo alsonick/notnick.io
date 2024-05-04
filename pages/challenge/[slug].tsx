@@ -12,24 +12,29 @@ import { GoBack } from "../../components/GoBack";
 import { Header } from "../../components/Header";
 import { Layout } from "../../components/Layout";
 import { Button } from "../../components/Button";
+import { Switch } from "../../components/Switch";
 import { fireworks } from "../../lib/fireworks";
 import { Table } from "../../components/Table";
 import { LinkT } from "../../components/Link";
 import { Note } from "../../components/Note";
 import { Text } from "../../components/Text";
 import { FiDownload } from "react-icons/fi";
+import { useState, useEffect } from "react";
 import { Tag } from "../../components/Tag";
 import { Seo } from "../../components/Seo";
 import { Key } from "../../components/Key";
 import { Th } from "../../components/Th";
 import { Td } from "../../components/Td";
 import { page } from "../../lib/page";
+import { saveAs } from "file-saver";
 
 // Next.js
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 
 const Slug: NextPage = () => {
+  const [enabled, setEnabled] = useState(true);
+
   const router = useRouter();
 
   const challenge = findSlugAndAssociatedContent(router, CHALLENGES);
@@ -51,6 +56,15 @@ const Slug: NextPage = () => {
     }
   }
 
+  const toggle = () => {
+    setEnabled(!enabled);
+  };
+
+  useEffect(() => {
+    setEnabled(challenge?.toggle?.value ?? true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Seo
@@ -68,7 +82,10 @@ const Slug: NextPage = () => {
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>{" "}
-            <Tag title={challenge?.active ? "Active" : "Not Active"} />
+            <Tag
+              title={challenge?.active ? "Active" : "Not Active"}
+              type={challenge?.active ? "success" : "error"}
+            />
           </Header>
           <Text>{challenge?.description}</Text>
           {challenge?.note ? (
@@ -84,6 +101,15 @@ const Slug: NextPage = () => {
                   {link.slice(8).replaceAll("www.", "")}
                 </LinkT>
               ))}
+            </div>
+          ) : null}
+          {challenge?.toggle ? (
+            <div className="my-6 flex flex-col">
+              <Key>Toggle</Key>
+              <div className="flex items-center justify-between">
+                <Text>{challenge.toggle.text}</Text>
+                <Switch enabled={enabled} setEnabled={toggle} />
+              </div>
             </div>
           ) : null}
           {challenge?.completed ? (
@@ -146,19 +172,44 @@ const Slug: NextPage = () => {
                   <tr key={generateRandomId()}>
                     <>
                       <Td text={`${c.day}`} center={true} />
-                      <Td text={c.description} center={false} />
+                      <Td
+                        text={
+                          c.description.length
+                            ? c.description
+                            : "No description."
+                        }
+                        center={false}
+                      />
                       <Td text={c.completed ? "✅" : "❌"} center={true} />
                       {c.preview.available ? (
                         <TdChildren>
                           <div className="flex justify-center text-center items-center my-3">
                             {c.preview.previewContent ? (
-                              <picture className="mb-2">
-                                <img
-                                  className="w-72"
-                                  src={`/challenge/${c.slug}/${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
-                                  alt={`Day ${c.day} Preview`}
-                                />
-                              </picture>
+                              <div className="flex flex-col items-center">
+                                <picture className="mb-2">
+                                  <img
+                                    className="w-72"
+                                    src={`/challenge/${c.slug}/${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
+                                    alt={`Day ${c.day} Preview`}
+                                  />
+                                </picture>
+                                {enabled ? (
+                                  <div>
+                                    <Button
+                                      title={`Download the Day ${c.day} asset file.`}
+                                      onClick={() => {
+                                        saveAs(
+                                          `/challenge/${c.slug}/${c.preview.previewContent?.path}${c.day}.${c.preview.previewContent?.extension}`,
+                                          `Day ${c.day} Preview`
+                                        );
+                                      }}
+                                    >
+                                      Download{" "}
+                                      <FiDownload className="text-xl ml-2 hover:scale-110 duration-150" />
+                                    </Button>
+                                  </div>
+                                ) : null}
+                              </div>
                             ) : null}
                             {!c.preview.previewContent && (
                               <ContentUnavailable message="No preview content was found." />

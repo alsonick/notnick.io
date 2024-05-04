@@ -14,6 +14,7 @@ export const FeaturedArticles = () => {
 
   const shuffleArticles = () => {
     let s = [];
+
     const shuffled = ARTICLES.slice(0, 3)
       .map((value) => ({
         value,

@@ -61,7 +61,7 @@ const Experience: NextPage = () => {
   });
 
   const [selected, setSelected] = useState(
-    capitalizeFirstLetter(types[1].filter)
+    capitalizeFirstLetter(types[0].filter)
   );
 
   const filteredBlogsList = types.filter((type) => type.filter === selected);

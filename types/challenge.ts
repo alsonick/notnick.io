@@ -7,6 +7,7 @@ export interface Challenge {
   completed: boolean;
   daysLeft: number;
   active: boolean;
+  toggle?: Toggle;
   keys: string[];
   note?: string;
   name: string;
@@ -42,4 +43,9 @@ export interface Code {
     extension: string;
   };
   link: string;
+}
+
+export interface Toggle {
+  value: boolean;
+  text: string;
 }

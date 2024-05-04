@@ -3,10 +3,13 @@ import { TdChildren } from "../components/TdChildren";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
+import { Button } from "../components/Button";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
+import { useState, useEffect } from "react";
 import { Table } from "../components/Table";
 import { LinkT } from "../components/Link";
+import { FiRepeat } from "react-icons/fi";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Td } from "../components/Td";
@@ -17,6 +20,26 @@ import { RAGS } from "../lib/rags";
 import { NextPage } from "next";
 
 const Rags: NextPage = () => {
+  const [rags, setRags] = useState(RAGS);
+
+  const shuffleRags = () => {
+    let r = [];
+
+    const shuffled = RAGS.map((rag) => ({
+      rag,
+      sort: Math.random(),
+    }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(({ rag }) => rag);
+    r.push(shuffled);
+    setRags(r[0]);
+  };
+
+  useEffect(() => {
+    shuffleRags();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Seo
@@ -44,6 +67,12 @@ const Rags: NextPage = () => {
             .
           </Text>
           <div className="my-4">
+            <Button style={{ marginLeft: "auto" }} onClick={shuffleRags}>
+              Shuffle{" "}
+              <FiRepeat className="text-xl ml-2 hover:scale-110 duration-150" />
+            </Button>
+          </div>
+          <div className="my-4">
             <div className="my-4 flex flex-col">
               <Table>
                 <thead>
@@ -54,7 +83,7 @@ const Rags: NextPage = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {RAGS.map((rag) => (
+                  {rags.map((rag) => (
                     <tr key={rag.id}>
                       <>
                         <Td text={rag.composer} center={true} />
