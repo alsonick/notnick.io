@@ -1,0 +1,788 @@
+{
+  "countries": [
+    {
+      "name": "Afghanistan",
+      "fact": "The official name of Afghanistan is the Islamic Republic of Afghanistan."
+    },
+    {
+      "name": "Albania",
+      "fact": "Albania is one of the few countries in the world where there are more bunkers than people."
+    },
+    {
+      "name": "Algeria",
+      "fact": "Algeria is the largest country in Africa and the Arab world."
+    },
+    {
+      "name": "Andorra",
+      "fact": "Andorra is the only country in the world with Catalan as its official language."
+    },
+    {
+      "name": "Angola",
+      "fact": "Angola is home to one of the world's largest waterfalls, the Tazua Falls."
+    },
+    {
+      "name": "Antigua and Barbuda",
+      "fact": "Antigua and Barbuda is known for having 365 beaches, one for each day of the year."
+    },
+    {
+      "name": "Argentina",
+      "fact": "Argentina is the birthplace of the Tango dance."
+    },
+    {
+      "name": "Armenia",
+      "fact": "Armenia is one of the oldest wine-producing countries in the world."
+    },
+    {
+      "name": "Australia",
+      "fact": "Australia is home to the world's largest reef system, the Great Barrier Reef."
+    },
+    {
+      "name": "Austria",
+      "fact": "Austria's national flag is one of the oldest in the world, dating back to 1191."
+    },
+    {
+      "name": "Azerbaijan",
+      "fact": "Azerbaijan is often referred to as the 'Land of Fire' due to its long history of Zoroastrianism and natural gas reserves."
+    },
+    {
+      "name": "Bahamas",
+      "fact": "The Bahamas is made up of 700 islands, though only around 30 are inhabited."
+    },
+    {
+      "name": "Bahrain",
+      "fact": "Bahrain is home to the ancient civilization of Dilmun, which dates back to the 3rd millennium BCE."
+    },
+    {
+      "name": "Bangladesh",
+      "fact": "Bangladesh is the world's largest producer of jute, often referred to as the 'golden fiber.'"
+    },
+    {
+      "name": "Barbados",
+      "fact": "Barbados is the birthplace of rum."
+    },
+    {
+      "name": "Belarus",
+      "fact": "Belarus is home to the largest forest in Europe, the Belovezhskaya Pushcha National Park."
+    },
+    {
+      "name": "Belgium",
+      "fact": "Belgium is the world's largest exporter of chocolate."
+    },
+    {
+      "name": "Belize",
+      "fact": "Belize has the lowest population density in Central America."
+    },
+    {
+      "name": "Benin",
+      "fact": "Benin is the birthplace of Voodoo, an African religion practiced by millions worldwide."
+    },
+    {
+      "name": "Bhutan",
+      "fact": "Bhutan measures its success in Gross National Happiness rather than Gross Domestic Product (GDP)."
+    },
+    {
+      "name": "Bolivia",
+      "fact": "Bolivia has the highest capital city in the world, La Paz, at 3,650 meters (11,975 feet) above sea level."
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "fact": "Bosnia and Herzegovina is home to one of the last remaining virgin forests in Europe, the Perucica Forest."
+    },
+    {
+      "name": "Botswana",
+      "fact": "Botswana is home to the world's largest population of African elephants."
+    },
+    {
+      "name": "Brazil",
+      "fact": "Brazil contains approximately 60% of the Amazon Rainforest."
+    },
+    {
+      "name": "Brunei",
+      "fact": "Brunei has one of the highest standards of living in the world due to its significant oil and natural gas reserves."
+    },
+    {
+      "name": "Bulgaria",
+      "fact": "Bulgaria is one of the oldest countries in Europe, established in 681 AD."
+    },
+    {
+      "name": "Burkina Faso",
+      "fact": "Burkina Faso translates to 'Land of Honest Men' and is known for its traditional music and dance."
+    },
+    {
+      "name": "Burundi",
+      "fact": "Burundi is one of the world's poorest countries, but it has a rich cultural heritage."
+    },
+    {
+      "name": "Cabo Verde",
+      "fact": "Cabo Verde is named after the westernmost cape of Africa, Cabo Verde."
+    },
+    {
+      "name": "Cambodia",
+      "fact": "Cambodia is home to Angkor Wat, the largest religious monument in the world."
+    },
+    {
+      "name": "Cameroon",
+      "fact": "Cameroon is sometimes referred to as 'Africa in miniature' due to its diverse landscapes."
+    },
+    {
+      "name": "Canada",
+      "fact": "Canada has the longest coastline of any country in the world."
+    },
+    {
+      "name": "Central African Republic",
+      "fact": "The Central African Republic is home to one of the highest concentrations of wildlife in Africa."
+    },
+    {
+      "name": "Chad",
+      "fact": "Chad is home to the Sahara Desert's largest body of water, Lake Chad."
+    },
+    {
+      "name": "Chile",
+      "fact": "Chile is the world's longest country, stretching over 4,300 kilometers (2,670 miles) from north to south."
+    },
+    {
+      "name": "China",
+      "fact": "China is the world's most populous country, with over 1.4 billion people."
+    },
+    {
+      "name": "Colombia",
+      "fact": "Colombia is one of the most biodiverse countries in the world, home to over 10% of the world's species."
+    },
+    {
+      "name": "Comoros",
+      "fact": "Comoros is known as the 'Perfume Islands' because of its fragrant plants."
+    },
+    {
+      "name": "Congo (Brazzaville)",
+      "fact": "Congo is the fourth-largest oil producer in sub-Saharan Africa."
+    },
+    {
+      "name": "Costa Rica",
+      "fact": "Costa Rica aims to be the first carbon-neutral country in the world by 2021."
+    },
+    {
+      "name": "Croatia",
+      "fact": "Croatia has over a thousand islands along its Adriatic coast."
+    },
+    {
+      "name": "Cuba",
+      "fact": "Cuba has the highest doctor-to-patient ratio in the world."
+    },
+    {
+      "name": "Cyprus",
+      "fact": "Cyprus is the birthplace of the mythical Greek goddess of love, Aphrodite."
+    },
+    {
+      "name": "Czech Republic",
+      "fact": "The Czech Republic has the highest beer consumption per capita in the world."
+    },
+    {
+      "name": "Democratic Republic of the Congo",
+      "fact": "The Democratic Republic of the Congo is the second-largest country in Africa by land area."
+    },
+    {
+      "name": "Denmark",
+      "fact": "Denmark is considered one of the happiest countries in the world."
+    },
+    {
+      "name": "Djibouti",
+      "fact": "Djibouti is home to one of the saltiest bodies of water in the world, Lake Assal."
+    },
+    {
+      "name": "Dominica",
+      "fact": "Dominica is known as the 'Nature Isle of the Caribbean' due to its lush rainforests and abundant wildlife."
+    },
+    {
+      "name": "Dominican Republic",
+      "fact": "The Dominican Republic is home to the first permanent European settlement in the Americas, Santo Domingo."
+    },
+    {
+      "name": "East Timor",
+      "fact": "East Timor is one of the world's newest countries, gaining independence from Indonesia in 2002."
+    },
+    {
+      "name": "Ecuador",
+      "fact": "Ecuador is the closest country to space, thanks to the bulge of the Earth at the equator."
+    },
+    {
+      "name": "Egypt",
+      "fact": "Egypt is home to the world's oldest known ancient civilization, the Ancient Egyptians."
+    },
+    {
+      "name": "El Salvador",
+      "fact": "El Salvador is the smallest and most densely populated country in Central America."
+    },
+    {
+      "name": "Equatorial Guinea",
+      "fact": "Equatorial Guinea is the only country in Africa where Spanish is an official language."
+    },
+    {
+      "name": "Eritrea",
+      "fact": "Eritrea is one of the few countries in the world with no McDonald's."
+    },
+    {
+      "name": "Estonia",
+      "fact": "Estonia is the birthplace of Skype."
+    },
+    {
+      "name": "Eswatini",
+      "fact": "Eswatini is one of the world's last remaining absolute monarchies."
+    },
+    {
+      "name": "Ethiopia",
+      "fact": "Ethiopia has its own calendar, which is seven to eight years behind the Gregorian calendar."
+    },
+    {
+      "name": "Fiji",
+      "fact": "Fiji is made up of over 330 islands, of which only about one-third are inhabited."
+    },
+    {
+      "name": "Finland",
+      "fact": "Finland is known as the 'Land of a Thousand Lakes,' but in reality, there are over 180,000 lakes in the country."
+    },
+    {
+      "name": "France",
+      "fact": "France is the most visited country in the world."
+    },
+    {
+      "name": "Gabon",
+      "fact": "Gabon is one of the most forested countries in Africa, with over 80% of its land covered in forests."
+    },
+    {
+      "name": "Gambia",
+      "fact": "The Gambia is the smallest country on mainland Africa."
+    },
+    {
+      "name": "Georgia",
+      "fact": "Georgia is known as the birthplace of wine, with evidence of winemaking dating back over 8,000 years."
+    },
+    {
+      "name": "Germany",
+      "fact": "Germany is home to the world's oldest brewery, the Weihenstephan Brewery, which has been operating since 1040 AD."
+    },
+    {
+      "name": "Ghana",
+      "fact": "Ghana was the first country in sub-Saharan Africa to gain independence from colonial rule."
+    },
+    {
+      "name": "Greece",
+      "fact": "Greece has over 2,000 islands, but only around 170 are inhabited."
+    },
+    {
+      "name": "Grenada",
+      "fact": "Grenada is known as the 'Spice Isle' due to its production of nutmeg and mace."
+    },
+    {
+      "name": "Guatemala",
+      "fact": "Guatemala is home to one of the largest and most well-preserved Mayan sites in the world, Tikal."
+    },
+    {
+      "name": "Guinea",
+      "fact": "Guinea is known for its rich natural resources, including bauxite, iron ore, and gold."
+    },
+    {
+      "name": "Guinea-Bissau",
+      "fact": "Guinea-Bissau is one of the few countries in Africa where Portuguese is the official language."
+    },
+    {
+      "name": "Guyana",
+      "fact": "Guyana is home to the world's largest single-drop waterfall by volume, Kaieteur Falls."
+    },
+    {
+      "name": "Haiti",
+      "fact": "Haiti is the most populous country in the Caribbean."
+    },
+    {
+      "name": "Honduras",
+      "fact": "Honduras is home to the second-largest barrier reef in the world, the Mesoamerican Barrier Reef."
+    },
+    {
+      "name": "Hungary",
+      "fact": "Hungary is home to the largest thermal water cave system in the world, the Cave Bath of Miskolc-Tapolca."
+    },
+    {
+      "name": "Iceland",
+      "fact": "Iceland is one of the most geologically active countries in the world, with numerous volcanoes and geysers."
+    },
+    {
+      "name": "India",
+      "fact": "India is the world's largest democracy."
+    },
+    {
+      "name": "Indonesia",
+      "fact": "Indonesia has the highest number of active volcanoes in the world, with over 130."
+    },
+    {
+      "name": "Iran",
+      "fact": "Iran is home to one of the world's oldest civilizations, dating back over 6,000 years."
+    },
+    {
+      "name": "Iraq",
+      "fact": "Iraq is often referred to as the 'Cradle of Civilization' due to its historical significance."
+    },
+    {
+      "name": "Ireland",
+      "fact": "Ireland has the highest per capita consumption of tea in the world."
+    },
+    {
+      "name": "Israel",
+      "fact": "Israel has the highest number of museums per capita in the world."
+    },
+    {
+      "name": "Italy",
+      "fact": "Italy is home to the most UNESCO World Heritage Sites in the world."
+    },
+    {
+      "name": "Jamaica",
+      "fact": "Jamaica is the birthplace of reggae music."
+    },
+    {
+      "name": "Japan",
+      "fact": "Japan is the world's largest consumer of Amazon rainforest timber."
+    },
+    {
+      "name": "Jordan",
+      "fact": "Jordan is home to one of the New Seven Wonders of the World, Petra."
+    },
+    {
+      "name": "Kazakhstan",
+      "fact": "Kazakhstan is the world's largest landlocked country."
+    },
+    {
+      "name": "Kenya",
+      "fact": "Kenya is home to the Maasai Mara National Reserve, famous for its annual wildebeest migration."
+    },
+    {
+      "name": "Kiribati",
+      "fact": "Kiribati is the only country in the world to fall into all four hemispheres."
+    },
+    {
+      "name": "Kosovo",
+      "fact": "Kosovo is one of the youngest countries in the world, having declared independence from Serbia in 2008."
+    },
+    {
+      "name": "Kuwait",
+      "fact": "Kuwait is one of the hottest countries in the world, with temperatures regularly exceeding 50°C (122°F) in the summer."
+    },
+    {
+      "name": "Kyrgyzstan",
+      "fact": "Kyrgyzstan is home to the world's second-largest alpine lake, Issyk-Kul."
+    },
+    {
+      "name": "Laos",
+      "fact": "Laos is the most bombed country per capita in history, a legacy of the Vietnam War."
+    },
+    {
+      "name": "Latvia",
+      "fact": "Latvia has the highest percentage of women to men in the world, with 54% of the population being female."
+    },
+    {
+      "name": "Lebanon",
+      "fact": "Lebanon is one of the world's oldest continuously inhabited countries."
+    },
+    {
+      "name": "Lesotho",
+      "fact": "Lesotho is the only country in the world entirely above 1,000 meters (3,281 feet) in elevation."
+    },
+    {
+      "name": "Liberia",
+      "fact": "Liberia is Africa's oldest republic, established by freed American and Caribbean slaves in 1847."
+    },
+    {
+      "name": "Libya",
+      "fact": "Libya is home to the ruins of the ancient Greek city of Cyrene, a UNESCO World Heritage Site."
+    },
+    {
+      "name": "Liechtenstein",
+      "fact": "Liechtenstein is the world's sixth smallest country."
+    },
+    {
+      "name": "Lithuania",
+      "fact": "Lithuania has one of the fastest internet speeds in the world."
+    },
+    {
+      "name": "Luxembourg",
+      "fact": "Luxembourg is the only Grand Duchy in the world."
+    },
+    {
+      "name": "Madagascar",
+      "fact": "Madagascar is home to approximately 5% of the world's plant and animal species, many of which are found nowhere else on Earth."
+    },
+    {
+      "name": "Malawi",
+      "fact": "Lake Malawi, also known as Lake Nyasa, covers about a third of Malawi's area and is the third-largest lake in Africa."
+    },
+    {
+      "name": "Malaysia",
+      "fact": "Malaysia is one of the world's top producers of palm oil."
+    },
+    {
+      "name": "Maldives",
+      "fact": "The Maldives is the lowest country in the world, with an average elevation of just 1.5 meters (4 feet 11 inches) above sea level."
+    },
+    {
+      "name": "Mali",
+      "fact": "Mali is home to the ancient city of Timbuktu, once a center of learning and trade in the region."
+    },
+    {
+      "name": "Malta",
+      "fact": "Malta is the smallest EU member state in both population and area."
+    },
+    {
+      "name": "Marshall Islands",
+      "fact": "The Marshall Islands is one of the world's youngest nations, gaining independence in 1986."
+    },
+    {
+      "name": "Mauritania",
+      "fact": "Mauritania is one of the least densely populated countries in the world."
+    },
+    {
+      "name": "Mauritius",
+      "fact": "Mauritius is known for its stunning beaches, coral reefs, and lagoons."
+    },
+    {
+      "name": "Mexico",
+      "fact": "Mexico City is built on top of the ruins of the Aztec capital, Tenochtitlan."
+    },
+    {
+      "name": "Micronesia",
+      "fact": "Micronesia is made up of over 600 islands scattered across the Pacific Ocean."
+    },
+    {
+      "name": "Moldova",
+      "fact": "Moldova is one of the least visited countries in Europe."
+    },
+    {
+      "name": "Monaco",
+      "fact": "Monaco is the second-smallest country in the world, after Vatican City."
+    },
+    {
+      "name": "Mongolia",
+      "fact": "Mongolia is the least densely populated country in the world."
+    },
+    {
+      "name": "Montenegro",
+      "fact": "Montenegro's name means 'Black Mountain' and is named after the dense forests that cover its mountains."
+    },
+    {
+      "name": "Morocco",
+      "fact": "Morocco is home to the world's largest solar power plant, Noor Ouarzazate."
+    },
+    {
+      "name": "Mozambique",
+      "fact": "Mozambique is home to some of the last remaining populations of dugongs, also known as sea cows."
+    },
+    {
+      "name": "Myanmar",
+      "fact": "Myanmar is home to the world's largest book, the Kuthodaw Pagoda in Mandalay."
+    },
+    {
+      "name": "Namibia",
+      "fact": "Namibia is home to the world's oldest desert, the Namib Desert."
+    },
+    {
+      "name": "Nauru",
+      "fact": "Nauru is the smallest island nation in the world."
+    },
+    {
+      "name": "Nepal",
+      "fact": "Nepal is home to the world's highest mountain, Mount Everest."
+    },
+    {
+      "name": "Netherlands",
+      "fact": "The Netherlands is one of the world's largest exporters of flowers, particularly tulips."
+    },
+    {
+      "name": "New Zealand",
+      "fact": "New Zealand was the first country in the world to grant women the right to vote, in 1893."
+    },
+    {
+      "name": "Nicaragua",
+      "fact": "Nicaragua has two large freshwater lakes, Lake Managua and Lake Nicaragua, the latter of which is home to the world's only freshwater sharks."
+    },
+    {
+      "name": "Niger",
+      "fact": "Niger is the hottest country in the world, with an average temperature of 30°C (86°F)."
+    },
+    {
+      "name": "Nigeria",
+      "fact": "Nigeria is home to Nollywood, the second-largest film industry in the world after Bollywood."
+    },
+    {
+      "name": "North Korea",
+      "fact": "North Korea is one of the most isolated and secretive countries in the world."
+    },
+    {
+      "name": "North Macedonia",
+      "fact": "North Macedonia was part of Yugoslavia until its independence in 1991."
+    },
+    {
+      "name": "Norway",
+      "fact": "Norway is home to the world's longest road tunnel, the Laerdal Tunnel."
+    },
+    {
+      "name": "Oman",
+      "fact": "Oman is home to some of the oldest human settlements in the Arabian Peninsula."
+    },
+    {
+      "name": "Pakistan",
+      "fact": "Pakistan has the world's second-highest peak, K2, also known as Mount Godwin-Austen."
+    },
+    {
+      "name": "Palau",
+      "fact": "Palau is known for its beautiful coral reefs and world-class diving spots."
+    },
+    {
+      "name": "Palestine",
+      "fact": "Palestine has the oldest olive trees in the world, some dating back over 2,000 years."
+    },
+    {
+      "name": "Panama",
+      "fact": "Panama is home to the Panama Canal, one of the world's most important waterways."
+    },
+    {
+      "name": "Papua New Guinea",
+      "fact": "Papua New Guinea is one of the most culturally diverse countries in the world, with over 800 languages spoken."
+    },
+    {
+      "name": "Paraguay",
+      "fact": "Paraguay is one of the few countries in the world with two official languages: Spanish and Guarani."
+    },
+    {
+      "name": "Peru",
+      "fact": "Peru is home to Machu Picchu, one of the New Seven Wonders of the World."
+    },
+    {
+      "name": "Philippines",
+      "fact": "The Philippines is the world's leading producer of coconuts."
+    },
+    {
+      "name": "Poland",
+      "fact": "Poland is the birthplace of astronomer Nicolaus Copernicus, who proposed that the Earth orbits the sun."
+    },
+    {
+      "name": "Portugal",
+      "fact": "Portugal is home to the oldest bookstore in the world, Livraria Bertrand, which has been operating since 1732."
+    },
+    {
+      "name": "Qatar",
+      "fact": "Qatar is the richest country in the world per capita."
+    },
+    {
+      "name": "Romania",
+      "fact": "Romania is home to one of the largest and best-preserved deltas in Europe, the Danube Delta."
+    },
+    {
+      "name": "Russia",
+      "fact": "Russia is the largest country in the world by land area."
+    },
+    {
+      "name": "Rwanda",
+      "fact": "Rwanda is known as the 'Land of a Thousand Hills' due to its hilly and mountainous terrain."
+    },
+    {
+      "name": "Saint Kitts and Nevis",
+      "fact": "Saint Kitts and Nevis is the smallest country in the Western Hemisphere in both area and population."
+    },
+    {
+      "name": "Saint Lucia",
+      "fact": "Saint Lucia is the only country in the world named after a woman, Saint Lucy of Syracuse."
+    },
+    {
+      "name": "Saint Vincent and the Grenadines",
+      "fact": "Saint Vincent and the Grenadines is made up of 32 islands and cays."
+    },
+    {
+      "name": "Samoa",
+      "fact": "Samoa is the first country in the world to see the sunrise every day."
+    },
+    {
+      "name": "San Marino",
+      "fact": "San Marino is the world's oldest surviving republic."
+    },
+    {
+      "name": "Sao Tome and Principe",
+      "fact": "Sao Tome and Principe is the second-smallest country in Africa by land area."
+    },
+    {
+      "name": "Saudi Arabia",
+      "fact": "Saudi Arabia is the largest country in the world without a river."
+    },
+    {
+      "name": "Senegal",
+      "fact": "Senegal is the westernmost country on the African mainland."
+    },
+    {
+      "name": "Serbia",
+      "fact": "Serbia is home to one of the largest Orthodox churches in the world, the Saint Sava Cathedral."
+    },
+    {
+      "name": "Seychelles",
+      "fact": "Seychelles is the only country in the world with a granite mountain range."
+    },
+    {
+      "name": "Sierra Leone",
+      "fact": "Sierra Leone is known for its diamond mines, though it is also one of the world's poorest countries."
+    },
+    {
+      "name": "Singapore",
+      "fact": "Singapore is the world's only island city-state."
+    },
+    {
+      "name": "Slovakia",
+      "fact": "Slovakia is the world's largest per capita car producer."
+    },
+    {
+      "name": "Slovenia",
+      "fact": "Slovenia is home to the world's oldest wooden wheel, dating back over 5,000 years."
+    },
+    {
+      "name": "Solomon Islands",
+      "fact": "The Solomon Islands is home to some of the most biologically diverse coral reefs in the world."
+    },
+    {
+      "name": "Somalia",
+      "fact": "Somalia is believed to be the home of the ancient Land of Punt, a trading partner of ancient Egypt."
+    },
+    {
+      "name": "South Africa",
+      "fact": "South Africa is home to the world's largest land mammal, the African elephant, and the largest bird, the ostrich."
+    },
+    {
+      "name": "South Korea",
+      "fact": "South Korea is known as the 'Land of the Morning Calm.'"
+    },
+    {
+      "name": "South Sudan",
+      "fact": "South Sudan is the youngest country in the world, gaining independence from Sudan in 2011."
+    },
+    {
+      "name": "Spain",
+      "fact": "Spain is the second most visited country in the world, after France."
+    },
+    {
+      "name": "Sri Lanka",
+      "fact": "Sri Lanka is home to the world's oldest recorded tree, the Sri Maha Bodhi, which is over 2,000 years old."
+    },
+    {
+      "name": "Sudan",
+      "fact": "Sudan has more pyramids than Egypt."
+    },
+    {
+      "name": "Suriname",
+      "fact": "Suriname is one of the most ethnically diverse countries in the world, with over 20 distinct ethnic groups."
+    },
+    {
+      "name": "Sweden",
+      "fact": "Sweden has the highest number of McDonald's restaurants per capita in Europe."
+    },
+    {
+      "name": "Switzerland",
+      "fact": "Switzerland has more Nobel Prize winners and Olympic medalists per capita than any other country."
+    },
+    {
+      "name": "Syria",
+      "fact": "Syria is home to some of the world's oldest continuously inhabited cities, including Damascus and Aleppo."
+    },
+    {
+      "name": "Taiwan",
+      "fact": "Taiwan is home to the world's tallest building, the Taipei 101."
+    },
+    {
+      "name": "Tajikistan",
+      "fact": "Tajikistan is home to some of the highest mountains in the world, including the Pamir Mountains."
+    },
+    {
+      "name": "Tanzania",
+      "fact": "Tanzania is home to Mount Kilimanjaro, the highest peak in Africa."
+    },
+    {
+      "name": "Thailand",
+      "fact": "Thailand is the only country in Southeast Asia to never have been colonized by a European power."
+    },
+    {
+      "name": "Togo",
+      "fact": "Togo is known for its vibrant music and dance, particularly the Gbedu."
+    },
+    {
+      "name": "Tonga",
+      "fact": "Tonga is the only monarchy in the Pacific."
+    },
+    {
+      "name": "Trinidad and Tobago",
+      "fact": "Trinidad and Tobago is the birthplace of calypso music."
+    },
+    {
+      "name": "Tunisia",
+      "fact": "Tunisia is the northernmost country in Africa."
+    },
+    {
+      "name": "Turkey",
+      "fact": "Turkey is the only country in the world that is located on two continents, Europe and Asia."
+    },
+    {
+      "name": "Turkmenistan",
+      "fact": "Turkmenistan is one of the least visited countries in the world."
+    },
+    {
+      "name": "Tuvalu",
+      "fact": "Tuvalu is the fourth smallest country in the world."
+    },
+    {
+      "name": "Uganda",
+      "fact": "Uganda is known as the 'Pearl of Africa' for its natural beauty and diverse wildlife."
+    },
+    {
+      "name": "Ukraine",
+      "fact": "Ukraine is the largest country entirely in Europe."
+    },
+    {
+      "name": "United Arab Emirates",
+      "fact": "The United Arab Emirates is home to the world's tallest building, the Burj Khalifa."
+    },
+    {
+      "name": "United Kingdom",
+      "fact": "The United Kingdom is made up of four countries: England, Scotland, Wales, and Northern Ireland."
+    },
+    {
+      "name": "United States",
+      "fact": "The United States has the world's largest economy."
+    },
+    {
+      "name": "Uruguay",
+      "fact": "Uruguay is the first country in the world to legalize marijuana."
+    },
+    {
+      "name": "Uzbekistan",
+      "fact": "Uzbekistan is home to some of the oldest cities in the world, including Samarkand and Bukhara."
+    },
+    {
+      "name": "Vanuatu",
+      "fact": "Vanuatu is known for its active volcanoes and traditional Melanesian culture."
+    },
+    {
+      "name": "Vatican City",
+      "fact": "Vatican City is the smallest independent state in the world by both area and population."
+    },
+    {
+      "name": "Venezuela",
+      "fact": "Venezuela has the world's highest waterfall, Angel Falls, which drops 979 meters (3,212 feet)."
+    },
+    {
+      "name": "Vietnam",
+      "fact": "Vietnam is the world's second-largest coffee producer, after Brazil."
+    },
+    {
+      "name": "Yemen",
+      "fact": "Yemen is the only country in the Arabian Peninsula that is a republic."
+    },
+    {
+      "name": "Zambia",
+      "fact": "Zambia is home to one of the largest waterfalls in the world, Victoria Falls."
+    },
+    {
+      "name": "Zimbabwe",
+      "fact": "Zimbabwe has the highest literacy rate in Africa."
+    }
+  ]
+}
