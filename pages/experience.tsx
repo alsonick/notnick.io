@@ -38,6 +38,7 @@ const Experience: NextPage = () => {
       link: "",
       task: "",
       filter: capitalizeFirstLetter("all"),
+      slug: "",
       feature: true,
     },
   ];
@@ -56,6 +57,7 @@ const Experience: NextPage = () => {
       link: experience.link,
       task: experience.task,
       filter: capitalizeFirstLetter(experience.filter),
+      slug: experience.slug,
       feature: experience.feature,
     });
   });
