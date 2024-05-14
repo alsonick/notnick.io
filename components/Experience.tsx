@@ -34,6 +34,7 @@ export const Experience = () => {
             year={experience.year}
             logo={experience.logo}
             task={experience.task}
+            slug={experience.slug}
             key={experience.id}
           />
         ))}
