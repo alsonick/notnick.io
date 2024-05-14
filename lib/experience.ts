@@ -15,6 +15,7 @@ export const EXPERIENCE: Experience[] = [
     link: "https://www.joinaviato.com/",
     task: "Helped out with building, maintaining, implementing, and improving the user experience on Aviato.",
     filter: "Engineering",
+    slug: "aviato",
     feature: true,
   },
   {
@@ -30,6 +31,7 @@ export const EXPERIENCE: Experience[] = [
     link: "https://www.youtube.com/channel/UCYFjrIHMnYmQRm1IGMS9pAw",
     task: "Helped up with uploads on the channel, and social media, and managed the Drop Zone community.",
     filter: "YouTube",
+    slug: "drop-zone",
     feature: true,
   },
   {
@@ -45,6 +47,7 @@ export const EXPERIENCE: Experience[] = [
     link: "https://watchou.com/",
     task: "One primary task was to convert the React app to from consuming a RESTful API to a GraphQL API.",
     filter: "Engineering",
+    slug: "watchou",
     feature: true,
   },
   {
@@ -60,6 +63,7 @@ export const EXPERIENCE: Experience[] = [
     link: "https://www.youtube.com/@aquila",
     task: "Primary focus is to provide daily uploads.",
     filter: "YouTube",
+    slug: "aquila",
     feature: true,
   },
   {
@@ -75,6 +79,7 @@ export const EXPERIENCE: Experience[] = [
     link: "https://www.youtube.com/@savourtunes",
     task: "A lyrical music channel I founded in 2019. I had to discontinue the project since it was nearly impossible to monetize or get the channel into a MCN (Multi-Channel Network).",
     filter: "YouTube",
+    slug: "savourtunes",
     feature: false,
   },
 ];

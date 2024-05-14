@@ -17,6 +17,7 @@ export interface Experience {
   location: string;
   current: boolean;
   feature: boolean;
+  slug: string;
   link: string;
   task: string;
   logo?: string;
