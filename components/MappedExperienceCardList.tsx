@@ -20,6 +20,7 @@ export const MappedExperienceCardList = ({ list }: Props) => {
           name={experience.name}
           link={experience.link}
           year={experience.year}
+          slug={experience.slug}
           logo={experience.logo}
           task={experience.task}
           key={experience.id}
