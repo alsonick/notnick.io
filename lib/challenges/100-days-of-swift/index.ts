@@ -1199,7 +1199,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     id: generateRandomId(),
     description: "Project 18, part one",
     slug: "100-days-of-swift",
-    completed: false,
+    completed: true,
     code: {
       icon: "xcode",
       image: {
