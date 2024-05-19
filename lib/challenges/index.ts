@@ -61,7 +61,7 @@ export const CHALLENGES: Challenge[] = [
       text: "Download iPhone screenshots?",
       value: true,
     },
-    active: WALKING_FOR_100_DAYS.length > 1,
+    active: false,
     goal: WALKING_FOR_100_DAYS_GOAL,
   },
   {
