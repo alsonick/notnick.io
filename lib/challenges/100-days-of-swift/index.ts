@@ -1356,4 +1356,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 73,
   },
+  {
+    id: generateRandomId(),
+    description: "Milestone: Projects 19-21",
+    slug: "100-days-of-swift",
+    completed: false,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/tree/main/Day74/Challenge`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 74,
+  },
 ];
