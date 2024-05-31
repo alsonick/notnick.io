@@ -1417,7 +1417,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day77-78/Project23`,
+      link: `${social.github.link}/100-days-of-swift/tree/main/Day77-78-79/Project23`,
     },
     preview: {
       available: true,
@@ -1427,5 +1427,22 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       },
     },
     day: 77,
+  },
+  {
+    id: generateRandomId(),
+    description: "Project 23, part two",
+    slug: "100-days-of-swift",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/100-days-of-swift/tree/main/Day77-78-79/Project23`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 78,
   },
 ];
