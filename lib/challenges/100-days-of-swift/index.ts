@@ -1613,4 +1613,14 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 88,
   },
+  {
+    id: generateRandomId(),
+    description: "Project 27, part two",
+    slug: "100-days-of-swift",
+    completed: false,
+    preview: {
+      available: false,
+    },
+    day: 89,
+  },
 ];
