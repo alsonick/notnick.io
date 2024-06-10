@@ -9,11 +9,10 @@ import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
 import { Layout } from "../components/Layout";
-import { Music } from "../components/Music";
+// import { Music } from "../components/Music";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
 import { Seo } from "../components/Seo";
-import { FiX } from "react-icons/fi";
 import { useState } from "react";
 
 // Next.js
@@ -33,7 +32,7 @@ const Home: NextPage = () => {
           <FeaturedArticles />
           <Experience />
           <Technologies />
-          <Music />
+          {/* <Music /> */}
           <Community />
           <NewsLetter />
           <Contact />
