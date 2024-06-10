@@ -1,7 +1,7 @@
 ---
 title: "Trip to Kenya"
 date: "2024-02-08"
-description: "My notes on how I learn programming."
+description: "I'll be gone for a bit!"
 finished: true
 tag: "Life Update"
 mins: "2"
