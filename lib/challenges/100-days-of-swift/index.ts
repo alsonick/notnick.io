@@ -1623,4 +1623,24 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 89,
   },
+  {
+    id: generateRandomId(),
+    description: "Milestone: Projects 25-27",
+    slug: "100-days-of-swift",
+    completed: false,
+    preview: {
+      available: false,
+    },
+    day: 90,
+  },
+  {
+    id: generateRandomId(),
+    description: "Core Graphics redux",
+    slug: "100-days-of-swift",
+    completed: true,
+    preview: {
+      available: false,
+    },
+    day: 91,
+  },
 ];
