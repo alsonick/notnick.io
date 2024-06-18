@@ -1757,4 +1757,14 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 98,
   },
+  {
+    id: generateRandomId(),
+    description: "Milestone: Projects 28-30",
+    slug: "100-days-of-swift",
+    completed: false,
+    preview: {
+      available: false,
+    },
+    day: 99,
+  },
 ];
