@@ -1773,7 +1773,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     slug: "100-days-of-swift",
     completed: true,
     preview: {
-      available: false,
+      available: true,
       previewContent: {
         path: "Day",
         extension: "jpg",
