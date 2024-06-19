@@ -67,12 +67,14 @@ const Slug: NextPage = () => {
 
   let status: string;
 
-  if (challenge?.active) {
-    status = "Active";
-  } else if (!challenge?.active) {
-    status = "Not Active";
-  } else {
+  if (challenge?.completed) {
     status = "Completed";
+  } else if (challenge?.active) {
+    status = "Not Active";
+  } else if (challenge?.active) {
+    status = "Active";
+  } else {
+    status = "";
   }
 
   return (
