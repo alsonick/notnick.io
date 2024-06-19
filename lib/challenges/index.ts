@@ -34,7 +34,8 @@ export const CHALLENGES: Challenge[] = [
       "https://www.hackingwithswift.com/100",
       "https://www.swift.org",
     ],
-    completedDays: ONE_HUNDRED_DAYS_OF_SWIFT.length,
+    completedDays:
+      ONE_HUNDRED_DAYS_OF_SWIFT.length == ONE_HUNDRED_DAYS_OF_SWIFT_GOAL,
     note: "I won't complete any challenges that involve game development as I don't have any interest in that sector of iOS development.",
     daysLeft: ONE_HUNDRED_DAYS_OF_SWIFT_GOAL - ONE_HUNDRED_DAYS_OF_SWIFT.length,
     completed: false,
