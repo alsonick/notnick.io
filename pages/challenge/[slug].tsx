@@ -65,6 +65,16 @@ const Slug: NextPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  let status: string;
+
+  if (challenge?.active) {
+    status = "Active";
+  } else if (!challenge?.active) {
+    status = "Not Active";
+  } else {
+    status = "Completed";
+  }
+
   return (
     <>
       <Seo
@@ -83,7 +93,7 @@ const Slug: NextPage = () => {
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>{" "}
             <Tag
-              title={challenge?.active ? "Active" : "Not Active"}
+              title={status}
               type={challenge?.active ? "success" : "error"}
             />
           </Header>
