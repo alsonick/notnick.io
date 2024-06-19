@@ -1767,4 +1767,18 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
     },
     day: 99,
   },
+  {
+    id: generateRandomId(),
+    description: "Final exam",
+    slug: "100-days-of-swift",
+    completed: true,
+    preview: {
+      available: false,
+      previewContent: {
+        path: "Day",
+        extension: "jpg",
+      },
+    },
+    day: 100,
+  },
 ];
