@@ -127,4 +127,26 @@ export const ANIME: Anime[] = [
     filter: "horror",
     slug: "Deadman-Wonderland",
   },
+  {
+    id: generateRandomId(),
+    name: "Assassination Classroom",
+    path: "/anime/assassination-classroom.jpg",
+    anilistId: 20755,
+    watch: "https://9animetv.to/watch/assassination-classroom-372?ep=8586",
+    description:
+      "The students of class 3-E have a mission: kill their teacher before graduation. He has already destroyed the moon, and has promised to destroy the Earth if he can not be killed within a year. But how can this class of misfits kill a tentacled monster, capable of reaching Mach 20 speed, who may be the best teacher any of them have ever had?",
+    filter: "supernatural",
+    slug: "Assassination-Classroom",
+  },
+  {
+    id: generateRandomId(),
+    name: "Classroom of the Elite",
+    path: "/anime/classroom-of-the-elite.jpg",
+    anilistId: 98659,
+    watch: "https://9animetv.to/watch/classroom-of-the-elite-713?ep=12865",
+    description:
+      'Koudo Ikusei Senior High School is a leading school with state-of-the-art facilities. The students there have the freedom to wear any hairstyle and bring any personal effects they desire. Koudo Ikusei is like a utopia, but the truth is that only the most superior students receive favorable treatment. Kiyotaka Ayanokouji is a student of D-class, which is where the school dumps its "inferior" students in order to ridicule them. For a certain reason, Kiyotaka was careless on his entrance examination, and was put in D-class. After meeting Suzune Horikita and Kikyou Kushida, two other students in his class, Kiyotaka\'s situation begins to change.',
+    filter: "school",
+    slug: "Classroom-of-the-Elite",
+  },
 ];

@@ -1,5 +1,6 @@
 import { findSlugAndAssociatedContent } from "../../lib/find-slug-and-associated-content";
 import { DownloadCodeProject } from "../../components/DownloadCodeProject";
+import { returnChallengeStatus } from "../../lib/return-challenge-status";
 import { ContentUnavailable } from "../../components/ContentUnavailable";
 import { generateRandomId } from "../../lib/generate-random-id";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
@@ -65,23 +66,11 @@ const Slug: NextPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  let status: string;
-
-  if (challenge?.completed) {
-    status = "Completed";
-  } else if (challenge?.active) {
-    status = "Not Active";
-  } else if (challenge?.active) {
-    status = "Active";
-  } else {
-    status = "";
-  }
-
   return (
     <>
       <Seo
         title={`${
-          !challenge?.name ? "Loading..." : challenge.name
+          !challenge?.name ? "Challenge" : challenge.name
         } • ${FULL_NAME}`}
         description={`${FULL_NAME} • ${PROFESSION}`}
       />
@@ -95,7 +84,7 @@ const Slug: NextPage = () => {
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>{" "}
             <Tag
-              title={status}
+              title={returnChallengeStatus(challenge)}
               type={challenge?.active ? "success" : "error"}
             />
           </Header>
