@@ -1,7 +1,8 @@
 export interface Experience {
+  showCurrentStatus?: boolean;
+  description: string;
   id?: number;
   name: string;
-  description: string;
   year: number;
   employmentType:
     | "contract"

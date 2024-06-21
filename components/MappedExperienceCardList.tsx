@@ -10,6 +10,7 @@ export const MappedExperienceCardList = ({ list }: Props) => {
     <>
       {list.map((experience) => (
         <ExperienceCard
+          showCurrentStatus={experience.showCurrentStatus}
           employmentType={experience.employmentType}
           description={experience.description}
           location={experience.location}

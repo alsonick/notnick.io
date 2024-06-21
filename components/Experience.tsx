@@ -29,6 +29,7 @@ export const Experience = () => {
             feature={experience.feature}
             filter={experience.filter}
             remote={experience.remote}
+            showCurrentStatus={false}
             name={experience.name}
             link={experience.link}
             year={experience.year}
