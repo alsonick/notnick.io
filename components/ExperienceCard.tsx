@@ -37,14 +37,14 @@ export const ExperienceCard = (props: Experience) => {
         <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start mb-3 sm:mb-0">
           <div className="flex items-center justify-center mr-3 sm:mb-0 mb-3">
             <h1 className="text-2xl font-bold dark:text-white">{props.name}</h1>
-            {props.showCurrentStatus ? (
+            {props.showCurrentStatus && (
               <div className="ml-3">
                 <Tag
                   title={props.current ? "Current" : "Past"}
                   type={props.current ? "success" : "error"}
                 />
               </div>
-            ) : null}
+            )}
           </div>
           <PostCardTag title={props.filter} style={{ margin: 0 }} />
         </div>
