@@ -47,13 +47,13 @@ const Experience: NextPage = () => {
   EXPERIENCE.forEach((experience) => {
     types.push({
       filter: capitalizeFirstLetter(experience.filter),
+      showCurrentStatus: experience.showCurrentStatus,
       employmentType: experience.employmentType,
       description: experience.description,
       location: experience.location,
       current: experience.current,
       feature: experience.feature,
       remote: experience.remote,
-      showCurrentStatus: true,
       id: generateRandomId(),
       name: experience.name,
       year: experience.year,
