@@ -29,10 +29,10 @@ export const Post = ({ type, post }: Props) => {
         description={post.description}
       />
       <Layout>
-        <h1 className="font-bold text-4xl mt-6 dark:text-white">
+        <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
           {post.title}
         </h1>
-        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-sm">
+        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between  sm:text-base text-sm">
           <div className="flex items-center">
             <Avatar border={false} width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
@@ -68,16 +68,17 @@ export const Post = ({ type, post }: Props) => {
           </div>
           {process.env.NODE_ENV === "development" ? (
             <div className="flex items-center mb-4">
-              <Label text="Status:" />
-              &nbsp;
-              <Text>{post.finished ? "Completed" : "Not Completed"}</Text>
+              <Tag
+                title={post.finished ? "Completed" : "Not Completed"}
+                type={post.finished ? "success" : "error"}
+              />
             </div>
           ) : null}
         </div>
         {Boolean(post.contentHtml) || post.finished ? (
           <article
             className={`
-            prose max-w-none mt-2 dark:prose-invert prose-a:text-[#f54bff]
+            prose max-w-none mt-2 sm:text-base text-sm dark:prose-invert prose-a:text-[#f54bff]
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
           dark:prose-code:text-white prose-img:rounded-xl prose-img:border
           prose-img:border-teal-100 prose-img:dark:border-teal-900 prose-a:font-bold

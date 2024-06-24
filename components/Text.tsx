@@ -7,7 +7,10 @@ interface Props {
 
 export const Text = ({ children, style, sliceText, slice }: Props) => {
   return (
-    <p className="text-gray-600 dark:text-gray-300" style={style}>
+    <p
+      className="text-gray-600 dark:text-gray-300 sm:text-base text-sm"
+      style={style}
+    >
       {!sliceText ? children : `${String(children).slice(0, slice).trim()}...`}
     </p>
   );

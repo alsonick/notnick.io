@@ -3,5 +3,9 @@ interface Props {
 }
 
 export const Warning = ({ message }: Props) => {
-  return <p className="text-sm font-semibold text-orange-500">{message}</p>;
+  return (
+    <p className="sm:text-base text-sm font-semibold text-orange-500">
+      {message}
+    </p>
+  );
 };

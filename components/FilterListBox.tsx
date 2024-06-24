@@ -24,7 +24,7 @@ export const FilterListBox = <T extends unknown>({
         }`}
       >
         <Listbox.Button
-          className={`flex p-3 font-semibold items-center text-sm justify-between 
+          className={`flex p-3 font-semibold items-center sm:text-base text-sm justify-between 
         dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100
         dark:bg-black dark:border-teal-900 focus:ring-4 ring-[${THEME}] outline-none duration-300
         focus:ring-offset-2 dark:ring-offset-black`}
@@ -45,7 +45,7 @@ export const FilterListBox = <T extends unknown>({
                 selected: boolean;
               }) => (
                 <li
-                  className={`flex cursor-pointer font-semibold text-sm dark:bg-black
+                  className={`flex cursor-pointer font-semibold sm:text-base text-sm dark:bg-black
                   dark:text-white items-center justify-between p-3 rounded-lg ${
                     active
                       ? `bg-[${THEME}] dark:bg-[#f54bff] duration-300 text-white`

@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <footer className="flex items-center justify-between pb-12 border-t mt-6 border-teal-100 dark:border-teal-900 pt-10">
       <div className="flex flex-col">
-        <h2 className="text-xl opacity-50 font-bold dark:text-white">
+        <h2 className="sm:text-lg text-base opacity-50 font-bold dark:text-white">
           {FULL_NAME}
         </h2>
         <p className="text-gray-500 opacity-50 text-xs">

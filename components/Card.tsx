@@ -24,7 +24,7 @@ export const Card = ({ type, post }: Props) => {
         <div className="mb-2">
           <PostCardTag title={post.tag} />
         </div>{" "}
-        <h1 className="text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">
+        <h1 className="sm:text-4xl text-3xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">
           {post.title}
         </h1>
         <div className="max-w-lg">

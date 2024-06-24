@@ -14,7 +14,7 @@ interface Props {
 export const LinkTag = ({ href, children, style, target, onClick }: Props) => {
   return (
     <Link
-      className={`font-bold focus:ring-offset-2 dark:ring-offset-black rounded inline-flex items-center w-fit text-[${THEME}]
+      className={`font-bold  sm:text-base text-sm focus:ring-offset-2 dark:ring-offset-black rounded inline-flex items-center w-fit text-[${THEME}]
       hover:underline focus:ring-4 ring-[${THEME}] outline-none duration-300`}
       style={style}
       target={target}

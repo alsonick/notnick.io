@@ -3,5 +3,9 @@ interface Props {
 }
 
 export const Success = ({ message }: Props) => {
-  return <p className="text-sm font-semibold text-green-500">{message}</p>;
+  return (
+    <p className="sm:text-base text-sm font-semibold text-green-500">
+      {message}
+    </p>
+  );
 };
