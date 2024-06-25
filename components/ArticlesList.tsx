@@ -34,7 +34,7 @@ export const ArticlesList = ({ articles }: Props) => {
               ))}
             </div>
             <h1
-              className="text-3xl font-bold cursor-pointer underline
+              className="sm:text-3xl text-2xl font-bold cursor-pointer underline
                   dark:text-white hover:no-underline"
             >
               {article.title}

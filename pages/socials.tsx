@@ -49,7 +49,7 @@ const Socials: NextPage = () => {
                 </Text>
                 <div className="flex items-center">
                   <Link
-                    className={`text-gray-600 focus:ring-4 focus:ring-offset-2 dark:ring-offset-black rounded ring-[${THEME}]
+                    className={`text-gray-600 sm:text-base text-sm focus:ring-4 focus:ring-offset-2 dark:ring-offset-black rounded ring-[${THEME}]
                     outline-none dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300`}
                     title={social.link}
                     target="_blank"
