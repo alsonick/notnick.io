@@ -28,9 +28,9 @@ const Specs: NextPage = () => {
           {SPECS.map((spec) => (
             <div className="flex flex-col w-full mb-8" key={spec.id}>
               {spec.sellingSoon && <Tag title="Selling soon" />}
-              <Heading style={{ fontSize: "2rem", marginBottom: 0 }}>
+              <h1 className="dark:text-white hover:no-underline sm:text-3xl text-2xl font-bold mb-0">
                 {spec.title}
-              </Heading>
+              </h1>
               <ul className="mt-3">
                 {spec.list.map((item) => (
                   <li className="mb-1" key={item.id}>

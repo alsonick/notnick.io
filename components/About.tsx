@@ -59,14 +59,9 @@ export const About = () => {
         <LinkTag href={page.specs.link}>click here</LinkTag>.
       </Text>
 
-      <Text>
+      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
         View the collection of articles that I&apos;ve found interesting{" "}
         <LinkTag href={page.articles.link}>over here</LinkTag>.
-      </Text>
-
-      <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        Like music? <LinkTag href={page.music.link}>View</LinkTag> my Spotify
-        playlist collection.
       </Text>
 
       <Text>
