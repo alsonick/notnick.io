@@ -23,4 +23,5 @@ export interface Experience {
   task: string;
   logo?: string;
   filter: string;
+  note?: string;
 }

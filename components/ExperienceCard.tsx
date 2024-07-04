@@ -9,6 +9,7 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Image from "next/image";
+import { Note } from "./Note";
 
 export const ExperienceCard = (props: Experience) => {
   return (
@@ -55,6 +56,9 @@ export const ExperienceCard = (props: Experience) => {
         <div className="relative mt-2">
           <Text>{props.task}</Text>
         </div>
+        {props.showCurrentStatus && (
+          <div className="mt-2">{props.note && <Note>{props.note}</Note>}</div>
+        )}
         <div className="w-full flex flex-col sm:flex-row items-center justify-between mt-2">
           <div className="flex items-center mb-4 sm:mb-0">
             <FiMapPin className="text-gray-600 dark:text-gray-300 mr-2" />

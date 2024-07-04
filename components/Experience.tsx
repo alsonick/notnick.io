@@ -30,6 +30,7 @@ export const Experience = () => {
             filter={experience.filter}
             remote={experience.remote}
             showCurrentStatus={false}
+            note={experience.note}
             name={experience.name}
             link={experience.link}
             year={experience.year}

@@ -55,6 +55,7 @@ const Experience: NextPage = () => {
       feature: experience.feature,
       remote: experience.remote,
       id: generateRandomId(),
+      note: experience.note,
       name: experience.name,
       year: experience.year,
       logo: experience.logo,

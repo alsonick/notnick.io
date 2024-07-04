@@ -18,6 +18,7 @@ export const MappedExperienceCardList = ({ list }: Props) => {
           feature={experience.feature}
           remote={experience.remote}
           filter={experience.filter}
+          note={experience.note}
           name={experience.name}
           link={experience.link}
           year={experience.year}
