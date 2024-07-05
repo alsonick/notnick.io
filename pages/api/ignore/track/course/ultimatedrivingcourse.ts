@@ -4,16 +4,28 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
     name: "Ultimate Driving Course",
     "Welcome To The Ultimate Driving Course - Automatic": {
-      "Welcome Video": true,
+      "Welcome Video": {
+        completed: true,
+      },
     },
     "Cockpit Drills / Controls": {
-      "Cockpit Drills/Control - Intro": true,
-      "Cockpit Drill (Auto)": true,
-      "Hand Controls (Auto)": true,
+      "Cockpit Drills/Control - Intro": {
+        completed: true,
+      },
+      "Cockpit Drill (Auto)": {
+        completed: true,
+      },
+      "Hand Controls (Auto)": {
+        completed: true,
+      },
     },
     "Moving The Vehicle": {
-      "Moving The Vehicle - Intro": true,
-      "Moving Off & Stopping": true,
+      "Moving The Vehicle - Intro": {
+        completed: true,
+      },
+      "Moving Off & Stopping": {
+        completed: true,
+      },
     },
   });
 }
