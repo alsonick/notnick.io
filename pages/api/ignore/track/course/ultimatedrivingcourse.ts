@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
     name: "Ultimate Driving Course",
+    started: "July 3rd, 2024",
     "Welcome To The Ultimate Driving Course - Automatic": {
       "Welcome Video": {
         completed: true,
