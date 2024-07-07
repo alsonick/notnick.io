@@ -30,7 +30,7 @@ const Luffy: NextPage = () => {
               />
             </picture>
           </div>
-          <Header column={true} singleItem={false}>
+          <Header column={true} singleItem={true}>
             <Tag title="idk lol" />
             <Heading style={{ marginBottom: "0.5rem" }}>
               Monkey D. Luffy

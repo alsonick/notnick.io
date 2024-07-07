@@ -1,6 +1,6 @@
-import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
 import { GitHubStarButton } from "./GitHubStarButton";
 import { social } from "../lib/social-links";
+import { FULL_NAME } from "../lib/constants";
 import { FooterLink } from "./FooterLink";
 import { Avatar } from "./Avatar";
 

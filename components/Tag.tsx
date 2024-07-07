@@ -17,7 +17,7 @@ export const Tag = ({ type, title, icon }: Props) => {
       color = "bg-red-500";
       break;
     default:
-      color = `bg-[${THEME}]`;
+      color = `bg-primary`;
   }
 
   return (

@@ -1,5 +1,4 @@
 import { PostCardTag } from "./PostCardTag";
-import { THEME } from "../lib/constants";
 import { Post } from "../types/post";
 import { Avatar } from "./Avatar";
 import { Text } from "./Text";
@@ -19,7 +18,7 @@ export const Card = ({ type, post }: Props) => {
       <Link
         href={`/${type}/${post.slug}`}
         className={`flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black focus:ring-4
-      rounded ring-[${THEME}] outline-none duration-300`}
+      rounded ring-primary outline-none duration-300`}
       >
         <div className="mb-2">
           <PostCardTag title={post.tag} />

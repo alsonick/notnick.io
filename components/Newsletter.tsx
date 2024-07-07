@@ -1,7 +1,7 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { getIssues as getIssuesMethod } from "../lib/get-issues";
-import { EMAIL_ADDRESS, THEME } from "../lib/constants";
 import { getSubscribers } from "../lib/get-subscribers";
+import { EMAIL_ADDRESS } from "../lib/constants";
 import { social } from "../lib/social-links";
 import { useState, useEffect } from "react";
 import { FiMail } from "react-icons/fi";
@@ -134,7 +134,7 @@ export const NewsLetter = () => {
             <Tippy content={"Disabled"}>
               <div>
                 <Link
-                  className={`hover:underline pointer-events-none focus:ring-4 ring-[${THEME}] outline-none duration-300
+                  className={`hover:underline pointer-events-none focus:ring-4 ring-primary outline-none duration-300
                   focus:ring-offset-2 dark:ring-offset-black rounded`}
                   href={social.revue.link}
                   rel="noreferrer"

@@ -52,11 +52,12 @@ export const E = ({ heading, title, text, code }: Props) => {
             <Text style={{ marginBottom: "1rem" }}>{text}</Text>
           </>
         )}
-        <div className="flex justify-between mb-6 w-52 items-center">
-          <Text>Toggle! 🐱</Text>
-          <Switch enabled={enabled} setEnabled={toggle} />
-        </div>
-        <GoBack />
+        {!enabled && <GoBack />}
+        {!enabled && (
+          <div className="flex justify-center mt-2 items-center">
+            <Switch enabled={enabled} setEnabled={toggle} />
+          </div>
+        )}
       </div>
     </>
   );

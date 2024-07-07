@@ -1,6 +1,5 @@
 import { FiChevronDown, FiCheck } from "react-icons/fi";
 import { Listbox } from "@headlessui/react";
-import { THEME } from "../lib/constants";
 import { Fragment } from "react";
 
 interface Props<T> {
@@ -26,13 +25,13 @@ export const FilterListBox = <T extends unknown>({
         <Listbox.Button
           className={`flex p-3 font-semibold items-center sm:text-base text-sm justify-between 
         dark:bg-[#10161a]/50 dark:text-white rounded-lg bg-white border border-teal-100
-        dark:bg-black dark:border-teal-900 focus:ring-4 ring-[${THEME}] outline-none duration-300
+        dark:bg-black dark:border-teal-900 focus:ring-4 ring-primary outline-none duration-300
         focus:ring-offset-2 dark:ring-offset-black`}
         >
           {selectedItem} <FiChevronDown />
         </Listbox.Button>
         <Listbox.Options
-          className={`flex z-10 outline-none absolute w-full p-1 focus:ring-4 ring-[${THEME}] flex-col border bg-white
+          className={`flex z-10 outline-none absolute w-full p-1 focus:ring-4 ring-primary flex-col border bg-white
         border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16`}
         >
           {items.map((item: any) => (
@@ -48,7 +47,7 @@ export const FilterListBox = <T extends unknown>({
                   className={`flex cursor-pointer font-semibold sm:text-base text-sm dark:bg-black
                   dark:text-white items-center justify-between p-3 rounded-lg ${
                     active
-                      ? `bg-[${THEME}] dark:bg-[#f54bff] duration-300 text-white`
+                      ? `bg-primary dark:bg-primary duration-300 text-white`
                       : "bg-white text-black"
                   }`}
                 >

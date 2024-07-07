@@ -1,6 +1,5 @@
 import { returnChallengeStatus } from "../lib/return-challenge-status";
 import { Challenge as ChallengeT } from "../types/challenge";
-import { THEME } from "../lib/constants";
 import { page } from "../lib/page";
 import { Text } from "./Text";
 import { Tag } from "./Tag";
@@ -20,7 +19,7 @@ export const Challenge = ({ challenge }: { challenge: ChallengeT }) => {
       />
       <Link
         className={`flex flex-col w-full mt-2 focus:ring-offset-2 dark:ring-offset-black focus:ring-4
-    rounded ring-[${THEME}] outline-none duration-300`}
+    rounded ring-primary outline-none duration-300`}
         href={`${page.challenge.name}/${challenge.slug}`}
       >
         <h1

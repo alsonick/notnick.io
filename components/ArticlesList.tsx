@@ -2,8 +2,7 @@ import { PostCardTag } from "../components/PostCardTag";
 import { Authors } from "../components/Authors";
 import { Article } from "../types/article";
 import { Text } from "../components/Text";
-import { THEME } from "../lib/constants";
-//
+
 // Next.js
 import Link from "next/link";
 
@@ -23,7 +22,7 @@ export const ArticlesList = ({ articles }: Props) => {
             href={article.link}
             title={article.title}
             className={`flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black focus:ring-4
-            rounded ring-[${THEME}] outline-none duration-300`}
+            rounded ring-primary outline-none duration-300`}
             target="_blank"
           >
             <div className="flex-wrap flex h-auto w-full text-wrap mb-2">
