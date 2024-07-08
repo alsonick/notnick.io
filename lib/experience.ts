@@ -1,5 +1,6 @@
 import { generateRandomId } from "./generate-random-id";
 import { Experience } from "./../types/experience";
+import { page } from "./page";
 
 export const EXPERIENCE: Experience[] = [
   {
@@ -7,7 +8,7 @@ export const EXPERIENCE: Experience[] = [
     name: "Aviato",
     description: "React Engineer",
     year: 2023,
-    logo: "/companies/logo/Aviato.png",
+    logo: `${page.experience.path}/logo/Aviato.png`,
     employmentType: "contract",
     location: "Carmel, Indiana - United States",
     remote: true,
@@ -24,7 +25,7 @@ export const EXPERIENCE: Experience[] = [
     name: "Drop Zone",
     description: "Manager",
     year: 2019,
-    logo: "/companies/logo/DropZone.jpeg",
+    logo: `${page.experience.path}/logo/DropZone.jpeg`,
     employmentType: "part-time",
     location: "United States, America",
     remote: true,
@@ -41,7 +42,7 @@ export const EXPERIENCE: Experience[] = [
     name: "Aquila",
     description: "Channel Manager",
     year: 2023,
-    logo: "/companies/logo/Aquila.jpeg",
+    logo: `${page.experience.path}/logo/Aquila.jpeg`,
     employmentType: "part-time",
     location: "England, United Kingdom",
     remote: true,
@@ -58,7 +59,7 @@ export const EXPERIENCE: Experience[] = [
     name: "Chill Zone",
     description: "Channel Manager",
     year: 2019,
-    logo: "/companies/logo/ChillZone.jpg",
+    logo: `${page.experience.path}/logo/ChillZone.jpg`,
     employmentType: "voluntary",
     location: "United States, America",
     remote: true,
@@ -76,7 +77,7 @@ export const EXPERIENCE: Experience[] = [
     name: "Watchou",
     description: "Frontend Engineer",
     year: 2021,
-    logo: "/companies/logo/Watchou.jpeg",
+    logo: `${page.experience.path}/logo/Watchou.jpeg`,
     employmentType: "voluntary",
     location: "Mississauga, Ontario - Canada",
     remote: true,
@@ -93,7 +94,7 @@ export const EXPERIENCE: Experience[] = [
     name: "SavourTunes",
     description: "Channel Founder",
     year: 2019,
-    logo: "/companies/logo/SavourTunes.png",
+    logo: `${page.experience.path}/logo/SavourTunes.png`,
     employmentType: "part-time",
     location: "England, United Kingdom",
     remote: true,
