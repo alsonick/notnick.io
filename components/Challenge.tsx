@@ -1,5 +1,5 @@
 import { returnChallengeStatus } from "../lib/return-challenge-status";
-import { Challenge as ChallengeT } from "../types/challenge";
+import { Challenge as C } from "../types/challenge";
 import { page } from "../lib/page";
 import { Text } from "./Text";
 import { Tag } from "./Tag";
@@ -7,7 +7,7 @@ import { Tag } from "./Tag";
 // Next.js
 import Link from "next/link";
 
-export const Challenge = ({ challenge }: { challenge: ChallengeT }) => {
+export const Challenge = ({ challenge }: { challenge: C }) => {
   return (
     <div
       className="border-b border-teal-100 dark:border-teal-900 mb-4 pb-4"
