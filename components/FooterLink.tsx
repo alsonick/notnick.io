@@ -1,6 +1,3 @@
-import { THEME } from "../lib/constants";
-
-// Next.js
 import Link from "next/link";
 
 interface Props {

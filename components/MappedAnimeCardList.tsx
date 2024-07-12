@@ -1,5 +1,5 @@
-import { Anime } from "../types/anime";
 import { AnimeCard } from "./AnimeCard";
+import { Anime } from "../types/anime";
 
 interface Props {
   showExtendedDescription: boolean;

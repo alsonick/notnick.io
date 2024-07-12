@@ -1,7 +1,6 @@
 import { SpotifyPlaylistLinkButton } from "./SpotifyLinkButton";
 import { SpotifyPlaylistCover } from "./SpotifyPlaylistCover";
 import { FiArrowRight } from "react-icons/fi";
-import { THEME } from "../lib/constants";
 import { MUSIC } from "../lib/music";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
@@ -25,7 +24,7 @@ export const Music = () => {
         {featured.map((playlist, index) => {
           return (
             <Link
-              className={`cursor-pointer flex flex-col items-center p-0 md:p-2 focus:ring-4 ring-[${THEME}] ${
+              className={`cursor-pointer flex flex-col items-center p-0 md:p-2 focus:ring-4 ring-primary ${
                 index === 1
                   ? "md:-translate-y-6 md:hover:-translate-y-5"
                   : "md:hover:translate-y-1"

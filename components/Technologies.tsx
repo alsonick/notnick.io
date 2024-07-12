@@ -1,10 +1,7 @@
 import { TECHNOLOGIES } from "../lib/technologies";
+import { TechnologyCard } from "./TechnologyCard";
 import { Heading } from "./Heading";
 import { Note } from "./Note";
-
-// Next.js
-import Link from "next/link";
-import { TechnologyCard } from "./TechnologyCard";
 
 export const Technologies = () => {
   return (

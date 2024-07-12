@@ -5,11 +5,11 @@ import { PostCardTag } from "./PostCardTag";
 import { LinkButton } from "./LinkButton";
 import { Border } from "./Border";
 import { Text } from "./Text";
+import { Note } from "./Note";
 import { Tag } from "./Tag";
 
 // Next.js
 import Image from "next/image";
-import { Note } from "./Note";
 
 export const ExperienceCard = (props: Experience) => {
   return (

@@ -1,5 +1,4 @@
 import { Switch as S } from "@headlessui/react";
-import { THEME } from "../lib/constants";
 
 interface Props {
   setEnabled: () => void;

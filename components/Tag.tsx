@@ -1,5 +1,3 @@
-import { THEME } from "../lib/constants";
-
 interface Props {
   type?: "normal" | "success" | "error";
   icon?: React.ReactNode;

@@ -8,9 +8,6 @@ export const findSlugAndAssociatedContent = <T extends { slug: string }>(
 ): T | undefined => {
   const slug = router.query.slug;
   return array.find((element) => {
-    if (element.slug === slug) {
-      return true;
-    }
-    return false;
+    return element.slug === slug;
   });
 };
