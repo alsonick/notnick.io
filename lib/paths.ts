@@ -12,11 +12,13 @@ export const PATHS: Path[] = [
     id: generateRandomId(),
     path: page.blog.path,
     link: page.blog.link,
+    slug: true,
   },
   {
     id: generateRandomId(),
     path: page.note.path,
     link: page.note.link,
+    slug: true,
   },
   {
     id: generateRandomId(),
@@ -82,6 +84,7 @@ export const PATHS: Path[] = [
     id: generateRandomId(),
     path: page.challenge.path,
     link: page.challenge.link,
+    slug: true,
   },
   {
     id: generateRandomId(),

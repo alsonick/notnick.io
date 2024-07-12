@@ -6,6 +6,7 @@ import { PATHS } from "../lib/paths";
 
 // Next.js
 import { NextPage } from "next";
+import { PlainTag } from "../components/PlainTag";
 
 export const Paths: NextPage = () => {
   return (
@@ -18,9 +19,14 @@ export const Paths: NextPage = () => {
         <Toggle />
         <div className="flex flex-col">
           {PATHS.map((path) => (
-            <LinkT key={path.id} href={path.link}>
-              {path.path}
-            </LinkT>
+            <div className="flex items-center p-1" key={path.id}>
+              <LinkT href={path.link}>{path.path}</LinkT>
+              {path.slug && (
+                <div className="ml-2">
+                  <PlainTag text="[Slug]" />
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

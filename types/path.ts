@@ -1,5 +1,6 @@
 export interface Path {
-  id: number;
-  path: string;
+  slug?: boolean;
   link: string;
+  path: string;
+  id: number;
 }
