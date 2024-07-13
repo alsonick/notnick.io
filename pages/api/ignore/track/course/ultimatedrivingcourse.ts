@@ -29,5 +29,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    Steering: {
+      "Steering intro": {
+        completed: false,
+      },
+      Steering: {
+        completed: false,
+      },
+    },
   });
 }
