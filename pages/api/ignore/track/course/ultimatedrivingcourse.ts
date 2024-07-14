@@ -39,7 +39,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     "T Junctions": {
       "T-Junctions Intro": {
-        completed: false,
+        completed: true,
       },
     },
   });
