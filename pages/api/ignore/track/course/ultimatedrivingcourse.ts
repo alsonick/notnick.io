@@ -41,6 +41,25 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       "T-Junctions Intro": {
         completed: true,
       },
+      "What is A T-Junction": {
+        completed: true,
+      },
+      "Emerging Left (Auto)": {
+        completed: true,
+      },
+      "Emerging Right (Auto)": {
+        completed: true,
+      },
+      "Approaching Left (Auto)": {
+        completed: true,
+      },
+      "Approaching Right (Auto)": {
+        completed: true,
+      },
+      "What order should you watch the modules in?": {
+        completed: true,
+      },
+    },
     },
   });
 }
