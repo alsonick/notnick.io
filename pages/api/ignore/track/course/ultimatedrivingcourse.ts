@@ -31,10 +31,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     Steering: {
       "Steering intro": {
-        completed: false,
+        completed: true,
       },
       Steering: {
-        completed: false,
+        completed: true,
       },
     },
   });
