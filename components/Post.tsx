@@ -92,7 +92,7 @@ export const Post = ({ type, post }: Props) => {
         )}
         <div className="pt-8 mt-8 flex sm:flex-row flex-col sm:items-center items-start justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
-            className={`text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-primary
+            className={`sm:text-base text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-primary
             outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black
             hover:underline dark:hover:text-white`}
             target="_blank"
