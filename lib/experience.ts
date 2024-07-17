@@ -68,7 +68,6 @@ export const EXPERIENCE: Experience[] = [
     task: "Another lyric channel I helped with uploads.",
     filter: "YouTube",
     showCurrentStatus: true,
-    note: "Whenever you visit the page, it navigates to the channel with the username 'ChillZone' instead of 'ChillZoneLyrics'. Even if you're on the correct channel and you reload the page, the issue persists. So I've provided the link to the search query instead.",
     slug: "chill-zone",
     feature: true,
   },
