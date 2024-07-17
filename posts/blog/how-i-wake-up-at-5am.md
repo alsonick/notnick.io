@@ -17,7 +17,7 @@ Recently I've decided to fix my sleep schedule and start waking up at 5am, I dec
 
 Well the reason is simple, I always thought I was a night owl, all my friends were so I initially thought I was too, most of them would stay up really late into the early mornings working. I was like that too for a long time but for me, I never felt productive working late in the night, I would wake up feeling guilty because I was waking up around 12pm-1pm, I would feel sluggish during the day, my brain didn't function properly and it was affecting my mental health.
 
-On January 4th I decided to start going to bed at around 8pm-9pm and wake up at 5am every day, I made this choice to see if it would work out for me and to see If I'd enjoy waking up early in the morning. Here's my current streak:
+On January 4th I decided to start going to bed at around 8pm-9pm and wake up at 5am every day, I made this choice to see if it would work out for me and to see If I'd enjoy waking up early in the morning.
 
 ![](/post/how-i-wake-up-at-5am/commit-app-streak.gif)
 
