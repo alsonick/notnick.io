@@ -60,5 +60,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    Crossroads: {
+      "Crossroad Intro": {
+        completed: true,
+      },
+      Crossroads: {
+        completed: true,
+      },
+      "Crossroads Controlled": {
+        completed: true,
+      },
+    },
   });
 }
