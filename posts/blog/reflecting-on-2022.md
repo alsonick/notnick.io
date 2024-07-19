@@ -21,7 +21,6 @@ I'm now more confident in my skills as a developer and I've also fallen in love 
 
 - Turned 19 ✅
 - Contributed to open source ✅
-- Joined university ✅
 - Increased my finance ✅
 - Improved my dev skills significantly ✅
 - Met some cool folks ✅
