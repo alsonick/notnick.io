@@ -34,7 +34,7 @@ export const SPECS = [
     list: [
       {
         id: generateRandomId(),
-        key: "Monitor",
+        key: "Primary Monitor",
         value: "Samsung UR55 4K IPS HDR10",
       },
       {
