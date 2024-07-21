@@ -35,7 +35,12 @@ export const SPECS = [
       {
         id: generateRandomId(),
         key: "Primary Monitor",
-        value: "Samsung UR55 4K IPS HDR10",
+        value: 'Samsung UR55 4K IPS HDR10 28"',
+      },
+      {
+        id: generateRandomId(),
+        key: "Secondary Monitor",
+        value: 'AOC 27B2H 27"',
       },
       {
         id: generateRandomId(),
