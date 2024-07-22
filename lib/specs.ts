@@ -50,7 +50,7 @@ export const SPECS = [
       {
         id: generateRandomId(),
         key: "Mouse",
-        value: "TECKNET RGB Gaming Mouse",
+        value: "RAZER DeathAdder",
       },
       {
         id: generateRandomId(),
