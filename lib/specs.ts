@@ -52,7 +52,11 @@ export const SPECS = [
         key: "Mouse",
         value: "TECKNET RGB Gaming Mouse",
       },
-      { id: generateRandomId(), key: "Headset", value: "HyperX Cloud II 7.1" },
+      {
+        id: generateRandomId(),
+        key: "Headset",
+        value: "CORSAIR HS65 SURROUND",
+      },
       { id: generateRandomId(), key: "Earbuds", value: "AirPods Pro" },
       { id: generateRandomId(), key: "Watch", value: "Apple Watch Series 3" },
       { id: generateRandomId(), key: "Primary phone", value: "iPhone 15" },
