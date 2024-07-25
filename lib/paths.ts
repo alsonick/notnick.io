@@ -27,11 +27,6 @@ export const PATHS: Path[] = [
   },
   {
     id: generateRandomId(),
-    path: page.luffy.path,
-    link: page.luffy.link,
-  },
-  {
-    id: generateRandomId(),
     path: page.paths.path,
     link: page.paths.path,
   },

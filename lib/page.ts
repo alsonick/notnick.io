@@ -19,11 +19,6 @@ export const page = {
     path: "/branding",
     link: "/branding",
   },
-  luffy: {
-    name: "luffy",
-    path: "/luffy",
-    link: "/luffy",
-  },
   paths: {
     name: "paths",
     path: "/paths",
