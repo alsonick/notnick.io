@@ -71,5 +71,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    "Meeting Traffic & Adequate Clearance": {
+      "Meeting Traffic Intro": {
+        completed: true,
+      },
+      "Meeting Traffic": {
+        completed: true,
+      },
+      "Adequate Clearance": {
+        completed: true,
+      },
+    },
   });
 }
