@@ -21,7 +21,7 @@ export const Seo = ({ description, cover, title }: Props) => {
       (date.getMonth() + 1 === 1 && date.getDate() === 1) ||
       (date.getMonth() + 1 === 3 && date.getDate() === 4)
     ) {
-      // Happy new yea! or Happy birthday!
+      // Happy new year! or Happy birthday!
       fireworks();
     }
   }
