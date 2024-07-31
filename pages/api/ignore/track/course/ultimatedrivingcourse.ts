@@ -82,5 +82,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    "Dual Carriageways": {
+      "Dual Carriageways Intro": {
+        completed: true,
+      },
+      "Dual Carriageways": {
+        completed: true,
+      },
+      "Changing Lanes": {
+        completed: true,
+      },
+      "Overtaking (Auto)": {
+        completed: true,
+      },
+    },
   });
 }
