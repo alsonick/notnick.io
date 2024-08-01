@@ -9,7 +9,7 @@ import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
 import { Layout } from "../components/Layout";
-// import { Music } from "../components/Music";
+import { Music } from "../components/Music";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
 import { Seo } from "../components/Seo";
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           <FeaturedArticles />
           <Experience />
           <Technologies />
-          {/* <Music /> */}
+          <Music />
           <Community />
           <NewsLetter />
           <Contact />
