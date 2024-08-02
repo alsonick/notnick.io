@@ -24,7 +24,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Seo title={FULL_NAME} description={`${FULL_NAME} • ${PROFESSION}`} />
+      <Seo title={FULL_NAME} description={`${FULL_NAME} - ${PROFESSION}`} />
       <Layout isDisplaySpotify={isDisplaySpotify}>
         <Animate>
           <Main />

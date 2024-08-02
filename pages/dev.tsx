@@ -30,7 +30,7 @@ const Dev: NextPage = () => {
     <OtherPageContainer footer={false}>
       <Seo
         title={`Dev • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Toggle />
       <Header singleItem={true} column={true}>

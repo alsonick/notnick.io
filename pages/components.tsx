@@ -17,7 +17,7 @@ const Components: NextPage = () => {
     <>
       <Seo
         title={`Components • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

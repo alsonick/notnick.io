@@ -60,7 +60,7 @@ const Note: NextPage<Props> = ({ notes }) => {
     <>
       <Seo
         title={`Note • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

@@ -31,7 +31,7 @@ const Socials: NextPage = () => {
     <>
       <Seo
         title={`Socials • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

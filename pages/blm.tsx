@@ -10,7 +10,7 @@ export const Blm: NextPage = () => {
     <>
       <Seo
         title={`Black Lives Matter • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <div className="h-screen">
         <div className="flex items-center justify-center h-full flex-col">

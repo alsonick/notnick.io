@@ -47,7 +47,7 @@ const Articles: NextPage = () => {
     <>
       <Seo
         title={`Articles • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
 
       <Layout>

@@ -51,7 +51,7 @@ const Blog: NextPage<Props> = ({ blogs }) => {
     <>
       <Seo
         title={`Blog • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

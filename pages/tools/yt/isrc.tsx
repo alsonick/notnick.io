@@ -97,7 +97,7 @@ const ISRC: NextPage = () => {
     <>
       <Seo
         title={`ISRC Finder • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout longLayoutFormat={false} supportLargeScreen={true}>
         <Animate>

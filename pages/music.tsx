@@ -21,7 +21,7 @@ const Music = () => {
     <>
       <Seo
         title={`Music • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

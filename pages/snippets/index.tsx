@@ -20,7 +20,7 @@ const Snippets: NextPage = () => {
     <>
       <Seo
         title={`Snippets • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>

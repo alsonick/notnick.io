@@ -44,7 +44,7 @@ const Rags: NextPage = () => {
     <>
       <Seo
         title={`Rags • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout
         longLayoutFormat={false}

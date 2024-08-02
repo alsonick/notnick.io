@@ -72,7 +72,7 @@ const Slug: NextPage = () => {
         title={`${
           !challenge?.name ? "Challenge" : challenge.name
         } • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout
         longLayoutFormat={true}

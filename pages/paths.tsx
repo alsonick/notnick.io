@@ -13,7 +13,7 @@ export const Paths: NextPage = () => {
     <>
       <Seo
         title={`Paths • ${FULL_NAME}`}
-        description={`${FULL_NAME} • ${PROFESSION}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <div className="p-10">
         <Toggle />
