@@ -96,5 +96,25 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    Roundabouts: {
+      "Roundabouts Intro": {
+        completed: true,
+      },
+      "What Is A Roundabout": {
+        completed: true,
+      },
+      "Approaching & Exiting A Roundabout (Auto)": {
+        completed: true,
+      },
+      "Judgement When Entering A Roundabout": {
+        completed: true,
+      },
+      "Lane Selection & Markings At Roundabouts": {
+        completed: true,
+      },
+      "Spiral Roundabouts": {
+        completed: true,
+      },
+    },
   });
 }
