@@ -36,7 +36,7 @@ type SocketEvent = {
 const logLanyardEvent = (eventName: string, data: any) => {
   console.log(
     `%cLanyard%c <~ ${eventName} %o`,
-    "background-color: #f54bff; border-radius: 5px; padding: 3px; color: #5050ff;",
+    `background-color: ${THEME}; border-radius: 5px; padding: 3px; color: #5050ff;`,
     `background: none; color: ${THEME};`,
     data
   );
