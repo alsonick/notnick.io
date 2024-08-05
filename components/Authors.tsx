@@ -9,7 +9,7 @@ interface Props {
 
 export const Authors = ({ type, authors, style }: Props) => {
   return (
-    <div className="flex text-gray-600 dark:text-gray-300">
+    <div className="flex text-gray-600 dark:text-gray-300 sm:text-base text-sm">
       <>
         {authors.length >= 1 ? (
           <>{type === "article" ? "By" : "Talk by"}&nbsp;</>
