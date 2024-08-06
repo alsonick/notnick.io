@@ -28,12 +28,6 @@ export const TECHNOLOGIES: Technologies[] = [
   },
   {
     id: generateRandomId(),
-    text: "Prisma",
-    link: "https://www.prisma.io/",
-    desc: "An open-source ORM for Node. js and TypeScript.",
-  },
-  {
-    id: generateRandomId(),
     text: "Git",
     link: "https://git-scm.com/",
     desc: "An open source software for distributed version control.",
