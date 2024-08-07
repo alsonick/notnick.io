@@ -98,4 +98,10 @@ export const TECHNOLOGIES: Technologies[] = [
     link: "https://developer.apple.com/xcode/swiftui/",
     desc: "A declarative Swift user interface framework",
   },
+  {
+    id: generateRandomId(),
+    text: "Xcode",
+    link: "https://developer.apple.com/xcode/",
+    desc: "An IDE used to develop, test, and distribute apps for all Apple platforms.",
+  },
 ];
