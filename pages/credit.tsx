@@ -51,7 +51,7 @@ const Credit: NextPage = () => {
         <picture className="mt-10 mb-2">
           <img
             className="border border-teal-100 dark:border-teal-900"
-            src="/credit/credit-screenshot-1.png"
+            src="/credit/credit-screenshot-.png"
             alt="Credit Screenshot"
           />
         </picture>
