@@ -11,6 +11,7 @@ import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
+import { page } from "../lib/page";
 
 const Credit: NextPage = () => {
   return (
@@ -51,8 +52,8 @@ const Credit: NextPage = () => {
         <picture className="mt-10 mb-2">
           <img
             className="border border-teal-100 dark:border-teal-900"
-            src="/credit/credit-screenshot-.png"
-            alt="Credit Screenshot"
+            src={`${page.credit.path}/credit-screenshot.png`}
+            alt="Credit Screenshot Example"
           />
         </picture>
 
