@@ -65,7 +65,7 @@ export const EXPERIENCE: Experience[] = [
     remote: true,
     current: false,
     link: "https://www.youtube.com/results?search_query=chill+zone+lyrics",
-    task: "Another lyric channel I helped with uploads.",
+    task: "A music channel I helped manage.",
     filter: "YouTube",
     showCurrentStatus: true,
     slug: "chill-zone",
