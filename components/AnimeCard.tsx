@@ -1,11 +1,10 @@
+import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
 import { FiExternalLink } from "react-icons/fi";
-import { PostCardTag } from "./PostCardTag";
 import { LinkButton } from "./LinkButton";
 import { Anime } from "../types/anime";
 import Tippy from "@tippyjs/react";
 import { Text } from "./Text";
 import { Tag } from "./Tag";
-import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
 
 interface Props {
   showExtendedDescription: boolean;
