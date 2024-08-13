@@ -5,6 +5,7 @@ import { Anime } from "../types/anime";
 import Tippy from "@tippyjs/react";
 import { Text } from "./Text";
 import { Tag } from "./Tag";
+import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
 
 interface Props {
   showExtendedDescription: boolean;
@@ -33,15 +34,9 @@ export const AnimeCard = ({ showExtendedDescription, anime }: Props) => {
       </picture>
       <div className="flex flex-col w-full items-center text-center sm:items-end sm:text-left px-6">
         <div className="flex items-center sm:mr-auto mr-0">
-          <Tag title={anime.filter} />
-          <div className="ml-2 hidden sm:flex">
-            <PostCardTag
-              title={anime.anilistId.toString()}
-              style={{ margin: 0 }}
-            />
-          </div>
+          <Tag title={capitalizeFirstLetter(anime.filter)} />
         </div>
-        <div className="my-3 w-full">
+        <div className="my-1 w-full">
           <h1 className="text-black dark:text-white font-bold text-xl">
             {anime.name} {anime.english && `(${anime.english})`}
           </h1>
@@ -66,14 +61,16 @@ export const AnimeCard = ({ showExtendedDescription, anime }: Props) => {
         <div className="flex sm:flex-row flex-col-reverse items-center">
           <div className="mr-0 sm:mr-4 mt-4 sm:mt-0">
             <LinkButton href={anime.watch} target="_blank">
-              Watch <FiExternalLink className="text-xl ml-2" />
+              Watch{" "}
+              <FiExternalLink className="text-xl ml-2 hover:scale-110 duration-150" />
             </LinkButton>
           </div>
           <LinkButton
             href={`https://anilist.co/anime/${anime.anilistId}/${anime.slug}/`}
             target="_blank"
           >
-            Learn More <FiExternalLink className="text-xl ml-2" />
+            Learn More{" "}
+            <FiExternalLink className="text-xl ml-2 hover:scale-110 duration-150" />
           </LinkButton>
         </div>
       </div>
