@@ -12,21 +12,21 @@ export interface Snippet {
   path: string;
   id: number;
   lang:
+    | "objective-c"
+    | "python"
+    | "kotlin"
+    | "elixir"
     | "swift"
+    | "cobol"
+    | "rust"
+    | "java"
+    | "perl"
+    | "dart"
+    | "c++"
+    | "php"
+    | "lua"
     | "js"
     | "ts"
-    | "rust"
     | "go"
-    | "python"
-    | "c"
-    | "c++"
-    | "java"
-    | "elixir"
-    | "php"
-    | "perl"
-    | "objective-c"
-    | "dart"
-    | "kotlin"
-    | "lua"
-    | "cobol";
+    | "c";
 }

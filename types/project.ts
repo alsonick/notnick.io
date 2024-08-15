@@ -1,9 +1,9 @@
 export interface Project {
-  id: number;
-  name: string;
-  desc: string;
   active: boolean;
   github: string;
-  oss: boolean;
+  name: string;
+  desc: string;
   site: string;
+  oss: boolean;
+  id: number;
 }

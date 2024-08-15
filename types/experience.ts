@@ -1,27 +1,27 @@
 export interface Experience {
   showCurrentStatus?: boolean;
   description: string;
-  id?: number;
-  name: string;
-  year: number;
   employmentType:
-    | "contract"
+    | "apprenticeship"
+    | "self-employed"
+    | "internship"
     | "full-time"
     | "part-time"
-    | "self-employed"
     | "freelance"
-    | "internship"
-    | "apprenticeship"
+    | "voluntary"
     | "temporary"
-    | "voluntary";
-  remote: boolean;
+    | "contract";
   location: string;
   current: boolean;
   feature: boolean;
-  slug: string;
-  link: string;
-  task: string;
-  logo?: string;
+  remote: boolean;
   filter: string;
+  logo?: string;
   note?: string;
+  year: number;
+  slug: string;
+  task: string;
+  link: string;
+  name: string;
+  id?: number;
 }

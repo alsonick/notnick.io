@@ -1,16 +1,16 @@
 export interface Music {
+  feature: boolean;
+  name: string;
+  link: string;
+  path: string;
   id: number;
   type:
-    | "anime"
-    | "chill"
-    | "coding"
-    | "edm"
     | "ragtime"
-    | "rap"
+    | "travel"
+    | "coding"
     | "summer"
-    | "travel";
-  name: string;
-  path: string;
-  link: string;
-  feature: boolean;
+    | "chill"
+    | "anime"
+    | "edm"
+    | "rap";
 }

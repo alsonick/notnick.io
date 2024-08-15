@@ -1,6 +1,6 @@
 export interface Nav {
-  id: number;
-  text: string;
-  to: string;
   dropdown: string;
+  text: string;
+  id: number;
+  to: string;
 }

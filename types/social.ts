@@ -1,6 +1,6 @@
 export interface Social {
-  id?: number;
-  title: string;
   username: string;
+  title: string;
   link: string;
+  id?: number;
 }

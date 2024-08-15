@@ -9,12 +9,12 @@ export interface Issues {
 }
 
 export interface Subscriber {
-  id: number;
-  list_id: number;
-  email: string;
   first_name: string | null;
   last_name: string | null;
   last_changed: string;
+  list_id: number;
+  email: string;
+  id: number;
 }
 
 export interface Error {

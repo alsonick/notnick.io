@@ -8,6 +8,6 @@ export interface Article {
 }
 
 export interface Tag {
-  id: number;
   filter: string;
+  id: number;
 }

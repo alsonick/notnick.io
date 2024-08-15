@@ -1,35 +1,35 @@
 export interface Topic {
-  id?: number;
-  language: string;
   description: string;
-  cover: string;
+  language: string;
   learn: Learn[];
+  cover: string;
+  id?: number;
 }
 
 export interface Learn {
-  id?: number;
-  name: string;
-  learned: {
-    id: number;
-    title: string;
-    points: Point[];
-  }[];
   completed: boolean;
+  learned: {
+    points: Point[];
+    title: string;
+    id: number;
+  }[];
   image?: string;
+  name: string;
   link: string;
+  id?: number;
 }
 
 export interface Topics {
-  id?: number;
-  name: string;
-  slug: string;
-  link: string;
   description: string;
   language: string;
   content: Topic;
+  name: string;
+  slug: string;
+  link: string;
+  id?: number;
 }
 
 export interface Point {
-  id: number;
   text: string;
+  id: number;
 }

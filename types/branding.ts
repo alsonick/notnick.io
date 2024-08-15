@@ -1,12 +1,12 @@
 export interface Branding {
-  path: string;
-  id?: number;
   ext: "png" | "jpeg";
-  name: string;
+  resolution: number;
   dimensions: {
     width: number;
     height: number;
   };
   size: string;
-  resolution: number;
+  path: string;
+  name: string;
+  id?: number;
 }

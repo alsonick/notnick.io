@@ -1,13 +1,13 @@
 export interface Dev {
   success: boolean;
   dev: {
-    version: string;
-    arch: string;
     platform: string;
-    node: string;
-    v8: string;
     NODE_ENV: string;
-    lts: string;
+    version: string;
     ipv6: boolean;
+    arch: string;
+    node: string;
+    lts: string;
+    v8: string;
   };
 }

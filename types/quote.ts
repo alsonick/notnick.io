@@ -1,10 +1,10 @@
 export interface Quote {
-  _id: string;
+  dateModified: string;
+  authorSlug: string;
   content: string;
   author: string;
   tags: string[];
-  authorSlug: string;
-  length: number;
   dateAdded: string;
-  dateModified: string;
+  length: number;
+  _id: string;
 }

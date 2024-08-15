@@ -9,10 +9,10 @@ export interface ErrorResponse {
 }
 
 export interface Rule {
-  id: number;
   number: number;
   title: string;
   text: string;
+  id: number;
 }
 
 export interface Response {

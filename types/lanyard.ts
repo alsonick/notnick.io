@@ -1,34 +1,34 @@
 export interface Presence {
-  active_on_discord_mobile: boolean;
   active_on_discord_desktop: boolean;
+  active_on_discord_mobile: boolean;
   listening_to_spotify: boolean;
-  spotify: Spotify;
   discord_user: DiscordUser;
   discord_status: string;
   activities: Activity[];
+  spotify: Spotify;
 }
 
 export interface Activity {
-  type: number;
+  application_id?: number;
   timestamps: Timestamps;
-  sync_id?: string;
-  state: string;
   session_id?: string;
+  created_at: number;
+  sync_id?: string;
+  details: string;
+  assets: Assets;
+  flags?: number;
+  state: string;
   party?: Party;
   name: string;
+  type: number;
   id: string;
-  flags?: number;
-  details: string;
-  created_at: number;
-  assets: Assets;
-  application_id?: number;
 }
 
 export interface Assets {
-  large_text: string;
+  small_image?: string;
   large_image: string;
   small_text?: string;
-  small_image?: string;
+  large_text: string;
 }
 
 export interface Party {
@@ -41,18 +41,18 @@ export interface Timestamps {
 }
 
 export interface DiscordUser {
-  username: string;
-  public_flags: number;
-  id: string;
   discriminator: string;
+  public_flags: number;
   avatar: string;
+  username: string;
+  id: string;
 }
 
 export interface Spotify {
-  track_id: string;
   timestamps: Timestamps;
-  song: string;
-  artist: string;
   album_art_url: string;
+  track_id: string;
+  artist: string;
   album: string;
+  song: string;
 }
