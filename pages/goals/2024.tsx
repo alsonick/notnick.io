@@ -18,7 +18,7 @@ const TZTT = () => {
       <Heading>Goals for 2024</Heading>
       <GoalsPageContainer>
         <GoalItem completed={false}>Become proficient in Swift.</GoalItem>
-        <GoalItem completed={false}>Spend less time on social media.</GoalItem>
+        <GoalItem completed={true}>Spend less time on social media.</GoalItem>
         <GoalItem completed={false}>
           Contribute more to the Swift ecosystem.
         </GoalItem>
@@ -26,7 +26,7 @@ const TZTT = () => {
           Get my driving license (Hopefully).
         </GoalItem>
         <GoalItem completed={false}>Build on more muscle.</GoalItem>
-        <GoalItem completed={false}>Learn to play the piano.</GoalItem>
+        <GoalItem completed={true}>Learn to play the piano.</GoalItem>
         <GoalItem completed={false}>Read more books.</GoalItem>
         <GoalItem completed={false}>Get closer to god.</GoalItem>
         <GoalItem completed={false}>
