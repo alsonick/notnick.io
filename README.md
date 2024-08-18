@@ -3,3 +3,7 @@
 # notnick.io
 
 ## Stack
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React.js](https://react.dev/)
