@@ -2,6 +2,8 @@
 
 # notnick.io
 
+The source code to my personal site, written with Next.js, Prisma, Tailwindcss & TypeScript, hosted and deployed on Vercel.
+
 ## Stack
 
 - [Next.js](https://nextjs.org/)
