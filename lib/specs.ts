@@ -34,6 +34,11 @@ export const SPECS = [
     list: [
       {
         id: generateRandomId(),
+        key: "Console",
+        value: "Nintendo Switch (Neon Blue / Neon Red Joy-Con Controllers)",
+      },
+      {
+        id: generateRandomId(),
         key: "Primary Monitor",
         value: 'Samsung UR55 4K IPS HDR10 28"',
       },

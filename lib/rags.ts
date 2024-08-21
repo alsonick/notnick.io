@@ -9,7 +9,7 @@ export const RAGS: Rag[] = [
     date: 1896,
     path: {
       composer: "joplin",
-      file: "crush",
+      file: "Great Crush Collision March",
       ext: "mp3",
     },
   },
@@ -20,7 +20,7 @@ export const RAGS: Rag[] = [
     date: 1902,
     path: {
       composer: "joplin",
-      file: "elitesyn",
+      file: "Elite Syncopations",
       ext: "mp3",
     },
   },
@@ -31,7 +31,7 @@ export const RAGS: Rag[] = [
     date: 1909,
     path: {
       composer: "joplin",
-      file: "euphonic",
+      file: "Euphonic Sounds",
       ext: "mp3",
     },
   },
@@ -42,7 +42,7 @@ export const RAGS: Rag[] = [
     date: 1904,
     path: {
       composer: "joplin",
-      file: "favorite",
+      file: "The Favorite",
       ext: "mp3",
     },
   },
@@ -53,7 +53,7 @@ export const RAGS: Rag[] = [
     date: 1911,
     path: {
       composer: "joplin",
-      file: "felicity",
+      file: "Felicity Rag",
       ext: "mp3",
     },
   },
@@ -64,7 +64,7 @@ export const RAGS: Rag[] = [
     date: 1907,
     path: {
       composer: "joplin",
-      file: "gldiolus",
+      file: "Gladiolus Rag",
       ext: "mp3",
     },
   },
@@ -75,29 +75,18 @@ export const RAGS: Rag[] = [
     date: 1896,
     path: {
       composer: "joplin",
-      file: "harmonyc",
+      file: "Harmony Club Waltz",
       ext: "mp3",
     },
   },
   {
     id: generateRandomId(),
-    composer: "Scott Joplin & Louis Chauvin",
-    title: "Heliotrope Bouquet",
-    date: 1907,
-    path: {
-      composer: "joplin",
-      file: "helitrop",
-      ext: "mp3",
-    },
-  },
-  {
-    id: generateRandomId(),
-    composer: "Scott Joplin",
+    composer: "Scott Joplin & Scott Hayden",
     title: "Kismet Rag",
     date: 1913,
     path: {
       composer: "joplin",
-      file: "kismet",
+      file: "Kismet Rag",
       ext: "mp3",
     },
   },
@@ -108,7 +97,7 @@ export const RAGS: Rag[] = [
     date: 1914,
     path: {
       composer: "joplin",
-      file: "magnetic",
+      file: "Magnetic Rag",
       ext: "mp3",
     },
   },
@@ -119,7 +108,7 @@ export const RAGS: Rag[] = [
     date: 1899,
     path: {
       composer: "joplin",
-      file: "maplea",
+      file: "Maple Leaf Rag",
       ext: "mp3",
     },
   },
@@ -130,7 +119,7 @@ export const RAGS: Rag[] = [
     date: 1907,
     path: {
       composer: "joplin",
-      file: "nonparil",
+      file: "The Nonpareil (None To Equal)",
       ext: "mp3",
     },
   },
@@ -141,7 +130,7 @@ export const RAGS: Rag[] = [
     date: 1901,
     path: {
       composer: "joplin",
-      file: "peacheri",
+      file: "Peacherine Rag",
       ext: "mp3",
     },
   },
@@ -152,18 +141,18 @@ export const RAGS: Rag[] = [
     date: 1910,
     path: {
       composer: "joplin",
-      file: "stoptime",
+      file: "Stoptime Rag",
       ext: "mp3",
     },
   },
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
-    title: "Sugar Cane",
+    title: "Sugar Cane Rag",
     date: 1908,
     path: {
       composer: "joplin",
-      file: "sugarcne",
+      file: "Sugar Cane Rag",
       ext: "mp3",
     },
   },
@@ -174,7 +163,7 @@ export const RAGS: Rag[] = [
     date: 1901,
     path: {
       composer: "joplin",
-      file: "sunflowr",
+      file: "Sunflower Slow Drag",
       ext: "mp3",
     },
   },
@@ -185,7 +174,7 @@ export const RAGS: Rag[] = [
     date: 1910,
     path: {
       composer: "lamb",
-      file: "champagn",
+      file: "Champagne Rag",
       ext: "mp3",
     },
   },
@@ -196,7 +185,7 @@ export const RAGS: Rag[] = [
     date: 1909,
     path: {
       composer: "lamb",
-      file: "exclsior",
+      file: "Excelsior Rag",
       ext: "mp3",
     },
   },
@@ -207,7 +196,7 @@ export const RAGS: Rag[] = [
     date: 1915,
     path: {
       composer: "lamb",
-      file: "reindeer",
+      file: "Reindeer Rag",
       ext: "mp3",
     },
   },
@@ -218,7 +207,7 @@ export const RAGS: Rag[] = [
     date: 1908,
     path: {
       composer: "lamb",
-      file: "sensatin",
+      file: "Sensation Rag",
       ext: "mp3",
     },
   },
@@ -229,7 +218,7 @@ export const RAGS: Rag[] = [
     date: 1917,
     path: {
       composer: "scott",
-      file: "efficncy",
+      file: "Efficiency Rag",
       ext: "mp3",
     },
   },
@@ -240,7 +229,7 @@ export const RAGS: Rag[] = [
     date: 1906,
     path: {
       composer: "scott",
-      file: "froglegs",
+      file: "Frog Legs Rag",
       ext: "mp3",
     },
   },
@@ -251,7 +240,7 @@ export const RAGS: Rag[] = [
     date: 1910,
     path: {
       composer: "scott",
-      file: "hilarity",
+      file: "Hilarity Rag",
       ext: "mp3",
     },
   },
@@ -262,7 +251,7 @@ export const RAGS: Rag[] = [
     date: 1916,
     path: {
       composer: "scott",
-      file: "honymoon",
+      file: "Honey Moon Rag",
       ext: "mp3",
     },
   },
@@ -273,7 +262,7 @@ export const RAGS: Rag[] = [
     date: 1911,
     path: {
       composer: "scott",
-      file: "oriole",
+      file: "Ragtime Oriole",
       ext: "mp3",
     },
   },

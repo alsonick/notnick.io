@@ -34,6 +34,13 @@ export const About = () => {
         </LinkTag>
         ,{" "}
         <LinkTag
+          href="https://anilist.co/anime/20755/Assassination-Classroom/"
+          target="_blank"
+        >
+          Assassination Classroom
+        </LinkTag>
+        ,{" "}
+        <LinkTag
           href="https://anilist.co/anime/223/Dragon-Ball/"
           target="_blank"
         >
@@ -46,12 +53,11 @@ export const About = () => {
         >
           Attack on Titan
         </LinkTag>
-        . I also love playing <b>piano</b>,{" "}
+        . I also love playing <b>piano</b> in my free,{" "}
         <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
           Ragtime
         </LinkTag>{" "}
-        & <LinkTag href="">Classical</LinkTag> music is my favorite genre to
-        play.
+        is my favorite musical style to play.
       </Text>
 
       <Text>
