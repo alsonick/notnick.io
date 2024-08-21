@@ -14,6 +14,8 @@ You can give credit anywhere on the site but it's common to add it in the footer
 
 ![sahil.lol](https://notnick.io/credit/credit-screenshot.png)
 
+[sahil.lol](https://sahil.lol/) _(site currently inactive)_
+
 If you run into any issues with this then please feel free to [raise an issue](https://github.com/alsonick/notnick.io/issues/new) on the GitHub repository and I'll be able to assist you there.
 
 ## Stack
