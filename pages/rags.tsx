@@ -11,6 +11,7 @@ import { Table } from "../components/Table";
 import { LinkT } from "../components/Link";
 import { FiRepeat } from "react-icons/fi";
 import { Text } from "../components/Text";
+import { Note } from "../components/Note";
 import { Seo } from "../components/Seo";
 import { Td } from "../components/Td";
 import { Th } from "../components/Th";
@@ -18,6 +19,7 @@ import { RAGS } from "../lib/rags";
 
 // Next.js
 import { NextPage } from "next";
+import Image from "next/image";
 
 const Rags: NextPage = () => {
   const [rags, setRags] = useState(RAGS);
@@ -66,6 +68,30 @@ const Rags: NextPage = () => {
             </LinkT>
             .
           </Text>
+          <div className="my-4">
+            <Note>
+              After clicking play, wait a few seconds (1-2 seconds) for the
+              audio to start playing.
+            </Note>
+          </div>
+          <div className="flex items-center">
+            <Image
+              className="rounded-full sm:hover:scale-105 duration-300 hover:scale-100 mr-1"
+              title="My Apple Memoji"
+              src="/itsRemco.jpg"
+              height={20}
+              alt="My Apple Memoji"
+              width={20}
+              quality={100}
+            />
+            <Text>
+              Synthesia audio from <b>itsRemco | Piano</b> on{" "}
+              <LinkT href="https://www.youtube.com/@itsRemco" target="_blank">
+                YouTube
+              </LinkT>
+              .
+            </Text>
+          </div>
           <div className="my-4">
             <Button style={{ marginLeft: "auto" }} onClick={shuffleRags}>
               Shuffle{" "}
