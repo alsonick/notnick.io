@@ -116,5 +116,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    "Pedestrian Crossings": {
+      "Pedestrian Crossings Intro": {
+        completed: true,
+      },
+      "Pedestrian Crossings": {
+        completed: true,
+      },
+    },
   });
 }
