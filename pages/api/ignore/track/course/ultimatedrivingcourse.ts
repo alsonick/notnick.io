@@ -124,5 +124,28 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         completed: true,
       },
     },
+    Manoeuvres: {
+      "Manoeuvres Intro": {
+        completed: false,
+      },
+      "Practice Reversing (Auto)": {
+        completed: false,
+      },
+      "Reverse Bay Parking (Left) (Auto)": {
+        completed: false,
+      },
+      "Reverse Bay Parking (Right) (Auto)": {
+        completed: false,
+      },
+      "Forward Bay Parking": {
+        completed: false,
+      },
+      "Reverse Parallel Parking (Auto)": {
+        completed: false,
+      },
+      "Parking On The Right": {
+        completed: false,
+      },
+    },
   });
 }
