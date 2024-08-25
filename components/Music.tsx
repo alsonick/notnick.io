@@ -38,9 +38,6 @@ export const Music = () => {
                 name={playlist.name}
                 path={playlist.path}
               />
-              <div className="mt-4">
-                <SpotifyPlaylistLinkButton name={playlist.name} />
-              </div>
             </Link>
           );
         })}
