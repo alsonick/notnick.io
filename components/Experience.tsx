@@ -23,6 +23,7 @@ export const Experience = () => {
         {EXPERIENCE.slice(0, 3).map((experience) => (
           <ExperienceCard
             employmentType={experience.employmentType}
+            discontinued={experience.discontinued}
             description={experience.description}
             location={experience.location}
             current={experience.current}
