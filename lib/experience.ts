@@ -18,6 +18,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "Engineering",
     showCurrentStatus: true,
     slug: "aviato",
+    discontinued: false,
     feature: true,
   },
   {
@@ -35,6 +36,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "YouTube",
     showCurrentStatus: true,
     slug: "drop-zone",
+    discontinued: true,
     feature: true,
   },
   {
@@ -52,6 +54,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "YouTube",
     showCurrentStatus: true,
     slug: "aquila",
+    discontinued: false,
     feature: true,
   },
   {
@@ -69,6 +72,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "YouTube",
     showCurrentStatus: true,
     slug: "chill-zone",
+    discontinued: false,
     feature: true,
   },
   {
@@ -86,6 +90,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "Engineering",
     showCurrentStatus: true,
     slug: "watchou",
+    discontinued: true,
     feature: true,
   },
   {
@@ -103,6 +108,7 @@ export const EXPERIENCE: Experience[] = [
     filter: "YouTube",
     showCurrentStatus: true,
     slug: "savourtunes",
+    discontinued: true,
     feature: false,
   },
 ];

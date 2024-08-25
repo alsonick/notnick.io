@@ -48,6 +48,11 @@ export const ExperienceCard = (props: Experience) => {
             )}
           </div>
           <PostCardTag title={props.filter} style={{ margin: 0 }} />
+          {props.discontinued && (
+            <p className="ml-3 sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
+              discontinued
+            </p>
+          )}
         </div>
         <Text>
           {props.description} &bull; {props.year} &bull;{" "}

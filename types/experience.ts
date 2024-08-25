@@ -1,5 +1,6 @@
 export interface Experience {
   showCurrentStatus?: boolean;
+  discontinued: boolean;
   description: string;
   employmentType:
     | "apprenticeship"
