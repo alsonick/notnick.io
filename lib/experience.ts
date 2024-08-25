@@ -8,7 +8,7 @@ export const EXPERIENCE: Experience[] = [
     name: "Aviato",
     description: "React Engineer",
     year: 2023,
-    logo: `${page.experience.path}/logo/Aviato.png`,
+    logo: `${page.experience.path}/logo/Aviato.jpg`,
     employmentType: "contract",
     location: "Carmel, Indiana - United States",
     remote: true,
