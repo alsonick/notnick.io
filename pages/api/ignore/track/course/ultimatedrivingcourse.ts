@@ -126,16 +126,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     },
     Manoeuvres: {
       "Manoeuvres Intro": {
-        completed: false,
+        completed: true,
       },
       "Practice Reversing (Auto)": {
-        completed: false,
+        completed: true,
       },
       "Reverse Bay Parking (Left) (Auto)": {
-        completed: false,
+        completed: true,
       },
       "Reverse Bay Parking (Right) (Auto)": {
-        completed: false,
+        completed: true,
       },
       "Forward Bay Parking": {
         completed: false,
