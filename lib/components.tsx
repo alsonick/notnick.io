@@ -1,4 +1,3 @@
-import { SpotifyPlaylistLinkButton } from "../components/SpotifyLinkButton";
 import { GitHubStarButton } from "../components/GitHubStarButton";
 import { TechnologyCard } from "../components/TechnologyCard";
 import { CharacterLimit } from "../components/CharacterLimit";
@@ -27,7 +26,6 @@ import { Switch } from "../components/Switch";
 import { Error } from "../components/Error";
 import { Input } from "../components/Input";
 import { Label } from "../components/Label";
-import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Form } from "../components/Form";
@@ -59,11 +57,6 @@ export const COMPONENTS: Components[] = [
     id: generateRandomId(),
     text: "Input",
     component: <Input placeholder="Example" />,
-  },
-  {
-    id: generateRandomId(),
-    text: "Link T",
-    component: <LinkT href="/api/example">Example</LinkT>,
   },
   {
     id: generateRandomId(),
@@ -175,9 +168,9 @@ export const COMPONENTS: Components[] = [
     component: (
       <TechnologyCard
         style={{ margin: 0 }}
-        desc="Swift is a general-purpose programming language used to create applications that run on Apple devices."
-        link="https://www.swift.org/"
-        text="Swift"
+        desc="Java is a high-level, class-based, object-oriented programming language."
+        link="https://www.java.com/en/"
+        text="Java"
       />
     ),
   },
@@ -214,31 +207,9 @@ export const COMPONENTS: Components[] = [
   },
   {
     id: generateRandomId(),
-    text: "Border",
-    component: (
-      <Border>
-        <Text
-          style={{
-            paddingLeft: "2.5rem",
-            paddingRight: "2.5rem",
-            paddingTop: "0.5rem",
-            paddingBottom: "0.5rem",
-          }}
-        >
-          Example
-        </Text>
-      </Border>
-    ),
-  },
-  {
-    id: generateRandomId(),
-    text: "Spotify Link Button",
-    component: <SpotifyPlaylistLinkButton name="Rap" />,
-  },
-  {
-    id: generateRandomId(),
     text: "GitHub Star Button",
     component: <GitHubStarButton />,
+    note: "If the button doesn't show (only the text shows) reload the page.",
   },
   {
     id: generateRandomId(),

@@ -1,20 +1,9 @@
+import { generateRandomId } from "./generate-random-id";
 import { Branding } from "../types/branding";
 
 export const BRANDING: Branding[] = [
   {
-    id: 1,
-    path: "/branding/Avatar",
-    ext: "png",
-    name: "Avatar",
-    dimensions: {
-      width: 400,
-      height: 400,
-    },
-    size: "81 KB",
-    resolution: 97,
-  },
-  {
-    id: 2,
+    id: generateRandomId(),
     path: "/branding/sig_avatar_one",
     ext: "png",
     name: "Sig Avatar One",
@@ -26,7 +15,7 @@ export const BRANDING: Branding[] = [
     resolution: 288,
   },
   {
-    id: 3,
+    id: generateRandomId(),
     path: "/branding/secondary_dark_short_sig_avatar",
     ext: "png",
     name: "Secondary Dark Short Sig Avatar",
@@ -38,7 +27,7 @@ export const BRANDING: Branding[] = [
     resolution: 288,
   },
   {
-    id: 4,
+    id: generateRandomId(),
     path: "/branding/secondary_light_short_sig_avatar",
     ext: "png",
     name: "Secondary Light Short Sig Avatar",
@@ -50,7 +39,7 @@ export const BRANDING: Branding[] = [
     resolution: 288,
   },
   {
-    id: 5,
+    id: generateRandomId(),
     path: "/branding/small_banner",
     ext: "png",
     name: "Small Banner",
@@ -62,7 +51,7 @@ export const BRANDING: Branding[] = [
     resolution: 72,
   },
   {
-    id: 6,
+    id: generateRandomId(),
     path: "/branding/large_banner",
     ext: "png",
     name: "Large Banner",
@@ -72,17 +61,5 @@ export const BRANDING: Branding[] = [
     },
     size: "4.24 KB",
     resolution: 72,
-  },
-  {
-    id: 7,
-    path: "/branding/theme",
-    ext: "png",
-    name: "Theme",
-    dimensions: {
-      width: 3600,
-      height: 3600,
-    },
-    size: "74.4 KB",
-    resolution: 288,
   },
 ];

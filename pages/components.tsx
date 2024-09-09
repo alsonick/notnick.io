@@ -1,4 +1,5 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { PlainTag } from "../components/PlainTag";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { COMPONENTS } from "../lib/components";
@@ -10,7 +11,7 @@ import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
-import { PlainTag } from "../components/PlainTag";
+import { Note } from "../components/Note";
 
 const Components: NextPage = () => {
   return (
@@ -38,7 +39,14 @@ const Components: NextPage = () => {
                 className="flex items-center my-4 w-full justify-between"
                 key={component.id}
               >
-                <PlainTag text={component.text} />
+                <div className="flex flex-col">
+                  <PlainTag text={component.text} />
+                  {component.note && (
+                    <div className="mt-4 sm:w-[60%] w-52">
+                      <Note>{component.note}</Note>
+                    </div>
+                  )}
+                </div>
                 {component.component}
               </div>
             ))}

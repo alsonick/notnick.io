@@ -28,7 +28,7 @@ const Img = ({ height, width }: { height: number; width: number }) => {
     <Image
       className="rounded-full sm:hover:scale-105 duration-300 hover:scale-100"
       title="My Apple Memoji"
-      src="/Avatar.png"
+      src="/branding/secondary_dark_short_sig_avatar.png"
       height={height}
       alt="My Apple Memoji"
       width={width}
