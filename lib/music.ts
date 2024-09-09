@@ -58,4 +58,12 @@ export const MUSIC: Music[] = [
     link: "https://open.spotify.com/playlist/3c2Ag0wboNkpOfUlNKmVoh?si=31e4ccb9257d48f0",
     feature: false,
   },
+  {
+    id: generateRandomId(),
+    type: "ragtime",
+    name: "Ragtime",
+    path: "/spotify/ragtime.jpg",
+    link: "https://open.spotify.com/playlist/3dbVsPqJjfHSvXYNKyYUtl?si=a9bae43d514d4412",
+    feature: false,
+  },
 ];
