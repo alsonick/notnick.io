@@ -82,11 +82,6 @@ export const page = {
       link: "/community/rules",
     },
   },
-  ragtime: {
-    name: "ragtime",
-    path: "/ragtime",
-    link: "/ragtime",
-  },
   contributors: {
     name: "contributors",
     path: "/contributors",
