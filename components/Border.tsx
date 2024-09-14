@@ -4,7 +4,7 @@ interface Props {
 
 export const Border = ({ children }: Props) => {
   return (
-    <div className="flex w-fit border border-teal-100 dark:border-teal-900 rounded-full sm:hover:scale-105 duration-300 hover:scale-100">
+    <div className="flex w-fit border border-teal-100 dark:border-teal-900 rounded-full">
       {children}
     </div>
   );

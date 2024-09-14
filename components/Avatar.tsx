@@ -26,7 +26,7 @@ export const Avatar = ({ border, height, width }: Props) => {
 const Img = ({ height, width }: { height: number; width: number }) => {
   return (
     <Image
-      className="rounded-full sm:hover:scale-105 duration-300 hover:scale-100 border border-teal-100 dark:border-teal-900"
+      className="rounded-full border border-teal-100 dark:border-teal-900"
       title="My avatar"
       src="/branding/secondary_dark_short_sig_avatar.png"
       height={height}

@@ -82,26 +82,8 @@ export const TECHNOLOGIES: Technologies[] = [
   },
   {
     id: generateRandomId(),
-    text: "Swift",
-    link: "https://www.swift.org/",
-    desc: "Swift is a general-purpose programming language used to create applications that run on Apple devices.",
-  },
-  {
-    id: generateRandomId(),
-    text: "UIKit",
-    link: "https://developer.apple.com/documentation/uikit",
-    desc: "A user interface framework.",
-  },
-  {
-    id: generateRandomId(),
-    text: "SwiftUI",
-    link: "https://developer.apple.com/xcode/swiftui/",
-    desc: "A declarative Swift user interface framework",
-  },
-  {
-    id: generateRandomId(),
-    text: "Xcode",
-    link: "https://developer.apple.com/xcode/",
-    desc: "An IDE used to develop, test, and distribute apps for all Apple platforms.",
+    text: "Java",
+    link: "https://www.java.com/en/",
+    desc: "Java is a high-level, class-based, object-oriented programming language.",
   },
 ];

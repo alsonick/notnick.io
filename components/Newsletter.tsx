@@ -102,7 +102,7 @@ export const NewsLetter = () => {
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
           Subscribe to my newsletter
         </Heading>
-        <Text>Subscribe if you&apos;re interested about Swift content.</Text>
+        <Text>Subscribe if you&apos;re interested in nerdy stuff.</Text>
         <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2">
           <div className="flex-1 md:w-fit w-full mr-3 mb-3 md:mb-0">
             <Input

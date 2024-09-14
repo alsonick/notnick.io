@@ -20,15 +20,15 @@ export const About = () => {
           </b>
         </Tippy>{" "}
         year old {PROFESSION.toLowerCase()} located in the <b>{LOCATED}</b>. I
-        mostly focus on developing for <b>Apple</b> platforms, more specifically
-        for <b>iOS</b> and <b>macOS</b>. I also have past experience (<b>4</b>{" "}
-        years) in web development and I&apos;m familiar with modern web
-        technologies such as <b>React</b> & <b>TypeScript</b>.
+        roughly have around <b>4</b> years of experience in web development and
+        I&apos;m familiar with modern web technologies such as <b>React</b> &{" "}
+        <b>TypeScript</b>. I&apos;m currently studying Computer Science and I
+        plan to specialize in server-side development in the near future.
       </Text>
 
       <Text style={{ marginBottom: `${TEXT_MARGIN_BOTTOM}rem` }}>
-        Aside from programming I also love to travel and watch <b>Anime</b> in
-        my spare time, currently my favorite anime shows are{" "}
+        Aside from programming I love to watch <b>anime</b> in my spare time,
+        currently my favorite anime shows are{" "}
         <LinkTag href="https://anilist.co/anime/21/ONE-PIECE/" target="_blank">
           One Piece{" "}
         </LinkTag>
@@ -41,10 +41,10 @@ export const About = () => {
         </LinkTag>
         ,{" "}
         <LinkTag
-          href="https://anilist.co/anime/223/Dragon-Ball/"
+          href="https://anilist.co/anime/1535/Death-Note/"
           target="_blank"
         >
-          Dragon Ball
+          Death Note
         </LinkTag>{" "}
         and{" "}
         <LinkTag
@@ -53,11 +53,29 @@ export const About = () => {
         >
           Attack on Titan
         </LinkTag>
-        . I also love playing <b>piano</b> in my free,{" "}
+        . Click{" "}
+        <LinkTag
+          href="https://anilist.co/user/alsonick/animelist"
+          target="_blank"
+        >
+          here
+        </LinkTag>{" "}
+        to see what I&apos;m currently watching. I also love playing{" "}
+        <b>piano</b> in my free,{" "}
         <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
           Ragtime
         </LinkTag>{" "}
-        is my favorite musical style to play.
+        is my favorite genre to play. <br /> <br /> I&apos;m also a huge{" "}
+        <LinkTag
+          href="https://en.wikipedia.org/wiki/Extraversion_and_introversion"
+          target="_blank"
+        >
+          introvert
+        </LinkTag>{" "}
+        and pretty shy so I prefer solitude but I&apos;m always open to meeting
+        new people with similar interests! If you&apos;d like to chat then be
+        sure to add me on any <LinkTag href={page.socials.link}>social</LinkTag>{" "}
+        media platform.
       </Text>
 
       <Text>
