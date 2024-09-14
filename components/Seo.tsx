@@ -46,9 +46,12 @@ export const Seo = ({ description, cover, title }: Props) => {
         <meta property="og:type" content="website" />
         <meta
           property="twitter:image"
-          content={`https://${DOMAIN}/Avatar.png`}
+          content={`https://${DOMAIN}/branding/secondary_dark_short_sig_avatar.png`}
         />
-        <meta property="og:image" content={`https://${DOMAIN}/Avatar.png`} />
+        <meta
+          property="og:image"
+          content={`https://${DOMAIN}/branding/secondary_dark_short_sig_avatar.png`}
+        />
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
