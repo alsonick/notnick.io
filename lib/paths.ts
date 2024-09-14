@@ -88,11 +88,6 @@ export const PATHS: Path[] = [
   },
   {
     id: generateRandomId(),
-    path: page.ragtime.path,
-    link: page.ragtime.link,
-  },
-  {
-    id: generateRandomId(),
     path: page.contributors.path,
     link: page.contributors.link,
   },
