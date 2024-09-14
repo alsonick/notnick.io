@@ -4,15 +4,13 @@ import { Music } from "../types/music";
 export const MUSIC: Music[] = [
   {
     id: generateRandomId(),
-    type: "anime",
     name: "Anime",
     path: "/spotify/anime.jpg",
     link: "https://open.spotify.com/playlist/0Wtm1mJRMoW0NeX8OnuBUj?si=aa5098fa12b3461a",
-    feature: true,
+    feature: false,
   },
   {
     id: generateRandomId(),
-    type: "chill",
     name: "Chill",
     path: "/spotify/chill.jpg",
     link: "https://open.spotify.com/playlist/3gBVUEwwgS8CRy8H3hv8Bf?si=efebd638974b4a54",
@@ -20,7 +18,6 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "coding",
     name: "Coding",
     path: "/spotify/coding.jpg",
     link: "https://open.spotify.com/playlist/1TOUK6GycbdQqUIQHCV1aX?si=06e5e6b5e46b4694",
@@ -28,7 +25,6 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "edm",
     name: "EDM",
     path: "/spotify/edm.jpg",
     link: "https://open.spotify.com/playlist/3lGZDsozMDEXVTyFo8nQxd?si=e64f0ddc4d484ab4",
@@ -36,7 +32,6 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "rap",
     name: "Rap",
     path: "/spotify/rap.jpg",
     link: "https://open.spotify.com/playlist/3rbuHFPd34pKchnj82JQNq?si=2af981fe67a24a6b",
@@ -44,7 +39,6 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "summer",
     name: "Summer",
     path: "/spotify/summer.jpg",
     link: "https://open.spotify.com/playlist/2D61TAYDwu29oECg3dpJX4?si=6635afc33e644203",
@@ -52,7 +46,6 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "travel",
     name: "Travel",
     path: "/spotify/travel.jpg",
     link: "https://open.spotify.com/playlist/3c2Ag0wboNkpOfUlNKmVoh?si=31e4ccb9257d48f0",
@@ -60,10 +53,23 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
-    type: "ragtime",
     name: "Ragtime",
     path: "/spotify/ragtime.jpg",
     link: "https://open.spotify.com/playlist/3dbVsPqJjfHSvXYNKyYUtl?si=a9bae43d514d4412",
     feature: false,
+  },
+  {
+    id: generateRandomId(),
+    name: "Christmas",
+    path: "/spotify/christmas.jpg",
+    link: "https://open.spotify.com/playlist/2mtTvfWVenuugOBeudM2kJ?si=7e902ac621c64bdd",
+    feature: false,
+  },
+  {
+    id: generateRandomId(),
+    name: "Gaming",
+    path: "/spotify/gaming.jpg",
+    link: "https://open.spotify.com/playlist/4ZDxGju5xfNmqVh69yRKyf?si=acb13e1d0617470c",
+    feature: true,
   },
 ];

@@ -4,13 +4,4 @@ export interface Music {
   link: string;
   path: string;
   id: number;
-  type:
-    | "ragtime"
-    | "travel"
-    | "coding"
-    | "summer"
-    | "chill"
-    | "anime"
-    | "edm"
-    | "rap";
 }
