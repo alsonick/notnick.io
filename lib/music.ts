@@ -4,6 +4,13 @@ import { Music } from "../types/music";
 export const MUSIC: Music[] = [
   {
     id: generateRandomId(),
+    name: "Gaming",
+    path: "/spotify/gaming.jpg",
+    link: "https://open.spotify.com/playlist/4ZDxGju5xfNmqVh69yRKyf?si=acb13e1d0617470c",
+    feature: true,
+  },
+  {
+    id: generateRandomId(),
     name: "Anime",
     path: "/spotify/anime.jpg",
     link: "https://open.spotify.com/playlist/0Wtm1mJRMoW0NeX8OnuBUj?si=aa5098fa12b3461a",
@@ -64,12 +71,5 @@ export const MUSIC: Music[] = [
     path: "/spotify/christmas.jpg",
     link: "https://open.spotify.com/playlist/2mtTvfWVenuugOBeudM2kJ?si=7e902ac621c64bdd",
     feature: false,
-  },
-  {
-    id: generateRandomId(),
-    name: "Gaming",
-    path: "/spotify/gaming.jpg",
-    link: "https://open.spotify.com/playlist/4ZDxGju5xfNmqVh69yRKyf?si=acb13e1d0617470c",
-    feature: true,
   },
 ];
