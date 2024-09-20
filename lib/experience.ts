@@ -41,7 +41,7 @@ export const EXPERIENCE: Experience[] = [
   },
   {
     id: generateRandomId(),
-    name: "Aquila",
+    name: "Aquila [earlyentry.io]",
     description: "Channel Manager",
     year: 2023,
     logo: `${page.experience.path}/logo/Aquila.jpeg`,
