@@ -65,28 +65,7 @@ export const About = () => {
         <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
           Ragtime
         </LinkTag>{" "}
-        is my favorite genre to play. <br /> <br /> I&apos;m also very
-        academically oriented so I like to read or study topics that interest
-        me. Recently I&apos;ve decided to get into{" "}
-        <LinkTag
-          href="https://en.wikipedia.org/wiki/Harry_Potter"
-          target="_blank"
-        >
-          Harry Potter
-        </LinkTag>{" "}
-        and now I&apos;m reading{" "}
-        <LinkTag href="https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone">
-          Harry Potter and the Philosopher&apos;s Stone
-        </LinkTag>
-        . Additionally I&apos;m very interested in{" "}
-        <LinkTag
-          href="https://www.amnh.org/explore/ology/astronomy/what-is-astronomy"
-          target="_blank"
-        >
-          astronomy
-        </LinkTag>{" "}
-        or anything space related, in fact a big chunk of my time is spent
-        watching space documentaries (yeah i know, huge geek). <br /> <br />{" "}
+        is my favorite genre to play. <br /> <br />
         I&apos;m also a huge{" "}
         <LinkTag
           href="https://en.wikipedia.org/wiki/Extraversion_and_introversion"
