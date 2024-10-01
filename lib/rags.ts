@@ -6,6 +6,7 @@ export const RAGS: Rag[] = [
     id: generateRandomId(),
     composer: "Scott Joplin",
     title: "Great Crush Collision March",
+    score: "https://musescore.com/james_brigham/great-crush-collision-march",
     date: 1896,
     path: {
       composer: "joplin",
@@ -16,6 +17,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/238866",
     title: "Elite Syncopations",
     date: 1902,
     path: {
@@ -27,6 +29,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/1614131",
     title: "Euphonic Sounds",
     date: 1909,
     path: {
@@ -38,6 +41,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/1750136",
     title: "The Favorite",
     date: 1904,
     path: {
@@ -49,6 +53,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin & Scott Hayden",
+    score: "https://musescore.com/user/58480/scores/1754361",
     title: "Felicity Rag",
     date: 1911,
     path: {
@@ -60,6 +65,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/1749906",
     title: "Gladiolus Rag",
     date: 1907,
     path: {
@@ -71,6 +77,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/2007551",
     title: "Harmony Club Waltz",
     date: 1896,
     path: {
@@ -82,6 +89,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin & Scott Hayden",
+    score: "https://musescore.com/user/58480/scores/2786976",
     title: "Kismet Rag",
     date: 1913,
     path: {
@@ -93,6 +101,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/2582006",
     title: "Magnetic Rag",
     date: 1914,
     path: {
@@ -104,6 +113,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/529121",
     title: "Maple Leaf Rag",
     date: 1899,
     path: {
@@ -116,6 +126,7 @@ export const RAGS: Rag[] = [
     id: generateRandomId(),
     composer: "Scott Joplin",
     title: "The Nonpareil (None To Equal)",
+    score: "https://musescore.com/user/58480/scores/1508466",
     date: 1907,
     path: {
       composer: "joplin",
@@ -126,6 +137,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/2011731",
     title: "Peacherine Rag",
     date: 1901,
     path: {
@@ -137,6 +149,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/user/58480/scores/529116",
     title: "Stoptime Rag",
     date: 1910,
     path: {
@@ -148,6 +161,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
+    score: "https://musescore.com/james_brigham/scores/1581921",
     title: "Sugar Cane Rag",
     date: 1908,
     path: {
@@ -159,6 +173,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin & Scott Hayden",
+    score: "https://musescore.com/james_brigham/scores/2174986",
     title: "Sunflower Slow Drag",
     date: 1901,
     path: {
@@ -170,6 +185,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Joseph Lamb",
+    score: "https://musescore.com/user/36482158/scores/6563628",
     title: "Champagne Rag",
     date: 1910,
     path: {
@@ -181,6 +197,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Joseph Lamb",
+    score: "https://musescore.com/user/36482158/scores/6561554",
     title: "Excelsior Rag",
     date: 1909,
     path: {
@@ -192,6 +209,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Joseph Lamb",
+    score: "https://musescore.com/piano_rags_lad/scores/6502245",
     title: "Reindeer Rag",
     date: 1915,
     path: {
@@ -203,6 +221,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Joseph Lamb",
+    score: "https://musescore.com/piotrbarcz/scores/6420074",
     title: "Sensation Rag",
     date: 1908,
     path: {
@@ -214,6 +233,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/10770310",
     title: "Efficiency Rag",
     date: 1917,
     path: {
@@ -225,6 +245,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/6524265",
     title: "Frog Legs Rag",
     date: 1906,
     path: {
@@ -236,6 +257,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/9142581",
     title: "Hilarity Rag",
     date: 1910,
     path: {
@@ -247,6 +269,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/10760014",
     title: "Honey Moon Rag",
     date: 1916,
     path: {
@@ -258,6 +281,7 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/6524362",
     title: "Ragtime Oriole",
     date: 1911,
     path: {

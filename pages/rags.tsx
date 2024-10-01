@@ -76,7 +76,7 @@ const Rags: NextPage = () => {
           </div>
           <div className="flex items-center">
             <Image
-              className="rounded-full sm:hover:scale-105 duration-300 hover:scale-100 mr-1"
+              className="rounded-full duration-300 mr-1 border border-teal-100 dark:border-teal-900"
               title="My Apple Memoji"
               src="/itsRemco.jpg"
               height={20}
@@ -86,11 +86,38 @@ const Rags: NextPage = () => {
             />
             <Text>
               Synthesia audio from <b>itsRemco | Piano</b> on{" "}
-              <LinkT href="https://www.youtube.com/@itsRemco" target="_blank">
+              <LinkT
+                href="https://www.youtube.com/@itsRemco"
+                title="itsRemco | Piano on YouTube"
+                target="_blank"
+              >
                 YouTube
               </LinkT>
               .
             </Text>
+          </div>
+          <div className="my-4">
+            <Note>
+              Some of these pieces aren&apos;t considered &quot;ragtime&quot; or
+              &quot;rags&quot;. A lot these ragtime composers had composed a
+              good number of{" "}
+              <LinkT
+                href="https://en.wikipedia.org/wiki/March_(music)"
+                title="marches"
+                target="_blank"
+              >
+                marches
+              </LinkT>{" "}
+              and{" "}
+              <LinkT
+                href="https://en.wikipedia.org/wiki/Waltz"
+                title="waltzes"
+                target="_blank"
+              >
+                waltzes
+              </LinkT>
+              .
+            </Note>
           </div>
           <div className="my-4">
             <Button style={{ marginLeft: "auto" }} onClick={shuffleRags}>
@@ -116,15 +143,24 @@ const Rags: NextPage = () => {
                         <Td text={rag.title} center={true} />
                         <Td text={rag.date.toString()} center={true} />
                         <TdChildren>
-                          <div className="flex w-full items-center justify-center">
+                          <div className="flex flex-col w-full items-center justify-center">
                             <audio
-                              className="m-4 p-1"
+                              className="ml-4 mr-4 mt-4 p-1"
                               controls
                               src={`/rags/${rag.path.composer}/${rag.path.file}.${rag.path.ext}`}
                             >
                               Your browser does not support the
                               <code>audio</code> element.
                             </audio>
+                            <div className="m-2">
+                              <LinkT
+                                href={rag.score}
+                                title={`${rag.composer} - ${rag.title} Sheet Music`}
+                                target="_blank"
+                              >
+                                [sheet music]
+                              </LinkT>
+                            </div>
                           </div>
                         </TdChildren>
                       </>
