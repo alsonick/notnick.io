@@ -73,9 +73,12 @@ export const ExperienceCard = (props: Experience) => {
             <FiMapPin className="text-gray-600 dark:text-gray-300 mr-2" />
             <Text>{props.location}</Text>
           </div>
-          <LinkButton href={props.link} target="_blank">
+          <LinkButton href={props.link} title="Visit" target="_blank">
             Visit{" "}
-            <FiExternalLink className="text-xl ml-2 hover:scale-110 duration-150" />
+            <FiExternalLink
+              title="Visit"
+              className="text-xl ml-2 hover:scale-110 duration-150"
+            />
           </LinkButton>
         </div>
       </div>

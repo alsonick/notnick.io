@@ -43,13 +43,13 @@ export const Learning = ({ learn, language, description }: Topic) => {
         </div>
         {learnData.map((topic) => (
           <Topic
-            key={topic.id}
-            name={topic.name}
-            language={language}
-            learned={topic.learned}
-            image={topic.image}
             completed={topic.completed}
+            learned={topic.learned}
+            language={language}
+            image={topic.image}
             link={topic.link}
+            name={topic.name}
+            key={topic.id}
           />
         ))}
       </div>
@@ -60,9 +60,9 @@ export const Learning = ({ learn, language, description }: Topic) => {
 
 const Topic = ({
   completed,
-  name,
   learned,
   image,
+  name,
   link,
 }: Learn & { language: string }) => {
   return (
@@ -76,7 +76,7 @@ const Topic = ({
         {learned.map((learn) => (
           <div className="ml-5" key={learn.id}>
             <Heading style={{ marginTop: "3.5rem" }}>{learn.title}</Heading>
-            <ul className="list-disc ml-10  leading-tight">
+            <ul className="list-disc ml-10 leading-tight">
               {learn.points.map((point) => (
                 <li
                   key={point.id}
@@ -92,10 +92,10 @@ const Topic = ({
       {image && (
         <picture>
           <img
+            title={`${name} Simulator Showcase`}
+            alt={`${name} Simulator Showcase`}
             className="w-2/3"
             src={image}
-            alt={`${name} Simulator Showcase`}
-            title={`${name} Simulator Showcase`}
           />
         </picture>
       )}
@@ -107,12 +107,12 @@ const Topic = ({
               saveAs(`${name} Simulator Showcase`, name);
             }}
           >
-            Download <FiDownload className="text-xl ml-2" />
+            Download <FiDownload title="Download" className="text-xl ml-2" />
           </Button>
         </div>
       )}
       <div className="mt-5">
-        <LinkT href={link} target="_blank">
+        <LinkT href={link} title="Visit Page" target="_blank">
           Visit Page
         </LinkT>
       </div>

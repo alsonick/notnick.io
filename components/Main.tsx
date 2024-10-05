@@ -60,7 +60,9 @@ export const Main = () => {
           {(date.getMonth() + 1 === 1 && date.getDate() === 1) ||
           (date.getMonth() + 1 === 3 && date.getDate() === 4) ? (
             <div className="mt-4">
-              <Button onClick={() => confetti()}>🎉</Button>
+              <Button title="Click me!" onClick={() => confetti()}>
+                🎉
+              </Button>
             </div>
           ) : null}
         </div>

@@ -8,12 +8,13 @@ export const GitHubStarButton = () => {
   return (
     <Link
       className="github-button sm:text-base text-sm text-gray-600 dark:text-gray-300 hover:scale-110 duration-150"
-      href={`https://github.com/${social.github.username}/${DOMAIN}`}
-      target="_blank"
-      data-color-scheme="no-preference: dark; light: dark; dark: dark;"
-      data-size="large"
-      data-show-count="true"
       aria-label={`Star ${social.github.username}/${DOMAIN} on ${social.github.name}`}
+      title={`Star ${social.github.username}/${DOMAIN} on ${social.github.name}`}
+      data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+      href={`https://github.com/${social.github.username}/${DOMAIN}`}
+      data-show-count="true"
+      data-size="large"
+      target="_blank"
     >
       Star
     </Link>

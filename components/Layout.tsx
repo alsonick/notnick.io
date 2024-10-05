@@ -22,7 +22,7 @@ export const Layout = ({
   return (
     <div
       className="flex flex-col items-center justify-center h-screen scrollbar-thin scrollbar-thumb-gray-700
-    scrollbar-track-gray-800 scrollbar-thumb-rounded-full"
+      scrollbar-track-gray-800 scrollbar-thumb-rounded-full"
     >
       <div className={`flex flex-col h-full py-20 sm:w-[40rem] w-[95%] mt-12`}>
         {!supportLargeScreen && (
