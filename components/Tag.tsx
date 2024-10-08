@@ -21,7 +21,7 @@ export const Tag = ({ type, title, icon }: Props) => {
   return (
     <div
       title={title}
-      className={`flex items-center w-fit p-1 px-3 text-white font-bold rounded-full text-sm ${color}`}
+      className={`flex items-center p-1 px-3 text-white font-bold rounded-full w-fit whitespace-nowrap text-sm ${color}`}
     >
       {title}
       {icon}

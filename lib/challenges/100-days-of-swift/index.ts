@@ -1,3 +1,4 @@
+import { ONE_HUNDRED_DAYS_OF_SWIFT_SLUG } from "./constants";
 import { generateRandomId } from "../../generate-random-id";
 import { Content } from "../../../types/challenge";
 import { social } from "../../social-links";
@@ -13,7 +14,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day1/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day1/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -30,7 +31,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day2/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day2/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -47,7 +48,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day3/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day3/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -64,7 +65,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day4/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day4/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -81,7 +82,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day5/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day5/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -98,7 +99,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day6/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day6/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -115,7 +116,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day7/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day7/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -132,7 +133,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day8/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day8/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -149,7 +150,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day9/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day9/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -166,7 +167,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day10/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day10/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -183,7 +184,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day11/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day11/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -200,7 +201,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/blob/main/Day12/MyPlayground.playground/Contents.swift`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/blob/main/Day12/MyPlayground.playground/Contents.swift`,
     },
     preview: {
       available: false,
@@ -247,7 +248,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day16-17-18/Project1`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day16-17-18/Project1`,
     },
     preview: {
       available: true,
@@ -268,7 +269,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day16-17-18/Project1`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day16-17-18/Project1`,
     },
     preview: {
       available: true,
@@ -289,7 +290,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day16-17-18/Project1`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day16-17-18/Project1`,
     },
     preview: {
       available: true,
@@ -310,7 +311,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day19-20-21/Project2`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day19-20-21/Project2`,
     },
     preview: {
       available: true,
@@ -331,7 +332,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day19-20-21/Project2`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day19-20-21/Project2`,
     },
     preview: {
       available: true,
@@ -352,7 +353,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day19-20-21/Project2`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day19-20-21/Project2`,
     },
     preview: {
       available: true,
@@ -373,7 +374,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day22/Project3`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day22/Project3`,
     },
     preview: {
       available: true,
@@ -394,7 +395,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day23/Challenge`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day23/Challenge`,
     },
     preview: {
       available: true,
@@ -415,7 +416,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day24-25-26/Project4`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day24-25-26/Project4`,
     },
     preview: {
       available: true,
@@ -436,7 +437,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day24-25-26/Project4`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day24-25-26/Project4`,
     },
     preview: {
       available: true,
@@ -457,7 +458,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day24-25-26/Project4`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day24-25-26/Project4`,
     },
     preview: {
       available: true,
@@ -478,7 +479,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day27-28-29/Project5`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day27-28-29/Project5`,
     },
     preview: {
       available: true,
@@ -499,7 +500,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day27-28-29/Project5`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day27-28-29/Project5`,
     },
     preview: {
       available: true,
@@ -520,7 +521,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day27-28-29/Project5`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day27-28-29/Project5`,
     },
     preview: {
       available: true,
@@ -541,7 +542,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day30-31/Project6a`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day30-31/Project6a`,
     },
     preview: {
       available: true,
@@ -562,7 +563,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day30-31/Project6b`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day30-31/Project6b`,
     },
     preview: {
       available: true,
@@ -583,7 +584,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day32/Challenge`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day32/Challenge`,
     },
     preview: {
       available: true,
@@ -604,7 +605,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day33-34-35/Project7`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day33-34-35/Project7`,
     },
     preview: {
       available: true,
@@ -625,7 +626,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day33-34-35/Project7`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day33-34-35/Project7`,
     },
     preview: {
       available: true,
@@ -646,7 +647,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day33-34-35/Project7`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day33-34-35/Project7`,
     },
     preview: {
       available: true,
@@ -667,7 +668,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day36-37-38/Project8`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day36-37-38/Project8`,
     },
     preview: {
       available: true,
@@ -688,7 +689,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day36-37-38/Project8`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day36-37-38/Project8`,
     },
     preview: {
       available: true,
@@ -709,7 +710,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day36-37-38/Project8`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day36-37-38/Project8`,
     },
     preview: {
       available: false,
@@ -726,7 +727,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day39-40/Project9`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day39-40/Project9`,
     },
     preview: {
       available: false,
@@ -743,7 +744,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day39-40/Project9`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day39-40/Project9`,
     },
     preview: {
       available: false,
@@ -760,7 +761,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day39-40/Project9`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day39-40/Project9`,
     },
     preview: {
       available: false,
@@ -777,7 +778,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day42-43-44/Project10`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day42-43-44/Project10`,
     },
     preview: {
       available: true,
@@ -798,7 +799,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day42-43-44/Project10`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day42-43-44/Project10`,
     },
     preview: {
       available: true,
@@ -819,7 +820,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day42-43-44/Project10`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day42-43-44/Project10`,
     },
     preview: {
       available: true,
@@ -840,7 +841,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day45-46-47/Project11`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day45-46-47/Project11`,
     },
     preview: {
       available: true,
@@ -861,7 +862,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day45-46-47/Project11`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day45-46-47/Project11`,
     },
     preview: {
       available: true,
@@ -882,7 +883,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day45-46-47/Project11`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day45-46-47/Project11`,
     },
     preview: {
       available: true,
@@ -903,7 +904,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day48-49/Project12`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day48-49/Project12`,
     },
     preview: {
       available: false,
@@ -920,7 +921,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day48-49/Project12`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day48-49/Project12`,
     },
     preview: {
       available: false,
@@ -937,7 +938,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day50/Challenge`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day50/Challenge`,
     },
     preview: {
       available: true,
@@ -968,7 +969,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day52-53-54/Project13`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day52-53-54/Project13`,
     },
     preview: {
       available: true,
@@ -989,7 +990,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day52-53-54/Project13`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day52-53-54/Project13`,
     },
     preview: {
       available: true,
@@ -1010,7 +1011,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day52-53-54/Project13`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day52-53-54/Project13`,
     },
     preview: {
       available: true,
@@ -1031,7 +1032,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day55-56/Project14`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day55-56/Project14`,
     },
     preview: {
       available: true,
@@ -1052,7 +1053,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day55-56/Project14`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day55-56/Project14`,
     },
     preview: {
       available: true,
@@ -1073,7 +1074,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day57-58/Project15`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day57-58/Project15`,
     },
     preview: {
       available: true,
@@ -1104,7 +1105,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day59/Challenge`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day59/Challenge`,
     },
     preview: {
       available: true,
@@ -1125,7 +1126,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day60-61/Project16`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day60-61/Project16`,
     },
     preview: {
       available: true,
@@ -1146,7 +1147,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day60-61/Project16`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day60-61/Project16`,
     },
     preview: {
       available: true,
@@ -1167,7 +1168,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day62-63/Project17`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day62-63/Project17`,
     },
     preview: {
       available: true,
@@ -1188,7 +1189,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day62-63/Project17`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day62-63/Project17`,
     },
     preview: {
       available: false,
@@ -1205,7 +1206,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day64-65/Project18`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day64-65/Project18`,
     },
     preview: {
       available: false,
@@ -1242,7 +1243,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day67-68-69/Project19`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day67-68-69/Project19`,
     },
     preview: {
       available: false,
@@ -1259,7 +1260,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day67-68-69/Project19`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day67-68-69/Project19`,
     },
     preview: {
       available: true,
@@ -1280,7 +1281,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day67-68-69/Project19`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day67-68-69/Project19`,
     },
     preview: {
       available: false,
@@ -1297,7 +1298,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day70-71/Project20`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day70-71/Project20`,
     },
     preview: {
       available: true,
@@ -1318,7 +1319,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day70-71/Project20`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day70-71/Project20`,
     },
     preview: {
       available: false,
@@ -1335,7 +1336,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day72-73/Project21`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day72-73/Project21`,
     },
     preview: {
       available: true,
@@ -1366,7 +1367,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day74/Challenge`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day74/Challenge`,
     },
     preview: {
       available: false,
@@ -1383,7 +1384,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day75-76/Project22`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day75-76/Project22`,
     },
     preview: {
       available: false,
@@ -1400,7 +1401,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day75-76/Project22`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day75-76/Project22`,
     },
     preview: {
       available: false,
@@ -1417,7 +1418,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day77-78-79/Project23`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day77-78-79/Project23`,
     },
     preview: {
       available: true,
@@ -1438,7 +1439,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day77-78-79/Project23`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day77-78-79/Project23`,
     },
     preview: {
       available: false,
@@ -1455,7 +1456,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day77-78-79/Project23`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day77-78-79/Project23`,
     },
     preview: {
       available: false,
@@ -1472,7 +1473,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day80-81/Project24.playground`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day80-81/Project24.playground`,
     },
     preview: {
       available: false,
@@ -1489,7 +1490,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day80-81/Project24.playground`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day80-81/Project24.playground`,
     },
     preview: {
       available: false,
@@ -1506,7 +1507,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day82/MyPlayground.playground`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day82/MyPlayground.playground`,
     },
     preview: {
       available: false,
@@ -1523,7 +1524,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day83-84/Project25`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day83-84/Project25`,
     },
     preview: {
       available: false,
@@ -1550,7 +1551,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day85-86-87/Project26`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day85-86-87/Project26`,
     },
     preview: {
       available: true,
@@ -1571,7 +1572,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day85-86-87/Project26`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day85-86-87/Project26`,
     },
     preview: {
       available: true,
@@ -1602,7 +1603,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day88-89/Project27`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day88-89/Project27`,
     },
     preview: {
       available: true,
@@ -1653,7 +1654,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day92-93/Project28`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day92-93/Project28`,
     },
     preview: {
       available: true,
@@ -1684,7 +1685,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day94-95-96/Project29`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day94-95-96/Project29`,
     },
     preview: {
       available: true,
@@ -1705,7 +1706,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day94-95-96/Project29`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day94-95-96/Project29`,
     },
     preview: {
       available: true,
@@ -1736,7 +1737,7 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT: Content[] = [
       image: {
         extension: "png",
       },
-      link: `${social.github.link}/100-days-of-swift/tree/main/Day97-98/Project30`,
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_SLUG}/tree/main/Day97-98/Project30`,
     },
     preview: {
       available: true,

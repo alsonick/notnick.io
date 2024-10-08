@@ -18,8 +18,8 @@ export const Challenge = ({ challenge }: { challenge: C }) => {
         type={challenge?.active ? "success" : "error"}
       />
       <Link
-        className={`flex flex-col w-full mt-2 focus:ring-offset-2 dark:ring-offset-black focus:ring-4
-    rounded ring-primary outline-none duration-300`}
+        className={`flex flex-col w-fit mt-2 focus:ring-offset-2 dark:ring-offset-black focus:ring-4
+        rounded ring-primary outline-none duration-300`}
         href={`${page.challenge.name}/${challenge.slug}`}
       >
         <h1

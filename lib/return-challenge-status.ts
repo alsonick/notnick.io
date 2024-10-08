@@ -7,7 +7,7 @@ export const returnChallengeStatus = (
 
   if (challenge?.completed) {
     status = "Completed";
-  } else if (challenge?.active) {
+  } else if (!challenge?.active) {
     status = "Not Active";
   } else if (challenge?.active) {
     status = "Active";
