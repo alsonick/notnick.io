@@ -69,7 +69,7 @@ export const CHALLENGES: Challenge[] = [
       text: "Download preview toggle?",
       value: true,
     },
-    active: true,
+    active: ONE_HUNDRED_DAYS_OF_SWIFT_UI.length > 1,
     goal: ONE_HUNDRED_DAYS_OF_SWIFT_UI_GOAL,
   },
 ];
