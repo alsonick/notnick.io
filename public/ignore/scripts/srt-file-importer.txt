@@ -1,13 +1,3 @@
-/*
-AR_ImportSRT
-
-Author: Arttu Rautio (aturtur)
-Website: http://aturtur.com/
-Name-US: AR_ImportSRT
-Description-US: Imports subtitles (SRT) file and creates text layers.
-Written for Adobe After Effects CC 2019 (Version 16.0.1 Build 48)
-
-*/
 //@target aftereffects
 function TimeToFrames(time, comp) {
     var frames = time * (1.0 / comp.frameDuration);
