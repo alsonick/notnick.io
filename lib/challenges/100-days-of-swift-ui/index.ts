@@ -31,4 +31,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT_UI: Content[] = [
     },
     day: 1,
   },
+  {
+    id: generateRandomId(),
+    description: "Booleans, string interpolation, and checkpoint 1",
+    slug: "100-days-of-swift-ui",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_UI_SLUG}/blob/main/Day2/MyPlayground.playground/Contents.swift`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 2,
+  },
 ];
