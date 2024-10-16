@@ -48,4 +48,21 @@ export const ONE_HUNDRED_DAYS_OF_SWIFT_UI: Content[] = [
     },
     day: 2,
   },
+  {
+    id: generateRandomId(),
+    description: "Arrays, dictionaries, sets, and enums",
+    slug: "100-days-of-swift-ui",
+    completed: true,
+    code: {
+      icon: "xcode",
+      image: {
+        extension: "png",
+      },
+      link: `${social.github.link}/${ONE_HUNDRED_DAYS_OF_SWIFT_UI_SLUG}/blob/main/Day3/MyPlayground.playground/Contents.swift`,
+    },
+    preview: {
+      available: false,
+    },
+    day: 3,
+  },
 ];
