@@ -24,7 +24,7 @@ export const Challenge = ({ challenge }: { challenge: C }) => {
       >
         <h1
           className="text-3xl font-bold cursor-pointer underline
-    dark:text-white hover:no-underline"
+       	  dark:text-white hover:no-underline"
         >
           {challenge.name}
         </h1>

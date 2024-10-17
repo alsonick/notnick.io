@@ -80,7 +80,7 @@ export const Post = ({ type, post }: Props) => {
             className={`
             prose max-w-none mt-2 sm:text-base text-sm dark:prose-invert prose-a:text-primary
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
-          dark:prose-code:text-white prose-img:drop-shadow prose-a:font-bold
+            dark:prose-code:text-white prose-img:drop-shadow prose-a:font-bold
             focus:prose-a:ring-4 focus:prose-a:ring-primary prose-a:outline-none
             prose-a:duration-300 prose-a:rounded focus:prose-a:ring-offset-2
             focus:prose-a:dark:ring-offset-black`}
