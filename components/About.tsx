@@ -20,8 +20,8 @@ export const About = () => {
           </b>
         </Tippy>{" "}
         year old {PROFESSION.toLowerCase()} located in the <b>{LOCATED}</b>. I
-        roughly have around <b>4</b> years of experience in web development and
-        I&apos;m familiar with modern web technologies such as <b>React</b> &{" "}
+        have <b>6</b> years of experience in web development and I&apos;m
+        familiar with modern web technologies such as <b>React</b> &{" "}
         <b>TypeScript</b>. I&apos;m currently studying Computer Science and I
         plan to specialize in server-side development in the near future.
       </Text>
