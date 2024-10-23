@@ -4,10 +4,11 @@ import { page } from "../lib/page";
 import { Header } from "./Header";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
+import { Section } from "./Section";
 
 export const License = () => {
   return (
-    <section className="flex flex-col border-t border-teal-100 dark:border-teal-900 pt-5 mb-12">
+    <Section topBorder={true}>
       <Header singleItem={false}>
         <Heading>License 📜</Heading>
       </Header>
@@ -26,6 +27,6 @@ export const License = () => {
         </LinkT>
         , read more <LinkT href={page.license.link}>here</LinkT>.
       </Text>
-    </section>
+    </Section>
   );
 };

@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { FiMail } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { Success } from "./Success";
+import { Section } from "./Section";
 import Tippy from "@tippyjs/react";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
@@ -72,6 +73,7 @@ export const NewsLetter = () => {
     }
   };
 
+  /*
   const fetchSubscriberHelperCall = async () => {
     try {
       const data = await getSubscribers();
@@ -89,6 +91,7 @@ export const NewsLetter = () => {
       setErrorMessage(e as string);
     }
   };
+  */
 
   useEffect(() => {
     // fetchSubscriberHelperCall();
@@ -96,7 +99,7 @@ export const NewsLetter = () => {
   }, []);
 
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>Newsletter 📰</Heading>
       <Form onSubmit={subscribe} action="POST">
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
@@ -170,6 +173,6 @@ export const NewsLetter = () => {
           in the meantime. 👍{" "}
         </Note>
       </div>
-    </section>
+    </Section>
   );
 };

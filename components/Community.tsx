@@ -2,6 +2,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { LinkButton } from "./LinkButton";
 import { DOMAIN } from "../lib/constants";
 import { Heading } from "./Heading";
+import { Section } from "./Section";
 import { page } from "../lib/page";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
@@ -9,7 +10,7 @@ import { Note } from "./Note";
 
 export const Community = () => {
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>Community 👊</Heading>
       <Text>
         If you would like to connect with me, whether we have previously
@@ -34,6 +35,6 @@ export const Community = () => {
           <LinkT href={page.community.rules.link}>rules</LinkT> upon joining.
         </Note>
       </div>
-    </section>
+    </Section>
   );
 };

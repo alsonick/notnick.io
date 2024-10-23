@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { ARTICLES } from "../lib/articles";
 import { Article } from "../types/article";
 import { FiRepeat } from "react-icons/fi";
+import { Section } from "./Section";
 import { Heading } from "./Heading";
 import { page } from "../lib/page";
 import { Button } from "./Button";
@@ -32,7 +33,7 @@ export const FeaturedArticles = () => {
   }, []);
 
   return (
-    <section className="flex justify-between flex-col mb-12">
+    <Section>
       <Heading>Featured Articles 📝</Heading>
       <div className="flex flex-col lg:flex-row">
         {shuffledArticles.map((article) => (
@@ -56,6 +57,6 @@ export const FeaturedArticles = () => {
           <FiRepeat className="text-xl ml-2 hover:scale-110 duration-150" />
         </Button>
       </div>
-    </section>
+    </Section>
   );
 };

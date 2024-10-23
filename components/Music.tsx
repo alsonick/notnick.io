@@ -3,6 +3,7 @@ import { FiArrowRight } from "react-icons/fi";
 import { MUSIC } from "../lib/music";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
+import { Section } from "./Section";
 import { page } from "../lib/page";
 import { Text } from "./Text";
 
@@ -13,7 +14,7 @@ export const Music = () => {
   const featured = MUSIC.filter((playlist) => playlist.feature);
 
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>Music 🎶</Heading>
       <Text>
         If you&apos;re curious about the type of music I listen to, be sure to
@@ -53,6 +54,6 @@ export const Music = () => {
           entire playlist collection.
         </Text>
       </div>
-    </section>
+    </Section>
   );
 };

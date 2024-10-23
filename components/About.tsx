@@ -5,6 +5,7 @@ import {
   DOMAIN,
 } from "../lib/constants";
 import { Heading } from "./Heading";
+import { Section } from "./Section";
 import { LinkTag } from "./LinkTag";
 import Tippy from "@tippyjs/react";
 import { page } from "../lib/page";
@@ -117,7 +118,7 @@ export const About = () => {
   ];
 
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>About 💭</Heading>
       <>
         {p[0].p1}
@@ -130,6 +131,6 @@ export const About = () => {
         <br />
         {p[0].p5}
       </>
-    </section>
+    </Section>
   );
 };

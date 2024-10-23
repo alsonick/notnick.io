@@ -2,6 +2,7 @@ import { EMAIL_ADDRESS } from "../lib/constants";
 import { social } from "../lib/social-links";
 import { ContactForm } from "./ContactForm";
 import { useState, useEffect } from "react";
+import { Section } from "./Section";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
 import { Text } from "./Text";
@@ -25,6 +26,7 @@ export const Contact = () => {
 
   useEffect(() => {
     const second = setInterval(() => updateCurrentTime(), 1000);
+
     return () => {
       clearInterval(second);
     };
@@ -33,7 +35,7 @@ export const Contact = () => {
   }, []);
 
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>Contact 💌</Heading>
       <Text>
         Be sure to shoot me a{" "}
@@ -57,6 +59,6 @@ export const Contact = () => {
           </Note>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

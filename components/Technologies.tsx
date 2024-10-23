@@ -1,11 +1,12 @@
 import { TECHNOLOGIES } from "../lib/technologies";
 import { TechnologyCard } from "./TechnologyCard";
 import { Heading } from "./Heading";
+import { Section } from "./Section";
 import { Note } from "./Note";
 
 export const Technologies = () => {
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>Technologies 💻</Heading>
       <ul className="block text-center list-disc mb-6">
         {TECHNOLOGIES.map((tech) => (
@@ -22,6 +23,6 @@ export const Technologies = () => {
         I may use certain technologies more frequently than others on a daily
         basis.
       </Note>
-    </section>
+    </Section>
   );
 };

@@ -2,6 +2,7 @@ import { ExperienceCard } from "./ExperienceCard";
 import { EXPERIENCE } from "../lib/experience";
 import { social } from "../lib/social-links";
 import { Heading } from "./Heading";
+import { Section } from "./Section";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
 import { LinkT } from "./Link";
@@ -9,7 +10,7 @@ import { Text } from "./Text";
 
 export const Experience = () => {
   return (
-    <section className="flex flex-col mb-12">
+    <Section>
       <Heading>Experience 🛠️</Heading>
       <Text>
         If you want to find out more about my professional experience and the
@@ -46,6 +47,6 @@ export const Experience = () => {
         Click <LinkTag href={page.experience.link}>here</LinkTag> to view the
         full list.
       </Text>
-    </section>
+    </Section>
   );
 };
