@@ -4,7 +4,7 @@ import { Border } from "./Border";
 import Image from "next/image";
 
 interface Props {
-  border: boolean;
+  border?: boolean;
   height: number;
   width: number;
 }

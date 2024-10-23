@@ -66,7 +66,7 @@ export const COMPONENTS: Components[] = [
   {
     id: generateRandomId(),
     text: "Avatar",
-    component: <Avatar border={true} width={50} height={50} />,
+    component: <Avatar width={60} height={60} />,
   },
   {
     id: generateRandomId(),

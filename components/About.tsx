@@ -1,4 +1,9 @@
-import { DOMAIN, LOCATED, PROFESSION } from "../lib/constants";
+import {
+  YEAR_STARTED_PROGRAMMING,
+  PROFESSION,
+  LOCATED,
+  DOMAIN,
+} from "../lib/constants";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
 import Tippy from "@tippyjs/react";
@@ -17,10 +22,11 @@ export const About = () => {
             </b>
           </Tippy>{" "}
           year old {PROFESSION.toLowerCase()} located in the <b>{LOCATED}</b>. I
-          have <b>6</b> years of experience in web development and I&apos;m
-          familiar with modern web technologies such as <b>React</b> &{" "}
-          <b>TypeScript</b>. I&apos;m currently studying Computer Science and I
-          plan to specialize in server-side development in the near future.
+          have <b>{new Date().getFullYear() - YEAR_STARTED_PROGRAMMING}</b>{" "}
+          years of experience in web development and I&apos;m familiar with
+          modern web technologies such as <b>React</b> & <b>TypeScript</b>.
+          I&apos;m currently studying Computer Science and I plan to specialize
+          in server-side development in the near future.
         </Text>
       ),
       p2: (
@@ -113,16 +119,17 @@ export const About = () => {
   return (
     <section className="flex flex-col mb-12">
       <Heading>About 💭</Heading>
-
-      {p[0].p1}
-      <br />
-      {p[0].p2}
-      <br />
-      {p[0].p3}
-      <br />
-      {p[0].p4}
-      <br />
-      {p[0].p5}
+      <>
+        {p[0].p1}
+        <br />
+        {p[0].p2}
+        <br />
+        {p[0].p3}
+        <br />
+        {p[0].p4}
+        <br />
+        {p[0].p5}
+      </>
     </section>
   );
 };

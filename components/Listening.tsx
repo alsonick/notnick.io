@@ -1,5 +1,10 @@
+import {
+  SECONDARY_THEME_COLOR,
+  WEBSOCKET_URL,
+  DISCORD_ID,
+  THEME,
+} from "../lib/constants";
 import { useEffect, useState, useMemo, CSSProperties } from "react";
-import { DISCORD_ID, THEME, WEBSOCKET_URL } from "../lib/constants";
 import { Presence } from "../types/lanyard";
 import { FaSpotify } from "react-icons/fa";
 import { Text } from "./Text";
@@ -8,7 +13,7 @@ import { Text } from "./Text";
 import Link from "next/link";
 
 // Credit to Phineas (https://github.com/phineas) for the lanyard implementation
-// Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx)
+// Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/main/src/types/lanyard.ts)
 
 type Props = {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,7 +41,7 @@ type SocketEvent = {
 const logLanyardEvent = (eventName: string, data: any) => {
   console.log(
     `%cLanyard%c <~ ${eventName} %o`,
-    `background-color: ${THEME}; border-radius: 5px; padding: 3px; color: #5050ff;`,
+    `background-color: ${THEME}; border-radius: 5px; padding: 3px; color: ${SECONDARY_THEME_COLOR};`,
     `background: none; color: ${THEME};`,
     data
   );
@@ -115,7 +120,8 @@ export const Listening: React.FC<Props> = (
 
   return (
     <a
-      className="flex items-center mb-6 duration-300 text-gray-600 dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit"
+      className="flex items-center mb-6 duration-300 text-gray-600
+      dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit"
       style={style}
     >
       <FaSpotify className="mr-2" />
