@@ -6,8 +6,6 @@ import { page } from "../lib/page";
 import { Text } from "./Text";
 
 export const About = () => {
-  const TEXT_MARGIN_BOTTOM = 1.5;
-
   const p = [
     {
       p1: (
