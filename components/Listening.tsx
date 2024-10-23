@@ -12,8 +12,8 @@ import { Text } from "./Text";
 // Next.js
 import Link from "next/link";
 
-// Credit to Phineas (https://github.com/phineas) for the lanyard implementation
-// Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/main/src/types/lanyard.ts)
+// Credit to Phineas (https://github.com/phineas) for the lanyard implementation.
+// Credit to Tim for the types (https://github.com/timcole/timcole.me/blob/main/src/types/lanyard.ts).
 
 type Props = {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
