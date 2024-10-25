@@ -52,11 +52,6 @@ export const PATHS: Path[] = [
   },
   {
     id: generateRandomId(),
-    path: page.anime.path,
-    link: page.anime.link,
-  },
-  {
-    id: generateRandomId(),
     path: page.socials.path,
     link: page.socials.link,
   },

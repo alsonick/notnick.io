@@ -1,25 +1,25 @@
 import { ISRCResponse, SpotifyAccessToken } from "../../../types/spotify";
 import { CharacterLimit } from "../../../components/CharacterLimit";
+import { StatusMessage } from "../../../components/StatusMessage";
 import { FULL_NAME, PROFESSION } from "../../../lib/constants";
 import { FiCopy, FiSearch, FiCheck } from "react-icons/fi";
 import { Heading } from "../../../components/Heading";
 import { Animate } from "../../../components/Animate";
 import { Loading } from "../../../components/Loading";
-import { Success } from "../../../components/Success";
+import { ICON } from "../../../lib/tailwindcss/icon";
 import { Layout } from "../../../components/Layout";
 import { GoBack } from "../../../components/GoBack";
 import { Header } from "../../../components/Header";
 import { Button } from "../../../components/Button";
-import { Error } from "../../../components/Error";
 import { Label } from "../../../components/Label";
 import { Input } from "../../../components/Input";
 import { LinkT } from "../../../components/Link";
 import { Text } from "../../../components/Text";
 import { Form } from "../../../components/Form";
 import { Seo } from "../../../components/Seo";
-import { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
 import copy from "copy-to-clipboard";
+import { useState } from "react";
 
 // Next.js
 import { NextPage } from "next";
@@ -34,6 +34,7 @@ const ISRC: NextPage = () => {
   const [error, setError] = useState("");
 
   const URL = "https://api.spotify.com/v1/search";
+
   const CHARACTER_LIMIT = 100;
 
   const sendSpotifyIsrcRequest = async (
@@ -131,17 +132,23 @@ const ISRC: NextPage = () => {
                     text={soundtrackTitle}
                   />
                   <Button style={{ marginLeft: "auto" }}>
-                    Search{" "}
-                    <FiSearch className="text-xl ml-2 hover:scale-110 duration-150" />
+                    Search <FiSearch className={ICON} />
                   </Button>
                 </div>
                 <Loading loading={loading} text="Loading..." />
-                {error && !loading ? <Error message={error} /> : null}
-                {success && !loading ? <Success message={success} /> : null}
+                {error && !loading ? (
+                  <StatusMessage message={error} type="error" />
+                ) : null}
+                {success && !loading ? (
+                  <StatusMessage message={success} type="success" />
+                ) : null}
               </div>
             </Form>
             <div className="my-12 text-center flex flex-col items-center">
-              <FaSpotify className="text-gray-600 mb-1 dark:text-gray-300 hover:scale-110 duration-300 hover:text-black dark:hover:text-white" />
+              <FaSpotify
+                className="text-gray-600 mb-1 dark:text-gray-300 hover:scale-110
+                duration-300 hover:text-black dark:hover:text-white"
+              />
               <Text>All request data is provided by Spotify. </Text>
               <LinkT href="https://developer.spotify.com/" target="_blank">
                 developer.spotify.com
@@ -166,9 +173,9 @@ const ISRC: NextPage = () => {
                   >
                     {copied ? "Copied" : "Copy"}{" "}
                     {copied ? (
-                      <FiCheck className="text-xl ml-2 hover:scale-110 duration-150" />
+                      <FiCheck className={ICON} />
                     ) : (
-                      <FiCopy className="text-xl ml-2 hover:scale-110 duration-150" />
+                      <FiCopy className={ICON} />
                     )}
                   </Button>
                 </div>

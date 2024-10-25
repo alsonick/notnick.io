@@ -22,6 +22,7 @@ const Rules: NextPage = () => {
   const fetchRulesData = async () => {
     const response = await fetch(`/api/community/rules`);
     const data: Response = await response.json();
+
     setLoading(false);
     setData(data);
   };
@@ -42,9 +43,12 @@ const Rules: NextPage = () => {
             <Heading style={{ marginBottom: 0 }}>Community Rules</Heading>
           </Header>
           {data ? (
-            <div className="mb-4">
+            <div className="mb-4 mt-16">
               {data?.rules.map((rule) => (
-                <div className="flex mb-12 flex-col" key={rule.id}>
+                <div
+                  className="flex flex-col border-b border-teal-100 dark:border-teal-900 mb-10 pb-4"
+                  key={rule.id}
+                >
                   <Key>
                     {rule.number}. {rule.title}
                   </Key>

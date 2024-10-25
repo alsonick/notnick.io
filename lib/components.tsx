@@ -2,6 +2,7 @@ import { GitHubStarButton } from "../components/GitHubStarButton";
 import { TechnologyCard } from "../components/TechnologyCard";
 import { CharacterLimit } from "../components/CharacterLimit";
 import { FilterListBox } from "../components/FilterListBox";
+import { StatusMessage } from "../components/StatusMessage";
 import { generateRandomId } from "./generate-random-id";
 import { PostCardTag } from "../components/PostCardTag";
 import { LinkButton } from "../components/LinkButton";
@@ -13,8 +14,6 @@ import { Dropdown } from "../components/Dropdown";
 import { Components } from "../types/components";
 import { Heading } from "../components/Heading";
 import { Loading } from "../components/Loading";
-import { Warning } from "../components/Warning";
-import { Success } from "../components/Success";
 import { LinkTag } from "../components/LinkTag";
 import { Date as D } from "../components/Date";
 import { Toggle } from "../components/Toggle";
@@ -23,7 +22,6 @@ import { Avatar } from "../components/Avatar";
 import { Button } from "../components/Button";
 import { Border } from "../components/Border";
 import { Switch } from "../components/Switch";
-import { Error } from "../components/Error";
 import { Input } from "../components/Input";
 import { Label } from "../components/Label";
 import { Text } from "../components/Text";
@@ -75,18 +73,13 @@ export const COMPONENTS: Components[] = [
   },
   {
     id: generateRandomId(),
-    text: "Success",
-    component: <Success message="Example" />,
+    text: "Status Message",
+    component: <StatusMessage message="Example" type="success" />,
   },
   {
     id: generateRandomId(),
-    text: "Warning",
-    component: <Warning message="Example" />,
-  },
-  {
-    id: generateRandomId(),
-    text: "Error",
-    component: <Error message="Example" />,
+    text: "Border",
+    component: <Border />,
   },
   {
     id: generateRandomId(),

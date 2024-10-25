@@ -1,3 +1,4 @@
+import { ICON } from "../lib/tailwindcss/icon";
 import { FiArrowRight } from "react-icons/fi";
 import { ArticleCard } from "./ArticleCard";
 import { useEffect, useState } from "react";
@@ -53,8 +54,7 @@ export const FeaturedArticles = () => {
       </div>
       <div className="ml-auto">
         <Button onClick={shuffleArticles}>
-          Shuffle{" "}
-          <FiRepeat className="text-xl ml-2 hover:scale-110 duration-150" />
+          Shuffle <FiRepeat className={ICON} />
         </Button>
       </div>
     </Section>

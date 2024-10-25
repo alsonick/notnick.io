@@ -3,12 +3,13 @@ import { DownloadCodeProject } from "../../components/DownloadCodeProject";
 import { returnChallengeStatus } from "../../lib/return-challenge-status";
 import { ContentUnavailable } from "../../components/ContentUnavailable";
 import { generateRandomId } from "../../lib/generate-random-id";
+import { StatusMessage } from "../../components/StatusMessage";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
 import { TdChildren } from "../../components/TdChildren";
 import { Heading } from "../../components/Heading";
 import { Animate } from "../../components/Animate";
-import { Success } from "../../components/Success";
 import { CHALLENGES } from "../../lib/challenges";
+import { ICON } from "../../lib/tailwindcss/icon";
 import { GoBack } from "../../components/GoBack";
 import { Header } from "../../components/Header";
 import { Layout } from "../../components/Layout";
@@ -116,7 +117,7 @@ const Slug: NextPage = () => {
           {challenge?.completed ? (
             <div className="my-6 flex justify-between items-center">
               <Button onClick={() => fireworks()}>🎉</Button>
-              <Success message="Completed" />
+              <StatusMessage message="Completed" type="success" />
             </div>
           ) : null}
           <div className="my-8">
@@ -200,8 +201,7 @@ const Slug: NextPage = () => {
                                         );
                                       }}
                                     >
-                                      Download{" "}
-                                      <FiDownload className="text-xl ml-2 hover:scale-110 duration-150" />
+                                      Download <FiDownload className={ICON} />
                                     </Button>
                                   </div>
                                 ) : null}

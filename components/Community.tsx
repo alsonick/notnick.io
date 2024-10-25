@@ -1,4 +1,5 @@
 import { FiExternalLink } from "react-icons/fi";
+import { ICON } from "../lib/tailwindcss/icon";
 import { LinkButton } from "./LinkButton";
 import { DOMAIN } from "../lib/constants";
 import { Heading } from "./Heading";
@@ -24,8 +25,7 @@ export const Community = () => {
       </Text>
       <div className="mt-4">
         <LinkButton href={`https://${DOMAIN}/community`} target="_blank">
-          Join Server{" "}
-          <FiExternalLink className="text-xl ml-2 hover:scale-110 duration-150" />
+          Join Server <FiExternalLink className={ICON} />
         </LinkButton>
       </div>
       <div className="mt-6">

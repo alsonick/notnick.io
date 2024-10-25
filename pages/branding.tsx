@@ -2,6 +2,7 @@ import { computedAltTitleTag } from "../lib/computed-alt-title-tag";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
+import { ICON } from "../lib/tailwindcss/icon";
 import { Button } from "../components/Button";
 import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
@@ -73,7 +74,7 @@ const Branding: NextPage = () => {
                       saveAs(`${branding.path}.${branding.ext}`, branding.name);
                     }}
                   >
-                    Download <FiDownload className="text-xl ml-2" />
+                    Download <FiDownload className={ICON} />
                   </Button>
                 </div>
               </div>

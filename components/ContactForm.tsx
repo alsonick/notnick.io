@@ -1,15 +1,15 @@
 import { CharacterLimit } from "./CharacterLimit";
 import { EMAIL_ADDRESS } from "../lib/constants";
+import { StatusMessage } from "./StatusMessage";
+import { ICON } from "../lib/tailwindcss/icon";
 import { FiSend } from "react-icons/fi";
 import { TextArea } from "./TextArea";
 import { Loading } from "./Loading";
 import { Heading } from "./Heading";
-import { Success } from "./Success";
 import { Button } from "./Button";
 import { useState } from "react";
 import { Input } from "./Input";
 import { Label } from "./Label";
-import { Error } from "./Error";
 import Filter from "bad-words";
 import { Text } from "./Text";
 import { Form } from "./Form";
@@ -117,12 +117,15 @@ export const ContactForm = () => {
       <CharacterLimit text={message} limit={CHARACTER_LIMIT} />
       <div className="w-full flex items-center justify-between mt-2">
         <Loading loading={loading} text="Sending..." />
-        {error && !loading ? <Error message={error} /> : null}
-        {success && !loading ? <Success message={success} /> : null}
+        {error && !loading ? (
+          <StatusMessage message={error} type="error" />
+        ) : null}
+        {success && !loading ? (
+          <StatusMessage message={success} type="success" />
+        ) : null}
         <div className="ml-auto pl-1">
           <Button>
-            Send{" "}
-            <FiSend className="text-xl ml-2 hover:scale-110 duration-150" />
+            Send <FiSend className={ICON} />
           </Button>
         </div>
       </div>

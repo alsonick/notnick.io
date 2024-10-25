@@ -2,17 +2,17 @@ import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { getIssues as getIssuesMethod } from "../lib/get-issues";
 import { getSubscribers } from "../lib/get-subscribers";
 import { EMAIL_ADDRESS } from "../lib/constants";
+import { StatusMessage } from "./StatusMessage";
+import { ICON } from "../lib/tailwindcss/icon";
 import { social } from "../lib/social-links";
 import { useState, useEffect } from "react";
 import { FiMail } from "react-icons/fi";
 import { Heading } from "./Heading";
-import { Success } from "./Success";
 import { Section } from "./Section";
 import Tippy from "@tippyjs/react";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Input } from "./Input";
-import { Error } from "./Error";
 import { Text } from "./Text";
 import { Form } from "./Form";
 import { Note } from "./Note";
@@ -23,8 +23,11 @@ import Link from "next/link";
 export const NewsLetter = () => {
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
+
   const [loading, setLoading] = useState<boolean>(false);
-  const [issues, getIssues] = useState<number>(0);
+
+  // const [issues, getIssues] = useState<number>(0);
+
   const [email, setEmail] = useState<string>("");
   const [subs, setSubs] = useState<number>(0);
 
@@ -122,8 +125,7 @@ export const NewsLetter = () => {
           <Tippy content={"Disabled"}>
             <div className="flex md:w-fit w-full">
               <Button disabled style={{ width: "100%" }}>
-                Subscribe{" "}
-                <FiMail className="text-xl ml-2 hover:scale-110 duration-150" />
+                Subscribe <FiMail className={ICON} />
               </Button>
             </div>
           </Tippy>
@@ -154,13 +156,13 @@ export const NewsLetter = () => {
           {successMessage && (
             <div className="flex items-center">
               <HiBadgeCheck className="mr-1 mt-[1px] text-green-500" />
-              <Success message={successMessage} />
+              <StatusMessage message={successMessage} type="success" />
             </div>
           )}
           {errorMessage && (
             <div className="flex items-center">
               <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
-              <Error message={errorMessage} />
+              <StatusMessage message={errorMessage} type="error" />
             </div>
           )}
           {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}

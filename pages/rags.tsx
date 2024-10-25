@@ -2,6 +2,7 @@ import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { TdChildren } from "../components/TdChildren";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
+import { ICON } from "../lib/tailwindcss/icon";
 import { Layout } from "../components/Layout";
 import { Button } from "../components/Button";
 import { GoBack } from "../components/GoBack";
@@ -121,8 +122,7 @@ const Rags: NextPage = () => {
           </div>
           <div className="my-4">
             <Button style={{ marginLeft: "auto" }} onClick={shuffleRags}>
-              Shuffle{" "}
-              <FiRepeat className="text-xl ml-2 hover:scale-110 duration-150" />
+              Shuffle <FiRepeat className={ICON} />
             </Button>
           </div>
           <div className="my-4">

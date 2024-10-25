@@ -1,6 +1,7 @@
 import { getEmploymentTypeString } from "../lib/get-employment-type-string";
 import { FiExternalLink, FiMapPin } from "react-icons/fi";
 import { Experience } from "../types/experience";
+import { ICON } from "../lib/tailwindcss/icon";
 import { PostCardTag } from "./PostCardTag";
 import { LinkButton } from "./LinkButton";
 import { Border } from "./Border";
@@ -74,11 +75,7 @@ export const ExperienceCard = (props: Experience) => {
             <Text>{props.location}</Text>
           </div>
           <LinkButton href={props.link} title="Visit" target="_blank">
-            Visit{" "}
-            <FiExternalLink
-              title="Visit"
-              className="text-xl ml-2 hover:scale-110 duration-150"
-            />
+            Visit <FiExternalLink title="Visit" className={ICON} />
           </LinkButton>
         </div>
       </div>
