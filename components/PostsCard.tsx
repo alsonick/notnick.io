@@ -6,10 +6,10 @@ interface Props {
   post: Post;
 }
 
-export const PostsCard = ({ type, post }: Props) => {
+export const PostsCard = (props: Props) => {
   return (
     <div>
-      <Card type={type} post={post} />
+      <Card type={props.type} post={props.post} />
     </div>
   );
 };

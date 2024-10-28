@@ -4,13 +4,13 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export const Heading = ({ className, children, style }: Props) => {
+export const Heading = (props: Props) => {
   return (
     <h1
-      className={`sm:text-4xl text-3xl font-bold mb-6 dark:text-white ${className}`}
-      style={style}
+      className={`sm:text-4xl text-3xl font-bold mb-6 dark:text-white ${props.className}`}
+      style={props.style}
     >
-      {children}
+      {props.children}
     </h1>
   );
 };

@@ -10,10 +10,10 @@ interface Props {
   articles: Article[];
 }
 
-export const ArticlesList = ({ articles }: Props) => {
+export const ArticlesList = (props: Props) => {
   return (
     <>
-      {articles.map((article) => (
+      {props.articles.map((article) => (
         <div
           className="border-b border-teal-100 dark:border-teal-900 mb-10 pb-4"
           key={article.id}

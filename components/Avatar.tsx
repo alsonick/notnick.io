@@ -9,29 +9,33 @@ interface Props {
   width: number;
 }
 
-export const Avatar = ({ border, height, width }: Props) => {
+export const Avatar = (props: Props) => {
   return (
     <>
-      {border ? (
+      {props.border ? (
         <Border>
-          <Img height={height} width={width} />
+          <Img height={props.height} width={props.width} />
         </Border>
       ) : (
-        <Img height={height} width={width} />
+        <Img height={props.height} width={props.width} />
       )}
     </>
   );
 };
+interface ImgProps {
+  height: number;
+  width: number;
+}
 
-const Img = ({ height, width }: { height: number; width: number }) => {
+const Img = (props: Props) => {
   return (
     <Image
       className="rounded-full border border-teal-100 dark:border-teal-900"
       title="My avatar"
       src="/branding/secondary_dark_short_sig_avatar.png"
-      height={height}
+      height={props.height}
       alt="My avatar"
-      width={width}
+      width={props.width}
       quality={100}
     />
   );

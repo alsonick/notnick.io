@@ -3,6 +3,7 @@ export const API_URL =
     ? "https://localhost:3000/api"
     : "https://notnick.io/api";
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
+export const SUBJECT_OF_STUDY = "Computer Science";
 export const DISCORD_ID = "463449066672619520";
 export const SECONDARY_THEME_COLOR = "#5050ff";
 export const PROFESSION = "Software Engineer";

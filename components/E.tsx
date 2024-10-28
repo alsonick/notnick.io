@@ -15,7 +15,7 @@ interface Props {
   code: number;
 }
 
-export const E = ({ heading, title, text, code }: Props) => {
+export const E = (props: Props) => {
   const router = useRouter();
 
   const [enabled, setEnabled] = useState(false);
@@ -37,19 +37,24 @@ export const E = ({ heading, title, text, code }: Props) => {
 
   return (
     <>
-      <Seo title={title} description={`${FULL_NAME} - ${PROFESSION}`} />
+      <Seo title={props.title} description={`${FULL_NAME} - ${PROFESSION}`} />
       <div className="flex flex-col items-center justify-center w-screen h-screen">
         {enabled ? (
           <picture>
-            <img className="w-72" src={`https://http.cat/${code}.jpg`} alt="" />
+            <img
+              className="w-72"
+              src={`https://http.cat/${props.code}.jpg`}
+              title="A cat."
+              alt="A cat."
+            />
           </picture>
         ) : (
           <>
             {" "}
             <h1 className="text-4xl font-bold text-center tracking-tight dark:text-white">
-              {heading}
+              {props.heading}
             </h1>
-            <Text style={{ marginBottom: "1rem" }}>{text}</Text>
+            <Text style={{ marginBottom: "1rem" }}>{props.text}</Text>
           </>
         )}
         {!enabled && <GoBack />}

@@ -4,17 +4,17 @@ interface Props {
   text: string;
 }
 
-export const CharacterLimit = ({ style, limit, text }: Props) => {
+export const CharacterLimit = (props: Props) => {
   return (
     <p
       className={`sm:text-base text-sm ${
-        text.length > limit
+        props.text.length > props.limit
           ? "text-red-500 font-semibold"
           : "text-gray-600 dark:text-gray-300"
       }`}
-      style={style}
+      style={props.style}
     >
-      {text.length}/{limit}
+      {props.text.length}/{props.limit}
     </p>
   );
 };

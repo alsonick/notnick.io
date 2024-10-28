@@ -11,21 +11,15 @@ interface Props {
   path: string;
 }
 
-export const SpotifyPlaylistCover = ({
-  playlist,
-  height,
-  width,
-  path,
-  name,
-}: Props) => {
+export const SpotifyPlaylistCover = (props: Props) => {
   return (
     <Image
       className="rounded-xl border w-full border-teal-100 dark:border-teal-900"
-      title={`${playlist?.name || name} Spotify Playlist`}
-      alt={`${playlist?.name || name} Spotify Playlist`}
-      src={playlist?.path || path}
-      height={height || 200}
-      width={width || 200}
+      title={`${props.playlist?.name || name} Spotify Playlist`}
+      alt={`${props.playlist?.name || name} Spotify Playlist`}
+      src={props.playlist?.path || props.path}
+      height={props.height || 200}
+      width={props.width || 200}
       quality={100}
     />
   );

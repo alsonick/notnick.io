@@ -6,24 +6,20 @@ interface Props {
   message?: string;
 }
 
-export const ContentUnavailable = ({
-  backButtonLocation,
-  showBackButton,
-  message,
-}: Props) => {
+export const ContentUnavailable = (props: Props) => {
   return (
     <div className="text-center items-center flex flex-col w-fit">
       <h2 className="text-xl font-semibold opacity-30 dark:text-white">
         Content Unavailable
       </h2>
       <p className="text-gray-600 dark:text-gray-300 opacity-80 w-2/3">
-        {message
-          ? message
+        {props.message
+          ? props.message
           : "The page is not supported on small mobile devices."}
       </p>
-      {showBackButton && (
+      {props.showBackButton && (
         <div className="mt-2">
-          <GoBack location={backButtonLocation} />
+          <GoBack location={props.backButtonLocation} />
         </div>
       )}
     </div>

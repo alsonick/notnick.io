@@ -5,13 +5,15 @@ interface Props {
   slice?: number;
 }
 
-export const Text = ({ children, style, sliceText, slice }: Props) => {
+export const Text = (props: Props) => {
   return (
     <p
       className="text-gray-600 dark:text-gray-300 sm:text-base text-sm"
-      style={style}
+      style={props.style}
     >
-      {!sliceText ? children : `${String(children).slice(0, slice).trim()}...`}
+      {!props.sliceText
+        ? props.children
+        : `${String(props.children).slice(0, props.slice).trim()}...`}
     </p>
   );
 };

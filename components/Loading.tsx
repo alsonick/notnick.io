@@ -3,12 +3,12 @@ interface Props {
   text: string;
 }
 
-export const Loading = ({ loading, text }: Props) => {
+export const Loading = (props: Props) => {
   return (
     <>
-      {loading ? (
+      {props.loading ? (
         <p className="sm:text-base text-sm text-gray-600 dark:text-gray-300">
-          {text}
+          {props.text}
         </p>
       ) : null}
     </>

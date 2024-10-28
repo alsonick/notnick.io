@@ -4,13 +4,13 @@ interface Props {
   date: string;
 }
 
-export const Date = ({ date }: Props) => {
+export const Date = (props: Props) => {
   return (
     <time
-      dateTime={date}
+      dateTime={props.date}
       className="text-gray-600 sm:text-base text-sm dark:text-gray-300"
     >
-      {convertDate(date)}
+      {convertDate(props.date)}
     </time>
   );
 };

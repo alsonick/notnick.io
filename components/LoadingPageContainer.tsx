@@ -2,10 +2,10 @@ interface Props {
   children?: React.ReactNode;
 }
 
-export const LoadingPageContainer = ({ children }: Props) => {
+export const LoadingPageContainer = (props: Props) => {
   return (
     <div className="h-full flex items-center justify-center text-center">
-      {children}
+      {props.children}
     </div>
   );
 };

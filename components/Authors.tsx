@@ -7,40 +7,40 @@ interface Props {
   authors: string[];
 }
 
-export const Authors = ({ type, authors, style }: Props) => {
+export const Authors = (props: Props) => {
   return (
     <div className="flex text-gray-600 dark:text-gray-300 sm:text-base text-sm">
       <>
-        {authors.length >= 1 ? (
-          <>{type === "article" ? "By" : "Talk by"}&nbsp;</>
+        {props.authors.length >= 1 ? (
+          <>{props.type === "article" ? "By" : "Talk by"}&nbsp;</>
         ) : (
           "No authors or talkers were provided."
         )}
       </>
 
-      {authors.map((author, index) => (
+      {props.authors.map((author, index) => (
         <div key={author}>
-          {authors[authors.length - 1].length !==
-          authors[index].length ? null : (
+          {props.authors[props.authors.length - 1].length !==
+          props.authors[index].length ? null : (
             <>
-              {style === "long" ? (
+              {props.style === "long" ? (
                 <div className="flex">
-                  {authors.map((a) => (
+                  {props.authors.map((a) => (
                     <Text key={a}>{a}, </Text>
                   ))}
                 </div>
               ) : (
                 <>
-                  {authors.length > 1 ? (
+                  {props.authors.length > 1 ? (
                     <Tippy
-                      content={`${authors.slice(1, authors.length)}`.replace(
-                        ",",
-                        ", "
-                      )}
+                      content={`${props.authors.slice(
+                        1,
+                        props.authors.length
+                      )}`.replace(",", ", ")}
                     >
                       <div className="flex">
                         <Text>
-                          {authors[0]} ({authors.length - 1})
+                          {props.authors[0]} ({props.authors.length - 1})
                         </Text>
                       </div>
                     </Tippy>

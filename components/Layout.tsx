@@ -11,40 +11,35 @@ interface Props {
   showBackButton?: boolean;
 }
 
-export const Layout = ({
-  supportLargeScreen = true,
-  backButtonLocation,
-  isDisplaySpotify,
-  longLayoutFormat,
-  showBackButton,
-  children,
-}: Props) => {
+export const Layout = (props: Props) => {
   return (
     <div
       className="flex flex-col items-center justify-center h-screen scrollbar-thin scrollbar-thumb-gray-700
       scrollbar-track-gray-800 scrollbar-thumb-rounded-full"
     >
       <div className={`flex flex-col h-full py-20 sm:w-[40rem] w-[95%] mt-12`}>
-        {!supportLargeScreen && (
+        {!props.supportLargeScreen && (
           <div
             className={`${
-              supportLargeScreen ? "lg:hidden block" : "lg:hidden block"
+              props.supportLargeScreen ? "lg:hidden block" : "lg:hidden block"
             }  w-full h-full items-center justify-center flex flex-col`}
           >
             <ContentUnavailable
-              showBackButton={showBackButton}
-              backButtonLocation={backButtonLocation}
+              showBackButton={props.showBackButton}
+              backButtonLocation={props.backButtonLocation}
             />
           </div>
         )}
         <div
-          className={`${supportLargeScreen ? "lg:block" : "lg:block hidden"}`}
+          className={`${
+            props.supportLargeScreen ? "lg:block" : "lg:block hidden"
+          }`}
         >
           <Nav
-            isDisplaySpotify={isDisplaySpotify}
-            longLayoutFormat={longLayoutFormat}
+            isDisplaySpotify={props.isDisplaySpotify}
+            longLayoutFormat={props.longLayoutFormat}
           />
-          {children}
+          {props.children}
           <Footer />
         </div>
       </div>

@@ -7,8 +7,8 @@ type Props = {
   items: Learn[] & {};
 };
 
-export const SecondaryFilterBox = ({ onClick, filter, items }: Props) => {
-  const [selected, setSelected] = useState<string>(items[0].name);
+export const SecondaryFilterBox = (props: Props) => {
+  const [selected, setSelected] = useState<string>(props.items[0].name);
 
   return (
     <select
@@ -19,10 +19,10 @@ export const SecondaryFilterBox = ({ onClick, filter, items }: Props) => {
       value={selected}
       onChange={(e) => {
         setSelected(e.target.value);
-        filter(e.target.value);
+        props.filter(e.target.value);
       }}
     >
-      {items.map((item) => (
+      {props.items.map((item) => (
         <option key={item.name} value={item.name}>
           {item.name}
         </option>

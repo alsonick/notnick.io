@@ -3,10 +3,10 @@ interface Props {
   completed: boolean;
 }
 
-export const GoalItem = ({ children, completed }: Props) => {
+export const GoalItem = (props: Props) => {
   return (
     <li className="text-gray-600 dark:text-gray-300 list-disc">
-      {children} {completed ? "✅" : "❌"}
+      {props.children} {props.completed ? "✅" : "❌"}
     </li>
   );
 };

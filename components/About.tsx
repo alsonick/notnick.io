@@ -1,5 +1,6 @@
 import {
   YEAR_STARTED_PROGRAMMING,
+  SUBJECT_OF_STUDY,
   PROFESSION,
   LOCATED,
   DOMAIN,
@@ -26,8 +27,8 @@ export const About = () => {
           have <b>{new Date().getFullYear() - YEAR_STARTED_PROGRAMMING}</b>{" "}
           years of experience in web development and I&apos;m familiar with
           modern web technologies such as <b>React</b> & <b>TypeScript</b>.
-          I&apos;m currently studying Computer Science and I plan to specialize
-          in server-side development in the near future.
+          I&apos;m currently studying {SUBJECT_OF_STUDY} and I plan to
+          specialize in server-side development in the near future.
         </Text>
       ),
       p2: (

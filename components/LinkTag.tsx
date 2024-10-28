@@ -8,18 +8,18 @@ interface Props {
   href: string;
 }
 
-export const LinkTag = ({ href, children, style, target, onClick }: Props) => {
+export const LinkTag = (props: Props) => {
   return (
     <Link
       className={`font-bold  sm:text-base text-sm focus:ring-offset-2 dark:ring-offset-black rounded inline-flex items-center w-fit text-primary
       hover:underline focus:ring-4 ring-primary outline-none duration-300`}
-      style={style}
-      target={target}
-      href={href}
-      onClick={onClick}
+      style={props.style}
+      target={props.target}
+      href={props.href}
+      onClick={props.onClick}
       rel="noreferrer"
     >
-      {children}
+      {props.children}
     </Link>
   );
 };

@@ -5,10 +5,10 @@ interface Props {
   list: Experience[];
 }
 
-export const MappedExperienceCardList = ({ list }: Props) => {
+export const MappedExperienceCardList = (props: Props) => {
   return (
     <>
-      {list.map((experience) => (
+      {props.list.map((experience) => (
         <ExperienceCard
           showCurrentStatus={experience.showCurrentStatus}
           employmentType={experience.employmentType}

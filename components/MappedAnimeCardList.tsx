@@ -6,15 +6,12 @@ interface Props {
   list: Anime[];
 }
 
-export const MappedAnimeCardList = ({
-  showExtendedDescription,
-  list,
-}: Props) => {
+export const MappedAnimeCardList = (props: Props) => {
   return (
     <>
-      {list.map((anime) => (
+      {props.list.map((anime) => (
         <AnimeCard
-          showExtendedDescription={showExtendedDescription}
+          showExtendedDescription={props.showExtendedDescription}
           key={anime.id}
           anime={anime}
         />

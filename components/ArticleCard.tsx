@@ -12,27 +12,28 @@ interface Props {
   tags: T[];
 }
 
-export const ArticleCard = ({ title, link, authors, tags }: Props) => {
+export const ArticleCard = (props: Props) => {
   return (
     <Link
-      className={`focus:ring-4 ring-primary focus:ring-offset-4 dark:ring-offset-black rounded p-0 sm:p-2 outline-none duration-300`}
-      href={link}
+      className={`focus:ring-4 ring-primary focus:ring-offset-4
+        dark:ring-offset-black rounded p-0 sm:p-2 outline-none duration-300`}
+      href={props.link}
       target="_blank"
-      title={link}
+      title={props.link}
     >
       <div
         className="flex flex-col justify-center w-full
          text-left hover:cursor-pointer mb-7 lg:mb-3
         hover:translate-y-2 duration-300"
       >
-        <Tag title={tags[0].filter} />
+        <Tag title={props.tags[0].filter} />
         <h3
           className="text-black underline dark:text-white
           font-bold text-2xl tracking-tight hover:no-underline"
         >
-          {title}
+          {props.title}
         </h3>
-        <Authors type="article" authors={authors} style="short" />
+        <Authors type="article" authors={props.authors} style="short" />
       </div>
     </Link>
   );

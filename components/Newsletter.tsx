@@ -1,6 +1,6 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
-import { getIssues as getIssuesMethod } from "../lib/get-issues";
-import { getSubscribers } from "../lib/get-subscribers";
+// import { getIssues as getIssuesMethod } from "../lib/get-issues";
+// import { getSubscribers } from "../lib/get-subscribers";
 import { EMAIL_ADDRESS } from "../lib/constants";
 import { StatusMessage } from "./StatusMessage";
 import { ICON } from "../lib/tailwindcss/icon";

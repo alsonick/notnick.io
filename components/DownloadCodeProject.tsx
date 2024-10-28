@@ -5,25 +5,27 @@ interface Props {
   c: Content;
 }
 
-export const DownloadCodeProject = ({ c }: Props) => {
+export const DownloadCodeProject = (props: Props) => {
   return (
     <div className="text-center whitespace-nowrap flex justify-center">
       <LinkT
-        href={c.code?.link}
+        href={props.c.code?.link}
         target="_blank"
-        title={`Download the Xcode project for Day ${c.day}`}
+        title={`Download the Xcode project for Day ${props.c.day}`}
       >
         <picture>
           <img
             className="w-6 mr-2"
-            src={`/assets/${c.code?.icon === "xcode" ? "xcode" : "vscode"}.${
-              c.code?.image.extension
-            }`}
-            title={`${c.code?.icon === "xcode" ? "Xcode" : "Vscode"} icon`}
-            alt={`${c.code?.icon === "xcode" ? "Xcode" : "Vscode"} icon`}
+            src={`/assets/${
+              props.c.code?.icon === "xcode" ? "xcode" : "vscode"
+            }.${props.c.code?.image.extension}`}
+            title={`${
+              props.c.code?.icon === "xcode" ? "Xcode" : "Vscode"
+            } icon`}
+            alt={`${props.c.code?.icon === "xcode" ? "Xcode" : "Vscode"} icon`}
           />
         </picture>
-        Download {c.code?.icon === "xcode" ? "Xcode" : "Vscode"} project
+        Download {props.c.code?.icon === "xcode" ? "Xcode" : "Vscode"} project
       </LinkT>
     </div>
   );

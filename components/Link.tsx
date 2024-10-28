@@ -9,25 +9,18 @@ interface Props {
   children: React.ReactNode;
 }
 
-export const LinkT = ({
-  children,
-  onClick,
-  target,
-  style,
-  title,
-  href,
-}: Props) => {
+export const LinkT = (props: Props) => {
   return (
     <Link
-      href={href || ""}
-      title={title}
+      href={props.href || ""}
+      title={props.title}
       className={`font-bold  sm:text-base text-sm focus:ring-offset-2 dark:ring-offset-black rounded outline-none focus:ring-primary 
       items-center inline-flex w-fit duration-300 cursor-pointer text-primary hover:underline focus:ring-4`}
-      onClick={onClick}
-      style={style}
-      target={target}
+      onClick={props.onClick}
+      style={props.style}
+      target={props.target}
     >
-      {children}
+      {props.children}
     </Link>
   );
 };

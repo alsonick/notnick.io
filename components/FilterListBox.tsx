@@ -9,17 +9,12 @@ interface Props<T> {
   items: T[];
 }
 
-export const FilterListBox = <T extends unknown>({
-  onChange,
-  selectedItem,
-  fullWidth = false,
-  items,
-}: Props<T>) => {
+export const FilterListBox = <T extends unknown>(props: Props<T>) => {
   return (
-    <Listbox value={selectedItem} onChange={onChange}>
+    <Listbox value={props.selectedItem} onChange={props.onChange}>
       <div
         className={`flex duration-300 relative flex-col ${
-          fullWidth ? "w-full" : "w-1/2"
+          props.fullWidth ? "w-full" : "w-1/2"
         }`}
       >
         <Listbox.Button
@@ -28,31 +23,25 @@ export const FilterListBox = <T extends unknown>({
         dark:bg-black dark:border-teal-900 focus:ring-4 ring-primary outline-none duration-300
         focus:ring-offset-2 dark:ring-offset-black`}
         >
-          {selectedItem} <FiChevronDown />
+          {props.selectedItem} <FiChevronDown />
         </Listbox.Button>
         <Listbox.Options
           className={`flex z-10 outline-none absolute w-full p-1 focus:ring-4 ring-primary flex-col border bg-white
         border-teal-100 dark:bg-black dark:border-teal-900 rounded-lg mt-16`}
         >
-          {items.map((item: any) => (
+          {props.items.map((item: any) => (
             <Listbox.Option key={item.id} value={item.filter} as={Fragment}>
-              {({
-                active,
-                selected,
-              }: {
-                active: boolean;
-                selected: boolean;
-              }) => (
+              {(props: { selected: boolean; active: boolean }) => (
                 <li
                   className={`flex cursor-pointer font-semibold sm:text-base text-sm dark:bg-black
                   dark:text-white items-center justify-between p-3 rounded-lg ${
-                    active
+                    props.active
                       ? `bg-primary dark:bg-primary duration-300 text-white`
                       : "bg-white text-black"
                   }`}
                 >
                   {item.filter}
-                  {selected && <FiCheck />}
+                  {props.selected && <FiCheck />}
                 </li>
               )}
             </Listbox.Option>

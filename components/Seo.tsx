@@ -13,7 +13,7 @@ interface Props {
   title: string;
 }
 
-export const Seo = ({ description, cover, title }: Props) => {
+export const Seo = (props: Props) => {
   const date = new Date();
 
   if (typeof window === "object") {
@@ -29,20 +29,20 @@ export const Seo = ({ description, cover, title }: Props) => {
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{props.title}</title>
         <meta name="theme-color" content={THEME} />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="description" content={description} key="desc" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta name="description" content={props.description} key="desc" />
+        <meta name="twitter:title" content={props.title} />
+        <meta name="twitter:description" content={props.description} />
         <meta property="twitter:creator" content={`@${social.x.username}`} />
         <meta property="twitter:site" content="@nick" />
         <meta name="keywords" content={seoKeywords} />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={props.title} />
         <meta property="og:site_name" content={`${FULL_NAME}`} />
         <meta property="og:url" content={`https://${DOMAIN}/`} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={props.description} />
         <meta property="og:type" content="website" />
         <meta
           property="twitter:image"

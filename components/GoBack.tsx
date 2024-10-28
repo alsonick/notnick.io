@@ -8,13 +8,13 @@ interface Props {
   location?: string;
 }
 
-export const GoBack = ({ location }: Props) => {
+export const GoBack = (props: Props) => {
   const router = useRouter();
 
   return (
     <LinkT
       title="Go back"
-      href={location ? location : undefined}
+      href={props.location ? props.location : undefined}
       onClick={() => {
         !location && router.back();
       }}

@@ -7,21 +7,23 @@ interface Props {
   posts: Post[];
 }
 
-export const Posts = ({ type, posts }: Props) => {
+export const Posts = (props: Props) => {
   return (
     <div className="flex flex-col w-full">
       <ul>
-        {posts.map((post) => (
+        {props.posts.map((post) => (
           <div key={generateRandomId()}>
             {process.env.NODE_ENV === "development" ? (
               <>
                 {post.finished || !post.finished ? (
-                  <PostsCard post={post} type={type} />
+                  <PostsCard post={post} type={props.type} />
                 ) : null}
               </>
             ) : (
               <>
-                {post.finished ? <PostsCard post={post} type={type} /> : null}
+                {post.finished ? (
+                  <PostsCard post={post} type={props.type} />
+                ) : null}
               </>
             )}
           </div>

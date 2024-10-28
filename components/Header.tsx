@@ -5,22 +5,19 @@ interface Props {
   column?: boolean;
 }
 
-export const Header = ({
-  mobileColumnLayout,
-  singleItem,
-  children,
-  column,
-}: Props) => {
+export const Header = (props: Props) => {
   return (
     <header
-      className={`flex ${mobileColumnLayout && "sm:flex-row flex-col w-full"} ${
-        column ? "flex-col" : "flex-row"
-      } my-4 mt-5 min-h-[4rem] ${
-        !singleItem &&
-        `justify-between ${mobileColumnLayout ? "items-start" : "items-center"}`
+      className={`flex ${
+        props.mobileColumnLayout && "sm:flex-row flex-col w-full"
+      } ${props.column ? "flex-col" : "flex-row"} my-4 mt-5 min-h-[4rem] ${
+        !props.singleItem &&
+        `justify-between ${
+          props.mobileColumnLayout ? "items-start" : "items-center"
+        }`
       }`}
     >
-      {children}
+      {props.children}
     </header>
   );
 };

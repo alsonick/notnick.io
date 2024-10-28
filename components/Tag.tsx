@@ -4,10 +4,10 @@ interface Props {
   title: string;
 }
 
-export const Tag = ({ type, title, icon }: Props) => {
+export const Tag = (props: Props) => {
   let color: string;
 
-  switch (type) {
+  switch (props.type) {
     case "success":
       color = "bg-green-500";
       break;
@@ -20,11 +20,11 @@ export const Tag = ({ type, title, icon }: Props) => {
 
   return (
     <div
-      title={title}
+      title={props.title}
       className={`flex items-center p-1 px-3 text-white font-bold rounded-full w-fit whitespace-nowrap text-sm ${color}`}
     >
-      {title}
-      {icon}
+      {props.title}
+      {props.icon}
     </div>
   );
 };
