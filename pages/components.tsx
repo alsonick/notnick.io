@@ -7,11 +7,11 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Text } from "../components/Text";
+import { Note } from "../components/Note";
 import { Seo } from "../components/Seo";
 
 // Next.js
 import { NextPage } from "next";
-import { Note } from "../components/Note";
 
 const Components: NextPage = () => {
   return (

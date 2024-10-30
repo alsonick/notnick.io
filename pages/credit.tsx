@@ -8,10 +8,10 @@ import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Key } from "../components/Key";
 import { Seo } from "../components/Seo";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
-import { page } from "../lib/page";
 
 const Credit: NextPage = () => {
   return (

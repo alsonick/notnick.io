@@ -67,8 +67,8 @@ export const social = {
     name: "TikTok",
   },
   stackoverflow: {
-    link: "https://stackoverflow.com/users/17204801/nicholas",
-    username: "user:17204801",
+    link: "https://stackoverflow.com/users/13305961/nicholas",
+    username: "user:13305961",
     name: "Stackoverflow",
   },
   youtube: {
