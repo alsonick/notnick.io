@@ -1,11 +1,11 @@
 import {
-  AVATAR,
-  COUNTRY,
-  DOMAIN,
   EMAIL_ADDRESS,
   FIRST_NAME,
-  FULL_NAME,
   LAST_NAME,
+  FULL_NAME,
+  COUNTRY,
+  AVATAR,
+  DOMAIN,
 } from "../../lib/constants";
 import { generateRandomId } from "../../lib/generate-random-id";
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -14,6 +14,7 @@ import { social } from "../../lib/social-links";
 import { SOCIALS } from "../../lib/socials";
 import { MUSIC } from "./../../lib/music";
 import { SPECS } from "../../lib/specs";
+import { page } from "../../lib/page";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json({
@@ -41,8 +42,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         },
         {
           id: generateRandomId(),
-          redirect: `${DOMAIN}/community`,
-          destination: `${DOMAIN}/community`,
+          redirect: `${DOMAIN}/${page.community.name}`,
+          destination: `${DOMAIN}/${page.community.name}`,
         },
       ],
       domain: {

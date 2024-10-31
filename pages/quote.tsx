@@ -14,6 +14,7 @@ import { FiRepeat } from "react-icons/fi";
 import { Text } from "../components/Text";
 import { Tag } from "../components/Tag";
 import { Seo } from "../components/Seo";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -42,7 +43,7 @@ const Quote: NextPage<Q> = () => {
             {quote && !loading ? (
               <div className="flex flex-col">
                 <Seo
-                  title={`Quote • ${FULL_NAME}`}
+                  title={`${page.quote.title} • ${FULL_NAME}`}
                   description={quote.author}
                 />
                 <Header column={true} singleItem={false}>

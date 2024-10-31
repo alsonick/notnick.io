@@ -18,6 +18,7 @@ import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Seo } from "../components/Seo";
 import { Key } from "../components/Key";
+import { page } from "../lib/page";
 import { useState } from "react";
 
 // Next.js
@@ -76,13 +77,15 @@ const Experience: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Experience • ${FULL_NAME}`}
+        title={`${page.experience.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false} mobileColumnLayout={true}>
-            <Heading style={{ marginBottom: 0 }}>Experience</Heading>
+            <Heading style={{ marginBottom: 0 }}>
+              {page.experience.title}
+            </Heading>
             <ResponsiveFilterListBoxWrapper>
               <FilterListBox
                 items={removeDuplicates(types)}

@@ -7,6 +7,7 @@ import { GoBack } from "../components/GoBack";
 import { social } from "../lib/social-links";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -16,12 +17,12 @@ const Contributors: NextPage = () => {
   return (
     <OtherPageContainer footer={false}>
       <Seo
-        title={`Contributors • ${FULL_NAME}`}
+        title={`${page.contributors.title} • ${FULL_NAME}`}
         description="Thank you contributors!"
       />
       <Toggle />
       <Header singleItem={true} column={true}>
-        <Heading style={{ marginBottom: 0 }}>Contributors</Heading>
+        <Heading style={{ marginBottom: 0 }}>{page.contributors.title}</Heading>
         <Text style={{ marginTop: "8px" }}>Thank you contributors! ❤️</Text>
       </Header>
       <Link

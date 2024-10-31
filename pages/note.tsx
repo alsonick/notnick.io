@@ -13,6 +13,7 @@ import { NoPost } from "../components/NoPost";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
+import { page } from "../lib/page";
 import { useState } from "react";
 
 // Next.js
@@ -59,13 +60,13 @@ const Note: NextPage<Props> = ({ notes }) => {
   return (
     <>
       <Seo
-        title={`Note • ${FULL_NAME}`}
+        title={`${page.note.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Note</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.note.title}</Heading>
             {notes.length ? (
               <FilterListBox
                 items={removeDuplicates(tags)}

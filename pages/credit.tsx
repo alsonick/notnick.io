@@ -17,22 +17,23 @@ const Credit: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Credit • ${FULL_NAME}`}
+        title={`${page.credit.title} • ${FULL_NAME}`}
         description="The source code to this site is open source so anyone is free to take a copy and make modifications. While this is not absolutely necessary it would be greatly appreciated if credit is given to the original creator."
       />
       <Layout>
         <Header singleItem={true}>
-          <Heading>Credit</Heading>
+          <Heading>{page.credit.title}</Heading>
         </Header>
         <Text>
           The source code to this site is{" "}
           <LinkT href={`${social.github.link}/${DOMAIN}`} target="_blank">
             open source
           </LinkT>{" "}
-          and it&apos;s under the <LinkT href="/license">MIT License</LinkT>, so
-          this means anyone is allowed to take a copy and make modifications.
-          While this is not absolutely necessary it would be greatly appreciated
-          if credit is given.
+          and it&apos;s under the{" "}
+          <LinkT href={page.license.path}>MIT License</LinkT>, so this means
+          anyone is allowed to take a copy and make modifications. While this is
+          not absolutely necessary it would be greatly appreciated if credit is
+          given.
         </Text>
 
         <br />

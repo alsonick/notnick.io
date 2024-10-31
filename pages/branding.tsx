@@ -14,6 +14,7 @@ import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Key } from "../components/Key";
 import { saveAs } from "file-saver";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -22,13 +23,13 @@ const Branding: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Branding • ${FULL_NAME}`}
+        title={`${page.branding.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={true} column={true}>
-            <Heading style={{ marginBottom: 0 }}>Branding</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.branding.title}</Heading>
             <Text style={{ marginTop: "15px" }}>
               The personal branding I use throughout my social media platforms.
               <br />

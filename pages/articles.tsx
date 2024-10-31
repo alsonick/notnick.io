@@ -12,6 +12,7 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { ARTICLES } from "../lib/articles";
 import { Seo } from "../components/Seo";
+import { page } from "../lib/page";
 import { useState } from "react";
 
 // Next.js
@@ -46,14 +47,14 @@ const Articles: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Articles • ${FULL_NAME}`}
+        title={`${page.articles.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
 
       <Layout>
         <Animate>
           <Header singleItem={false} column={false}>
-            <Heading style={{ marginBottom: 0 }}>Articles</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.articles.title}</Heading>
             <FilterListBox
               items={removeDuplicates(tags)}
               selectedItem={selected}

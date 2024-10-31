@@ -71,7 +71,7 @@ const Slug: NextPage = () => {
     <>
       <Seo
         title={`${
-          !challenge?.name ? "Challenge" : challenge.name
+          !challenge?.name ? page.challenge.title : challenge.name
         } • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
@@ -186,7 +186,7 @@ const Slug: NextPage = () => {
                                 <picture className="mb-2">
                                   <img
                                     className="w-72"
-                                    src={`/challenge/${c.slug}/${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
+                                    src={`${page.challenge.path}/${c.slug}/${c.preview.previewContent.path}${c.day}.${c.preview.previewContent.extension}`}
                                     alt={`Day ${c.day} Preview`}
                                   />
                                 </picture>
@@ -196,7 +196,7 @@ const Slug: NextPage = () => {
                                       title={`Download the Day ${c.day} asset file.`}
                                       onClick={() => {
                                         saveAs(
-                                          `/challenge/${c.slug}/${c.preview.previewContent?.path}${c.day}.${c.preview.previewContent?.extension}`,
+                                          `${page.challenge.path}/${c.slug}/${c.preview.previewContent?.path}${c.day}.${c.preview.previewContent?.extension}`,
                                           `Day ${c.day} Preview`
                                         );
                                       }}

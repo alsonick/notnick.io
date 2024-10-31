@@ -9,6 +9,7 @@ import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { Dev as D } from "../types/dev";
 import { Key } from "../components/Key";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -29,12 +30,12 @@ const Dev: NextPage = () => {
   return (
     <OtherPageContainer footer={false}>
       <Seo
-        title={`Dev • ${FULL_NAME}`}
+        title={`${page.dev.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Toggle />
       <Header singleItem={true} column={true}>
-        <Heading>dev</Heading>
+        <Heading>{page.dev.title.toLowerCase()}</Heading>
       </Header>
       <div className="mb-6">
         {dev ? (

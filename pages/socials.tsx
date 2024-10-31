@@ -10,6 +10,7 @@ import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/Seo";
 import copy from "copy-to-clipboard";
 import Tippy from "@tippyjs/react";
+import { page } from "../lib/page";
 import { useState } from "react";
 
 // Next.js
@@ -30,13 +31,13 @@ const Socials: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Socials • ${FULL_NAME}`}
+        title={`${page.socials.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>Socials</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.socials.title}</Heading>
           </Header>
           <div className="flex flex-col mb-4">
             {SOCIALS.map((social) => (
@@ -49,7 +50,7 @@ const Socials: NextPage = () => {
                 </Text>
                 <div className="flex items-center">
                   <Link
-                    className={`text-gray-600 sm:text-base text-sm focus:ring-4 focus:ring-offset-2 dark:ring-offset-black rounded ring-[${THEME}]
+                    className={`text-gray-600 sm:text-base text-sm focus:ring-4 focus:ring-offset-2 dark:ring-offset-black rounded ring-primary
                     outline-none dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer duration-300`}
                     title={social.link}
                     target="_blank"

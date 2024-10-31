@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import { Response } from "../../types/rule";
 import { Seo } from "../../components/Seo";
 import { Key } from "../../components/Key";
+import { page } from "../../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -34,13 +35,15 @@ const Rules: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Community Rules • ${FULL_NAME}`}
+        title={`${page.community.title2} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Community Rules</Heading>
+            <Heading style={{ marginBottom: 0 }}>
+              {page.community.title2}
+            </Heading>
           </Header>
           {data ? (
             <div className="mb-4 mt-16">

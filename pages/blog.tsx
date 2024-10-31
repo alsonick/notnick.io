@@ -13,6 +13,7 @@ import { Header } from "../components/Header";
 import { Posts } from "../components/Posts";
 import { Seo } from "../components/Seo";
 import { Post } from "../types/post";
+import { page } from "../lib/page";
 import { useState } from "react";
 
 // Next.js
@@ -50,13 +51,13 @@ const Blog: NextPage<Props> = ({ blogs }) => {
   return (
     <>
       <Seo
-        title={`Blog • ${FULL_NAME}`}
+        title={`${page.blog.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Blog</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.blog.title}</Heading>
             {blogs.length ? (
               <FilterListBox
                 items={removeDuplicates(tags)}

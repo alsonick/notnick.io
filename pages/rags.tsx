@@ -17,6 +17,7 @@ import { Seo } from "../components/Seo";
 import { Td } from "../components/Td";
 import { Th } from "../components/Th";
 import { RAGS } from "../lib/rags";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -46,7 +47,7 @@ const Rags: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Rags • ${FULL_NAME}`}
+        title={`${page.rags.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout
@@ -56,7 +57,9 @@ const Rags: NextPage = () => {
       >
         <Animate>
           <Header column={false} singleItem={false}>
-            <Heading style={{ marginBottom: "0.5rem" }}>Rags</Heading>
+            <Heading style={{ marginBottom: "0.5rem" }}>
+              {page.rags.title}
+            </Heading>
           </Header>
           <Text>
             This is a collection of my favorite rags. All these compositions
@@ -147,7 +150,7 @@ const Rags: NextPage = () => {
                             <audio
                               className="ml-4 mr-4 mt-4 p-1"
                               controls
-                              src={`/rags/${rag.path.composer}/${rag.path.file}.${rag.path.ext}`}
+                              src={`${page.rags.path}/${rag.path.composer}/${rag.path.file}.${rag.path.ext}`}
                             >
                               Your browser does not support the
                               <code>audio</code> element.

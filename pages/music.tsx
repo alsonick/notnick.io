@@ -12,6 +12,7 @@ import { useState } from "react";
 
 // Next.js
 import Link from "next/link";
+import { page } from "../lib/page";
 
 const Music = () => {
   const [_, setPresenceActive] = useState(false);
@@ -19,13 +20,13 @@ const Music = () => {
   return (
     <>
       <Seo
-        title={`Music • ${FULL_NAME}`}
+        title={`${page.music.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Music</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.music.title}</Heading>
           </Header>
           <Listening setActive={setPresenceActive} />
           <div className="mb-4 grid md:grid-cols-3 gap-4 sm:grid-cols-2">
@@ -33,7 +34,8 @@ const Music = () => {
               <Link
                 href={playlist.link}
                 target="_blank"
-                className={`my-4 flex flex-col items-center  hover:translate-y-1 duration-300 focus:ring-4 ring-[${THEME}] rounded-xl outline-none`}
+                className={`my-4 flex flex-col items-center  hover:translate-y-1 duration-300
+                focus:ring-4 ring-primary rounded-xl outline-none`}
                 key={playlist.id}
               >
                 <SpotifyPlaylistCover

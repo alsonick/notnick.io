@@ -18,6 +18,7 @@ import { Text } from "../../../components/Text";
 import { Form } from "../../../components/Form";
 import { Seo } from "../../../components/Seo";
 import { FaSpotify } from "react-icons/fa";
+import { page } from "../../../lib/page";
 import copy from "copy-to-clipboard";
 import { useState } from "react";
 
@@ -52,7 +53,7 @@ const ISRC: NextPage = () => {
 
     setLoading(true);
 
-    fetch("/api/tools/yt/isrc", {
+    fetch(`/api/tools/yt${page.isrc.path}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -97,17 +98,19 @@ const ISRC: NextPage = () => {
   return (
     <>
       <Seo
-        title={`ISRC Finder • ${FULL_NAME}`}
+        title={`${page.isrc.title1} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout longLayoutFormat={false} supportLargeScreen={true}>
         <Animate>
           <Header column={false} singleItem={false}>
-            <Heading style={{ marginBottom: "0.5rem" }}>ISRC</Heading>
+            <Heading style={{ marginBottom: "0.5rem" }}>
+              {page.isrc.title2}
+            </Heading>
           </Header>
           <Text>
-            Find the <LinkT>ISRC</LinkT> codes to a collection of over 100
-            million tracks on Spotify.
+            Find the <LinkT>{page.isrc.title2}</LinkT> codes to a collection of
+            over 100 million tracks on Spotify.
           </Text>
           <div className="my-4">
             <Form onSubmit={sendSpotifyIsrcRequest} action="POST">

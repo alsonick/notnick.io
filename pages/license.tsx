@@ -6,6 +6,7 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -14,13 +15,13 @@ const License: NextPage = () => {
   return (
     <>
       <Seo
-        title={`License • ${FULL_NAME}`}
+        title={`${page.license.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>License</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.license.title}</Heading>
           </Header>
           <div className="mb-4">
             <Text>

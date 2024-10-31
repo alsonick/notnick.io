@@ -9,6 +9,7 @@ import { Seo } from "../components/Seo";
 import { Tag } from "../components/Tag";
 import { Key } from "../components/Key";
 import { SPECS } from "../lib/specs";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -17,13 +18,13 @@ const Specs: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Specs • ${FULL_NAME}`}
+        title={`${page.specs.title} • ${FULL_NAME}`}
         description="The equipment I use on a daily basis."
       />
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>Specs</Heading>
+            <Heading style={{ marginBottom: 0 }}>{page.specs.title}</Heading>
           </Header>
           {SPECS.map((spec) => (
             <div className="flex flex-col w-full mb-8" key={spec.id}>

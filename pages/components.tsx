@@ -9,6 +9,7 @@ import { Header } from "../components/Header";
 import { Text } from "../components/Text";
 import { Note } from "../components/Note";
 import { Seo } from "../components/Seo";
+import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
@@ -17,13 +18,15 @@ const Components: NextPage = () => {
   return (
     <>
       <Seo
-        title={`Components • ${FULL_NAME}`}
+        title={`${page.components.title} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Components</Heading>
+            <Heading style={{ marginBottom: 0 }}>
+              {page.components.title}
+            </Heading>
             <div className="sm:flex hidden">
               <Text>
                 <b className="text-gray-500 dark:text-gray-200">
