@@ -16,10 +16,12 @@ Hey everyone! Wow, it’s been a whole year since I last wrote a blog post here.
 > Note: For this tutorial, you'll need to be familiar with the following technologies:
 
 - [Programming](https://www.codecademy.com/article/what-is-programming)
+- [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org/)
-- [React](https://react.dev/)
 - [Git](https://git-scm.com/)
+
+---
 
 ### Step 1: Clone the GitHub project onto your computer
 
@@ -67,6 +69,8 @@ After the project has been cloned, `cd` into the `notnick.io` directory.
 $ cd notnick.io
 ```
 
+---
+
 ### Step 2: Configure the project
 
 Now we're ready configuring the project, but first we need to do a few things.
@@ -76,3 +80,104 @@ Now we're ready configuring the project, but first we need to do a few things.
 For this tutorial, I'd **strongly** advice on you using [Visual Studio Code](https://code.visualstudio.com/) but if you already have an IDE or code editor you're already familiar with then just use that. Launch your code editor and open the `notnick.io` project. Your editor should look something like this:
 
 ![](/post/how-to-use-my-personal-website/vscode-opened.png)
+
+#### 2.2 Install the code dependencies
+
+For this you're going to need to install [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) (you might need [Node.js](https://nodejs.org/) to install Yarn so be sure to install that too)
+
+Once you've done that, open the `package.json` file and there, you'll see all the required dependencies needed for this project.
+
+![](/post/how-to-use-my-personal-website/vscode-package-json.png)
+
+Go back to your terminal and run the following command:
+
+```sh
+$ yarn install
+```
+
+Once you've done that, your terminal should look something like this:
+
+![](/post/how-to-use-my-personal-website/yarn-install-terminal.png)
+
+---
+
+### Step 3: Edit the project with your details
+
+Alright! You're ready to start editing the project. Firstly we're gonna start by deleting folders and files that you won't need in your version.
+
+#### 3.1 Delete unnecessary folders/files
+
+Please delete the following folders in the `public` directory:
+
+- public/archive
+- public/assets
+- public/banners
+- public/branding
+- public/challenge
+- public/credit
+- public/ignore
+- public/old
+- public/rags
+- public/sample
+- public/snippets
+- public/spotify
+
+Please delete the following folders in the `pages` directory:
+
+- pages/challenge
+- pages/community
+- pages/tools
+- pages/api/community
+- pages/api/tools
+
+---
+
+Please delete the following files in the `public` directory:
+
+- public/itsRemco.jpg
+- public/nintendo-switch-friend-code.txt
+  > If you have a switch, then just replace the contents of the file with your switch friend code.
+- public/test.txt
+
+Please delete the following files in the `pages/api` directory:
+
+- pages/api/challenge.ts
+- pages/api/dev.ts
+- pages/api/example.ts
+- pages/api/experience.ts
+- pages/api/me.ts
+- pages/api/music.ts
+- pages/api/newsletter.ts
+- pages/api/page.ts
+- pages/api/paths.ts
+- pages/api/ping.ts
+- pages/api/pong.ts
+- pages/api/rags.ts
+- pages/api/social.ts
+- pages/api/socials.ts
+- pages/api/specs.ts
+- pages/api/technologies.ts
+
+Please delete the following files in `pages`:
+
+- pages/articles.tsx
+- pages/blm.tsx
+- pages/branding.tsx
+- pages/components.tsx
+- pages/contributors.tsx
+- pages/credit.tsx
+- pages/dev.tsx
+- pages/helloworld.tsx
+- pages/license.tsx
+- pages/music.tsx
+- pages/paths.tsx
+- pages/rags.tsx
+- pages/specs.tsx
+
+#### 3.2 Replace the files
+
+Replace the `Avatar.png` and `favicon.ico` with your own. Use [favicon.io](https://favicon.io/) to generate the favicon, once you've done that, unzip the folder and drag the `favicon.ico` file to the `public` directory.
+
+#### 3.3 Edit the constants.ts file
+
+Open the `constants.ts` file in the `lib` folder and replace the values
