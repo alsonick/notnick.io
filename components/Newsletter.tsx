@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 import { FiMail } from "react-icons/fi";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
-import Tippy from "@tippyjs/react";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Input } from "./Input";
@@ -33,6 +32,9 @@ export const NewsLetter = () => {
 
   const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setErrorMessage("Revue has shut down.");
+    return;
 
     setSuccessMessage("");
     setErrorMessage("");
@@ -122,13 +124,14 @@ export const NewsLetter = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <Tippy content={"Disabled"}>
-            <div className="flex md:w-fit w-full">
-              <Button disabled style={{ width: "100%" }}>
-                Subscribe <FiMail className={ICON} />
-              </Button>
-            </div>
-          </Tippy>
+          <div className="flex md:w-fit w-full">
+            <Button
+              style={{ width: "100%" }}
+              onClick={() => setErrorMessage("Revue has shut down.")}
+            >
+              Subscribe <FiMail className={ICON} />
+            </Button>
+          </div>
         </div>
         <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
           <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
@@ -136,21 +139,17 @@ export const NewsLetter = () => {
               {subs ?? 0}&nbsp;
             </span>{" "}
             {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
-            <Tippy content={"Disabled"}>
-              <div>
-                <Link
-                  className={`hover:underline pointer-events-none focus:ring-4 ring-primary outline-none duration-300
+            <Link
+              className={`hover:underline focus:ring-4 ring-0 ring-primary outline-none duration-300
                   focus:ring-offset-2 dark:ring-offset-black rounded`}
-                  href={social.revue.link}
-                  rel="noreferrer"
-                  target="_blank"
-                  title="View my published issues"
-                >
-                  View all issues&nbsp;
-                </Link>
-              </div>
-            </Tippy>
-            &bull;&nbsp;
+              href={social.revue.link}
+              rel="noreferrer"
+              target="_blank"
+              title="View my published issues"
+            >
+              View all issues
+            </Link>
+            &nbsp; &bull;&nbsp;
             <Avatar border={false} width={20} height={20} />
           </div>
           {successMessage && (

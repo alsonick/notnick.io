@@ -12,16 +12,18 @@ interface Props {
 }
 
 export const Layout = (props: Props) => {
+  const { supportLargeScreen = true } = props;
+
   return (
     <div
       className="flex flex-col items-center justify-center h-screen scrollbar-thin scrollbar-thumb-gray-700
       scrollbar-track-gray-800 scrollbar-thumb-rounded-full"
     >
       <div className={`flex flex-col h-full py-20 sm:w-[40rem] w-[95%] mt-12`}>
-        {!props.supportLargeScreen && (
+        {!supportLargeScreen && (
           <div
             className={`${
-              props.supportLargeScreen ? "lg:hidden block" : "lg:hidden block"
+              supportLargeScreen ? "lg:hidden block" : "lg:hidden block"
             }  w-full h-full items-center justify-center flex flex-col`}
           >
             <ContentUnavailable
@@ -31,9 +33,7 @@ export const Layout = (props: Props) => {
           </div>
         )}
         <div
-          className={`${
-            props.supportLargeScreen ? "lg:block" : "lg:block hidden"
-          }`}
+          className={`${supportLargeScreen ? "lg:block" : "lg:block hidden"}`}
         >
           <Nav
             isDisplaySpotify={props.isDisplaySpotify}

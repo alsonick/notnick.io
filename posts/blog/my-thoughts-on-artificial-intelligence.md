@@ -17,7 +17,7 @@ Recently in the tech world, AI is currently the hot subject to talk about, with 
 
 Before I answer this question, I highly urge you try out [ChatGPT](https://chat.openai.com/chat) and ask it any question you like, you'll see It's pretty damn impressive. Not only can it answer your questions, it can also generate and fix code, don't believe me? Check this out below.
 
-![](/post/my-thoughts-on-ai/gpt-screenshot-example-1.png)
+![](/post/my-thoughts-on-artificial-intelligence/gpt-screenshot-example-1.png)
 
 In the screenshot above I asked ChatGPT to "Generate a [React](https://react.dev/) component that renders a list of items" and it did so perfectly, it even generates a description so you can understand underlying logic. Obviously this is a simple example but ChatGPT is more than capable of generating more complex code.
 

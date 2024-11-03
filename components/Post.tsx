@@ -5,6 +5,7 @@ import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
+import { page } from "../lib/page";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
 import { Label } from "./Label";
@@ -64,7 +65,11 @@ export const Post = (props: Props) => {
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
           <div className="duration-300 mb-4 mt-1">
-            <Text>{props.post.description}</Text>
+            <Text>
+              {props.post.description
+                ? props.post.description
+                : "No description."}
+            </Text>
           </div>
           {process.env.NODE_ENV === "development" ? (
             <div className="flex items-center mb-4">
@@ -109,7 +114,7 @@ export const Post = (props: Props) => {
         </div>
         <LinkTag href={`/${props.type}`} style={{ marginTop: "2rem" }}>
           <FiArrowLeft className="text-lg mr-1" /> Go back to{" "}
-          {props.type === "blog" ? "blog" : "note"}
+          {props.type === page.blog.name ? page.blog.name : page.note.name}
         </LinkTag>
       </Layout>
     </>
