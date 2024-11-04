@@ -180,4 +180,6 @@ Replace the `Avatar.png` and `favicon.ico` with your own. Use [favicon.io](https
 
 #### 3.3 Edit the constants.ts file
 
-Open the `constants.ts` file in the `lib` folder and replace the values
+Open the `constants.ts` file in the `lib` folder and replace the relevant values.
+
+![](/post/how-to-use-my-personal-website/code-example-1.png)
