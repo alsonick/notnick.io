@@ -5,7 +5,7 @@ description: "I'll be gone for a bit!"
 finished: true
 tag: "Life Update"
 mins: "2"
-last_updated_date: "2024-02-14"
+last_updated_date: "2024-11-06"
 filter: "Life Update"
 ---
 
