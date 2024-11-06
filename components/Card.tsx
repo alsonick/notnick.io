@@ -18,7 +18,7 @@ export const Card = (props: Props) => {
       <Link
         href={`/${props.type}/${props.post.slug}`}
         className={`flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black focus:ring-4
-      rounded ring-primary outline-none duration-300`}
+        rounded ring-primary outline-none duration-300`}
       >
         <div className="mb-2">
           <PostCardTag title={props.post.tag} />
@@ -36,7 +36,7 @@ export const Card = (props: Props) => {
         <div className="flex items-center">
           <Date date={props.post.date} />
           <Text>&nbsp;&bull; {props.post.mins} min read &bull;&nbsp; </Text>
-          <Avatar border={true} width={22} height={22} />
+          <Avatar border={false} width={22} height={22} />
         </div>
       </Link>
     </div>

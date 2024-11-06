@@ -15,6 +15,7 @@ export const EMAIL_ADDRESS = "hi@notnick.io";
 export const YEAR_STARTED_PROGRAMMING = 2019;
 export const BLOGS_URL_PATH = page.blog.path;
 export const NOTES_URL_PATH = page.note.path;
+export const AVATAR_FILE_EXTENSION = "png";
 export const FULL_NAME = "Nicholas Njoki";
 export const LOCATED = "United Kingdom";
 export const CACHE_TOKEN = "nas-dsf";

@@ -1,3 +1,4 @@
+import { AVATAR_FILE_EXTENSION, AVATAR } from "../lib/constants";
 import { Border } from "./Border";
 
 // Next.js
@@ -31,11 +32,11 @@ const Img = (props: Props) => {
   return (
     <Image
       className="rounded-full border border-teal-100 dark:border-teal-900"
-      title="My avatar"
-      src="/branding/secondary_dark_short_sig_avatar.png"
+      src={`/${AVATAR}.${AVATAR_FILE_EXTENSION}`}
       height={props.height}
-      alt="My avatar"
       width={props.width}
+      title="My Avatar"
+      alt="My Avatar"
       quality={100}
     />
   );
