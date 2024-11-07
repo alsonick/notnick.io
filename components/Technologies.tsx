@@ -2,7 +2,6 @@ import { TECHNOLOGIES } from "../lib/technologies";
 import { TechnologyCard } from "./TechnologyCard";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
-import { Note } from "./Note";
 
 export const Technologies = () => {
   return (
@@ -19,10 +18,6 @@ export const Technologies = () => {
           </div>
         ))}
       </ul>
-      <Note>
-        I may use certain technologies more frequently than others on a daily
-        basis.
-      </Note>
     </Section>
   );
 };

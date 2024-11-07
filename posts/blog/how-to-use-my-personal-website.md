@@ -130,6 +130,11 @@ Please delete the following folders in the `pages` directory:
 - pages/api/community
 - pages/api/tools
 
+Please delete the following folders in the `libs` directory:
+
+- libs/challenges
+- libs/snippets
+
 ---
 
 Please delete the following files in the `public` directory:
@@ -138,6 +143,22 @@ Please delete the following files in the `public` directory:
 - public/nintendo-switch-friend-code.txt
   > If you have a switch, then just replace the contents of the file with your switch friend code.
 - public/test.txt
+
+Please delete the following files in `pages`:
+
+- pages/articles.tsx
+- pages/blm.tsx
+- pages/branding.tsx
+- pages/components.tsx
+- pages/contributors.tsx
+- pages/credit.tsx
+- pages/dev.tsx
+- pages/helloworld.tsx
+- pages/license.tsx
+- pages/music.tsx
+- pages/paths.tsx
+- pages/rags.tsx
+- pages/specs.tsx
 
 Please delete the following files in the `pages/api` directory:
 
@@ -158,21 +179,17 @@ Please delete the following files in the `pages/api` directory:
 - pages/api/specs.ts
 - pages/api/technologies.ts
 
-Please delete the following files in `pages`:
+Please delete the following files in the `libs` directory:
 
-- pages/articles.tsx
-- pages/blm.tsx
-- pages/branding.tsx
-- pages/components.tsx
-- pages/contributors.tsx
-- pages/credit.tsx
-- pages/dev.tsx
-- pages/helloworld.tsx
-- pages/license.tsx
-- pages/music.tsx
-- pages/paths.tsx
-- pages/rags.tsx
-- pages/specs.tsx
+- libs/articles.ts
+- libs/branding.ts
+- libs/components.tsx
+- libs/challenge-keys.ts
+- libs/get-issues.ts
+- libs/get-subscribers.ts
+- libs/music.ts
+- libs/rags.ts
+- libs/return-challenge-status.ts
 
 #### 3.2 Replace the files
 
@@ -210,3 +227,9 @@ export const THEME = "#f54bff";
 export const AVATAR = "Avatar";
 export const COUNTRY = "UK";
 ```
+
+#### 3.3 Editing the code
+
+Alright time for the fun stuff! Here's the list of files that you need to edit:
+
+- libs/experience.ts
