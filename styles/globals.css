@@ -36,3 +36,7 @@
     transform: rotate(0deg);
   }
 }
+
+::selection {
+  background: #5050ff;
+}
