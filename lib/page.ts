@@ -53,6 +53,17 @@ export const page = {
     link: "/license",
     name: "license",
   },
+  switch: {
+    games: {
+      title: "Nintendo Switch Games",
+      path: "/switch/games",
+      link: "/switch/games",
+      name: "games",
+    },
+    path: "/switch",
+    link: "/switch",
+    name: "switch",
+  },
   quote: {
     title: "Quote",
     path: "/quote",

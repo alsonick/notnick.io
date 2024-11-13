@@ -40,3 +40,7 @@
 ::selection {
   background: #5050ff;
 }
+
+::-moz-selection {
+  background: #5050ff;
+}

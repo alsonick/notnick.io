@@ -1,3 +1,4 @@
+import "react-tippy/dist/tippy.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import "tippy.js/dist/tippy.css";
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main className={inter.className}>
       <Component {...pageProps} />
+      <div id="particles-js"></div>
     </main>
   );
 }

@@ -8,8 +8,8 @@ import { Text } from "../components/Text";
 import { SOCIALS } from "../lib/socials";
 import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/Seo";
+import { Tooltip } from "react-tippy";
 import copy from "copy-to-clipboard";
-import Tippy from "@tippyjs/react";
 import { page } from "../lib/page";
 import { useState } from "react";
 
@@ -25,7 +25,7 @@ const Socials: NextPage = () => {
     copy(text, { debug: true });
     setTimeout(() => {
       setCopyText("Copy");
-    }, 3000);
+    }, 500);
   };
 
   return (
@@ -42,8 +42,8 @@ const Socials: NextPage = () => {
           <div className="flex flex-col mb-4">
             {SOCIALS.map((social) => (
               <div
+                className="flex w-full items-center justify-between h-12 border-b border-teal-100 dark:border-teal-900"
                 key={social.id}
-                className="flex w-full items-center justify-between p-1 h-12 border-b border-teal-100 dark:border-teal-900"
               >
                 <Text style={{ fontWeight: 600, marginRight: "1rem" }}>
                   {social.title}
@@ -58,10 +58,11 @@ const Socials: NextPage = () => {
                   >
                     {social.username}
                   </Link>
-                  <Tippy
-                    content={copyText}
+                  <Tooltip
+                    title={copyText}
                     hideOnClick={false}
-                    onHidden={() => setCopyText("Copy")}
+                    position="top"
+                    animation="shift"
                   >
                     <div
                       className="cursor-pointer"
@@ -69,7 +70,7 @@ const Socials: NextPage = () => {
                     >
                       <FiCopy className="ml-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white duration-300" />
                     </div>
-                  </Tippy>
+                  </Tooltip>
                 </div>
               </div>
             ))}

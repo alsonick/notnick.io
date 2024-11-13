@@ -106,6 +106,9 @@ export const About = () => {
       ),
       p5: (
         <Text>
+          See what games I play on my Nintendo Switch{" "}
+          <LinkTag href={page.switch.games.path}>here</LinkTag>.
+          <br />
           View some random pictures I&apos;ve taken{" "}
           <LinkTag href={`https://pics.${DOMAIN}`} target="_blank">
             here
