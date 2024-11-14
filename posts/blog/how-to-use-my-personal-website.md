@@ -23,6 +23,42 @@ Hey everyone! Wow, it’s been a whole year since I last wrote a blog post here.
 
 ---
 
+#### Just a quick note
+
+For the Spotify playing feature you need to join the Lanyard server and you must have a Discord account.
+
+![](/post/how-to-use-my-personal-website/spotify-playing.png)
+
+If you don't have a Discord account then please head over there and register an account. [Click here to register an account](https://discord.com/register).
+
+Once you've done that, you need to enable developer mode. Here's how you do it:
+
+#### Step 1:
+
+On the bottom left, you should see your user card, click the settings icon.
+
+![](/post/how-to-use-my-personal-website/discord-user-settings.png)
+
+#### Step 2:
+
+Scroll down until if you "Advanced" option under the "App Settings" section.
+
+![](/post/how-to-use-my-personal-website/discord-app-settings.png)
+
+#### Step 3:
+
+Enable the "Developer Mode" option.
+
+![](/post/how-to-use-my-personal-website/discord-developer-mode.png)
+
+#### Step 4:
+
+Copy your Discord ID and replace the `DISCORD_ID` constant with it inside the `libs/constant.ts` file.
+
+![](/post/how-to-use-my-personal-website/discord-recording.mov)
+
+---
+
 ### Step 1: Clone the GitHub project onto your computer
 
 Firstly, to complete this step, you're gonna need a [GitHub](https://github.com/) account, if you don't have a GitHub account then please click [here](https://github.com/join). Once you've done that, please head over to the GitHub repository for my personal site, you can find it by clicking [here](https://github.com/alsonick) to get to it.
@@ -200,6 +236,8 @@ Replace the `Avatar.png` and `favicon.ico` with your own. Use [favicon.io](https
 Open the `constants.ts` file in the `lib` folder and replace the relevant values.
 
 ```ts
+import { page } from "./page";
+
 export const API_URL =
   process.env.NODE_ENV === "development"
     ? "https://localhost:3000/api"
@@ -233,3 +271,28 @@ export const COUNTRY = "UK";
 Alright time for the fun stuff! Here's the list of files that you need to edit:
 
 - libs/experience.ts
+- libs/page.ts
+
+For the `libs/page.ts` file, delete all the object key entries for the pages you don't need, so basically all the pages we deleted earlier.
+
+- libs/paths.ts
+
+Again as before, delete all the objects in the array for the pages we deleted earlier.
+
+- libs/seo-keywords.ts
+
+Replace all the keywords in the `seoKeywords` constant with seo keywords that tailor to yourself followed after with a comma.
+
+Example:
+
+```ts
+export const seoKeywords = "elon musk, tesla, spacex, x";
+```
+
+- libs/social-links.ts
+- libs/socials.ts
+
+These files should be pretty self explanatory.
+
+- libs/specs.ts
+- libs/technologies.ts
