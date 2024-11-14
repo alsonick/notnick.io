@@ -55,7 +55,7 @@ Enable the "Developer Mode" option.
 
 Copy your Discord ID and replace the `DISCORD_ID` constant with it inside the `libs/constant.ts` file.
 
-![Screen Recording 2024-11-14 at 14 46 52](https://github.com/user-attachments/assets/4e3f4332-a318-4ead-8b44-9d331a8d8cb3)
+![Screen Recording 2024-11-14 at 18 41 06](https://github.com/user-attachments/assets/07e7f862-9675-4688-a413-c904fde24c6d)
 
 ---
 
