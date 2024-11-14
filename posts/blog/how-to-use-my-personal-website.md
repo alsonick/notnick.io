@@ -55,7 +55,7 @@ Enable the "Developer Mode" option.
 
 Copy your Discord ID and replace the `DISCORD_ID` constant with it inside the `libs/constant.ts` file.
 
-![](/post/how-to-use-my-personal-website/discord-recording.mov)
+![Screen Recording 2024-11-14 at 14 46 52](https://github.com/user-attachments/assets/4e3f4332-a318-4ead-8b44-9d331a8d8cb3)
 
 ---
 
