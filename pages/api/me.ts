@@ -62,7 +62,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       specs: SPECS,
       socials: SOCIALS,
       technologies: TECHNOLOGIES,
-      hobbies: ["Traveling", "Anime", "Playing Piano"],
+      hobbies: ["Gaming", "Anime", "Piano"],
     },
   });
 }
