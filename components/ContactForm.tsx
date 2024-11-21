@@ -60,11 +60,13 @@ export const ContactForm = () => {
           return;
         });
 
-    if (!response) {
+    if (!response.success) {
       setLoading(false);
-      setError("Unable to connect to the internet.");
+      setError(response.error ?? "Something went wrong.");
       return;
     }
+
+    console.log(response);
 
     if (response.success) {
       setLoading(false);
