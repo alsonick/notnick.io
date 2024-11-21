@@ -1,4 +1,3 @@
-import { Error, Issues, Subscriber } from "../../types/revue";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
