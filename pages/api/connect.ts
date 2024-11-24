@@ -24,17 +24,22 @@ export default async function handler(
 
   const { email, message } = body as Body;
 
-  const ipAddress =
+  const forwardedFor =
     (Array.isArray(req.headers["x-forwarded-for"])
       ? req.headers["x-forwarded-for"][0]
-      : req.headers["x-forwarded-for"]?.split(",")[0]) ||
-    req.socket.remoteAddress;
+      : req.headers["x-forwarded-for"]?.split(",")[0]) || "";
 
-  const isLocalhost = ipAddress === "::1" || ipAddress === "127.0.0.1";
+  const remoteAddress = req.socket.remoteAddress || "";
 
-  if (isLocalhost) {
-    console.log("Request from local development environment.");
-  }
+  const isForwardedIPv6 = forwardedFor.includes(":");
+  const isRemoteIPv6 = remoteAddress.includes(":");
+
+  const forwardedFieldName = isForwardedIPv6
+    ? "IP Address (IPv6 Forwarded)"
+    : "IP Address (IPv4 Forwarded)";
+  const remoteFieldName = isRemoteIPv6
+    ? "IP Address (IPv6 Remote)"
+    : "IP Address (IPv4 Remote)";
 
   if (
     !email
@@ -66,7 +71,7 @@ export default async function handler(
   if (lastRequestTime && Date.now() - lastRequestTime < RATE_LIMIT_TIME) {
     const timeLeft = Math.ceil(
       (RATE_LIMIT_TIME - (Date.now() - lastRequestTime)) / 1000 / 60
-    ); // in minutes
+    );
     return res.status(429).send({
       success: false,
       error: `RATE LIMIT: Please wait ${timeLeft} more minute(s) before sending another request.`,
@@ -86,8 +91,12 @@ export default async function handler(
           description: message,
           fields: [
             {
-              name: "IP Address",
-              value: ipAddress as string,
+              name: forwardedFieldName,
+              value: forwardedFor || "N/A",
+            },
+            {
+              name: remoteFieldName,
+              value: remoteAddress || "N/A",
             },
           ],
         },
