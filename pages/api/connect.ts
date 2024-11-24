@@ -24,7 +24,18 @@ export default async function handler(
 
   const { email, message } = body as Body;
 
-  // Validate email format
+  const ipAddress =
+    (Array.isArray(req.headers["x-forwarded-for"])
+      ? req.headers["x-forwarded-for"][0]
+      : req.headers["x-forwarded-for"]?.split(",")[0]) ||
+    req.socket.remoteAddress;
+
+  const isLocalhost = ipAddress === "::1" || ipAddress === "127.0.0.1";
+
+  if (isLocalhost) {
+    console.log("Request from local development environment.");
+  }
+
   if (
     !email
       ?.toLowerCase()
@@ -37,14 +48,12 @@ export default async function handler(
       .send({ success: false, error: "Please include a valid email." });
   }
 
-  // Validate all required fields are provided
   if (!email || !message) {
     return res
       .status(400)
       .send({ success: false, error: "Please include all the fields." });
   }
 
-  // Check message length limit
   if (message.length > CHARACTER_LIMIT) {
     return res.status(400).send({
       success: false,
@@ -52,7 +61,6 @@ export default async function handler(
     });
   }
 
-  // Check rate limit (30 minutes per user)
   const lastRequestTime = rateLimitStore[email];
 
   if (lastRequestTime && Date.now() - lastRequestTime < RATE_LIMIT_TIME) {
@@ -65,10 +73,8 @@ export default async function handler(
     });
   }
 
-  // Update the rate limit store with the current timestamp
   rateLimitStore[email] = Date.now();
 
-  // Send the message to Discord webhook
   const response = await fetch(process.env.DISCORD_WEBHOOK_URL!, {
     method: "POST",
     body: JSON.stringify({
@@ -78,7 +84,12 @@ export default async function handler(
             name: `New message | ${email}`,
           },
           description: message,
-          fields: [],
+          fields: [
+            {
+              name: "IP Address",
+              value: ipAddress as string,
+            },
+          ],
         },
       ],
     }),
