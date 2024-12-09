@@ -23,16 +23,12 @@ export const Avatar = (props: Props) => {
     </>
   );
 };
-interface ImgProps {
-  height: number;
-  width: number;
-}
 
 const Img = (props: Props) => {
   return (
     <Image
       className="rounded-full border border-teal-100 dark:border-teal-900"
-      src={`/${AVATAR}.${AVATAR_FILE_EXTENSION}`}
+      src={`/branding/secondary_dark_short_sig_avatar.${AVATAR_FILE_EXTENSION}`}
       height={props.height}
       width={props.width}
       title="My Avatar"
