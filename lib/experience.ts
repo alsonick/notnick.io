@@ -6,7 +6,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Aviato",
-    description: "React Engineer",
+    description: "Software Engineer",
     year: 2023,
     logo: `${page.experience.path}/logo/Aviato.jpg`,
     employmentType: "contract",
