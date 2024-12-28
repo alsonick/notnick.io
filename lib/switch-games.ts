@@ -3,6 +3,11 @@ import { SwitchGame } from "../types/switch";
 
 export const SWITCH_GAMES: SwitchGame[] = [
   {
+    link: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-games/Super-Mario-Bros-Wonder-2404150.html",
+    title: "Super Mario Bros. Wonder",
+    id: generateRandomId(),
+  },
+  {
     link: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-games/New-Super-Mario-Bros-U-Deluxe-1438640.html",
     title: "New Super Mario Bros. U Deluxe",
     id: generateRandomId(),
