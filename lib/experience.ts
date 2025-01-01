@@ -24,7 +24,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Drop Zone",
-    description: "Manager",
+    description: "Channel Manager",
     year: 2019,
     logo: `${page.experience.path}/logo/DropZone.jpeg`,
     employmentType: "part-time",
@@ -60,7 +60,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Watchou",
-    description: "Frontend Engineer",
+    description: "Software Engineer",
     year: 2021,
     logo: `${page.experience.path}/logo/Watchou.jpeg`,
     employmentType: "voluntary",
