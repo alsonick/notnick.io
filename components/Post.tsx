@@ -50,6 +50,7 @@ export const Post = (props: Props) => {
                 <Link
                   className={`focus:ring-4 hover:scale-110 ring-primary focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300`}
                   href={`https://twitter.com/intent/tweet?text=${props.post.title} by @${social.x.username}: https://${DOMAIN}/${props.type}/${props.post.slug}`}
+                  title={`Share "${props.post.title}" on  X (Twitter).`}
                   target="_blank"
                 >
                   <FiTwitter
@@ -99,8 +100,9 @@ export const Post = (props: Props) => {
             className={`sm:text-base text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-primary
             outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black
             hover:underline dark:hover:text-white`}
-            target="_blank"
             href={`${social.github.link}/${DOMAIN}/blob/main/posts/${props.type}/${props.post.slug}.md`}
+            title="Edit this page on GitHub."
+            target="_blank"
           >
             Edit this page on {social.github.name}{" "}
             <FiExternalLink className="ml-2" />

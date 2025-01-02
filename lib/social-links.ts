@@ -4,7 +4,7 @@ export const social = {
   x: {
     link: "https://twitter.com/heynickn",
     username: "heynickn",
-    name: "X",
+    name: "X (Twitter)",
   },
   instagram: {
     link: "https://www.instagram.com/heynickn",

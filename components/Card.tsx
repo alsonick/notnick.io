@@ -19,6 +19,7 @@ export const Card = (props: Props) => {
         href={`/${props.type}/${props.post.slug}`}
         className={`flex flex-col w-full focus:ring-offset-2 dark:ring-offset-black focus:ring-4
         rounded ring-primary outline-none duration-300`}
+        title={props.post.title}
       >
         <div className="mb-2">
           <PostCardTag title={props.post.tag} />

@@ -35,11 +35,11 @@ export const Toggle = () => {
   };
 
   return (
-    <RoundedBox onClick={() => toggleTheme(theme)}>
+    <RoundedBox onClick={() => toggleTheme(theme)} title="Toggle">
       {theme === "dark" ? (
-        <FiSun className="hover:scale-110 duration-150" />
+        <FiSun className="hover:scale-110 duration-150 sm:text-base text-sm" />
       ) : (
-        <FiMoon className="hover:scale-110 duration-150" />
+        <FiMoon className="hover:scale-110 duration-150 sm:text-base text-sm" />
       )}
     </RoundedBox>
   );

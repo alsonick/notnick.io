@@ -23,7 +23,7 @@ export const Dropdown = (props: Props) => {
           <FiMenu className="text-xl text-gray-600 dark:text-gray-300 cursor-pointer hover:text-black dark:hover:text-white duration-300" />
         </Menu.Button>
         <Menu.Items>
-          <div className="flex flex-col focus:ring-4 ring-primary p-1 absolute top-8 w-36 text-sm justify-between left-0 py-2 rounded-lg bg-white border border-teal-100 dark:bg-[#10161a]/100 dark:border-teal-900">
+          <div className="flex flex-col focus:ring-4 ring-primary p-1 absolute top-8 w-36 sm:text-base text-sm justify-between left-0 py-2 rounded-lg bg-white border border-teal-100 dark:bg-[#10161a]/100 dark:border-teal-900">
             {props.items.map((item) => (
               <Menu.Item key={item.id}>
                 {({ active }) => (

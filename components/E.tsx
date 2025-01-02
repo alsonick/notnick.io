@@ -58,11 +58,11 @@ export const E = (props: Props) => {
           </>
         )}
         {!enabled && <GoBack />}
-        {!enabled && (
+        {/* {!enabled && (
           <div className="flex justify-center mt-2 items-center">
             <Switch enabled={enabled} setEnabled={toggle} />
           </div>
-        )}
+        )} */}
       </div>
     </>
   );
