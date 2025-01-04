@@ -34,7 +34,7 @@ const Home: NextPage = () => {
           <Technologies />
           <Music />
           <Community />
-          <NewsLetter />
+          <NewsLetter showStats={true} />
           <Contact />
           <License />
           <Listening setActive={setPresenceActive} />

@@ -3,6 +3,7 @@ import { DOMAIN, FULL_NAME } from "../lib/constants";
 import { ProgressNotice } from "./ProgressNotice";
 import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
+import { PostCardTag } from "./PostCardTag";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
@@ -16,6 +17,7 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Link from "next/link";
+import { NewsLetter } from "./Newsletter";
 
 interface Props {
   type: "note" | "blog";
@@ -62,7 +64,7 @@ export const Post = (props: Props) => {
             ) : null}
           </div>
         </div>
-        <Tag title={props.post.tag} />
+        <PostCardTag title={props.post.tag} />
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
           <div className="duration-300 mb-4 mt-1">
@@ -95,6 +97,9 @@ export const Post = (props: Props) => {
         ) : (
           <ProgressNotice />
         )}
+        <div className="mt-8 pt-4 border-t border-teal-100 dark:border-teal-900">
+          <NewsLetter formHeading="Enjoyed the post?" showStats />
+        </div>
         <div className="pt-8 mt-8 flex sm:flex-row flex-col sm:items-center items-start justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
             className={`sm:text-base text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-primary

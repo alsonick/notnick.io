@@ -8,8 +8,8 @@ interface Props {
 
 export const PostsCard = (props: Props) => {
   return (
-    <div>
+    <>
       <Card type={props.type} post={props.post} />
-    </div>
+    </>
   );
 };

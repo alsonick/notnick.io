@@ -19,7 +19,15 @@ import { Note } from "./Note";
 // Next.js
 import Link from "next/link";
 
-export const NewsLetter = () => {
+interface Props {
+  formHeading?: string;
+  showStats?: boolean;
+  showTitle?: boolean;
+  title?: string;
+  note?: boolean;
+}
+
+export const NewsLetter = (props: Props) => {
   const [successMessage, setSuccessMessage] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -105,13 +113,21 @@ export const NewsLetter = () => {
 
   return (
     <Section>
-      <Heading>Newsletter 📰</Heading>
+      {props.showTitle && (
+        <>
+          {props.title ? (
+            <Heading>{props.title}</Heading>
+          ) : (
+            <Heading>Newsletter 📰</Heading>
+          )}
+        </>
+      )}
       <Form onSubmit={subscribe} action="POST">
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
-          Subscribe to my newsletter
+          {props.formHeading ? props.formHeading : "Subscribe to my newsletter"}
         </Heading>
         <Text>Subscribe if you&apos;re interested in nerdy stuff.</Text>
-        <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2">
+        <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2 mb-2">
           <div className="flex-1 md:w-fit w-full mr-3 mb-3 md:mb-0">
             <Input
               id="email"
@@ -133,46 +149,50 @@ export const NewsLetter = () => {
             </Button>
           </div>
         </div>
-        <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
-          <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
-            <span className="font-bold text-black dark:text-white">
-              {subs ?? 0}&nbsp;
-            </span>{" "}
-            {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
-            <Link
-              className={`hover:underline focus:ring-4 ring-0 ring-primary outline-none duration-300
+        {props.showStats && (
+          <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
+            <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
+              <span className="font-bold text-black dark:text-white">
+                {subs ?? 0}&nbsp;
+              </span>{" "}
+              {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
+              <Link
+                className={`hover:underline focus:ring-4 ring-0 ring-primary outline-none duration-300
                   focus:ring-offset-2 dark:ring-offset-black rounded`}
-              href={social.revue.link}
-              rel="noreferrer"
-              target="_blank"
-              title="View my published issues"
-            >
-              View all issues
-            </Link>
-            &nbsp; &bull;&nbsp;
-            <Avatar border={false} width={20} height={20} />
+                href={social.revue.link}
+                rel="noreferrer"
+                target="_blank"
+                title="View my published issues"
+              >
+                View all issues
+              </Link>
+              &nbsp; &bull;&nbsp;
+              <Avatar border={false} width={20} height={20} />
+            </div>
           </div>
-          {successMessage && (
-            <div className="flex items-center">
-              <HiBadgeCheck className="mr-1 mt-[1px] text-green-500" />
-              <StatusMessage message={successMessage} type="success" />
-            </div>
-          )}
-          {errorMessage && (
-            <div className="flex items-center">
-              <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
-              <StatusMessage message={errorMessage} type="error" />
-            </div>
-          )}
-          {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}
-        </div>
+        )}
+        {successMessage && (
+          <div className="flex items-center">
+            <HiBadgeCheck className="mr-1 mt-[1px] text-green-500" />
+            <StatusMessage message={successMessage} type="success" />
+          </div>
+        )}
+        {errorMessage && (
+          <div className="flex items-center">
+            <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
+            <StatusMessage message={errorMessage} type="error" />
+          </div>
+        )}
+        {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}
       </Form>
       <div className="mt-6">
-        <Note>
-          {social.revue.name} has <b>shut down</b> so you won&apos;t be able to
-          subscribe. I&apos;ll make sure to find another newsletter alternative
-          in the meantime. 👍{" "}
-        </Note>
+        {props.note && (
+          <Note>
+            {social.revue.name} has <b>shut down</b> so you won&apos;t be able
+            to subscribe. I&apos;ll make sure to find another newsletter
+            alternative in the meantime. 👍{" "}
+          </Note>
+        )}
       </div>
     </Section>
   );
