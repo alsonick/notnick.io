@@ -4,6 +4,7 @@ import { ProgressNotice } from "./ProgressNotice";
 import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
 import { PostCardTag } from "./PostCardTag";
+import { NewsLetter } from "./Newsletter";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
@@ -17,7 +18,6 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Link from "next/link";
-import { NewsLetter } from "./Newsletter";
 
 interface Props {
   type: "note" | "blog";
