@@ -2,7 +2,6 @@ import { getEmploymentTypeString } from "../lib/get-employment-type-string";
 import { FiExternalLink, FiMapPin } from "react-icons/fi";
 import { Experience } from "../types/experience";
 import { ICON } from "../lib/tailwindcss/icon";
-import { PostCardTag } from "./PostCardTag";
 import { LinkButton } from "./LinkButton";
 import { Border } from "./Border";
 import { Text } from "./Text";
@@ -48,11 +47,10 @@ export const ExperienceCard = (props: Experience) => {
               </div>
             )}
           </div>
-          <PostCardTag title={props.filter} style={{ margin: 0 }} />
           {props.showCurrentStatus && (
             <>
               {props.discontinued && (
-                <p className="ml-3 sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
+                <p className="ml-1 sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
                   discontinued
                 </p>
               )}
