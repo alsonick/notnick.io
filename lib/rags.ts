@@ -5,12 +5,12 @@ export const RAGS: Rag[] = [
   {
     id: generateRandomId(),
     composer: "Scott Joplin",
-    title: "Great Crush Collision March",
+    title: "The Great Crush Collision March",
     score: "https://musescore.com/james_brigham/great-crush-collision-march",
     date: 1896,
     path: {
       composer: "joplin",
-      file: "Great Crush Collision March",
+      file: "The Great Crush Collision March",
       ext: "mp3",
     },
   },

@@ -16,3 +16,5 @@ Ever since I was little I was _extremely_ quiet, and I mean really quiet, I was 
 By definition introversion and shyness/quietness doesn't really correlate but for some people they can be linked. In my case, introversion causes me to be more shy. But by definition an introvert is someone who typically prefers to spend time alone or in small groups.
 
 ### School life
+
+My school life wasn't the best, due to my quietness, I was picked on a lot which really destroyed my self-esteem. I did have a few friends but that was about it,
