@@ -33,7 +33,7 @@ const Home: NextPage = () => {
           <Experience />
           <Technologies />
           <Music />
-          <Community />
+          {/* <Community /> */}
           <NewsLetter showStats={true} />
           <Contact />
           <License />
