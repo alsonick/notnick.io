@@ -38,20 +38,25 @@ export const Seo = (props: Props) => {
         <meta name="twitter:description" content={props.description} />
         <meta property="twitter:creator" content={`@${social.x.username}`} />
         <meta property="twitter:site" content="@nick" />
+        <meta name="twitter:image" content="/og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="keywords" content={seoKeywords} />
         <meta property="og:title" content={props.title} />
         <meta property="og:site_name" content={`${FULL_NAME}`} />
         <meta property="og:url" content={`https://${DOMAIN}/`} />
+        <meta property="og:image" content="/og.png" />
         <meta property="og:description" content={props.description} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="600" />
         <meta property="og:type" content="website" />
-        <meta
+        {/* <meta
           property="twitter:image"
           content={`https://${DOMAIN}/branding/secondary_dark_short_sig_avatar.png`}
         />
         <meta
           property="og:image"
           content={`https://${DOMAIN}/branding/secondary_dark_short_sig_avatar.png`}
-        />
+        /> */}
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
       {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
