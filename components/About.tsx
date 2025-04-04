@@ -86,10 +86,10 @@ export const About = () => {
           >
             introvert
           </LinkTag>{" "}
-          and pretty shy so I prefer solitude but I&apos;m always open to
-          meeting new people with similar interests! If you&apos;d like to chat
-          then be sure to add me on any{" "}
-          <LinkTag href={page.socials.link}>social</LinkTag> media platform.
+          and pretty shy but I&apos;m always open to meeting new people with
+          similar interests! If you&apos;d like to chat then be sure to add me
+          on any <LinkTag href={page.socials.link}>social</LinkTag> media
+          platform.
         </Text>
       ),
       p4: (
