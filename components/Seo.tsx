@@ -42,7 +42,7 @@ export const Seo = (props: Props) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="keywords" content={seoKeywords} />
         <meta property="og:title" content={props.title} />
-        <meta property="og:site_name" content={`${FULL_NAME}`} />
+        <meta property="og:site_name" content={DOMAIN} />
         <meta property="og:url" content={`https://${DOMAIN}/`} />
         <meta property="og:image" content="/og.png" />
         <meta property="og:description" content={props.description} />
