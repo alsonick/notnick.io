@@ -28,13 +28,13 @@ export const Community = () => {
           Join Server <FiExternalLink className={ICON} />
         </LinkButton>
       </div>
-      <div className="mt-6">
+      {/* <div className="mt-6">
         <Note>
           To maintain a safe environment for all members, it is important that
           you carefully review and accept the server guidelines and{" "}
           <LinkT href={page.community.rules.link}>rules</LinkT> upon joining.
         </Note>
-      </div>
+      </div> */}
     </Section>
   );
 };

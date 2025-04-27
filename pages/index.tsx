@@ -5,6 +5,7 @@ import { Experience } from "../components/Experience";
 import { NewsLetter } from "../components/Newsletter";
 import { Community } from "../components/Community";
 import { Listening } from "../components/Listening";
+import { Projects } from "../components/Projects";
 import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
@@ -32,6 +33,7 @@ const Home: NextPage = () => {
           <FeaturedArticles />
           <Experience />
           <Technologies />
+          <Projects />
           <Music />
           <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />

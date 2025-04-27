@@ -1,6 +1,7 @@
 export interface Project {
   active: boolean;
-  github: string;
+  github?: string;
+  logo: string;
   name: string;
   desc: string;
   site: string;
