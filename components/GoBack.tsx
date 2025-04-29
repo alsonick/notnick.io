@@ -14,7 +14,7 @@ export const GoBack = (props: Props) => {
   return (
     <LinkT
       title="Go back"
-      href={props.location ? props.location : undefined}
+      href={props.location ? props.location : "/"}
       onClick={() => {
         !location && router.back();
       }}
