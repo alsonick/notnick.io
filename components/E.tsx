@@ -29,7 +29,7 @@ export const E = (props: Props) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (path === "/luna" || path === "/gxthmxm" || path === "/coronux") {
-        alert("Thanks Luna for the http.cat site lol!");
+        // alert("Thanks Luna for the http.cat site lol!");
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
