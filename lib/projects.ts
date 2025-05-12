@@ -1,5 +1,5 @@
-import { Project } from "../types/project";
 import { generateRandomId } from "./generate-random-id";
+import { Project } from "../types/project";
 
 export const PROJECTS: Project[] = [
   {
@@ -28,5 +28,15 @@ export const PROJECTS: Project[] = [
     active: true,
     oss: true,
     desc: "A gallery collection site of vercel merchandise.",
+  },
+  {
+    logo: "/project/branding/lyrics-tags-generator.png",
+    name: "Lyrics Tags Generator Bot",
+    id: generateRandomId(),
+    site: "tags.notnick.io",
+    link: "https://discord.com/oauth2/authorize?client_id=1338567480834265193&permissions=2147534848&integration_type=0&scope=bot",
+    active: true,
+    oss: false,
+    desc: "Discord bot version of Lyrics Tags Generator.",
   },
 ];

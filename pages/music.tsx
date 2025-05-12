@@ -1,5 +1,5 @@
 import { SpotifyPlaylistCover } from "../components/SpotifyPlaylistCover";
-import { FULL_NAME, PROFESSION, THEME } from "../lib/constants";
+import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Listening } from "../components/Listening";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
@@ -8,11 +8,11 @@ import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Seo } from "../components/Seo";
 import { MUSIC } from "../lib/music";
+import { page } from "../lib/page";
 import { useState } from "react";
 
 // Next.js
 import Link from "next/link";
-import { page } from "../lib/page";
 
 const Music = () => {
   const [_, setPresenceActive] = useState(false);

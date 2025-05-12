@@ -29,6 +29,12 @@ export const page = {
     link: "/branding",
     name: "branding",
   },
+  projects: {
+    title: "Projects",
+    path: "/projects",
+    link: "/projects",
+    name: "/projects",
+  },
   paths: {
     title: "Paths",
     path: "/paths",

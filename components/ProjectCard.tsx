@@ -31,7 +31,10 @@ export const ProjectCard = (props: Project) => {
       <div className="flex items-center mt-3">
         {" "}
         <div className="mr-2">
-          <LinkButton href={`https://${props.site}`} target="_blank">
+          <LinkButton
+            href={props.link ? props.link : `https://${props.site}`}
+            target="_blank"
+          >
             Visit <FiExternalLink className={ICON} />
           </LinkButton>
         </div>
