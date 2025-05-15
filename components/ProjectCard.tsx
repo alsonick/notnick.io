@@ -12,7 +12,7 @@ import Image from "next/image";
 
 export const ProjectCard = (props: Project) => {
   return (
-    <div className="rounded-xl flex flex-col text-center justify-between items-center py-4 px-2 border w-full border-teal-100 dark:border-teal-900 hover:translate-y-1 duration-300">
+    <div className="rounded-xl flex flex-col text-center dark:bg-[#10161a]/50 justify-between items-center py-4 px-2 border w-full border-teal-100 dark:border-teal-900 hover:translate-y-1 duration-300">
       <Image
         className="rounded-full border border-teal-100 dark:border-teal-900"
         title={`${props.name} Logo`}
