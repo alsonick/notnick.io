@@ -30,7 +30,7 @@ export const About = () => {
           </b>{" "}
           in web development and I&apos;m familiar with modern web technologies
           such as <b>React</b> & <b>TypeScript</b>. I&apos;m currently{" "}
-          <b>pursing a degree in {SUBJECT_OF_STUDY}</b>.
+          <b>pursuing a degree in {SUBJECT_OF_STUDY}</b>.
         </Text>
       ),
       p2: (
