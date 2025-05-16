@@ -23,12 +23,14 @@ export const About = () => {
               <span className="inline">{new Date().getFullYear() - 2003}</span>
             </b>
           </Tippy>{" "}
-          year old {PROFESSION.toLowerCase()} located in the <b>{LOCATED}</b>. I
-          have <b>{new Date().getFullYear() - YEAR_STARTED_PROGRAMMING}</b>{" "}
-          years of experience in web development and I&apos;m familiar with
-          modern web technologies such as <b>React</b> & <b>TypeScript</b>.
-          I&apos;m currently studying {SUBJECT_OF_STUDY} and I plan to
-          specialize in server-side development in the near future.
+          year old <b>{PROFESSION}</b> located in the <b>{LOCATED}</b>. I have{" "}
+          <b>
+            {new Date().getFullYear() - YEAR_STARTED_PROGRAMMING} years of
+            experience
+          </b>{" "}
+          in web development and I&apos;m familiar with modern web technologies
+          such as <b>React</b> & <b>TypeScript</b>. I&apos;m currently{" "}
+          <b>pursing a degree in {SUBJECT_OF_STUDY}</b>.
         </Text>
       ),
       p2: (

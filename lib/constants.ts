@@ -5,8 +5,8 @@ export const API_URL =
     ? "https://localhost:3000/api"
     : "https://notnick.io/api";
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
+export const SUBJECT_OF_STUDY = "Software Engineering";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
-export const SUBJECT_OF_STUDY = "Computer Science";
 export const BLOGS_DIR = `posts${page.blog.path}`;
 export const NOTES_DIR = `posts${page.note.path}`;
 export const DISCORD_ID = "463449066672619520";
