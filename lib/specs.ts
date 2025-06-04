@@ -50,7 +50,7 @@ export const SPECS = [
       {
         id: generateRandomId(),
         key: "Keyboard",
-        value: "Keychron K4 Wireless Mechanical Keyboard",
+        value: "Logitech G413 TKL SE Mechanical Keyboard",
       },
       {
         id: generateRandomId(),
