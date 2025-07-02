@@ -30,6 +30,18 @@ export const SPECS = [
   },
   {
     id: generateRandomId(),
+    title: "Home Server 💽",
+    list: [
+      { id: generateRandomId(), key: "CPU", value: "AMD Ryzen 5 PRO" },
+      { id: generateRandomId(), key: "GPU", value: "AMD Radeon Vega 11" },
+      { id: generateRandomId(), key: "Storage", value: "256GB SSD" },
+      { id: generateRandomId(), key: "Series", value: "HP ProDesk 405" },
+      { id: generateRandomId(), key: "OS", value: "Ubuntu Linux" },
+      { id: generateRandomId(), key: "RAM", value: "16GB" },
+    ],
+  },
+  {
+    id: generateRandomId(),
     title: "Gear ⚙️",
     list: [
       {

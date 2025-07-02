@@ -98,10 +98,8 @@ export const About = () => {
         <>
           <Text>
             If you&apos;re interested on what specs I use on a daily basis then{" "}
-            <LinkTag href={page.specs.link}>click here</LinkTag>.
-          </Text>
-          <Text>
-            View the collection of articles that I&apos;ve found interesting{" "}
+            <LinkTag href={page.specs.link}>click here</LinkTag>.<br /> View the
+            collection of articles that I&apos;ve found interesting{" "}
             <LinkTag href={page.articles.link}>over here</LinkTag>.
           </Text>
         </>
@@ -126,17 +124,13 @@ export const About = () => {
   return (
     <Section>
       <Heading>About 💭</Heading>
-      <>
+      <div className="space-y-4">
         {p[0].p1}
-        <br />
         {p[0].p2}
-        <br />
         {p[0].p3}
-        <br />
         {p[0].p4}
-        <br />
         {p[0].p5}
-      </>
+      </div>
     </Section>
   );
 };
