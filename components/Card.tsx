@@ -1,4 +1,3 @@
-import { PostCardTag } from "./PostCardTag";
 import { Post } from "../types/post";
 import { Avatar } from "./Avatar";
 import { Text } from "./Text";
@@ -6,6 +5,7 @@ import { Date } from "./Date";
 
 // Next.js
 import Link from "next/link";
+import { Tag } from "./Tag";
 
 interface Props {
   type: "note" | "blog";
@@ -22,7 +22,7 @@ export const Card = (props: Props) => {
         title={props.post.title}
       >
         <div className="mb-2">
-          <PostCardTag title={props.post.tag} />
+          <Tag title={props.post.tag} />
         </div>{" "}
         <h1 className="sm:text-3xl text-2xl font-bold cursor-pointer underline dark:text-white hover:no-underline w-fit">
           {props.post.title}

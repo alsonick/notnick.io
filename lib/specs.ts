@@ -30,12 +30,12 @@ export const SPECS = [
   },
   {
     id: generateRandomId(),
-    title: "Home Server 💽",
+    title: "Server [HOME] 🖥️",
     list: [
       { id: generateRandomId(), key: "CPU", value: "AMD Ryzen 5 PRO" },
       { id: generateRandomId(), key: "GPU", value: "AMD Radeon Vega 11" },
-      { id: generateRandomId(), key: "Storage", value: "256GB SSD" },
       { id: generateRandomId(), key: "Series", value: "HP ProDesk 405" },
+      { id: generateRandomId(), key: "Storage", value: "256GB SSD" },
       { id: generateRandomId(), key: "OS", value: "Ubuntu Linux" },
       { id: generateRandomId(), key: "RAM", value: "16GB" },
     ],
@@ -46,13 +46,13 @@ export const SPECS = [
     list: [
       {
         id: generateRandomId(),
-        key: "Console",
-        value: "Nintendo Switch (Neon Blue / Neon Red Joy-Con Controllers)",
+        key: "Primary Monitor",
+        value: 'Samsung UR55 4K IPS HDR10 28"',
       },
       {
         id: generateRandomId(),
-        key: "Primary Monitor",
-        value: 'Samsung UR55 4K IPS HDR10 28"',
+        key: "Console",
+        value: "Nintendo Switch",
       },
       {
         id: generateRandomId(),
@@ -62,7 +62,7 @@ export const SPECS = [
       {
         id: generateRandomId(),
         key: "Keyboard",
-        value: "Logitech G413 TKL SE Mechanical Keyboard",
+        value: "Logitech G413 TKL SE",
       },
       {
         id: generateRandomId(),

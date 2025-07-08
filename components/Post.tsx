@@ -64,7 +64,7 @@ export const Post = (props: Props) => {
             ) : null}
           </div>
         </div>
-        <PostCardTag title={props.post.tag} />
+        <Tag title={props.post.tag} />
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
           <div className="duration-300 mb-4 mt-1">

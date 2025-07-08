@@ -13,6 +13,7 @@ import { Label } from "./Label";
 import Filter from "bad-words";
 import { Text } from "./Text";
 import { Form } from "./Form";
+import { Tag } from "./Tag";
 
 export const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -66,8 +67,6 @@ export const ContactForm = () => {
       return;
     }
 
-    console.log(response);
-
     if (response.success) {
       setLoading(false);
       setSuccess("Thanks! I've received the message.");
@@ -81,9 +80,12 @@ export const ContactForm = () => {
 
   return (
     <Form onSubmit={sendMessage} action="POST">
-      <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
-        Let&apos;s connect!
-      </Heading>
+      <div className="flex items-center justify-between">
+        <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
+          Let&apos;s connect!
+        </Heading>
+        <Tag title="WEBHOOK" />
+      </div>
       <Text>Become part of my network bubble!</Text>
       <div className="flex flex-col my-2 justify-center w-full">
         <div className="mb-1">
