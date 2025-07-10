@@ -5,6 +5,7 @@ export const API_URL =
     ? "https://localhost:3000/api"
     : "https://notnick.io/api";
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
+export const MUSIC_STREAMING_PLATFORM = "YouTube Music";
 export const SUBJECT_OF_STUDY = "Software Engineering";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
 export const BLOGS_DIR = `posts${page.blog.path}`;
@@ -24,6 +25,6 @@ export const FIRST_NAME = "Nicholas";
 export const DOMAIN = "notnick.io";
 export const LAST_NAME = "Njoki";
 export const CITY = "Canterbury";
-export const THEME = "#f54bff";
+export const THEME = "#4271ff";
 export const AVATAR = "Avatar";
 export const COUNTRY = "UK";

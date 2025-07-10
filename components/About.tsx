@@ -114,8 +114,6 @@ export const About = () => {
             here
           </LinkTag>
           .
-          <br /> Connect with me on my{" "}
-          <LinkTag href={page.socials.link}>socials</LinkTag>.
         </Text>
       ),
     },
