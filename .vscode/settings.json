@@ -40,6 +40,7 @@
     "headlessui",
     "helitrop",
     "helloworld",
+    "homelabbing",
     "honymoon",
     "Horikita",
     "Ikusei",
@@ -103,5 +104,6 @@
     "Yagami",
     "Yakusoku",
     "Yujiro"
-  ]
+  ],
+  "discord.enabled": false
 }

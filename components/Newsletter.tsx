@@ -178,14 +178,14 @@ export const NewsLetter = (props: Props) => {
           </div>
         )}
         {errorMessage && (
-          <div className="flex items-center">
+          <div className="flex mt-2 items-center">
             <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
             <StatusMessage message={errorMessage} type="error" />
           </div>
         )}
         {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}
       </Form>
-      <div className="mt-6">
+      {/* <div className="mt-6">
         {props.note && (
           <Note>
             {social.revue.name} has <b>shut down</b> so you won&apos;t be able
@@ -193,7 +193,7 @@ export const NewsLetter = (props: Props) => {
             alternative in the meantime. 👍{" "}
           </Note>
         )}
-      </div>
+      </div> */}
     </Section>
   );
 };

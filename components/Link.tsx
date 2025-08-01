@@ -14,7 +14,7 @@ export const LinkT = (props: Props) => {
     <Link
       href={props.href || ""}
       title={props.title}
-      className={`font-bold  sm:text-base text-sm focus:ring-offset-2 dark:ring-offset-black rounded outline-none focus:ring-primary 
+      className={`font-bold  text-base focus:ring-offset-2 dark:ring-offset-black rounded outline-none focus:ring-primary 
       items-center inline-flex w-fit duration-300 cursor-pointer text-primary hover:underline focus:ring-4`}
       onClick={props.onClick}
       style={props.style}

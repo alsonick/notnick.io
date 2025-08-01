@@ -35,7 +35,7 @@ export const Post = (props: Props) => {
         <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
           {props.post.title}
         </h1>
-        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between sm:text-base text-sm">
+        <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-base">
           <div className="flex items-center">
             <Avatar border={false} width={24} height={24} />
             <p className="text-gray-600 dark:text-gray-300 ml-2">
@@ -86,7 +86,7 @@ export const Post = (props: Props) => {
         {Boolean(props.post.contentHtml) || props.post.finished ? (
           <article
             className={`
-            prose max-w-none mt-2 sm:text-base text-sm dark:prose-invert prose-a:text-primary
+            prose max-w-none mt-2 text-base dark:prose-invert prose-a:text-primary
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
             dark:prose-code:text-white prose-img:drop-shadow prose-a:font-bold
             focus:prose-a:ring-4 focus:prose-a:ring-primary prose-a:outline-none
@@ -102,7 +102,7 @@ export const Post = (props: Props) => {
         </div>
         <div className="pt-8 mt-8 flex sm:flex-row flex-col sm:items-center items-start justify-between border-t border-teal-100 dark:border-teal-900">
           <Link
-            className={`sm:text-base text-sm focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-primary
+            className={`text-base focus:ring-4 rounded focus:ring-offset-2 dark:ring-offset-black ring-primary
             outline-none flex w-fit duration-300 items-center text-gray-600 dark:text-gray-300 hover:text-black
             hover:underline dark:hover:text-white`}
             href={`${social.github.link}/${DOMAIN}/blob/main/posts/${props.type}/${props.post.slug}.md`}

@@ -1,7 +1,7 @@
 ---
 title: "Why I quit social media"
 date: "2025-01-11"
-description: "Life as an introvert"
+description: "Why I quit social media"
 finished: false
 tag: "Personal"
 mins: "8"

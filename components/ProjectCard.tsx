@@ -7,6 +7,7 @@ import { LinkButton } from "./LinkButton";
 import { FaGithub } from "react-icons/fa";
 import { LinkT } from "./Link";
 import { Text } from "./Text";
+import { Tag } from "./Tag";
 
 // Next.js
 import Image from "next/image";
@@ -31,6 +32,7 @@ export const ProjectCard = (props: Project) => {
       <div className="mb-2 mt-1">
         <PostCardTag title={props.site} />
       </div>
+      <Tag title={props.kind} />
       <h1 className="text-xl font-bold  dark:text-white">
         {props.name} {props.oss && "[OSS]"}
       </h1>

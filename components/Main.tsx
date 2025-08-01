@@ -30,7 +30,7 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <Link
+          {/* <Link
             className={`cursor-pointer p-[2px] mr-[2px] w-fit focus:ring-4 ring-primary outline-none rounded-full duration-300`}
             href={`https://www.google.com/maps/search/${CITY}`}
             target="_blank"
@@ -44,13 +44,14 @@ export const Main = () => {
                 />
               }
             />
-          </Link>
-          <Heading style={{ marginBottom: "0.5rem", marginTop: "8px" }}>
-            Hi, I&apos;m{" "}
-            <span className="bg-gradient-to-r from-[#4271ff] to-[#91caff] text-transparent bg-clip-text">
-              {FIRST_NAME}
-            </span>
-            ! <span className="wave">👋</span>
+          </Link> */}
+          <Heading
+            style={{
+              marginBottom: "0.5rem",
+              marginTop: "8px",
+            }}
+          >
+            Hi, I&apos;m {FIRST_NAME}! <span className="wave">👋</span>
           </Heading>
           <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">
             <TypeAnimation

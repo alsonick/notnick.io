@@ -7,7 +7,7 @@ interface Props {
 export const CharacterLimit = (props: Props) => {
   return (
     <p
-      className={`sm:text-base text-sm ${
+      className={`text-base ${
         props.text.length > props.limit
           ? "text-red-500 font-semibold"
           : "text-gray-600 dark:text-gray-300"

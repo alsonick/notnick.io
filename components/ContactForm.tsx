@@ -1,3 +1,4 @@
+import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { CharacterLimit } from "./CharacterLimit";
 import { EMAIL_ADDRESS } from "../lib/constants";
 import { StatusMessage } from "./StatusMessage";
@@ -84,7 +85,7 @@ export const ContactForm = () => {
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
           Let&apos;s connect!
         </Heading>
-        <Tag title="WEBHOOK" />
+        {/* <Tag title="WEBHOOK" /> */}
       </div>
       <Text>Become part of my network bubble!</Text>
       <div className="flex flex-col my-2 justify-center w-full">
@@ -122,10 +123,16 @@ export const ContactForm = () => {
       <div className="w-full flex items-center justify-between mt-2">
         <Loading loading={loading} text="Sending..." />
         {error && !loading ? (
-          <StatusMessage message={error} type="error" />
+          <div className="flex items-center">
+            <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
+            <StatusMessage message={error} type="error" />
+          </div>
         ) : null}
         {success && !loading ? (
-          <StatusMessage message={success} type="success" />
+          <div className="flex items-center">
+            <HiBadgeCheck className="mr-1 mt-[1px] text-green-500" />
+            <StatusMessage message={success} type="success" />
+          </div>
         ) : null}
         <div className="ml-auto pl-1">
           <Button>

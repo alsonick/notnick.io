@@ -29,6 +29,7 @@ const Projects = () => {
                 desc={project.desc}
                 name={project.name}
                 logo={project.logo}
+                kind={project.kind}
                 link={project.link}
                 site={project.site}
                 oss={project.oss}

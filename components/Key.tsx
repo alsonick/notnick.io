@@ -4,7 +4,7 @@ interface Props {
 
 export const Key = (props: Props) => {
   return (
-    <span className="text-black dark:text-white font-bold sm:text-base text-sm">
+    <span className="text-black dark:text-white font-bold text-base">
       {props.children}
     </span>
   );

@@ -16,7 +16,7 @@ export const ArticleCard = (props: Props) => {
   return (
     <Link
       className={`focus:ring-4 ring-primary focus:ring-offset-4
-        dark:ring-offset-black rounded p-0 sm:p-2 outline-none duration-300`}
+        dark:ring-offset-black rounded p-0 lg:p-2 outline-none duration-300`}
       href={props.link}
       target="_blank"
       title={props.link}
