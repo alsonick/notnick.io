@@ -31,7 +31,7 @@ export const Projects = () => {
         ))}
       </div>
       <div className="mt-6">
-        <Note>
+        {/* <Note>
           Some projects are based on other platforms and may use their branding
           assets, these are small hobby projects, but if you&apos;d like your
           branding removed, please{" "}
@@ -39,13 +39,11 @@ export const Projects = () => {
             email
           </LinkT>{" "}
           me.
-        </Note>
-        <div className="mt-6">
-          <Text>
-            Click <LinkTag href={page.projects.link}>here</LinkTag> to view the
-            full list.
-          </Text>
-        </div>
+        </Note> */}
+        <Text>
+          Click <LinkTag href={page.projects.link}>here</LinkTag> to view the
+          full list.
+        </Text>
       </div>
     </Section>
   );

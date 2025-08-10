@@ -133,7 +133,14 @@ const Experience: NextPage = () => {
                   ? filteredBlogsList.length
                   : EXPERIENCE.length}
               </Key>{" "}
-              items
+              {filteredBlogsList.length && (
+                <>
+                  {filteredBlogsList.length === 1 &&
+                  filteredBlogsList[0].filter !== "All"
+                    ? "item"
+                    : "items"}
+                </>
+              )}
             </Text>
           </div>
           {selected !== capitalizeFirstLetter("all") ? (

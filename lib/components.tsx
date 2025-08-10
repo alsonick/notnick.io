@@ -78,11 +78,6 @@ export const COMPONENTS: Components[] = [
   },
   {
     id: generateRandomId(),
-    text: "Border",
-    component: <Border />,
-  },
-  {
-    id: generateRandomId(),
     text: "Filter Box",
     component: (
       <FilterListBox
@@ -197,12 +192,6 @@ export const COMPONENTS: Components[] = [
         </Form>
       </div>
     ),
-  },
-  {
-    id: generateRandomId(),
-    text: "GitHub Star Button",
-    component: <GitHubStarButton />,
-    note: "If the button doesn't show (only the text shows) reload the page.",
   },
   {
     id: generateRandomId(),

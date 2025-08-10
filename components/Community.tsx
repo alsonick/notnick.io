@@ -15,13 +15,8 @@ export const Community = () => {
       <Heading>Community 👊</Heading>
       <Text>
         If you would like to connect with me, whether we have previously
-        interacted online or in person, I invite you to{" "}
-        <LinkT href={`https://${DOMAIN}/community`} target="_blank">
-          join
-        </LinkT>{" "}
-        my community server on <b>Discord</b>. It is an open space that welcomes
-        anyone who may be interested in getting to know me and engaging with
-        like-minded individuals.
+        interacted online or in person, I invite you to join my community server
+        on <b>Discord</b>. It is an open space that welcomes anyone.
       </Text>
       <div className="mt-4">
         <LinkButton href={`https://${DOMAIN}/community`} target="_blank">

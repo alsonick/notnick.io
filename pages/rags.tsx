@@ -81,10 +81,10 @@ const Rags: NextPage = () => {
           <div className="flex items-center">
             <Image
               className="rounded-full duration-300 mr-1 border border-teal-100 dark:border-teal-900"
-              title="My Apple Memoji"
+              title="itsRemco's YouTube Profile Picture"
               src="/itsRemco.jpg"
               height={20}
-              alt="My Apple Memoji"
+              alt="itsRemco's YouTube Profile Picture"
               width={20}
               quality={100}
             />
@@ -128,14 +128,16 @@ const Rags: NextPage = () => {
               Shuffle <FiRepeat className={ICON} />
             </Button>
           </div>
-          <div className="my-4">
-            <div className="my-4 flex flex-col">
+          <div className="my-4 w-full">
+            <div className="my-4 flex flex-col w-full">
               <Table>
                 <thead>
                   <tr>
-                    {["Composer", "Title", "Date", "File"].map((key) => (
-                      <Th key={key} text={key} />
-                    ))}
+                    {["Composer", "Title", "Publication", "Audio"].map(
+                      (key) => (
+                        <Th key={key} text={key} />
+                      )
+                    )}
                   </tr>
                 </thead>
                 <tbody>
@@ -148,7 +150,7 @@ const Rags: NextPage = () => {
                         <TdChildren>
                           <div className="flex flex-col w-full items-center justify-center">
                             <audio
-                              className="ml-4 mr-4 mt-4 p-1"
+                              className="ml-4 mr-4 mt-4 p-1 w-64"
                               controls
                               src={`${page.rags.path}/${rag.path.composer}/${rag.path.file}.${rag.path.ext}`}
                             >
