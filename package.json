@@ -24,7 +24,7 @@
     "file-saver": "^2.0.5",
     "framer-motion": "^7.6.1",
     "gray-matter": "^4.0.3",
-    "next": "^13.0.7",
+    "next": "^14.2.30",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
