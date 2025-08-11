@@ -19,8 +19,7 @@ export const Nav = (props: Props) => {
       className={`flex px-6 ${
         props.isDisplaySpotify ? "md:top-18 top-8" : "top-8"
       } fixed border dark:bg-[#10161a]/50 z-10  border-teal-100
-      dark:border-teal-900 backdrop-blur-md mb-12 duration-300 sm:w-[39rem]
-        w-[92.5%] rounded-lg justify-between h-14 items-center`}
+      dark:border-teal-900 backdrop-blur-md mb-12 duration-300 sm:w-[40rem] w-[95%]  rounded-lg justify-between h-14 items-center`}
     >
       <div className="flex lg:hidden">
         <Dropdown items={ITEMS} />
