@@ -12,7 +12,7 @@ export const Footer = () => {
           {FULL_NAME}
         </h2>
         <p className="text-gray-500 opacity-50 text-xs">
-          &copy; {new Date().getFullYear()} | All rights reserved
+          &copy; {new Date().getFullYear()} | All rights reserved.
         </p>
         <p className="text-gray-500 opacity-50 text-xs">
           Made with{" "}
@@ -35,12 +35,13 @@ export const Footer = () => {
             Built with ❤️ by{" "}
             <FooterLink link={social.github.link} title={FULL_NAME}>
               {FULL_NAME}
-            </FooterLink>{" "}
+            </FooterLink>
+            .{" "}
           </p>
           <Avatar border={false} width={15} height={15} />
         </div>
       </div>
-      <GitHubStarButton />
+      {/* <GitHubStarButton /> */}
     </footer>
   );
 };

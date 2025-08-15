@@ -6,7 +6,7 @@ import "tippy.js/dist/tippy.css";
 import "../styles/globals.css";
 
 // Next.js
-import { Inter } from "next/font/google";
+import { Inter } from "@next/font/google";
 import type { AppProps } from "next/app";
 import { Router } from "next/router";
 
