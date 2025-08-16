@@ -36,7 +36,7 @@ export const ExperienceCard = (props: Experience) => {
       )}
       <div className="sm:ml-8 ml-0 w-full text-center sm:text-left">
         <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start mb-3 sm:mb-0">
-          <div className="flex items-center justify-center mr-3 sm:mb-0 mb-3">
+          <div className="flex items-center justify-center sm:mr-3 mr-0">
             <h1 className="text-2xl font-bold dark:text-white">{props.name}</h1>
             {props.showCurrentStatus && (
               <div className="ml-3">
