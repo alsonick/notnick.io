@@ -1,4 +1,4 @@
-import { CITY, COUNTRY, FIRST_NAME } from "../lib/constants";
+import { CITY, COUNTRY, FIRST_NAME, PRONOUNS } from "../lib/constants";
 import { TypeAnimation } from "react-type-animation";
 import { FiNavigation } from "react-icons/fi";
 import { fireworks } from "../lib/fireworks";
@@ -45,6 +45,11 @@ export const Main = () => {
               }
             />
           </Link> */}
+          <div className="p-1 w-fit px-2 rounded-md border dark:bg-[#10161a]/50 z-10  border-teal-100 dark:border-teal-900">
+            <p className="text-gray-700 dark:text-gray-100 text-xs">
+              {PRONOUNS}
+            </p>
+          </div>
           <Heading
             style={{
               marginBottom: "0.5rem",
