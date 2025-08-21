@@ -105,5 +105,5 @@
     "Yakusoku",
     "Yujiro"
   ],
-  "discord.enabled": false
+  "discord.enabled": true
 }
