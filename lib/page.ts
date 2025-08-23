@@ -98,6 +98,12 @@ export const page = {
     path: "/credit",
     link: "/credit",
   },
+  feedback: {
+    lyricsTagsGenerator: {
+      name: "Lyrics Tags Generator",
+      title: "Feedback",
+    },
+  },
   challenge: {
     title: "Challenge",
     path: "/challenge",

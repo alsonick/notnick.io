@@ -18,10 +18,8 @@ import { Tag } from "./Tag";
 
 export const ContactForm = () => {
   const [loading, setLoading] = useState(false);
-
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
-
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
