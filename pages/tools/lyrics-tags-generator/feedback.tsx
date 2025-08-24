@@ -10,7 +10,6 @@ import { ICON } from "../../../lib/tailwindcss/icon";
 import { Header } from "../../../components/Header";
 import { Layout } from "../../../components/Layout";
 import { Button } from "../../../components/Button";
-import { GoBack } from "../../../components/GoBack";
 import { Label } from "../../../components/Label";
 import { Input } from "../../../components/Input";
 import { Form } from "../../../components/Form";
@@ -53,21 +52,39 @@ const Feedback: NextPage = () => {
 
     setLoading(true);
 
-    try {
-      await fetch(process.env.FEEDBACK_DISCORD_WEBHOOK_URL!, {
+    const response: { success: boolean; error?: string | undefined } =
+      await fetch("/api/tools/lyrics-tags-generator/feedback", {
         method: "POST",
+        body: JSON.stringify({
+          feedback,
+          email,
+        }),
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          content: `Feedback from **${email}**:\n\n${feedback}`,
-        }),
-      });
-    } catch (error) {
-      console.log(error);
+      })
+        .then((res) => res.json())
+        .catch((error) => {
+          setLoading(false);
+          setError(error);
+          return;
+        });
+
+    if (!response.success) {
+      setLoading(false);
+      setError(response.error ?? "Something went wrong.");
+      return;
     }
 
-    // setError(response.error!);
+    if (response.success) {
+      setLoading(false);
+      setSuccess("Thanks! I've received the message.");
+      setFeedback("");
+      setEmail("");
+      return;
+    }
+
+    setError(response.error!);
   };
 
   return (
@@ -108,7 +125,6 @@ const Feedback: NextPage = () => {
               <TextArea
                 onChange={(e) => {
                   setFeedback(e.target.value);
-
                   if (feedback.length === CHARACTER_LIMIT) {
                     setLoading(false);
                   }

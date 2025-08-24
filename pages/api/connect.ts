@@ -18,8 +18,8 @@ export default async function handler(
   }
 
   interface Body {
-    email?: string | undefined;
     message?: string | undefined;
+    email?: string | undefined;
   }
 
   const { email, message } = body as Body;
