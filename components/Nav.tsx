@@ -1,6 +1,6 @@
+import { NavDropdown } from "./NavDropdown";
 import { NavLinkTag } from "./NavLinkTag";
 import { ITEMS } from "../lib/nav-items";
-import { Dropdown } from "./Dropdown";
 import { Toggle } from "./Toggle";
 
 // Next.js
@@ -19,17 +19,20 @@ export const Nav = (props: Props) => {
       className={`flex px-6 ${
         props.isDisplaySpotify ? "md:top-18 top-8" : "top-8"
       } fixed border dark:bg-[#10161a]/50 z-50  border-teal-100
-      dark:border-teal-900 backdrop-blur-md mb-12 duration-300 sm:w-[40rem] w-[95%]  rounded-lg justify-between h-14 items-center`}
+      dark:border-teal-900 backdrop-blur-md mb-12 duration-300 sm:w-[40rem] w-[95%] rounded-lg justify-between h-14 items-center`}
     >
       <div className="flex lg:hidden">
-        <Dropdown items={ITEMS} />
+        <NavDropdown items={ITEMS} />
       </div>
       <div className="hidden lg:flex">
         {ITEMS.map((nav) => (
           <NavLinkTag
             key={nav.id}
             className={`${
-              router.pathname.includes(nav.to) && "dark:bg-gray-800 bg-gray-100"
+              (nav.to === "/"
+                ? router.pathname === nav.to
+                : router.pathname.includes(nav.to)) &&
+              "dark:bg-gray-800 bg-gray-100"
             }`}
             title={nav.text}
             to={nav.to}
