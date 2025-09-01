@@ -144,10 +144,4 @@ export const page = {
     link: "/dev",
     name: "dev",
   },
-  blm: {
-    title: "Black Lives Matter",
-    name: "/blm",
-    path: "/blm",
-    link: "/blm",
-  },
 };

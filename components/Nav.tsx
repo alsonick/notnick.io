@@ -29,10 +29,10 @@ export const Nav = (props: Props) => {
           <NavLinkTag
             key={nav.id}
             className={`${
-              (nav.to === "/"
-                ? router.pathname === nav.to
-                : router.pathname.includes(nav.to)) &&
-              "dark:bg-gray-800 bg-gray-100"
+              nav.to === "/"
+                ? "dark:bg-gray-800 bg-gray-100"
+                : router.pathname.includes(nav.to) &&
+                  "dark:bg-gray-800 bg-gray-100"
             }`}
             title={nav.text}
             to={nav.to}

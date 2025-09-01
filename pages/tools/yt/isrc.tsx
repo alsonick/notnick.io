@@ -61,35 +61,57 @@ const ISRC: NextPage = () => {
     })
       .then((res) => res.json())
       .then((t: { token: SpotifyAccessToken }) => {
-        fetch(
-          `${URL}?q=${encodeURIComponent(soundtrackTitle)}&type=track&limit=1`,
-          {
-            method: "GET",
-            headers: {
-              Authorization: `${t.token.token_type} ${t.token.access_token}`,
-              "Content-Type": "application/json",
-            },
-          }
-        )
+        const tokenHeader = {
+          Authorization: `${t.token.token_type} ${t.token.access_token}`,
+          "Content-Type": "application/json",
+        };
+
+        let fetchUrl = "";
+        let isLink = false;
+
+        // check if user entered a Spotify link
+        const spotifyLinkRegex =
+          /^(https?:\/\/)?(open\.spotify\.com\/track\/|spotify:track:)([a-zA-Z0-9]+)(\?.*)?$/;
+
+        const match = soundtrackTitle.match(spotifyLinkRegex);
+
+        if (match) {
+          const trackId = match[3];
+          fetchUrl = `https://api.spotify.com/v1/tracks/${trackId}`;
+          isLink = true;
+        } else {
+          fetchUrl = `${URL}?q=${encodeURIComponent(
+            soundtrackTitle
+          )}&type=track&limit=1`;
+        }
+
+        fetch(fetchUrl, { method: "GET", headers: tokenHeader })
           .then((res) => res.json())
-          .then((response: ISRCResponse) => {
+          .then((response) => {
             if (response.error) {
               setLoading(false);
               setError(response.error.message);
+              return;
             }
 
-            if (response.tracks) {
-              setSoundtrackTitle("");
-              setData(response);
-              setLoading(false);
-              setSuccess(
-                `Successfully found the track '${response.tracks.items[0].name}'.`
-              );
+            // Normalize response so UI still works
+            let trackData;
+            if (isLink) {
+              trackData = { tracks: { items: [response] } };
+            } else {
+              trackData = response;
             }
+
+            setSoundtrackTitle("");
+            setData(trackData);
+            setLoading(false);
+            setSuccess(
+              `Successfully found the track '${trackData.tracks.items[0].name}'.`
+            );
           })
           .catch((error) => {
             setLoading(false);
-            setError(error);
+            setError(error.message || "Something went wrong");
             return;
           });
       });
@@ -98,7 +120,7 @@ const ISRC: NextPage = () => {
   return (
     <>
       <Seo
-        title={`${page.isrc.title1} • ${FULL_NAME}`}
+        title={`${page.isrc.title2} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout longLayoutFormat={false} supportLargeScreen={true}>
@@ -120,7 +142,7 @@ const ISRC: NextPage = () => {
                     <Label text="soundtrack" />
                   </div>
                   <Input
-                    placeholder="Spotify Link + Soundtrack Title"
+                    placeholder="https://open.spotify.com/track/6JrFlbV1Ehnigcp71vtiI1?si=e99533332a6a4b81"
                     style={{ width: "100%" }}
                     required={true}
                     value={soundtrackTitle}
@@ -183,7 +205,13 @@ const ISRC: NextPage = () => {
                   </Button>
                 </div>
                 <div className="mb-12 flex items-center w-full justify-center">
-                  <Text style={{ fontSize: "2rem", textAlign: "center" }}>
+                  <Text
+                    style={{
+                      fontSize: "2rem",
+                      textAlign: "center",
+                      lineHeight: 1.2,
+                    }}
+                  >
                     <b>{data.tracks.items[0].name}</b> by{" "}
                     <b>{data.tracks.items[0].artists[0].name}</b>
                   </Text>
@@ -198,8 +226,8 @@ const ISRC: NextPage = () => {
                     <Image
                       className="mt-2"
                       src={data.tracks.items[0].album.images[0].url}
-                      height={data.tracks.items[0].album.images[0].height}
-                      width={data.tracks.items[0].album.images[0].width}
+                      height={350}
+                      width={350}
                       alt={`Album cover for ${data.tracks.items[0].name} by ${data.tracks.items[0].artists[0].name}`}
                       title={`Album cover for ${data.tracks.items[0].name} by ${data.tracks.items[0].artists[0].name}`}
                     />

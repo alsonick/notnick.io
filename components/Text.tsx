@@ -8,7 +8,7 @@ interface Props {
 export const Text = (props: Props) => {
   return (
     <p
-      className="text-gray-600 dark:text-gray-300 text-base"
+      className="text-gray-600 dark:text-gray-300 text-base/7"
       style={props.style}
     >
       {!props.sliceText
