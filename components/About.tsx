@@ -81,17 +81,11 @@ export const About = () => {
       ),
       p3: (
         <Text>
-          I&apos;m also a huge{" "}
-          <LinkTag
-            href="https://en.wikipedia.org/wiki/Extraversion_and_introversion"
-            target="_blank"
-          >
-            introvert
-          </LinkTag>{" "}
-          and pretty shy but I&apos;m always open to meeting new people with
-          similar interests! If you&apos;d like to chat then be sure to add me
-          on any <LinkTag href={page.socials.link}>social</LinkTag> media
-          platform.
+          I&apos;m also a huge introvert and pretty shy, but I&apos;m always
+          open to meeting new people with similar interests! If you&apos;d like
+          to chat then be sure to add me on any{" "}
+          <LinkTag href={page.socials.link}>social media platform</LinkTag>{" "}
+          (Inactive on most except X).
         </Text>
       ),
       p4: (

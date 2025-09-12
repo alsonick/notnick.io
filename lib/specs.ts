@@ -30,7 +30,7 @@ export const SPECS = [
   },
   {
     id: generateRandomId(),
-    title: "Server [HOME] 🖥️",
+    title: "Personal Home Server 🖥️",
     list: [
       { id: generateRandomId(), key: "CPU", value: "AMD Ryzen 5 PRO" },
       { id: generateRandomId(), key: "GPU", value: "AMD Radeon Vega 11" },

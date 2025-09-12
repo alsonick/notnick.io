@@ -16,11 +16,11 @@ export const Community = () => {
       <Text>
         If you would like to connect with me, whether we have previously
         interacted online or in person, I invite you to join my community server
-        on <b>Discord</b>. It is an open space that welcomes anyone.
+        on <b>Discord</b>.
       </Text>
       <div className="mt-4">
         <LinkButton href={`https://${DOMAIN}/community`} target="_blank">
-          Join Server <FiExternalLink className={ICON} />
+          Join <FiExternalLink className={ICON} />
         </LinkButton>
       </div>
       {/* <div className="mt-6">
