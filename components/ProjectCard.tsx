@@ -29,14 +29,14 @@ export const ProjectCard = (props: Project) => {
           <FiCameraOff className="text-3xl hover:scale-110 duration-150 dark:text-white text-black" />
         </div>
       )}
-      <div className="mb-2 mt-1">
+      {/* <div className="mt-1">
         <PostCardTag title={props.site} />
-      </div>
+      </div> */}
       {/* <Tag title={props.kind} /> */}
-      <h1 className="text-xl font-bold  dark:text-white">
-        {props.name} {props.oss && "[OSS]"}
+      <h1 className="text-xl font-bold mt-2 dark:text-white">
+        {props.name} {props.oss && ""}
       </h1>
-      <Text>{props.desc}</Text>
+      {/* <Text>{props.desc}</Text> */}
       <div className="flex items-center mt-3">
         {" "}
         <div className="mr-2">
@@ -48,7 +48,7 @@ export const ProjectCard = (props: Project) => {
           </LinkButton>
         </div>
         {props.oss && (
-          <LinkT href="" target="_blank">
+          <LinkT href={props.github} target="_blank">
             <FaGithub className="text-2xl text-black dark:text-white hover:scale-110 duration-150" />
           </LinkT>
         )}
