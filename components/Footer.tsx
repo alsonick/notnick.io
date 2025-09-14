@@ -38,7 +38,6 @@ export const Footer = () => {
             </FooterLink>
             .{" "}
           </p>
-          <Avatar border={false} width={15} height={15} />
         </div>
       </div>
       {/* <GitHubStarButton /> */}

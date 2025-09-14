@@ -167,7 +167,7 @@ export const NewsLetter = (props: Props) => {
                 View all issues
               </Link>
               &nbsp; &bull;&nbsp;
-              <Avatar border={false} width={20} height={20} />
+              <Avatar border={true} width={20} height={20} />
             </div>
           </div>
         )}
