@@ -1,7 +1,9 @@
-import { AVATAR_FILE_EXTENSION, AVATAR } from "../lib/constants";
+import { determineAvatarDecorationType } from "../lib/determine-avatar-decoration-type";
+import { determineQueryMonth } from "../lib/determine-query-month";
 import { Border } from "./Border";
 
 // Next.js
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 interface Props {
@@ -25,10 +27,19 @@ export const Avatar = (props: Props) => {
 };
 
 const Img = (props: Props) => {
+  const month = new Date().getMonth();
+  const router = useRouter();
+
+  const decoration = router.query.decoration as string;
+
   return (
     <Image
+      src={
+        decoration
+          ? determineAvatarDecorationType(determineQueryMonth(decoration))
+          : determineAvatarDecorationType(month)
+      }
       className="rounded-full"
-      src={`/branding/secondary_dark_short_sig_avatar.${AVATAR_FILE_EXTENSION}`}
       height={props.height}
       width={props.width}
       title="My Avatar"
