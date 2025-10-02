@@ -338,4 +338,40 @@ export const RAGS: Rag[] = [
       ext: "mp3",
     },
   },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    score: "https://musescore.com/user/33456843/scores/6535412",
+    title: "Victory Rag",
+    date: 1921,
+    path: {
+      composer: "scott",
+      file: "James Scott",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    score: "https://musescore.com/user/3224/scores/2277741",
+    title: "Climax Rag",
+    date: 1914,
+    path: {
+      composer: "scott",
+      file: "Climax Rag",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    score: "https://musescore.com/user/58480/scores/5101474",
+    title: "Evergreen Rag",
+    date: 1915,
+    path: {
+      composer: "scott",
+      file: "Evergreen Rag",
+      ext: "mp3",
+    },
+  },
 ];
