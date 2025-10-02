@@ -346,7 +346,7 @@ export const RAGS: Rag[] = [
     date: 1921,
     path: {
       composer: "scott",
-      file: "James Scott",
+      file: "Victory Rag",
       ext: "mp3",
     },
   },
