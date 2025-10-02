@@ -15,7 +15,7 @@ export const ContentUnavailable = (props: Props) => {
       <p className="text-gray-600 dark:text-gray-300 opacity-80 w-2/3">
         {props.message
           ? props.message
-          : "The page is not supported on small mobile devices."}
+          : "The page is not supported on smaller mobile devices."}
       </p>
       {props.showBackButton && (
         <div className="mt-2">
