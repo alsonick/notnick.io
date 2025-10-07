@@ -27,4 +27,9 @@ export const SWITCH_GAMES: SwitchGame[] = [
     title: "Nintendo Switch Sports",
     id: generateRandomId(),
   },
+  {
+    link: "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-download-software/Super-Mario-Galaxy-2-2915406.html",
+    title: "Super Mario Galaxy 2",
+    id: generateRandomId(),
+  },
 ];
