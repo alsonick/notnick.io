@@ -3,6 +3,7 @@ import { Technologies } from "../components/Technologies";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Experience } from "../components/Experience";
 import { NewsLetter } from "../components/Newsletter";
+import { Education } from "../components/Education";
 import { Community } from "../components/Community";
 import { Listening } from "../components/Listening";
 import { Projects } from "../components/Projects";
@@ -33,6 +34,7 @@ const Home: NextPage = () => {
           <FeaturedArticles />
           <Experience />
           <Technologies />
+          <Education />
           {/* <Projects /> */}
           <Music />
           <Community />
