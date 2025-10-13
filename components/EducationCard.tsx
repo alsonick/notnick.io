@@ -42,8 +42,8 @@ export const EducationCard = (props: Props) => {
           </div>
         </div>
         <LinkButton
-          href={props.education.link}
           title={`Visit The ${props.education.name} Website`}
+          href={props.education.link}
           target="_blank"
         >
           Visit <FiExternalLink title="Visit" className={ICON} />
