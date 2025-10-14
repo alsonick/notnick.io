@@ -36,7 +36,7 @@ const Img = (props: Props) => {
     <Image
       src={
         decoration
-          ? determineAvatarDecorationType(determineQueryMonth(decoration))
+          ? determineAvatarDecorationType(determineQueryMonth("none"))
           : determineAvatarDecorationType(month)
       }
       className="rounded-full"
