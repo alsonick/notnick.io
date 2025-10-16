@@ -1,6 +1,5 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { useEffect, useState } from "react";
-import { Switch } from "./Switch";
 import { GoBack } from "./GoBack";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
