@@ -27,7 +27,6 @@ export const Avatar = (props: Props) => {
 };
 
 const Img = (props: Props) => {
-  const month = new Date().getMonth();
   const router = useRouter();
 
   const decoration = router.query.decoration as string;
@@ -39,11 +38,11 @@ const Img = (props: Props) => {
           ? determineAvatarDecorationType(determineQueryMonth("none"))
           : determineAvatarDecorationType(0)
       }
+      title="My Signature Avatar"
+      alt="My Signature Avatar"
       className="rounded-full"
       height={props.height}
       width={props.width}
-      title="My Avatar"
-      alt="My Avatar"
       quality={100}
     />
   );
