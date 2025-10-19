@@ -33,8 +33,15 @@ export const EducationCard = (props: Props) => {
             />
           </Border>
           <div className="flex sm:ml-8 ml-0 flex-col sm:text-left mt-5 sm:mt-0 text-center">
-            <div className="flex w-full items-center justify-center sm:justify-start sm:mb-1 mb-0">
-              <Text>{`${props.education.start} - ${props.education.finish}`}</Text>{" "}
+            <div
+              className={`flex w-full items-center justify-center sm:justify-start sm:mb-1 mb-0 ${
+                props.education.graduated ? "mb-1" : "mb-0"
+              }`}
+            >
+              <Text>{`${props.education.start} - ${props.education.finish} ${
+                props.education.finish - new Date().getFullYear() >= 1 &&
+                "(Present)"
+              }`}</Text>{" "}
               {props.education.graduated ? (
                 <div className="ml-2">
                   <Tag
