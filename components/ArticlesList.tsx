@@ -25,37 +25,28 @@ export const ArticlesList = (props: Props) => {
             rounded ring-primary outline-none duration-300`}
             target="_blank"
           >
-            <div className="flex-wrap flex h-auto w-full text-wrap mb-2">
+            {/* <div className="flex-wrap flex h-auto w-full text-wrap mb-2">
               {article.tags.map((tag) => (
                 <div key={tag.id} className="mr-2">
                   <Tag title={tag.filter} />
                 </div>
               ))}
-            </div>
+            </div> */}
             <h1
               className="sm:text-3xl text-2xl font-bold cursor-pointer underline
                   dark:text-white hover:no-underline"
             >
               {article.title}
             </h1>
-            <div className="flex w-full">
+            <div className="flex items-center w-full">
               {article.authors.length === 1 ? (
-                <Text style={{ margin: "0.5rem 0 0.25rem 0" }}>
-                  By {article.authors[0]}
-                </Text>
+                <Text>By {article.authors[0]}</Text>
               ) : (
-                <>
-                  <div
-                    className="flex"
-                    style={{ margin: "0.5rem 0 0.25rem 0" }}
-                  >
-                    <Authors
-                      type="article"
-                      authors={article.authors}
-                      style="short"
-                    />
-                  </div>
-                </>
+                <Authors
+                  type="article"
+                  authors={article.authors}
+                  style="short"
+                />
               )}
             </div>
           </Link>

@@ -37,10 +37,10 @@ const Home: NextPage = () => {
           <Education />
           {/* <Projects /> */}
           <Music />
-          <Community />
+          {/* <Community /> */}
           <NewsLetter showStats={true} showTitle={true} note={true} />
           <Contact />
-          <License />
+          {/* <License /> */}
           <Listening setActive={setPresenceActive} />
         </Animate>
       </Layout>

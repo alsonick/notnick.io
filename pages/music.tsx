@@ -9,14 +9,11 @@ import { Header } from "../components/Header";
 import { Seo } from "../components/Seo";
 import { MUSIC } from "../lib/music";
 import { page } from "../lib/page";
-import { useState } from "react";
 
 // Next.js
 import Link from "next/link";
 
 const Music = () => {
-  const [_, setPresenceActive] = useState(false);
-
   return (
     <>
       <Seo
@@ -28,14 +25,13 @@ const Music = () => {
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>{page.music.title}</Heading>
           </Header>
-          <Listening setActive={setPresenceActive} />
           <div className="mb-4 grid md:grid-cols-3 gap-4 sm:grid-cols-2">
             {MUSIC.map((playlist) => (
               <Link
                 href={playlist.link}
                 target="_blank"
-                className={`my-4 flex flex-col items-center  hover:translate-y-1 duration-300
-                focus:ring-4 ring-primary rounded-xl outline-none`}
+                className={`my-4 flex flex-col items-center md:hover:translate-y-1 duration-300
+  focus:ring-4 ring-primary rounded-xl outline-none`}
                 key={playlist.id}
               >
                 <SpotifyPlaylistCover

@@ -17,9 +17,8 @@ export const TechnologyCard = (props: Props) => {
     <Link
       href={props.link}
       className={`cursor-pointer flex items-center justify-center py-2 px-5 focus:ring-4 ring-primary outline-none
-                  hover:translate-y-1 text-base rounded-xl mb-4 duration-300 focus:ring-offset-2 dark:ring-offset-black
-                  font-semibold bg-gray-100 hover:bg-gray-200 dark:bg-gray-800
-                dark:hover:bg-gray-900 dark:text-white`}
+            sm:hover:translate-y-1 text-base rounded-xl mb-4 duration-300 focus:ring-offset-2 dark:ring-offset-black
+            font-semibold bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-white`}
       style={props.style}
       title={props.text}
       rel="noreferrer"

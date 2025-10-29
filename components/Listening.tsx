@@ -107,7 +107,7 @@ export const Listening: React.FC<Props> = (
 
   if (!doing || !doing.discord_status)
     return (
-      <div className="flex items-center mb-6" style={style}>
+      <div className="flex items-center mb-5" style={style}>
         <FaSpotify
           style={style}
           className="text-gray-600 dark:text-gray-300 hover:scale-110 duration-300"
@@ -120,7 +120,7 @@ export const Listening: React.FC<Props> = (
 
   return (
     <a
-      className="flex items-center mb-6 duration-300 text-gray-600
+      className="flex items-center mb-5 duration-300 text-gray-600
       dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit"
       style={style}
     >

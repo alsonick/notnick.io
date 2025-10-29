@@ -7,7 +7,7 @@ interface Props {
 export const Heading = (props: Props) => {
   return (
     <h1
-      className={`lg:text-4xl text-3xl font-bold mb-6 dark:text-white ${props.className}`}
+      className={`sm:text-4xl text-3xl font-bold mb-6 dark:text-white ${props.className}`}
       style={props.style}
     >
       {props.children}

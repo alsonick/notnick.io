@@ -6,7 +6,7 @@ import { Avatar } from "./Avatar";
 
 export const Footer = () => {
   return (
-    <footer className="flex items-center justify-between pb-1 border-t mt-6 border-teal-100 dark:border-teal-900 pt-10">
+    <footer className="flex items-center justify-between pb-1 border-t mt-5 border-teal-100 dark:border-teal-900 pt-10">
       <div className="flex flex-col">
         <h2 className="sm:text-lg text-base opacity-50 font-bold dark:text-white">
           {FULL_NAME}
