@@ -50,15 +50,15 @@ export const Contact = () => {
       </Text>
       <div className="flex flex-col justify-center border-t border-teal-100 dark:border-teal-900 mt-10 pt-5 w-full">
         <ContactForm />
-        <div className="mt-6">
-          {/* // Credit: https://github.com/cnrad/cnrad.dev/blob/master/src/components/talk/TimeStatus.tsx */}
+        {/* <div className="mt-6">
+          // Credit: https://github.com/cnrad/cnrad.dev/blob/master/src/components/talk/TimeStatus.tsx
           <Note>
             It&apos;s currently <span className="font-bold">{time}</span> for
             me, so I&apos;m probably{" "}
             <span className="font-bold">{awake ? "awake" : "sleeping"}</span>.
             I&apos;ll get back to you soon.
           </Note>
-        </div>
+        </div> */}
       </div>
     </Section>
   );

@@ -17,7 +17,7 @@ export const EducationCard = (props: Props) => {
   return (
     <div
       className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6
-      duration-300 border border-teal-100 dark:border-teal-900 mb-6"
+      border border-teal-100 dark:border-teal-900 mb-6"
     >
       <div className="flex sm:flex-row flex-col items-center w-full justify-between">
         <div className="flex sm:flex-row flex-col items-center mb-4 sm:mb-0">
@@ -34,23 +34,15 @@ export const EducationCard = (props: Props) => {
           </Border>
           <div className="flex sm:ml-8 ml-0 flex-col sm:text-left mt-5 sm:mt-0 text-center">
             <div
-              className={`flex w-full items-center justify-center sm:justify-start sm:mb-1 mb-0 ${
+              className={`flex w-full items-center justify-center sm:justify-start sm:mb-0 mb-0 ${
                 props.education.graduated ? "mb-1" : "mb-0"
               }`}
             >
               <Text>{`${props.education.start} - ${props.education.finish} ${
                 props.education.finish - new Date().getFullYear() >= 1
                   ? "(Present)"
-                  : ""
+                  : "(Graduated)"
               }`}</Text>{" "}
-              {props.education.graduated ? (
-                <div className="ml-2">
-                  <Tag
-                    title={props.education.graduated && "Graduated"}
-                    type="success"
-                  />
-                </div>
-              ) : null}
             </div>
             <h1 className="text-2xl font-bold dark:text-white">
               {props.education.name}

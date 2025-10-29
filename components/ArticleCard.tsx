@@ -23,8 +23,8 @@ export const ArticleCard = (props: Props) => {
     >
       <div
         className="flex flex-col justify-center w-full
-         text-left hover:cursor-pointer mb-7 lg:mb-3
-        hover:translate-y-2 duration-300"
+        text-left cursor-pointer mb-7 lg:mb-3
+        lg:hover:translate-y-2 duration-300"
       >
         <Tag title={props.tags[0].filter} />
         <h3
