@@ -14,14 +14,14 @@ export const MUSIC: Music[] = [
     name: "Anime",
     path: "/spotify/anime.jpg",
     link: "https://open.spotify.com/playlist/0Wtm1mJRMoW0NeX8OnuBUj?si=aa5098fa12b3461a",
-    feature: false,
+    feature: true,
   },
   {
     id: generateRandomId(),
     name: "Chill",
     path: "/spotify/chill.jpg",
     link: "https://open.spotify.com/playlist/3gBVUEwwgS8CRy8H3hv8Bf?si=efebd638974b4a54",
-    feature: true,
+    feature: false,
   },
   // {
   //   id: generateRandomId(),
