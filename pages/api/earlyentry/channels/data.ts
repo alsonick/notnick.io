@@ -51,6 +51,8 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
   const key = process.env.YOUTUBE_API_KEY;
   if (!key) {
     res.status(500).json({
