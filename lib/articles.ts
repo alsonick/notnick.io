@@ -21,6 +21,20 @@ export const ARTICLES: Article[] = [
   },
   {
     id: generateRandomId(),
+    title:
+      "Supercharging the ML and AI Development Experience at Netflix with Metaflow",
+    type: "AI & Machine Learning",
+    link: "https://netflixtechblog.com/supercharging-the-ml-and-ai-development-experience-at-netflix-b2d5b95c63eb",
+    authors: ["Shashank Srikanth, Romain Cledat"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "AI",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
     title: "Rust Is The Future of JavaScript Infrastructure",
     type: "Language Talk",
     link: "https://leerob.io/blog/rust",
