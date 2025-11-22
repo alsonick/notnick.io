@@ -4,7 +4,6 @@ import { Text } from "../components/Text";
 
 // Next.js
 import Link from "next/link";
-import { Tag } from "./Tag";
 
 interface Props {
   articles: Article[];
@@ -25,13 +24,6 @@ export const ArticlesList = (props: Props) => {
             rounded ring-primary outline-none duration-300`}
             target="_blank"
           >
-            {/* <div className="flex-wrap flex h-auto w-full text-wrap mb-2">
-              {article.tags.map((tag) => (
-                <div key={tag.id} className="mr-2">
-                  <Tag title={tag.filter} />
-                </div>
-              ))}
-            </div> */}
             <h1
               className="sm:text-3xl text-2xl font-bold cursor-pointer underline
                   dark:text-white hover:no-underline"
@@ -43,9 +35,9 @@ export const ArticlesList = (props: Props) => {
                 <Text>By {article.authors[0]}</Text>
               ) : (
                 <Authors
-                  type="article"
                   authors={article.authors}
-                  style="short"
+                  type="article"
+                  style="long"
                 />
               )}
             </div>

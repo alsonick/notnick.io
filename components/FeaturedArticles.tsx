@@ -1,3 +1,4 @@
+import { truncateText } from "../lib/truncate-text";
 import { ICON } from "../lib/tailwindcss/icon";
 import { FiArrowRight } from "react-icons/fi";
 import { ArticleCard } from "./ArticleCard";
@@ -39,8 +40,8 @@ export const FeaturedArticles = () => {
       <div className="flex flex-col lg:flex-row">
         {shuffledArticles.map((article) => (
           <ArticleCard
+            title={truncateText(article.title, 70)}
             authors={article.authors}
-            title={article.title}
             tags={article.tags}
             link={article.link}
             key={article.id}

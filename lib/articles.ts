@@ -25,11 +25,11 @@ export const ARTICLES: Article[] = [
       "Supercharging the ML and AI Development Experience at Netflix with Metaflow",
     type: "AI & Machine Learning",
     link: "https://netflixtechblog.com/supercharging-the-ml-and-ai-development-experience-at-netflix-b2d5b95c63eb",
-    authors: ["Shashank Srikanth, Romain Cledat"],
+    authors: ["Shashank Srikanth", "Romain Cledat"],
     tags: [
       {
         id: generateRandomId(),
-        filter: "AI",
+        filter: "AI & Machine Learning",
       },
     ],
   },

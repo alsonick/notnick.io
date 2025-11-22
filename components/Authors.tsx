@@ -23,12 +23,7 @@ export const Authors = (props: Props) => {
       {label}&nbsp;
       {props.style === "long" ? (
         <div className="flex flex-wrap">
-          {props.authors.map((author, i) => (
-            <Text key={author}>
-              {author}
-              {i < props.authors.length - 1 ? ", " : ""}
-            </Text>
-          ))}
+          <Text>{props.authors.join(", ")}</Text>
         </div>
       ) : (
         <div className="flex">
