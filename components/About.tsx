@@ -18,7 +18,7 @@ export const About = () => {
       p1: (
         <Text>
           I&apos;m a <Tippy animation="fade" content={"4th March 2003"}></Tippy>
-          <b>{PROFESSION}</b> located in the <b>{LOCATED}</b>. I have{" "}
+          <b>{PROFESSION}</b> located in the <b>{LOCATED}</b> 🇬🇧. I have{" "}
           <b>
             {new Date().getFullYear() - YEAR_STARTED_PROGRAMMING} years of
             experience
