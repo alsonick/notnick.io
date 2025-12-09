@@ -51,6 +51,7 @@
     "Kaioh",
     "Kakuritsu",
     "Kaoru",
+    "Karlstedt",
     "Keybase",
     "Kikyou",
     "Kiseijuu",
@@ -70,6 +71,7 @@
     "Nagai’s",
     "Nanatsu",
     "neverland",
+    "nodenext",
     "nonparil",
     "Orochi",
     "Parasyte",
@@ -111,5 +113,6 @@
     "Yakusoku",
     "Yujiro"
   ],
-  "discord.enabled": true
+  "discord.enabled": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

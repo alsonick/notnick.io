@@ -97,4 +97,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "Learning From Structure: Discord’s Entity-Relationship Embeddings",
+    type: "AI & Machine Learning",
+    link: "https://discord.com/blog/learning-from-structure-discords-entity-relationship-embeddings",
+    authors: ["August Karlstedt"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "AI & Machine Learning",
+      },
+    ],
+  },
 ];

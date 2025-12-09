@@ -1,4 +1,5 @@
-// import { SpeedInsights } from "@vercel/speed-insights/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { useEffect, useRef } from "react";
 import "react-tippy/dist/tippy.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
@@ -6,10 +7,9 @@ import "tippy.js/dist/tippy.css";
 import "../styles/globals.css";
 
 // Next.js
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 import type { AppProps } from "next/app";
 import { Router } from "next/router";
-import { useEffect, useRef } from "react";
 
 Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
@@ -39,7 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main className={inter.className}>
       <Component {...pageProps} />
-      {/* <SpeedInsights /> */}
+      <SpeedInsights />
     </main>
   );
 }
