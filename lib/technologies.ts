@@ -86,4 +86,10 @@ export const TECHNOLOGIES: Technologies[] = [
     link: "https://www.java.com/en/",
     desc: "Java is a high-level, class-based, object-oriented programming language.",
   },
+  {
+    id: generateRandomId(),
+    text: "Python",
+    link: "https://www.python.org/",
+    desc: "Python is a high-level, general-purpose programming language.",
+  },
 ];
