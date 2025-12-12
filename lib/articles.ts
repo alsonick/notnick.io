@@ -110,4 +110,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "Becoming an AI engineering company",
+    type: "AI & Machine Learning",
+    link: "https://vercel.com/blog/becoming-an-ai-engineering-company",
+    authors: ["Malte Ubl"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "AI & Machine Learning",
+      },
+    ],
+  },
 ];
