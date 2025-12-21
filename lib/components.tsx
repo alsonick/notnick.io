@@ -1,4 +1,3 @@
-import { GitHubStarButton } from "../components/GitHubStarButton";
 import { TechnologyCard } from "../components/TechnologyCard";
 import { CharacterLimit } from "../components/CharacterLimit";
 import { FilterListBox } from "../components/FilterListBox";
@@ -20,7 +19,6 @@ import { Toggle } from "../components/Toggle";
 import { GoBack } from "../components/GoBack";
 import { Avatar } from "../components/Avatar";
 import { Button } from "../components/Button";
-import { Border } from "../components/Border";
 import { Switch } from "../components/Switch";
 import { Input } from "../components/Input";
 import { Label } from "../components/Label";
@@ -68,13 +66,23 @@ export const COMPONENTS: Components[] = [
   },
   {
     id: generateRandomId(),
-    text: "Character Limit",
+    text: "Character Limit {limit: 100}",
     component: <CharacterLimit text="" limit={100} />,
   },
   {
     id: generateRandomId(),
-    text: "Status Message",
+    text: "Status Message {type: success}",
     component: <StatusMessage message="Example" type="success" />,
+  },
+  {
+    id: generateRandomId(),
+    text: "Status Message {type: warning}",
+    component: <StatusMessage message="Example" type="warning" />,
+  },
+  {
+    id: generateRandomId(),
+    text: "Status Message {type: error}",
+    component: <StatusMessage message="Example" type="error" />,
   },
   {
     id: generateRandomId(),
@@ -89,7 +97,7 @@ export const COMPONENTS: Components[] = [
   },
   {
     id: generateRandomId(),
-    text: "Loading",
+    text: "Loading {loading: true}",
     component: <Loading text="Loading..." loading={true} />,
   },
   {
@@ -139,11 +147,6 @@ export const COMPONENTS: Components[] = [
     id: generateRandomId(),
     text: "Key",
     component: <Key>Example</Key>,
-  },
-  {
-    id: generateRandomId(),
-    text: "Listening",
-    component: <Listening setActive={() => {}} style={{ margin: 0 }} />,
   },
   {
     id: generateRandomId(),
