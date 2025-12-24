@@ -123,4 +123,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "Python at Netflix",
+    type: "Technical Writing",
+    link: "https://netflixtechblog.com/python-at-netflix-86b6028b3b3e",
+    authors: ["Roy Rapoport", " Brian Moyles", " Jim Cistaro", "Corey Bertram"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Technical Writing",
+      },
+    ],
+  },
 ];
