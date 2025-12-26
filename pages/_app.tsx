@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ParticleBackground from "../components/Particles";
 import { useEffect, useRef } from "react";
 import "react-tippy/dist/tippy.css";
 import NProgress from "nprogress";
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main className={inter.className}>
       <Component {...pageProps} />
+      {new Date().getMonth() + 1 !== 12 ? <ParticleBackground /> : null}
       <SpeedInsights />
     </main>
   );

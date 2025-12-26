@@ -17,7 +17,7 @@ export const EducationCard = (props: Props) => {
   return (
     <div
       className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6
-      border border-teal-100 dark:border-teal-900 mb-6"
+      border border-teal-100 dark:border-teal-900 mb-6 z-10"
     >
       <div className="flex sm:flex-row flex-col items-center w-full justify-between">
         <div className="flex sm:flex-row flex-col items-center mb-4 sm:mb-0">
