@@ -14,7 +14,7 @@ interface Props {
 export const SpotifyPlaylistCover = (props: Props) => {
   return (
     <Image
-      className="rounded-xl border w-full border-teal-100 dark:border-teal-900"
+      className="rounded-xl border w-full border-teal-100 dark:border-teal-900 z-10"
       title={`${props.playlist?.name || name} Spotify Playlist`}
       alt={`${props.playlist?.name || name} Spotify Playlist`}
       src={props.playlist?.path || props.path}

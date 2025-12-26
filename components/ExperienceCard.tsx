@@ -14,14 +14,14 @@ import Image from "next/image";
 export const ExperienceCard = (props: Experience) => {
   return (
     <div
-      className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6 mt-5 
-      duration-300 border border-teal-100 dark:border-teal-900 mb-6"
+      className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6
+      border border-teal-100 dark:border-teal-900 mb-6 z-10 mt-5"
     >
       {props.logo ? (
         <div className="mb-5">
           <Border>
             <Image
-              className="rounded-full h-fit sm:mb-0"
+              className="rounded-full h-fit sm:mb-0 z-10"
               title={`${props.name} Logo`}
               alt={`${props.name} Logo`}
               src={props.logo}

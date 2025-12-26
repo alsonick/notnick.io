@@ -24,7 +24,7 @@ export const Music = () => {
         {featured.map((playlist, index) => {
           return (
             <Link
-              className={`cursor-pointer flex flex-col items-center p-0 md:p-2 focus:ring-4 ring-primary ${
+              className={`cursor-pointer flex flex-col items-center z-10 p-0 md:p-2 focus:ring-4 ring-primary ${
                 index === 1
                   ? "md:-translate-y-6 md:hover:-translate-y-5"
                   : "md:hover:translate-y-1"
