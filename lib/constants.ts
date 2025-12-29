@@ -20,6 +20,7 @@ export const NOTES_URL_PATH = page.note.path;
 export const AVATAR_FILE_EXTENSION = "png";
 export const FULL_NAME = "Nicholas Njoki";
 export const LOCATED = "United Kingdom";
+export const LOOKING_FOR_WORK = false;
 export const CACHE_TOKEN = "nas-dsf";
 export const FIRST_NAME = "Nicholas";
 export const DOMAIN = "notnick.io";
