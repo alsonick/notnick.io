@@ -100,3 +100,8 @@
 ::-moz-selection {
   background: #5050ff;
 }
+
+#tsparticles {
+  z-index: -1 !important;
+  pointer-events: none;
+}

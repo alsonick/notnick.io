@@ -38,9 +38,9 @@ const Img = (props: Props) => {
           ? determineAvatarDecorationType(determineQueryMonth("none"))
           : determineAvatarDecorationType(0)
       }
+      className="rounded-full z-10"
       title="My Signature Avatar"
       alt="My Signature Avatar"
-      className="rounded-full"
       height={props.height}
       width={props.width}
       quality={100}
