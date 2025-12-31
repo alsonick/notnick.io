@@ -15,11 +15,13 @@ interface Props {
 
 export const Seo = (props: Props) => {
   const date = new Date();
+  const ogImage = props.cover || "/og.png";
+  const month = date.getMonth() + 1;
 
   if (typeof window === "object") {
     if (
-      (date.getMonth() + 1 === 1 && date.getDate() === 1) ||
-      (date.getMonth() + 1 === 3 && date.getDate() === 4)
+      (month === 1 && date.getDate() === 1) ||
+      (month === 3 && date.getDate() === 4)
     ) {
       // Happy new year! or Happy birthday!
       fireworks();
@@ -30,30 +32,38 @@ export const Seo = (props: Props) => {
     <>
       <Head>
         <title>{props.title}</title>
+        <meta name="description" content={props.description} />
+        <link rel="canonical" href={`https://${DOMAIN}/`} />
+
+        {/* Theme & App */}
         <meta name="theme-color" content={THEME} />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <meta name="description" content={props.description} key="desc" />
-        <meta name="twitter:title" content={props.title} />
-        <meta name="twitter:description" content={props.description} />
-        <meta property="twitter:creator" content={`@${social.x.username}`} />
-        <meta property="twitter:site" content="@nick" />
-        <meta name="twitter:image" content="/og.png" />
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="keywords" content={seoKeywords} />
+
+        {/* Open Graph */}
         <meta property="og:title" content={props.title} />
-        <meta property="og:site_name" content={DOMAIN} />
-        <meta property="og:url" content={`https://${DOMAIN}/`} />
-        <meta property="og:image" content="/og.png" />
         <meta property="og:description" content={props.description} />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
         <meta property="og:type" content="website" />
-        <meta property="twitter:image" content="/og.png" />
-        <meta property="og:image" content="/og.png" />
+        <meta property="og:site_name" content={DOMAIN} />
+        <meta property="og:url" content={`https://${DOMAIN}/`} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={props.title} />
+        <meta name="twitter:description" content={props.description} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:creator" content={`@${social.x.username}`} />
+        <meta
+          name="twitter:site"
+          content={`@${FULL_NAME.split(" ")[0].toLowerCase()}`}
+        />
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
-      {date.getMonth() + 1 >= 12 && date.getDate() >= 1 ? (
+      {month >= 12 && date.getDate() >= 1 ? (
         <Script src="https://app.embed.im/snow.js" defer />
       ) : null}
     </>
