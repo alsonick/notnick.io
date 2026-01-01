@@ -5,6 +5,7 @@ interface Props {
   onClick?: ((e: any) => void) | undefined;
   style?: React.CSSProperties | undefined;
   children: React.ReactNode;
+  title?: string;
   href: string;
 }
 
@@ -16,6 +17,7 @@ export const LinkTag = (props: Props) => {
       style={props.style}
       target={props.target}
       href={props.href}
+      title={props.title}
       onClick={props.onClick}
       rel="noreferrer"
     >

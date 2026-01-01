@@ -5,6 +5,7 @@ export const API_URL =
     ? "https://localhost:3000/api"
     : "https://notnick.io/api";
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
+export const YEAR_STARTED_PROGRAMMING_PROFESSIONALLY = 2023;
 export const MUSIC_STREAMING_PLATFORM = "YouTube Music";
 export const SUBJECT_OF_STUDY = "Software Engineering";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";

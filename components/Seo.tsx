@@ -34,14 +34,10 @@ export const Seo = (props: Props) => {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
         <link rel="canonical" href={`https://${DOMAIN}/`} />
-
-        {/* Theme & App */}
         <meta name="theme-color" content={THEME} />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="keywords" content={seoKeywords} />
-
-        {/* Open Graph */}
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.description} />
         <meta property="og:image" content={ogImage} />
@@ -50,8 +46,6 @@ export const Seo = (props: Props) => {
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={DOMAIN} />
         <meta property="og:url" content={`https://${DOMAIN}/`} />
-
-        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.description} />

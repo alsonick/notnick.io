@@ -6,7 +6,6 @@ import { Section } from "./Section";
 import { Heading } from "./Heading";
 import { LinkTag } from "./LinkTag";
 import { Text } from "./Text";
-import { Note } from "./Note";
 
 export const Contact = () => {
   const [time, setTime] = useState<string>("00:00 P.M.");
@@ -39,26 +38,27 @@ export const Contact = () => {
       <Heading>Contact 💌</Heading>
       <Text>
         Be sure to shoot me a{" "}
-        <LinkTag href={social.x.link} target="_blank">
-          DM on Twitter
+        <LinkTag
+          href={social.x.link}
+          target="_blank"
+          title="DM on X (Previously Twitter)"
+        >
+          DM on X (Previously Twitter)
         </LinkTag>
         .
       </Text>
       <Text>
         For more <b>serious</b> matters{" "}
-        <LinkTag href={`mailto:${EMAIL_ADDRESS}`}>shoot me an email</LinkTag>.
+        <LinkTag
+          href={`mailto:${EMAIL_ADDRESS}`}
+          title={`shoot me an email (${EMAIL_ADDRESS})`}
+        >
+          shoot me an email
+        </LinkTag>
+        .
       </Text>
       <div className="flex flex-col justify-center border-t border-teal-100 dark:border-teal-900 mt-10 pt-5 w-full">
         <ContactForm />
-        {/* <div className="mt-6">
-          // Credit: https://github.com/cnrad/cnrad.dev/blob/master/src/components/talk/TimeStatus.tsx
-          <Note>
-            It&apos;s currently <span className="font-bold">{time}</span> for
-            me, so I&apos;m probably{" "}
-            <span className="font-bold">{awake ? "awake" : "sleeping"}</span>.
-            I&apos;ll get back to you soon.
-          </Note>
-        </div> */}
       </div>
     </Section>
   );

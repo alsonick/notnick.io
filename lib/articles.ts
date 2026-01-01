@@ -21,28 +21,14 @@ export const ARTICLES: Article[] = [
   },
   {
     id: generateRandomId(),
-    title:
-      "Supercharging the ML and AI Development Experience at Netflix with Metaflow",
-    type: "AI & Machine Learning",
-    link: "https://netflixtechblog.com/supercharging-the-ml-and-ai-development-experience-at-netflix-b2d5b95c63eb",
-    authors: ["Shashank Srikanth", "Romain Cledat"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "AI & Machine Learning",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
     title: "Rust Is The Future of JavaScript Infrastructure",
-    type: "Language Talk",
+    type: "Infrastructure",
     link: "https://leerob.io/blog/rust",
     authors: ["Lee Robinson"],
     tags: [
       {
         id: generateRandomId(),
-        filter: "Low-Level Programming",
+        filter: "Infrastructure",
       },
     ],
   },
@@ -65,6 +51,33 @@ export const ARTICLES: Article[] = [
   },
   {
     id: generateRandomId(),
+    title: "The 50/30/20 rule: how to budget your money more efficiently",
+    type: "Finance",
+    link: "https://n26.com/en-eu/blog/50-30-20-rule",
+    authors: ["N26"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Finance",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    title:
+      "Supercharging the ML and AI Development Experience at Netflix with Metaflow",
+    type: "AI & Machine Learning",
+    link: "https://netflixtechblog.com/supercharging-the-ml-and-ai-development-experience-at-netflix-b2d5b95c63eb",
+    authors: ["Shashank Srikanth", "Romain Cledat"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "AI & Machine Learning",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
     title: "Evolution of Java Usage at Netflix",
     type: "Technical Writing",
     link: "https://blog.bytebytego.com/p/evolution-of-java-usage-at-netflix",
@@ -81,19 +94,6 @@ export const ARTICLES: Article[] = [
       {
         id: generateRandomId(),
         filter: "Technical",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "The 50/30/20 rule: how to budget your money more efficiently",
-    type: "Finance",
-    link: "https://n26.com/en-eu/blog/50-30-20-rule",
-    authors: ["N26"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "Finance",
       },
     ],
   },

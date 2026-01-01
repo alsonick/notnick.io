@@ -130,20 +130,21 @@ export const NewsLetter = (props: Props) => {
         <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2 mb-2">
           <div className="flex-1 md:w-fit w-full mr-3 mb-3 md:mb-0">
             <Input
-              id="email"
-              name="email"
-              value={email}
-              type="email"
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={`${EMAIL_ADDRESS}`}
               style={{ width: "100%" }}
               required={true}
-              placeholder={`${EMAIL_ADDRESS}`}
-              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              name="email"
+              type="email"
+              id="email"
             />
           </div>
           <div className="flex md:w-fit w-full">
             <Button
               style={{ width: "100%" }}
               onClick={() => setErrorMessage("Revue has shut down.")}
+              title="Subscribe"
             >
               Subscribe <FiMail className={ICON} />
             </Button>

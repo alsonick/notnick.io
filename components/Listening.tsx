@@ -145,7 +145,7 @@ export const Listening: React.FC<Props> = (
           </b>
         </Link>
       ) : (
-        <Text style={{ ...style, fontWeight: "bold" }}>
+        <Text style={{ ...style, fontWeight: "bold", cursor: "default" }}>
           Not listening to anything...
         </Text>
       )}

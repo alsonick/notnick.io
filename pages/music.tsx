@@ -1,6 +1,5 @@
-import { SpotifyPlaylistCover } from "../components/SpotifyPlaylistCover";
+import { PlaylistCover } from "../components/PlaylistCover";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Listening } from "../components/Listening";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { GoBack } from "../components/GoBack";
@@ -34,7 +33,7 @@ const Music = () => {
   focus:ring-4 ring-primary rounded-xl outline-none`}
                 key={playlist.id}
               >
-                <SpotifyPlaylistCover
+                <PlaylistCover
                   playlist={playlist}
                   name={playlist.name}
                   path={playlist.path}
