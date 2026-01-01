@@ -32,7 +32,7 @@ export const About = () => {
       p2: (
         <Text>
           Outside of programming, I enjoy watching <b>anime</b> in my spare
-          time. Some of my favourites include{" "}
+          time. Some of my favorites include{" "}
           <LinkTag
             href="https://anilist.co/anime/21/ONE-PIECE/"
             target="_blank"
