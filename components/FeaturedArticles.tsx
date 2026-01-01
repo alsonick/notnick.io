@@ -54,7 +54,7 @@ export const FeaturedArticles = () => {
         </LinkT>
       </div>
       <div className="ml-auto">
-        <Button onClick={shuffleArticles}>
+        <Button onClick={shuffleArticles} title="Shuffle">
           Shuffle <FiRepeat className={ICON} />
         </Button>
       </div>

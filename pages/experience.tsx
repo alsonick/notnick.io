@@ -99,12 +99,20 @@ const Experience: NextPage = () => {
             <Text style={{ marginTop: "10px" }}>
               Not all my professional experience is listed below here, If
               you&apos;d like to find out more then please visit my{" "}
-              <LinkTag href={`${social.linkedin.link}`} target="_blank">
+              <LinkTag
+                href={`${social.linkedin.link}`}
+                target="_blank"
+                title="LinkedIn"
+              >
                 LinkedIn
               </LinkTag>{" "}
               page. For details on my past experience please drop an email to me
               by clicking{" "}
-              <LinkTag href={`mailto:${EMAIL_ADDRESS}`} target="_blank">
+              <LinkTag
+                href={`mailto:${EMAIL_ADDRESS}`}
+                target="_blank"
+                title={`Email me at ${EMAIL_ADDRESS} for more details on my past experience`}
+              >
                 here
               </LinkTag>
               .
@@ -114,7 +122,11 @@ const Experience: NextPage = () => {
               This is a only a few select of things I&apos;ve worked on that
               I&apos;ve decided to showcase. If you&apos;d like to know more,
               please shoot me an{" "}
-              <LinkTag href={`mailto:${EMAIL_ADDRESS}`} target="_blank">
+              <LinkTag
+                href={`mailto:${EMAIL_ADDRESS}`}
+                target="_blank"
+                title={`Email me at ${EMAIL_ADDRESS} for my complete CV`}
+              >
                 email
               </LinkTag>{" "}
               and I&apos;ll get back to you with my complete CV.

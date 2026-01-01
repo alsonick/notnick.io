@@ -29,7 +29,7 @@ export const ArticleCard = (props: Props) => {
         <Tag title={props.tags[0].filter} />
         <h3
           className="text-black underline dark:text-white
-          font-bold text-2xl tracking-tight hover:no-underline"
+          font-bold text-2xl tracking-tight md:hover:no-underline"
         >
           {props.title}
         </h3>

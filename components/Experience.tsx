@@ -15,7 +15,7 @@ export const Experience = () => {
       <Text>
         If you want to find out more about my professional experience and the
         work I&apos;ve done then please head over to my{" "}
-        <LinkT href={social.linkedin.link} target="_blank">
+        <LinkT href={social.linkedin.link} target="_blank" title="LinkedIn">
           LinkedIn
         </LinkT>{" "}
         page.

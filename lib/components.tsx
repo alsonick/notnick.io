@@ -158,9 +158,8 @@ export const COMPONENTS: Components[] = [
     text: "Technology Card",
     component: (
       <TechnologyCard
-        style={{ margin: 0 }}
-        desc="Java is a high-level, class-based, object-oriented programming language."
         link="https://www.java.com/en/"
+        style={{ margin: 0 }}
         text="Java"
       />
     ),

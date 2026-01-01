@@ -36,21 +36,18 @@ export const ExperienceCard = (props: Experience) => {
       )}
       <div className="sm:ml-8 ml-0 w-full text-center sm:text-left">
         <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start mb-3 sm:mb-0">
-          <div className="flex items-center justify-center sm:mr-3 mr-0">
+          <div className="flex items-center justify-center">
             <h1 className="text-2xl font-bold dark:text-white">{props.name}</h1>
-            {props.showCurrentStatus && (
+            {props.showCurrentStatus ? (
               <div className="ml-3">
-                <Tag
-                  title={props.current ? "Current" : "Past"}
-                  type={props.current ? "success" : "error"}
-                />
+                {props.current && <Tag title="Current" type="success" />}
               </div>
-            )}
+            ) : null}
           </div>
           {props.showCurrentStatus && (
             <>
               {props.discontinued && (
-                <p className="ml-1 sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
+                <p className="sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
                   discontinued
                 </p>
               )}
@@ -72,8 +69,16 @@ export const ExperienceCard = (props: Experience) => {
             <FiMapPin className="text-gray-600 dark:text-gray-300 mr-2" />
             <Text>{props.location}</Text>
           </div>
-          <LinkButton href={props.link} title="Visit" target="_blank">
-            Visit <FiExternalLink title="Visit" className={ICON} />
+          <LinkButton
+            href={props.link}
+            title={`Visit ${props.name} Website`}
+            target="_blank"
+          >
+            Visit{" "}
+            <FiExternalLink
+              title={`Visit ${props.name} Website`}
+              className={ICON}
+            />
           </LinkButton>
         </div>
       </div>

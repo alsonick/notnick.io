@@ -14,7 +14,6 @@ import { Label } from "./Label";
 import Filter from "bad-words";
 import { Text } from "./Text";
 import { Form } from "./Form";
-import { Tag } from "./Tag";
 
 export const ContactForm = () => {
   const [loading, setLoading] = useState(false);
@@ -83,7 +82,6 @@ export const ContactForm = () => {
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
           Let&apos;s connect!
         </Heading>
-        {/* <Tag title="WEBHOOK" /> */}
       </div>
       <Text>Become part of my network bubble!</Text>
       <div className="flex flex-col my-2 justify-center w-full">
@@ -133,7 +131,7 @@ export const ContactForm = () => {
           </div>
         ) : null}
         <div className="ml-auto pl-1">
-          <Button>
+          <Button title="Send">
             Send <FiSend className={ICON} />
           </Button>
         </div>

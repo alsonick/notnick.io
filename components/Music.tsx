@@ -1,4 +1,5 @@
-import { SpotifyPlaylistCover } from "./SpotifyPlaylistCover";
+import { MUSIC_STREAMING_PLATFORM } from "../lib/constants";
+import { PlaylistCover } from "./PlaylistCover";
 import { FiArrowRight } from "react-icons/fi";
 import { MUSIC } from "../lib/music";
 import { Heading } from "./Heading";
@@ -18,9 +19,9 @@ export const Music = () => {
       <Heading>Music 🎶</Heading>
       <Text>
         If you&apos;re curious about the type of music I listen to, be sure to
-        check out some of my Spotify playlists below.
+        check out some of my {MUSIC_STREAMING_PLATFORM} playlists below.
       </Text>
-      <div className="sm:flex hidden mt-8 mb-6 flex-col md:flex-row justify-between">
+      <div className="sm:flex hidden mt-12 mb-6 flex-col md:flex-row justify-between">
         {featured.map((playlist, index) => {
           return (
             <Link
@@ -33,7 +34,7 @@ export const Music = () => {
               href={playlist.link}
               target="_blank"
             >
-              <SpotifyPlaylistCover
+              <PlaylistCover
                 playlist={playlist}
                 name={playlist.name}
                 path={playlist.path}
@@ -50,8 +51,14 @@ export const Music = () => {
       </div>
       <div className="sm:flex hidden">
         <Text>
-          Click <LinkTag href={page.music.link}>here</LinkTag> to view the
-          entire playlist collection.
+          Click{" "}
+          <LinkTag
+            href={page.music.link}
+            title="Click here to view the entire playlist collection"
+          >
+            here
+          </LinkTag>{" "}
+          to view the entire playlist collection.
         </Text>
       </div>
     </Section>
