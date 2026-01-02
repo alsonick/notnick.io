@@ -28,7 +28,7 @@ export const social = {
   },
   linkedin: {
     link: "https://www.linkedin.com/in/nicholas-k-n-5a9187195/",
-    username: "nicholas-n-5a9187195",
+    username: "nicholas-k-n-5a9187195",
     name: "LinkedIn",
   },
   revue: {
