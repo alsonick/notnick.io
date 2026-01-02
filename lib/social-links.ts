@@ -27,7 +27,7 @@ export const social = {
     name: "GitHub",
   },
   linkedin: {
-    link: "https://www.linkedin.com/in/nicholas-n-5a9187195",
+    link: "https://www.linkedin.com/in/nicholas-k-n-5a9187195/",
     username: "nicholas-n-5a9187195",
     name: "LinkedIn",
   },
