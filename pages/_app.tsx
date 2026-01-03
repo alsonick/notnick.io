@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <main className={inter.className}>
       <Component {...pageProps} />
-      {new Date().getMonth() + 1 !== 12 ? <ParticleBackground /> : null}
+      {new Date().getMonth() + 1 !== 12 ? null : null}
       <SpeedInsights />
     </main>
   );
