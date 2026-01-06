@@ -136,4 +136,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "Understanding AI",
+    type: "AI & Machine Learning",
+    link: "https://leerob.com/ai",
+    authors: ["Lee Robinson"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "AI & Machine Learning",
+      },
+    ],
+  },
 ];
