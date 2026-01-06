@@ -34,6 +34,30 @@ export const Toggle = () => {
       : document.querySelector("html")?.classList.add("dark");
   };
 
+  useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      const isMac =
+        /mac/i.test(navigator.platform) || /mac os/i.test(navigator.userAgent);
+      const hasPrimaryMod = isMac ? e.metaKey : e.ctrlKey;
+      const hasAlt = e.altKey;
+      const isTKey = e.key === "t" || e.key === "T";
+
+      if (hasPrimaryMod && hasAlt && isTKey) {
+        e.preventDefault();
+        toggleTheme(theme);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("keydown", handleKeydown);
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("keydown", handleKeydown);
+      }
+    };
+  }, [theme]);
+
   return (
     <RoundedBox onClick={() => toggleTheme(theme)} title="Toggle">
       {theme === "dark" ? (
