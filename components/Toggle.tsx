@@ -36,13 +36,10 @@ export const Toggle = () => {
 
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
-      const isMac =
-        /mac/i.test(navigator.platform) || /mac os/i.test(navigator.userAgent);
-      const hasPrimaryMod = isMac ? e.metaKey : e.ctrlKey;
-      const hasAlt = e.altKey;
+      const hasCtrl = e.ctrlKey;
       const isTKey = e.key === "t" || e.key === "T";
 
-      if (hasPrimaryMod && hasAlt && isTKey) {
+      if (hasCtrl && isTKey) {
         e.preventDefault();
         toggleTheme(theme);
       }

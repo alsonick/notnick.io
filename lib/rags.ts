@@ -374,4 +374,16 @@ export const RAGS: Rag[] = [
       ext: "mp3",
     },
   },
+  {
+    id: generateRandomId(),
+    composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/15064630",
+    title: "Peace and Plenty Rag",
+    date: 1919,
+    path: {
+      composer: "scott",
+      file: "Peace and Plenty Rag",
+      ext: "mp3",
+    },
+  },
 ];
