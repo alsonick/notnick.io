@@ -7,7 +7,7 @@ import { Post } from "../../components/Post";
 import { GetStaticProps, NextPage } from "next";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const blog = await getPostData(params!.slug, BLOGS_DIR);
+  const blog = await getPostData(params!.slug as string, BLOGS_DIR);
   return {
     props: {
       blog,

@@ -7,7 +7,7 @@ import { Post } from "../../components/Post";
 import { GetStaticProps, NextPage } from "next";
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const note = await getPostData(params!.slug, NOTES_DIR);
+  const note = await getPostData(params!.slug as string, NOTES_DIR);
   return {
     props: {
       note,
