@@ -5,13 +5,13 @@ description: "How I went from sleeping at 2am and waking up at 1pm to sleeping a
 tag: "How"
 mins: "5"
 finished: true
-last_updated_date: "2023-01-09"
+last_updated_date: "2026-01-15"
 filter: "How"
 ---
 
 ## How I wake up at 5am
 
-Recently I've decided to fix my sleep schedule and start waking up at 5am, I decided to make this change in my life after realising that I wasn't a [night owl](https://en.wikipedia.org/wiki/Night_owl) and staying up until 2am wasn't for me.
+Recently I've decided to fix my sleep schedule and start waking up at 5am, I decided to make this change in my life after realizing that I wasn't a [night owl](https://en.wikipedia.org/wiki/Night_owl) and staying up until 2am wasn't for me.
 
 ### Why am I waking up at 5am?
 

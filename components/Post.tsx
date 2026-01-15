@@ -3,14 +3,16 @@ import { DOMAIN, FULL_NAME } from "../lib/constants";
 import { ProgressNotice } from "./ProgressNotice";
 import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
-import { PostCardTag } from "./PostCardTag";
+import { GitHubEmbed } from "./GitHubEmbed";
 import { NewsLetter } from "./Newsletter";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
+import { useMemo } from "react";
 import { Label } from "./Label";
+import { Tweet } from "./Tweet";
 import { Date } from "./Date";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
@@ -25,6 +27,76 @@ interface Props {
 }
 
 export const Post = (props: Props) => {
+  const contentWithEmbeds = useMemo(() => {
+    if (!props.post.contentHtml) return null;
+
+    const embedRegex = /<div data-embed="(tweet|github)"[^>]*><\/div>/g;
+    const matches = [...props.post.contentHtml.matchAll(embedRegex)];
+
+    if (matches.length === 0) {
+      return (
+        <div dangerouslySetInnerHTML={{ __html: props.post.contentHtml }} />
+      );
+    }
+
+    const getAttr = (str: string, name: string) => {
+      const m = str.match(new RegExp(`${name}="([^"]+)"`));
+      return m ? m[1] : null;
+    };
+
+    const parts: JSX.Element[] = [];
+    let lastIndex = 0;
+
+    matches.forEach((match, index) => {
+      const matchIndex = match.index!;
+      const matchStr = match[0];
+      const type = match[1];
+
+      if (matchIndex > lastIndex) {
+        const htmlBefore = props.post.contentHtml.substring(
+          lastIndex,
+          matchIndex
+        );
+        parts.push(
+          <div
+            key={`html-${index}`}
+            dangerouslySetInnerHTML={{ __html: htmlBefore }}
+          />
+        );
+      }
+
+      if (type === "tweet") {
+        const tweetUrl = getAttr(matchStr, "data-tweet-url");
+        const tweetId = getAttr(matchStr, "data-tweet-id");
+        if (tweetUrl && tweetId) {
+          parts.push(
+            <Tweet
+              key={`tweet-${tweetId}-${index}`}
+              url={tweetUrl}
+              id={tweetId}
+            />
+          );
+        }
+      } else if (type === "github") {
+        const ghUrl = getAttr(matchStr, "data-github-url");
+        if (ghUrl) {
+          parts.push(<GitHubEmbed key={`github-${index}`} url={ghUrl} />);
+        }
+      }
+
+      lastIndex = matchIndex + matchStr.length;
+    });
+
+    if (lastIndex < props.post.contentHtml.length) {
+      const htmlAfter = props.post.contentHtml.substring(lastIndex);
+      parts.push(
+        <div key="html-end" dangerouslySetInnerHTML={{ __html: htmlAfter }} />
+      );
+    }
+
+    return <>{parts}</>;
+  }, [props.post.contentHtml]);
+
   return (
     <>
       <Seo
@@ -92,8 +164,9 @@ export const Post = (props: Props) => {
             focus:prose-a:ring-4 focus:prose-a:ring-primary prose-a:outline-none
             prose-a:duration-300 prose-a:rounded focus:prose-a:ring-offset-2
             focus:prose-a:dark:ring-offset-black`}
-            dangerouslySetInnerHTML={{ __html: props.post.contentHtml }}
-          />
+          >
+            {contentWithEmbeds}
+          </article>
         ) : (
           <ProgressNotice />
         )}

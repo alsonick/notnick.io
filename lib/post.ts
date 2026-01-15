@@ -3,6 +3,8 @@ import { remark } from "remark";
 import html from "remark-html";
 import path from "path";
 import fs from "fs";
+import { remarkGithub } from "./remark-github";
+import { remarkTweet } from "./remark-tweet";
 
 const getDirectory = (dir: string) => {
   return path.join(process.cwd(), dir);
@@ -51,7 +53,7 @@ export const getAllPostSlugs = (dir: string) => {
   });
 };
 
-export const getPostData = async (slug: any, dir: string) => {
+export const getPostData = async (slug: string, dir: string) => {
   const directory = getDirectory(dir);
   const fullPath = path.join(directory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -59,6 +61,8 @@ export const getPostData = async (slug: any, dir: string) => {
   const matterResult = matter(fileContents);
 
   const processedContent = await remark()
+    .use(remarkTweet)
+    .use(remarkGithub)
     .use(html, { sanitize: false })
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
