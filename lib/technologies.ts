@@ -72,9 +72,4 @@ export const TECHNOLOGIES: Technologies[] = [
     text: "Python",
     link: "https://www.python.org/",
   },
-  {
-    id: generateRandomId(),
-    text: "Flask",
-    link: "https://flask.palletsprojects.com/",
-  },
 ];
