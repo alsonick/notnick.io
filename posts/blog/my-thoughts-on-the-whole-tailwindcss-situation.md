@@ -1,11 +1,11 @@
 ---
 title: "My thoughts on the whole TailwindCSS situation"
 date: "2026-01-15"
-description: "TailwindCSS lay off 75% of staff members due to the impact of AI."
+description: "TailwindCSS lays off 75% of staff members due to the impact of AI."
 tag: "Thoughts"
 mins: "5"
 finished: true
-last_updated_date: "2026-01-15"
+last_updated_date: "2026-01-21"
 filter: "Thoughts"
 ---
 
