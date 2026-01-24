@@ -1,10 +1,11 @@
+import { remarkHeadingAnchors } from "./remark-heading-anchors";
+import { remarkGithub } from "./remark-github";
+import { remarkTweet } from "./remark-tweet";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 import path from "path";
 import fs from "fs";
-import { remarkGithub } from "./remark-github";
-import { remarkTweet } from "./remark-tweet";
 
 const getDirectory = (dir: string) => {
   return path.join(process.cwd(), dir);
@@ -63,6 +64,7 @@ export const getPostData = async (slug: string, dir: string) => {
   const processedContent = await remark()
     .use(remarkTweet)
     .use(remarkGithub)
+    .use(remarkHeadingAnchors)
     .use(html, { sanitize: false })
     .process(matterResult.content);
   const contentHtml = processedContent.toString();

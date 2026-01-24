@@ -1,5 +1,6 @@
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
 import { DOMAIN, FULL_NAME } from "../lib/constants";
+import { useMemo, useEffect, useRef } from "react";
 import { ProgressNotice } from "./ProgressNotice";
 import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
@@ -10,7 +11,6 @@ import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
 import { Layout } from "./Layout";
 import { Avatar } from "./Avatar";
-import { useMemo } from "react";
 import { Label } from "./Label";
 import { Tweet } from "./Tweet";
 import { Date } from "./Date";
@@ -27,6 +27,8 @@ interface Props {
 }
 
 export const Post = (props: Props) => {
+  const articleRef = useRef<HTMLDivElement>(null);
+
   const contentWithEmbeds = useMemo(() => {
     if (!props.post.contentHtml) return null;
 
@@ -55,13 +57,13 @@ export const Post = (props: Props) => {
       if (matchIndex > lastIndex) {
         const htmlBefore = props.post.contentHtml.substring(
           lastIndex,
-          matchIndex
+          matchIndex,
         );
         parts.push(
           <div
             key={`html-${index}`}
             dangerouslySetInnerHTML={{ __html: htmlBefore }}
-          />
+          />,
         );
       }
 
@@ -74,7 +76,7 @@ export const Post = (props: Props) => {
               key={`tweet-${tweetId}-${index}`}
               url={tweetUrl}
               id={tweetId}
-            />
+            />,
           );
         }
       } else if (type === "github") {
@@ -90,12 +92,41 @@ export const Post = (props: Props) => {
     if (lastIndex < props.post.contentHtml.length) {
       const htmlAfter = props.post.contentHtml.substring(lastIndex);
       parts.push(
-        <div key="html-end" dangerouslySetInnerHTML={{ __html: htmlAfter }} />
+        <div key="html-end" dangerouslySetInnerHTML={{ __html: htmlAfter }} />,
       );
     }
 
     return <>{parts}</>;
   }, [props.post.contentHtml]);
+
+  // Add click handlers to h3 headings
+  useEffect(() => {
+    if (articleRef.current) {
+      const h3Elements =
+        articleRef.current.querySelectorAll<HTMLHeadingElement>("h3[id]");
+      h3Elements.forEach((h3) => {
+        const headingId = h3.id;
+        h3.style.cursor = "pointer";
+        h3.style.scrollMarginTop = "100px";
+        h3.classList.add("group");
+
+        // Add hover effect
+        h3.addEventListener("mouseenter", () => {
+          h3.style.textDecoration = "underline";
+        });
+        h3.addEventListener("mouseleave", () => {
+          h3.style.textDecoration = "none";
+        });
+
+        h3.addEventListener("click", () => {
+          // Update URL with hash using History API
+          window.history.pushState(null, "", `#${headingId}`);
+          // Smooth scroll to the heading
+          h3.scrollIntoView({ behavior: "smooth" });
+        });
+      });
+    }
+  }, [contentWithEmbeds]);
 
   return (
     <>
@@ -157,6 +188,7 @@ export const Post = (props: Props) => {
         </div>
         {Boolean(props.post.contentHtml) || props.post.finished ? (
           <article
+            ref={articleRef}
             className={`
             prose max-w-none mt-2 text-base dark:prose-invert prose-a:text-primary
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
