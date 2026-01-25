@@ -9,7 +9,7 @@ export const EXPERIENCE: Experience[] = [
     description: "Software Engineer",
     year: 2023,
     logo: `${page.experience.path}/logo/Aviato.jpg`,
-    employmentType: "contract",
+    employmentType: "internship",
     location: "Carmel, Indiana - United States",
     remote: true,
     current: false,
