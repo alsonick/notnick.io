@@ -17,6 +17,7 @@ import { Date } from "./Date";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
 import { Tag } from "./Tag";
+import { TableOfContents } from "./TableOfContents";
 
 // Next.js
 import Link from "next/link";
@@ -99,30 +100,29 @@ export const Post = (props: Props) => {
     return <>{parts}</>;
   }, [props.post.contentHtml]);
 
-  // Add click handlers to h3 headings
+  // Add click handlers to h2 and h3 headings
   useEffect(() => {
     if (articleRef.current) {
-      const h3Elements =
-        articleRef.current.querySelectorAll<HTMLHeadingElement>("h3[id]");
-      h3Elements.forEach((h3) => {
-        const headingId = h3.id;
-        h3.style.cursor = "pointer";
-        h3.style.scrollMarginTop = "100px";
-        h3.classList.add("group");
+      const headingElements =
+        articleRef.current.querySelectorAll<HTMLHeadingElement>(
+          "h2[id], h3[id]",
+        );
+      headingElements.forEach((heading) => {
+        const headingId = heading.id;
+        heading.style.cursor = "pointer";
+        heading.style.scrollMarginTop = "100px";
+        heading.classList.add("group");
 
-        // Add hover effect
-        h3.addEventListener("mouseenter", () => {
-          h3.style.textDecoration = "underline";
+        heading.addEventListener("mouseenter", () => {
+          heading.style.textDecoration = "underline";
         });
-        h3.addEventListener("mouseleave", () => {
-          h3.style.textDecoration = "none";
+        heading.addEventListener("mouseleave", () => {
+          heading.style.textDecoration = "none";
         });
 
-        h3.addEventListener("click", () => {
-          // Update URL with hash using History API
+        heading.addEventListener("click", () => {
           window.history.pushState(null, "", `#${headingId}`);
-          // Smooth scroll to the heading
-          h3.scrollIntoView({ behavior: "smooth" });
+          heading.scrollIntoView({ behavior: "smooth" });
         });
       });
     }
@@ -187,18 +187,23 @@ export const Post = (props: Props) => {
           ) : null}
         </div>
         {Boolean(props.post.contentHtml) || props.post.finished ? (
-          <article
-            ref={articleRef}
-            className={`
+          <>
+            <article
+              ref={articleRef}
+              className={`
             prose max-w-none mt-2 text-base dark:prose-invert prose-a:text-primary
             prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
             dark:prose-code:text-white prose-img:drop-shadow prose-a:font-bold
             focus:prose-a:ring-4 focus:prose-a:ring-primary prose-a:outline-none
             prose-a:duration-300 prose-a:rounded focus:prose-a:ring-offset-2
             focus:prose-a:dark:ring-offset-black`}
-          >
-            {contentWithEmbeds}
-          </article>
+            >
+              {contentWithEmbeds}
+            </article>
+            {props.post.contentHtml && (
+              <TableOfContents contentHtml={props.post.contentHtml} />
+            )}
+          </>
         ) : (
           <ProgressNotice />
         )}
