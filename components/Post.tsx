@@ -1,5 +1,6 @@
 import { FiExternalLink, FiTwitter } from "react-icons/fi";
 import { DOMAIN, FULL_NAME } from "../lib/constants";
+import { TableOfContents } from "./TableOfContents";
 import { useMemo, useEffect, useRef } from "react";
 import { ProgressNotice } from "./ProgressNotice";
 import { social } from "../lib/social-links";
@@ -17,7 +18,6 @@ import { Date } from "./Date";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
 import { Tag } from "./Tag";
-import { TableOfContents } from "./TableOfContents";
 
 // Next.js
 import Link from "next/link";
