@@ -11,10 +11,17 @@ export const MUSIC: Music[] = [
   },
   {
     id: generateRandomId(),
+    name: "Ragtime",
+    path: "/spotify/ragtime.jpg",
+    link: "https://music.youtube.com/playlist?list=PL1neWfMX2BxRte1X2DX1QeSYCUoE6H8tw&si=1mWg7Flj7o-U3BjZ",
+    feature: true,
+  },
+  {
+    id: generateRandomId(),
     name: "Anime",
     path: "/spotify/anime.jpg",
     link: "https://music.youtube.com/playlist?list=PL1neWfMX2BxRpKXg_ci0h-1Rn6IuCHZdR&si=1spela8ocRWH40ZR",
-    feature: true,
+    feature: false,
   },
   {
     id: generateRandomId(),
@@ -42,13 +49,6 @@ export const MUSIC: Music[] = [
     name: "Travel",
     path: "/spotify/travel.jpg",
     link: "https://music.youtube.com/playlist?list=PL1neWfMX2BxQXu4wjPS_lBrcZAq6LojDk&si=eNFGP12PhlRGvQF5",
-    feature: false,
-  },
-  {
-    id: generateRandomId(),
-    name: "Ragtime",
-    path: "/spotify/ragtime.jpg",
-    link: "https://music.youtube.com/playlist?list=PL1neWfMX2BxRte1X2DX1QeSYCUoE6H8tw&si=1mWg7Flj7o-U3BjZ",
     feature: false,
   },
   {

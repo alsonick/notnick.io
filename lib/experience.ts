@@ -30,7 +30,7 @@ export const EXPERIENCE: Experience[] = [
     employmentType: "part-time",
     location: "England, United Kingdom",
     remote: true,
-    current: true,
+    current: false,
     link: "https://tags.notnick.io/",
     task: "Built an API/Service for promotional music channels to generate relevant metadata for their YouTube videos.",
     filter: "Project",
