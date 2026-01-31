@@ -386,4 +386,16 @@ export const RAGS: Rag[] = [
       ext: "mp3",
     },
   },
+  {
+    id: generateRandomId(),
+    composer: "L. Edgar Settle",
+    score: "https://musescore.com/user/13824426/scores/4732786",
+    title: "X. L. Rag",
+    date: 1903,
+    path: {
+      composer: "settle",
+      file: "X. L. Rag",
+      ext: "mp3",
+    },
+  },
 ];
