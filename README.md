@@ -1,10 +1,10 @@
-# Nicholas Njoki
+# Nicholas Njoki | notnick.io
 
 Personal site, written with Next.js, Prisma, Tailwindcss & TypeScript, hosted and deployed on Vercel.
 
 ## Credit
 
-The source code to this site is open source and it's under the [MIT License](https://notnick.io/license), so this means anyone is allowed to take a copy and make modifications. While this is not absolutely necessary it would be greatly appreciated if credit is given.
+The source code to this site is open source and it's under the [MIT License](https://notnick.io/license).
 
 ## Stack
 
