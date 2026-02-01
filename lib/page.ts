@@ -16,6 +16,12 @@ export const page = {
     path: "/note",
     link: "/note",
   },
+  talks: {
+    title: "Talks",
+    name: "talks",
+    path: "/talks",
+    link: "/talks",
+  },
   isrc: {
     title1: "ISRC Finder",
     title2: "ISRC",
