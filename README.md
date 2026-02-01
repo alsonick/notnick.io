@@ -1,4 +1,4 @@
-# Nicholas Njoki | notnick.io
+# notnick.io
 
 Personal site, written with Next.js, Prisma, Tailwindcss & TypeScript, hosted and deployed on Vercel.
 
