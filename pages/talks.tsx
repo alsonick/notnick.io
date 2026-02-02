@@ -1,14 +1,19 @@
-import { PageUnderConstruction } from "../components/PageUnderConstruction";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { NewsLetter } from "../components/Newsletter";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
+import { Text } from "../components/Text";
+import { Date } from "../components/Date";
 import { Seo } from "../components/Seo";
+import { Tag } from "../components/Tag";
+import { TALKS } from "../lib/talks";
 import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
+import { PostCardTag } from "../components/PostCardTag";
 
 const Talks: NextPage = () => {
   return (
@@ -22,7 +27,38 @@ const Talks: NextPage = () => {
           <Header singleItem={true}>
             <Heading style={{ marginBottom: 0 }}>{page.talks.title}</Heading>
           </Header>
-          <PageUnderConstruction />
+          <div className="mb-5">
+            <Text>
+              A collection of daily talks where I share my thoughts on various
+              topics like technology, programming, personal development,
+              artificial intelligence, and more. Also you get to hear my sexy
+              voice...
+            </Text>
+          </div>
+          <Text>
+            If you want to stay updated with the topics I discuss, feel free to
+            subscribe to my newsletter for more detailed insights.
+          </Text>
+          <NewsLetter showStats />
+          {TALKS.length === 0 && <Text>No talks available at the moment.</Text>}
+          {TALKS.map((talk) => (
+            <div
+              className="flex items-center justify-between mb-5"
+              key={talk.file}
+            >
+              <div className="flex flex-col justify-center">
+                <PostCardTag title={`Talk #${talk.recording}`} />
+                <h1 className="sm:text-3xl mt-2 text-2xl font-bold underline dark:text-white w-fit">
+                  {talk.title}
+                </h1>
+                <div className="my-1">
+                  <Text>{talk.description}</Text>
+                </div>
+                <Date date={talk.date} />
+              </div>
+              <audio controls src={`${page.talks.path}/${talk.file}.mp3`} />
+            </div>
+          ))}
         </Animate>
       </Layout>
     </>
