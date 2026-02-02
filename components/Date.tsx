@@ -8,7 +8,7 @@ export const Date = (props: Props) => {
   return (
     <time
       dateTime={props.date}
-      className="text-gray-600 text-base dark:text-gray-300"
+      className="text-gray-600 dark:text-gray-300 text-base"
     >
       {convertDate(props.date)}
     </time>

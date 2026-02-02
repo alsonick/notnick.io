@@ -22,6 +22,11 @@ export const PATHS: Path[] = [
   },
   {
     id: generateRandomId(),
+    path: page.talks.path,
+    link: page.talks.link,
+  },
+  {
+    id: generateRandomId(),
     path: page.branding.path,
     link: page.branding.link,
   },
