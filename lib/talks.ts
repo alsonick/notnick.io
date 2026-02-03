@@ -8,4 +8,11 @@ export const TALKS: Talk[] = [
     file: "hello-world",
     date: "2026-02-02",
   },
+  {
+    title: "Playing Piano",
+    recording: 2,
+    description: "Not much talking, just some piano playing.",
+    file: "playing-piano",
+    date: "2026-02-03",
+  },
 ];
