@@ -1,19 +1,18 @@
+import { Date as DateComponent } from "../components/Date";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { PostCardTag } from "../components/PostCardTag";
 import { NewsLetter } from "../components/Newsletter";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Text } from "../components/Text";
-import { Date } from "../components/Date";
 import { Seo } from "../components/Seo";
-import { Tag } from "../components/Tag";
 import { TALKS } from "../lib/talks";
 import { page } from "../lib/page";
 
 // Next.js
 import { NextPage } from "next";
-import { PostCardTag } from "../components/PostCardTag";
 
 const Talks: NextPage = () => {
   return (
@@ -41,24 +40,28 @@ const Talks: NextPage = () => {
           </Text>
           <NewsLetter showStats />
           {TALKS.length === 0 && <Text>No talks available at the moment.</Text>}
-          {TALKS.map((talk) => (
-            <div
-              className="flex items-center justify-between mb-5"
-              key={talk.file}
-            >
-              <div className="flex flex-col justify-center">
-                <PostCardTag title={`Talk #${talk.recording}`} />
-                <h1 className="sm:text-3xl mt-2 text-2xl font-bold underline dark:text-white w-fit">
-                  {talk.title}
-                </h1>
-                <div className="my-1">
-                  <Text>{talk.description}</Text>
+          {[...TALKS]
+            .sort(
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+            )
+            .map((talk) => (
+              <div
+                className="flex items-center justify-between mb-5"
+                key={talk.file}
+              >
+                <div className="flex flex-col justify-center">
+                  <PostCardTag title={`Talk #${talk.recording}`} />
+                  <h1 className="sm:text-3xl mt-2 text-2xl font-bold underline dark:text-white w-fit">
+                    {talk.title}
+                  </h1>
+                  <div className="my-1">
+                    <Text>{talk.description}</Text>
+                  </div>
+                  <DateComponent date={talk.date} />
                 </div>
-                <Date date={talk.date} />
+                <audio controls src={`${page.talks.path}/${talk.file}.mp3`} />
               </div>
-              <audio controls src={`${page.talks.path}/${talk.file}.mp3`} />
-            </div>
-          ))}
+            ))}
         </Animate>
       </Layout>
     </>
