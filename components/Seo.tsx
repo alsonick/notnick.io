@@ -16,6 +16,7 @@ interface Props {
 export const Seo = (props: Props) => {
   const date = new Date();
   const ogImage = props.cover || "/og.png";
+  const ogImageUrl = ogImage.startsWith("http") ? ogImage : `https://${DOMAIN}${ogImage}`;
   const month = date.getMonth() + 1;
 
   if (typeof window === "object") {
@@ -40,7 +41,7 @@ export const Seo = (props: Props) => {
         <meta name="keywords" content={seoKeywords} />
         <meta property="og:title" content={props.title} />
         <meta property="og:description" content={props.description} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={ogImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
         <meta property="og:type" content="website" />
@@ -49,7 +50,7 @@ export const Seo = (props: Props) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.description} />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={ogImageUrl} />
         <meta name="twitter:creator" content={`@${social.x.username}`} />
         <meta
           name="twitter:site"
