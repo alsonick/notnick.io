@@ -100,6 +100,47 @@ export const Post = (props: Props) => {
     return <>{parts}</>;
   }, [props.post.contentHtml]);
 
+  // Add line numbers and copy button to code blocks
+  useEffect(() => {
+    if (articleRef.current) {
+      const codeBlocks = articleRef.current.querySelectorAll("pre code.hljs");
+      codeBlocks.forEach((code) => {
+        const pre = code.parentElement;
+        if (!pre || pre.querySelector(".line-numbers")) return;
+
+        pre.style.position = "relative";
+
+        const text = code.textContent || "";
+        const lines = text.split("\n");
+        if (lines[lines.length - 1] === "") lines.pop();
+
+        const gutter = document.createElement("code");
+        gutter.className = "line-numbers";
+        gutter.setAttribute("aria-hidden", "true");
+        gutter.textContent = lines.map((_, i) => i + 1).join("\n");
+        pre.insertBefore(gutter, code);
+
+        const copyBtn = document.createElement("button");
+        copyBtn.className = "copy-button";
+        copyBtn.setAttribute("aria-label", "Copy code");
+        copyBtn.innerHTML =
+          '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+        copyBtn.addEventListener("click", () => {
+          navigator.clipboard.writeText(text.replace(/\n$/, ""));
+          copyBtn.innerHTML =
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+          copyBtn.classList.add("copied");
+          setTimeout(() => {
+            copyBtn.innerHTML =
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+            copyBtn.classList.remove("copied");
+          }, 2000);
+        });
+        pre.appendChild(copyBtn);
+      });
+    }
+  }, [contentWithEmbeds]);
+
   // Add click handlers to h2 and h3 headings
   useEffect(() => {
     if (articleRef.current) {
@@ -192,7 +233,7 @@ export const Post = (props: Props) => {
               ref={articleRef}
               className={`
             prose max-w-none mt-2 text-base dark:prose-invert prose-a:text-primary
-            prose-a:no-underline hover:prose-a:underline dark:prose-pre:bg-gray-800
+            prose-a:no-underline hover:prose-a:underline
             dark:prose-code:text-white prose-img:drop-shadow prose-a:font-bold
             focus:prose-a:ring-4 focus:prose-a:ring-primary prose-a:outline-none
             prose-a:duration-300 prose-a:rounded focus:prose-a:ring-offset-2

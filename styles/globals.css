@@ -175,6 +175,132 @@
   }
 }
 
+/* Syntax highlighting */
+.hljs {
+  background: transparent;
+  padding: 0;
+}
+
+.prose pre {
+  display: flex;
+  padding: 0;
+  background-color: #f6f8fa;
+  color: #1f2328;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark .prose pre {
+  background-color: #1e293b;
+}
+
+.prose pre code:not(.line-numbers) {
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0.75rem 1rem;
+}
+
+.line-numbers {
+  display: block;
+  padding: 0.75rem 0.75rem;
+  white-space: pre;
+  text-align: right;
+  user-select: none;
+  color: #9ca3af;
+  border-right: 1px solid #e5e7eb;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.375rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  line-height: 1;
+}
+
+.prose pre:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.copy-button.copied {
+  color: #22c55e;
+}
+
+.dark .copy-button {
+  border-color: #4b5563;
+  background: #374151;
+  color: #9ca3af;
+}
+
+.dark .copy-button:hover {
+  background: #4b5563;
+  color: #e5e7eb;
+}
+
+.dark .copy-button.copied {
+  color: #22c55e;
+}
+
+.dark .line-numbers {
+  color: #6e7681;
+  border-right-color: #374151;
+}
+
+.dark .hljs {
+  color: #c9d1d9;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag {
+  color: #ff7b72;
+}
+
+.dark .hljs-string,
+.dark .hljs-attr {
+  color: #a5d6ff;
+}
+
+.dark .hljs-comment,
+.dark .hljs-quote {
+  color: #8b949e;
+}
+
+.dark .hljs-number,
+.dark .hljs-literal {
+  color: #79c0ff;
+}
+
+.dark .hljs-title,
+.dark .hljs-section {
+  color: #d2a8ff;
+}
+
+.dark .hljs-type,
+.dark .hljs-built_in {
+  color: #ffa657;
+}
+
+.dark .hljs-params {
+  color: #c9d1d9;
+}
+
+.dark .hljs-variable {
+  color: #ffa657;
+}
+
 /* Dropdown animations */
 @keyframes slideDownAndFade {
   from {

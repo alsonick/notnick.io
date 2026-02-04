@@ -1,9 +1,13 @@
 import { remarkHeadingAnchors } from "./remark-heading-anchors";
 import { remarkGithub } from "./remark-github";
 import { remarkTweet } from "./remark-tweet";
+import rehypeHighlight from "rehype-highlight";
+import rehypeStringify from "rehype-stringify";
+import remarkRehype from "remark-rehype";
+import remarkParse from "remark-parse";
+import rehypeRaw from "rehype-raw";
+import { unified } from "unified";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
 import path from "path";
 import fs from "fs";
 
@@ -61,11 +65,15 @@ export const getPostData = async (slug: string, dir: string) => {
 
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
+  const processedContent = await unified()
+    .use(remarkParse)
     .use(remarkTweet)
     .use(remarkGithub)
     .use(remarkHeadingAnchors)
-    .use(html, { sanitize: false })
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypeHighlight)
+    .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
