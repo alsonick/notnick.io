@@ -93,4 +93,10 @@ export const SOCIALS: Social[] = [
     username: social.threads.username,
     link: social.threads.link,
   },
+  {
+    id: generateRandomId(),
+    title: social.leetcode.name,
+    username: social.leetcode.username,
+    link: social.leetcode.link,
+  },
 ];

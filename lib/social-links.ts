@@ -1,3 +1,4 @@
+import { link } from "fs";
 import { DISCORD_ID } from "./constants";
 
 export const social = {
@@ -27,8 +28,8 @@ export const social = {
     name: "GitHub",
   },
   linkedin: {
-    link: "https://www.linkedin.com/in/nicholas-k-n-5a9187195/",
-    username: "nicholas-k-n-5a9187195",
+    link: "https://www.linkedin.com/in/heynickn/",
+    username: "heynickn",
     name: "LinkedIn",
   },
   revue: {
@@ -80,5 +81,10 @@ export const social = {
     link: "https://threads.net/@heynickn",
     username: "@heynickn",
     name: "Threads",
+  },
+  leetcode: {
+    link: "https://leetcode.com/u/nickdev03/",
+    username: "nickdev03",
+    name: "LeetCode",
   },
 };
