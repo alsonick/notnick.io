@@ -1,4 +1,3 @@
-import { link } from "fs";
 import { DISCORD_ID } from "./constants";
 
 export const social = {
