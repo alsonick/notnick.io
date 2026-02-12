@@ -51,7 +51,6 @@ export default async function handler(
       });
     }
 
-    // Check if user already has a message
     const existing = await prisma.guestbookMessage.findUnique({
       where: { discordId: session.discordId },
     });
@@ -112,7 +111,6 @@ export default async function handler(
     return res.status(200).json({ success: true });
   }
 
-  // Sign out
   if (req.method === "PATCH") {
     clearSession(res);
     return res.status(200).json({ success: true });
