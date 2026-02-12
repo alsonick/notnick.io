@@ -59,6 +59,12 @@ export const page = {
     link: "/experience",
     name: "path",
   },
+  guestbook: {
+    title: "Guestbook",
+    path: "/guestbook",
+    link: "/guestbook",
+    name: "guestbook",
+  },
   license: {
     title: "License",
     path: "/license",
