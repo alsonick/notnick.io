@@ -73,7 +73,7 @@ export default async function handler(
     });
 
     if (process.env.DISCORD_GUESTBOOK_WEBHOOK_URL) {
-      fetch(process.env.DISCORD_GUESTBOOK_WEBHOOK_URL, {
+      await fetch(process.env.DISCORD_GUESTBOOK_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
