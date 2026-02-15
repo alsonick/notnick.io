@@ -93,6 +93,8 @@ export const About = () => {
             here
           </LinkTag>
           .
+          <br /> Click <LinkTag href={page.guestbook.link}>here</LinkTag> to
+          sign my guestbook!{" "}
         </Text>
       ),
     },
