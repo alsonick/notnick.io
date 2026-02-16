@@ -149,4 +149,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "How AI Impacts Skill Formation",
+    type: "Agentic",
+    link: "https://www.anthropic.com/research/AI-assistance-coding-skills",
+    authors: ["Shen, Judy Hanwen, Tamkin, Alex"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Agentic",
+      },
+    ],
+  },
 ];
