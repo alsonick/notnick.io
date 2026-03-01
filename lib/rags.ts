@@ -388,6 +388,18 @@ export const RAGS: Rag[] = [
   },
   {
     id: generateRandomId(),
+    composer: "James Scott",
+    score: "https://musescore.com/user/36482158/scores/10749487",
+    title: "Pegasus Rag",
+    date: 1919,
+    path: {
+      composer: "scott",
+      file: "Pegasus Rag",
+      ext: "mp3",
+    },
+  },
+  {
+    id: generateRandomId(),
     composer: "L. Edgar Settle",
     score: "https://musescore.com/user/13824426/scores/4732786",
     title: "X. L. Rag",
