@@ -2,7 +2,6 @@ import { GitHubStarButton } from "./GitHubStarButton";
 import { social } from "../lib/social-links";
 import { FULL_NAME } from "../lib/constants";
 import { FooterLink } from "./FooterLink";
-import { Avatar } from "./Avatar";
 
 export const Footer = () => {
   return (
@@ -31,16 +30,19 @@ export const Footer = () => {
           .
         </p>
         <div className="flex items-center">
-          <p className="text-gray-500 opacity-50 text-xs mr-1 ">
-            Built with ❤️ by{" "}
-            <FooterLink link={social.github.link} title={FULL_NAME}>
-              {FULL_NAME}
-            </FooterLink>
-            .{" "}
+          <p className="text-gray-500 text-xs mr-1 ">
+            <span className="opacity-50">Built with</span> <span className="opacity-75">❤️</span>{" "}
+            <span className="opacity-50">
+              by{" "}
+              <FooterLink link={social.github.link} title={FULL_NAME}>
+                {FULL_NAME}
+              </FooterLink>
+              .{" "}
+            </span>
           </p>
         </div>
       </div>
-      {/* <GitHubStarButton /> */}
+      <GitHubStarButton />
     </footer>
   );
 };
