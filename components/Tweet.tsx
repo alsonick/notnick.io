@@ -47,7 +47,7 @@ export const Tweet = ({ id, url }: TweetProps) => {
 
   return (
     <div
-      className="flex items-center justify-center my-6"
+      className="my-6 [&>*]:mx-auto"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

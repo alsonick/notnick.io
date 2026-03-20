@@ -1,9 +1,6 @@
-import { determineAvatarDecorationType } from "../lib/determine-avatar-decoration-type";
-import { determineQueryMonth } from "../lib/determine-query-month";
 import { Border } from "./Border";
 
 // Next.js
-import { useRouter } from "next/router";
 import Image from "next/image";
 
 interface Props {
@@ -27,22 +24,14 @@ export const Avatar = (props: Props) => {
 };
 
 const Img = (props: Props) => {
-  const router = useRouter();
-
-  const decoration = router.query.decoration as string;
-
   return (
     <Image
-      src={
-        decoration
-          ? determineAvatarDecorationType(determineQueryMonth("none"))
-          : determineAvatarDecorationType(0)
-      }
-      className="rounded-full z-10"
+      className="rounded-full z-10 aspect-square object-cover"
       title="My Signature Avatar"
       alt="My Signature Avatar"
       height={props.height}
       width={props.width}
+      src={"/chibi.jpg"}
       quality={100}
     />
   );
