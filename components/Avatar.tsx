@@ -31,7 +31,7 @@ const Img = (props: Props) => {
       alt="My Signature Avatar"
       height={props.height}
       width={props.width}
-      src={"/chibi.jpg"}
+      src={"/Chibi.jpg"}
       quality={100}
     />
   );
