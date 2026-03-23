@@ -62,8 +62,8 @@ export const social = {
     name: "Mastadon",
   },
   tiktok: {
-    link: "https://www.tiktok.com/@heynick010",
-    username: "heynick010",
+    link: "https://www.tiktok.com/@heynickn",
+    username: "heynickn",
     name: "TikTok",
   },
   stackoverflow: {
@@ -90,5 +90,10 @@ export const social = {
     link: "https://unsplash.com/@heynickn",
     username: "@heynickn",
     name: "Unsplash",
+  },
+  anilist: {
+    link: "https://anilist.co/user/alsonick/",
+    username: "alsonick",
+    name: "AniList",
   },
 };

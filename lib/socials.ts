@@ -105,4 +105,9 @@ export const SOCIALS: Social[] = [
     username: social.unsplash.username,
     link: social.unsplash.link,
   },
+  {
+    id: generateRandomId(),
+    title: social.anilist.name,
+    username: social.anilist.username,
+    link: social.anilist.link,
 ];
