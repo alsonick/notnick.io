@@ -99,4 +99,10 @@ export const SOCIALS: Social[] = [
     username: social.leetcode.username,
     link: social.leetcode.link,
   },
+  {
+    id: generateRandomId(),
+    title: social.unsplash.name,
+    username: social.unsplash.username,
+    link: social.unsplash.link,
+  },
 ];

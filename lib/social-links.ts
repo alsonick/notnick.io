@@ -86,4 +86,9 @@ export const social = {
     username: "nickdev03",
     name: "LeetCode",
   },
+  unsplash: {
+    link: "https://unsplash.com/@heynickn",
+    username: "@heynickn",
+    name: "Unsplash",
+  },
 };
