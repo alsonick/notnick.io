@@ -38,12 +38,8 @@ export const Contact = () => {
       <Heading>Contact 💌</Heading>
       <Text>
         Be sure to shoot me a{" "}
-        <LinkTag
-          href={social.x.link}
-          target="_blank"
-          title="DM on X (Previously Twitter)"
-        >
-          DM on X (Previously Twitter)
+        <LinkTag href={social.x.link} target="_blank" title="DM on X">
+          DM on X
         </LinkTag>
         .
       </Text>

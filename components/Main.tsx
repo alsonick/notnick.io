@@ -45,6 +45,7 @@ export const Main = () => {
               }
             />
           </Link> */}
+          <p className="text-sm opacity-65">{PRONOUNS}</p>
           <Heading
             style={{
               marginBottom: "0.5rem",

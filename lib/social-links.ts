@@ -2,9 +2,9 @@ import { DISCORD_ID } from "./constants";
 
 export const social = {
   x: {
-    link: "https://twitter.com/heynickn",
+    link: "https://x.com/heynickn",
     username: "heynickn",
-    name: "X (Previously Twitter)",
+    name: "X",
   },
   instagram: {
     link: "https://www.instagram.com/heynickn",
@@ -47,13 +47,13 @@ export const social = {
     name: "Bluesky",
   },
   twitch: {
-    link: "https://www.twitch.tv/alsonick_",
-    username: "alsonick_",
+    link: "https://www.twitch.tv/heynickn",
+    username: "heynickn",
     name: "Twitch",
   },
   discord: {
     link: `https://discord.com/users/${DISCORD_ID}`,
-    username: "alsonick_",
+    username: "heynickn",
     name: "Discord",
   },
   mastadon: {

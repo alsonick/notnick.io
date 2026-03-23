@@ -31,7 +31,8 @@ export const Footer = () => {
         </p>
         <div className="flex items-center">
           <p className="text-gray-500 text-xs mr-1 ">
-            <span className="opacity-50">Built with</span> <span className="opacity-75">❤️</span>{" "}
+            <span className="opacity-50">Built with</span>{" "}
+            <span className="opacity-75">❤️</span>{" "}
             <span className="opacity-50">
               by{" "}
               <FooterLink link={social.github.link} title={FULL_NAME}>
@@ -42,7 +43,7 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-      <GitHubStarButton />
+      {/* <GitHubStarButton /> */}
     </footer>
   );
 };
