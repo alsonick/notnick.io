@@ -40,7 +40,7 @@ export const Layout = (props: Props) => {
             longLayoutFormat={props.longLayoutFormat}
           />
           <div className="flex flex-col h-screen justify-between">
-            <div>{props.children}</div>
+            <div className="flex flex-col flex-grow">{props.children}</div>
             <Footer />
           </div>
         </div>

@@ -125,118 +125,122 @@ const ISRC: NextPage = () => {
       />
       <Layout longLayoutFormat={false} supportLargeScreen={true}>
         <Animate>
-          <Header column={false} singleItem={false}>
-            <Heading style={{ marginBottom: "0.5rem" }}>
-              {page.isrc.title2}
-            </Heading>
-          </Header>
-          <Text>
-            Find the <LinkT>{page.isrc.title2}</LinkT> codes to a collection of
-            over 100 million tracks on Spotify.
-          </Text>
-          <div className="my-4">
-            <Form onSubmit={sendSpotifyIsrcRequest} action="POST">
-              <div className="w-full">
-                <div className="mb-3">
-                  <div className="mb-1">
-                    <Label text="soundtrack" />
-                  </div>
-                  <Input
-                    placeholder="https://open.spotify.com/track/6JrFlbV1Ehnigcp71vtiI1?si=e99533332a6a4b81"
-                    style={{ width: "100%" }}
-                    required={true}
-                    value={soundtrackTitle}
-                    onChange={(e) => {
-                      setSoundtrackTitle(e.target.value);
-                    }}
-                  />
-                </div>
-                <div className="mt-6 mb-3 w-full justify-between flex items-center">
-                  <CharacterLimit
-                    limit={CHARACTER_LIMIT}
-                    text={soundtrackTitle}
-                  />
-                  <Button style={{ marginLeft: "auto" }}>
-                    Search <FiSearch className={ICON} />
-                  </Button>
-                </div>
-                <Loading loading={loading} text="Loading..." />
-                {error && !loading ? (
-                  <StatusMessage message={error} type="error" />
-                ) : null}
-                {success && !loading ? (
-                  <StatusMessage message={success} type="success" />
-                ) : null}
-              </div>
-            </Form>
-            <div className="my-12 text-center flex flex-col items-center">
-              <FaSpotify
-                className="text-gray-600 mb-1 dark:text-gray-300 hover:scale-110
-                duration-300 hover:text-black dark:hover:text-white"
-              />
-              <Text>All request data is provided by Spotify. </Text>
-              <LinkT href="https://developer.spotify.com/" target="_blank">
-                developer.spotify.com
-              </LinkT>
-            </div>
-            {data && !loading && !error && (
-              <div className="flex flex-col mt-24">
-                <div className="flex items-center justify-between w-full mb-12">
-                  <Text style={{ fontSize: "2rem" }}>
-                    {data.tracks.items[0].external_ids.isrc}
-                  </Text>
-                  <Button
-                    onClick={() => {
-                      setCopied(true);
-                      copy(data.tracks.items[0].external_ids.isrc, {
-                        debug: true,
-                      });
-                      setTimeout(() => {
-                        setCopied(false);
-                      }, 3000);
-                    }}
-                  >
-                    {copied ? "Copied" : "Copy"}{" "}
-                    {copied ? (
-                      <FiCheck className={ICON} />
-                    ) : (
-                      <FiCopy className={ICON} />
-                    )}
-                  </Button>
-                </div>
-                <div className="mb-12 flex items-center w-full justify-center">
-                  <Text
-                    style={{
-                      fontSize: "2rem",
-                      textAlign: "center",
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    <b>{data.tracks.items[0].name}</b> by{" "}
-                    <b>{data.tracks.items[0].artists[0].name}</b>
-                  </Text>
-                  <div className="mt-3 text-center ml-6">
-                    <LinkT
-                      style={{ fontSize: "1.5rem" }}
-                      href={data.tracks.items[0].external_urls.spotify}
-                      target="_blank"
-                    >
-                      Album Link
-                    </LinkT>
-                    <Image
-                      className="mt-2"
-                      src={data.tracks.items[0].album.images[0].url}
-                      height={350}
-                      width={350}
-                      alt={`Album cover for ${data.tracks.items[0].name} by ${data.tracks.items[0].artists[0].name}`}
-                      title={`Album cover for ${data.tracks.items[0].name} by ${data.tracks.items[0].artists[0].name}`}
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header column={false} singleItem={false}>
+              <Heading style={{ marginBottom: "0.5rem" }}>
+                {page.isrc.title2}
+              </Heading>
+            </Header>
+            <Text>
+              Find the <LinkT>{page.isrc.title2}</LinkT> codes to a collection of
+              over 100 million tracks on Spotify.
+            </Text>
+            <div className="my-4">
+              <Form onSubmit={sendSpotifyIsrcRequest} action="POST">
+                <div className="w-full">
+                  <div className="mb-3">
+                    <div className="mb-1">
+                      <Label text="soundtrack" />
+                    </div>
+                    <Input
+                      placeholder="https://open.spotify.com/track/6JrFlbV1Ehnigcp71vtiI1?si=e99533332a6a4b81"
+                      style={{ width: "100%" }}
+                      required={true}
+                      value={soundtrackTitle}
+                      onChange={(e) => {
+                        setSoundtrackTitle(e.target.value);
+                      }}
                     />
                   </div>
+                  <div className="mt-6 mb-3 w-full justify-between flex items-center">
+                    <CharacterLimit
+                      limit={CHARACTER_LIMIT}
+                      text={soundtrackTitle}
+                    />
+                    <Button style={{ marginLeft: "auto" }}>
+                      Search <FiSearch className={ICON} />
+                    </Button>
+                  </div>
+                  <Loading loading={loading} text="Loading..." />
+                  {error && !loading ? (
+                    <StatusMessage message={error} type="error" />
+                  ) : null}
+                  {success && !loading ? (
+                    <StatusMessage message={success} type="success" />
+                  ) : null}
                 </div>
+              </Form>
+              <div className="my-12 text-center flex flex-col items-center">
+                <FaSpotify
+                  className="text-gray-600 mb-1 dark:text-gray-300 hover:scale-110
+                  duration-300 hover:text-black dark:hover:text-white"
+                />
+                <Text>All request data is provided by Spotify. </Text>
+                <LinkT href="https://developer.spotify.com/" target="_blank">
+                  developer.spotify.com
+                </LinkT>
               </div>
-            )}
+              {data && !loading && !error && (
+                <div className="flex flex-col mt-24">
+                  <div className="flex items-center justify-between w-full mb-12">
+                    <Text style={{ fontSize: "2rem" }}>
+                      {data.tracks.items[0].external_ids.isrc}
+                    </Text>
+                    <Button
+                      onClick={() => {
+                        setCopied(true);
+                        copy(data.tracks.items[0].external_ids.isrc, {
+                          debug: true,
+                        });
+                        setTimeout(() => {
+                          setCopied(false);
+                        }, 3000);
+                      }}
+                    >
+                      {copied ? "Copied" : "Copy"}{" "}
+                      {copied ? (
+                        <FiCheck className={ICON} />
+                      ) : (
+                        <FiCopy className={ICON} />
+                      )}
+                    </Button>
+                  </div>
+                  <div className="mb-12 flex items-center w-full justify-center">
+                    <Text
+                      style={{
+                        fontSize: "2rem",
+                        textAlign: "center",
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      <b>{data.tracks.items[0].name}</b> by{" "}
+                      <b>{data.tracks.items[0].artists[0].name}</b>
+                    </Text>
+                    <div className="mt-3 text-center ml-6">
+                      <LinkT
+                        style={{ fontSize: "1.5rem" }}
+                        href={data.tracks.items[0].external_urls.spotify}
+                        target="_blank"
+                      >
+                        Album Link
+                      </LinkT>
+                      <Image
+                        className="mt-2"
+                        src={data.tracks.items[0].album.images[0].url}
+                        height={350}
+                        width={350}
+                        alt={`Album cover for ${data.tracks.items[0].name} by ${data.tracks.items[0].artists[0].name}`}
+                        title={`Album cover for ${data.tracks.items[0].name} by ${data.tracks.items[0].artists[0].name}`}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="mt-auto">
+              <GoBack />
+            </div>
           </div>
-          <GoBack />
         </Animate>
       </Layout>
     </>

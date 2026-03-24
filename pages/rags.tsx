@@ -27,16 +27,14 @@ const Rags: NextPage = () => {
   const [rags, setRags] = useState(RAGS);
 
   const shuffleRags = () => {
-    let r = [];
+    const shuffled = [...RAGS];
 
-    const shuffled = RAGS.map((rag) => ({
-      rag,
-      sort: Math.random(),
-    }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ rag }) => rag);
-    r.push(shuffled);
-    setRags(r[0]);
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    setRags(shuffled);
   };
 
   useEffect(() => {
@@ -136,7 +134,7 @@ const Rags: NextPage = () => {
                     {["Composer", "Title", "Publication", "Audio"].map(
                       (key) => (
                         <Th key={key} text={key} />
-                      )
+                      ),
                     )}
                   </tr>
                 </thead>

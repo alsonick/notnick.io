@@ -23,27 +23,31 @@ const Specs: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>{page.specs.title}</Heading>
-          </Header>
-          {SPECS.map((spec) => (
-            <div className="flex flex-col w-full mb-8" key={spec.id}>
-              {spec.sellingSoon && <Tag title="Selling soon" />}
-              <h1 className="dark:text-white hover:no-underline sm:text-3xl text-2xl font-bold mb-0">
-                {spec.title}
-              </h1>
-              <ul className="mt-3">
-                {spec.list.map((item) => (
-                  <li className="mb-1" key={item.id}>
-                    <Text>
-                      <Key>{item.key}:</Key> {item.value}
-                    </Text>
-                  </li>
-                ))}
-              </ul>
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header singleItem={true}>
+              <Heading style={{ marginBottom: 0 }}>{page.specs.title}</Heading>
+            </Header>
+            {SPECS.map((spec) => (
+              <div className="flex flex-col w-full mb-8" key={spec.id}>
+                {spec.sellingSoon && <Tag title="Selling soon" />}
+                <h1 className="dark:text-white hover:no-underline sm:text-3xl text-2xl font-bold mb-0">
+                  {spec.title}
+                </h1>
+                <ul className="mt-3">
+                  {spec.list.map((item) => (
+                    <li className="mb-1" key={item.id}>
+                      <Text>
+                        <Key>{item.key}:</Key> {item.value}
+                      </Text>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+            <div className="mt-auto">
+              <GoBack />
             </div>
-          ))}
-          <GoBack />
+          </div>
         </Animate>
       </Layout>
     </>

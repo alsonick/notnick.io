@@ -65,22 +65,26 @@ const Note: NextPage<Props> = ({ notes }) => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>{page.note.title}</Heading>
-            {notes.length ? (
-              <FilterListBox
-                items={removeDuplicates(tags)}
-                selectedItem={selected}
-                onChange={setSelected}
-              />
-            ) : null}
-          </Header>
-          {!notes.length && <NoPost type="notes" />}
-          <Posts
-            posts={filteredNotesList.length ? filteredNotesList : notes}
-            type="note"
-          />
-          <GoBack />
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header singleItem={false}>
+              <Heading style={{ marginBottom: 0 }}>{page.note.title}</Heading>
+              {notes.length ? (
+                <FilterListBox
+                  items={removeDuplicates(tags)}
+                  selectedItem={selected}
+                  onChange={setSelected}
+                />
+              ) : null}
+            </Header>
+            {!notes.length && <NoPost type="notes" />}
+            <Posts
+              posts={filteredNotesList.length ? filteredNotesList : notes}
+              type="note"
+            />
+            <div className="mt-auto">
+              <GoBack />
+            </div>
+          </div>
         </Animate>
       </Layout>
     </>

@@ -127,7 +127,7 @@ const Guestbook: NextPage<Props> = ({
       />
       <Layout>
         <Animate>
-          <div className="flex flex-col min-h-[calc(100vh-16rem)]">
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={false}>
               <Heading style={{ marginBottom: 0 }}>
                 {page.guestbook.title}
@@ -254,7 +254,9 @@ const Guestbook: NextPage<Props> = ({
                 </div>
               )}
             </div>
-            <GoBack />
+            <div className="mt-auto">
+              <GoBack />
+            </div>
           </div>
         </Animate>
       </Layout>

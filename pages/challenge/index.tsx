@@ -20,17 +20,21 @@ const ChallengePage: NextPage = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>Challenge</Heading>
-          </Header>
-          <div className="flex flex-col mb-4">
-            {CHALLENGES.filter((challenge) => challenge.active).map(
-              (challenge) => (
-                <Challenge key={challenge.id} challenge={challenge} />
-              )
-            )}
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header singleItem={false}>
+              <Heading style={{ marginBottom: 0 }}>Challenge</Heading>
+            </Header>
+            <div className="flex flex-col mb-4">
+              {CHALLENGES.filter((challenge) => challenge.active).map(
+                (challenge) => (
+                  <Challenge key={challenge.id} challenge={challenge} />
+                )
+              )}
+            </div>
+            <div className="mt-auto">
+              <GoBack />
+            </div>
           </div>
-          <GoBack />
         </Animate>
       </Layout>
     </>

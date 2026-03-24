@@ -40,8 +40,8 @@ const Home: NextPage = () => {
           <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />
           <Contact />
-          {/* <License /> */}
-          {/* <Listening setActive={setPresenceActive} /> */}
+          <License />
+          <Listening setActive={setPresenceActive} />
         </Animate>
       </Layout>
     </>

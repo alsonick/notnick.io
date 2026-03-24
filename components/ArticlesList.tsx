@@ -26,7 +26,7 @@ export const ArticlesList = (props: Props) => {
           >
             <h1
               className="sm:text-3xl text-2xl font-bold cursor-pointer underline
-                  dark:text-white hover:no-underline"
+                  dark:text-white md:hover:no-underline"
             >
               {article.title}
             </h1>
