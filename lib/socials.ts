@@ -110,4 +110,5 @@ export const SOCIALS: Social[] = [
     title: social.anilist.name,
     username: social.anilist.username,
     link: social.anilist.link,
+  },
 ];

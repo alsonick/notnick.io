@@ -21,27 +21,31 @@ const Music = () => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>{page.music.title}</Heading>
-          </Header>
-          <div className="mb-4 grid md:grid-cols-3 gap-4 sm:grid-cols-2">
-            {MUSIC.map((playlist) => (
-              <Link
-                href={playlist.link}
-                target="_blank"
-                className={`my-4 flex flex-col items-center md:hover:translate-y-1 duration-300
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header singleItem={false}>
+              <Heading style={{ marginBottom: 0 }}>{page.music.title}</Heading>
+            </Header>
+            <div className="mb-4 grid md:grid-cols-3 gap-4 sm:grid-cols-2">
+              {MUSIC.map((playlist) => (
+                <Link
+                  href={playlist.link}
+                  target="_blank"
+                  className={`my-4 flex flex-col items-center md:hover:translate-y-1 duration-300
   focus:ring-4 ring-primary rounded-xl outline-none`}
-                key={playlist.id}
-              >
-                <PlaylistCover
-                  playlist={playlist}
-                  name={playlist.name}
-                  path={playlist.path}
-                />
-              </Link>
-            ))}
+                  key={playlist.id}
+                >
+                  <PlaylistCover
+                    playlist={playlist}
+                    name={playlist.name}
+                    path={playlist.path}
+                  />
+                </Link>
+              ))}
+            </div>
+            <div className="mt-auto">
+              <GoBack />
+            </div>
           </div>
-          <GoBack />
         </Animate>
       </Layout>
     </>

@@ -50,10 +50,20 @@ export const PATHS: Path[] = [
     path: page.license.path,
     link: page.license.link,
   },
+  // {
+  //   id: generateRandomId(),
+  //   path: page.projects.path,
+  //   link: page.projects.link,
+  // },
   {
     id: generateRandomId(),
-    path: page.quote.path,
-    link: page.quote.link,
+    path: page.isrc.path,
+    link: page.isrc.link,
+  },
+  {
+    id: generateRandomId(),
+    path: page.guestbook.path,
+    link: page.guestbook.link,
   },
   {
     id: generateRandomId(),

@@ -27,8 +27,8 @@ export const Community = () => {
         <Note>
           To maintain a safe environment for all members, it is important that
           you carefully review and accept the server guidelines and{" "}
-          <LinkT href={page.community.rules.link}>rules</LinkT> upon joining the
-          community server.
+          <LinkT href={page.community.rules.link}>community rules</LinkT> upon
+          joining the community server.
         </Note>
       </div>
     </Section>

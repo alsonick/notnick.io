@@ -56,23 +56,25 @@ const Blog: NextPage<Props> = ({ blogs }) => {
       />
       <Layout>
         <Animate>
-          <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>{page.blog.title}</Heading>
-            {blogs.length ? (
-              <FilterListBox
-                items={removeDuplicates(tags)}
-                selectedItem={selected}
-                onChange={setSelected}
-              />
-            ) : null}
-          </Header>
-          {!blogs.length && <NoPost type="blogs" />}
-          <div className="relative">
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header singleItem={false}>
+              <Heading style={{ marginBottom: 0 }}>{page.blog.title}</Heading>
+              {blogs.length ? (
+                <FilterListBox
+                  items={removeDuplicates(tags)}
+                  selectedItem={selected}
+                  onChange={setSelected}
+                />
+              ) : null}
+            </Header>
+            {!blogs.length && <NoPost type="blogs" />}
             <Posts
               posts={filteredBlogsList.length ? filteredBlogsList : blogs}
               type="blog"
             />
-            <GoBack />
+            <div className="mt-auto">
+              <GoBack />
+            </div>
           </div>
         </Animate>
       </Layout>

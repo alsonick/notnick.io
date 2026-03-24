@@ -22,7 +22,7 @@ const Credit: NextPage = () => {
       />
       <Layout>
         <Header singleItem={true}>
-          <Heading>{page.credit.title}</Heading>
+          <Heading style={{ marginBottom: 0 }}>{page.credit.title}</Heading>
         </Header>
         <Text>
           The source code to this site is{" "}
@@ -35,30 +35,21 @@ const Credit: NextPage = () => {
           not absolutely necessary it would be greatly appreciated if credit is
           given.
         </Text>
-
         <br />
-
         <Key>How do I give credit?</Key>
-
         <br />
-        <br />
-
         <Text>
           You can give credit anywhere on the site but it&apos;s common to add
           it in the footer, here&apos;s an example:
         </Text>
-
-        <br />
-
-        <picture className="mt-10 mb-2">
+        <picture className="mt-4 mb-1">
           <img
             className="border border-teal-100 dark:border-teal-900"
             src={`${page.credit.path}/credit-screenshot.png`}
             alt="Credit Screenshot Example"
           />
         </picture>
-
-        <div className="flex">
+        <div className="flex mb-4">
           <LinkT href="https://sahil.lol/" target="_blank">
             sahil.lol
           </LinkT>
@@ -66,9 +57,6 @@ const Credit: NextPage = () => {
             <i>(site currently inactive)</i>
           </Text>
         </div>
-
-        <br />
-
         <Text>
           If you run into any issues with this then please feel free to{" "}
           <LinkT
@@ -79,7 +67,7 @@ const Credit: NextPage = () => {
           </LinkT>{" "}
           on the GitHub repository and I&apos;ll be able to assist you there.
         </Text>
-        <div className="mt-4">
+        <div className="mt-auto">
           <GoBack />
         </div>
       </Layout>

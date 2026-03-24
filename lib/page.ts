@@ -25,8 +25,8 @@ export const page = {
   isrc: {
     title1: "ISRC Finder",
     title2: "ISRC",
-    path: "/isrc",
-    link: "/isrc",
+    path: "/tools/yt/isrc",
+    link: "/tools/yt/isrc",
     name: "isrc",
   },
   branding: {
@@ -73,7 +73,7 @@ export const page = {
   },
   switch: {
     games: {
-      title: "Nintendo Switch Games",
+      title: "Games",
       path: "/switch/games",
       link: "/switch/games",
       name: "games",
@@ -81,12 +81,6 @@ export const page = {
     path: "/switch",
     link: "/switch",
     name: "switch",
-  },
-  quote: {
-    title: "Quote",
-    path: "/quote",
-    link: "/quote",
-    name: "quote",
   },
   socials: {
     title: "Socials",
@@ -123,8 +117,9 @@ export const page = {
     name: "challenge",
   },
   community: {
-    title2: "Community Rules",
-    title1: "Community",
+    title3: "Community Rules",
+    title2: "Community",
+    title1: "Rules",
     name: "community",
     rules: {
       path: "/community/rules",

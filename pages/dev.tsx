@@ -1,7 +1,6 @@
 import { OtherPageContainer } from "../components/OtherPageContainer";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Heading } from "../components/Heading";
-import { GoBack } from "../components/GoBack";
 import { Toggle } from "../components/Toggle";
 import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
@@ -50,9 +49,6 @@ const Dev: NextPage = () => {
         ) : (
           <Text>Loading...</Text>
         )}
-      </div>
-      <div className="mt-4">
-        <GoBack />
       </div>
     </OtherPageContainer>
   );

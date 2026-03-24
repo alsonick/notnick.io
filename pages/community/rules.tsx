@@ -35,20 +35,21 @@ const Rules: NextPage = () => {
   return (
     <>
       <Seo
-        title={`${page.community.title2} • ${FULL_NAME}`}
+        title={`${page.community.title3} • ${FULL_NAME}`}
         description={`${FULL_NAME} - ${PROFESSION}`}
       />
       <Layout>
         <Animate>
           <Header singleItem={false}>
             <Heading style={{ marginBottom: 0 }}>
-              {page.community.title2}
+              {page.community.title1}
             </Heading>
           </Header>
           {data ? (
-            <div className="mb-4 mt-16">
+            <div className="mb-4">
               {data?.rules.map((rule) => (
                 <div
+                style={{ marginTop: "10px" }}
                   className="flex flex-col border-b border-teal-100 dark:border-teal-900 mb-10 pb-4"
                   key={rule.id}
                 >
