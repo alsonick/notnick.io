@@ -63,8 +63,8 @@
     "@types/react": "18.0.9",
     "@types/react-dom": "18.2.0",
     "autoprefixer": "^10.4.13",
-    "eslint": "^10.0.3",
-    "eslint-config-next": "^16.1.6",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.35",
     "postcss": "^8.4.21",
     "prisma": "^7.4.0",
     "typescript": "^5.9.3"
