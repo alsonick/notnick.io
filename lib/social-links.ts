@@ -96,4 +96,9 @@ export const social = {
     username: "alsonick",
     name: "AniList",
   },
+  facebook: {
+    link: "https://www.facebook.com/heynickn/",
+    username: "heynickn",
+    name: "Facebook",
+  },
 };

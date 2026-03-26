@@ -111,4 +111,10 @@ export const SOCIALS: Social[] = [
     username: social.anilist.username,
     link: social.anilist.link,
   },
+  {
+    id: generateRandomId(),
+    title: social.facebook.name,
+    username: social.facebook.username,
+    link: social.facebook.link,
+  },
 ];
