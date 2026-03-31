@@ -10,8 +10,11 @@ import { Tag } from "./Tag";
 
 // Next.js
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const Main = () => {
+  const { query } = useRouter();
+  const decoration = query.decoration as "halloween" | "christmas" | undefined;
   const date = new Date();
 
   const confetti = () => {
@@ -73,7 +76,7 @@ export const Main = () => {
           ) : null}
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
-          <Avatar border={true} width={135} height={125} />
+          <Avatar border={true} width={135} height={125} decoration={decoration} />
         </div>
       </main>
     </>
