@@ -25,11 +25,11 @@ export const PATHS: Path[] = [
     path: page.talks.path,
     link: page.talks.link,
   },
-  {
-    id: generateRandomId(),
-    path: page.branding.path,
-    link: page.branding.link,
-  },
+  // {
+  //   id: generateRandomId(),
+  //   path: page.branding.path,
+  //   link: page.branding.link,
+  // },
   {
     id: generateRandomId(),
     path: page.paths.path,
