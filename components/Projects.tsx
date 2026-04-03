@@ -13,7 +13,8 @@ export const Projects = () => {
   return (
     <Section>
       <Heading>Projects ⛓️</Heading>
-      <div className="flex gap-2 flex-col md:flex-row justify-between">
+      <Text>A collection of a few of my projects.</Text>
+      <div className="flex gap-2 flex-col md:flex-row justify-between mt-6">
         {PROJECTS.slice(0, 3).map((project) => (
           <ProjectCard
             active={project.active}
@@ -31,19 +32,22 @@ export const Projects = () => {
         ))}
       </div>
       <div className="mt-6">
-        {/* <Note>
-          Some projects are based on other platforms and may use their branding
+        <Note>
+          Some projects are based on other platforms (e.g. Lyrics Tags
+          Generator, vercel.notnick.io) and may use some of their branding
           assets, these are small hobby projects, but if you&apos;d like your
           branding removed, please{" "}
           <LinkT href={`mailto:${EMAIL_ADDRESS}`} target="_blank">
             email
           </LinkT>{" "}
           me.
-        </Note> */}
-        <Text>
-          Click <LinkTag href={page.projects.link}>here</LinkTag> to view the
-          full list.
-        </Text>
+        </Note>
+        <div className="mt-6">
+          <Text>
+            Click <LinkTag href={page.projects.link}>here</LinkTag> to view the
+            full list.
+          </Text>
+        </div>
       </div>
     </Section>
   );
