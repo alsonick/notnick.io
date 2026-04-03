@@ -25,11 +25,11 @@ export const PATHS: Path[] = [
     path: page.talks.path,
     link: page.talks.link,
   },
-  // {
-  //   id: generateRandomId(),
-  //   path: page.branding.path,
-  //   link: page.branding.link,
-  // },
+  {
+    id: generateRandomId(),
+    path: page.branding.path,
+    link: page.branding.link,
+  },
   {
     id: generateRandomId(),
     path: page.paths.path,
@@ -50,11 +50,11 @@ export const PATHS: Path[] = [
     path: page.license.path,
     link: page.license.link,
   },
-  // {
-  //   id: generateRandomId(),
-  //   path: page.projects.path,
-  //   link: page.projects.link,
-  // },
+  {
+    id: generateRandomId(),
+    path: page.projects.path,
+    link: page.projects.link,
+  },
   {
     id: generateRandomId(),
     path: page.isrc.path,
