@@ -32,22 +32,10 @@ export const Projects = () => {
         ))}
       </div>
       <div className="mt-6">
-        <Note>
-          Some projects are based on other platforms (e.g. Lyrics Tags
-          Generator, vercel.notnick.io) and may use some of their branding
-          assets, these are small hobby projects, but if you&apos;d like your
-          branding removed, please{" "}
-          <LinkT href={`mailto:${EMAIL_ADDRESS}`} target="_blank">
-            email
-          </LinkT>{" "}
-          me.
-        </Note>
-        <div className="mt-6">
-          <Text>
-            Click <LinkTag href={page.projects.link}>here</LinkTag> to view the
-            full list.
-          </Text>
-        </div>
+        <Text>
+          Click <LinkTag href={page.projects.link}>here</LinkTag> to view the
+          full list.
+        </Text>
       </div>
     </Section>
   );
