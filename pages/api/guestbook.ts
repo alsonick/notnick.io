@@ -81,7 +81,7 @@ export default async function handler(
             {
               title: "New Guestbook Message",
               description: message.trim(),
-              color: 0xb921ff,
+              color: 0x30d158,
               author: {
                 name: `${session.name} (@${session.username})`,
                 icon_url: session.avatar,

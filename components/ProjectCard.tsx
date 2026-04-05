@@ -13,7 +13,7 @@ export const ProjectCard = (props: Project) => {
   const href = props.link ? props.link : `https://${props.site}`;
 
   return (
-    <div className="rounded-2xl flex flex-col dark:bg-[#10161a]/50 bg-white border border-teal-100 dark:border-teal-900 hover:border-teal-400 dark:hover:border-teal-600 duration-300 w-full">
+    <div className="rounded-2xl flex flex-col dark:bg-[#10161a]/50 bg-white border border-teal-100 dark:border-teal-900 hover:border-primary dark:hover:border-primary duration-300 w-full">
       <div className="p-4 flex flex-col gap-4 flex-1">
         <div className="flex flex-col gap-2">
           {props.logo ? (
