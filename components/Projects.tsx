@@ -1,12 +1,9 @@
-import { EMAIL_ADDRESS } from "../lib/constants";
 import { ProjectCard } from "./ProjectCard";
 import { PROJECTS } from "../lib/projects";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
-import { LinkT } from "./Link";
-import { Note } from "./Note";
 import { Text } from "./Text";
 
 export const Projects = () => {
