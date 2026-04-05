@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     desc: "A simple healthcare app to track your daily walks.",
   },
   {
-    logo: "",
+    logo: "/Character.png",
     name: "notnick.io",
     id: generateRandomId(),
     site: "notnick.io",
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     desc: "A gallery collection site of vercel merchandise.",
   },
   {
-    logo: "",
+    logo: "/Character.png",
     name: "pics.notnick.io",
     id: generateRandomId(),
     site: "pics.notnick.io",
