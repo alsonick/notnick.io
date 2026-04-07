@@ -15,7 +15,7 @@ export const ExperienceCard = (props: Experience) => {
   return (
     <div
       className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6
-      border border-teal-100 dark:border-teal-900 mb-6 z-10 mt-5"
+      border border-teal-100 dark:border-teal-900 sm:hover:border-primary sm:dark:hover:border-primary duration-300 mb-6 z-10 mt-5"
     >
       {props.logo ? (
         <div className="mb-5">
