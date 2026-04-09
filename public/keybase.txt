@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nick241
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://notnick.io
+  * I am nick241 (https://keybase.io/nick241) on keybase.
+  * I have a public key ASAemcOoBffhoMvR04nHQBZBXnc1j84GUegeaLvOiylvpAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201e99c3a805f7e1a0cbd1d389c74016415e77358fce0651e81e68bbce8b296fa40a",
+      "host": "keybase.io",
+      "kid": "01201e99c3a805f7e1a0cbd1d389c74016415e77358fce0651e81e68bbce8b296fa40a",
+      "uid": "4622611c216a49d5ee9c352bf0ca7919",
+      "username": "nick241"
+    },
+    "merkle_root": {
+      "ctime": 1775747315,
+      "hash": "f0355f565cab1b4a9511e3dfefa3e5d852534b05de361cf6cd88cba2709a6d9a251637f34d04ffbaf7410f112f02b5339b1a25c25bdea4896d4bd80a32803b91",
+      "hash_meta": "0307ad2636915edc9ecb51dc9546bce86b02985a9eda53a5269880b92ffbb49a",
+      "seqno": 27518919
+    },
+    "service": {
+      "entropy": "zEp0fc2U087bT56YoDuAG7ic",
+      "hostname": "notnick.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.6.2"
+  },
+  "ctime": 1775747324,
+  "expire_in": 504576000,
+  "prev": "5dd10dd9c152d58c011dbec4e52a759a90ae56b2f60b1cc366222408ae502c8f",
+  "seqno": 33,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgHpnDqAX34aDL0dOJx0AWQV53NY/OBlHoHmi7zospb6QKp3BheWxvYWTESpcCIcQgXdEN2cFS1YwBHb7E5Sp1mpCuVrL2CxzDZiIkCK5QLI/EIDv2UlShMgqXsoK0fW7UBz8u3hqnSAKItfeOm+WB2hf+AgHCo3NpZ8RAXxYezfCipnhnElcEFHi21SSiG6i72LoIsCeFvH8DRDj5tS8HALKmrhQDg6MJ5OefzaECqC+TZ6YMokzsnro/DKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIFYRASZYo5ajeNF3KGYea6rFIZuAOQNg3MpK5TADdR07o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nick241
+
+==================================================================
