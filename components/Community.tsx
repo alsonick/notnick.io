@@ -23,14 +23,14 @@ export const Community = () => {
           Join Discord Community <FiExternalLink className={ICON} />
         </LinkButton>
       </div>
-      <div className="mt-6">
+      {/* <div className="mt-6">
         <Note>
           To maintain a safe environment for all members, it is important that
           you carefully review and accept the server guidelines and{" "}
           <LinkT href={page.community.rules.link}>community rules</LinkT> upon
           joining the community server.
         </Note>
-      </div>
+      </div> */}
     </Section>
   );
 };
