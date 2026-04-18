@@ -82,8 +82,8 @@ export const social = {
     name: "Threads",
   },
   leetcode: {
-    link: "https://leetcode.com/u/nickdev03/",
-    username: "nickdev03",
+    link: "https://leetcode.com/u/alsonick/",
+    username: "alsonick",
     name: "LeetCode",
   },
   unsplash: {
