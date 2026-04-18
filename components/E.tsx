@@ -1,43 +1,51 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { GoBack } from "./GoBack";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
 
 // Next.js
 import { useRouter } from "next/router";
+import { Switch } from "./Switch";
 
 interface Props {
-  heading: string;
+  description?: string;
+  subtitle?: string;
   title: string;
-  text: string;
   code: number;
 }
 
 export const E = (props: Props) => {
   const router = useRouter();
 
+  const [mounted, setMounted] = useState(false);
   const [enabled, setEnabled] = useState(false);
+  const alertedRef = useRef(false);
+
+  const easterEggPaths = ["/luna", "/gxthmxm", "/coronux", "/rei"];
+  const isEasterEgg = mounted && easterEggPaths.includes(router.asPath);
 
   const toggle = () => {
     setEnabled(!enabled);
   };
 
-  const path = router.asPath;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (path === "/luna" || path === "/gxthmxm" || path === "/coronux") {
-        // alert("Thanks Luna for the http.cat site lol!");
-      }
+    if (isEasterEgg && !alertedRef.current) {
+      alertedRef.current = true;
+      alert("Thanks Rei for the http.cat site lol!");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isEasterEgg]);
+
+  if (!mounted) return null;
 
   return (
     <>
       <Seo title={props.title} description={`${FULL_NAME} - ${PROFESSION}`} />
-      <div className="flex flex-col items-center justify-center w-screen h-screen">
+      <div className="flex flex-col items-center justify-center w-screen h-screen px-6">
         {enabled ? (
           <picture>
             <img
@@ -48,20 +56,25 @@ export const E = (props: Props) => {
             />
           </picture>
         ) : (
-          <>
-            {" "}
-            <h1 className="text-4xl font-bold text-center tracking-tight dark:text-white">
-              {props.heading}
-            </h1>
-            <Text style={{ marginBottom: "1rem" }}>{props.text}</Text>
-          </>
+          !isEasterEgg && (
+            <div className="flex flex-col items-center max-w-md">
+              {props.subtitle && (
+                <h2 className="text-4xl font-semibold text-center tracking-tight text-gray-800 dark:text-gray-200 mb-3">
+                  {props.code} - {props.subtitle}
+                </h2>
+              )}
+              {props.description && (
+                <div className="mb-5 text-center">
+                  <Text>{props.description}</Text>
+                </div>
+              )}
+            </div>
+          )
         )}
-        {!enabled && <GoBack />}
-        {/* {!enabled && (
-          <div className="flex justify-center mt-2 items-center">
-            <Switch enabled={enabled} setEnabled={toggle} />
-          </div>
-        )} */}
+        {!enabled && !isEasterEgg && <GoBack />}
+        <div className="flex justify-center mt-2 items-center">
+          <Switch enabled={enabled} setEnabled={toggle} />
+        </div>
       </div>
     </>
   );

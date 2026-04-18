@@ -1,10 +1,14 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { Resend } from "resend";
+import { EMAIL_ADDRESS } from "../../lib/constants";
 
 const rateLimitStore: { [key: string]: number } = {};
 
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const body = req.body;
 
@@ -28,7 +32,7 @@ export default async function handler(
     !email
       ?.toLowerCase()
       .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       )
   ) {
     return res
@@ -53,7 +57,7 @@ export default async function handler(
 
   if (lastRequestTime && Date.now() - lastRequestTime < RATE_LIMIT_TIME) {
     const timeLeft = Math.ceil(
-      (RATE_LIMIT_TIME - (Date.now() - lastRequestTime)) / 1000 / 60
+      (RATE_LIMIT_TIME - (Date.now() - lastRequestTime)) / 1000 / 60,
     );
     return res.status(429).send({
       success: false,
@@ -63,25 +67,39 @@ export default async function handler(
 
   rateLimitStore[email] = Date.now();
 
-  const response = await fetch(process.env.DISCORD_WEBHOOK_URL!, {
-    method: "POST",
-    body: JSON.stringify({
-      embeds: [
-        {
-          author: {
-            name: `New message | ${email}`,
+  const [discordResponse, emailResult] = await Promise.all([
+    fetch(process.env.DISCORD_WEBHOOK_URL!, {
+      method: "POST",
+      body: JSON.stringify({
+        embeds: [
+          {
+            author: {
+              name: `New message | ${email}`,
+            },
+            color: 0x30d158,
+            description: message,
+            fields: [],
           },
-          description: message,
-          fields: [],
-        },
-      ],
+        ],
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+    resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
+      to: EMAIL_ADDRESS,
+      replyTo: email,
+      subject: `New message from ${email}`,
+      text: message,
+    }),
+  ]);
 
-  if (response.status >= 400) {
+  if (emailResult.error) {
+    console.error("Resend error:", emailResult.error);
+  }
+
+  if (discordResponse.status >= 400 || emailResult.error) {
     return res.send({ success: false, error: "Something went wrong." });
   }
 
