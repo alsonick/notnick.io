@@ -6,7 +6,7 @@ import { NewsLetter } from "../components/Newsletter";
 import { Education } from "../components/Education";
 import { Community } from "../components/Community";
 import { Listening } from "../components/Listening";
-import { Projects } from "../components/Projects";
+// import { Projects } from "../components/Projects";
 import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           <Experience />
           <Technologies />
           <Education />
-          <Projects />
+          {/* <Projects /> */}
           <Music />
           <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />
