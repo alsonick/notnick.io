@@ -39,7 +39,7 @@ const ISRC: NextPage = () => {
   const CHARACTER_LIMIT = 100;
 
   const sendSpotifyIsrcRequest = async (
-    e: React.FormEvent<HTMLFormElement>
+    e: React.FormEvent<HTMLFormElement>,
   ) => {
     e.preventDefault();
 
@@ -53,7 +53,7 @@ const ISRC: NextPage = () => {
 
     setLoading(true);
 
-    fetch(`/api/tools/yt${page.isrc.path}`, {
+    fetch(`/api/tools/yt/${page.isrc.name}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -81,7 +81,7 @@ const ISRC: NextPage = () => {
           isLink = true;
         } else {
           fetchUrl = `${URL}?q=${encodeURIComponent(
-            soundtrackTitle
+            soundtrackTitle,
           )}&type=track&limit=1`;
         }
 
@@ -106,7 +106,7 @@ const ISRC: NextPage = () => {
             setData(trackData);
             setLoading(false);
             setSuccess(
-              `Successfully found the track '${trackData.tracks.items[0].name}'.`
+              `Successfully found the track '${trackData.tracks.items[0].name}'.`,
             );
           })
           .catch((error) => {
@@ -132,9 +132,15 @@ const ISRC: NextPage = () => {
               </Heading>
             </Header>
             <Text>
-              Find the <LinkT>{page.isrc.title2}</LinkT> codes to a collection of
-              over 100 million tracks on Spotify.
+              Find the <LinkT>{page.isrc.title2}</LinkT> codes to a collection
+              of over 100 million tracks on Spotify.
             </Text>
+            <div className="mt-4">
+              <StatusMessage
+                type="error"
+                message="This tool is currently non-functional. Spotify now requires a Premium subscription on the account tied to the API credentials, and I don't currently have one."
+              />
+            </div>
             <div className="my-4">
               <Form onSubmit={sendSpotifyIsrcRequest} action="POST">
                 <div className="w-full">

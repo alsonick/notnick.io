@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const body = req.body;
 
@@ -25,7 +25,20 @@ export default async function handler(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      content: `Feedback from **${email}**:\n\n${feedback}`,
+      embeds: [
+        {
+          title: "Lyrics Tags Generator Feedback",
+          description: feedback,
+          color: 0x30d158,
+          fields: [
+            {
+              name: "Email",
+              value: email ?? "Not provided",
+            },
+          ],
+          timestamp: new Date().toISOString(),
+        },
+      ],
     }),
   });
 
