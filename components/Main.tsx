@@ -33,7 +33,7 @@ export const Main = () => {
     <>
       <main className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <p className="text-sm opacity-65 mb-1">{PRONOUNS}</p>
+          {/* <p className="text-sm opacity-65 mb-1">{PRONOUNS}</p> */}
           <Link
             className={`cursor-pointer  w-fit focus:ring-4 ring-primary outline-none rounded-full duration-300`}
             href={`https://www.google.com/maps/search/${CITY}`}
