@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
 interface TweetProps {
-  id: string;
   url: string;
+  id: string;
 }
 
-export const Tweet = ({ id, url }: TweetProps) => {
+export const Tweet = (props: TweetProps) => {
   const [html, setHtml] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://publish.twitter.com/oembed?url=${encodeURIComponent(url)}`)
+    fetch(
+      `https://publish.twitter.com/oembed?url=${encodeURIComponent(props.url)}`,
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.html) {
@@ -27,7 +29,7 @@ export const Tweet = ({ id, url }: TweetProps) => {
       .catch(() => {
         setLoading(false);
       });
-  }, [url]);
+  }, [props.url]);
 
   if (loading) {
     return (

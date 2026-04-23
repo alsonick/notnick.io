@@ -4,7 +4,6 @@ import { ICON } from "../lib/tailwindcss/icon";
 import { LinkButton } from "./LinkButton";
 import { Border } from "./Border";
 import { Text } from "./Text";
-import { Tag } from "./Tag";
 
 // Next.js
 import Image from "next/image";

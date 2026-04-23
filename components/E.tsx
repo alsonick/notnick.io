@@ -1,12 +1,12 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { useEffect, useRef, useState } from "react";
 import { GoBack } from "./GoBack";
+import { Switch } from "./Switch";
 import { Text } from "./Text";
 import { Seo } from "./Seo";
 
 // Next.js
 import { useRouter } from "next/router";
-import { Switch } from "./Switch";
 
 interface Props {
   description?: string;

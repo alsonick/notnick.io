@@ -1,15 +1,14 @@
+import {
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+  DropdownMenuItem,
+  DropdownMenu,
+} from "./dropdown-menu";
 import { FiMenu } from "react-icons/fi";
-import { useRouter } from "next/router";
 
 // Next.js
+import { useRouter } from "next/router";
 import Link from "next/link";
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "./dropdown-menu";
 
 interface Item {
   dropdown?: string | undefined;
@@ -22,7 +21,7 @@ interface Props {
   items: Item[];
 }
 
-export const NavDropdown = ({ items }: Props) => {
+export const NavDropdown = (props: Props) => {
   const router = useRouter();
 
   return (
@@ -34,7 +33,7 @@ export const NavDropdown = ({ items }: Props) => {
         className="w-36 bg-white border border-teal-100 dark:bg-[#10161a]/100 dark:border-teal-900"
         align="start"
       >
-        {items.map((item) => (
+        {props.items.map((item) => (
           <DropdownMenuItem key={item.id} asChild>
             <Link
               href={item.to}

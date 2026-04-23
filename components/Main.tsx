@@ -9,8 +9,8 @@ import { Links } from "./Links";
 import { Tag } from "./Tag";
 
 // Next.js
-import Link from "next/link";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const Main = () => {
   const { query } = useRouter();

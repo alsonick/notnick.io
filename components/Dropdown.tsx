@@ -1,8 +1,8 @@
 import {
-  DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuItem,
+  DropdownMenu,
 } from "./dropdown-menu";
 import { FiMenu } from "react-icons/fi";
 

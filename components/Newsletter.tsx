@@ -1,6 +1,4 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
-// import { getIssues as getIssuesMethod } from "../lib/get-issues";
-// import { getSubscribers } from "../lib/get-subscribers";
 import { EMAIL_ADDRESS } from "../lib/constants";
 import { StatusMessage } from "./StatusMessage";
 import { ICON } from "../lib/tailwindcss/icon";
@@ -33,8 +31,6 @@ export const NewsLetter = (props: Props) => {
 
   const [loading, setLoading] = useState<boolean>(false);
 
-  // const [issues, getIssues] = useState<number>(0);
-
   const [email, setEmail] = useState<string>("");
   const [subs, setSubs] = useState<number>(0);
 
@@ -42,74 +38,9 @@ export const NewsLetter = (props: Props) => {
     e.preventDefault();
 
     setErrorMessage("Revue has shut down.");
-    return;
-
-    setSuccessMessage("");
-    setErrorMessage("");
-    setLoading(true);
-
-    try {
-      const response = await fetch("/api/newsletter", {
-        method: "POST",
-        body: JSON.stringify({ email }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      interface DataResponse {
-        success: boolean;
-        error: string;
-      }
-
-      const data = (await response.json()) as DataResponse;
-
-      // Something went wrong
-      if (!data.success) {
-        setLoading(false);
-        return setErrorMessage(data.error);
-      }
-
-      // Success
-      if (data.success) {
-        setLoading(false);
-        setSuccessMessage("You're set! Check your email to confirm.");
-        return setEmail("");
-      }
-
-      setLoading(false);
-      setErrorMessage("Revue is not in operation.");
-    } catch (e) {
-      setLoading(false);
-
-      setErrorMessage("Revue is not in operation.");
-    }
   };
 
-  /*
-  const fetchSubscriberHelperCall = async () => {
-    try {
-      const data = await getSubscribers();
-      if (data) return setSubs(data);
-    } catch (e) {
-      setErrorMessage(e as string);
-    }
-  };
-
-  const fetchIssuesHelperCall = async () => {
-    try {
-      const data = await getIssuesMethod();
-      if (data) return getIssues(data);
-    } catch (e) {
-      setErrorMessage(e as string);
-    }
-  };
-  */
-
-  useEffect(() => {
-    // fetchSubscriberHelperCall();
-    // fetchIssuesHelperCall();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <Section>

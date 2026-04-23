@@ -17,15 +17,15 @@ interface IssueData {
   state: string;
 }
 
-export const GitHubEmbed = ({ url }: Props) => {
+export const GitHubEmbed = (props: Props) => {
   const [data, setData] = useState<IssueData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const apiUrl = url.replace(
+    const apiUrl = props.url.replace(
       /https?:\/\/github.com\/(.+?)\/(.+?)\/(issues|pull)\/(\d+)/,
-      "https://api.github.com/repos/$1/$2/issues/$4"
+      "https://api.github.com/repos/$1/$2/issues/$4",
     );
 
     fetch(apiUrl)
@@ -41,7 +41,7 @@ export const GitHubEmbed = ({ url }: Props) => {
         setError(true);
         setLoading(false);
       });
-  }, [url]);
+  }, [props.url]);
 
   if (loading) {
     return (

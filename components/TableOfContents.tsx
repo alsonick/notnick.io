@@ -1,23 +1,22 @@
 import { useEffect, useState } from "react";
 
 interface Heading {
-  id: string;
-  text: string;
   level: number;
+  text: string;
+  id: string;
 }
 
 interface Props {
   contentHtml: string;
 }
 
-export const TableOfContents = ({ contentHtml }: Props) => {
+export const TableOfContents = (props: Props) => {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    // Parse HTML to extract h2 and h3 headings
     const parser = new DOMParser();
-    const doc = parser.parseFromString(contentHtml, "text/html");
+    const doc = parser.parseFromString(props.contentHtml, "text/html");
     const headingElements = doc.querySelectorAll("h2[id], h3[id]");
 
     const extractedHeadings: Heading[] = Array.from(headingElements).map(
@@ -25,11 +24,11 @@ export const TableOfContents = ({ contentHtml }: Props) => {
         id: heading.id,
         text: heading.textContent || "",
         level: parseInt(heading.tagName.substring(1)),
-      })
+      }),
     );
 
     setHeadings(extractedHeadings);
-  }, [contentHtml]);
+  }, [props.contentHtml]);
 
   useEffect(() => {
     // Set up intersection observer to track active heading
@@ -43,7 +42,7 @@ export const TableOfContents = ({ contentHtml }: Props) => {
       },
       {
         rootMargin: "-100px 0px -66% 0px",
-      }
+      },
     );
 
     // Observe all headings

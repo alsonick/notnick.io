@@ -14,7 +14,6 @@ import React from "react";
 
 /*
 I've decided to remove the page load animation across all pages. Instead of manually removing every instance of the <Animation /> component, I simply wrapped its contents in an empty fragment (<>...</>), effectively disabling it without changing each individual usage.
-
 */
 
 export const Animate = (props: { children?: React.ReactNode }) => {

@@ -4,10 +4,7 @@ import { LinkButton } from "./LinkButton";
 import { DOMAIN } from "../lib/constants";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
-import { page } from "../lib/page";
-import { LinkT } from "./Link";
 import { Text } from "./Text";
-import { Note } from "./Note";
 
 export const Community = () => {
   return (
@@ -23,14 +20,6 @@ export const Community = () => {
           Join Discord Community <FiExternalLink className={ICON} />
         </LinkButton>
       </div>
-      {/* <div className="mt-6">
-        <Note>
-          To maintain a safe environment for all members, it is important that
-          you carefully review and accept the server guidelines and{" "}
-          <LinkT href={page.community.rules.link}>community rules</LinkT> upon
-          joining the community server.
-        </Note>
-      </div> */}
     </Section>
   );
 };
