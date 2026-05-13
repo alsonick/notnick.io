@@ -1,16 +1,13 @@
-import { CITY, COUNTRY, FIRST_NAME, PRONOUNS } from "../lib/constants";
+import { FIRST_NAME, PRONOUNS } from "../lib/constants";
 import { TypeAnimation } from "react-type-animation";
-import { FiNavigation } from "react-icons/fi";
 import { fireworks } from "../lib/fireworks";
 import { Heading } from "./Heading";
 import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
-import { Tag } from "./Tag";
 
 // Next.js
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export const Main = () => {
   const { query } = useRouter();

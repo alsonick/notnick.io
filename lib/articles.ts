@@ -162,4 +162,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "The Art of Writing Meaningful Git Commit Messages",
+    type: "Resource",
+    link: "https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49",
+    authors: ["theurikarue"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Resource",
+      },
+    ],
+  },
 ];
