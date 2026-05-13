@@ -69,7 +69,7 @@ export const About = () => {
           </LinkTag>
           . I also enjoy playing the <b>piano</b> in my free time, with{" "}
           <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
-            ragtime
+            Ragtime
           </LinkTag>{" "}
           being my favorite genre to play.
         </Text>
