@@ -45,9 +45,10 @@ export default async function handler(req: NextRequest) {
     await Promise.all([interRegular, interBold, interExtraBold]);
   const avatarSrc = new URL("/Chibi.jpg", req.url).toString();
 
-  const W = 1200;
-  const H = 630;
-  const s = (n: number) => n;
+  const SCALE = 1.5;
+  const W = 1200 * SCALE;
+  const H = 630 * SCALE;
+  const s = (n: number) => Math.round(n * SCALE);
 
   const meta = [date, mins ? `${mins} min read` : null]
     .filter(Boolean)
@@ -62,26 +63,13 @@ export default async function handler(req: NextRequest) {
         flexDirection: "column",
         backgroundColor: "#0a0a0a",
         backgroundImage:
-          "radial-gradient(circle at 92% 8%, rgba(48,209,88,0.22), transparent 45%), radial-gradient(circle at 6% 96%, rgba(48,209,88,0.14), transparent 50%), linear-gradient(180deg, #0a0a0a 0%, #050505 100%)",
+          "radial-gradient(ellipse 60% 50% at 50% 120%, rgba(48,209,88,0.10), transparent 70%), linear-gradient(180deg, #0e0e10 0%, #060608 100%)",
         padding: `${s(72)}px ${s(80)}px`,
         fontFamily: "Inter",
         color: "#ffffff",
         position: "relative",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: s(6),
-          display: "flex",
-          backgroundImage:
-            "linear-gradient(90deg, #30D158 0%, #25A244 50%, transparent 100%)",
-        }}
-      />
-
       <div
         style={{
           display: "flex",
@@ -94,13 +82,14 @@ export default async function handler(req: NextRequest) {
             style={{
               display: "flex",
               alignItems: "center",
-              padding: `${s(10)}px ${s(22)}px`,
+              padding: `${s(8)}px ${s(18)}px`,
               borderRadius: 999,
-              backgroundColor: "rgba(148,163,184,0.12)",
-              color: "#cbd5e1",
-              fontSize: s(24),
+              border: "1px solid rgba(148,163,184,0.18)",
+              backgroundColor: "rgba(148,163,184,0.06)",
+              color: "#e2e8f0",
+              fontSize: s(22),
               fontWeight: 700,
-              letterSpacing: s(1),
+              letterSpacing: s(0.5),
             }}
           >
             {tag}
@@ -114,11 +103,22 @@ export default async function handler(req: NextRequest) {
             display: "flex",
             alignItems: "center",
             color: "#94a3b8",
-            fontSize: s(26),
+            fontSize: s(24),
             fontWeight: 700,
             letterSpacing: s(0.5),
           }}
         >
+          <div
+            style={{
+              display: "flex",
+              width: s(8),
+              height: s(8),
+              borderRadius: "50%",
+              backgroundColor: "#30D158",
+              marginRight: s(10),
+              boxShadow: `0 0 ${s(10)}px rgba(48,209,88,0.8)`,
+            }}
+          />
           notnick.io
         </div>
       </div>
@@ -163,11 +163,18 @@ export default async function handler(req: NextRequest) {
 
       <div
         style={{
+          height: s(1),
+          display: "flex",
+          backgroundImage:
+            "linear-gradient(90deg, transparent 0%, rgba(148,163,184,0.25) 20%, rgba(148,163,184,0.25) 80%, transparent 100%)",
+          marginBottom: s(28),
+        }}
+      />
+      <div
+        style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          paddingTop: s(28),
-          borderTop: `${s(1)}px solid rgba(148,163,184,0.18)`,
         }}
       >
         <div
