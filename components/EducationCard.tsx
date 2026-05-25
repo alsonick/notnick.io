@@ -40,7 +40,7 @@ export const EducationCard = (props: Props) => {
               <Text>{`${props.education.start} - ${props.education.finish} ${
                 props.education.finish - new Date().getFullYear() >= 1
                   ? "(Present)"
-                  : "(Graduated)"
+                  : ""
               }`}</Text>{" "}
             </div>
             <h1 className="text-2xl font-bold dark:text-white">
