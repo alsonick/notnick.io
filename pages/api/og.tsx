@@ -43,7 +43,6 @@ export default async function handler(req: NextRequest) {
 
   const [interRegularData, interBoldData, interExtraBoldData] =
     await Promise.all([interRegular, interBold, interExtraBold]);
-  const avatarSrc = new URL("/Chibi.jpg", req.url).toString();
 
   const SCALE = 1.5;
   const W = 1200 * SCALE;
@@ -70,58 +69,25 @@ export default async function handler(req: NextRequest) {
         position: "relative",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        {tag ? (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              padding: `${s(8)}px ${s(18)}px`,
-              borderRadius: 999,
-              border: "1px solid rgba(148,163,184,0.18)",
-              backgroundColor: "rgba(148,163,184,0.06)",
-              color: "#e2e8f0",
-              fontSize: s(22),
-              fontWeight: 700,
-              letterSpacing: s(0.5),
-            }}
-          >
-            {tag}
-          </div>
-        ) : (
-          <div />
-        )}
-
+      {tag ? (
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            color: "#94a3b8",
-            fontSize: s(24),
+            alignSelf: "flex-start",
+            padding: `${s(8)}px ${s(18)}px`,
+            borderRadius: 999,
+            border: "1px solid rgba(148,163,184,0.18)",
+            backgroundColor: "rgba(148,163,184,0.06)",
+            color: "#e2e8f0",
+            fontSize: s(22),
             fontWeight: 700,
             letterSpacing: s(0.5),
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              width: s(8),
-              height: s(8),
-              borderRadius: "50%",
-              backgroundColor: "#30D158",
-              marginRight: s(10),
-              boxShadow: `0 0 ${s(10)}px rgba(48,209,88,0.8)`,
-            }}
-          />
-          notnick.io
+          {tag}
         </div>
-      </div>
+      ) : null}
 
       <div
         style={{
@@ -186,21 +152,6 @@ export default async function handler(req: NextRequest) {
             color: "#ffffff",
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element -- @vercel/og uses Satori, not next/image */}
-          <img
-            src={avatarSrc}
-            width={s(40)}
-            height={s(40)}
-            alt=""
-            style={{
-              width: s(40),
-              height: s(40),
-              borderRadius: "50%",
-              objectFit: "cover",
-              marginRight: s(14),
-              boxShadow: `0 0 0 ${s(2)}px rgba(48,209,88,0.55)`,
-            }}
-          />
           {FULL_NAME}
         </div>
         {meta ? (
