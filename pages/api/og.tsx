@@ -45,10 +45,9 @@ export default async function handler(req: NextRequest) {
     await Promise.all([interRegular, interBold, interExtraBold]);
   const avatarSrc = new URL("/Chibi.jpg", req.url).toString();
 
-  const SCALE = 2;
-  const W = 1200 * SCALE;
-  const H = 630 * SCALE;
-  const s = (n: number) => n * SCALE;
+  const W = 1200;
+  const H = 630;
+  const s = (n: number) => n;
 
   const meta = [date, mins ? `${mins} min read` : null]
     .filter(Boolean)
