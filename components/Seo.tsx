@@ -43,7 +43,7 @@ export const Seo = (props: Props) => {
         <meta property="og:description" content={props.description} />
         <meta property="og:image" content={ogImageUrl} />
         <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="600" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={DOMAIN} />
         <meta property="og:url" content={`https://${DOMAIN}/`} />
