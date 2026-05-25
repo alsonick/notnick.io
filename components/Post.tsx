@@ -169,11 +169,29 @@ export const Post = (props: Props) => {
     }
   }, [contentWithEmbeds]);
 
+  const ogCover = useMemo(() => {
+    if (props.post.cover) return props.post.cover;
+    const params = new URLSearchParams({ title: props.post.title });
+    if (props.post.description) params.set("description", props.post.description);
+    if (props.post.tag) params.set("tag", props.post.tag);
+    if (props.post.date) params.set("date", props.post.date);
+    if (props.post.mins) params.set("mins", props.post.mins);
+    return `/api/og?${params.toString()}`;
+  }, [
+    props.post.cover,
+    props.post.title,
+    props.post.description,
+    props.post.tag,
+    props.post.date,
+    props.post.mins,
+  ]);
+
   return (
     <>
       <Seo
         title={`${props.post.title} - ${FULL_NAME}`}
         description={props.post.description}
+        cover={ogCover}
       />
       <Layout>
         <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
