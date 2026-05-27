@@ -58,7 +58,7 @@ export const ExperienceCard = (props: Experience) => {
               </>
             )}
           </div>
-          <p className="text-sm text-gray-600 dark:text-gray-400 sm:text-right whitespace-nowrap sm:mt-2">
+          <p className="text-sm text-gray-600 dark:text-gray-300 sm:text-right whitespace-nowrap sm:mt-2">
             {getExperienceDurationString(props)}
           </p>
         </div>
