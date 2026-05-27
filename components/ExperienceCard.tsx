@@ -1,3 +1,4 @@
+import { getExperienceDurationString } from "../lib/get-experience-duration-string";
 import { getEmploymentTypeString } from "../lib/get-employment-type-string";
 import { FiExternalLink, FiMapPin } from "react-icons/fi";
 import { Experience } from "../types/experience";
@@ -35,24 +36,31 @@ export const ExperienceCard = (props: Experience) => {
         <div></div>
       )}
       <div className="sm:ml-8 ml-0 w-full text-center sm:text-left">
-        <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start mb-3 sm:mb-0">
-          <div className="flex items-center justify-center">
-            <h1 className="text-2xl font-bold dark:text-white">{props.name}</h1>
-            {props.showCurrentStatus ? (
-              <div className="ml-3">
-                {props.current && <Tag title="Current" type="success" />}
-              </div>
-            ) : null}
+        <div className="flex w-full items-center sm:items-start sm:flex-row flex-col sm:justify-between mb-3 sm:mb-0 gap-2">
+          <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start">
+            <div className="flex items-center justify-center">
+              <h1 className="text-2xl font-bold dark:text-white">
+                {props.name}
+              </h1>
+              {props.showCurrentStatus ? (
+                <div className="ml-3">
+                  {props.current && <Tag title="Current" type="success" />}
+                </div>
+              ) : null}
+            </div>
+            {props.showCurrentStatus && (
+              <>
+                {props.discontinued && (
+                  <p className="sm:ml-3 sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
+                    discontinued
+                  </p>
+                )}
+              </>
+            )}
           </div>
-          {props.showCurrentStatus && (
-            <>
-              {props.discontinued && (
-                <p className="sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
-                  discontinued
-                </p>
-              )}
-            </>
-          )}
+          <p className="text-sm text-gray-600 dark:text-gray-400 sm:text-right whitespace-nowrap sm:mt-2">
+            {getExperienceDurationString(props)}
+          </p>
         </div>
         <Text>
           {props.description} &bull; {getEmploymentTypeString(props)} &bull;{" "}

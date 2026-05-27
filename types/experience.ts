@@ -12,14 +12,43 @@ export interface Experience {
     | "voluntary"
     | "temporary"
     | "contract";
+  startMonth:
+    | ""
+    | "jan"
+    | "feb"
+    | "mar"
+    | "apr"
+    | "may"
+    | "jun"
+    | "jul"
+    | "aug"
+    | "sep"
+    | "oct"
+    | "nov"
+    | "dec";
+  endMonth:
+    | ""
+    | "jan"
+    | "feb"
+    | "mar"
+    | "apr"
+    | "may"
+    | "jun"
+    | "jul"
+    | "aug"
+    | "sep"
+    | "oct"
+    | "nov"
+    | "dec";
+  startYear: number;
   location: string;
   current: boolean;
   feature: boolean;
   remote: boolean;
+  endYear: number;
   filter: string;
   logo?: string;
   note?: string;
-  year: number;
   slug: string;
   task: string;
   link: string;

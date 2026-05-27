@@ -34,15 +34,18 @@ const Experience: NextPage = () => {
       discontinued: false,
       description: "",
       current: false,
+      startMonth: "",
       remote: false,
       feature: true,
+      endMonth: "",
       location: "",
+      startYear: 0,
+      endYear: 0,
       name: "",
       task: "",
       link: "",
       logo: "",
       slug: "",
-      year: 0,
     },
   ];
 
@@ -53,14 +56,17 @@ const Experience: NextPage = () => {
       employmentType: experience.employmentType,
       discontinued: experience.discontinued,
       description: experience.description,
+      startMonth: experience.startMonth,
+      startYear: experience.startYear,
       location: experience.location,
+      endMonth: experience.endMonth,
+      endYear: experience.endYear,
       current: experience.current,
       feature: experience.feature,
       remote: experience.remote,
       id: generateRandomId(),
       note: experience.note,
       name: experience.name,
-      year: experience.year,
       logo: experience.logo,
       link: experience.link,
       task: experience.task,
@@ -69,7 +75,7 @@ const Experience: NextPage = () => {
   });
 
   const [selected, setSelected] = useState(
-    capitalizeFirstLetter(types[0].filter)
+    capitalizeFirstLetter(types[0].filter),
   );
 
   const filteredBlogsList = types.filter((type) => type.filter === selected);
