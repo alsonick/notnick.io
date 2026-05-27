@@ -10,7 +10,7 @@ import { Listening } from "../components/Listening";
 import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
-import { Layout } from "../components/Layout";
+// import { Layout } from "../components/Layout";
 import { Music } from "../components/Music";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
           <Technologies />
           <Education />
           {/* <Projects /> */}
-          <Music />
+          {/* <Music /> */}
           <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />
           <Contact />
