@@ -48,7 +48,7 @@ export const ExperienceCard = (props: Experience) => {
                 </div>
               ) : null}
             </div>
-            {props.showCurrentStatus && (
+            {/* {props.showCurrentStatus && (
               <>
                 {props.discontinued && (
                   <p className="sm:ml-3 sm:mt-0 mt-3 uppercase text-xs text-red-500 font-bold tracking-widest">
@@ -56,7 +56,7 @@ export const ExperienceCard = (props: Experience) => {
                   </p>
                 )}
               </>
-            )}
+            )} */}
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 sm:text-right whitespace-nowrap sm:mt-2">
             {getExperienceDurationString(props)}

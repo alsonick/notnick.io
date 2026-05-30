@@ -12,6 +12,8 @@ export const getEmploymentTypeString = (props?: Experience) => {
       return "Full-Time";
     case "internship":
       return "Internship";
+    case "virtual-internship":
+      return "Virtual Internship";
     case "part-time":
       return "Part-Time";
     case "self-employed":

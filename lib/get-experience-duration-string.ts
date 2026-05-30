@@ -49,10 +49,10 @@ export const getExperienceDurationString = (experience: Experience): string => {
     : formatEndpoint(experience.endMonth, experience.endYear);
 
   const startMonthIdx = MONTH_INDEX[experience.startMonth] ?? 0;
-  const totalMonths =
-    (endYear - experience.startYear) * 12 +
-    (endMonthIdx - startMonthIdx) +
-    1;
+  const monthSpan =
+    (endYear - experience.startYear) * 12 + (endMonthIdx - startMonthIdx);
+  // Elapsed months between start and end, floored at 1 mo.
+  const totalMonths = Math.max(monthSpan, 1);
 
   if (totalMonths <= 0) {
     return `${start} - ${end}`;
