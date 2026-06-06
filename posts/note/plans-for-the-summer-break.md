@@ -36,7 +36,7 @@ Here are a list of my goals:
 - Improve my DSA (Data Structures Algorithms) skills
 - Solve 200-300 LeetCode questions
 - Become more proficient with industry leading AI tools
-- Learn the Rust programming language as a hobby
+- Learn the Golang
 - Learn Systems Design
 
 ### Conclusion
