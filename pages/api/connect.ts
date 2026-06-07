@@ -34,98 +34,127 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  const body = req.body;
+  try {
+    const body = req.body;
 
-  const CHARACTER_LIMIT = 500;
-  const RATE_LIMIT_TIME = 30 * 60 * 1000;
+    const CHARACTER_LIMIT = 500;
+    const RATE_LIMIT_TIME = 30 * 60 * 1000;
 
-  if (!body) {
-    return res
-      .status(400)
-      .send({ success: false, error: "Please include the body." });
-  }
+    if (!body) {
+      return res
+        .status(400)
+        .json({ success: false, error: "Please include the body." });
+    }
 
-  interface Body {
-    message?: string | undefined;
-    email?: string | undefined;
-  }
+    interface Body {
+      message?: string | undefined;
+      email?: string | undefined;
+    }
 
-  const { email, message } = body as Body;
+    const { email, message } = body as Body;
 
-  if (
-    !email
-      ?.toLowerCase()
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-      )
-  ) {
-    return res
-      .status(400)
-      .send({ success: false, error: "Please include a valid email." });
-  }
+    if (
+      !email
+        ?.toLowerCase()
+        .match(
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        )
+    ) {
+      return res
+        .status(400)
+        .json({ success: false, error: "Please include a valid email." });
+    }
 
-  if (!email || !message) {
-    return res
-      .status(400)
-      .send({ success: false, error: "Please include all the fields." });
-  }
+    if (!email || !message) {
+      return res
+        .status(400)
+        .json({ success: false, error: "Please include all the fields." });
+    }
 
-  if (message.length > CHARACTER_LIMIT) {
-    return res.status(400).send({
-      success: false,
-      error: `You can only have ${CHARACTER_LIMIT} characters.`,
-    });
-  }
+    if (message.length > CHARACTER_LIMIT) {
+      return res.status(400).json({
+        success: false,
+        error: `You can only have ${CHARACTER_LIMIT} characters.`,
+      });
+    }
 
-  const lastRequestTime = rateLimitStore[email];
+    const lastRequestTime = rateLimitStore[email];
 
-  if (lastRequestTime && Date.now() - lastRequestTime < RATE_LIMIT_TIME) {
-    const timeLeft = Math.ceil(
-      (RATE_LIMIT_TIME - (Date.now() - lastRequestTime)) / 1000 / 60,
-    );
-    return res.status(429).send({
-      success: false,
-      error: `RATE LIMIT: Please wait ${timeLeft} more minute(s) before sending another request.`,
-    });
-  }
+    if (lastRequestTime && Date.now() - lastRequestTime < RATE_LIMIT_TIME) {
+      const timeLeft = Math.ceil(
+        (RATE_LIMIT_TIME - (Date.now() - lastRequestTime)) / 1000 / 60,
+      );
+      return res.status(429).json({
+        success: false,
+        error: `RATE LIMIT: Please wait ${timeLeft} more minute(s) before sending another request.`,
+      });
+    }
 
-  rateLimitStore[email] = Date.now();
+    if (!process.env.DISCORD_WEBHOOK_URL) {
+      console.error("DISCORD_WEBHOOK_URL is not set.");
+      return res.status(500).json({
+        success: false,
+        error: "Server misconfigured: DISCORD_WEBHOOK_URL is not set.",
+      });
+    }
 
-  // Email is sent in parallel but treated as best-effort — the response
-  // succeeds as long as the Discord webhook does.
-  const [discordResult] = await Promise.allSettled([
-    fetch(process.env.DISCORD_WEBHOOK_URL!, {
-      method: "POST",
-      body: JSON.stringify({
-        embeds: [
-          {
-            author: {
-              name: `New message | ${email}`,
+    rateLimitStore[email] = Date.now();
+
+    // Email is sent in parallel but treated as best-effort — the response
+    // succeeds as long as the Discord webhook does.
+    const [discordResult] = await Promise.allSettled([
+      fetch(process.env.DISCORD_WEBHOOK_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          embeds: [
+            {
+              author: {
+                name: `New message | ${email}`,
+              },
+              color: 0x30d158,
+              description: message,
+              fields: [],
             },
-            color: 0x30d158,
-            description: message,
-            fields: [],
-          },
-        ],
+          ],
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }),
-    sendEmailNotification(email, message),
-  ]);
+      sendEmailNotification(email, message),
+    ]);
 
-  const discordOk =
-    discordResult.status === "fulfilled" && discordResult.value.status < 400;
-
-  if (!discordOk) {
     if (discordResult.status === "rejected") {
       console.error("Discord webhook threw:", discordResult.reason);
+      return res.status(502).json({
+        success: false,
+        error: `Failed to reach Discord: ${
+          discordResult.reason instanceof Error
+            ? discordResult.reason.message
+            : String(discordResult.reason)
+        }`,
+      });
     }
-    return res
-      .status(502)
-      .send({ success: false, error: "Something went wrong." });
-  }
 
-  return res.status(200).send({ success: true });
+    if (discordResult.value.status >= 400) {
+      const detail = await discordResult.value.text().catch(() => "");
+      console.error(
+        "Discord webhook error:",
+        discordResult.value.status,
+        detail,
+      );
+      return res.status(502).json({
+        success: false,
+        error: `Discord returned ${discordResult.value.status}.`,
+      });
+    }
+
+    return res.status(200).json({ success: true });
+  } catch (err) {
+    console.error("/api/connect failed:", err);
+    return res.status(500).json({
+      success: false,
+      error: err instanceof Error ? err.message : "Internal server error.",
+    });
+  }
 }
