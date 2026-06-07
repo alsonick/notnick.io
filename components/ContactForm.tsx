@@ -44,36 +44,30 @@ export const ContactForm = () => {
 
     setLoading(true);
 
-    const response: { success: boolean; error?: string | undefined } =
-      await fetch("/api/connect", {
+    try {
+      const res = await fetch("/api/connect", {
         method: "POST",
         body: JSON.stringify({ email, message }),
         headers: {
           "Content-Type": "application/json",
         },
-      })
-        .then((res) => res.json())
-        .catch((error) => {
-          setLoading(false);
-          setError(error);
-          return;
-        });
+      });
 
-    if (!response.success) {
+      const response: { success: boolean; error?: string | undefined } =
+        await res.json();
+
+      if (response.success) {
+        setSuccess("Thanks! I've received the message.");
+        setMessage("");
+        setEmail("");
+      } else {
+        setError(response.error ?? "Something went wrong.");
+      }
+    } catch {
+      setError("Something went wrong. Please try again.");
+    } finally {
       setLoading(false);
-      setError(response.error ?? "Something went wrong.");
-      return;
     }
-
-    if (response.success) {
-      setLoading(false);
-      setSuccess("Thanks! I've received the message.");
-      setMessage("");
-      setEmail("");
-      return;
-    }
-
-    setError(response.error!);
   };
 
   return (
