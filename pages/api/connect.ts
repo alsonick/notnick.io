@@ -100,8 +100,6 @@ export default async function handler(
 
     rateLimitStore[email] = Date.now();
 
-    // Email is sent in parallel but treated as best-effort — the response
-    // succeeds as long as the Discord webhook does.
     const [discordResult] = await Promise.allSettled([
       fetch(process.env.DISCORD_WEBHOOK_URL, {
         method: "POST",
