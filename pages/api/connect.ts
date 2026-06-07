@@ -4,7 +4,31 @@ import { EMAIL_ADDRESS } from "../../lib/constants";
 
 const rateLimitStore: { [key: string]: number } = {};
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Email is best-effort: a missing key or a failed send must never break the
+// request as long as the Discord webhook succeeds.
+async function sendEmailNotification(email: string, message: string) {
+  if (!process.env.RESEND_API_KEY) {
+    console.warn("RESEND_API_KEY not set; skipping email notification.");
+    return;
+  }
+
+  try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const { error } = await resend.emails.send({
+      from: "Contact Form <onboarding@resend.dev>",
+      to: EMAIL_ADDRESS,
+      replyTo: email,
+      subject: `New message from ${email}`,
+      text: message,
+    });
+
+    if (error) {
+      console.error("Resend error:", error);
+    }
+  } catch (err) {
+    console.error("Resend threw:", err);
+  }
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -67,7 +91,9 @@ export default async function handler(
 
   rateLimitStore[email] = Date.now();
 
-  const [discordResponse, emailResult] = await Promise.all([
+  // Email is sent in parallel but treated as best-effort — the response
+  // succeeds as long as the Discord webhook does.
+  const [discordResult] = await Promise.allSettled([
     fetch(process.env.DISCORD_WEBHOOK_URL!, {
       method: "POST",
       body: JSON.stringify({
@@ -86,21 +112,19 @@ export default async function handler(
         "Content-Type": "application/json",
       },
     }),
-    resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: EMAIL_ADDRESS,
-      replyTo: email,
-      subject: `New message from ${email}`,
-      text: message,
-    }),
+    sendEmailNotification(email, message),
   ]);
 
-  if (emailResult.error) {
-    console.error("Resend error:", emailResult.error);
-  }
+  const discordOk =
+    discordResult.status === "fulfilled" && discordResult.value.status < 400;
 
-  if (discordResponse.status >= 400 || emailResult.error) {
-    return res.send({ success: false, error: "Something went wrong." });
+  if (!discordOk) {
+    if (discordResult.status === "rejected") {
+      console.error("Discord webhook threw:", discordResult.reason);
+    }
+    return res
+      .status(502)
+      .send({ success: false, error: "Something went wrong." });
   }
 
   return res.status(200).send({ success: true });
