@@ -1,5 +1,6 @@
 import { FeaturedArticles } from "../components/FeaturedArticles";
 import { Technologies } from "../components/Technologies";
+import { GitHubGraph } from "../components/GitHubGraph";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Experience } from "../components/Experience";
 import { NewsLetter } from "../components/Newsletter";
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
           <Experience />
           <Technologies />
           <Education />
+          <GitHubGraph />
           {/* <Projects /> */}
           <Music />
           <Community />
