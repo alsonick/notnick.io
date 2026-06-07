@@ -1,34 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Resend } from "resend";
-import { EMAIL_ADDRESS } from "../../lib/constants";
 
 const rateLimitStore: { [key: string]: number } = {};
-
-// Email is best-effort: a missing key or a failed send must never break the
-// request as long as the Discord webhook succeeds.
-async function sendEmailNotification(email: string, message: string) {
-  if (!process.env.RESEND_API_KEY) {
-    console.warn("RESEND_API_KEY not set; skipping email notification.");
-    return;
-  }
-
-  try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const { error } = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: EMAIL_ADDRESS,
-      replyTo: email,
-      subject: `New message from ${email}`,
-      text: message,
-    });
-
-    if (error) {
-      console.error("Resend error:", error);
-    }
-  } catch (err) {
-    console.error("Resend threw:", err);
-  }
-}
 
 export default async function handler(
   req: NextApiRequest,
@@ -100,8 +72,10 @@ export default async function handler(
 
     rateLimitStore[email] = Date.now();
 
-    const [discordResult] = await Promise.allSettled([
-      fetch(process.env.DISCORD_WEBHOOK_URL, {
+    let discordResponse: Response;
+
+    try {
+      discordResponse = await fetch(process.env.DISCORD_WEBHOOK_URL, {
         method: "POST",
         body: JSON.stringify({
           embeds: [
@@ -118,32 +92,23 @@ export default async function handler(
         headers: {
           "Content-Type": "application/json",
         },
-      }),
-      sendEmailNotification(email, message),
-    ]);
-
-    if (discordResult.status === "rejected") {
-      console.error("Discord webhook threw:", discordResult.reason);
+      });
+    } catch (err) {
+      console.error("Discord webhook threw:", err);
       return res.status(502).json({
         success: false,
         error: `Failed to reach Discord: ${
-          discordResult.reason instanceof Error
-            ? discordResult.reason.message
-            : String(discordResult.reason)
+          err instanceof Error ? err.message : String(err)
         }`,
       });
     }
 
-    if (discordResult.value.status >= 400) {
-      const detail = await discordResult.value.text().catch(() => "");
-      console.error(
-        "Discord webhook error:",
-        discordResult.value.status,
-        detail,
-      );
+    if (discordResponse.status >= 400) {
+      const detail = await discordResponse.text().catch(() => "");
+      console.error("Discord webhook error:", discordResponse.status, detail);
       return res.status(502).json({
         success: false,
-        error: `Discord returned ${discordResult.value.status}.`,
+        error: `Discord returned ${discordResponse.status}.`,
       });
     }
 
