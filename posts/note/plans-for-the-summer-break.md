@@ -5,7 +5,7 @@ description: "My second year of university is finally coming to an end, here are
 finished: true
 tag: "Life"
 mins: "6"
-last_updated_date: "2026-06-05"
+last_updated_date: "2026-06-07"
 filter: "Life"
 ---
 
@@ -36,8 +36,8 @@ Here are a list of my goals:
 - Improve my DSA (Data Structures Algorithms) skills
 - Solve 200-300 LeetCode questions
 - Become more proficient with industry leading AI tools
-- Learn the Golang
-- Learn Systems Design
+- Start to cover systems design concepts
+- Learn Golang
 
 ### Conclusion
 
