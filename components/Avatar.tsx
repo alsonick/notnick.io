@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { AVATAR, AVATAR_FILE_EXTENSION } from "../lib/constants";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 import { Border } from "./Border";
@@ -16,18 +17,19 @@ interface Props {
 
 const getAvatarSrc = (decoration?: "halloween" | "christmas") => {
   if (decoration === "halloween")
-    return "/branding/fun/discord/HalloweenChibi.jpg";
+    return `/branding/fun/discord/HalloweenAvatar.${AVATAR_FILE_EXTENSION}`;
   if (decoration === "christmas")
-    return "/branding/fun/discord/ChristmasChibi.jpg";
+    return `/branding/fun/discord/ChristmasAvatar.${AVATAR_FILE_EXTENSION}`;
 
   const month = new Date().getMonth() + 1;
   const day = new Date().getDate();
 
   if (month === 10 && day === 31)
-    return "/branding/fun/discord/HalloweenChibi.jpg";
-  if (month === 12) return "/branding/fun/discord/ChristmasChibi.jpg";
+    return `/branding/fun/discord/HalloweenAvatar.${AVATAR_FILE_EXTENSION}`;
+  if (month === 12)
+    return `/branding/fun/discord/ChristmasAvatar.${AVATAR_FILE_EXTENSION}`;
 
-  return "/Chibi.jpg";
+  return `/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
 };
 
 const STYLES = `
