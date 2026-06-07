@@ -43,3 +43,4 @@ yarn-error.log*
 
 # prisma
 /lib/generated/prisma
+.env*
