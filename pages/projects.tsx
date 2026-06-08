@@ -34,7 +34,7 @@ const Projects = () => {
             me.
           </Note>
           <div className="flex flex-col flex-1 mt-6">
-            <div className="mb-4 grid md:grid-cols-3 gap-4 sm:grid-cols-2">
+            <div className="mb-4 flex flex-col gap-4">
               {PROJECTS.map((project) => (
                 <ProjectCard
                   active={project.active}

@@ -11,7 +11,7 @@ export const Projects = () => {
     <Section>
       <Heading>Projects ⛓️</Heading>
       <Text>A collection of a few of my projects.</Text>
-      <div className="flex gap-2 flex-col md:flex-row justify-between mt-6">
+      <div className="flex flex-col gap-4 mt-6">
         {PROJECTS.slice(0, 3).map((project) => (
           <ProjectCard
             active={project.active}
