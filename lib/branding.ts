@@ -4,6 +4,18 @@ import { Branding } from "../types/branding";
 export const BRANDING: Branding[] = [
   {
     id: generateRandomId(),
+    path: "/Avatar",
+    ext: "png",
+    name: "Chibi Avatar",
+    dimensions: {
+      width: 900,
+      height: 900,
+    },
+    size: "438 KB",
+    resolution: 72,
+  },
+  {
+    id: generateRandomId(),
     path: "/branding/sig_avatar_one",
     ext: "png",
     name: "Sig Avatar One",
