@@ -12,6 +12,7 @@ import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
 import { Layout } from "../components/Layout";
+import { Hero } from "../components/Hero";
 import { Music } from "../components/Music";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo title={FULL_NAME} description={`${FULL_NAME} - ${PROFESSION}`} />
+      <Hero />
       <Layout isDisplaySpotify={isDisplaySpotify}>
         <Animate>
           <Main />

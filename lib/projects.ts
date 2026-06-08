@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/alsonick/tags.notnick.io",
     active: true,
     oss: true,
-    desc: "A YouTube utility metadata generator service that builds clean, properly formatted lyric tags and metadata for your videos in seconds.",
+    desc: "A YouTube utility metadata generator service that builds clean, formatted metadata for your lyric videos in seconds.",
   },
   {
     logo: "/project/branding/daily-walks.jpg",
