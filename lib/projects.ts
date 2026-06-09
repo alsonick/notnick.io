@@ -15,7 +15,7 @@ export const PROJECTS: Project[] = [
     desc: "A YouTube utility metadata generator service that builds clean, formatted metadata for your lyric videos in seconds.",
   },
   {
-    logo: "/project/branding/daily-walks.jpg",
+    logo: "/project/branding/daily-walks.png",
     name: "DailyWalks",
     id: generateRandomId(),
     site: "dailywalks.notnick.io",
