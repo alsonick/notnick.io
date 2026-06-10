@@ -12,6 +12,7 @@ export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
 export const BLOGS_DIR = `posts${page.blog.path}`;
 export const NOTES_DIR = `posts${page.note.path}`;
 export const DISCORD_ID = "463449066672619520";
+export const DISCORD_INVITE_CODE = "EAMyNzBSZT";
 export const SECONDARY_THEME_COLOR = "#25A244";
 export const PROFESSION = "Software Engineer";
 export const EMAIL_ADDRESS = "hi@notnick.io";
