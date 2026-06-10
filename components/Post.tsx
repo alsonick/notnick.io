@@ -1,4 +1,5 @@
-import { FiExternalLink, FiTwitter } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 import { DOMAIN, FULL_NAME } from "../lib/constants";
 import { TableOfContents } from "./TableOfContents";
 import { useMemo, useEffect, useRef } from "react";
@@ -217,7 +218,7 @@ export const Post = (props: Props) => {
                   title={`Share "${props.post.title}" on  X (Twitter).`}
                   target="_blank"
                 >
-                  <FiTwitter
+                  <FaXTwitter
                     className="text-gray-600 dark:text-gray-300 cursor-pointer
                     text-xl hover:text-black hover:dark:text-white duration-300"
                   />

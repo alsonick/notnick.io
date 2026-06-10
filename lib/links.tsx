@@ -1,4 +1,5 @@
-import { FiKey, FiGithub, FiTwitter, FiLinkedin } from "react-icons/fi";
+import { FiKey, FiGithub, FiLinkedin } from "react-icons/fi";
+import { FaXTwitter } from "react-icons/fa6";
 import { generateRandomId } from "./generate-random-id";
 import { social } from "./social-links";
 
@@ -19,7 +20,7 @@ export const LINKS = [
     id: generateRandomId(),
     title: social.x.name,
     href: social.x.link,
-    icon: <FiTwitter />,
+    icon: <FaXTwitter />,
   },
   {
     id: generateRandomId(),
