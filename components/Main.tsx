@@ -59,7 +59,7 @@ export const Main = () => {
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
           <Avatar
-            border={true}
+            border={false}
             width={135}
             height={125}
             decoration={decoration}

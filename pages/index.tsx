@@ -12,10 +12,10 @@ import { Contact } from "../components/Contact";
 import { Animate } from "../components/Animate";
 import { License } from "../components/License";
 import { Layout } from "../components/Layout";
-import { Hero } from "../components/Hero";
 import { Music } from "../components/Music";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
+import { Hero } from "../components/Hero";
 import { Seo } from "../components/Seo";
 import { useState } from "react";
 
