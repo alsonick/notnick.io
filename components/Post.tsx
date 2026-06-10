@@ -7,6 +7,7 @@ import { ProgressNotice } from "./ProgressNotice";
 import { social } from "../lib/social-links";
 import { FiArrowLeft } from "react-icons/fi";
 import { GitHubEmbed } from "./GitHubEmbed";
+import { CommunityCard } from "./Community";
 import { NewsLetter } from "./Newsletter";
 import { Post as P } from "../types/post";
 import { LinkTag } from "./LinkTag";
@@ -34,7 +35,7 @@ export const Post = (props: Props) => {
   const contentWithEmbeds = useMemo(() => {
     if (!props.post.contentHtml) return null;
 
-    const embedRegex = /<div data-embed="(tweet|github)"[^>]*><\/div>/g;
+    const embedRegex = /<div data-embed="(tweet|github|community)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -86,6 +87,8 @@ export const Post = (props: Props) => {
         if (ghUrl) {
           parts.push(<GitHubEmbed key={`github-${index}`} url={ghUrl} />);
         }
+      } else if (type === "community") {
+        parts.push(<CommunityCard key={`community-${index}`} />);
       }
 
       lastIndex = matchIndex + matchStr.length;
