@@ -65,7 +65,7 @@ export const Community = () => {
         <Note>
           By joining the server, you agree to the{" "}
           <LinkT href="/community/rules" title="Community Rules">
-            community rules
+            rules
           </LinkT>
           .
         </Note>
