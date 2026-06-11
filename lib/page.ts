@@ -151,4 +151,15 @@ export const page = {
     link: "/dev",
     name: "dev",
   },
+  group: {
+    apply: {
+      title: "Apply",
+      path: "/group/apply",
+      link: "/group/apply",
+      name: "apply",
+    },
+    path: "/group",
+    link: "/group",
+    name: "group",
+  },
 };
