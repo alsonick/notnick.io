@@ -5,7 +5,7 @@ description: "My second year of university is finally coming to an end, here are
 finished: true
 tag: "Life"
 mins: "6"
-last_updated_date: "2026-06-07"
+last_updated_date: "2026-06-15"
 filter: "Life"
 ---
 
@@ -37,7 +37,7 @@ Here are a list of my goals:
 - Solve 200-300 LeetCode questions
 - Become more proficient with industry leading AI tools
 - Start to cover systems design concepts
-- Learn Golang
+- Learn C++
 
 ### Conclusion
 
