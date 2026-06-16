@@ -129,6 +129,7 @@ while i < len(left) and j < len(right):
     else:
         array[k] = right[j]
         j += 1
+
     k += 1
 ```
 
@@ -162,6 +163,7 @@ while i < len(left) and j < len(right):
     else:
         array[k] = right[j]
         j += 1
+
     k += 1
 
 while i < len(left):
