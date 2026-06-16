@@ -68,6 +68,7 @@ merge_sort(right)
 ```py
 def merge_sort(array: List[int]):
     n = len(array)
+
     if n == 1:
         return array
 
