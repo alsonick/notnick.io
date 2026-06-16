@@ -49,6 +49,7 @@ After that, we want to recursively call our merge sort function. Let me define t
 ```py
 def merge_sort(array: List[int]):
     n = len(array)
+
     if n == 1:
         return array
 
@@ -58,7 +59,7 @@ def merge_sort(array: List[int]):
 
 Oh yeah, you might be wondering why we're checking if the length of the array is 1 and returning it. Well, if an array only has a single element then it's already sorted, so there's nothing for merge sort to do and we can just return it as is.
 
-Alright nice, we've done that, now we want recursively repeat the process for both the our left and right array.
+Alright nice, we've done that, now we want recursively repeat the process for both our left and right array.
 
 ```py
 merge_sort(left)
