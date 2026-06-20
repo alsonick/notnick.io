@@ -1,0 +1,39 @@
+---
+title: "Computer Networking"
+date: "2026-06-20"
+description: "My computer networking notes."
+finished: true
+tag: "Networking"
+mins: "C"
+last_updated_date: "2026-06-20"
+filter: "Networking"
+---
+
+## Computer Networking
+
+Computer networking has always been an interest of mine besides Software Engineering, it's actually the reason I studied IT in college, which covered a lot of networking concepts. Becoming a Network Engineer was always a career option for me, and I'm on a journey to learn as much as I can about it. I'm going to use this note to write about everything I pick up along the way. It'll be a continuous thing, so I'll be adding bits to it pretty much every day. If you spot any mistakes in my notes, please feel free to edit this note (scroll down for details).
+
+### What is a Computer Network?
+
+A computer network is a system of connected devices that communicate to exchange data and resources. These devices can be your phone, computer, printer, servers, and so on. They can be connected either wirelessly or through a wired connection. A good example of a computer network is your home, where all your devices connect to your router. This is what's known as a local area network (LAN), which I'll cover later.
+
+#### Key components of network
+
+- **Nodes** - The physical devices on a network.
+- **Connectivity Hardware** - The devices whose job is to route, filter and manage traffic across the network, so think Switches, Routers and Modems.
+- **Transmission Media** - The pathway that's used to transport data packets between connected nodes on a network.
+- **Protocols** - The established rules that specify exactly how data packets must be structured, transmitted and received.
+
+#### Types of Computer Network Architecture:
+
+The two primary types of network architecture are [Peer-to-Peer (P2P)](https://en.wikipedia.org/wiki/Peer-to-peer) and [Client-Server](https://en.wikipedia.org/wiki/Client%E2%80%93server_model).
+
+#### Client-Server
+
+A system where the client nodes request data or resources from a server. The client's job is to initiate the requests, while the server stores the data and resources and processes those requests. The main advantage of this system is that it gives you a centralized place for data management, along with better security control. One of the major disadvantages is that if the server fails, all the connected client nodes are affected by it.
+
+#### Peer-to-Peer
+
+A system where devices on a network can communicate directly with each other without relying on a central server. Think of your home network, where you can share any file with other connected devices. The main advantage of this system is that there isn't a single point of failure, unlike with the client-server architecture. One disadvantage is that it's harder to manage and secure, so it's probably not the best architecture if an organization needs to control the resources on their network.
+
+...
