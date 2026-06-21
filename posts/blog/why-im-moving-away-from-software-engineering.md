@@ -4,7 +4,7 @@ date: "2026-06-21"
 description: "Why I'm deciding not to pursue Software Engineering as a career path anymore and what I'll be doing instead."
 tag: "Career"
 mins: "7"
-finished: false
+finished: true
 last_updated_date: "2026-06-21"
 filter: "Career"
 ---
