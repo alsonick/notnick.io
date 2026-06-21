@@ -36,4 +36,22 @@ A system where the client nodes request data or resources from a server. The cli
 
 A system where devices on a network can communicate directly with each other without relying on a central server. Think of your home network, where you can share any file with other connected devices. The main advantage of this system is that there isn't a single point of failure, unlike with the client-server architecture. One disadvantage is that it's harder to manage and secure, so it's probably not the best architecture if an organization needs to control the resources on their network.
 
+### The OSI Model
+
+OSI stands for **Open Systems Interconnection**. It's a conceptual model that explains how data travels from one computer to another over a network. The OSI model breaks network communication down into **7 layers**, each with its own specific purpose.
+
+Here's a diagram of all the layers in the OSI model:
+
+![](/post/networking/osi_model.png)
+
+> I'll come to this to add explanations of all the layers.
+
 ...
+
+### The TCP/IP Model
+
+The **TCP/IP (Transmission Control Protocol/Internet Protocol)** model is the networking model that's actually used on the Internet, and it dictates how data is routed and received. It's simpler than the **OSI model** and only consists of **4 layers**.
+
+Here's the comparison between the OSI & TCP/IP model:
+
+![](/post/networking/osi_vs_tcpip.png)
