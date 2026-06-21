@@ -1,7 +1,7 @@
 ---
 title: "Why I'm moving away from Software Engineering"
 date: "2026-06-21"
-description: "Why I'm deciding not to pursue Software Engineering as a career path anymore and what I'll be doing instead."
+description: "I'm deciding not to pursue Software Engineering as a career."
 tag: "Career"
 mins: "7"
 finished: true
