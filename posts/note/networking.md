@@ -55,3 +55,5 @@ The **TCP/IP (Transmission Control Protocol/Internet Protocol)** model is the ne
 Here's the comparison between the OSI & TCP/IP model:
 
 ![](/post/networking/osi_vs_tcpip.png)
+
+...
