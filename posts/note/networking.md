@@ -56,4 +56,22 @@ Here's the comparison between the OSI & TCP/IP model:
 
 ![](/post/networking/osi_vs_tcpip.png)
 
-...
+### Network Topologies
+
+The two main types of network topologies:
+
+#### Physical Topology
+
+Refers to the physical arrangement of hardware such as devices, switches & cables, and how they're physically connected.
+
+#### Logical Topology
+
+Describes how data actually flows through a network, regardless of its physical layout.
+
+### Wired Network Topologies
+
+#### Ring Topology
+
+All devices on a network are connected in a circular fashion, where each node has exactly two neighbors. One drawback of a single ring is that there's a single point of failure, a single broken cable can disrupt the flow of the whole network. A dual ring solves this by adding a second connection so data can travel both ways, giving you redundancy and high availability.
+
+![](/post/networking/ring_topology.png)
