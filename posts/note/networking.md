@@ -5,7 +5,7 @@ description: "My computer networking notes."
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-06-20"
+last_updated_date: "2026-06-25"
 filter: "Networking"
 ---
 
@@ -75,3 +75,5 @@ Describes how data actually flows through a network, regardless of its physical 
 All devices on a network are connected in a circular fashion, where each node has exactly two neighbors. One drawback of a single ring is that there's a single point of failure, a single broken cable can disrupt the flow of the whole network. A dual ring solves this by adding a second connection so data can travel both ways, giving you redundancy and high availability.
 
 ![](/post/networking/ring_topology.png)
+
+...
