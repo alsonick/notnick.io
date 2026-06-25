@@ -38,14 +38,14 @@ const Home: NextPage = () => {
           <Experience />
           <Technologies />
           <Education />
-          <Projects />
-          <GitHubGraph />
+          {/* <Projects /> */}
+          {/* <GitHubGraph /> */}
           <Music />
           <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />
           <Contact />
           <License />
-          <Listening setActive={setPresenceActive} />
+          {/* <Listening setActive={setPresenceActive} /> */}
         </Animate>
       </Layout>
     </>
