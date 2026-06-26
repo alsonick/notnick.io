@@ -6,7 +6,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Aviato",
-    description: "Software Engineer Intern",
+    description: "Software Engineer",
     startYear: 2023,
     endYear: 2023,
     startMonth: "jan",
@@ -27,7 +27,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Lyrics Tags Generator",
-    description: "Founder & Software Engineer",
+    description: "Software Engineer",
     startYear: 2025,
     startMonth: "jan",
     endYear: 2026,
@@ -48,7 +48,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Watchou",
-    description: "Voluntary Software Engineer",
+    description: "Software Engineer",
     startYear: 2021,
     endYear: 2021,
     startMonth: "sep",
@@ -80,7 +80,7 @@ export const EXPERIENCE: Experience[] = [
     remote: true,
     current: false,
     link: "https://www.brightnetwork.co.uk/",
-    task: "Attending Bright Network's IEUK 2026: Technology & Engineering, a four-day virtual internship of skill-building sessions and an employer-set Sector Skills Project.",
+    task: "Attended Bright Network's IEUK 2026: Technology & Engineering, a four-day virtual internship of skill-building sessions and an employer-set Sector Skills Project.",
     filter: "Engineering",
     showCurrentStatus: true,
     slug: "bright-network",
