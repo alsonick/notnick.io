@@ -1,9 +1,13 @@
 import { FiMoon, FiSun } from "react-icons/fi";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RoundedBox } from "./RoundedBox";
+
+// Keep in sync with the `.theme-transition` duration in globals.css.
+const THEME_FADE_MS = 150;
 
 export const Toggle = () => {
   const [theme, setTheme] = useState<string | null>(null);
+  const fadeTimeout = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -29,9 +33,19 @@ export const Toggle = () => {
     localStorage.setItem("theme", newThemeToToggle);
     setTheme(newThemeToToggle);
 
+    const html = document.querySelector("html");
+
+    // Turn on the synchronized colour fade just for this toggle, then remove it
+    // so it doesn't affect hover/focus transitions afterwards.
+    html?.classList.add("theme-transition");
+    clearTimeout(fadeTimeout.current);
+    fadeTimeout.current = setTimeout(() => {
+      html?.classList.remove("theme-transition");
+    }, THEME_FADE_MS);
+
     newThemeToToggle === "light"
-      ? document.querySelector("html")?.classList.remove("dark")
-      : document.querySelector("html")?.classList.add("dark");
+      ? html?.classList.remove("dark")
+      : html?.classList.add("dark");
   };
 
   useEffect(() => {

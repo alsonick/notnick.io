@@ -25,8 +25,10 @@ export const About = () => {
           </b>{" "}
           hands-on experience building software applications. I specialize in
           full-stack development using <b>React</b>, <b>Python</b>, <b>Java</b>{" "}
-          & <b>TypeScript</b>. I&apos;m currently{" "}
-          <b>pursuing a degree in {SUBJECT_OF_STUDY}</b>.
+          & <b>TypeScript</b>. I&apos;m currently pursuing a degree in{" "}
+          <b>{SUBJECT_OF_STUDY}</b>. I&apos;m also
+          interested in networking, infrastructure & homelabbing, and I write
+          about these topics too.
         </Text>
       ),
       p2: (
