@@ -15,7 +15,6 @@ import { Layout } from "../components/Layout";
 import { Music } from "../components/Music";
 import { About } from "../components/About";
 import { Main } from "../components/Main";
-import { Hero } from "../components/Hero";
 import { Seo } from "../components/Seo";
 import { useState } from "react";
 
@@ -29,7 +28,6 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo title={FULL_NAME} description={`${FULL_NAME} - ${PROFESSION}`} />
-      <Hero />
       <Layout isDisplaySpotify={isDisplaySpotify}>
         <Animate>
           <Main />

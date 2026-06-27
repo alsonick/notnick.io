@@ -58,6 +58,34 @@
   }
 }
 
+/* Many elements use a bare `duration-*` utility with no `transition-*` utility, so
+   they fall back to CSS's native `ease` timing function. `ease` has a slow start,
+   which reads as a tiny lag before a hover effect begins. Default everything to
+   ease-out (fast start, decelerate) so those interactions feel immediate.
+
+   This only touches the bare-`duration` cases: any element that sets its own curve
+   via Tailwind's `transition`/`ease-*` utilities has class specificity (0,1,0) and
+   overrides this `*` rule (0,0,0). And it can't introduce new motion, since an
+   element with no `duration-*` has a 0s duration and never transitions. */
+* {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* When toggling the theme we add `.theme-transition` to <html> for the length of
+   the fade (see Toggle.tsx), then remove it. While it's present, every element
+   cross-fades its colours on the same 150ms curve as the page background, so the
+   text/borders/icons fade together instead of the text snapping. Gating it to the
+   toggle window keeps hover/focus transitions on their own snappier timings and
+   avoids a colour fade on initial page load. */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out,
+    border-color 150ms ease-in-out, fill 150ms ease-in-out,
+    stroke 150ms ease-in-out !important;
+}
+
 .wave {
   animation-name: wave-animation;
   animation-duration: 2.5s;

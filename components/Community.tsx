@@ -2,8 +2,6 @@ import { FiExternalLink } from "react-icons/fi";
 import { ICON } from "../lib/tailwindcss/icon";
 import { useState, useEffect } from "react";
 import { LinkButton } from "./LinkButton";
-import { LinkT } from "./Link";
-import { Note } from "./Note";
 import { DOMAIN } from "../lib/constants";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
@@ -70,13 +68,6 @@ export const Community = () => {
       </Text>
       <div className="flex flex-col mt-6">
         <CommunityCard />
-        <Note>
-          By joining the server, you agree to the{" "}
-          <LinkT href="/community/rules" title="Community Rules">
-            rules
-          </LinkT>
-          .
-        </Note>
       </div>
     </Section>
   );
