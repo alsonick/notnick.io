@@ -1,7 +1,9 @@
 import { FiExternalLink } from "react-icons/fi";
+import { RiVipDiamondFill } from "react-icons/ri";
 import { Education } from "../types/education";
 import { ICON } from "../lib/tailwindcss/icon";
 import { LinkButton } from "./LinkButton";
+import { Tooltip } from "react-tippy";
 import { Border } from "./Border";
 import { Text } from "./Text";
 
@@ -12,10 +14,15 @@ interface Props {
   education: Education;
 }
 
+const VISIBLE_SKILLS = 2;
+
 export const EducationCard = (props: Props) => {
+  const visibleSkills = props.education.skills.slice(0, VISIBLE_SKILLS);
+  const remaining = props.education.skills.length - VISIBLE_SKILLS;
+
   return (
     <div
-      className="flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6
+      className="flex flex-col w-full dark:bg-[#10161a]/50 rounded-lg p-6
       border border-teal-100 dark:border-teal-900 sm:hover:border-primary sm:dark:hover:border-primary duration-300 mb-6 z-10"
     >
       <div className="flex sm:flex-row flex-col items-center w-full justify-between">
@@ -59,6 +66,31 @@ export const EducationCard = (props: Props) => {
           Visit <FiExternalLink title="Visit" className={ICON} />
         </LinkButton>
       </div>
+      {props.education.skills.length > 0 && (
+        <div className="flex items-center justify-center sm:justify-start mt-5 pt-5 border-t border-teal-100 dark:border-teal-900">
+          <RiVipDiamondFill
+            title="Skills"
+            className="text-primary text-base shrink-0 mr-3 md:hover:scale-110 transition-transform duration-200 ease-out"
+          />
+          <Text>
+            {visibleSkills.join(", ")}
+            {remaining > 0 && (
+              <>
+                {" and "}
+                <Tooltip
+                  title={props.education.skills.join(", ")}
+                  position="top"
+                  animation="shift"
+                >
+                  <span className="font-medium text-gray-700 dark:text-gray-200 cursor-default border-b border-dotted border-gray-400 dark:border-gray-500">
+                    +{remaining} skill{remaining > 1 ? "s" : ""}
+                  </span>
+                </Tooltip>
+              </>
+            )}
+          </Text>
+        </div>
+      )}
     </div>
   );
 };

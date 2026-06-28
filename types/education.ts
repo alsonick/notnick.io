@@ -1,5 +1,6 @@
 export interface Education {
   graduated: boolean;
+  skills: string[];
   finish: number;
   degree: string;
   course: string;

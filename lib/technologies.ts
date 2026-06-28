@@ -77,4 +77,9 @@ export const TECHNOLOGIES: Technologies[] = [
     text: "MySQL",
     link: "https://www.mysql.com/",
   },
+  {
+    id: generateRandomId(),
+    text: "Claude",
+    link: "https://www.claude.com/",
+  },
 ];
