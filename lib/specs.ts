@@ -25,21 +25,23 @@ export const SPECS = [
       { id: generateRandomId(), key: "Chip", value: "Apple M2 Pro Chip" },
       { id: generateRandomId(), key: "Memory", value: "16GB" },
       { id: generateRandomId(), key: "Storage", value: "512GB SSD" },
+      { id: generateRandomId(), key: "OS", value: "macOS Tahoe" },
     ],
     sellingSoon: false,
   },
-  // {
-  //   id: generateRandomId(),
-  //   title: "Personal Home Server 🖥️",
-  //   list: [
-  //     { id: generateRandomId(), key: "CPU", value: "AMD Ryzen 5 PRO" },
-  //     { id: generateRandomId(), key: "GPU", value: "AMD Radeon Vega 11" },
-  //     { id: generateRandomId(), key: "Series", value: "HP ProDesk 405" },
-  //     { id: generateRandomId(), key: "Storage", value: "256GB SSD" },
-  //     { id: generateRandomId(), key: "OS", value: "Ubuntu Linux" },
-  //     { id: generateRandomId(), key: "RAM", value: "16GB" },
-  //   ],
-  // },
+  {
+    id: generateRandomId(),
+    title: "Home Server 🖥️",
+    list: [
+      { id: generateRandomId(), key: "CPU", value: "Core i5-8500T" },
+      { id: generateRandomId(), key: "GPU", value: "Intel UHD Graphics 630" },
+      { id: generateRandomId(), key: "Series", value: "Dell Optiplex 7060" },
+      { id: generateRandomId(), key: "Storage", value: "256GB SSD" },
+      { id: generateRandomId(), key: "OS", value: "Ubuntu" },
+      { id: generateRandomId(), key: "RAM", value: "16GB" },
+    ],
+    sellingSoon: false,
+  },
   {
     id: generateRandomId(),
     title: "Gear ⚙️",
@@ -79,5 +81,6 @@ export const SPECS = [
       { id: generateRandomId(), key: "Primary phone", value: "iPhone 15" },
       { id: generateRandomId(), key: "Secondary phone", value: "iPhone XR" },
     ],
+    sellingSoon: false,
   },
 ];
