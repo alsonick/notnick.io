@@ -6,12 +6,7 @@ import { Button } from "./Button";
 import { Avatar } from "./Avatar";
 import { Links } from "./Links";
 
-// Next.js
-import { useRouter } from "next/router";
-
 export const Main = () => {
-  const { query } = useRouter();
-  const decoration = query.decoration as "halloween" | "christmas" | undefined;
   const date = new Date();
 
   const confetti = () => {
@@ -62,7 +57,6 @@ export const Main = () => {
             border={false}
             width={135}
             height={125}
-            decoration={decoration}
             clickable={true}
           />
         </div>

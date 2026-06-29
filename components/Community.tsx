@@ -26,7 +26,7 @@ export const CommunityCard = () => {
       border border-teal-100 dark:border-teal-900 sm:hover:border-primary sm:dark:hover:border-primary duration-300 z-10"
     >
       <div className="flex sm:flex-row flex-col items-center w-full justify-between">
-        <div className="flex sm:flex-row flex-col items-center sm:mb-0">
+        <div className="flex mb-4 sm:flex-row flex-col items-center sm:mb-0">
           <div className="shrink-0">
             <Avatar border height={100} width={100} />
           </div>

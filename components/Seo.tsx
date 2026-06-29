@@ -4,6 +4,7 @@ import { fireworks } from "../lib/fireworks";
 import { social } from "../lib/social-links";
 
 // Next.js
+import { useRouter } from "next/router";
 import Script from "next/script";
 import Head from "next/head";
 
@@ -14,10 +15,12 @@ interface Props {
 }
 
 export const Seo = (props: Props) => {
+  const { query } = useRouter();
   const date = new Date();
   const ogImage = props.cover || "/og.png";
   const ogImageUrl = ogImage.startsWith("http") ? ogImage : `https://${DOMAIN}${ogImage}`;
   const month = date.getMonth() + 1;
+  const showSnow = (month >= 12 && date.getDate() >= 1) || query.decoration === "christmas";
 
   if (typeof window === "object") {
     if (
@@ -58,7 +61,7 @@ export const Seo = (props: Props) => {
         />
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
-      {month >= 12 && date.getDate() >= 1 ? (
+      {showSnow ? (
         <Script src="https://app.embed.im/snow.js" defer />
       ) : null}
     </>

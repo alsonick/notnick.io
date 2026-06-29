@@ -9,6 +9,7 @@ export const YEAR_STARTED_PROGRAMMING_PROFESSIONALLY = 2023;
 export const MUSIC_STREAMING_PLATFORM = "YouTube Music";
 export const SUBJECT_OF_STUDY = "Software Engineering";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
+export const CDN = "https://cdn.notnick.io/images";
 export const BLOGS_DIR = `posts${page.blog.path}`;
 export const NOTES_DIR = `posts${page.note.path}`;
 export const DISCORD_ID = "463449066672619520";

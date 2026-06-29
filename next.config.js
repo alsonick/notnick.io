@@ -6,6 +6,7 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "cdn.discordapp.com" },
       { protocol: "https", hostname: "i.scdn.co" },
+      { protocol: "https", hostname: "cdn.notnick.io" },
     ],
   },
 };

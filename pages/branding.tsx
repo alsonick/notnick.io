@@ -1,5 +1,7 @@
 import { computedAltTitleTag } from "../lib/computed-alt-title-tag";
-import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { FULL_NAME, PROFESSION, CDN } from "../lib/constants";
+import { Branding as BrandingType } from "../types/branding";
+import { getBranding } from "../lib/get-branding";
 import { Heading } from "../components/Heading";
 import { Animate } from "../components/Animate";
 import { ICON } from "../lib/tailwindcss/icon";
@@ -8,7 +10,6 @@ import { GoBack } from "../components/GoBack";
 import { Header } from "../components/Header";
 import { Layout } from "../components/Layout";
 import { FiDownload } from "react-icons/fi";
-import { BRANDING } from "../lib/branding";
 import { LinkT } from "../components/Link";
 import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
@@ -17,9 +18,13 @@ import { saveAs } from "file-saver";
 import { page } from "../lib/page";
 
 // Next.js
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 
-const Branding: NextPage = () => {
+interface Props {
+  branding: BrandingType[];
+}
+
+const Branding: NextPage<Props> = ({ branding: BRANDING }) => {
   return (
     <>
       <Seo
@@ -51,7 +56,7 @@ const Branding: NextPage = () => {
                 <picture>
                   <img
                     className="sm:w-fit w-full"
-                    src={`${branding.path}.${branding.ext}`}
+                    src={`${CDN}${branding.path}.${branding.ext}`}
                     title={computedAltTitleTag(branding.name)}
                     alt={computedAltTitleTag(branding.name)}
                   />
@@ -72,7 +77,10 @@ const Branding: NextPage = () => {
                   </div>
                   <Button
                     onClick={() => {
-                      saveAs(`${branding.path}.${branding.ext}`, branding.name);
+                      saveAs(
+                        `${CDN}${branding.path}.${branding.ext}`,
+                        branding.name,
+                      );
                     }}
                   >
                     Download <FiDownload className={ICON} />
@@ -86,6 +94,15 @@ const Branding: NextPage = () => {
       </Layout>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const branding = await getBranding();
+  return {
+    props: {
+      branding,
+    },
+  };
 };
 
 export default Branding;

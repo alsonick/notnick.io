@@ -1,10 +1,11 @@
+import { AVATAR, AVATAR_FILE_EXTENSION, CDN } from "../lib/constants";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { AVATAR, AVATAR_FILE_EXTENSION } from "../lib/constants";
 import { createPortal } from "react-dom";
 import { FiX } from "react-icons/fi";
 import { Border } from "./Border";
 
 // Next.js
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 interface Props {
@@ -16,20 +17,19 @@ interface Props {
 }
 
 const getAvatarSrc = (decoration?: "halloween" | "christmas") => {
-  if (decoration === "halloween")
-    return `/branding/fun/discord/HalloweenAvatar.${AVATAR_FILE_EXTENSION}`;
-  if (decoration === "christmas")
-    return `/branding/fun/discord/ChristmasAvatar.${AVATAR_FILE_EXTENSION}`;
+  const christmas = `${CDN}/branding/fun/discord/ChristmasAvatar.${AVATAR_FILE_EXTENSION}`;
+  const halloween = `${CDN}/branding/fun/discord/HalloweenAvatar.${AVATAR_FILE_EXTENSION}`;
+
+  if (decoration === "halloween") return halloween;
+  if (decoration === "christmas") return christmas;
 
   const month = new Date().getMonth() + 1;
   const day = new Date().getDate();
 
-  if (month === 10 && day === 31)
-    return `/branding/fun/discord/HalloweenAvatar.${AVATAR_FILE_EXTENSION}`;
-  if (month === 12)
-    return `/branding/fun/discord/ChristmasAvatar.${AVATAR_FILE_EXTENSION}`;
+  if (month === 10 && day === 31) return halloween;
+  if (month === 12) return christmas;
 
-  return `/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
+  return `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
 };
 
 const STYLES = `
@@ -89,28 +89,31 @@ const Lightbox = (props: LightboxProps) => {
         className={props.closing ? "lb-img-leave" : "lb-img-enter"}
       >
         <Image
+          src={props.src}
+          alt="My Chibi Avatar"
           className="rounded-full aspect-square object-cover"
           style={{ maxWidth: "90vw", maxHeight: "90vh" }}
-          title="My Chibi Avatar"
-          alt="My Chibi Avatar"
-          src={props.src}
-          quality={100}
           height={500}
           width={500}
+          quality={100}
         />
       </div>
     </div>
-  ) as unknown as import("react").ReactNode;
+  );
 
   return createPortal(content, document.body);
 };
 
 export const Avatar = (props: Props) => {
+  const { query } = useRouter();
   const [closing, setClosing] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const src = getAvatarSrc(props.decoration);
+  const decoration =
+    props.decoration ??
+    (query.decoration as "halloween" | "christmas" | undefined);
+  const src = getAvatarSrc(decoration);
 
   useEffect(() => {
     setMounted(true);

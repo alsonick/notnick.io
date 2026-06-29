@@ -1,5 +1,5 @@
-import { FiExternalLink } from "react-icons/fi";
 import { RiVipDiamondFill } from "react-icons/ri";
+import { FiExternalLink } from "react-icons/fi";
 import { Education } from "../types/education";
 import { ICON } from "../lib/tailwindcss/icon";
 import { LinkButton } from "./LinkButton";
@@ -72,7 +72,7 @@ export const EducationCard = (props: Props) => {
             title="Skills"
             className="text-primary text-base shrink-0 mr-3 md:hover:scale-110 transition-transform duration-200 ease-out"
           />
-          <Text>
+          <span className="text-gray-600 dark:text-gray-300 text-base">
             {visibleSkills.join(", ")}
             {remaining > 0 && (
               <>
@@ -88,7 +88,7 @@ export const EducationCard = (props: Props) => {
                 </Tooltip>
               </>
             )}
-          </Text>
+          </span>
         </div>
       )}
     </div>

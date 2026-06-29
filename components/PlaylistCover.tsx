@@ -1,4 +1,4 @@
-import { MUSIC_STREAMING_PLATFORM } from "../lib/constants";
+import { MUSIC_STREAMING_PLATFORM, CDN } from "../lib/constants";
 import { Music } from "../types/music";
 
 // Next.js
@@ -22,7 +22,7 @@ export const PlaylistCover = (props: Props) => {
       alt={`${
         props.playlist?.name || props.name
       } ${MUSIC_STREAMING_PLATFORM} Playlist Cover`}
-      src={props.playlist?.path || props.path}
+      src={`${CDN}${props.playlist?.path || props.path}`}
       height={props.height || 200}
       width={props.width || 200}
       quality={100}

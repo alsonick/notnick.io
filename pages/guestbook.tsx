@@ -1,9 +1,10 @@
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { CharacterLimit } from "../components/CharacterLimit";
-import { Props, Message } from "../types/guestbook";
 import { StatusMessage } from "../components/StatusMessage";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { UserAvatar } from "../components/UserAvatar";
 import relativeTime from "dayjs/plugin/relativeTime";
+import { Props, Message } from "../types/guestbook";
 import { FiSend, FiLogOut } from "react-icons/fi";
 import { TextArea } from "../components/TextArea";
 import { Heading } from "../components/Heading";
@@ -26,11 +27,16 @@ import dayjs from "dayjs";
 
 // Next.js
 import { GetServerSideProps, NextPage } from "next";
-import Image from "next/image";
 
 dayjs.extend(relativeTime);
 
 const CHARACTER_LIMIT = 200;
+
+// Usernames that get a verified checkmark next to their name.
+const VERIFIED_USERNAMES = ["heynickn", "reikolul"];
+
+const isVerified = (username: string) =>
+  VERIFIED_USERNAMES.includes(username.toLowerCase());
 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   const session = getSession(ctx.req);
@@ -160,16 +166,21 @@ const Guestbook: NextPage<Props> = ({
                 className="flex flex-col w-full dark:bg-[#10161a]/50 rounded-lg p-4 mb-6 duration-300 border border-teal-100 dark:border-teal-900"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <Image
+                  <UserAvatar
                     className="w-8 h-8 rounded-full"
                     src={session.avatar}
                     alt={session.name}
-                    width={32}
-                    height={32}
+                    size={32}
                   />
                   <div className="flex flex-col">
-                    <span className="font-semibold text-base dark:text-white">
+                    <span className="flex items-center gap-1 font-semibold text-base dark:text-white">
                       {session.name}
+                      {isVerified(session.username) && (
+                        <HiBadgeCheck
+                          className="text-primary"
+                          title="Verified"
+                        />
+                      )}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       @{session.username}
@@ -223,17 +234,22 @@ const Guestbook: NextPage<Props> = ({
                       : "border-gray-200 dark:border-gray-800 dark:bg-[#10161a]/30"
                   }`}
                 >
-                  <Image
+                  <UserAvatar
                     src={entry.avatar}
                     alt={entry.name}
-                    width={40}
-                    height={40}
+                    size={40}
                     className="w-10 h-10 rounded-full flex-shrink-0"
                   />
                   <div className="flex flex-col min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-semibold text-base dark:text-white">
+                      <span className="flex items-center gap-1 font-semibold text-base dark:text-white">
                         {entry.name}
+                        {isVerified(entry.username) && (
+                          <HiBadgeCheck
+                            className="text-primary"
+                            title="Verified"
+                          />
+                        )}
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-400">
                         @{entry.username}
