@@ -157,9 +157,9 @@ export const COMPONENTS: Components[] = [
     text: "Technology Card",
     component: (
       <TechnologyCard
-        link="https://www.java.com/en/"
+        link="https://www.python.org/"
         style={{ margin: 0 }}
-        text="Java"
+        text="Python"
       />
     ),
   },
