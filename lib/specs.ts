@@ -37,7 +37,7 @@ export const SPECS = [
       { id: generateRandomId(), key: "GPU", value: "Intel UHD Graphics 630" },
       { id: generateRandomId(), key: "Series", value: "Dell Optiplex 7060" },
       { id: generateRandomId(), key: "Storage", value: "256GB SSD" },
-      { id: generateRandomId(), key: "OS", value: "Ubuntu" },
+      { id: generateRandomId(), key: "OS", value: "Proxmox (Debian)" },
       { id: generateRandomId(), key: "RAM", value: "16GB" },
     ],
     sellingSoon: false,
