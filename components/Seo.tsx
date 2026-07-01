@@ -1,4 +1,14 @@
-import { DOMAIN, FULL_NAME, THEME } from "../lib/constants";
+import {
+  AVATAR,
+  AVATAR_FILE_EXTENSION,
+  CDN,
+  CITY,
+  DOMAIN,
+  EMAIL_ADDRESS,
+  FULL_NAME,
+  PROFESSION,
+  THEME,
+} from "../lib/constants";
 import { seoKeywords } from "../lib/seo-keywords";
 import { fireworks } from "../lib/fireworks";
 import { social } from "../lib/social-links";
@@ -15,10 +25,38 @@ interface Props {
 }
 
 export const Seo = (props: Props) => {
-  const { query } = useRouter();
+  const { query, asPath } = useRouter();
   const date = new Date();
   const ogImage = props.cover || "/og.png";
   const ogImageUrl = ogImage.startsWith("http") ? ogImage : `https://${DOMAIN}${ogImage}`;
+  const pagePath = asPath.split(/[?#]/)[0];
+  const pageUrl = `https://${DOMAIN}${pagePath === "/" ? "" : pagePath}`;
+  const avatarUrl = `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
+
+  const structuredData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: FULL_NAME,
+      alternateName: [DOMAIN, FULL_NAME.split(" ")[0]],
+      url: `https://${DOMAIN}`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: FULL_NAME,
+      url: `https://${DOMAIN}`,
+      image: avatarUrl,
+      jobTitle: PROFESSION,
+      email: `mailto:${EMAIL_ADDRESS}`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: CITY,
+        addressCountry: "GB",
+      },
+      sameAs: Object.values(social).map((s) => s.link),
+    },
+  ];
   const month = date.getMonth() + 1;
   const showSnow = (month >= 12 && date.getDate() >= 1) || query.decoration === "christmas";
 
@@ -37,7 +75,7 @@ export const Seo = (props: Props) => {
       <Head>
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
-        <link rel="canonical" href={`https://${DOMAIN}/`} />
+        <link rel="canonical" href={pageUrl} />
         <meta name="theme-color" content={THEME} />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -49,7 +87,7 @@ export const Seo = (props: Props) => {
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content={DOMAIN} />
-        <meta property="og:url" content={`https://${DOMAIN}/`} />
+        <meta property="og:url" content={pageUrl} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={props.title} />
         <meta name="twitter:description" content={props.description} />
@@ -59,6 +97,12 @@ export const Seo = (props: Props) => {
           name="twitter:site"
           content={`@${FULL_NAME.split(" ")[0].toLowerCase()}`}
         />
+        {pagePath === "/" ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          />
+        ) : null}
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
       {showSnow ? (
