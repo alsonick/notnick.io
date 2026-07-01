@@ -28,17 +28,23 @@ const url = (path: string, priority: string) => {
 };
 
 const generateSiteMap = () => {
-  const blogs = getAllPostSlugs(BLOGS_DIR).map(
-    ({ params }) => `${page.blog.path}/${params.slug}`
-  );
-  const notes = getAllPostSlugs(NOTES_DIR).map(
-    ({ params }) => `${page.note.path}/${params.slug}`
-  );
+  let posts: string[] = [];
+  try {
+    const blogs = getAllPostSlugs(BLOGS_DIR).map(
+      ({ params }) => `${page.blog.path}/${params.slug}`
+    );
+    const notes = getAllPostSlugs(NOTES_DIR).map(
+      ({ params }) => `${page.note.path}/${params.slug}`
+    );
+    posts = [...blogs, ...notes];
+  } catch (error) {
+    console.error("Failed to read posts for sitemap:", error);
+  }
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${STATIC_PATHS.map((path) => url(path, path === "/" ? "1.0" : "0.8")).join("\n")}
-${[...blogs, ...notes].map((path) => url(path, "0.6")).join("\n")}
+${posts.map((path) => url(path, "0.6")).join("\n")}
 </urlset>`;
 };
 

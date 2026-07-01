@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingIncludes: {
+    "/sitemap.xml": ["./posts/**/*"],
+  },
   images: {
     qualities: [99, 100],
     remotePatterns: [
