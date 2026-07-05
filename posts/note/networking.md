@@ -76,6 +76,16 @@ All devices on a network are connected in a circular fashion, where each node ha
 
 ![](/post/networking/ring_topology.png)
 
+#### Star Topology
+
+Star topologies are Local Area Networks (LAN) where devices are connected to a central device, usually a **switch** or **hub**. One advantage of this topology is that it's easy to manage, since adding or removing devices is quite straightforward. A drawback is that there's a single point of failure, so if the switch or hub fails then the entire network goes down.
+
+> Hubs aren't typically used nowadays and have largely been replaced by switches.
+
+![](/post/networking/star_topology.png)
+
+#### Mesh Topology
+
 ...
 
 <div data-embed="scrollup"></div>
