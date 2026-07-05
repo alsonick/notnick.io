@@ -1,4 +1,5 @@
 import { FULL_NAME } from "../../lib/constants";
+import { readTime } from "../../lib/read-time";
 import type { NextRequest } from "next/server";
 
 // Next.js
@@ -49,7 +50,7 @@ export default async function handler(req: NextRequest) {
   const H = 630 * SCALE;
   const s = (n: number) => Math.round(n * SCALE);
 
-  const meta = [date, mins ? `${mins} min read` : null]
+  const meta = [date, mins ? readTime(mins) : null]
     .filter(Boolean)
     .join("  ·  ");
 

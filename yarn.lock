@@ -1899,9 +1899,9 @@ camelize@^1.0.0:
   integrity sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==
 
 caniuse-lite@^1.0.30001579, caniuse-lite@^1.0.30001754, caniuse-lite@^1.0.30001759:
-  version "1.0.30001760"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001760.tgz"
-  integrity sha512-7AAMPcueWELt1p3mi13HR/LHH0TJLT11cnwDJEs3xA4+CK/PLKeO9Kl1oru24htkyUKtkGCvAx4ohB0Ttry8Dw==
+  version "1.0.30001800"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001800.tgz"
+  integrity sha512-MMHtuAz9Ys840zAY5F4k6fV5GaivZ9sPk+nz0mY+GYVzRBnYkN0mpqkSR92oWRQ19yQWo4HvBV/FnC16AJX8MA==
 
 canvas-confetti@^1.6.0:
   version "1.9.4"

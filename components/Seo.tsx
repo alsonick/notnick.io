@@ -97,12 +97,15 @@ export const Seo = (props: Props) => {
           name="twitter:site"
           content={`@${FULL_NAME.split(" ")[0].toLowerCase()}`}
         />
-        {pagePath === "/" ? (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-          />
-        ) : null}
+        {pagePath === "/"
+          ? structuredData.map((schema) => (
+              <script
+                key={`ld-json-${schema["@type"]}`}
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+              />
+            ))
+          : null}
       </Head>
       <Script async defer src="https://buttons.github.io/buttons.js" />
       {showSnow ? (

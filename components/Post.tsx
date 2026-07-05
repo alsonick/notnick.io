@@ -9,7 +9,9 @@ import { FiArrowLeft } from "react-icons/fi";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "./Community";
 import { NewsLetter } from "./Newsletter";
+import { ScrollUp } from "./ScrollUp";
 import { Post as P } from "../types/post";
+import { readTime } from "../lib/read-time";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
 import { Layout } from "./Layout";
@@ -35,7 +37,8 @@ export const Post = (props: Props) => {
   const contentWithEmbeds = useMemo(() => {
     if (!props.post.contentHtml) return null;
 
-    const embedRegex = /<div data-embed="(tweet|github|community)"[^>]*><\/div>/g;
+    const embedRegex =
+      /<div data-embed="(tweet|github|community|scrollup)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -89,6 +92,8 @@ export const Post = (props: Props) => {
         }
       } else if (type === "community") {
         parts.push(<CommunityCard key={`community-${index}`} />);
+      } else if (type === "scrollup") {
+        parts.push(<ScrollUp key={`scrollup-${index}`} />);
       }
 
       lastIndex = matchIndex + matchStr.length;
@@ -211,7 +216,7 @@ export const Post = (props: Props) => {
           </div>
           <div className="flex items-center justify-center sm:mt-2 mt-0">
             <div className="border-r-2 pr-2 border-teal-100 dark:border-teal-900">
-              <Text>{props.post.mins} min read</Text>
+              <Text>{readTime(props.post.mins)}</Text>
             </div>
             {props.post.finished ? (
               <div className="ml-2 outline-none flex">

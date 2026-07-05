@@ -5,7 +5,7 @@ description: "My computer networking notes."
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-06-25"
+last_updated_date: "2026-07-05"
 filter: "Networking"
 ---
 
@@ -77,3 +77,5 @@ All devices on a network are connected in a circular fashion, where each node ha
 ![](/post/networking/ring_topology.png)
 
 ...
+
+<div data-embed="scrollup"></div>

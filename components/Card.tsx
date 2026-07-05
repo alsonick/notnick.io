@@ -1,3 +1,4 @@
+import { readTime } from "../lib/read-time";
 import { Post } from "../types/post";
 import { Avatar } from "./Avatar";
 import { Text } from "./Text";
@@ -37,7 +38,7 @@ export const Card = (props: Props) => {
         </div>
         <div className="flex items-center">
           <Date date={props.post.date} />
-          <Text>&nbsp;&bull; {props.post.mins} min read &bull;&nbsp; </Text>
+          <Text>&nbsp;&bull; {readTime(props.post.mins)} &bull;&nbsp; </Text>
           <Avatar border={false} width={22} height={22} />
         </div>
       </Link>
