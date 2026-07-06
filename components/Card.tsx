@@ -1,3 +1,4 @@
+import { BsPinAngleFill } from "react-icons/bs";
 import { readTime } from "../lib/read-time";
 import { Post } from "../types/post";
 import { Avatar } from "./Avatar";
@@ -23,8 +24,16 @@ export const Card = (props: Props) => {
         rounded ring-primary outline-none duration-300`}
         title={props.post.title}
       >
-        <div className="mb-2">
+        <div className="mb-2 flex items-center justify-between">
           <PostCardTag title={props.post.tag} />
+          {props.post.pinned ? (
+            <span
+              title="Pinned"
+              className="flex items-center text-sm font-semibold text-primary"
+            >
+              <BsPinAngleFill className="mr-1" /> Pinned
+            </span>
+          ) : null}
         </div>{" "}
         <h1 className="sm:text-3xl text-2xl font-bold cursor-pointer underline dark:text-white md:hover:no-underline w-fit">
           {props.post.title}

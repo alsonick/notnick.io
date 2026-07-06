@@ -34,11 +34,16 @@ export const getSortedPostData = (dir: string) => {
     };
   });
 
-  // Sort posts by date
-  return allNotesData.sort(({ date: a }: any, { date: b }: any) => {
-    if (a < b) {
+  // Sort posts: pinned ones first, then by date
+  return allNotesData.sort((a: any, b: any) => {
+    const aPinned = a.pinned === true;
+    const bPinned = b.pinned === true;
+    if (aPinned !== bPinned) {
+      return aPinned ? -1 : 1;
+    }
+    if (a.date < b.date) {
       return 1;
-    } else if (a > b) {
+    } else if (a.date > b.date) {
       return -1;
     } else {
       return 0;

@@ -6,6 +6,7 @@ export interface Post {
   description: string;
   contentHtml: string;
   finished: boolean;
+  pinned?: boolean;
   filter: string;
   cover?: string;
   title: string;

@@ -19,7 +19,7 @@ Well the reason is simple, I always thought I was a night owl, all my friends we
 
 On January 4th I decided to start going to bed at around 8pm-9pm and wake up at 5am every day, I made this choice to see if it would work out for me and to see If I'd enjoy waking up early in the morning.
 
-![](/post/how-i-wake-up-at-5am/commit-app-streak.gif)
+<img src="/post/how-i-wake-up-at-5am/commit-app-streak.gif" alt="" style="display:block;margin-left:auto;margin-right:auto" />
 
 Btw the app is called [Commit](https://www.trycommit.app/) if anyone is wondering. At first, waking up at 5am can be quite hard but if you sleep early and really push yourself to get out of bed then it's possible. Now that I'm waking up at 5am I feel so much better and I'm a lot more productive.
 
