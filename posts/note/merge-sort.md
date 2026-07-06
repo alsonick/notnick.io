@@ -15,6 +15,12 @@ I remember my professor covering the [Merge Sort](https://en.wikipedia.org/wiki/
 
 ### Divide and Conquer
 
+---
+
+finished: true
+
+---
+
 I'm pretty sure you've heard of the [divide-and-conquer algorithm](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm). It's a problem solving approach that works in three steps: you **divide** a big problem into smaller subproblems, **conquer** each of those smaller problems (usually by solving them recursively), and then **combine** the results back together into the final answer.
 
 Merge sort is literally just that. We take the unsorted array and keep splitting it in half until every piece is a single element. A single element is already sorted by definition, so that part is basically free. The clever bit is the combine step, where we merge those tiny sorted pieces back together two at a time, always keeping them in order, until we're left with one fully sorted array.

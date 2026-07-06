@@ -10,6 +10,8 @@ import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "./Community";
 import { NewsLetter } from "./Newsletter";
 import { ScrollUp } from "./ScrollUp";
+import { Quiz } from "./Quiz";
+import { getQuiz } from "../lib/quizzes";
 import { Post as P } from "../types/post";
 import { readTime } from "../lib/read-time";
 import { LinkTag } from "./LinkTag";
@@ -38,7 +40,7 @@ export const Post = (props: Props) => {
     if (!props.post.contentHtml) return null;
 
     const embedRegex =
-      /<div data-embed="(tweet|github|community|scrollup)"[^>]*><\/div>/g;
+      /<div data-embed="(tweet|github|community|scrollup|quiz)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -94,6 +96,18 @@ export const Post = (props: Props) => {
         parts.push(<CommunityCard key={`community-${index}`} />);
       } else if (type === "scrollup") {
         parts.push(<ScrollUp key={`scrollup-${index}`} />);
+      } else if (type === "quiz") {
+        const quizId = getAttr(matchStr, "data-quiz-id");
+        const quiz = quizId ? getQuiz(props.post.slug, quizId) : undefined;
+        if (quiz && quizId) {
+          parts.push(
+            <Quiz
+              key={`quiz-${quizId}-${index}`}
+              storageId={`${props.type}/${props.post.slug}/${quizId}`}
+              quiz={quiz}
+            />,
+          );
+        }
       }
 
       lastIndex = matchIndex + matchStr.length;
@@ -107,7 +121,7 @@ export const Post = (props: Props) => {
     }
 
     return <>{parts}</>;
-  }, [props.post.contentHtml]);
+  }, [props.post.contentHtml, props.post.slug, props.type]);
 
   // Add line numbers and copy button to code blocks
   useEffect(() => {

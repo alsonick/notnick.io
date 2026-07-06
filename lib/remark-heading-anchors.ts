@@ -1,5 +1,6 @@
 import { visit } from "unist-util-visit";
 import { Node, Parent } from "unist";
+import { slugify } from "./slugify";
 
 interface HeadingNode extends Parent {
   type: "heading";
@@ -15,16 +16,6 @@ interface HeadingNode extends Parent {
 interface TextNode extends Node {
   type: "text";
   value: string;
-}
-
-// Convert heading text to URL-friendly slug
-function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[\s_]+/g, "-")
-    .replace(/^-+|-+$/g, "");
 }
 
 // Extract text from heading node

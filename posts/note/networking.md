@@ -7,6 +7,7 @@ tag: "Networking"
 mins: "C"
 last_updated_date: "2026-07-05"
 filter: "Networking"
+pinned: true
 ---
 
 ## Computer Networking
@@ -14,6 +15,12 @@ filter: "Networking"
 Computer networking has always been an interest of mine besides Software Engineering, it's actually the reason I studied IT in college, which covered a lot of networking concepts. Becoming a Network Engineer was always a career option for me, and I'm on a journey to learn as much as I can about it. I'm going to use this note to write about everything I pick up along the way. It'll be a continuous thing, so I'll be adding bits to it pretty much every day. If you spot any mistakes in my notes, please feel free to edit this note (scroll down for details).
 
 ### What is a Computer Network?
+
+---
+
+finished: true
+
+---
 
 A computer network is a system of connected devices that communicate to exchange data and resources. These devices can be your phone, computer, printer, servers, and so on. They can be connected either wirelessly or through a wired connection. A good example of a computer network is your home, where all your devices connect to your router. This is what's known as a local area network (LAN), which I'll cover later.
 
@@ -38,6 +45,12 @@ A system where devices on a network can communicate directly with each other wit
 
 ### The OSI Model
 
+---
+
+finished: false
+
+---
+
 OSI stands for **Open Systems Interconnection**. It's a conceptual model that explains how data travels from one computer to another over a network. The OSI model breaks network communication down into **7 layers**, each with its own specific purpose.
 
 Here's a diagram of all the layers in the OSI model:
@@ -50,6 +63,12 @@ Here's a diagram of all the layers in the OSI model:
 
 ### The TCP/IP Model
 
+---
+
+finished: false
+
+---
+
 The **TCP/IP (Transmission Control Protocol/Internet Protocol)** model is the networking model that's actually used on the Internet, and it dictates how data is routed and received. It's simpler than the **OSI model** and only consists of **4 layers**.
 
 Here's the comparison between the OSI & TCP/IP model:
@@ -57,6 +76,12 @@ Here's the comparison between the OSI & TCP/IP model:
 ![](/post/networking/osi_vs_tcpip.png)
 
 ### Network Topologies
+
+---
+
+finished: false
+
+---
 
 The two main types of network topologies:
 
@@ -69,6 +94,12 @@ Refers to the physical arrangement of hardware such as devices, switches & cable
 Describes how data actually flows through a network, regardless of its physical layout.
 
 ### Wired Network Topologies
+
+---
+
+finished: true
+
+---
 
 #### Ring Topology
 
@@ -97,6 +128,12 @@ Here's some resources on wired network topologies:
 - [https://www.coursera.org/articles/network-topology](https://www.coursera.org/articles/network-topology)
 
 ### Network Devices
+
+---
+
+finished: false
+
+---
 
 ...
 

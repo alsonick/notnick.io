@@ -1,4 +1,5 @@
 import { remarkHeadingAnchors } from "./remark-heading-anchors";
+import { remarkSectionMeta, PostSection } from "./remark-section-meta";
 import { remarkGithub } from "./remark-github";
 import { remarkTweet } from "./remark-tweet";
 import rehypeHighlight from "rehype-highlight";
@@ -67,6 +68,7 @@ export const getPostData = async (slug: string, dir: string) => {
 
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkSectionMeta)
     .use(remarkTweet)
     .use(remarkGithub)
     .use(remarkHeadingAnchors)
@@ -76,10 +78,13 @@ export const getPostData = async (slug: string, dir: string) => {
     .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  const sections =
+    (processedContent.data as { sections?: PostSection[] }).sections ?? [];
 
   return {
     slug,
     contentHtml,
+    sections,
     ...matterResult.data,
   };
 };
