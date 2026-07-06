@@ -17,7 +17,7 @@ export const TableOfContents = (props: Props) => {
   useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(props.contentHtml, "text/html");
-    const headingElements = doc.querySelectorAll("h2[id], h3[id]");
+    const headingElements = doc.querySelectorAll("h2[id], h3[id], h4[id]");
 
     const extractedHeadings: Heading[] = Array.from(headingElements).map(
       (heading) => ({
@@ -78,7 +78,7 @@ export const TableOfContents = (props: Props) => {
           <li
             key={heading.id}
             className={`${
-              heading.level === 3 ? "pl-6" : "pl-3"
+              heading.level === 4 ? "pl-9" : heading.level === 3 ? "pl-6" : "pl-3"
             } transition-colors duration-200`}
           >
             <button

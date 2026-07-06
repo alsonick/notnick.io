@@ -39,8 +39,8 @@ function getHeadingText(node: HeadingNode): string {
 export function remarkHeadingAnchors() {
   return (tree: Node) => {
     visit(tree, "heading", (node: HeadingNode) => {
-      // Only process h3 headings (depth 3)
-      if (node.depth === 3) {
+      // Only process h3 and h4 headings (depth 3 and 4)
+      if (node.depth === 3 || node.depth === 4) {
         const headingText = getHeadingText(node);
         const slug = slugify(headingText);
 

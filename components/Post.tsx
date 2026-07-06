@@ -150,12 +150,12 @@ export const Post = (props: Props) => {
     }
   }, [contentWithEmbeds]);
 
-  // Add click handlers to h2 and h3 headings
+  // Add click handlers to h2, h3 and h4 headings
   useEffect(() => {
     if (articleRef.current) {
       const headingElements =
         articleRef.current.querySelectorAll<HTMLHeadingElement>(
-          "h2[id], h3[id]",
+          "h2[id], h3[id], h4[id]",
         );
       headingElements.forEach((heading) => {
         const headingId = heading.id;
