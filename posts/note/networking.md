@@ -86,6 +86,18 @@ Star topologies are Local Area Networks (LAN) where devices are connected to a c
 
 #### Mesh Topology
 
+A Mesh topology is a network where devices are connected to multiple other devices. There are **two** types of mesh topologies, **Full Mesh** and **Partial Mesh**. In a full mesh topology, every device has a direct connection to every other device on the network, which provides high redundancy because of all the alternative routes. In a partial mesh topology, not every device is connected to every other device, so it's more common and cheaper than a full mesh. Because of how interconnected mesh topologies are, they're very reliable and availability rates are quite high. A drawback is that they're quite expensive to run.
+
+![](/post/networking/mesh_topology.png)
+
+Here's some resources on wired network topologies:
+
+- [https://www.geeksforgeeks.org/computer-networks/types-of-network-topology/](https://www.geeksforgeeks.org/computer-networks/types-of-network-topology/)
+- [https://www.youtube.com/watch?v=lEmBNqoBpZU](https://www.youtube.com/watch?v=lEmBNqoBpZU)
+- [https://www.coursera.org/articles/network-topology](https://www.coursera.org/articles/network-topology)
+
+### Network Devices
+
 ...
 
 <div data-embed="scrollup"></div>
