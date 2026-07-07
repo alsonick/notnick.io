@@ -5,7 +5,7 @@ description: "My computer networking notes."
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-07-05"
+last_updated_date: "2026-07-07"
 filter: "Networking"
 pinned: true
 ---
@@ -123,9 +123,8 @@ A Mesh topology is a network where devices are connected to multiple other devic
 
 Here's some resources on wired network topologies:
 
-- [https://www.geeksforgeeks.org/computer-networks/types-of-network-topology/](https://www.geeksforgeeks.org/computer-networks/types-of-network-topology/)
-- [https://www.youtube.com/watch?v=lEmBNqoBpZU](https://www.youtube.com/watch?v=lEmBNqoBpZU)
 - [https://www.coursera.org/articles/network-topology](https://www.coursera.org/articles/network-topology)
+- [https://www.youtube.com/watch?v=lEmBNqoBpZU](https://www.youtube.com/watch?v=lEmBNqoBpZU)
 
 ### Network Devices
 
