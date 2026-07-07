@@ -134,6 +134,28 @@ finished: false
 
 ---
 
+#### Routers
+
+Routers are networking devices that **connect different networks together** and **forward data/packets between them**. The router sits between the Internet and the devices in your **local area network (LAN)**. It assigns every connected device a **private IP (Internet Protocol)** address, using the [DHCP (Dynamic Host Configuration Protocol)](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) protocol to hand these out automatically.
+
+When a device on a network requests data from a resource on the Internet, it sends a packet to the router. Devices on a local area network (LAN) are assigned **private IP addresses**, which cannot be routed across the public Internet.
+
+The router uses **Network Address Translation (NAT)** to replace the packet's source private IP address with the router's **public IP address**. It also creates an entry in its **NAT table** that maps the device's private IP address and source port to the router's public IP address and a translated port number. This process, commonly called **Port Address Translation (PAT)**, allows multiple devices to share a single public IP address.
+
+The router examines the destination IP address and forwards the packet to the next hop, usually the **Internet Service Provider (ISP)**. From there, routers across the Internet continue forwarding the packet until it reaches the destination server.
+
+The server processes the request and sends a response back to the router's public IP address. When the response reaches the router, it looks up the translated port number in its NAT table, rewrites the destination back to the original private IP address and port, and forwards the packet to the correct device on the local network.
+
+Here's a visual of the whole process:
+
+![](/post/networking/router_nat_dhcp.png)
+
+> You might need to open the image in a new tab to properly see the diagram.
+
+Here's how a packet would normally look:
+
+![](/post/networking/packet_structure.png)
+
 ...
 
 <div data-embed="scrollup"></div>
