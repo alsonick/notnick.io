@@ -146,6 +146,10 @@ The router examines the destination IP address and forwards the packet to the ne
 
 The server processes the request and sends a response back to the router's public IP address. When the response reaches the router, it looks up the translated port number in its NAT table, rewrites the destination back to the original private IP address and port, and forwards the packet to the correct device on the local network.
 
+#### Hubs
+
+Hubs are networking devices used to **connect multiple devices on a network**, and they're typically used in **local area networks**. Appearance wise, hubs look identical to switches but are very different in terms of what they do. When a hub receives data from a device, it repeats that data to all connected ports regardless of the intended recipient. In networking, hubs are considered "dumb" devices because all they do is repeat data. They operate at **Layer 1 (Physical Layer)** of the OSI model, and they aren't commonly used anymore, having largely been replaced by switches.
+
 ...
 
 <div data-embed="scrollup"></div>
