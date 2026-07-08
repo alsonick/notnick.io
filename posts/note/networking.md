@@ -146,16 +146,6 @@ The router examines the destination IP address and forwards the packet to the ne
 
 The server processes the request and sends a response back to the router's public IP address. When the response reaches the router, it looks up the translated port number in its NAT table, rewrites the destination back to the original private IP address and port, and forwards the packet to the correct device on the local network.
 
-Here's a visual of the whole process:
-
-![](/post/networking/router_nat_dhcp.png)
-
-> You might need to open the image in a new tab to properly see the diagram.
-
-Here's how a packet would normally look:
-
-![](/post/networking/packet_structure.png)
-
 ...
 
 <div data-embed="scrollup"></div>
