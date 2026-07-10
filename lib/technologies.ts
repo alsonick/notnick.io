@@ -79,7 +79,7 @@ export const TECHNOLOGIES: Technologies[] = [
   },
   {
     id: generateRandomId(),
-    text: "Claude",
-    link: "https://www.claude.com/",
+    text: "Cisco Packet Tracer",
+    link: "https://www.netacad.com/cisco-packet-tracer",
   },
 ];

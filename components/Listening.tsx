@@ -43,7 +43,7 @@ const logLanyardEvent = (eventName: string, data: any) => {
     `%cLanyard%c <~ ${eventName} %o`,
     `background-color: ${THEME}; border-radius: 5px; padding: 3px; color: ${SECONDARY_THEME_COLOR};`,
     `background: none; color: ${THEME};`,
-    data
+    data,
   );
 };
 
@@ -56,7 +56,7 @@ export const Listening: React.FC<Props> = (
     setActive: (active: boolean) => void;
     style?: CSSProperties | undefined;
   } & any,
-  ref: any
+  ref: any,
 ) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [doing, setDoing] = useState<Presence>();
@@ -74,7 +74,7 @@ export const Listening: React.FC<Props> = (
       if (op === Operation.Hello) {
         setInterval(
           () => send(Operation.Heartbeat),
-          (d as { heartbeat_interval: number }).heartbeat_interval
+          (d as { heartbeat_interval: number }).heartbeat_interval,
         );
         send(Operation.Initialize, { subscribe_to_id: DISCORD_ID });
       } else if (op === Operation.Event && t) {
@@ -97,7 +97,7 @@ export const Listening: React.FC<Props> = (
 
   const currentActivity = useMemo(
     () => doing?.activities.filter((activity) => activity.type === 0)[0],
-    [doing]
+    [doing],
   );
 
   useEffect(() => {
@@ -107,7 +107,7 @@ export const Listening: React.FC<Props> = (
 
   if (!doing || !doing.discord_status)
     return (
-      <div className="flex items-center mb-5" style={style}>
+      <div className="flex items-center my-5" style={style}>
         <FaSpotify
           style={style}
           className="text-gray-600 dark:text-gray-300 hover:scale-110 duration-300"
@@ -120,7 +120,7 @@ export const Listening: React.FC<Props> = (
 
   return (
     <a
-      className="flex items-center mb-5 duration-300 text-gray-600
+      className="flex items-center my-5 duration-300 text-gray-600
       dark:text-gray-300 hover:opacity-50 cursor-pointer w-fit"
       style={style}
     >
@@ -130,7 +130,7 @@ export const Listening: React.FC<Props> = (
           target="_blank"
           title={`${doing.spotify.album} by ${doing.spotify.artist.replaceAll(
             ";",
-            ","
+            ",",
           )}`}
           rel="noreferrer"
           href={`https://open.spotify.com/track/${doing.spotify.track_id}`}

@@ -34,7 +34,8 @@ export const CommunityCard = () => {
             <h1 className="text-2xl font-bold dark:text-white">
               Nicholas F&amp;F
             </h1>
-            <Text>Community Server &bull; Discord</Text>
+            <Text>Friends &amp; Family</Text>
+            <Text>Discord Server</Text>
             {members !== null && (
               <Text>
                 <b className="dark:text-white text-black">
