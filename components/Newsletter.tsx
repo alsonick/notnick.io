@@ -12,7 +12,6 @@ import { Avatar } from "./Avatar";
 import { Input } from "./Input";
 import { Text } from "./Text";
 import { Form } from "./Form";
-import { Note } from "./Note";
 
 // Next.js
 import Link from "next/link";
@@ -57,7 +56,7 @@ export const NewsLetter = (props: Props) => {
         <Heading style={{ fontSize: "1.2rem", marginBottom: 0 }}>
           {props.formHeading ? props.formHeading : "Subscribe to my newsletter"}
         </Heading>
-        <Text>Subscribe if you&apos;re interested in nerdy stuff.</Text>
+        <Text>Subscribe if you&apos;re interested in networking topics.</Text>
         <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2 mb-2">
           <div className="flex-1 md:w-fit w-full mr-3 mb-3 md:mb-0">
             <Input

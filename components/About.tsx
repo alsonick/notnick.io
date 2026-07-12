@@ -18,23 +18,22 @@ export const About = () => {
       p1: (
         <Text>
           <Tippy animation="fade" content={"4th March 2003"}></Tippy>
-          <b>{PROFESSION}</b> located in the <b>{LOCATED}</b>. I have{" "}
+          <b>{PROFESSION}</b> located in the <b>{LOCATED}</b>, currently
+          pursuing a degree in <b>{SUBJECT_OF_STUDY}</b>. I&apos;m working
+          towards a career in <b>networking</b> and <b>infrastructure</b>. I
+          also have{" "}
           <b>
             {new Date().getFullYear() - YEAR_STARTED_PROGRAMMING_PROFESSIONALLY}{" "}
             years
           </b>{" "}
-          hands-on experience building software applications. I specialize in
-          full-stack development using <b>React</b>, <b>Python</b>, <b>Java</b>{" "}
-          & <b>TypeScript</b>. I&apos;m currently pursuing a degree in{" "}
-          <b>{SUBJECT_OF_STUDY}</b>. I&apos;m also
-          interested in networking, infrastructure & homelabbing, and I write
-          about these topics too.
+          of hands-on experience building software with <b>React</b>,{" "}
+          <b>Python</b>, <b>Java</b> & <b>TypeScript</b>.
         </Text>
       ),
       p2: (
         <Text>
-          Outside of programming, I enjoy watching <b>anime</b> in my spare
-          time. Some of my favorites include{" "}
+          Outside of work, I enjoy watching <b>anime</b> in my spare time. Some
+          of my favorites are{" "}
           <LinkTag
             href="https://anilist.co/anime/21/ONE-PIECE/"
             target="_blank"
@@ -62,18 +61,19 @@ export const About = () => {
           >
             Attack on Titan
           </LinkTag>
-          . You can see what I&apos;m currently watching{" "}
+          , and you can see what I&apos;m currently watching{" "}
           <LinkTag
             href="https://anilist.co/user/alsonick/animelist"
             target="_blank"
           >
             here
           </LinkTag>
-          . I also enjoy playing the <b>piano</b> in my free time, with{" "}
+          . I also play the <b>piano</b>, with{" "}
           <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
             Ragtime
           </LinkTag>{" "}
-          being my favorite genre to play.
+          being my favorite genre to play, and I&apos;m a big fan of{" "}
+          <b>gaming</b> whenever I get the chance.
         </Text>
       ),
 
@@ -95,6 +95,7 @@ export const About = () => {
             here
           </LinkTag>
           .
+          <br />
           <br /> Click <LinkTag href={page.guestbook.link}>here</LinkTag> to
           sign my guestbook!{" "}
         </Text>

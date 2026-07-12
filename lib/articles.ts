@@ -4,6 +4,19 @@ import { Article } from "../types/article";
 export const ARTICLES: Article[] = [
   {
     id: generateRandomId(),
+    title: "Key Difference Between TCP/IP And OSI Model",
+    type: "Networking",
+    link: "https://www.fortinet.com/uk/resources/cyberglossary/tcp-ip-model-vs-osi-model",
+    authors: ["fortinet"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
     title: "Why Google stores billions of lines of code in a single repository",
     link: "https://dl.acm.org/doi/fullHtml/10.1145/2854146",
     type: "Technical Writing",

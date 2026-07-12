@@ -1,4 +1,9 @@
-import { FIRST_NAME, PRONOUNS } from "../lib/constants";
+import {
+  FIRST_NAME,
+  PROFESSION,
+  PRONOUNS,
+  STUDYING_UNTIL,
+} from "../lib/constants";
 import { TypeAnimation } from "react-type-animation";
 import { fireworks } from "../lib/fireworks";
 import { Heading } from "./Heading";
@@ -8,6 +13,8 @@ import { Links } from "./Links";
 
 export const Main = () => {
   const date = new Date();
+
+  const isStudent = date < STUDYING_UNTIL;
 
   const confetti = () => {
     if (typeof window === "object") {
@@ -36,7 +43,13 @@ export const Main = () => {
           </Heading>
           <div className="text-gray-700 flex font-semibold dark:text-gray-100 mb-4">
             <TypeAnimation
-              sequence={["Software Engineer", 2000, "Student", 2000]}
+              sequence={[
+                PROFESSION,
+                2000,
+                "Programmer",
+                2000,
+                ...(isStudent ? ["Student", 2000] : []),
+              ]}
               wrapper="p"
               cursor={true}
               repeat={Infinity}
@@ -53,12 +66,7 @@ export const Main = () => {
           ) : null}
         </div>
         <div className="flex mb-8 md:mb-0 duration-300 rounded-full">
-          <Avatar
-            border={false}
-            width={135}
-            height={125}
-            clickable={true}
-          />
+          <Avatar border={false} width={135} height={125} clickable={true} />
         </div>
       </main>
     </>

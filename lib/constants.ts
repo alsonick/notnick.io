@@ -4,18 +4,19 @@ export const API_URL =
   process.env.NODE_ENV === "development"
     ? "https://localhost:3000/api"
     : "https://notnick.io/api";
+export const SUBJECT_OF_STUDY = "Computer Science (Software Engineering)";
+export const STUDYING_UNTIL = new Date("2027-07-01T00:00:00Z");
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
 export const YEAR_STARTED_PROGRAMMING_PROFESSIONALLY = 2023;
 export const MUSIC_STREAMING_PLATFORM = "YouTube Music";
-export const SUBJECT_OF_STUDY = "Software Engineering";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
+export const PROFESSION = "Aspiring Network Engineer";
 export const CDN = "https://cdn.notnick.io/images";
 export const BLOGS_DIR = `posts${page.blog.path}`;
 export const NOTES_DIR = `posts${page.note.path}`;
 export const DISCORD_ID = "463449066672619520";
 export const DISCORD_INVITE_CODE = "EAMyNzBSZT";
 export const SECONDARY_THEME_COLOR = "#25A244";
-export const PROFESSION = "Software Engineer";
 export const EMAIL_ADDRESS = "hi@notnick.io";
 export const YEAR_STARTED_PROGRAMMING = 2019;
 export const BLOGS_URL_PATH = page.blog.path;
