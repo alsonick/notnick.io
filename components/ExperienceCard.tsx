@@ -64,7 +64,7 @@ export const ExperienceCard = (props: Experience) => {
         </div>
         <Text>
           {props.description} &bull; {getEmploymentTypeString(props)} &bull;{" "}
-          {props.remote && "Remote"}
+          {props.remote ? "Remote" : "On-Site"}
         </Text>
         <div className="relative mt-2">
           <Text>{props.task}</Text>
