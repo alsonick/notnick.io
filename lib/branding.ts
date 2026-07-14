@@ -4,12 +4,6 @@ import { BrandingSource } from "../types/branding";
 export const BRANDING: BrandingSource[] = [
   {
     id: generateRandomId(),
-    path: "/branding/Avatar",
-    ext: "png",
-    name: "Chibi Avatar",
-  },
-  {
-    id: generateRandomId(),
     path: "/branding/Sig_Avatar_One",
     ext: "png",
     name: "Sig Avatar One",
