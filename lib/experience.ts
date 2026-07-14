@@ -39,7 +39,7 @@ export const EXPERIENCE: Experience[] = [
     current: false,
     link: "https://tags.notnick.io/",
     task: "Built an API/Service for promotional music channels to generate relevant metadata for their YouTube videos.",
-    filter: "Project",
+    filter: "Engineering",
     showCurrentStatus: true,
     slug: "lyricstagsgenerator",
     discontinued: false,
