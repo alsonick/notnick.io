@@ -162,7 +162,7 @@ const Apply: NextPage = () => {
               to show off, be sure to apply!
             </Text>
           </Callout>
-          <div>
+          <div className="mb-5">
             <ApplyForm />
             <Callout title="Privacy" variant="privacy">
               <Text>
@@ -172,7 +172,6 @@ const Apply: NextPage = () => {
                 that option in the form above.
               </Text>
             </Callout>
-            <p className="text-7xl text-center mt-16 mb-16">🛠️🛠️🛠️</p>
           </div>
         </Animate>
       </Layout>

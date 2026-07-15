@@ -39,7 +39,7 @@ const Home: NextPage = () => {
           {/* <Projects /> */}
           {/* <GitHubGraph /> */}
           <Music />
-          {/* <Community /> */}
+          <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />
           <Contact />
           <License />

@@ -1,8 +1,5 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { useEffect, useRef, useState } from "react";
-import { GoBack } from "./GoBack";
-import { Switch } from "./Switch";
-import { Text } from "./Text";
 import { Seo } from "./Seo";
 
 // Next.js
@@ -60,21 +57,12 @@ export const E = (props: Props) => {
             <div className="flex flex-col items-center max-w-md">
               {props.subtitle && (
                 <h2 className="text-4xl font-semibold text-center tracking-tight text-gray-800 dark:text-gray-200 mb-3">
-                  {props.code} - {props.subtitle}
+                  {props.code}
                 </h2>
-              )}
-              {props.description && (
-                <div className="mb-5 text-center">
-                  <Text>{props.description}</Text>
-                </div>
               )}
             </div>
           )
         )}
-        {!enabled && !isEasterEgg && <GoBack />}
-        <div className="flex justify-center mt-2 items-center">
-          <Switch enabled={enabled} setEnabled={toggle} />
-        </div>
       </div>
     </>
   );

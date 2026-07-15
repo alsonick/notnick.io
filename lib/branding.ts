@@ -10,6 +10,12 @@ export const BRANDING: BrandingSource[] = [
   },
   {
     id: generateRandomId(),
+    path: "/branding/Sig_Avatar_Two",
+    ext: "png",
+    name: "Sig Avatar Two",
+  },
+  {
+    id: generateRandomId(),
     path: "/branding/Secondary_Dark_Short_Sig_Avatar",
     ext: "png",
     name: "Secondary Dark Short Sig Avatar",

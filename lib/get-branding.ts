@@ -6,8 +6,8 @@ import sharp from "sharp";
 const formatBytes = (bytes: number) => {
   if (bytes < 1024) return `${bytes} B`;
   const kb = bytes / 1024;
-  if (kb < 1024) return `${kb.toFixed(2)} KB`;
-  return `${(kb / 1024).toFixed(2)} MB`;
+  if (kb < 1024) return `${kb.toFixed(2)}KB`;
+  return `${(kb / 1024).toFixed(2)}MB`;
 };
 
 // Reads the real dimensions, DPI (resolution) and file size of each branding
@@ -19,7 +19,7 @@ export const getBranding = async (): Promise<Branding[]> => {
 
       if (!res.ok) {
         throw new Error(
-          `Failed to fetch branding asset "${branding.name}" (${res.status})`
+          `Failed to fetch branding asset "${branding.name}" (${res.status})`,
         );
       }
 
@@ -35,6 +35,6 @@ export const getBranding = async (): Promise<Branding[]> => {
         resolution: Math.round(density ?? 72),
         size: formatBytes(buffer.length),
       };
-    })
+    }),
   );
 };

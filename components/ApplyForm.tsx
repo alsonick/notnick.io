@@ -336,7 +336,7 @@ export const ApplyForm = () => {
         </div>
         <Input
           onChange={(e) => setDiscord(e.target.value)}
-          placeholder="Nicholas#0050"
+          placeholder="heynickn"
           style={{ width: "100%" }}
           required={true}
           value={discord}

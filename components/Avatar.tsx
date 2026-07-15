@@ -5,32 +5,14 @@ import { FiX } from "react-icons/fi";
 import { Border } from "./Border";
 
 // Next.js
-import { useRouter } from "next/router";
 import Image from "next/image";
 
 interface Props {
-  decoration?: "halloween" | "christmas";
   clickable?: boolean;
   border?: boolean;
   height: number;
   width: number;
 }
-
-const getAvatarSrc = (decoration?: "halloween" | "christmas") => {
-  const christmas = `${CDN}/branding/fun/discord/ChristmasAvatar.${AVATAR_FILE_EXTENSION}`;
-  const halloween = `${CDN}/branding/fun/discord/HalloweenAvatar.${AVATAR_FILE_EXTENSION}`;
-
-  if (decoration === "halloween") return halloween;
-  if (decoration === "christmas") return christmas;
-
-  const month = new Date().getMonth() + 1;
-  const day = new Date().getDate();
-
-  if (month === 10 && day === 31) return halloween;
-  if (month === 12) return christmas;
-
-  return `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
-};
 
 const STYLES = `
   @keyframes fade-in  { from { opacity: 0 } to { opacity: 1 } }
@@ -105,15 +87,11 @@ const Lightbox = (props: LightboxProps) => {
 };
 
 export const Avatar = (props: Props) => {
-  const { query } = useRouter();
   const [closing, setClosing] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const decoration =
-    props.decoration ??
-    (query.decoration as "halloween" | "christmas" | undefined);
-  const src = getAvatarSrc(decoration);
+  const src = `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
 
   useEffect(() => {
     setMounted(true);

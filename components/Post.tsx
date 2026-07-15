@@ -1,19 +1,18 @@
-import { FiExternalLink } from "react-icons/fi";
-import { FaXTwitter } from "react-icons/fa6";
 import { DOMAIN, FULL_NAME } from "../lib/constants";
 import { TableOfContents } from "./TableOfContents";
 import { useMemo, useEffect, useRef } from "react";
 import { ProgressNotice } from "./ProgressNotice";
+import { FiExternalLink } from "react-icons/fi";
 import { social } from "../lib/social-links";
+import { FaXTwitter } from "react-icons/fa6";
 import { FiArrowLeft } from "react-icons/fi";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "./Community";
-import { NewsLetter } from "./Newsletter";
-import { ScrollUp } from "./ScrollUp";
-import { Quiz } from "./Quiz";
-import { getQuiz } from "../lib/quizzes";
-import { Post as P } from "../types/post";
 import { readTime } from "../lib/read-time";
+import { NewsLetter } from "./Newsletter";
+import { Post as P } from "../types/post";
+import { getQuiz } from "../lib/quizzes";
+import { ScrollUp } from "./ScrollUp";
 import { LinkTag } from "./LinkTag";
 import { page } from "../lib/page";
 import { Layout } from "./Layout";
@@ -22,6 +21,7 @@ import { Label } from "./Label";
 import { Tweet } from "./Tweet";
 import { Date } from "./Date";
 import { Text } from "./Text";
+import { Quiz } from "./Quiz";
 import { Seo } from "./Seo";
 import { Tag } from "./Tag";
 
@@ -195,7 +195,8 @@ export const Post = (props: Props) => {
   const ogCover = useMemo(() => {
     if (props.post.cover) return props.post.cover;
     const params = new URLSearchParams({ title: props.post.title });
-    if (props.post.description) params.set("description", props.post.description);
+    if (props.post.description)
+      params.set("description", props.post.description);
     if (props.post.tag) params.set("tag", props.post.tag);
     if (props.post.date) params.set("date", props.post.date);
     if (props.post.mins) params.set("mins", props.post.mins);
@@ -249,7 +250,7 @@ export const Post = (props: Props) => {
             ) : null}
           </div>
         </div>
-        <Tag title={props.post.tag} />
+        <Tag title={props.post.tag} type="success" />
         <div className="my-4 border-b border-teal-100 dark:border-teal-900">
           <Label text="Description" />
           <div className="duration-300 mb-4 mt-1">
