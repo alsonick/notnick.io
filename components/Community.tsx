@@ -28,7 +28,7 @@ export const CommunityCard = () => {
       <div className="flex sm:flex-row flex-col items-center w-full justify-between">
         <div className="flex mb-4 sm:flex-row flex-col items-center sm:mb-0">
           <div className="shrink-0">
-            <Avatar border height={100} width={100} />
+            <Avatar border={true} height={100} width={100} />
           </div>
           <div className="flex sm:ml-8 ml-0 flex-col sm:text-left mt-5 sm:mt-0 text-center">
             <h1 className="text-2xl font-bold dark:text-white">
