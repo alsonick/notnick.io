@@ -52,7 +52,7 @@ const Lightbox = (props: LightboxProps) => {
         zIndex: 9999,
         inset: 0,
       }}
-      aria-label="My Chibi Avatar"
+      aria-label="My Signature Avatar"
       onClick={props.onClose}
       aria-modal="true"
       tabIndex={-1}
@@ -72,7 +72,7 @@ const Lightbox = (props: LightboxProps) => {
       >
         <Image
           src={props.src}
-          alt="My Chibi Avatar"
+          alt="My Signature Avatar"
           className="rounded-full aspect-square object-cover"
           style={{ maxWidth: "90vw", maxHeight: "90vh" }}
           height={500}
@@ -126,8 +126,8 @@ export const Avatar = (props: Props) => {
   const img = (
     <Image
       className="rounded-full z-10 aspect-square object-cover sm:hover:scale-105 sm:transition-transform sm:duration-300"
-      title="My Chibi Avatar"
-      alt="My Chibi Avatar"
+      title="My Signature Avatar"
+      alt="My Signature Avatar"
       height={props.height}
       width={props.width}
       quality={100}

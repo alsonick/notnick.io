@@ -1,7 +1,7 @@
 import { FiExternalLink } from "react-icons/fi";
 import { ICON } from "../lib/tailwindcss/icon";
-import { useState, useEffect } from "react";
 import { LinkButton } from "./LinkButton";
+import { LinkTag } from "./LinkTag";
 import { DOMAIN } from "../lib/constants";
 import { Heading } from "./Heading";
 import { Section } from "./Section";
@@ -9,17 +9,6 @@ import { Avatar } from "./Avatar";
 import { Text } from "./Text";
 
 export const CommunityCard = () => {
-  const [members, setMembers] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch("/api/community/members")
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) setMembers(data.members);
-      })
-      .catch(() => {});
-  }, []);
-
   return (
     <div
       className="not-prose flex flex-col sm:flex-row w-full items-center dark:bg-[#10161a]/50 rounded-lg p-6
@@ -35,15 +24,6 @@ export const CommunityCard = () => {
               Nicholas F&amp;F
             </h1>
             <Text>Friends &amp; Family</Text>
-
-            {members !== null && (
-              <Text>
-                <b className="dark:text-white text-black">
-                  {members.toLocaleString()}
-                </b>{" "}
-                Members
-              </Text>
-            )}
           </div>
         </div>
         <LinkButton
@@ -64,8 +44,12 @@ export const Community = () => {
       <Heading>Community 👊</Heading>
       <Text>
         If you would like to connect with me, whether we have previously
-        interacted online or in person, I invite you to join my community server
-        on <b>Discord</b>.
+        interacted online or in person, join my community server on{" "}
+        <b>Discord</b> to chat. By joining, you&apos;re agreeing to the{" "}
+        <LinkTag title="Server Rules & Guidelines" href="/community/rules">
+          server rules and guidelines
+        </LinkTag>
+        .
       </Text>
       <div className="flex flex-col mt-6">
         <CommunityCard />

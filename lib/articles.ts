@@ -188,4 +188,17 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "ARP (ADDRESS RESOLUTION PROTOCOL) — How Does It Work?",
+    type: "Networking",
+    link: "https://medium.com/@nurcanakatay/arp-address-resolution-protocol-how-does-it-work-e90907a28e03",
+    authors: ["Nurcan Akatay"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
 ];
