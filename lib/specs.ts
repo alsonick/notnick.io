@@ -31,6 +31,18 @@ export const SPECS = [
   },
   {
     id: generateRandomId(),
+    title: "Sony PlayStation 4 Slim 🎮",
+    list: [
+      { id: generateRandomId(), key: "CPU", value: "AMD Jaguar 8-core" },
+      { id: generateRandomId(), key: "GPU", value: "AMD Radeon Graphics" },
+      { id: generateRandomId(), key: "Storage", value: "500GB HDD" },
+      { id: generateRandomId(), key: "RAM", value: "8GB GDDR5" },
+      { id: generateRandomId(), key: "OS", value: "Orbis OS" },
+    ],
+    sellingSoon: false,
+  },
+  {
+    id: generateRandomId(),
     title: "Home Server 🖥️",
     list: [
       { id: generateRandomId(), key: "CPU", value: "Core i5-8500T" },
