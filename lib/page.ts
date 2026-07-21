@@ -116,6 +116,12 @@ export const page = {
     link: "/challenge",
     name: "challenge",
   },
+  learn: {
+    title: "Learn",
+    path: "/learn",
+    link: "/learn",
+    name: "learn",
+  },
   community: {
     title3: "Community Rules",
     title2: "Community",
