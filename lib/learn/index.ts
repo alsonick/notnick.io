@@ -22,8 +22,11 @@ export const COURSES: Course[] = [
     modules: CISCO_200_301_MODULES,
     path: `/${CISCO_200_301_SLUG}`,
     slug: CISCO_200_301_SLUG,
-    description: "",
-    usefulLinks: ["https://learningnetwork.cisco.com"],
+    description: "My journey to Cisco 200-301 (CCNA) Certification.",
+    usefulLinks: [
+      "https://learningnetwork.cisco.com",
+      "https://davidbombal.com",
+    ],
     completedLessons: CISCO_200_301_COMPLETED,
     completed:
       CISCO_200_301_LESSONS.length > 0 &&

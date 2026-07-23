@@ -23,6 +23,49 @@ export const CISCO_200_301_MODULES: Module[] = [
         id: generateRandomId(),
         title:
           "What is a Switch? A Router? What network is this? And what are these?",
+        completed: true,
+        learnt:
+          "Covered the difference between physical and logical networks, and the role of switches and routers in connecting devices within a network. Learned about the different types of network topologies and how they affect network performance and reliability.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Answering your questions",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Udemy tips and tricks?",
+        completed: true,
+        learnt: "",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    name: "Download and Install Recommended Software",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Download and Install Packet Tracer (Windows)",
+        completed: false,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Download and Install Packet Tracer (macOS)",
+        completed: false,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Packet Tracer Tips and Tricks",
+        completed: false,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Packet Tracer vs Physical Equipment",
         completed: false,
         learnt: "",
       },
