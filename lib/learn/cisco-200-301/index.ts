@@ -48,24 +48,43 @@ export const CISCO_200_301_MODULES: Module[] = [
       {
         id: generateRandomId(),
         title: "Download and Install Packet Tracer (Windows)",
-        completed: false,
+        completed: true,
         learnt: "",
       },
       {
         id: generateRandomId(),
         title: "Download and Install Packet Tracer (macOS)",
-        completed: false,
+        completed: true,
         learnt: "",
       },
       {
         id: generateRandomId(),
         title: "Packet Tracer Tips and Tricks",
-        completed: false,
+        completed: true,
         learnt: "",
       },
       {
         id: generateRandomId(),
         title: "Packet Tracer vs Physical Equipment",
+        completed: true,
+        learnt: "",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    name: "Build a network with me",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Build your first network with Packet Tracer",
+        completed: true,
+        learnt:
+          "Built a simple network using Packet Tracer, including configuring IP addresses and testing connectivity between devices.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Build a Web Server network for free using Cisco Packet Tracer",
         completed: false,
         learnt: "",
       },
