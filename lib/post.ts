@@ -6,6 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 import remarkRehype from "remark-rehype";
 import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { unified } from "unified";
 import matter from "gray-matter";
@@ -73,13 +74,14 @@ export const getPostData = async (slug: string, dir: string) => {
 
   const processedContent = await unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkSectionMeta)
     .use(remarkTweet)
     .use(remarkGithub)
     .use(remarkHeadingAnchors)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
-    .use(rehypeHighlight)
+    .use(rehypeHighlight, { plainText: ["diagram"] })
     .use(rehypeStringify)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();

@@ -222,6 +222,18 @@
   }
 }
 
+/* Tables — full content width with evenly sized columns, breaking long cell
+   values on narrow screens */
+.prose table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.prose th,
+.prose td {
+  overflow-wrap: break-word;
+}
+
 /* Syntax highlighting */
 .hljs {
   background: transparent;
@@ -245,6 +257,13 @@
   min-width: 0;
   overflow-x: auto;
   padding: 0.75rem 1rem;
+}
+
+/* ASCII diagrams (```diagram) — centered, no line numbers or copy button.
+   Must follow the rule above: same specificity, so source order decides. */
+.prose pre code.language-diagram {
+  flex: 0 1 auto;
+  margin-inline: auto;
 }
 
 .line-numbers {

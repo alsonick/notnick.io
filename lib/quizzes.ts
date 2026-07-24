@@ -61,6 +61,14 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 3,
     },
+    "network-devices": {
+      id: "network-devices",
+      topic: "Network Devices",
+      question:
+        "Which network device learns the MAC address of each connected device so it can forward data only to the device it was intended for?",
+      options: ["A hub", "A modem", "A switch", "An access point"],
+      correctIndex: 2,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

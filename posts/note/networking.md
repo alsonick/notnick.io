@@ -5,7 +5,7 @@ description: "My computer networking notes."
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-07-07"
+last_updated_date: "2026-07-24"
 filter: "Networking"
 pinned: true
 ---
@@ -130,7 +130,7 @@ Here's some resources on wired network topologies:
 
 ---
 
-finished: false
+finished: true
 
 ---
 
@@ -148,8 +148,47 @@ The server processes the request and sends a response back to the router's publi
 
 #### Hubs
 
-Hubs are networking devices used to **connect multiple devices on a network**, and they're typically used in **local area networks**. Appearance wise, hubs look identical to switches but are very different in terms of what they do. When a hub receives data from a device, it repeats that data to all connected ports regardless of the intended recipient. In networking, hubs are considered "dumb" devices because all they do is repeat data. They operate at **Layer 1 (Physical Layer)** of the OSI model, and they aren't commonly used anymore, having largely been replaced by switches.
+Hubs are networking devices used to **connect multiple devices on a network**, and they're typically used in **local area networks (LAN)**. Appearance wise, hubs look identical to switches but are very different in terms of what they do. When a hub receives data from a device, it repeats that data to all connected ports regardless of the intended recipient. In networking, hubs are considered "dumb" devices because all they do is repeat data. They operate at **Layer 1 (Physical Layer)** of the OSI model, and they aren't commonly used anymore, having largely been replaced by switches.
 
-...
+#### Switches
+
+Switches are networking devices that look very similar to hubs but work very differently under the hood. They also connect multiple devices on a **local area network (LAN)**, but they only **forward data to the device the data was intended for**. They do this by learning the [MAC (Media Access Control) address](https://en.wikipedia.org/wiki/MAC_address) of each device connected to the network. A MAC address typically looks like this:
+
+`00:1A:2B:3C:4D:5E`
+
+Let's imagine a scenario to understand how switches work. Say `PC A` wants to send data to `PC B`.
+
+```diagram
+  ┌───────────────────────┐
+  │        Switch         │
+  └──┬─────────────────┬──┘
+     │                 │
+┌────┴────┐       ┌────┴────┐
+│  PC A   │       │  PC B   │
+└─────────┘       └─────────┘
+```
+
+The switch acts like a bridge between the two PCs. Every device on a network has both an [IP address]() and a MAC address, and below are the IP and MAC addresses of both PCs.
+
+| Device | IP Address   | MAC Address       |
+| ------ | ------------ | ----------------- |
+| PC A   | 192.168.1.10 | AA:AA:AA:AA:AA:AA |
+| PC B   | 192.168.1.20 | BB:BB:BB:BB:BB:BB |
+
+`PC A (192.168.1.10)` wants to send data to `PC B (192.168.1.20)`, but for that to be possible `PC A` needs to learn the MAC address of `PC B`. So how does it do that? Well, `PC A` first checks its **ARP (Address Resolution Protocol) cache** to see if it already has an entry for `PC B`'s IP address. If it doesn't, it sends out an ARP request, which goes to the switch, and the switch then forwards that request to all its other connected devices asking who owns the **destination IP address**. `PC B` sees that the request is for its own IP, so it replies with its MAC address, and `PC A` stores that mapping in its ARP cache.
+
+`192.168.1.20 → BB:BB:BB:BB:BB:BB`
+
+Now `PC A` knows that `192.168.1.20 (PC B)` corresponds to the `BB:BB:BB:BB:BB:BB` MAC address, so the next time it wants to send data to `PC B`, it just checks its ARP cache instead of asking again. The switch learns something too, but it's a different thing. It doesn't care about IP addresses at all, it only records which MAC address sits on which of its ports, and that's what it uses to forward frames to the right device.
+
+The reason `PC A` needs to know the MAC address in the first place is because devices on a local network can only communicate with each other if they know the recipient's MAC address. IPs are used to figure out where traffic needs to go across networks, but the actual delivery within the local network happens using MAC addresses.
+
+#### Access Points
+
+An access point is a networking device that connects wireless devices such as phones and laptops to a wired **local area network (LAN)**. Access points are kinda similar to hubs in that they broadcast the Wi-Fi signal out to all connected devices.
+
+#### Modems
+
+Modems are hardware devices that sit between home networks and the Internet Service Provider (ISP). They convert analog signals from a physical medium into digital data that devices on the network can understand, and they convert data going the other way back into analog signals.
 
 <div data-embed="scrollup"></div>
