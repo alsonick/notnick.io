@@ -20,8 +20,7 @@ export const About = () => {
           <Tippy animation="fade" content={"4th March 2003"}></Tippy>
           <b>{PROFESSION}</b> located in the <b>{LOCATED}</b>, currently
           pursuing a degree in <b>{SUBJECT_OF_STUDY}</b>. I&apos;m working
-          towards a career in <b>networking</b> and <b>infrastructure</b>. I
-          also have{" "}
+          towards a career in <b>Computer Networking</b>. I also have{" "}
           <b>
             {new Date().getFullYear() - YEAR_STARTED_PROGRAMMING_PROFESSIONALLY}{" "}
             years

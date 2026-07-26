@@ -85,6 +85,34 @@ export const CISCO_200_301_MODULES: Module[] = [
       {
         id: generateRandomId(),
         title: "Build a Web Server network for free using Cisco Packet Tracer",
+        completed: true,
+        learnt:
+          "Built a web server network using Packet Tracer, including configuring a web server and testing connectivity from client devices.",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "How does a Switch learn MAC addresses? What is a MAC address table?",
+        completed: true,
+        learnt:
+          "Covered how switches learn MAC addresses and build a MAC address table to forward traffic to the correct destination. Learned about the different types of MAC address tables and how they are used in network communication.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Why is ARP used in networks?",
+        completed: true,
+        learnt:
+          "Covered the purpose and functionality of ARP in network communication, including how it resolves IP addresses to MAC addresses.",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    name: "TCP/IP Model",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "TCP/IP Model vs OSI Model",
         completed: false,
         learnt: "",
       },
