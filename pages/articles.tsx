@@ -11,6 +11,8 @@ import { GoBack } from "../components/GoBack";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { ARTICLES } from "../lib/articles";
+import { Input } from "../components/Input";
+import { Text } from "../components/Text";
 import { Seo } from "../components/Seo";
 import { page } from "../lib/page";
 import { useState } from "react";
@@ -27,6 +29,7 @@ const Articles: NextPage = () => {
   ];
 
   const [selected, setSelected] = useState(tags[0].filter);
+  const [query, setQuery] = useState("");
 
   ARTICLES.forEach((article) => {
     article.tags.forEach((tag) => {
@@ -44,6 +47,21 @@ const Articles: NextPage = () => {
     });
   });
 
+  const search = query.trim().toLowerCase();
+
+  const articlesList: Article[] = (
+    !filteredArticlesList.length ? ARTICLES : filteredArticlesList
+  ).filter((article) => {
+    if (!search) return true;
+
+    return (
+      article.title.toLowerCase().includes(search) ||
+      article.type.toLowerCase().includes(search) ||
+      article.authors.some((author) => author.toLowerCase().includes(search)) ||
+      article.tags.some((tag) => tag.filter.toLowerCase().includes(search))
+    );
+  });
+
   return (
     <>
       <Seo
@@ -53,22 +71,42 @@ const Articles: NextPage = () => {
 
       <Layout>
         <Animate>
-          <Header singleItem={false} column={false}>
-            <Heading style={{ marginBottom: 0 }}>{page.articles.title}</Heading>
-            <FilterListBox
-              items={removeDuplicates(tags)}
-              selectedItem={selected}
-              onChange={setSelected}
-            />
-          </Header>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-4">
-            {!filteredArticlesList.length ? (
-              <ArticlesList articles={ARTICLES} />
+          <div className="flex flex-col min-h-[calc(100vh-8rem)]">
+            <Header singleItem={false} column={false}>
+              <Heading style={{ marginBottom: 0 }}>
+                {page.articles.title}
+              </Heading>
+              <FilterListBox
+                items={removeDuplicates(tags)}
+                selectedItem={selected}
+                onChange={setSelected}
+              />
+            </Header>
+            <div className="mb-6">
+              <Input
+                placeholder="Search articles..."
+                style={{ width: "100%" }}
+                type="search"
+                aria-label="Search articles"
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                }}
+              />
+            </div>
+            {articlesList.length ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-4">
+                <ArticlesList articles={articlesList} />
+              </div>
             ) : (
-              <ArticlesList articles={filteredArticlesList} />
+              <div className="mb-4">
+                <Text>No articles found for &quot;{query.trim()}&quot;.</Text>
+              </div>
             )}
+            <div className="mt-auto">
+              <GoBack />
+            </div>
           </div>
-          <GoBack />
         </Animate>
       </Layout>
     </>
