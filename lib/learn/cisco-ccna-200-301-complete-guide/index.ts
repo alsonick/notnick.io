@@ -140,7 +140,53 @@ export const CISCO_CCNA_200_301_GUIDE_MODULES: Module[] = [
       {
         id: generateRandomId(),
         title: "Introduction",
-        completed: false,
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Cisco Operating System",
+        completed: true,
+        learnt:
+          "Learned about the Cisco IOS operating system, its features, and how to navigate and configure devices using the command-line interface.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Connecting to a Cisco Device over the network",
+        completed: true,
+        learnt:
+          "Covered the methods for connecting to a Cisco device over the network, including Telnet and SSH.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Making the Initial Connection to a Cisco Device",
+        completed: true,
+        learnt:
+          "Learned how to make the initial connection to a Cisco device using the console port and terminal emulation software.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Navigating the Cisco IOS Operating System Part 1",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Navigating the Cisco IOS Operating System Part 2",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Cisco IOS Configuration Management",
+        completed: true,
+        learnt:
+          "Learned about configuration management in Cisco IOS, including saving and loading configurations.",
+      },
+      {
+        id: generateRandomId(),
+        title: "The IOS Operating System - Lab Exercise",
+        completed: true,
         learnt: "",
       },
     ],
