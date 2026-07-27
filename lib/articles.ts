@@ -26,10 +26,6 @@ export const ARTICLES: Article[] = [
         id: generateRandomId(),
         filter: "Engineering",
       },
-      {
-        id: generateRandomId(),
-        filter: "Technical",
-      },
     ],
   },
   {
@@ -41,24 +37,7 @@ export const ARTICLES: Article[] = [
     tags: [
       {
         id: generateRandomId(),
-        filter: "Infrastructure",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "How Discord Modernized MFA with WebAuthn",
-    type: "Technical Writing",
-    link: "https://discord.com/blog/how-discord-modernized-mfa-with-webauthn",
-    authors: ["Nathan Walsh"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "Authentication",
-      },
-      {
-        id: generateRandomId(),
-        filter: "Technical",
+        filter: "Engineering",
       },
     ],
   },
@@ -77,123 +56,36 @@ export const ARTICLES: Article[] = [
   },
   {
     id: generateRandomId(),
-    title:
-      "Supercharging the ML and AI Development Experience at Netflix with Metaflow",
-    type: "AI & Machine Learning",
-    link: "https://netflixtechblog.com/supercharging-the-ml-and-ai-development-experience-at-netflix-b2d5b95c63eb",
-    authors: ["Shashank Srikanth", "Romain Cledat"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "AI & Machine Learning",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "Evolution of Java Usage at Netflix",
-    type: "Technical Writing",
-    link: "https://blog.bytebytego.com/p/evolution-of-java-usage-at-netflix",
-    authors: ["ByteByteGo"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "Java",
-      },
-      {
-        id: generateRandomId(),
-        filter: "Engineering",
-      },
-      {
-        id: generateRandomId(),
-        filter: "Technical",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "Learning From Structure: Discord’s Entity-Relationship Embeddings",
-    type: "AI & Machine Learning",
-    link: "https://discord.com/blog/learning-from-structure-discords-entity-relationship-embeddings",
-    authors: ["August Karlstedt"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "AI & Machine Learning",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "Becoming an AI engineering company",
-    type: "AI & Machine Learning",
-    link: "https://vercel.com/blog/becoming-an-ai-engineering-company",
-    authors: ["Malte Ubl"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "AI & Machine Learning",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "Python at Netflix",
-    type: "Technical Writing",
-    link: "https://netflixtechblog.com/python-at-netflix-86b6028b3b3e",
-    authors: ["Roy Rapoport", " Brian Moyles", " Jim Cistaro", "Corey Bertram"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "Technical Writing",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "Understanding AI",
-    type: "AI & Machine Learning",
-    link: "https://leerob.com/ai",
-    authors: ["Lee Robinson"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "AI & Machine Learning",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "How AI Impacts Skill Formation",
-    type: "Agentic",
-    link: "https://www.anthropic.com/research/AI-assistance-coding-skills",
-    authors: ["Shen, Judy Hanwen, Tamkin, Alex"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "Agentic",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
-    title: "The Art of Writing Meaningful Git Commit Messages",
-    type: "Resource",
-    link: "https://medium.com/@iambonitheuri/the-art-of-writing-meaningful-git-commit-messages-a56887a4cb49",
-    authors: ["theurikarue"],
-    tags: [
-      {
-        id: generateRandomId(),
-        filter: "Resource",
-      },
-    ],
-  },
-  {
-    id: generateRandomId(),
     title: "ARP (ADDRESS RESOLUTION PROTOCOL) — How Does It Work?",
     type: "Networking",
     link: "https://medium.com/@nurcanakatay/arp-address-resolution-protocol-how-does-it-work-e90907a28e03",
     authors: ["Nurcan Akatay"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    title: "How to build a 30M RPS CDN in 30 days with Rust and WASM",
+    type: "Networking",
+    link: "https://blog.railway.com/p/railway-cdn",
+    authors: ["Phin Walton"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    title: "Dynamic Host Configuration Protocol (DHCP)",
+    type: "Networking",
+    link: "https://medium.com/@induwaraudanaranaweera/dynamic-host-configuration-protocol-dhcp-7153425d3939",
+    authors: ["Induwara Udana"],
     tags: [
       {
         id: generateRandomId(),
