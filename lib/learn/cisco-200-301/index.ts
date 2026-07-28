@@ -113,8 +113,40 @@ export const CISCO_200_301_MODULES: Module[] = [
       {
         id: generateRandomId(),
         title: "TCP/IP Model vs OSI Model",
-        completed: false,
+        completed: true,
         learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "TCP/IP Model: Where are the devices and protocols?",
+        completed: true,
+        learnt:
+          "Covered the TCP/IP model and its layers, including the protocols and devices that operate at each layer. Learned about the differences between the TCP/IP model and the OSI model, and how they are used in network communication.",
+      },
+      {
+        id: generateRandomId(),
+        title: "TCP/IP Model: PDUs and Encapsulation & Decapsulation",
+        completed: true,
+        learnt:
+          "Covered the concept of PDUs (Protocol Data Units) and how they are used in the TCP/IP model. Learned about encapsulation and decapsulation processes and how they facilitate communication between different layers of the model.",
+      },
+      {
+        id: generateRandomId(),
+        title: "TCP/IP Model: Packet Tracer Lab",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "TCP/IP Model: Real World Wireshark Lab",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Quiz 1: Quiz",
+        completed: true,
+        learnt: "13/13",
       },
     ],
   },
