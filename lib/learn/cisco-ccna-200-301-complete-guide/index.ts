@@ -191,4 +191,23 @@ export const CISCO_CCNA_200_301_GUIDE_MODULES: Module[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    name: "OSI Layer 4 - The Transport Layer",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Introduction",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "The Transport Layer Header, TCP and UDP",
+        completed: true,
+        learnt:
+          "Learned about the transport layer header, including the structure and fields of TCP and UDP headers.",
+      },
+    ],
+  },
 ];
