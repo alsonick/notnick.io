@@ -210,4 +210,41 @@ export const CISCO_CCNA_200_301_GUIDE_MODULES: Module[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    name: "OSI Layer 3 - The Network Layer",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Introduction",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "The IP Header",
+        completed: true,
+        learnt: "",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    name: "OSI Layer 2 - The Data Link Layer",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Introduction",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "The IP Header",
+        completed: true,
+        learnt:
+          "Learned about how the IP header is structured and the information it contains.",
+      },
+    ],
+  },
 ];
