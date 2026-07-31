@@ -247,4 +247,65 @@ export const CISCO_CCNA_200_301_GUIDE_MODULES: Module[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    name: "OSI Layer 3 - The Network Layer",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Introduction",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "The IP Header",
+        completed: true,
+        learnt:
+          "Learned about how the IP header is structured and the information it contains.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Unicast, Broadcast and Multicast Traffic",
+        completed: true,
+        learnt:
+          "Learned about the different types of network traffic and how they are handled at the network layer.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Converting from Decimal to Binary",
+        completed: true,
+        learnt:
+          "Learned how to convert decimal numbers to binary, which is essential for understanding IP addressing and subnetting.",
+      },
+      {
+        id: generateRandomId(),
+        title: "IPv4 Addresses",
+        completed: true,
+        learnt:
+          "Learned about IPv4 addressing, including the structure of IPv4 addresses and how they are used in networking.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Calculating an IPv4 Address in Binary",
+        completed: true,
+        learnt:
+          "Learned how to calculate IPv4 addresses in binary format, which is crucial for understanding subnetting and network design.",
+      },
+      {
+        id: generateRandomId(),
+        title: "The Subnet Mask",
+        completed: true,
+        learnt:
+          "Learned about the subnet mask and its role in dividing IP networks into subnets.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Slash Notation",
+        completed: true,
+        learnt:
+          "Learned about slash notation (CIDR) and how it is used to represent subnet masks and network prefixes.",
+      },
+    ],
+  },
 ];
