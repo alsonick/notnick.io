@@ -27,7 +27,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Lyrics Tags Generator",
-    description: "Software Engineer",
+    description: "Founder & Software Engineer",
     startYear: 2025,
     startMonth: "jan",
     endYear: 2026,
