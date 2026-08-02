@@ -69,7 +69,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Penn Elcom",
-    description: "Student Work Experience",
+    description: "Engineering Student Work Experience",
     startYear: 2018,
     endYear: 2018,
     startMonth: "jun",
