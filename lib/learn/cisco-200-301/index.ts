@@ -150,4 +150,42 @@ export const CISCO_200_301_MODULES: Module[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    name: "Binary",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Introduction",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Binary Math",
+        completed: true,
+        learnt:
+          "Covered the basics of binary math, including how to convert between binary and decimal numbers, and how to perform basic arithmetic operations in binary.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Binary Conversion Examples",
+        completed: true,
+        learnt: "Learned how to convert between binary and decimal numbers.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Converting IP Addressed to Binary",
+        completed: true,
+        learnt:
+          "Covered how to convert IP addresses to binary format, including understanding the structure of IP addresses and how to represent them in binary.",
+      },
+      {
+        id: generateRandomId(),
+        title: "Quiz 2: Quiz",
+        completed: true,
+        learnt: "16/16",
+      },
+    ],
+  },
 ];
