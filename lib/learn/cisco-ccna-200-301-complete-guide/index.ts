@@ -308,4 +308,37 @@ export const CISCO_CCNA_200_301_GUIDE_MODULES: Module[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    name: "IP Address Classes",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title: "Introduction",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "Class A IP Addresses",
+        completed: true,
+        learnt:
+          "Learned about Class A IP addresses, their range, and how they are used in large networks.",
+      },
+      {
+        id: generateRandomId(),
+        title: "IP Address Classes B and C",
+        completed: true,
+        learnt:
+          "Learned about Class B and Class C IP addresses, their ranges, and how they are used in medium and small networks.",
+      },
+      {
+        id: generateRandomId(),
+        title: "IP Address Classes D and E",
+        completed: true,
+        learnt:
+          "Learned about Class D and Class E IP addresses, their purposes, and how they are used in multicast and experimental applications.",
+      },
+    ],
+  },
 ];
