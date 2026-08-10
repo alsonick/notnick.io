@@ -1,7 +1,7 @@
 import { generateRandomId } from "../../generate-random-id";
 import { Module } from "../../../types/learn";
 
-export const CISCO_CCNA_200_301_GUIDE_MODULES: Module[] = [
+export const CCNA_COMPLETE_MODULES: Module[] = [
   {
     id: generateRandomId(),
     name: "Welcome",

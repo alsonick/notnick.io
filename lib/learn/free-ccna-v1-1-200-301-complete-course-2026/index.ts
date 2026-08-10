@@ -1,0 +1,73 @@
+import { generateRandomId } from "../../generate-random-id";
+import { Module } from "../../../types/learn";
+
+export const FREE_CCNA_V1_1_200_301_COMPLETE_COURSE_2026_MODULES: Module[] = [
+  {
+    id: generateRandomId(),
+    name: "Jeremy's IT Lab",
+    lessons: [
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Network Devices | Day 1 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Anki Flashcards | Day 1 Extra | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Anki Flashcards | Day 1 Extra | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Interfaces and Cables | Day 2 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Connecting Devices | Day 2 Lab | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title: "How the TCP/IP Model Actually Works | CCNA Day 3",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | OSI Model | Day 3 Lab | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Intro to the CLI | Day 4 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Ethernet LAN Switching (Part 1) | Day 5 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+    ],
+  },
+];
