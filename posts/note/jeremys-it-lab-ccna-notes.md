@@ -169,4 +169,86 @@ There are two types of fiber cables:
 
 ### Day 3
 
+#### Protocols and Standards
+
+A protocol is a set of rules defining how data should be communicated between devices over a network.
+
+---
+
+#### Who defines the standards?
+
+Most networking standards are developed by independent standards organizations, not a single vendor, with participation from engineers at many companies.
+
+| Organization                                                 | Role                                                          | Examples                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------- | -------------------------------- |
+| **IEEE** (Institute of Electrical and Electronics Engineers) | Develops many of the technologies used on local area networks | Ethernet (802.3), Wi-Fi (802.11) |
+| **IETF** (Internet Engineering Task Force)                   | Open community that defines protocols used on the Internet    | TCP, IP, UDP, HTTP, DNS, etc.    |
+
+---
+
+#### The TCP/IP Model
+
+![](/post/jeremys-it-lab-ccna-notes/layers_explained.png)
+
+---
+
+#### Layer 1: The Physical Layer
+
+- Responsible for sending and receiving bits as electrical, optical, or radio signals over the medium.
+- Defines things like cables, connectors, signal levels, and link speeds.
+- Examples: copper UTP cables, fiber-optic cables, Wi-Fi radios and antennas, network interface cards (NICs).
+
+---
+
+#### Layer 2: The Local Network Layer
+
+- Provides **hop-to-hop** delivery of messages on a local network.
+  - A hop is a one step along the path between two devices: from one router or host, to the next router or host in the path.
+- Uses **MAC (Media Access Control) addresses** to identify interfaces.
+  - Each device connected to a LAN has a unique MAC address assigned to it.
+- Protocols at this layer include:
+  - Ethernet (IEEE 802.3)
+  - Wi-Fi (IEEE 802.11)
+
+---
+
+#### Layer 3: The Internet Layer
+
+- Provides end-to-end delivery between hosts across multiple networks.
+- Uses **IP addresses** to identify hosts on a network.
+- Routers operate at this layer, using the message's destination IP address to forward the message toward its final destination host.
+- Protocols at this layer include:
+  - IP (IPv4, IPv6)
+  - ICMP (Internet Control Message Protocol)
+
+---
+
+#### Layer 4: The Transport Layer
+
+- Provides end-to-end communication between application processes.
+- Uses **port numbers** to identify the processes on each host.
+- Runs mainly on the communicating hosts.
+- Protocols at this layer include:
+  - UDP (User Datagram Protocol)
+  - TCP (Transmission Control Protocol)
+
+---
+
+#### Layer 5: The Application Layer
+
+- The **Application layer (layer 5)** is where network communications meet applications.
+- Defines how application processes format, send, and interpret data.
+- Protocols at this layer define message formats and rules for specific tasks, such as:
+  - Browsing web pages (HTTP/HTTPS)
+  - Transferring files (FTP/TFTP)
+  - Sending/Receiving email (SMTP, POP3, IMAP)
+- Network infrastructure devices (routers, switches) don't care about application-layer details.
+
+---
+
+#### Encapsulation & Decapsulation
+
+https://www.youtube.com/watch?v=ntVii_EJc6s
+[preview=true]
+
 <div data-embed="scrollup"></div>
