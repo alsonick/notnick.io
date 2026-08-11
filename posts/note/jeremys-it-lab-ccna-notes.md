@@ -248,7 +248,32 @@ Most networking standards are developed by independent standards organizations, 
 
 #### Encapsulation & Decapsulation
 
-https://www.youtube.com/watch?v=ntVii_EJc6s
+https://www.youtube.com/watch?v=yM-XNq9ADlI&t=27m48s
 [preview=true]
+
+---
+
+#### Protocol Data Units
+
+- The combination of data and a L4 header is called a **segment** (TCP) or **datagram** (UDP).
+- The combination of a **segment/datagram** and a L3 header is called a **packet**.
+- The combination of a packet and a L2 header/trailer is called a **frame**. - The frame is what gets sent over the physical medium.
+
+---
+
+#### The OSI Model
+
+![](/post/networking/osi_model.png)
+
+---
+
+#### Other Versions
+
+https://www.youtube.com/watch?v=yM-XNq9ADlI&t=2316s
+[preview=true]
+
+---
+
+### Day 4
 
 <div data-embed="scrollup"></div>

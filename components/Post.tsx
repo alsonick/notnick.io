@@ -9,6 +9,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "./Community";
 import { readTime } from "../lib/read-time";
+import { VideoEmbed } from "./VideoEmbed";
 import { NewsLetter } from "./Newsletter";
 import { Post as P } from "../types/post";
 import { getQuiz } from "../lib/quizzes";
@@ -40,7 +41,7 @@ export const Post = (props: Props) => {
     if (!props.post.contentHtml) return null;
 
     const embedRegex =
-      /<div data-embed="(tweet|github|community|scrollup|quiz)"[^>]*><\/div>/g;
+      /<div data-embed="(tweet|github|community|scrollup|quiz|video)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -91,6 +92,18 @@ export const Post = (props: Props) => {
         const ghUrl = getAttr(matchStr, "data-github-url");
         if (ghUrl) {
           parts.push(<GitHubEmbed key={`github-${index}`} url={ghUrl} />);
+        }
+      } else if (type === "video") {
+        const videoId = getAttr(matchStr, "data-video-id");
+        const start = getAttr(matchStr, "data-video-start");
+        if (videoId) {
+          parts.push(
+            <VideoEmbed
+              key={`video-${videoId}-${index}`}
+              id={videoId}
+              start={start ?? undefined}
+            />,
+          );
         }
       } else if (type === "community") {
         parts.push(<CommunityCard key={`community-${index}`} />);
