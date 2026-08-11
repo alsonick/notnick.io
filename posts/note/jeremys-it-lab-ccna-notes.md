@@ -60,6 +60,8 @@ Routers are used to provide connectivity **between** LANs.
 
 Host based firewalls are software based applications that run on **individual devices**.
 
+---
+
 ### Day 2
 
 #### Ethernet
@@ -155,12 +157,16 @@ There are two types of fiber cables:
 
 #### UTP vs Fiber-Optic Cabling
 
-| UTP                                                                                          | Fiber-Optic                                                                                   |
-| -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Lower cost than fiber-optic.                                                                   | Higher cost than UTP.                                                                           |
-| Shorter maximum distance than fiber-optic (~100m).                                             | Longer maximum distance than UTP.                                                               |
-| Can be vulnerable to EMI (Electromagnetic Interference).                                       | No vulnerability to EMI.                                                                        |
-| RJ45 ports used with UTP are cheaper than SFP ports.                                           | SFP ports are more expensive than RJ45 ports (single-mode is more expensive than multimode).    |
-| Emit (leak) a faint signal outside of the cable, which can be copied (= security risk).        | Does not emit any signal outside of the cable (= no security risk).                             |
+| UTP                                                                                     | Fiber-Optic                                                                                  |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Lower cost than fiber-optic.                                                            | Higher cost than UTP.                                                                        |
+| Shorter maximum distance than fiber-optic (~100m).                                      | Longer maximum distance than UTP.                                                            |
+| Can be vulnerable to EMI (Electromagnetic Interference).                                | No vulnerability to EMI.                                                                     |
+| RJ45 ports used with UTP are cheaper than SFP ports.                                    | SFP ports are more expensive than RJ45 ports (single-mode is more expensive than multimode). |
+| Emit (leak) a faint signal outside of the cable, which can be copied (= security risk). | Does not emit any signal outside of the cable (= no security risk).                          |
+
+---
+
+### Day 3
 
 <div data-embed="scrollup"></div>
