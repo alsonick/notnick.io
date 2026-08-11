@@ -276,4 +276,174 @@ https://www.youtube.com/watch?v=yM-XNq9ADlI&t=2316s
 
 ### Day 4
 
+#### User EXEC Mode
+
+```
+Router>
+```
+
+- The `>` symbol indicates that you're in user EXEC mode.
+- `Router` is the hostname of the device.
+- User EXEC mode is very limited.
+- Not able to make changes to the configuration.
+
+---
+
+#### Privileged EXEC Mode
+
+To enter privileged EXEC mode from user EXEC mode you must run the `enable` command.
+
+```
+Router>enable
+Router#
+```
+
+- The `#` symbol indicates that you're in privileged EXEC mode.
+- Provides complete access to view the device's configuration, restart the device, etc.
+- Cannot change the configuration, but can change the time on the device, save the configuration file, etc.
+
+---
+
+#### Global Configuration Mode
+
+To make changes to any of the configurations on the device you must enter global configuration mode.
+
+```
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line. End with CNTL/Z.
+Router(config)#
+```
+
+The `configure terminal` command enters global configuration mode.
+
+---
+
+#### Enable Password
+
+You don't want just anyone to have the ability to make changes to the network configuration for security purposes, so must protect privileged EXEC mode with a password.
+
+```
+Router(config)#enable password CCNA
+```
+
+`CCNA` is the password.
+
+- Passwords **are** case-sensitive.
+
+---
+
+#### Running-Config / Startup-Config
+
+- There are two separate configuration files kept on the device at once.
+- `running-config` is the current, active configuration file on the device. As you enter commands in the CLI, you edit the active configuration.
+
+To look at the configuration file:
+
+```
+Router#show running-config
+Building configuration...
+
+Current configuration : 714 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+enable password CCNA
+!
+```
+
+To run the `startup-config` file:
+
+```
+Router#show startup-config
+startup-config is not present
+```
+
+`startup-config is not present` this is because we haven't have saved the running config.
+
+---
+
+#### Saving The Configuration
+
+```
+Router#write
+Building configuration...
+ [OK]
+Router# copy running-config startup-config
+Destination filename [startup-config]?
+Building configuration...
+ [OK]
+Router#
+```
+
+---
+
+#### Service Password-Encryption
+
+```
+Router#configure terminal
+Enter configuration commands, one per line. Ed with CNTL/Z.
+Router(config)#service password-encryption
+```
+
+`service password-encryption` will encrypt all passwords.
+
+`service password-encryption` is not very secure.
+
+---
+
+#### Enable Secret
+
+The more secure version to encrypt passwords is the `enable secret` command.
+
+```
+Router(config)#enable secret Cisco
+```
+
+`Cisco` is the password.
+
+`enable secret` uses the [MD5](https://en.wikipedia.org/wiki/MD5) hashing algorithm.
+
+If both the `enable secret` and `enable password` are configured, then the whatever password you had setup for `enable password` will be ignored.
+
+`enable secret` is always encrypted by default.
+
+---
+
+#### Cancelling Commands
+
+```
+Router(config)#no service password-encryption
+```
+
+- The `no` keyword disable encryption for future passwords.
+- Passwords that were already encrypted will **not** be decrypted.
+
+---
+
+#### Service Password-Encryption Summary
+
+If you enable `service password-encryption`:
+
+- Current passwords **will** be encrypted.
+- Future passwords **will** be encrypted.
+- The `enable secret` will not be affected (it's always encrypted).
+
+If you disable `service password encryption`:
+
+- Current passwords **will not** be decrypted.
+- Future passwords **will not** be encrypted.
+- `enable secret` **will not** be affected.
+
+---
+
+### Day 5
+
 <div data-embed="scrollup"></div>
