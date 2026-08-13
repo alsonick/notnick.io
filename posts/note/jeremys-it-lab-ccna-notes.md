@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-10"
+last_updated_date: "2026-08-13"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -479,6 +479,94 @@ If you disable `service password encryption`:
 
 ---
 
-### Day 5
+### Day 5 (Part 1)
+
+#### Local Area Networks (LANs)
+
+Local area networks are networks confined to a small area like a home or small office.
+
+- Routers are use to connect separate LANs.
+
+---
+
+#### OSI Model - PDUs
+
+https://www.youtube.com/watch?v=u2n762WG0Vo&t=286s
+[preview=true]
+
+The different stages of preparing data to be forwarded are **Protocol Data Units (PDUs)**.
+
+---
+
+#### Ethernet Frame
+
+https://www.youtube.com/watch?v=u2n762WG0Vo&t=348s
+[preview=true]
+
+There are 5 fields in the ethernet frame header:
+
+- Preamble
+- SFD (Start Frame Delimiter)
+- Destination
+- Source
+- Type (or Length)
+
+There is only 1 field in the ethernet frame trailer:
+
+- FCS (Frame Check Sequence)
+  - Used by the receiving device to check if any errors occurred during the transmission.
+
+The header and trailer are **26 bytes** in length.
+
+---
+
+#### Preamble & SFD
+
+Preamble:
+
+- Length: 7 bytes (56 bits).
+- Alternating 1's and 0's.
+- Allows devices to synchronize their receiver clocks.
+
+SFD:
+
+- Stands for 'Start Frame Delimiter'.
+- Length: 1 byte (8 bits).
+- Marks the end of the preamble, and the beginning of the rest of the frame.
+
+---
+
+#### Destination & Source
+
+- Indicate the devices sending and receiving the frame.
+- Mainly consist of the destination and source MAC address.
+- MAC = Media Access Control.
+- 6 byte (48 bit) address of the physical device.
+
+---
+
+#### Type / Length
+
+- 2 bytes (16 bits).
+- A value of **1500 or less** in this field indicates the **length** of the encapsulated packet.
+- A value of **1536 or greater** in this field indicates the **type** of encapsulated packet, and the length is determined via other methods.
+
+---
+
+#### Frame Check Sequence (FCS)
+
+- Stands for 'Frame Check Sequence'.
+- 4 bytes (32 bits).
+- Detects corrupted data by running a 'CRC' algorithm over the received data.
+- CRC = 'Cyclic Redundancy Check'.
+
+---
+
+#### MAC Address
+
+- Is globally unique.
+- The first 3 bytes are the OUI (Organizationally Unique Identifier), which is assigned to the company making the device.
+- The last 3 bytes are unique to the device itself.
+- Written as 12 **hexadecimal** characters.
 
 <div data-embed="scrollup"></div>
