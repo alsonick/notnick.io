@@ -6,11 +6,18 @@ finished: true
 tag: "Networking"
 mins: "C"
 last_updated_date: "2026-08-10"
+labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
 ---
 
 ### Day 1
+
+---
+
+finished: true
+
+---
 
 #### What is a network?
 
@@ -60,9 +67,17 @@ Routers are used to provide connectivity **between** LANs.
 
 Host based firewalls are software based applications that run on **individual devices**.
 
+[lab=Day 01 Lab - Packet Tracer Introduction.pkt]
+
 ---
 
 ### Day 2
+
+---
+
+finished: true
+
+---
 
 #### Ethernet
 
@@ -165,9 +180,17 @@ There are two types of fiber cables:
 | RJ45 ports used with UTP are cheaper than SFP ports.                                    | SFP ports are more expensive than RJ45 ports (single-mode is more expensive than multimode). |
 | Emit (leak) a faint signal outside of the cable, which can be copied (= security risk). | Does not emit any signal outside of the cable (= no security risk).                          |
 
+[lab=Day 02 Lab - Connecting Devices.pkt]
+
 ---
 
 ### Day 3
+
+---
+
+finished: true
+
+---
 
 #### Protocols and Standards
 
@@ -188,7 +211,8 @@ Most networking standards are developed by independent standards organizations, 
 
 #### The TCP/IP Model
 
-![](/post/jeremys-it-lab-ccna-notes/layers_explained.png)
+https://www.youtube.com/watch?v=yM-XNq9ADlI&t=883s
+[preview=true]
 
 ---
 
@@ -248,7 +272,7 @@ Most networking standards are developed by independent standards organizations, 
 
 #### Encapsulation & Decapsulation
 
-https://www.youtube.com/watch?v=yM-XNq9ADlI&t=27m48s
+https://www.youtube.com/watch?v=yM-XNq9ADlI&t=1668s
 [preview=true]
 
 ---
@@ -263,7 +287,8 @@ https://www.youtube.com/watch?v=yM-XNq9ADlI&t=27m48s
 
 #### The OSI Model
 
-![](/post/networking/osi_model.png)
+https://www.youtube.com/watch?v=yM-XNq9ADlI&t=2174s
+[preview=true]
 
 ---
 
@@ -272,9 +297,17 @@ https://www.youtube.com/watch?v=yM-XNq9ADlI&t=27m48s
 https://www.youtube.com/watch?v=yM-XNq9ADlI&t=2316s
 [preview=true]
 
+[lab=Day 03 Lab - OSI Model.pkt]
+
 ---
 
 ### Day 4
+
+---
+
+finished: true
+
+---
 
 #### User EXEC Mode
 
@@ -441,6 +474,8 @@ If you disable `service password encryption`:
 - Current passwords **will not** be decrypted.
 - Future passwords **will not** be encrypted.
 - `enable secret` **will not** be affected.
+
+[lab=Day 04 Lab - Basic Device Security.pkt]
 
 ---
 

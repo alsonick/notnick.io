@@ -6,6 +6,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { social } from "../lib/social-links";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiArrowLeft } from "react-icons/fi";
+import { DownloadLab } from "./DownloadLab";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "./Community";
 import { readTime } from "../lib/read-time";
@@ -41,7 +42,7 @@ export const Post = (props: Props) => {
     if (!props.post.contentHtml) return null;
 
     const embedRegex =
-      /<div data-embed="(tweet|github|community|scrollup|quiz|video)"[^>]*><\/div>/g;
+      /<div data-embed="(tweet|github|community|scrollup|quiz|video|lab)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -103,6 +104,14 @@ export const Post = (props: Props) => {
               id={videoId}
               start={start ?? undefined}
             />,
+          );
+        }
+      } else if (type === "lab") {
+        const labHref = getAttr(matchStr, "data-lab-href");
+        const labFile = getAttr(matchStr, "data-lab-file");
+        if (labHref && labFile) {
+          parts.push(
+            <DownloadLab key={`lab-${index}`} href={labHref} file={labFile} />,
           );
         }
       } else if (type === "community") {

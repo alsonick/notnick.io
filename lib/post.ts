@@ -3,6 +3,7 @@ import { remarkSectionMeta, PostSection } from "./remark-section-meta";
 import { remarkGithub } from "./remark-github";
 import { remarkVideo } from "./remark-video";
 import { remarkTweet } from "./remark-tweet";
+import { remarkLab } from "./remark-lab";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
 import remarkRehype from "remark-rehype";
@@ -80,6 +81,7 @@ export const getPostData = async (slug: string, dir: string) => {
     .use(remarkTweet)
     .use(remarkGithub)
     .use(remarkVideo)
+    .use(remarkLab, { dir: matterResult.data.labs })
     .use(remarkHeadingAnchors)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)

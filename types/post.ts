@@ -8,6 +8,7 @@ export interface Post {
   finished: boolean;
   pinned?: boolean;
   filter: string;
+  labs?: string;
   cover?: string;
   title: string;
   slug: string;

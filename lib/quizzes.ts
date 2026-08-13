@@ -70,6 +70,45 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       correctIndex: 2,
     },
   },
+  "jeremys-it-lab-ccna-notes": {
+    "day-1": {
+      id: "day-1",
+      topic: "Day 1",
+      question:
+        "Two hosts sit on separate LANs and need to communicate with each other. Which device provides the connectivity between those LANs?",
+      options: ["A switch", "A router", "A firewall", "A server"],
+      correctIndex: 1,
+    },
+    "day-2": {
+      id: "day-2",
+      topic: "Day 2",
+      question:
+        "On a 10BASE-T or 100BASE-T link, which device transmits on pins 3 and 6 and receives on pins 1 and 2?",
+      options: ["A PC", "A router", "A switch", "A firewall"],
+      correctIndex: 2,
+    },
+    "day-3": {
+      id: "day-3",
+      topic: "Day 3",
+      question:
+        "What do you call a packet once a Layer 2 header and trailer have been added to it?",
+      options: ["A segment", "A datagram", "A frame", "A bit stream"],
+      correctIndex: 2,
+    },
+    "day-4": {
+      id: "day-4",
+      topic: "Day 4",
+      question:
+        "A router has both an enable password and an enable secret configured. Which one do you need to enter to reach privileged EXEC mode?",
+      options: [
+        "The enable password",
+        "The enable secret",
+        "Either one is accepted",
+        "Neither, both are ignored",
+      ],
+      correctIndex: 1,
+    },
+  },
   "merge-sort": {
     "divide-and-conquer": {
       id: "divide-and-conquer",
