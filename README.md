@@ -1,7 +1,3 @@
-# notnick.io
-
-My personal website and blog.
-
 ## Getting Started
 
 **Prerequisites:** Node.js and Yarn installed.
