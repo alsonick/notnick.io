@@ -108,6 +108,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-5-part-1": {
+      id: "day-5-part-1",
+      topic: "Day 5 (Part 1)",
+      question:
+        "A switch receives an Ethernet frame whose Type/Length field holds the value 1500. What does that value tell the receiving device?",
+      options: [
+        "The type of packet encapsulated in the frame",
+        "The length of the encapsulated packet",
+        "The number of bytes in the preamble and SFD",
+        "The size of the frame check sequence",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

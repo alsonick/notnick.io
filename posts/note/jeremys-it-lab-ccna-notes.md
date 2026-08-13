@@ -107,7 +107,7 @@ Ethernet is a collection of network protocols/standards.
 
 UTP = Unshielded Twisted Pair
 
-They limited to **100 meters**.
+They're limited to **100 meters**.
 
 - Unshielded
   - Means that the wires have no **metallic shield**, which makes them **vulnerable to electromagnetic magnetic interferences**.
@@ -481,6 +481,12 @@ If you disable `service password encryption`:
 
 ### Day 5 (Part 1)
 
+---
+
+finished: true
+
+---
+
 #### Local Area Networks (LANs)
 
 Local area networks are networks confined to a small area like a home or small office.
@@ -568,5 +574,9 @@ SFD:
 - The first 3 bytes are the OUI (Organizationally Unique Identifier), which is assigned to the company making the device.
 - The last 3 bytes are unique to the device itself.
 - Written as 12 **hexadecimal** characters.
+
+---
+
+### Day 6 (Part 2)
 
 <div data-embed="scrollup"></div>
