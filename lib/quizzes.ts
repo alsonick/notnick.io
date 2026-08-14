@@ -121,6 +121,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-6-part-2": {
+      id: "day-6-part-2",
+      topic: "Day 6 (Part 2)",
+      question:
+        "A host knows the IP address of another host on its LAN, but not its MAC address. How are the two ARP messages that follow addressed?",
+      options: [
+        "The request is unicast and the reply is broadcast",
+        "The request is broadcast and the reply is unicast",
+        "Both the request and the reply are broadcast",
+        "Both the request and the reply are unicast",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

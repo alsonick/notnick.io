@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-13"
+last_updated_date: "2026-08-14"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -522,7 +522,12 @@ There is only 1 field in the ethernet frame trailer:
 - FCS (Frame Check Sequence)
   - Used by the receiving device to check if any errors occurred during the transmission.
 
-The header and trailer are **26 bytes** in length.
+Key points:
+
+- The header and trailer are **26 bytes** in length.
+- The minimum size for an Ethernet frame is **64 bytes**.
+- The minimum payload for the Ethernet frame is 46 bytes.
+- If the payload is **less than 46 bytes**, padding bytes are added.
 
 ---
 
@@ -539,6 +544,8 @@ SFD:
 - Stands for 'Start Frame Delimiter'.
 - Length: 1 byte (8 bits).
 - Marks the end of the preamble, and the beginning of the rest of the frame.
+
+The **Preamble & SFD** is usually not considered part of the Ethernet header. Therefore the size of the Ethernet header + trailer is 18 bytes.
 
 ---
 
@@ -578,5 +585,119 @@ SFD:
 ---
 
 ### Day 6 (Part 2)
+
+---
+
+finished: true
+
+---
+
+#### ARP
+
+- ARP stands for 'Address Resolution Protocol'.
+- APR is used to discover the Layer 2 address (MAC address) of a known Layer 3 address (IP address).
+- Consists of two messages:
+  - **ARP Request**
+  - **ARP Reply**
+- **ARP Request** is **broadcast** (sent to all hosts on the network).
+- **ARP Reply** is **unicast** (the host that sent the request).
+
+---
+
+#### Ping
+
+- A network utility that is used to test reachability.
+- Measures round-trip time.
+- Uses two messages:
+  - **ICMP Echo Request**
+  - **ICMP Echo Reply**
+
+---
+
+#### MAC Address Table
+
+https://www.youtube.com/watch?v=5q1pqdmdPjo&t=1225
+[preview=true]
+
+The command to view the MAC address table on a Cisco switch:
+
+```
+SW1#show mac address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    0c2f.b011.9d00    DYNAMIC     Gi0/0
+   1    0c2f.b06a.3900    DYNAMIC     Gi0/2
+Total Mac Addresses for this criterion: 2
+SW1#
+```
+
+---
+
+#### Clearing the MAC Address Table
+
+This command will remove all dynamic MAC addresses from the table:
+
+```
+Total Mac Addresses for this criterion: 2
+SW1#clear mac address-table dynamic
+SW1#show mac address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+SW1#
+```
+
+```
+clear mac address-table dynamic
+```
+
+If the switch doesn't get any traffic from a certain MAC address for 5 minutes, it will remove the entry from the MAC address table, this process is called **aging**.
+
+To remove a certain MAC address from the table:
+
+```
+SW1#clear mac address-table dynamic address 0c2f.b011.9d00
+SW1#show mac address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    0c2f.b06a.3900    DYNAMIC     Gi0/2
+Total Mac Addresses for this criterion: 1
+SW1#
+```
+
+```
+clear mac address-table dynamic address mac-address
+```
+
+You can clear a MAC address from the table by specifying the interface/port:
+
+```
+SW1#clear mac address-table dynamic interface Gi0/0
+SW1#show mac address-table
+          Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    0c2f.b06a.3900    DYNAMIC     Gi0/2
+Total Mac Addresses for this criterion: 1
+SW1#
+```
+
+```
+clear mac address-table dynamic interface interface-id
+```
+
+---
+
+### Day 7
 
 <div data-embed="scrollup"></div>
