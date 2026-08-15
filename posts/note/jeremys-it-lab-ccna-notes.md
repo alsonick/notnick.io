@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-14"
+last_updated_date: "2026-08-15"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -698,6 +698,100 @@ clear mac address-table dynamic interface interface-id
 
 ---
 
-### Day 7
+### Day 7 (Part 1)
+
+---
+
+finished: true
+
+---
+
+#### IPv4 Header
+
+- IP addresses are 32 bits (4 bytes) in length.
+
+---
+
+#### IPv4 Addresses
+
+An example IPv4 address:
+
+`192.168.1.254/24`
+
+- Each group is 8 bits.
+- Each 8 bit group is called an octet.
+- The `/24` means the first 24 bits represents the network portion of the address.
+- The remaining 8 bits represents the end host portion.
+
+So `192.168.1` is the network portion and `.254` is the host portion.
+
+---
+
+#### IPv4 Address Classes
+
+| Class | First octet | First octet numeric range |
+| ----- | ----------- | ------------------------- |
+| A     | 0xxxxxxx    | 0-127                     |
+| B     | 10xxxxxx    | 128-191                   |
+| C     | 110xxxxx    | 192-223                   |
+| D     | 1110xxxx    | 224-239                   |
+| E     | 1111xxxx    | 240-255                   |
+
+Classes A, B and C are the classes used for hosts, and each has a default prefix length:
+
+| Class | First octet | First octet numeric range | Prefix Length |
+| ----- | ----------- | ------------------------- | ------------- |
+| A     | 0xxxxxxx    | 0-127                     | /8            |
+| B     | 10xxxxxx    | 128-191                   | /16           |
+| C     | 110xxxxx    | 192-223                   | /24           |
+
+The prefix length determines how many networks each class has, and how many addresses are in each of those networks:
+
+| Class   | Leading bits | Size of _network number_ bit field | Size of _rest_ bit field | Number of networks         | Addresses per network       |
+| ------- | ------------ | ---------------------------------- | ------------------------ | -------------------------- | --------------------------- |
+| Class A | 0            | 8                                  | 24                       | 128 (2<sup>7</sup>)        | 16,777,216 (2<sup>24</sup>) |
+| Class B | 10           | 16                                 | 16                       | 16,384 (2<sup>14</sup>)    | 65,536 (2<sup>16</sup>)     |
+| Class C | 110          | 24                                 | 8                        | 2,097,152 (2<sup>21</sup>) | 256 (2<sup>8</sup>)         |
+
+---
+
+#### Loopback Addresses
+
+- Addresses range `127.0.0.0` - `127.255.255.255`.
+- Used to test the network stack on the local device.
+
+![](/post/jeremys-it-lab-ccna-notes/loopback-terminal-example.png)
+
+---
+
+#### Netmask
+
+A netmask (also called a subnet mask) is another way of writing the prefix length. It's a 32 bit value where the bits belonging to the network portion are set to `1`, and the bits belonging to the host portion are set to `0`.
+
+So `/24` and `255.255.255.0` mean exactly the same thing: the first 24 bits are the network portion.
+
+| Class | Prefix Length | Netmask       | Netmask in binary                   |
+| ----- | ------------- | ------------- | ----------------------------------- |
+| A     | /8            | 255.0.0.0     | 11111111 00000000 00000000 00000000 |
+| B     | /16           | 255.255.0.0   | 11111111 11111111 00000000 00000000 |
+| C     | /24           | 255.255.255.0 | 11111111 11111111 11111111 00000000 |
+
+---
+
+#### Network Address
+
+- Host portion of the address is all 0's = **Network Address**.
+- The **network address** cannot be assigned a host.
+
+---
+
+#### Broadcast Address
+
+- Host portion of the address is all 1's = **Broadcast Address**.
+- The **broadcast address** cannot be assigned to a host.
+
+---
+
+### Day 8 (Part 2)
 
 <div data-embed="scrollup"></div>

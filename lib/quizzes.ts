@@ -134,6 +134,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-7-part-1": {
+      id: "day-7-part-1",
+      topic: "Day 7 (Part 1)",
+      question:
+        "A host is configured with the address 172.16.5.10/16. Which address is the broadcast address of the network it belongs to?",
+      options: [
+        "172.16.255.255",
+        "172.16.5.255",
+        "172.255.255.255",
+        "255.255.0.0",
+      ],
+      correctIndex: 0,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
