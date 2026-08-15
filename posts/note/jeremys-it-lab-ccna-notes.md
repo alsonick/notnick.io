@@ -696,6 +696,8 @@ SW1#
 clear mac address-table dynamic interface interface-id
 ```
 
+[lab=Day 06 Lab - Ethernet LAN Switching.pkt]
+
 ---
 
 ### Day 7 (Part 1)
