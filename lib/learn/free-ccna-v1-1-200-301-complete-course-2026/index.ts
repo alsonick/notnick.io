@@ -68,6 +68,27 @@ export const FREE_CCNA_V1_1_200_301_COMPLETE_COURSE_2026_MODULES: Module[] = [
         completed: true,
         learnt: "",
       },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Ethernet LAN Switching (Part 2) | Day 6 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Analyzing Ethernet Switching | Day 6 Lab | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | IPv4 Addressing (Part 1) | Day 7 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
     ],
   },
 ];
