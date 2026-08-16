@@ -147,6 +147,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 0,
     },
+    "day-8-part-2": {
+      id: "day-8-part-2",
+      topic: "Day 8 (Part 2)",
+      question:
+        "You configure an IP address on a router interface, but `show ip interface brief` still shows it as administratively down. What do you need to do to bring it up?",
+      options: [
+        "Enter `no shutdown` on the interface",
+        "Add a description to the interface",
+        "Re-enter the address with a /8 prefix instead of a netmask",
+        "Nothing, the interface comes up on its own after a few seconds",
+      ],
+      correctIndex: 0,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-15"
+last_updated_date: "2026-08-16"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -795,5 +795,218 @@ So `/24` and `255.255.255.0` mean exactly the same thing: the first 24 bits are 
 ---
 
 ### Day 8 (Part 2)
+
+---
+
+finished: true
+
+---
+
+#### Viewing Interfaces
+
+The command to view a summary of all the interfaces on a router:
+
+```
+R1>en
+R1#show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     unassigned      YES unset  administratively down down
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+GigabitEthernet0/3     unassigned      YES unset  administratively down down
+R1#
+```
+
+```
+show ip interface brief
+```
+
+- Lists every interface on the device, its IP address, and whether it's up or down.
+- `unassigned` means no IP address has been configured on the interface yet.
+- **Status** is the Layer 1 state, and **Protocol** is the Layer 2 state.
+- `administratively down` means the interface has been manually disabled, router interfaces are disabled by default.
+- This is the default **status** of Cisco router interfaces.
+- Cisco switch interfaces are not `administratively down` by default.
+
+---
+
+#### Configuring an Interface
+
+To configure an interface you first have to enter interface configuration mode:
+
+```
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface gigabitethernet 0/0
+R1(config-if)#
+```
+
+```
+interface interface-id
+```
+
+- `conf t` is short for `configure terminal`, which takes you from privileged EXEC mode into global configuration mode.
+- `interface gigabitethernet 0/0` selects the interface you want to configure.
+- The prompt changes from `R1(config)#` to `R1(config-if)#`, which tells you any commands you type now will apply to that interface only.
+
+---
+
+#### Assigning an IP Address to an Interface
+
+Once you're in interface configuration mode you can give the interface an IP address and enable it:
+
+```
+R1(config-if)#ip address 10.255.255.254 ?
+  A.B.C.D  IP subnet mask
+
+R1(config-if)#ip address 10.255.255.254 255.0.0.0
+R1(config-if)#no shutdown
+R1(config-if)#
+*Dec  7 08:29:08.937: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Dec  7 08:29:09.938: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+R1(config-if)#
+```
+
+```
+ip address ip-address netmask
+```
+
+- The `?` shows you what the router expects next, in this case the netmask.
+- The netmask has to be written out in full (`255.0.0.0`), you can't use the `/8` prefix notation here.
+- `no shutdown` enables the interface, this is what takes it out of the `administratively down` state.
+- The two messages that follow are the router telling you the interface came up:
+  - **%LINK-3-UPDOWN** is Layer 1 (the **Status** column) coming up.
+  - **%LINEPROTO-5-UPDOWN** is Layer 2 (the **Protocol** column) coming up.
+
+---
+
+#### Running Show Commands from Configuration Mode
+
+`show` commands normally only work in privileged EXEC mode, but you can run them from configuration mode by putting `do` in front:
+
+```
+R1(config-if)#do show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     10.255.255.254  YES manual up                    up
+GigabitEthernet0/1     unassigned      YES unset  administratively down down
+GigabitEthernet0/2     unassigned      YES unset  administratively down down
+GigabitEthernet0/3     unassigned      YES unset  administratively down down
+R1(config-if)#
+```
+
+```
+do show-command
+```
+
+- Saves you from having to `exit` back to privileged EXEC mode just to check something.
+- Gi0/0 is now the only interface with an IP address, and its **Status** and **Protocol** are both `up`.
+- The **Method** changed from `unset` to `manual`, which means the address was configured by hand.
+
+---
+
+#### Show Interfaces [Interface]
+
+`show ip interface brief` gives you a summary of every interface, `show interfaces` gives you everything about one interface:
+
+```
+R1#show interfaces g0/0
+GigabitEthernet0/0 is up, line protocol is up
+  Hardware is iGbE, address is 0c1b.8444.f000 (bia 0c1b.8444.f000)
+  Internet address is 10.255.255.254/8
+  MTU 1500 bytes, BW 1000000 Kbit/sec, DLY 10 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Auto Duplex, Auto Speed, link type is auto, media type is RJ45
+  output flow-control is unsupported, input flow-control is unsupported
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:00:06, output 00:00:05, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     167 packets input, 30159 bytes, 0 no buffer
+     Received 0 broadcasts (0 IP multicasts)
+     0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog, 0 multicast, 0 pause input
+     350 packets output, 39097 bytes, 0 underruns
+     0 output errors, 0 collisions, 2 interface resets
+     105 unknown protocol drops
+     0 babbles, 0 late collision, 0 deferred
+     1 lost carrier, 0 no carrier, 0 pause output
+     0 output buffer failures, 0 output buffers swapped out
+```
+
+```
+show interfaces interface-id
+```
+
+- `g0/0` is shorthand for `GigabitEthernet0/0`.
+- If you leave the interface off the end, it shows this same output for **every** interface on the device.
+- `is up, line protocol is up` is the same Layer 1 / Layer 2 state as the **Status** and **Protocol** columns.
+- `address is 0c1b.8444.f000` is the MAC address of the interface, and `bia` (burned in address) is the one that came from the factory.
+- `Internet address is 10.255.255.254/8` is the IP address and prefix length configured on the interface.
+- `MTU 1500 bytes` is the largest packet the interface will send without breaking it up.
+- `BW 1000000 Kbit/sec` is the bandwidth (1 Gbps).
+- The counters at the bottom (`input errors`, `CRC`, `collisions`, etc) are what you use to troubleshoot a link, they should all be 0 on a healthy interface.
+
+---
+
+#### Show Interfaces Description
+
+```
+R1#show interfaces description
+Interface                      Status         Protocol Description
+Gi0/0                          up             up
+Gi0/1                          up             up
+Gi0/2                          up             up
+Gi0/3                          admin down     down
+```
+
+```
+show interfaces description
+```
+
+- Gives you a shorter summary than `show ip interface brief`, no IP addresses, just the state of each interface.
+- The **Description** column is empty because no descriptions have been configured yet.
+- A description is just a label you give an interface to remind you what it connects to, it has no effect on how the interface works.
+- `admin down` is the short way of writing `administratively down`.
+
+---
+
+#### Adding a Description to an Interface
+
+You add a description from interface configuration mode:
+
+```
+R1(config)#int g0/0
+R1(config-if)#description ## to SW1 ##
+R1(config-if)#int g0/1
+R1(config-if)#desc ## to SW2 ##
+R1(config-if)#int g0/2
+R1(config-if)#desc ## to SW3 ##
+R1(config-if)#do sh int desc
+Interface                      Status         Protocol Description
+Gi0/0                          up             up       ## to SW1 ##
+Gi0/1                          up             up       ## to SW2 ##
+Gi0/2                          up             up       ## to SW3 ##
+Gi0/3                          admin down     down
+```
+
+```
+description text
+```
+
+- `desc` is short for `description`, and `int` is short for `interface`.
+- You don't have to `exit` between interfaces, typing `int g0/1` while in `(config-if)` mode just moves you straight to the next interface.
+- The `##` are not special, they're just there to make the description stand out in the output.
+- Gi0/3 has no description because one was never set on it.
+
+---
+
+### Day 9
 
 <div data-embed="scrollup"></div>
