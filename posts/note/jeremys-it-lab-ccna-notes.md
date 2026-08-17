@@ -1005,6 +1005,8 @@ description text
 - The `##` are not special, they're just there to make the description stand out in the output.
 - Gi0/3 has no description because one was never set on it.
 
+[lab=Day 08 Lab - IPv4 Addresses.pkt]
+
 ---
 
 ### Day 9
