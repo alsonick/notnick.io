@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-16"
+last_updated_date: "2026-08-19"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -828,6 +828,8 @@ show ip interface brief
 - This is the default **status** of Cisco router interfaces.
 - Cisco switch interfaces are not `administratively down` by default.
 
+Switch interfaces do not have the 'shutdown' command applied by default. They will have the `up/up` state if connected to another device, or the `down/down` state if they're not.
+
 ---
 
 #### Configuring an Interface
@@ -1010,5 +1012,213 @@ description text
 ---
 
 ### Day 9
+
+#### Show Interfaces Status
+
+```
+SW1#show interfaces status
+Port      Name               Status       Vlan       Duplex  Speed Type
+Fa0/1                        connected    1          a-full  a-100 10/100BaseTX
+Fa0/2                        connected    trunk      a-full  a-100 10/100BaseTX
+Fa0/3                        connected    1          a-full  a-100 10/100BaseTX
+Fa0/4                        connected    1          a-full  a-100 10/100BaseTX
+Fa0/5                        notconnect   1            auto   auto 10/100BaseTX
+Fa0/6                        notconnect   1            auto   auto 10/100BaseTX
+Fa0/7                        notconnect   1            auto   auto 10/100BaseTX
+Fa0/8                        notconnect   1            auto   auto 10/100BaseTX
+Fa0/9                        notconnect   1            auto   auto 10/100BaseTX
+Fa0/10                       notconnect   1            auto   auto 10/100BaseTX
+Fa0/11                       notconnect   1            auto   auto 10/100BaseTX
+Fa0/12                       notconnect   1            auto   auto 10/100BaseTX
+```
+
+```
+show interfaces status
+```
+
+- **Port** is the interface, `Fa0/1` is short for `FastEthernet0/1`.
+- **Name** is the description set on the port.
+- **Status** is whether the port is up:
+  - `connected` = something is plugged in.
+  - `notconnect` = nothing is plugged in.
+  - `disabled` = the port was shut down.
+- **Vlan** is the VLAN the port is in, `1` is the default.
+  - `trunk` means the port carries multiple VLANs.
+- **Duplex** is `full` (send and receive at once) or `half` (one at a time).
+- **Speed** is the speed of the port in Mbps.
+- **Type** is the physical port, `10/100BaseTX` is copper RJ45 that runs at 10 or 100 Mbps.
+
+`a-` means **autonegotiated**, the two devices agreed on the speed and duplex themselves.
+
+- Ports with nothing plugged in just say `auto` because there's nothing to negotiate with.
+
+---
+
+#### Configuring Interface Speed and Duplex
+
+```
+SW1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#int f0/1
+SW1(config-if)#speed ?
+  10    Force 10 Mbps operation
+  100   Force 100 Mbps operation
+  auto  Enable AUTO speed configuration
+SW1(config-if)#speed 100
+SW1(config-if)#duplex ?
+  auto  Enable AUTO duplex configuration
+  full  Force full duplex operation
+  half  Force half-duplex operation
+SW1(config-if)#duplex full
+SW1(config-if)#description ## to R1 ##
+```
+
+```
+speed 10 | 100 | auto
+duplex auto | full | half
+```
+
+- `speed` and `duplex` are set in interface configuration mode.
+- `?` shows you the options you can use with a command.
+- The options are the speeds the port supports.
+- Setting a speed or duplex **forces** it, the port stops autonegotiating and uses what you told it.
+- `auto` puts it back to autonegotiating.
+- `description` sets the description for that interface.
+
+---
+
+#### Interface Range
+
+```
+SW1(config)#interface range f0/5 - 12
+SW1(config-if-range)#description ## not in use ##
+SW1(config-if-range)#shutdown
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/5, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/6, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/7, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/8, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/9, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/10, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/11, changed state to administratively down
+00:42:36: %LINK-5-CHANGED: Interface FastEthernet0/12, changed state to administratively down
+SW1(config-if-range)#
+```
+
+```
+interface range interface-id - interface-id
+```
+
+- `interface range` lets you configure lots of interfaces at once instead of one at a time.
+- `f0/5 - 12` means f0/5 up to f0/12, that's 8 interfaces.
+- The prompt changes to `(config-if-range)` to show you're editing a group of interfaces.
+- Every command you enter is applied to all of them, so all 8 got the same description and were shut down.
+- Shutting down unused ports is good practice, it stops anyone plugging into a spare port to get onto the network.
+
+```
+SW1(config)#int range f0/5 - 6, f0/9 - 12
+SW1(config-if-range)#no shut
+00:57:07: %LINK-3-UPDOWN: Interface FastEthernet0/5, changed state to up
+00:57:07: %LINK-3-UPDOWN: Interface FastEthernet0/6, changed state to up
+00:57:07: %LINK-3-UPDOWN: Interface FastEthernet0/9, changed state to up
+00:57:07: %LINK-3-UPDOWN: Interface FastEthernet0/10, changed state to up
+00:57:07: %LINK-3-UPDOWN: Interface FastEthernet0/11, changed state to up
+00:57:07: %LINK-3-UPDOWN: Interface FastEthernet0/12, changed state to up
+```
+
+```
+interface range interface-id - interface-id, interface-id - interface-id
+```
+
+- You can select more than one range at a time by separating them with a comma.
+- `f0/5 - 6, f0/9 - 12` selects f0/5, f0/6, and f0/9 to f0/12, f0/7 and f0/8 are skipped.
+- `no shut` is short for `no shutdown`, it turns the interfaces back on.
+
+---
+
+Full/Half Duplex
+
+- **Half duplex** means that the device cannot send and receive data at the same time. If it is receiving a frame, it must wait before sending a frame.
+- **Full duplex** means that the device **can** send and receive data at the same time.
+
+Devices connected to hubs must operate in half duplex.
+
+---
+
+#### CSMA/CD
+
+- Stands for 'Carrier Sense Multiple Access with Collision Detection'.
+- Before sending frames, devices listen to the collision domain until they detect that other devices are not sending traffic.
+- If a collision does occur, the device sends a jamming signal to inform the other devices that a collision has occurred.
+- Each device will wait a random period of time before sending frames again.
+- This whole process repeats.
+
+---
+
+#### Speed/Duplex Autonegotiation
+
+- Interfaces that can run at different speeds (10/100 or 10/100/1000) have default setting of **speed auto** and **duplex auto**.
+- Interfaces tell the device on the other end what they're capable of, and the two agree on the fastest **speed** and best **duplex** they can both do.
+
+If autonegotiation is disabled on the other device, the switch has to work it out on its own:
+
+- **Speed**: the switch tries to sense what speed the other device is running at.
+  - If it can't, it uses the **slowest** speed it supports (10 Mbps on a 10/100/1000 interface).
+- **Duplex**: the switch picks the duplex based on the speed it ended up with.
+  - 10 or 100 Mbps = **half duplex**.
+  - 1000 Mbps or faster = **full duplex**.
+
+---
+
+#### Duplex Mismatch
+
+A duplex mismatch is when one end of a link is on full duplex and the other end is on half duplex.
+
+It happens because the switch can sense the **speed** the other device is using, but it can't sense the **duplex**, so it has to guess with the rule above.
+
+Here's a switch on `auto` with 3 PCs that were all set manually:
+
+| PC is set to     | Switch senses | Switch guesses | Result       |
+| ---------------- | ------------- | -------------- | ------------ |
+| 10 Mbps / half   | 10 Mbps       | half duplex    | match        |
+| 1000 Mbps / full | 1000 Mbps     | full duplex    | match        |
+| 100 Mbps / full  | 100 Mbps      | half duplex    | **mismatch** |
+
+The last one breaks because the switch always guesses half duplex at 100 Mbps, but the PC was set to full.
+
+What goes wrong:
+
+- The full duplex end sends whenever it wants, it doesn't check if the line is busy.
+- The half duplex end is using CSMA/CD, so frames arriving while it's sending look like a **collision**.
+- It stops, waits, then sends the frame again.
+
+The link still works, it's just slow, and it gets worse the more traffic you put through it.
+
+- The half duplex end shows **late collisions**.
+- The full duplex end shows **CRC errors** and **runts**.
+- Both show up in the counters at the bottom of `show interfaces`.
+
+The fix is to make both ends match, either put both on `auto` or set both manually to the same thing.
+
+---
+
+#### Interface Errors
+
+These are the counters at the bottom of `show interfaces`:
+
+```
+269 packets input, 71059 bytes, 0 no buffer
+Received 6 broadcasts, 0 runts, 0 giants, 0 throttles
+0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+7290 packets output, 429075 bytes, 0 underruns
+0 output errors, 3 interface resets
+0 output buffer failures, 0 output buffers swapped out
+```
+
+- **Runts** are frames smaller than the minimum frame size (64 bytes).
+- **Giants** are frames larger than the maximum frame size (1518 bytes).
+- **CRC** are frames that failed the CRC (Cyclic redundancy check) check in the Ethernet FCS trailer.
+- **Frame** are frames with an incorrect format, caused by an error.
+- **Input errors** is the total of the above four and a few others.
+- **Output errors** are frames the switch tried to send but couldn't because of an error.
 
 <div data-embed="scrollup"></div>
