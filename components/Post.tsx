@@ -1,4 +1,4 @@
-import { DOMAIN, FULL_NAME } from "../lib/constants";
+import { DOMAIN, FULL_NAME, LONG_POST_LINE_COUNT } from "../lib/constants";
 import { TableOfContents } from "./TableOfContents";
 import { useMemo, useEffect, useRef } from "react";
 import { ProgressNotice } from "./ProgressNotice";
@@ -37,6 +37,12 @@ interface Props {
 
 export const Post = (props: Props) => {
   const articleRef = useRef<HTMLDivElement>(null);
+
+  // Long posts are tedious to navigate by scrolling, so they get the ⌘F/Ctrl+F
+  // heading search in the nav.
+  const isLongPost =
+    Boolean(props.post.contentHtml) &&
+    (props.post.lineCount ?? 0) >= LONG_POST_LINE_COUNT;
 
   const contentWithEmbeds = useMemo(() => {
     if (!props.post.contentHtml) return null;
@@ -239,7 +245,9 @@ export const Post = (props: Props) => {
         description={props.post.description}
         cover={ogCover}
       />
-      <Layout>
+      <Layout
+        searchableContentHtml={isLongPost ? props.post.contentHtml : undefined}
+      >
         <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
           {props.post.title}
         </h1>

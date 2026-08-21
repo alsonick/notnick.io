@@ -1,10 +1,5 @@
+import { extractHeadings, PostHeading } from "../lib/extract-headings";
 import { useEffect, useRef, useState } from "react";
-
-interface Heading {
-  level: number;
-  text: string;
-  id: string;
-}
 
 interface Props {
   contentHtml: string;
@@ -16,7 +11,7 @@ interface Props {
 const ACTIVE_LINE = 110;
 
 export const TableOfContents = (props: Props) => {
-  const [headings, setHeadings] = useState<Heading[]>([]);
+  const [headings, setHeadings] = useState<PostHeading[]>([]);
   const [activeId, setActiveId] = useState<string>("");
   const navRef = useRef<HTMLElement>(null);
   const itemRefs = useRef(new Map<string, HTMLLIElement>());
@@ -27,19 +22,7 @@ export const TableOfContents = (props: Props) => {
   const settleTimer = useRef<ReturnType<typeof setTimeout>>();
 
   useEffect(() => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(props.contentHtml, "text/html");
-    const headingElements = doc.querySelectorAll("h2[id], h3[id], h4[id]");
-
-    const extractedHeadings: Heading[] = Array.from(headingElements).map(
-      (heading) => ({
-        id: heading.id,
-        text: heading.textContent || "",
-        level: parseInt(heading.tagName.substring(1)),
-      }),
-    );
-
-    setHeadings(extractedHeadings);
+    setHeadings(extractHeadings(props.contentHtml));
   }, [props.contentHtml]);
 
   useEffect(() => {
@@ -164,7 +147,11 @@ export const TableOfContents = (props: Props) => {
               }
             }}
             className={`${
-              heading.level === 4 ? "pl-9" : heading.level === 3 ? "pl-6" : "pl-3"
+              heading.level === 4
+                ? "pl-9"
+                : heading.level === 3
+                  ? "pl-6"
+                  : "pl-3"
             } transition-colors duration-200`}
           >
             <button

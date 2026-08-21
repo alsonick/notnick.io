@@ -5,6 +5,7 @@ export interface Post {
   last_updated_date: string;
   description: string;
   contentHtml: string;
+  lineCount?: number;
   finished: boolean;
   pinned?: boolean;
   filter: string;

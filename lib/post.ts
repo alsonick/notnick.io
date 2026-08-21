@@ -96,6 +96,7 @@ export const getPostData = async (slug: string, dir: string) => {
     slug,
     contentHtml,
     sections,
+    lineCount: matterResult.content.split("\n").length,
     ...matterResult.data,
   };
 };
