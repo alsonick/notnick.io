@@ -1,5 +1,6 @@
 import { NavDropdown } from "./NavDropdown";
 import { NavLinkTag } from "./NavLinkTag";
+import { PostSearch } from "./PostSearch";
 import { ITEMS } from "../lib/nav-items";
 import { Toggle } from "./Toggle";
 
@@ -7,6 +8,8 @@ import { Toggle } from "./Toggle";
 import { useRouter } from "next/router";
 
 interface Props {
+  /** Rendered HTML of a long post, which gets a heading search next to the theme toggle. */
+  searchableContentHtml?: string;
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
 }
@@ -40,7 +43,12 @@ export const Nav = (props: Props) => {
           </NavLinkTag>
         ))}
       </div>
-      <Toggle />
+      <div className="flex items-center gap-2 ml-auto">
+        {props.searchableContentHtml ? (
+          <PostSearch contentHtml={props.searchableContentHtml} />
+        ) : null}
+        <Toggle />
+      </div>
     </nav>
   );
 };

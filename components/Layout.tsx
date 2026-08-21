@@ -3,6 +3,8 @@ import { Footer } from "./Footer";
 import { Nav } from "./Nav";
 
 interface Props {
+  /** Rendered HTML of a long post, which gets a heading search next to the theme toggle. */
+  searchableContentHtml?: string;
   supportLargeScreen?: boolean;
   backButtonLocation?: string;
   children?: React.ReactNode;
@@ -36,6 +38,7 @@ export const Layout = (props: Props) => {
           className={`${supportLargeScreen ? "lg:block" : "lg:block hidden"}`}
         >
           <Nav
+            searchableContentHtml={props.searchableContentHtml}
             isDisplaySpotify={props.isDisplaySpotify}
             longLayoutFormat={props.longLayoutFormat}
           />

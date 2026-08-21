@@ -8,6 +8,8 @@ export const SUBJECT_OF_STUDY = "Computer Science (Software Engineering)";
 export const STUDYING_UNTIL = new Date("2027-07-01T00:00:00Z");
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
 export const YEAR_STARTED_PROGRAMMING_PROFESSIONALLY = 2023;
+// Posts at least this many lines long get the in-post heading search.
+export const LONG_POST_LINE_COUNT = 1000;
 export const AVATAR = "Secondary_Dark_Short_Sig_Avatar";
 export const MUSIC_STREAMING_PLATFORM = "YouTube Music";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
