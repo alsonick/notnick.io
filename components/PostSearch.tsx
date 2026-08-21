@@ -1,8 +1,8 @@
-import { extractHeadings, PostHeading } from "../lib/extract-headings";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { extractHeadings, PostHeading } from "../lib/extract-headings";
+import { FiSearch, FiX } from "react-icons/fi";
 import { createPortal } from "react-dom";
 import { Command } from "lucide-react";
-import { FiSearch } from "react-icons/fi";
 
 interface Props {
   contentHtml: string;
@@ -230,13 +230,11 @@ export const PostSearch = (props: Props) => {
         text-black h-9 px-2 duration-300 md:hover:bg-gray-200 dark:bg-gray-800 md:dark:hover:bg-gray-900
         dark:text-white rounded-lg focus:ring-offset-2 dark:ring-offset-black"
       >
-        <span className="flex items-center justify-center min-w-[1.75rem]">
-          {isMac === null ? null : isMac ? (
-            <Command className="h-4 w-4" strokeWidth={2.25} />
-          ) : (
-            <span className="text-[11px] font-semibold leading-none">CTRL</span>
-          )}
-        </span>
+        {isMac === null ? null : isMac ? (
+          <Command className="h-4 w-4" strokeWidth={2.25} />
+        ) : (
+          <span className="text-[11px] font-semibold leading-none">CTRL</span>
+        )}
         <span className="text-xs font-semibold leading-none">+</span>
         <span className="text-xs font-semibold leading-none">F</span>
       </button>
@@ -275,11 +273,11 @@ export const PostSearch = (props: Props) => {
                   <button
                     onClick={close}
                     title="Close"
-                    className="shrink-0 rounded border border-teal-100 px-1.5 py-0.5 text-[11px] font-semibold
-                    text-gray-500 duration-300 hover:text-black focus:ring-4 ring-primary outline-none
-                    dark:border-teal-900 dark:text-gray-400 dark:hover:text-white"
+                    aria-label="Close"
+                    className="shrink-0 rounded p-1 text-gray-500 duration-300 hover:text-black
+                    focus:ring-4 ring-primary outline-none dark:text-gray-400 dark:hover:text-white"
                   >
-                    Esc
+                    <FiX className="text-base" />
                   </button>
                 </div>
 
@@ -333,7 +331,6 @@ export const PostSearch = (props: Props) => {
                   text-gray-500 dark:border-teal-900 dark:text-gray-400 sm:flex"
                 >
                   <span>↑ ↓ to navigate</span>
-                  <span>↵ to jump</span>
                   <span className="ml-auto">
                     {results.length} of {headings.length} headings
                   </span>

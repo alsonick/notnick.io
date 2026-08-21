@@ -1,8 +1,8 @@
 import { PostSection } from "../lib/remark-section-meta";
 
 export interface Post {
-  sections?: PostSection[];
   last_updated_date: string;
+  sections?: PostSection[];
   description: string;
   contentHtml: string;
   lineCount?: number;

@@ -1,11 +1,11 @@
 import { remarkHeadingAnchors } from "./remark-heading-anchors";
 import { remarkSectionMeta, PostSection } from "./remark-section-meta";
 import { remarkGithub } from "./remark-github";
+import rehypeStringify from "rehype-stringify";
+import rehypeHighlight from "rehype-highlight";
 import { remarkVideo } from "./remark-video";
 import { remarkTweet } from "./remark-tweet";
 import { remarkLab } from "./remark-lab";
-import rehypeHighlight from "rehype-highlight";
-import rehypeStringify from "rehype-stringify";
 import remarkRehype from "remark-rehype";
 import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";

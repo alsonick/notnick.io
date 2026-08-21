@@ -8,8 +8,6 @@ export const SUBJECT_OF_STUDY = "Computer Science (Software Engineering)";
 export const STUDYING_UNTIL = new Date("2027-07-01T00:00:00Z");
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
 export const YEAR_STARTED_PROGRAMMING_PROFESSIONALLY = 2023;
-// Posts at least this many lines long get the in-post heading search.
-export const LONG_POST_LINE_COUNT = 1000;
 export const AVATAR = "Secondary_Dark_Short_Sig_Avatar";
 export const MUSIC_STREAMING_PLATFORM = "YouTube Music";
 export const SWITCH_FRIEND_CODE = "SW-8471-1596-9212";
@@ -26,6 +24,7 @@ export const BLOGS_URL_PATH = page.blog.path;
 export const NOTES_URL_PATH = page.note.path;
 export const AVATAR_FILE_EXTENSION = "png";
 export const FULL_NAME = "Nicholas Njoki";
+export const LONG_POST_LINE_COUNT = 1000;
 export const LOCATED = "United Kingdom";
 export const LOOKING_FOR_WORK = false;
 export const CACHE_TOKEN = "nas-dsf";

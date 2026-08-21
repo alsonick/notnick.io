@@ -8,7 +8,6 @@ import { Toggle } from "./Toggle";
 import { useRouter } from "next/router";
 
 interface Props {
-  /** Rendered HTML of a long post, which gets a heading search next to the theme toggle. */
   searchableContentHtml?: string;
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
