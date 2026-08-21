@@ -160,6 +160,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 0,
     },
+    "day-9": {
+      id: "day-9",
+      topic: "Day 9",
+      question:
+        "A PC is set manually to 100 Mbps and full duplex, and the switch port it connects to is left on auto. What happens on that link?",
+      options: [
+        "The switch senses full duplex from the PC and both ends match",
+        "The switch guesses half duplex, so the link comes up with a duplex mismatch",
+        "The link fails to come up because the two ends disagree",
+        "The switch drops the port down to 10 Mbps and half duplex",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

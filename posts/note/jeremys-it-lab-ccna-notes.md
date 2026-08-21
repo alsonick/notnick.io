@@ -1013,6 +1013,12 @@ description text
 
 ### Day 9
 
+---
+
+finished: true
+
+---
+
 #### Show Interfaces Status
 
 ```
@@ -1220,5 +1226,11 @@ Received 6 broadcasts, 0 runts, 0 giants, 0 throttles
 - **Frame** are frames with an incorrect format, caused by an error.
 - **Input errors** is the total of the above four and a few others.
 - **Output errors** are frames the switch tried to send but couldn't because of an error.
+
+[lab=Day 09 Lab - Interface Configuration.pkt]
+
+---
+
+### Day 10
 
 <div data-embed="scrollup"></div>
