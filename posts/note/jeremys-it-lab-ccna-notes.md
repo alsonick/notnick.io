@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-19"
+last_updated_date: "2026-08-23"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1232,5 +1232,161 @@ Received 6 broadcasts, 0 runts, 0 giants, 0 throttles
 ---
 
 ### Day 10
+
+---
+
+finished: true
+
+---
+
+#### IPv4 Header - Version Field
+
+- Length: 4 bits.
+- Identifies the version of IP being used.
+- There are two versions:
+  - IPv4 = 4 (0100)
+  - IPv6 = 6 (0110)
+
+---
+
+#### IPv4 Header - Internet Header Length (IHL)
+
+- The final field of the IPv4 header (Options) is dynamic (it can have a variable length), so this field is necessary to indicate the total length of the header.
+- Identifies the length of the header **in 4-byte increments**.
+  - Value `5` = `5 * 4-bytes = 20 bytes`.
+- Minimum value is 5 (20 bytes).
+- Maximum value is 15 (`15 * 4 = 60`, 60 bytes).
+
+---
+
+#### IPv4 Header - DSCP Field
+
+- Stands for 'Differential Services Code Point'.
+- Length: 6 bits.
+- Used for QoS (Quality of Service).
+- Used to prioritize delay-sensitive data.
+
+---
+
+#### IPv4 Header - ECN Field
+
+- Stands for 'Explicit Congestion Notification'.
+- Length: 2 bits.
+- Provides end-to-end (between two endpoints) notification of network congestion **without dropping packets**.
+- Optional feature that requires both endpoints, as well as the underlying network infrastructure, to support it.
+
+Further Reading: [https://www.geeksforgeeks.org/computer-networks/what-is-ecnexplicit-congestion-notification/](https://www.geeksforgeeks.org/computer-networks/what-is-ecnexplicit-congestion-notification/)
+
+---
+
+#### IPv4 Header - Total Length Field
+
+- Length: 16 bits.
+- Indicates the total length of the packet.
+- Measured in bytes (**not 4-byte increments like Internet Header Length (IHL)**).
+- Minimum value of 20 (with no encapsulated data).
+- Maximum value of 65,535 (maximum 16-bit value).
+
+---
+
+#### IPv4 Header - Identification Field
+
+- Length: 16 bits.
+- If a packet is fragmented due to being too large, this field is used to identify which packet the fragment belongs to.
+- All fragments of the same packet will have their own IPv4 header with the same value in this field.
+- Packets are fragmented if larger than the MTU (Maximum Transmission Unit).
+- The MTU is usually **1500 bytes**.
+- Fragments are reassembled by the receiving host.
+
+---
+
+#### IPv4 Header - Flags Field
+
+- Length: 3 bits.
+- Used to control/identify fragments.
+- Bit 0: Reserved, always set to 0.
+- Bit 1: Don't Fragment (DF bit), used to indicate a packet that should not be fragmented.
+- Bit 2: More Fragments (MF bit), set to 1 if there are more fragments in the packet, set to 0 for the last fragment.
+
+---
+
+#### IPv4 Header - Fragment Offset Field
+
+- Length: 13 bits.
+- Used to indicate the position of the fragment within the original unfragmented IP packet.
+- Allows fragmented packets to be reassembled even if the fragments arrive out of order.
+
+---
+
+#### IPv4 Header - Time To Live Field
+
+- Length: 8 bits.
+- A router will drop a packet with a TTL of 0.
+- It prevents a packet from circulating around the network forever.
+- Indicates a 'hop count': each time the packet arrives at a router, the router decreases the TTL by 1.
+- Recommended default TTL is 64.
+
+---
+
+#### IPv4 Header - Protocol Field
+
+- Length: 8 bits.
+- Indicates the protocol used at layer 4.
+- Example protocols:
+  - 6: TCP
+  - 17: UDP
+  - 1: ICMP
+  - 89: OSPF (dynamic routing protocol)
+
+[https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers](https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers)
+
+---
+
+#### IPv4 Header - Header Checksum Field
+
+Used to **check whether the IPv4 header has been corrupted or changed while traveling across the network**
+
+- Length: 16 bits.
+- A calculated checksum used to check for errors in the IPv4 header.
+- When a router receives a packet, it calculates the checksum of the header and compares it to the one in this field of the header.
+- If they do not match, the router drops the packet.
+- Not used to check for errors in the encapsulated data.
+- IP relies on the encapsulated protocol to detect errors in the encapsulated data.
+- Both TCP and UDP have their own checksum fields to detect errors in the encapsulated data.
+
+---
+
+#### IPv4 Header - Source/Destination IP Address Fields
+
+- Length: 32 bits.
+- Source IP Address = IPv4 address of the sender of the packet.
+- Destination IP Address = IPv4 address of the intended receiver of the packet.
+
+---
+
+#### IPv4 Header - Options
+
+- Length: 0 - 320 bits.
+- Rarely used.
+- If the IHL field is greater than 5, it means that Options are present.
+
+| Field         | Size (bits) | Description                                                                                                             |
+| ------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Copied        | 1           | Set to 1 if the options need to be copied into all fragments of a fragmented packet.                                    |
+| Option Class  | 2           | A general options category. 0 is for "control" options, and 2 is for "debugging and measurement". 1 and 3 are reserved. |
+| Option Number | 5           | Specifies an option.                                                                                                    |
+| Option Length | 8           | Indicates the size of the entire option (including this field). This field may not exist for simple options.            |
+| Option Data   | Variable    | Option-specific data. This field may not exist for simple options.                                                      |
+
+---
+
+#### Wireshark Packet Capture
+
+https://www.youtube.com/watch?v=aQB22y4liXA&t=1033
+[preview=true]
+
+---
+
+### Day 11 (Part 1)
 
 <div data-embed="scrollup"></div>

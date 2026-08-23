@@ -173,6 +173,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-10": {
+      id: "day-10",
+      topic: "Day 10",
+      question:
+        "A router receives an IPv4 packet whose IHL field holds the value 6. How long is the header, and what does that value tell you about the Options field?",
+      options: [
+        "6 bytes, and no Options are present",
+        "24 bytes, and Options are present",
+        "20 bytes, and Options are present",
+        "60 bytes, and no Options are present",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
