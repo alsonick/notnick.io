@@ -1,6 +1,7 @@
 import { remarkHeadingAnchors } from "./remark-heading-anchors";
 import { remarkSectionMeta, PostSection } from "./remark-section-meta";
 import { remarkGithub } from "./remark-github";
+import { remarkCaption } from "./remark-caption";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
 import { remarkVideo } from "./remark-video";
@@ -78,6 +79,7 @@ export const getPostData = async (slug: string, dir: string) => {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkSectionMeta)
+    .use(remarkCaption)
     .use(remarkTweet)
     .use(remarkGithub)
     .use(remarkVideo)

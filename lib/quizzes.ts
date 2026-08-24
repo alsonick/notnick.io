@@ -186,6 +186,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-11-part-1": {
+      id: "day-11-part-1",
+      topic: "Day 11 (Part 1)",
+      question:
+        "R1's G0/2 interface is configured with 192.168.1.1/24, so its routing table holds both a connected route to 192.168.1.0/24 and a local route to 192.168.1.1/32. A packet arrives destined for 192.168.1.1, which both routes match. What does R1 do?",
+      options: [
+        "Uses the 192.168.1.0/24 connected route and forwards the packet out of G0/2",
+        "Uses the 192.168.1.1/32 local route and keeps the packet for itself",
+        "Uses whichever of the two routes was added to the routing table first",
+        "Drops the packet, because two routes matching the same destination is a conflict",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

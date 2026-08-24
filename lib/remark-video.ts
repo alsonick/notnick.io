@@ -11,12 +11,24 @@ interface HtmlNode extends Node {
   value: string;
 }
 
+/** A video, a playlist, or a video playing inside a playlist. */
+interface VideoRef {
+  id?: string;
+  list?: string;
+  start?: string;
+}
+
 /**
  * Turns a paragraph made up of a video URL followed by a `[preview=true]`
  * flag into a video embed placeholder, which `Post.tsx` swaps for the
  * `VideoEmbed` component.
  *
  *   https://www.youtube.com/watch?v=ntVii_EJc6s
+ *   [preview=true]
+ *
+ * Playlist URLs work the same way and embed the playlist:
+ *
+ *   https://www.youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ
  *   [preview=true]
  *
  * Without the flag the URL is left alone and renders as a plain link.
@@ -34,7 +46,9 @@ export function remarkVideo() {
 
       const htmlNode: HtmlNode = {
         type: "html",
-        value: `<div data-embed="video" data-video-id="${video.id}"${
+        value: `<div data-embed="video"${
+          video.id ? ` data-video-id="${video.id}"` : ""
+        }${video.list ? ` data-video-list="${video.list}"` : ""}${
           video.start ? ` data-video-start="${video.start}"` : ""
         }></div>`,
       };
@@ -72,11 +86,11 @@ function toRawText(children: Array<Node>): string {
 }
 
 /**
- * Pulls the video ID (and optional start time) out of any of YouTube's URL
- * shapes. Returns null for anything that isn't a YouTube video, which leaves
- * the paragraph untouched.
+ * Pulls the video ID, playlist ID and optional start time out of any of
+ * YouTube's URL shapes. Returns null for anything that is neither a YouTube
+ * video nor a playlist, which leaves the paragraph untouched.
  */
-function parseVideoUrl(url: string): { id: string; start?: string } | null {
+function parseVideoUrl(url: string): VideoRef | null {
   let parsed: URL;
   try {
     parsed = new URL(url);
@@ -92,19 +106,32 @@ function parseVideoUrl(url: string): { id: string; start?: string } | null {
   } else if (host === "youtube.com" || host === "youtube-nocookie.com") {
     if (parsed.pathname === "/watch") {
       id = parsed.searchParams.get("v");
-    } else {
+    } else if (parsed.pathname !== "/playlist") {
       const segments = parsed.pathname.split("/").filter(Boolean);
       if (["embed", "shorts", "live", "v"].includes(segments[0])) {
         id = segments[1] ?? null;
       }
     }
+  } else {
+    // Some other host, so the `list` param below isn't a YouTube playlist.
+    return null;
   }
 
-  if (!id || !/^[\w-]{11}$/.test(id)) return null;
+  if (id && !/^[\w-]{11}$/.test(id)) return null;
+
+  const rawList = parsed.searchParams.get("list");
+  const list = rawList && /^[\w-]{2,64}$/.test(rawList) ? rawList : null;
+
+  // A `/playlist` URL names no video of its own, so the list is all there is.
+  if (!id && !list) return null;
 
   const start = parsed.searchParams.get("t") ?? parsed.searchParams.get("start");
 
-  return { id, start: start ? toSeconds(start) : undefined };
+  return {
+    id: id ?? undefined,
+    list: list ?? undefined,
+    start: start ? toSeconds(start) : undefined,
+  };
 }
 
 /** Accepts both `90` and YouTube's `1m30s` time formats. */

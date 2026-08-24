@@ -5,11 +5,17 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-23"
+last_updated_date: "2026-08-24"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
 ---
+
+## Labs
+
+https://youtube.com/playlist?list=PLdFdBLXS6DpI&si=c93dSbW6grb2Iepd
+[caption="This is the YouTube playlist of all the labs from Jeremy's IT CCNA course."]
+[preview=true]
 
 ### Day 1
 
@@ -1388,5 +1394,123 @@ https://www.youtube.com/watch?v=aQB22y4liXA&t=1033
 ---
 
 ### Day 11 (Part 1)
+
+---
+
+finished: true
+
+---
+
+#### What is Routing?
+
+Routing is the process that routers use to determine the path that IP packets should take over a network to reach their destination. Routers typically store routes to all of their known destinations in a **routing table**. When a router receives a packet, it looks at the **routing table** to find the best route to forward the packet.
+
+There are two main routing methods:
+
+- **Dynamic Routing**: Routers use dynamic routing protocols (i.e OSPF) to share routing information with each other automatically and build their routing tables.
+- **Static Routing**: A network engineer/admin manually configures routes on the router.
+
+A **route** tells the router: to send a packet to _destination X_, you should send the packet to **next-hop (the next router in the path to the destination)** Y. -> or, if the destination is directly connected to the router, send the packet directly to the destination. -> or, if the destination is the router's own IP address, receive the packet for yourself.
+
+If a router receives a packet and it doesn't have a route that matches the packet's destination, it will **drop** the packet.
+
+---
+
+#### Routing Table (show ip route)
+
+Use the command `show ip route` to view the routing table.
+
+```
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, GigabitEthernet0/2
+L        192.168.1.1/32 is directly connected, GigabitEthernet0/2
+      192.168.12.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.12.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.12.1/32 is directly connected, GigabitEthernet0/1
+      192.168.13.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.13.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.13.1/32 is directly connected, GigabitEthernet0/0
+```
+
+The **Codes** legend at the top lists the different protocols routers can use to learn routes. The two in this output are:
+
+- **L - local** is a route to the actual IP address configured on the interface (with a **/32** netmask).
+- **C - connected** is a route to the network the interface is connected to (with the actual netmask configured on the interface).
+
+When you configure an IP address on an interface and enable it with `no shutdown`, **2 routes per interface** are automatically added to the routing table:
+
+- A **connected** route.
+- A **local** route.
+
+---
+
+#### Connected and Local Routes
+
+```
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, GigabitEthernet0/2
+L        192.168.1.1/32 is directly connected, GigabitEthernet0/2
+      192.168.12.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.12.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.12.1/32 is directly connected, GigabitEthernet0/1
+      192.168.13.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.13.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.13.1/32 is directly connected, GigabitEthernet0/0
+```
+
+A **connected** route is a route to the network the interface is connected to.
+
+- R1's G0/2 IP address is `192.168.1.1/24`.
+- The network address is `192.168.1.0/24`.
+- It provides a route to all hosts in that network (i.e. `192.168.1.10`, `192.168.1.100`, `192.168.1.232`, etc).
+- R1 knows: "If I need to send a packet to any host in the `192.168.1.0/24` network, I should send it out of G0/2".
+
+A **local** route is a route to the exact IP address configured on the interface.
+
+- A **/32** netmask is used to specify the exact IP address of the interface.
+- /32 means all 32 bits are 'fixed', they can't change.
+- Even though R1's G0/2 is configured as `192.168.1.1/24`, the local route is to `192.168.1.1/32`.
+- R1 knows: "If I receive a packet destined for this IP address, the message is for me".
+
+A route **matches** a packet's destination if the packet's destination IP address is part of the network specified in the route.
+
+---
+
+#### Route Selection
+
+```
+      192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.1.0/24 is directly connected, GigabitEthernet0/2
+L        192.168.1.1/32 is directly connected, GigabitEthernet0/2
+```
+
+A packet destined for `192.168.1.1` is matched by **both** of those routes, so which one does R1 use? It chooses the **most specific** matching route.
+
+- The route to `192.168.1.0/24` includes 256 different IP addresses (`192.168.1.0` to `192.168.1.255`).
+- The route to `192.168.1.1/32` includes only 1 IP address (`192.168.1.1`), so it is the more **specific** of the two.
+
+The **most specific** matching route is the matching route with the **longest prefix length**.
+
+So R1 selects the route to `192.168.1.1/32`, which is the **local** route:
+
+- R1 receives the packet for itself, rather than forwarding it out of G0/2.
+- A **local** route means keep the packet, don't forward it.
+
+---
+
+### Day 11 (Part 2)
 
 <div data-embed="scrollup"></div>

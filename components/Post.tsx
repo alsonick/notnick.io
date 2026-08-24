@@ -102,12 +102,14 @@ export const Post = (props: Props) => {
         }
       } else if (type === "video") {
         const videoId = getAttr(matchStr, "data-video-id");
+        const list = getAttr(matchStr, "data-video-list");
         const start = getAttr(matchStr, "data-video-start");
-        if (videoId) {
+        if (videoId || list) {
           parts.push(
             <VideoEmbed
-              key={`video-${videoId}-${index}`}
-              id={videoId}
+              key={`video-${videoId ?? list}-${index}`}
+              id={videoId ?? undefined}
+              list={list ?? undefined}
               start={start ?? undefined}
             />,
           );
