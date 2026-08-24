@@ -96,6 +96,34 @@ export const FREE_CCNA_V1_1_200_301_COMPLETE_COURSE_2026_MODULES: Module[] = [
         completed: true,
         learnt: "",
       },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Configuring IP Addresses | Day 8 Lab | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Switch Interfaces | Day 9 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Configuring Interfaces | Day 9 Lab | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | IPv4 Header | Day 10 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
     ],
   },
 ];
