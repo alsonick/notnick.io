@@ -222,6 +222,15 @@
   }
 }
 
+/* A bare URL used as its own link text has no break opportunities, so on a
+   phone it pushes the article wider than its container and the whole page
+   ends up scrolling sideways. `overflow-wrap` is inherited, so this one rule
+   covers body text, links and inline code. Code blocks are unaffected —
+   `white-space: pre` disables wrapping there, and they scroll on their own. */
+.prose {
+  overflow-wrap: break-word;
+}
+
 /* Tables — full content width with evenly sized columns, breaking long cell
    values on narrow screens */
 .prose table {
