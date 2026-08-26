@@ -1519,4 +1519,87 @@ So R1 selects the route to `192.168.1.1/32`, which is the **local** route:
 
 ### Day 11 (Part 2)
 
+---
+
+finished: true
+
+---
+
+#### Routing Packets: Default Gateway
+
+For hosts to send packets outside of their local network, they must send the packets to their **default gateway**.
+
+The **default gateway** configuration is also called a **default route**. It is a route to `0.0.0.0/0` = all netmask bits set to 0. It includes addresses from `0.0.0.0` to `255.255.255.255`.
+
+End hosts usually have no need for any more specific routes. -> They just know: to send packets outside of my local network, I should send them to my default gateway.
+
+---
+
+#### Static Route Configuration
+
+To configure a static route on a Cisco router:
+
+```
+R1(config)# ip route ip-address netmask next-hop
+```
+
+- `ip-address` is the destination IP address.
+- `netmask` the netmask/subnet for the destination IP address.
+- `next-hop` the IP address for the next hop destination in the path.
+
+An example:
+
+```
+R1(config)# ip route 192.168.4.0 255.255.255.0 192.168.13.3
+```
+
+---
+
+#### Static Route Configuration with Exit-Interface
+
+https://www.youtube.com/watch?v=aHwAm8GYbn8&t=1383s
+[preview=true]
+
+---
+
+#### Default Route
+
+- A **default route** is a route to `0.0.0.0/0`.
+  - `0.0.0.0/0` is the _least specific_ route possible; it includes every possible destination IP address.
+- If the router doesn't have a more specific route for the packet's destination IP address, it will forward the packet using the **default route**.
+- A default route is often used to direct traffic to the internet.
+
+How to configure a default route on a Cisco router:
+
+```
+R1(config)# ip route 0.0.0.0 0.0.0.0 203.0.113.2
+R1(config)# do show ip route
+!most codes omitted
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+!most codes omitted
+
+Gateway of last resort is 203.0.113.2 to network 0.0.0.0
+
+S*    0.0.0.0/0 [1/0] via 203.0.113.2
+S     10.0.0.0/8 [1/0] via 192.168.12.2
+S     172.16.0.0/16 [1/0] via 192.168.13.3
+      192.168.12.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.12.0/24 is directly connected, GigabitEthernet0/1
+L        192.168.12.1/32 is directly connected, GigabitEthernet0/1
+      192.168.13.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.13.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.13.1/32 is directly connected, GigabitEthernet0/0
+      203.0.113.0/24 is variably subnetted, 2 subnets, 2 masks
+C        203.0.113.0/24 is directly connected, GigabitEthernet0/2
+L        203.0.113.1/32 is directly connected, GigabitEthernet0/2
+```
+
+- `ip route 0.0.0.0 0.0.0.0 203.0.113.2` is the same `ip route` command as any other static route, but with all zeros for the destination and netmask (`0.0.0.0/0`), so it matches every destination.
+- **Gateway of last resort** is now set to `203.0.113.2`. That's where R1 sends packets it has no other route for. The new `S*` entry is the route itself: **S** for static, `*` for _candidate default_.
+- It doesn't override the other routes, because R1 still picks the **most specific** match. `0.0.0.0/0` has the shortest prefix length possible, so it's only used when nothing else matches.
+
+---
+
+### Day 12
+
 <div data-embed="scrollup"></div>

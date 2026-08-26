@@ -199,6 +199,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-11-part-2": {
+      id: "day-11-part-2",
+      topic: "Day 11 (Part 2)",
+      question:
+        "R1 has a default route to 0.0.0.0/0 via 203.0.113.2, as well as several more specific static and connected routes. When does R1 actually forward a packet using that default route?",
+      options: [
+        "Only when no more specific route in the table matches the destination",
+        "For every packet, because 0.0.0.0/0 matches every possible destination",
+        "Only for packets whose destination is outside the router's own subnets",
+        "Only when the interfaces used by its other routes are down",
+      ],
+      correctIndex: 0,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
