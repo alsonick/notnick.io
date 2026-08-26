@@ -11,6 +11,8 @@ interface Props {
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
   showBackButton?: boolean;
+  /** Drops the nav to clear a fixed notice bar pinned to the top of the viewport. */
+  hasTopNotice?: boolean;
 }
 
 export const Layout = (props: Props) => {
@@ -39,6 +41,7 @@ export const Layout = (props: Props) => {
         >
           <Nav
             searchableContentHtml={props.searchableContentHtml}
+            hasTopNotice={props.hasTopNotice}
             isDisplaySpotify={props.isDisplaySpotify}
             longLayoutFormat={props.longLayoutFormat}
           />

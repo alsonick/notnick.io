@@ -7,10 +7,15 @@ import { Toggle } from "./Toggle";
 // Next.js
 import { useRouter } from "next/router";
 
+// The long-post theme notice is a fixed `h-7` (1.75rem) bar at the top of the
+// viewport, so the nav drops by that much to keep its usual 2rem of clearance.
+const NOTICE_NAV_OFFSET = "top-[3.75rem]";
+
 interface Props {
   searchableContentHtml?: string;
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
+  hasTopNotice?: boolean;
 }
 
 export const Nav = (props: Props) => {
@@ -19,7 +24,11 @@ export const Nav = (props: Props) => {
   return (
     <nav
       className={`liquid-glass flex px-6 ${
-        props.isDisplaySpotify ? "md:top-18 top-8" : "top-8"
+        props.hasTopNotice
+          ? NOTICE_NAV_OFFSET
+          : props.isDisplaySpotify
+            ? "md:top-18 top-8"
+            : "top-8"
       } fixed z-50 mb-12 duration-300 sm:w-[40rem] w-[95%] rounded-lg justify-between h-14 items-center`}
     >
       <div className="flex lg:hidden">

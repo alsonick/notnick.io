@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-24"
+last_updated_date: "2026-08-26"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1459,6 +1459,9 @@ When you configure an IP address on an interface and enable it with `no shutdown
 
 #### Connected and Local Routes
 
+https://www.youtube.com/watch?v=aHwAm8GYbn8&t=582s
+[preview=true]
+
 ```
       192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks
 C        192.168.1.0/24 is directly connected, GigabitEthernet0/2
@@ -1490,6 +1493,9 @@ A route **matches** a packet's destination if the packet's destination IP addres
 ---
 
 #### Route Selection
+
+https://www.youtube.com/watch?v=aHwAm8GYbn8&t=880s
+[preview=true]
 
 ```
       192.168.1.0/24 is variably subnetted, 2 subnets, 2 masks

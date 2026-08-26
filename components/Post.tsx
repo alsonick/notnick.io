@@ -1,6 +1,7 @@
 import { DOMAIN, FULL_NAME, LONG_POST_LINE_COUNT } from "../lib/constants";
+import { LongPostThemeNotice } from "./LongPostThemeNotice";
 import { TableOfContents } from "./TableOfContents";
-import { useMemo, useEffect, useRef } from "react";
+import { useMemo, useEffect, useRef, useState } from "react";
 import { ProgressNotice } from "./ProgressNotice";
 import { FiExternalLink } from "react-icons/fi";
 import { social } from "../lib/social-links";
@@ -37,12 +38,16 @@ interface Props {
 
 export const Post = (props: Props) => {
   const articleRef = useRef<HTMLDivElement>(null);
+  const [isNoticeDismissed, setIsNoticeDismissed] = useState(false);
 
   // Long posts are tedious to navigate by scrolling, so they get the ⌘F/Ctrl+F
-  // heading search in the nav.
+  // heading search in the nav, plus a notice about the sluggish theme toggle.
   const isLongPost =
     Boolean(props.post.contentHtml) &&
     (props.post.lineCount ?? 0) >= LONG_POST_LINE_COUNT;
+
+  // Dismissing the notice drops it and slides the nav back to its usual spot.
+  const isNoticeVisible = isLongPost && !isNoticeDismissed;
 
   const contentWithEmbeds = useMemo(() => {
     if (!props.post.contentHtml) return null;
@@ -247,8 +252,12 @@ export const Post = (props: Props) => {
         description={props.post.description}
         cover={ogCover}
       />
+      {isNoticeVisible ? (
+        <LongPostThemeNotice onDismiss={() => setIsNoticeDismissed(true)} />
+      ) : null}
       <Layout
         searchableContentHtml={isLongPost ? props.post.contentHtml : undefined}
+        hasTopNotice={isNoticeVisible}
       >
         <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
           {props.post.title}
