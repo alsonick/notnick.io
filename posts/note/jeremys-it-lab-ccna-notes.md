@@ -1598,6 +1598,8 @@ L        203.0.113.1/32 is directly connected, GigabitEthernet0/2
 - **Gateway of last resort** is now set to `203.0.113.2`. That's where R1 sends packets it has no other route for. The new `S*` entry is the route itself: **S** for static, `*` for _candidate default_.
 - It doesn't override the other routes, because R1 still picks the **most specific** match. `0.0.0.0/0` has the shortest prefix length possible, so it's only used when nothing else matches.
 
+[lab=Day 11 Lab - Configuring Static Routes.pkt]
+
 ---
 
 ### Day 12
