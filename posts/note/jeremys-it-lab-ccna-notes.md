@@ -1599,6 +1599,7 @@ L        203.0.113.1/32 is directly connected, GigabitEthernet0/2
 - It doesn't override the other routes, because R1 still picks the **most specific** match. `0.0.0.0/0` has the shortest prefix length possible, so it's only used when nothing else matches.
 
 [lab=Day 11 Lab - Configuring Static Routes.pkt]
+[lab=Day 11 Lab - Troubleshooting Static Routes.pkt]
 
 ---
 
