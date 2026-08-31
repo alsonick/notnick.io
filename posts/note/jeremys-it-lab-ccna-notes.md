@@ -11,10 +11,26 @@ filter: "Networking"
 pinned: true
 ---
 
+## Free CCNA v1.1 200-301 | Complete Course 2026
+
+https://youtube.com/playlist?list=PLxbwE86jKRgMpuZuLBivzlM8s2Dk5lXBQ&si=t4kgi_m9EvXX4vhh
+[caption="The official YouTube playlist for Jeremy's CCNA course."]
+[preview=true]
+
+Support:
+
+- [https://www.linkedin.com/company/jeremysitlab](https://www.linkedin.com/company/jeremysitlab)
+- [https://www.youtube.com/@JeremysITLab](https://www.youtube.com/@JeremysITLab)
+- [discord.com/invite/pkBYDnqFD9](discord.com/invite/pkBYDnqFD9)
+- [https://www.jeremysitlab.com](https://www.jeremysitlab.com)
+- [https://x.com/jeremysitlab](https://x.com/jeremysitlab)
+
+---
+
 ## Labs
 
 https://youtube.com/playlist?list=PLdFdBLXS6DpI&si=c93dSbW6grb2Iepd
-[caption="This is the YouTube playlist of all the labs from Jeremy's IT CCNA course."]
+[caption="This is the YouTube playlist of all the labs from Jeremy's IT CCNA course that I've completed."]
 [preview=true]
 
 ### Day 1
