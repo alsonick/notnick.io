@@ -138,6 +138,20 @@ export const FREE_CCNA_V1_1_200_301_COMPLETE_COURSE_2026_MODULES: Module[] = [
         completed: true,
         learnt: "",
       },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | Configuring Static Routes | Day 11 Lab 1 | CCNA 200-301 Complete Course",
+        completed: true,
+        learnt: "",
+      },
+      {
+        id: generateRandomId(),
+        title:
+          "Free CCNA | The Life of a Packet | Day 12 | CCNA 200-301 Complete Course",
+        completed: false,
+        learnt: "",
+      },
     ],
   },
 ];
