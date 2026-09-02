@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-08-31"
+last_updated_date: "2026-09-02"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1624,6 +1624,8 @@ L        203.0.113.1/32 is directly connected, GigabitEthernet0/2
 
 https://www.youtube.com/watch?v=4YrYV2io3as
 [preview=true]
+
+[lab=Day 12 Lab - Life of a Packet.pkt]
 
 ---
 
