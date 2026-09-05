@@ -212,6 +212,14 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 0,
     },
+    "day-13-part-1": {
+      id: "day-13-part-1",
+      topic: "Day 13 (Part 1)",
+      question:
+        "A subnet uses the netmask 255.255.240.0. What is that written in CIDR notation?",
+      options: ["/21", "/20", "/28", "/12"],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

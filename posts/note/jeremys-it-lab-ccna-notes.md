@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-02"
+last_updated_date: "2026-09-04"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1630,5 +1630,43 @@ https://www.youtube.com/watch?v=4YrYV2io3as
 ---
 
 ### Day 13 (Part 1)
+
+---
+
+finished: true
+
+---
+
+#### CIDR (Classless Inter-Domain Routing)
+
+- The IETF (Internet Engineering Task Force) introduced **CIDR** in 1993 to replace 'classful' addressing system.
+
+With CIDR, the requirements of...
+
+- Class A = /8
+- Class B = /16
+- Class C = /24
+
+were removed.
+
+- This allowed larger networks to be split into smaller networks, allowing greater efficiency.
+- These smaller networks are called 'subnetworks' or 'subnets'.
+
+---
+
+#### CIDR Notation
+
+CIDR notation is the `/x` way of writing a netmask, where `x` is the number of bits set to `1`:
+
+| Dotted Decimal  | CIDR Notation |
+| --------------- | ------------- |
+| 255.255.255.128 | /25           |
+| 255.255.255.192 | /26           |
+| 255.255.255.224 | /27           |
+| 255.255.255.240 | /28           |
+| 255.255.255.248 | /29           |
+| 255.255.255.252 | /30           |
+| 255.255.255.254 | /31           |
+| 255.255.255.255 | /32           |
 
 <div data-embed="scrollup"></div>
