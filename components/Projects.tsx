@@ -21,6 +21,7 @@ export const Projects = () => {
             logo={project.logo}
             link={project.link}
             kind={project.kind}
+            tech={project.tech}
             site={project.site}
             oss={project.oss}
             key={project.id}

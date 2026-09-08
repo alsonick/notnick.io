@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-04"
+last_updated_date: "2026-09-07"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true

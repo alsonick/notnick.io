@@ -25,8 +25,8 @@ export const LongPostThemeNotice = (props: Props) => {
           Theme switching is slow on long posts.
         </span>
         <span className="hidden sm:inline">
-          Heads up: this post is long, so switching themes will be slower and
-          less smooth than usual.
+          This post is long, so switching themes will be slower and less smooth
+          than usual.
         </span>
       </p>
       <button

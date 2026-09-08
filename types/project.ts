@@ -1,5 +1,6 @@
 export interface Project {
   active: boolean;
+  tech: string[];
   github?: string;
   link?: string;
   kind: string;

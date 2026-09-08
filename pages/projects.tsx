@@ -44,6 +44,7 @@ const Projects = () => {
                   logo={project.logo}
                   kind={project.kind}
                   link={project.link}
+                  tech={project.tech}
                   site={project.site}
                   oss={project.oss}
                   key={project.id}

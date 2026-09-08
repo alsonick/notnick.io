@@ -12,6 +12,11 @@ interface TextNode extends Node {
   value: string;
 }
 
+interface HtmlNode extends Node {
+  type: "html";
+  value: string;
+}
+
 export type SectionMetaValue = string | number | boolean;
 
 export interface PostSection {
@@ -106,6 +111,14 @@ function matchMetaBlock(
   return null;
 }
 
+/** Matches the `<div data-embed="scrollup">` a post ends with. */
+function isScrollUp(node: Node): boolean {
+  return (
+    node.type === "html" &&
+    (node as HtmlNode).value.includes('data-embed="scrollup"')
+  );
+}
+
 /**
  * Strips `--- key: value ---` metadata fences that directly follow `###`
  * headings, collects them into file.data.sections, and appends a quiz embed
@@ -132,10 +145,14 @@ export function remarkSectionMeta() {
       if (block.meta.finished === true) {
         // Insert the quiz placeholder at the end of the section (right
         // before the next `##`/`###` heading, or at the end of the post).
+        // The scroll-up button is authored as the last thing in a post, so
+        // it ends a section too — otherwise the final section's quiz would
+        // land underneath it.
         let end = i + 1;
         while (end < root.children.length) {
           const sibling = root.children[end] as HeadingNode;
           if (sibling.type === "heading" && sibling.depth <= 3) break;
+          if (isScrollUp(sibling)) break;
           end++;
         }
         root.children.splice(end, 0, {

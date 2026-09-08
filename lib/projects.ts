@@ -1,10 +1,12 @@
 import { generateRandomId } from "./generate-random-id";
 import { Project } from "../types/project";
+import { AVATAR, AVATAR_FILE_EXTENSION, CDN } from "./constants";
 
 export const PROJECTS: Project[] = [
   {
     logo: "/project/branding/lyrics-tags-generator.png",
     name: "Lyrics Tags Generator",
+    tech: ["Next.js", "TypeScript", "TailwindCSS"],
     id: generateRandomId(),
     site: "tags.notnick.io",
     kind: "website",
@@ -17,6 +19,8 @@ export const PROJECTS: Project[] = [
   {
     logo: "/project/branding/daily-walks.png",
     name: "DailyWalks",
+    // TODO: closed source, so the stack could not be verified - fill this in.
+    tech: ["Swift", "SwiftUI", "SwiftData", "HealthKit"],
     id: generateRandomId(),
     site: "dailywalks.notnick.io",
     kind: "app",
@@ -25,8 +29,9 @@ export const PROJECTS: Project[] = [
     desc: "A simple healthcare app to track your daily walks, log your progress over time, and stay motivated to keep moving every day.",
   },
   {
-    logo: "/Avatar.png",
+    logo: `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`,
     name: "notnick.io",
+    tech: ["TypeScript", "Next.js", "TailwindCSS", "Prisma"],
     id: generateRandomId(),
     site: "notnick.io",
     kind: "website",
@@ -37,32 +42,9 @@ export const PROJECTS: Project[] = [
     desc: "You're currently on it right now! This is my own personal site where I share my projects, writing, and a little about who I am.",
   },
   {
-    logo: "",
-    name: "Module Grade Calculator",
-    id: generateRandomId(),
-    site: "",
-    link: "https://github.com/Nicholas-FnF/module-grade-calculator",
-    github: "https://github.com/Nicholas-FnF/module-grade-calculator",
-    kind: "website",
-    active: true,
-    oss: true,
-    desc: "A small program to calculate your module grades and work out exactly what you need to score to hit the result you're aiming for.",
-  },
-  {
-    logo: "/Avatar.png",
-    name: "vercel.notnick.io",
-    id: generateRandomId(),
-    site: "vercel.notnick.io",
-    kind: "website",
-    link: "https://vercel.notnick.io/",
-    github: "https://github.com/alsonick/vercel.notnick.io",
-    active: true,
-    oss: true,
-    desc: "A gallery collection site showcasing Vercel merchandise, bringing all the swag together in one neatly browsable place.",
-  },
-  {
-    logo: "/Avatar.png",
+    logo: `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`,
     name: "pics.notnick.io",
+    tech: ["Next.js", "TypeScript", "TailwindCSS"],
     id: generateRandomId(),
     site: "pics.notnick.io",
     kind: "website",
