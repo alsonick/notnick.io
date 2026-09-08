@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-07"
+last_updated_date: "2026-09-09"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1629,7 +1629,7 @@ https://www.youtube.com/watch?v=4YrYV2io3as
 
 ---
 
-### Day 13 (Part 1)
+### Day 13 (Part 1 - Subnetting)
 
 ---
 
@@ -1668,5 +1668,45 @@ CIDR notation is the `/x` way of writing a netmask, where `x` is the number of b
 | 255.255.255.252 | /30           |
 | 255.255.255.254 | /31           |
 | 255.255.255.255 | /32           |
+
+---
+
+### Day 14 (Part 2 - Subnetting)
+
+#### Subnets/Hosts (Class C)
+
+| Prefix Length | Number of Subnets | Number of Hosts |
+| ------------- | ----------------- | --------------- |
+| /25           | 2                 | 126             |
+| /26           | 4                 | 62              |
+| /27           | 8                 | 30              |
+| /28           | 16                | 14              |
+| /29           | 32                | 6               |
+| /30           | 64                | 2               |
+| /31           | 128               | 0 (2)           |
+| /32           | 256               | 0 (1)           |
+
+---
+
+#### Subnets/Hosts (Class B)
+
+| Prefix Length | Number of Subnets | Number of Hosts |
+| ------------- | ----------------- | --------------- |
+| /17           | 2                 | 32766           |
+| /18           | 4                 | 16382           |
+| /19           | 8                 | 8190            |
+| /20           | 16                | 4094            |
+| /21           | 32                | 2044            |
+| /22           | 64                | 1022            |
+| /23           | 128               | 510             |
+| /24           | 256               | 254             |
+| /25           | 512               | 126             |
+| /26           | 1024              | 62              |
+| /27           | 2048              | 30              |
+| /28           | 4096              | 14              |
+| /29           | 8192              | 6               |
+| /30           | 16384             | 2               |
+| /31           | 32768             | 0 (2)           |
+| /32           | 65536             | 0 (1)           |
 
 <div data-embed="scrollup"></div>
