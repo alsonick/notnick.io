@@ -1,5 +1,6 @@
 import { social } from "../lib/social-links";
 import { FULL_NAME } from "../lib/constants";
+import { GitHubButton } from "./GitHubButton";
 import { FooterLink } from "./FooterLink";
 
 export const Footer = () => {
@@ -42,7 +43,7 @@ export const Footer = () => {
           </p>
         </div>
       </div>
-      {/* <GitHubStarButton /> */}
+      <GitHubButton />
     </footer>
   );
 };

@@ -93,4 +93,31 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
+  {
+    id: generateRandomId(),
+    title: "Data Encapsulation and Decapsulation in Computer Networks",
+    type: "Networking",
+    link: "https://medium.com/@atharva.ghag24/data-encapsulation-and-decapsulation-in-computer-networks-db9ac33cf483",
+    authors: ["Atharva Ghag"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
+
+  {
+    id: generateRandomId(),
+    title: "Computer Networking",
+    type: "Networking",
+    link: "https://notnick.io/note/networking",
+    authors: ["Nicholas Njoki"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
 ];
