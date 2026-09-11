@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-09"
+last_updated_date: "2026-09-12"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1708,5 +1708,26 @@ CIDR notation is the `/x` way of writing a netmask, where `x` is the number of b
 | /30           | 16384             | 2               |
 | /31           | 32768             | 0 (2)           |
 | /32           | 65536             | 0 (1)           |
+
+---
+
+### Day 15 (Part 3 - Subnetting)
+
+#### Variable-Length Subnet Masks
+
+- VLSM (Variable-Length Subnet Masks) is the process of creating subnets of different sizes, to make your use of network addresses more efficient.
+- It's more complicated than [FLSM](https://ipcisco.com/lesson/vlsm-subnetting/).
+
+---
+
+#### VLSM - Steps
+
+1. Assign the largest subnet at the start of the address space.
+2. Assign the second-largest subnet after it.
+3. Repeat the process until all subnets have been assigned.
+
+---
+
+### Day 16 (Part 1)
 
 <div data-embed="scrollup"></div>
