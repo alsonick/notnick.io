@@ -1726,6 +1726,8 @@ CIDR notation is the `/x` way of writing a netmask, where `x` is the number of b
 2. Assign the second-largest subnet after it.
 3. Repeat the process until all subnets have been assigned.
 
+[lab=Day 15 Lab - VLSM.pkt]
+
 ---
 
 ### Day 16 (Part 1)
