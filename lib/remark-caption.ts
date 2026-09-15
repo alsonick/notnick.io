@@ -74,7 +74,7 @@ export function remarkCaption() {
  * single-newline line ending is a soft break, which lives inside a text node's
  * value rather than as a `break` node, so text has to be split as well.
  */
-function splitLines(children: Array<Node>): Array<Array<Node>> {
+export function splitLines(children: Array<Node>): Array<Array<Node>> {
   const lines: Array<Array<Node>> = [[]];
 
   for (const child of children) {
@@ -100,7 +100,7 @@ function splitLines(children: Array<Node>): Array<Array<Node>> {
 }
 
 /** Stitches lines back together with the soft breaks that separated them. */
-function joinLines(lines: Array<Array<Node>>): Array<Node> {
+export function joinLines(lines: Array<Array<Node>>): Array<Node> {
   const kept = lines.filter((line) => line.length > 0);
 
   return kept.flatMap((line, i) =>

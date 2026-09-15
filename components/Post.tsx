@@ -1,4 +1,5 @@
 import { DOMAIN, FULL_NAME, LONG_POST_LINE_COUNT } from "../lib/constants";
+import { LongPostThemeNoticePrompt } from "./LongPostThemeNoticePrompt";
 import { LongPostThemeNotice } from "./LongPostThemeNotice";
 import { TableOfContents } from "./TableOfContents";
 import { useMemo, useEffect, useRef, useState } from "react";
@@ -10,6 +11,11 @@ import { FiArrowLeft } from "react-icons/fi";
 import { DownloadLab } from "./DownloadLab";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "./Community";
+import {
+  LongPostNoticePreference,
+  readLongPostNoticePreference,
+  saveLongPostNoticePreference,
+} from "../lib/long-post-notice";
 import { readTime } from "../lib/read-time";
 import { VideoEmbed } from "./VideoEmbed";
 import { NewsLetter } from "./Newsletter";
@@ -39,6 +45,18 @@ interface Props {
 export const Post = (props: Props) => {
   const articleRef = useRef<HTMLDivElement>(null);
   const [isNoticeDismissed, setIsNoticeDismissed] = useState(false);
+  const [isPromptOpen, setIsPromptOpen] = useState(false);
+
+  // The saved answer lives in localStorage, which can't be read until after
+  // hydration, so `null` here means "we don't know yet" and holds the notice
+  // back — a reader who retired it should never see it flash on the way out.
+  const [preference, setPreference] = useState<LongPostNoticePreference | null>(
+    null,
+  );
+
+  useEffect(() => {
+    setPreference(readLongPostNoticePreference());
+  }, []);
 
   // Long posts are tedious to navigate by scrolling, so they get the ⌘F/Ctrl+F
   // heading search in the nav, plus a notice about the sluggish theme toggle.
@@ -47,7 +65,26 @@ export const Post = (props: Props) => {
     (props.post.lineCount ?? 0) >= LONG_POST_LINE_COUNT;
 
   // Dismissing the notice drops it and slides the nav back to its usual spot.
-  const isNoticeVisible = isLongPost && !isNoticeDismissed;
+  const isNoticeVisible =
+    isLongPost &&
+    !isNoticeDismissed &&
+    preference !== null &&
+    preference !== "hide";
+
+  const handleNoticeDismiss = () => {
+    setIsNoticeDismissed(true);
+
+    // Only ask readers we haven't asked before — anyone who already chose to
+    // keep the notice shouldn't be re-prompted every time they close it.
+    if (preference === "unasked") setIsPromptOpen(true);
+  };
+
+  const handlePromptChoice = (keepShowing: boolean) => {
+    const answer = keepShowing ? "show" : "hide";
+    saveLongPostNoticePreference(answer);
+    setPreference(answer);
+    setIsPromptOpen(false);
+  };
 
   const contentWithEmbeds = useMemo(() => {
     if (!props.post.contentHtml) return null;
@@ -253,7 +290,13 @@ export const Post = (props: Props) => {
         cover={ogCover}
       />
       {isNoticeVisible ? (
-        <LongPostThemeNotice onDismiss={() => setIsNoticeDismissed(true)} />
+        <LongPostThemeNotice onDismiss={handleNoticeDismiss} />
+      ) : null}
+      {isPromptOpen ? (
+        <LongPostThemeNoticePrompt
+          onClose={() => setIsPromptOpen(false)}
+          onChoose={handlePromptChoice}
+        />
       ) : null}
       <Layout
         searchableContentHtml={isLongPost ? props.post.contentHtml : undefined}

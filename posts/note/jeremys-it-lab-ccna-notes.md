@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-14"
+last_updated_date: "2026-09-15"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1730,6 +1730,91 @@ CIDR notation is the `/x` way of writing a netmask, where `x` is the number of b
 
 ---
 
-### Day 16 (Part 1)
+### Day 16 (Part 1 - VLANs)
+
+---
+
+finished: true
+
+---
+
+#### What is a LAN?
+
+- A LAN is a **single broadcast domain**, including all devices in that broadcast domain.
+- A **broadcast domain** is the group of devices which will receive a broadcast frame (destination MAC `FFFF.FFFF.FFFF`) sent by any one of the members.
+- A switch **will not** forward traffic between VLANs, including **broadcast/unknown unicast** traffic.
+- Switches do not perform **inter-VLAN routing**. It must send the traffic through the router.
+
+---
+
+#### What is a VLAN?
+
+A VLAN (Virtual Local Area Network) is a way to logically divide one physical network into multiple separated networks.
+
+- VLANs are configured on switches on a **per-interface** basis.
+- They **logically** separate end hosts at Layer 2.
+
+Benefits of VLANs:
+
+- Security
+- Performance
+- Segmentation
+
+---
+
+#### VLAN Configuration
+
+```
+SW1#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi0/0, Gi0/1, Gi0/2, Gi0/3
+                                                Gi1/0, Gi1/1, Gi1/2, Gi1/3
+                                                Gi2/0, Gi2/1, Gi2/2, Gi2/3
+                                                Gi3/0, Gi3/1, Gi3/2, Gi3/3
+1002 fddi-default                     act/unsup
+1003 token-ring-default               act/unsup
+1004 fddinet-default                  act/unsup
+1005 trnet-default                    act/unsup
+```
+
+`show vlan brief` shows a quick summary of the VLANs on the switch: each VLAN's **number**, **name**, **status**, and which **ports** belong to it.
+
+- **VLAN 1** is the default VLAN. Every interface is in VLAN 1 until you assign it somewhere else.
+- **VLANs 1002-1005** exist by default too. They were made for old technologies (FDDI and Token Ring), so their status is `act/unsup` (active but unsupported).
+- VLAN 1 and VLANs 1002-1005 **cannot be deleted**.
+
+```
+SW1(config)#interface range g1/0 - 3
+SW1(config-if-range)#switchport mode access
+SW1(config-if-range)#switchport access vlan 10
+% Access VLAN does not exist. Creating vlan 10
+```
+
+These commands put ports **Gi1/0 to Gi1/3** into **VLAN 10**.
+
+- `interface range g1/0 - 3` selects all four ports at once, so you don't have to configure them one by one.
+- `switchport mode access` makes the ports **access ports**. An access port belongs to **one VLAN** and usually connects to an end host like a PC.
+- `switchport access vlan 10` assigns the ports to VLAN 10.
+- VLAN 10 didn't exist yet, so the switch **created it automatically**.
+
+Note: Switchports which carry multiple VLANs are called 'truck ports'.
+
+```
+SW1(config)#vlan 10
+SW1(config-vlan)#name ENGINEERING
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name HR
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name SALES
+```
+
+These commands give VLANs a **name** so it's easier to tell what each one is for.
+
+- `vlan 10` enters VLAN config mode for VLAN 10. If the VLAN doesn't exist yet, it gets created.
+- `name ENGINEERING` names VLAN 10 **ENGINEERING**.
+- You can go straight to the next VLAN with `vlan 20` without leaving config mode first.
+- If you don't give a VLAN a name, the switch names it automatically (for example, `VLAN0010`).
 
 <div data-embed="scrollup"></div>

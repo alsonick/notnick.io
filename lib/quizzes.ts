@@ -220,6 +220,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       options: ["/21", "/20", "/28", "/12"],
       correctIndex: 1,
     },
+    "day-16-part-1---vlans": {
+      id: "day-16-part-1---vlans",
+      topic: "Day 16 (Part 1 - VLANs)",
+      question:
+        "PC1 is in VLAN 10 and PC2 is in VLAN 20, and both are plugged into the same switch, SW1. How does traffic from PC1 reach PC2?",
+      options: [
+        "SW1 forwards it directly from VLAN 10 into VLAN 20",
+        "SW1 floods it out of every port, across all VLANs",
+        "SW1 sends it to a router, which routes it into VLAN 20",
+        "It can't, hosts in different VLANs can never communicate",
+      ],
+      correctIndex: 2,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
