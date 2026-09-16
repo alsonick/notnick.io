@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-15"
+last_updated_date: "2026-09-16"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1816,5 +1816,11 @@ These commands give VLANs a **name** so it's easier to tell what each one is for
 - `name ENGINEERING` names VLAN 10 **ENGINEERING**.
 - You can go straight to the next VLAN with `vlan 20` without leaving config mode first.
 - If you don't give a VLAN a name, the switch names it automatically (for example, `VLAN0010`).
+
+[lab=Day 16 Lab - VLANs (Part 1).pkt]
+
+---
+
+### Day 16 (Part 2 - VLANs)
 
 <div data-embed="scrollup"></div>
