@@ -1,4 +1,5 @@
 import { remarkHeadingAnchors } from "./remark-heading-anchors";
+import { remarkSuperscript } from "./remark-superscript";
 import { remarkSectionMeta, PostSection } from "./remark-section-meta";
 import { remarkGithub } from "./remark-github";
 import { remarkCaption } from "./remark-caption";
@@ -87,6 +88,7 @@ export const getPostData = async (slug: string, dir: string) => {
     .use(remarkLab, { dir: matterResult.data.labs })
     .use(remarkNote)
     .use(remarkHeadingAnchors)
+    .use(remarkSuperscript)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeHighlight, { plainText: ["diagram"] })

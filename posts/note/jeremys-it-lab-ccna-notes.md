@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-16"
+last_updated_date: "2026-09-17"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1821,6 +1821,238 @@ These commands give VLANs a **name** so it's easier to tell what each one is for
 
 ---
 
-### Day 16 (Part 2 - VLANs)
+### Day 17 (Part 2 - VLANs)
+
+---
+
+finished: true
+
+---
+
+#### Trunk Ports
+
+A trunk port is a network switch port that carries traffic for multiple VLANs simultaneously.
+
+Key points:
+
+- Switches will 'tag' all frames that they send over a trunk link. This allows the receiving switch to know which VLAN the frame belongs to.
+- Trunk ports = 'tagged' ports.
+- Access ports = 'untagged' ports.
+
+---
+
+#### VLAN Tagging
+
+- There are two main trunking protocols: **ISL (Inter-Switch Link)** and **IEEE 802.1Q** (dot1q).
+- IEEE 802.1Q is an industry standard protocol created by the IEEE (Institute of Electrical and Electronics Engineers).
+
+---
+
+#### 802.1Q Tag
+
+![](/post/jeremys-it-lab-ccna-notes/ethernet-header-frame.png)
+[caption=The ethernet header frame components including the 802.1Q tag.]
+
+- The 802.1Q tag is inserted between the **Source** and **Type/Length** fields of the Ethernet frame.
+- The tag is 4 bytes (32 bits) in length.
+- The tag consists of two main fields:
+  - Tag Protocol Identifier (TPID)
+  - Tag Control Information (TCI)
+- The TCI consists of three sub-fields.
+
+![](/post/jeremys-it-lab-ccna-notes/8021q-tag-format.png)
+
+---
+
+#### 802.1Q Tag - TPID (Tag Protocol Identifier)
+
+- 16 bits (2 bytes) in length.
+- Always set to a value of 0x8100 (8100). This indicates that the frame is 802.1Q-tagged.
+
+Note: 0x = hexadecimal.
+
+---
+
+#### 802.1Q - PCP (Priority Code Point)
+
+- 3 bits in length.
+- Used for Class of Service (CoS), which prioritizes important traffic in congested networks.
+
+---
+
+#### 802.1Q Tag - DEI (Drop Eligible Indicator)
+
+- 1 bit in length.
+- Used to indicate frames that can be dropped if the network is congested.
+
+---
+
+#### 802.1Q Tag - VID (VLAN ID)
+
+- 12 bits in length.
+- Identifies the VLAN the frame belongs to.
+- 12 bits in length = 4096 total VLANs (2^12), range of 0 - 4095.
+- VLANs 0 and 4095 are reserved and can't be used.
+- The actual range of VLANs is 1 - 4094.
+
+---
+
+#### VLAN Ranges
+
+- The range of VLANs is divided into two section:
+  - Normal VLANs: 1 - 1005
+  - Extended VLANs: 1006 - 4094
+
+---
+
+#### Native VLAN
+
+- 802.1Q has a feature called **native VLAN**.
+- The native VLAN is VLAN 1 by default on all trunk ports, however this can be manually configured on each trunk port.
+- The switch does not add an 802.1Q tag to frames in the native VLAN.
+- When a switch receives an untagged frame on a trunk port, it assumes the frame belongs to the native VLAN.
+
+Note: It's very important that the native VLAN matches.
+
+---
+
+#### Trunk Configuration
+
+```
+SW1(config)#interface g0/0
+SW1(config-if)#switchport mode trunk
+Command rejected: An interface whose trunk encapsulation is "Auto" can not be configured to "trunk" mode.
+SW1(config-if)#switchport trunk encapsulation ?
+  dot1q      Interface uses only 802.1q trunking encapsulation when trunking
+  isl        Interface uses only ISL trunking encapsulation when trunking
+  negotiate  Device will negotiate trunking encapsulation with peer on
+             interface
+
+SW1(config-if)#switchport trunk encapsulation dot1q
+SW1(config-if)#switchport mode trunk
+SW1(config-if)#
+```
+
+These commands make **Gi0/0** a **trunk port**, which carries traffic for multiple VLANs.
+
+- `switchport mode trunk` was **rejected** at first. Some switches support more than one trunking encapsulation, and they won't let you turn on trunk mode while the encapsulation is still set to `Auto`.
+- Typing `?` after a command shows the available options. Here the choices are `dot1q`, `isl`, and `negotiate`.
+- `switchport trunk encapsulation dot1q` picks **802.1Q**, the standard used today. ISL is an old Cisco-only protocol.
+- Once the encapsulation is set, `switchport mode trunk` works and the port becomes a trunk.
+
+Note: On switches that only support 802.1Q, you can skip the encapsulation command and just use `switchport mode trunk`.
+
+---
+
+```
+SW1#show interfaces trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi0/0       on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi0/0       1-4094
+
+Port        Vlans allowed and active in management domain
+Gi0/0       1,10,30
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi0/0       1,10,30
+SW1#
+```
+
+`show interfaces trunk` lists the trunk ports on the switch and how each one is set up.
+
+- **Mode `on`** means the port was manually set to trunk mode, and **Status `trunking`** means it's actually working as a trunk.
+- **Encapsulation `802.1q`** is the tagging standard being used, and **Native vlan `1`** is the VLAN whose frames are sent untagged.
+- **Vlans allowed on trunk** shows `1-4094`, which is the default. A trunk allows every VLAN unless you limit it.
+- **Vlans allowed and active in management domain** shows `1,10,30`. These are the VLANs that are both allowed **and** actually exist on the switch, so these are the only ones the trunk really carries.
+
+---
+
+```
+SW1(config-if)#switchport trunk allowed vlan 10,30
+SW1(config-if)#do show interfaces trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Gi0/0       on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Gi0/0       10,30
+
+Port        Vlans allowed and active in management domain
+Gi0/0       10,30
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Gi0/0       10,30
+SW1(config-if)#
+```
+
+`switchport trunk allowed vlan 10,30` limits the trunk so it only carries **VLAN 10 and VLAN 30**.
+
+- The allowed list went from `1-4094` (all VLANs) down to just `10,30`.
+- VLAN 1 is no longer allowed, so its traffic won't cross this trunk anymore.
+- Limiting the allowed VLANs is good practice. It keeps unnecessary traffic off the link.
+
+---
+
+```
+SW1(config-if)#switchport trunk allowed vlan ?
+  WORD    VLAN IDs of the allowed VLANs when this port is in trunking mode
+  add     add VLANs to the current list
+  all     all VLANs
+  except  all VLANs except the following
+  none    no VLANs
+  remove  remove VLANs from the current list
+```
+
+These are the options for `switchport trunk allowed vlan`.
+
+- **WORD** = you type the VLAN IDs yourself, like `10,30` or `10-20`. This **replaces** the whole list.
+- **add** = adds VLANs to the list that's already there.
+- **all** = allows every VLAN (this is the default).
+- **except** = allows every VLAN apart from the ones you list.
+- **none** = allows no VLANs at all.
+- **remove** = takes VLANs off the current list.
+
+Note: For security purposes, it is best to change the native VLAN to an **unused VLAN**.
+
+Note: The **show vlan brief** command shows the access ports assigned to each VLAN, not the trunk ports that allow each VLAN. Use the **show interfaces trunk** command instead to confirm trunk ports.
+
+---
+
+#### Router on a Stick (ROAS)
+
+```
+R1(config)#interface g0/0
+R1(config-if)#no shutdown
+R1(config-if)#
+*Apr 15 04:29:49.681: %LINK-3-UPDOWN: Interface GigabitEthernet0/0, changed state to up
+*Apr 15 04:29:50.682: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+R1(config-if)#interface g0/0.10
+R1(config-subif)#encapsulation dot1q 10
+R1(config-subif)#ip address 192.168.1.62 255.255.255.192
+```
+
+This is the router side of **router-on-a-stick**, where one physical router port handles the traffic of multiple VLANs.
+
+- `no shutdown` turns on the physical interface. Router interfaces are shut down by default.
+- `interface g0/0.10` creates a **subinterface**. It's a virtual interface that lives on the physical port, and you make one per VLAN.
+- `encapsulation dot1q 10` tells the subinterface to handle traffic tagged for **VLAN 10**.
+- `ip address` gives the subinterface an IP, which becomes the **default gateway** for the hosts in that VLAN.
+
+Note: The number after the dot (`g0/0.10`) is just a label, but matching it to the VLAN ID keeps things easy to read. The VLAN is actually set by the `encapsulation` command.
+
+Note: Use the **show ip interface brief** command to confirm the configured ip addresses.
+
+Key points:
+
+- ROAS is used to route between multiple VLANs using a single interface on the router and switch.
+- The router interface is configured using **subinterfaces**. You configure the VLAN tag and IP address on each subinterface.
+- The router will tag frames sent out of each subinterface with the VLAN tag configured on the subinterface.
+
+---
+
+### Day 18 (Part 3 - VLANs)
 
 <div data-embed="scrollup"></div>

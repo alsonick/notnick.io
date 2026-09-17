@@ -484,6 +484,17 @@
   color: #d1d5db;
 }
 
+/* Exponents — `2^12` in a post renders as a raised 12. Positioned rather than
+   left on `vertical-align: super`, which pushes the line it sits on further
+   from the line above and unevenly spaces a paragraph of body text. */
+.prose sup {
+  position: relative;
+  top: -0.5em;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
 /* Feather's info icon (FiInfo, as Callout uses), drawn as a mask so it takes
    the accent colour in either theme without any extra markup. */
 .prose .post-note > .post-note-label::before {

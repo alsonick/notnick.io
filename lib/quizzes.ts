@@ -233,6 +233,19 @@ export const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 2,
     },
+    "day-17-part-2---vlans": {
+      id: "day-17-part-2---vlans",
+      topic: "Day 17 (Part 2 - VLANs)",
+      question:
+        "SW1 and SW2 are connected by an 802.1Q trunk, and both ends still use the default native VLAN of 1. SW1 needs to send a frame from VLAN 1 across that trunk. How does it send the frame?",
+      options: [
+        "Tagged with a VID of 1, like every other frame on a trunk link",
+        "Untagged, because frames belonging to the native VLAN are sent without an 802.1Q tag",
+        "Tagged with a VID of 0, which is reserved to mean the native VLAN",
+        "It doesn't, VLAN 1 traffic is never allowed to cross a trunk link",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
