@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-17"
+last_updated_date: "2026-09-18"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1861,6 +1861,7 @@ Key points:
 - The TCI consists of three sub-fields.
 
 ![](/post/jeremys-it-lab-ccna-notes/8021q-tag-format.png)
+[caption=https://en.wikipedia.org/wiki/IEEE_802.1Q]
 
 ---
 
@@ -1906,6 +1907,8 @@ Note: 0x = hexadecimal.
 ---
 
 #### Native VLAN
+
+A native VLAN is the VLAN that carries untagged traffic on a trunk port.
 
 - 802.1Q has a feature called **native VLAN**.
 - The native VLAN is VLAN 1 by default on all trunk ports, however this can be manually configured on each trunk port.
@@ -2043,7 +2046,7 @@ This is the router side of **router-on-a-stick**, where one physical router port
 
 Note: The number after the dot (`g0/0.10`) is just a label, but matching it to the VLAN ID keeps things easy to read. The VLAN is actually set by the `encapsulation` command.
 
-Note: Use the **show ip interface brief** command to confirm the configured ip addresses.
+Note: Use the **show ip interface brief** command to confirm the configured IP addresses.
 
 Key points:
 
