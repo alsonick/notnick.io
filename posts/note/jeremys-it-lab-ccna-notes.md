@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-18"
+last_updated_date: "2026-09-19"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -2053,6 +2053,8 @@ Key points:
 - ROAS is used to route between multiple VLANs using a single interface on the router and switch.
 - The router interface is configured using **subinterfaces**. You configure the VLAN tag and IP address on each subinterface.
 - The router will tag frames sent out of each subinterface with the VLAN tag configured on the subinterface.
+
+[lab=Day 17 Lab - VLANs (Part 2).pkt]
 
 ---
 
