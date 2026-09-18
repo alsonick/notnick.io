@@ -9,6 +9,12 @@ import {
   PROFESSION,
   THEME,
 } from "../lib/constants";
+import {
+  COMPONENT_EMBED_SCRIPT_ID,
+  serializeComponentEmbed,
+  buildPageEmbed,
+} from "../lib/discord-embed";
+import { ComponentEmbed } from "../types/discord-embed";
 import { seoKeywords } from "../lib/seo-keywords";
 import { fireworks } from "../lib/fireworks";
 import { social } from "../lib/social-links";
@@ -19,6 +25,9 @@ import Script from "next/script";
 import Head from "next/head";
 
 interface Props {
+  // Discord renders this in place of the Open Graph card. Pass a payload to
+  // tailor the preview, or `null` to opt the page out and keep the card.
+  embed?: ComponentEmbed | null;
   description: string;
   cover?: string;
   title: string;
@@ -32,6 +41,22 @@ export const Seo = (props: Props) => {
   const pagePath = asPath.split(/[?#]/)[0];
   const pageUrl = `https://${DOMAIN}${pagePath === "/" ? "" : pagePath}`;
   const avatarUrl = `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
+
+  // Pages that don't build their own payload still get a preview, and the
+  // serializer hands back null for anything Discord would reject — in which
+  // case the Open Graph tags below carry the preview on their own.
+  const componentEmbed =
+    props.embed === null
+      ? null
+      : props.embed ||
+        buildPageEmbed({
+          description: props.description,
+          title: props.title,
+          url: pageUrl,
+        });
+  const componentEmbedJson = componentEmbed
+    ? serializeComponentEmbed(componentEmbed)
+    : null;
 
   const structuredData = [
     {
@@ -97,6 +122,14 @@ export const Seo = (props: Props) => {
           name="twitter:site"
           content={`@${FULL_NAME.split(" ")[0].toLowerCase()}`}
         />
+        {componentEmbedJson ? (
+          <script
+            dangerouslySetInnerHTML={{ __html: componentEmbedJson }}
+            id={COMPONENT_EMBED_SCRIPT_ID}
+            key={COMPONENT_EMBED_SCRIPT_ID}
+            type="application/json"
+          />
+        ) : null}
         {pagePath === "/"
           ? structuredData.map((schema) => (
               <script

@@ -16,6 +16,7 @@ import {
   readLongPostNoticePreference,
   saveLongPostNoticePreference,
 } from "../lib/long-post-notice";
+import { buildPostEmbed } from "../lib/discord-embed";
 import { readTime } from "../lib/read-time";
 import { VideoEmbed } from "./VideoEmbed";
 import { NewsLetter } from "./Newsletter";
@@ -282,11 +283,38 @@ export const Post = (props: Props) => {
     props.post.mins,
   ]);
 
+  // The Discord link preview leans on the same card the Open Graph image uses,
+  // so a post shared in a chat reads the way it does on a timeline.
+  const componentEmbed = useMemo(
+    () =>
+      buildPostEmbed({
+        url: `${page[props.type].link}/${props.post.slug}`,
+        description: props.post.description,
+        title: props.post.title,
+        date: props.post.date,
+        mins: props.post.mins,
+        tag: props.post.tag,
+        type: props.type,
+        cover: ogCover,
+      }),
+    [
+      props.post.description,
+      props.post.title,
+      props.post.slug,
+      props.post.date,
+      props.post.mins,
+      props.post.tag,
+      props.type,
+      ogCover,
+    ],
+  );
+
   return (
     <>
       <Seo
         title={`${props.post.title} - ${FULL_NAME}`}
         description={props.post.description}
+        embed={componentEmbed}
         cover={ogCover}
       />
       {isNoticeVisible ? (
