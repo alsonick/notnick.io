@@ -1,4 +1,4 @@
-import { SpotifyAccessToken } from "./../../../../types/spotify";
+import { SpotifyAccessToken } from "../../../../types/spotify";
 
 import type { NextApiRequest, NextApiResponse } from "next";
 

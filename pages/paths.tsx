@@ -1,12 +1,12 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { Header } from "../components/Header";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { Header } from "../components/layout/Header";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
 import { FiArrowRight } from "react-icons/fi";
-import { Seo } from "../components/Seo";
-import { PATHS } from "../lib/paths";
+import { Seo } from "../components/layout/Seo";
+import { PATHS } from "../lib/data/paths";
 import { page } from "../lib/page";
 
 // Next.js
@@ -24,7 +24,9 @@ export const Paths: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={true}>
-              <Heading style={{ marginBottom: 0 }}>{page.paths.title}</Heading>
+              <Heading as="h1" style={{ marginBottom: 0 }}>
+                {page.paths.title}
+              </Heading>
             </Header>
             <div className="flex flex-col gap-1">
               {PATHS.map((path) => (

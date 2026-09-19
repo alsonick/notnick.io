@@ -1,0 +1,22 @@
+interface Props {
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  children?: React.ReactNode | undefined;
+  title?: string | undefined;
+  "aria-label"?: string | undefined;
+}
+
+export const RoundedBox = (props: Props) => {
+  return (
+    <button
+      className={`flex items-center justify-center focus:ring-4 ring-primary outline-none bg-gray-100 text-black
+      h-9 w-9 duration-300 md:hover:bg-gray-200 ml-auto dark:bg-gray-800
+    md:dark:hover:bg-gray-900 dark:text-white rounded-lg focus:ring-offset-2 dark:ring-offset-black
+    border border-gray-300 dark:border-gray-700`}
+      onClick={props.onClick}
+      aria-label={props["aria-label"]}
+      title={props.title}
+    >
+      {props.children}
+    </button>
+  );
+};

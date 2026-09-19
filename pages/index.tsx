@@ -1,21 +1,20 @@
-import { FeaturedArticles } from "../components/FeaturedArticles";
-import { Technologies } from "../components/Technologies";
-import { GitHubGraph } from "../components/GitHubGraph";
+import { FeaturedArticles } from "../components/articles/FeaturedArticles";
+import { Experience } from "../components/experience/Experience";
+import { Technologies } from "../components/home/Technologies";
+import { Education } from "../components/experience/Education";
+import { NewsLetter } from "../components/home/Newsletter";
+import { Projects } from "../components/projects/Projects";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Experience } from "../components/Experience";
-import { NewsLetter } from "../components/Newsletter";
-import { Education } from "../components/Education";
-import { Community } from "../components/Community";
-import { Listening } from "../components/Listening";
-import { Projects } from "../components/Projects";
-import { Contact } from "../components/Contact";
-import { Animate } from "../components/Animate";
-import { License } from "../components/License";
-import { Layout } from "../components/Layout";
-import { Music } from "../components/Music";
-import { About } from "../components/About";
-import { Main } from "../components/Main";
-import { Seo } from "../components/Seo";
+import { Community } from "../components/home/Community";
+import { Listening } from "../components/home/Listening";
+import { Animate } from "../components/layout/Animate";
+import { License } from "../components/home/License";
+import { Contact } from "../components/home/Contact";
+import { Layout } from "../components/layout/Layout";
+import { Music } from "../components/music/Music";
+import { About } from "../components/home/About";
+import { Main } from "../components/home/Main";
+import { Seo } from "../components/layout/Seo";
 import { useState } from "react";
 
 // Next.js
@@ -37,7 +36,6 @@ const Home: NextPage = () => {
           <Technologies />
           <Education />
           {/* <Projects /> */}
-          {/* <GitHubGraph /> */}
           <Music />
           <Community />
           <NewsLetter showStats={true} showTitle={true} note={true} />

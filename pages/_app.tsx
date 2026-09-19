@@ -1,5 +1,9 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { MAIN_CONTENT_ID } from "../lib/constants";
+// Registers the router listeners GoBack relies on; must load on every page.
+import "../lib/navigation-history";
 import { useEffect, useRef } from "react";
+import { IconContext } from "react-icons";
 import "highlight.js/styles/github.css";
 import "react-tippy/dist/tippy.css";
 import NProgress from "nprogress";
@@ -38,11 +42,23 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <main className={inter.className}>
-      <Component {...pageProps} />
-      {new Date().getMonth() + 1 !== 12 ? null : null}
-      <SpeedInsights />
-    </main>
+    // Every react-icons icon is decorative unless it says otherwise, so hide
+    // them from screen readers. Icon-only controls carry their own aria-label.
+    <IconContext.Provider value={{ attr: { "aria-hidden": "true" } }}>
+      <div className={inter.className}>
+        <a
+          href={`#${MAIN_CONTENT_ID}`}
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10000]
+          focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-black
+          focus:outline-none focus:ring-4 focus:ring-primary dark:focus:bg-black dark:focus:text-white"
+        >
+          Skip to content
+        </a>
+        <Component {...pageProps} />
+        {new Date().getMonth() + 1 !== 12 ? null : null}
+        <SpeedInsights />
+      </div>
+    </IconContext.Provider>
   );
 }
 

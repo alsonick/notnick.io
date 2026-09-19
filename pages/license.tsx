@@ -1,11 +1,11 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { Header } from "../components/Header";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Text } from "../components/Text";
-import { Seo } from "../components/Seo";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { Header } from "../components/layout/Header";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Text } from "../components/ui/Text";
+import { Seo } from "../components/layout/Seo";
 import { page } from "../lib/page";
 
 // Next.js
@@ -22,7 +22,7 @@ const License: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={true}>
-              <Heading style={{ marginBottom: 0 }}>{page.license.title}</Heading>
+              <Heading as="h1" style={{ marginBottom: 0 }}>{page.license.title}</Heading>
             </Header>
             <div className="mb-4">
               <Text>

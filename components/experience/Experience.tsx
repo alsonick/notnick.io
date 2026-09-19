@@ -1,0 +1,55 @@
+import { ExperienceCard } from "./ExperienceCard";
+import { EXPERIENCE } from "../../lib/data/experience";
+import { social } from "../../lib/data/social-links";
+import { Heading } from "../ui/Heading";
+import { Section } from "../layout/Section";
+import { LinkTag } from "../ui/LinkTag";
+import { page } from "../../lib/page";
+import { LinkT } from "../ui/Link";
+import { Text } from "../ui/Text";
+
+export const Experience = () => {
+  return (
+    <Section>
+      <Heading>Experience 🛠️</Heading>
+      <Text>
+        If you want to find out more about my professional experience and the
+        work I&apos;ve done then please head over to my{" "}
+        <LinkT href={social.linkedin.link} target="_blank" title="LinkedIn">
+          LinkedIn
+        </LinkT>{" "}
+        page.
+      </Text>
+      <div>
+        {EXPERIENCE.slice(0, 3).map((experience) => (
+          <ExperienceCard
+            employmentType={experience.employmentType}
+            discontinued={experience.discontinued}
+            description={experience.description}
+            startMonth={experience.startMonth}
+            startYear={experience.startYear}
+            location={experience.location}
+            endMonth={experience.endMonth}
+            current={experience.current}
+            feature={experience.feature}
+            endYear={experience.endYear}
+            filter={experience.filter}
+            remote={experience.remote}
+            showCurrentStatus={false}
+            note={experience.note}
+            name={experience.name}
+            link={experience.link}
+            logo={experience.logo}
+            task={experience.task}
+            slug={experience.slug}
+            key={experience.id}
+          />
+        ))}
+      </div>
+      <Text>
+        Click <LinkTag href={page.experience.link}>here</LinkTag> to view the
+        full list.
+      </Text>
+    </Section>
+  );
+};

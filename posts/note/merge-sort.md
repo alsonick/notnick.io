@@ -13,7 +13,7 @@ Recently I came across a problem on Leetcode [(912. Sort an Array)](https://leet
 
 I remember my professor covering the [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) algorithm, but I'd forgotten it, so I had to relearn the concept again. In this note I'm going to explain it to reinforce my own learning. I'm going to start doing this for any algorithm I pick up to really lock in my understanding. If you spot any mistakes in my explanation then please edit this document (scroll down and click the "Edit this page on GitHub" link).
 
-### Divide and Conquer
+## Divide and Conquer
 
 ---
 
@@ -240,6 +240,6 @@ Here's the full diagram illustrating the whole process:
 
 ![](/post/merge-sort/merge_sort_full_hourglass.png)
 
-### Conclusion
+## Conclusion
 
 I know this is a confusing topic, but I hope I was able to make it easier to understand. If you still don't get it, the best thing to do is watch some YouTube videos on Merge Sort, read this post again, and write out the code yourself. Do that a few times until it clicks. As usual, thank you for reading.

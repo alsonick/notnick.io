@@ -1,14 +1,14 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { PlainTag } from "../components/PlainTag";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { COMPONENTS } from "../lib/components";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { Text } from "../components/Text";
-import { Note } from "../components/Note";
-import { Seo } from "../components/Seo";
+import { PlainTag } from "../components/ui/PlainTag";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { COMPONENTS } from "../lib/data/components";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { Text } from "../components/ui/Text";
+import { Note } from "../components/ui/Note";
+import { Seo } from "../components/layout/Seo";
 import { page } from "../lib/page";
 
 // Next.js
@@ -24,7 +24,7 @@ const Components: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
               {page.components.title}
             </Heading>
             <div className="sm:flex hidden">

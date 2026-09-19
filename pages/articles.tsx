@@ -1,20 +1,21 @@
-import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
-import { generateRandomId } from "../lib/generate-random-id";
-import { removeDuplicates } from "../lib/remove-duplicates";
-import { FilterListBox } from "../components/FilterListBox";
-import { ArticlesList } from "../components/ArticlesList";
+import { capitalizeFirstLetter } from "../lib/utils/capitalize-first-letter";
+import { generateRandomId } from "../lib/utils/generate-random-id";
+import { removeDuplicates } from "../lib/utils/remove-duplicates";
+import { FilterListBox } from "../components/ui/FilterListBox";
+import { ArticlesList } from "../components/articles/ArticlesList";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Article, Tag } from "../types/article";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { ARTICLES } from "../lib/articles";
-import { Input } from "../components/Input";
-import { Text } from "../components/Text";
-import { Seo } from "../components/Seo";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { ARTICLES } from "../lib/data/articles";
+import { Input } from "../components/ui/Input";
+import { Text } from "../components/ui/Text";
+import { Seo } from "../components/layout/Seo";
 import { page } from "../lib/page";
+import { FiSearch } from "react-icons/fi";
 import { useState } from "react";
 
 // Next.js
@@ -73,19 +74,25 @@ const Articles: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={false} column={false}>
-              <Heading style={{ marginBottom: 0 }}>
+              <Heading as="h1" style={{ marginBottom: 0 }}>
                 {page.articles.title}
               </Heading>
               <FilterListBox
                 items={removeDuplicates(tags)}
                 selectedItem={selected}
                 onChange={setSelected}
+                label="Filter articles by tag"
               />
             </Header>
-            <div className="mb-6">
+            <div className="group relative mb-6">
+              <FiSearch
+                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-base
+                text-gray-500 dark:text-gray-400 group-focus-within:text-primary duration-300"
+              />
               <Input
                 placeholder="Search articles..."
-                style={{ width: "100%" }}
+                // Room on the left for the search icon.
+                style={{ width: "100%", paddingLeft: "2.75rem" }}
                 type="search"
                 aria-label="Search articles"
                 value={query}

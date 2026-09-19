@@ -1,13 +1,13 @@
-import { FULL_NAME, PROFESSION, THEME } from "../lib/constants";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { Text } from "../components/Text";
-import { SOCIALS } from "../lib/socials";
+import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { Text } from "../components/ui/Text";
+import { SOCIALS } from "../lib/data/socials";
 import { FiCopy } from "react-icons/fi";
-import { Seo } from "../components/Seo";
+import { Seo } from "../components/layout/Seo";
 import { Tooltip } from "react-tippy";
 import copy from "copy-to-clipboard";
 import { page } from "../lib/page";
@@ -37,7 +37,9 @@ const Socials: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>{page.socials.title}</Heading>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
+              {page.socials.title}
+            </Heading>
           </Header>
           <div className="flex flex-col mb-4">
             {SOCIALS.map((social) => (
@@ -64,17 +66,24 @@ const Socials: NextPage = () => {
                     position="top"
                     animation="shift"
                   >
-                    <div
-                      className="cursor-pointer"
+                    <button
+                      type="button"
+                      aria-label={`Copy ${social.title} link`}
+                      className="ml-2 flex cursor-pointer rounded outline-none focus-visible:ring-4 ring-primary
+                      focus-visible:ring-offset-2 dark:ring-offset-black"
                       onClick={() => copyToClipboard(social.link)}
                     >
-                      <FiCopy className="ml-2 text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white duration-300" />
-                    </div>
+                      <FiCopy className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white duration-300" />
+                    </button>
                   </Tooltip>
                 </div>
               </div>
             ))}
           </div>
+          {/* Announces a successful copy, which is otherwise only a tooltip. */}
+          <p className="sr-only" role="status">
+            {copyText === "Copied" ? "Link copied" : ""}
+          </p>
           <GoBack />
         </Animate>
       </Layout>

@@ -1,13 +1,3 @@
-export interface SingleRuleResponse {
-  success: boolean;
-  rule: Rule;
-}
-
-export interface ErrorResponse {
-  success: boolean;
-  error: string;
-}
-
 export interface Rule {
   number: number;
   title: string;

@@ -4,21 +4,21 @@ import {
   PROFESSION,
   FULL_NAME,
 } from "../../lib/constants";
-import { ApplyForm } from "../../components/ApplyForm";
-import { Callout } from "../../components/Callout";
-import { Heading } from "../../components/Heading";
-import { Animate } from "../../components/Animate";
-import { Section } from "../../components/Section";
-import { LinkTag } from "../../components/LinkTag";
-import { Layout } from "../../components/Layout";
-import { Header } from "../../components/Header";
-import { Avatar } from "../../components/Avatar";
-import { social } from "../../lib/social-links";
+import { ApplyForm } from "../../components/group/ApplyForm";
+import { Callout } from "../../components/ui/Callout";
+import { Heading } from "../../components/ui/Heading";
+import { Animate } from "../../components/layout/Animate";
+import { Section } from "../../components/layout/Section";
+import { LinkTag } from "../../components/ui/LinkTag";
+import { Layout } from "../../components/layout/Layout";
+import { Header } from "../../components/layout/Header";
+import { Avatar } from "../../components/ui/Avatar";
+import { social } from "../../lib/data/social-links";
 import { FaXTwitter } from "react-icons/fa6";
-import { Text } from "../../components/Text";
-import { Note } from "../../components/Note";
+import { Text } from "../../components/ui/Text";
+import { Note } from "../../components/ui/Note";
 import { FiLinkedin } from "react-icons/fi";
-import { Seo } from "../../components/Seo";
+import { Seo } from "../../components/layout/Seo";
 import { page } from "../../lib/page";
 
 // Next.js
@@ -35,7 +35,7 @@ const Apply: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
               {page.group.apply.title}
             </Heading>
           </Header>
@@ -55,6 +55,7 @@ const Apply: NextPage = () => {
                   <Avatar height={64} width={64} border={true} />
                   <div className="ml-4 flex flex-col">
                     <Heading
+                      as="h3"
                       style={{
                         lineHeight: "1.5rem",
                         fontSize: "1.2rem",

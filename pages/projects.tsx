@@ -1,14 +1,14 @@
 import { EMAIL_ADDRESS, FULL_NAME, PROFESSION } from "../lib/constants";
-import { ProjectCard } from "../components/ProjectCard";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { PROJECTS } from "../lib/projects";
-import { LinkT } from "../components/Link";
-import { Note } from "../components/Note";
-import { Seo } from "../components/Seo";
+import { ProjectCard } from "../components/projects/ProjectCard";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { PROJECTS } from "../lib/data/projects";
+import { LinkT } from "../components/ui/Link";
+import { Note } from "../components/ui/Note";
+import { Seo } from "../components/layout/Seo";
 import { page } from "../lib/page";
 
 const Projects = () => {
@@ -21,7 +21,9 @@ const Projects = () => {
       <Layout>
         <Animate>
           <Header singleItem={true}>
-            <Heading style={{ marginBottom: 0 }}>{page.projects.title}</Heading>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
+              {page.projects.title}
+            </Heading>
           </Header>
           <Note>
             Some projects are based on other platforms (e.g. Lyrics Tags

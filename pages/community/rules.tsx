@@ -1,16 +1,16 @@
-import { LoadingPageContainer } from "../../components/LoadingPageContainer";
+import { LoadingPageContainer } from "../../components/layout/LoadingPageContainer";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
-import { Heading } from "../../components/Heading";
-import { Animate } from "../../components/Animate";
-import { Loading } from "../../components/Loading";
-import { GoBack } from "../../components/GoBack";
-import { Header } from "../../components/Header";
-import { Layout } from "../../components/Layout";
-import { Text } from "../../components/Text";
+import { Heading } from "../../components/ui/Heading";
+import { Animate } from "../../components/layout/Animate";
+import { Loading } from "../../components/ui/Loading";
+import { GoBack } from "../../components/layout/GoBack";
+import { Header } from "../../components/layout/Header";
+import { Layout } from "../../components/layout/Layout";
+import { Text } from "../../components/ui/Text";
 import { useState, useEffect } from "react";
 import { Response } from "../../types/rule";
-import { Seo } from "../../components/Seo";
-import { Key } from "../../components/Key";
+import { Seo } from "../../components/layout/Seo";
+import { Key } from "../../components/ui/Key";
 import { page } from "../../lib/page";
 
 // Next.js
@@ -41,7 +41,7 @@ const Rules: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
               {page.community.title1}
             </Heading>
           </Header>

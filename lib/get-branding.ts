@@ -1,5 +1,5 @@
 import { Branding } from "../types/branding";
-import { BRANDING } from "./branding";
+import { BRANDING } from "./data/branding";
 import { CDN } from "./constants";
 import sharp from "sharp";
 

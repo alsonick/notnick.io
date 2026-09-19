@@ -1,15 +1,15 @@
-import { Date as DateComponent } from "../components/Date";
+import { Date as DateComponent } from "../components/ui/Date";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { PostCardTag } from "../components/PostCardTag";
-import { NewsLetter } from "../components/Newsletter";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { Text } from "../components/Text";
-import { Seo } from "../components/Seo";
-import { TALKS } from "../lib/talks";
+import { PostCardTag } from "../components/posts/PostCardTag";
+import { NewsLetter } from "../components/home/Newsletter";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { Text } from "../components/ui/Text";
+import { Seo } from "../components/layout/Seo";
+import { TALKS } from "../lib/data/talks";
 import { page } from "../lib/page";
 
 // Next.js
@@ -26,7 +26,7 @@ const Talks: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={true}>
-              <Heading style={{ marginBottom: 0 }}>{page.talks.title}</Heading>
+              <Heading as="h1" style={{ marginBottom: 0 }}>{page.talks.title}</Heading>
             </Header>
             <div className="mb-5">
               <Text>
@@ -53,9 +53,9 @@ const Talks: NextPage = () => {
                 >
                   <div className="flex flex-col justify-center">
                     <PostCardTag title={`Talk #${talk.recording}`} />
-                    <h1 className="sm:text-3xl mt-2 text-2xl font-bold underline dark:text-white w-fit">
+                    <h2 className="sm:text-3xl mt-2 text-2xl font-bold underline dark:text-white w-fit">
                       {talk.title}
-                    </h1>
+                    </h2>
                     <div className="my-1">
                       <Text>{talk.description}</Text>
                     </div>

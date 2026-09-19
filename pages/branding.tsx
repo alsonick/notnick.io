@@ -1,19 +1,19 @@
-import { computedAltTitleTag } from "../lib/computed-alt-title-tag";
+import { computedAltTitleTag } from "../lib/utils/computed-alt-title-tag";
 import { FULL_NAME, PROFESSION, CDN } from "../lib/constants";
 import { Branding as BrandingType } from "../types/branding";
 import { getBranding } from "../lib/get-branding";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
 import { ICON } from "../lib/tailwindcss/icon";
-import { Button } from "../components/Button";
-import { GoBack } from "../components/GoBack";
-import { Header } from "../components/Header";
-import { Layout } from "../components/Layout";
+import { Button } from "../components/ui/Button";
+import { GoBack } from "../components/layout/GoBack";
+import { Header } from "../components/layout/Header";
+import { Layout } from "../components/layout/Layout";
 import { FiDownload } from "react-icons/fi";
-import { LinkT } from "../components/Link";
-import { Text } from "../components/Text";
-import { Seo } from "../components/Seo";
-import { Key } from "../components/Key";
+import { LinkT } from "../components/ui/Link";
+import { Text } from "../components/ui/Text";
+import { Seo } from "../components/layout/Seo";
+import { Key } from "../components/ui/Key";
 import { saveAs } from "file-saver";
 import { page } from "../lib/page";
 
@@ -34,7 +34,9 @@ const Branding: NextPage<Props> = ({ branding: BRANDING }) => {
       <Layout>
         <Animate>
           <Header singleItem={true} column={true}>
-            <Heading style={{ marginBottom: 0 }}>{page.branding.title}</Heading>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
+              {page.branding.title}
+            </Heading>
             <Text style={{ marginTop: "15px" }}>
               The personal branding I use throughout my social media platforms.
               <br />

@@ -1,12 +1,12 @@
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
-import { Challenge } from "../../components/Challenge";
-import { Heading } from "../../components/Heading";
-import { Animate } from "../../components/Animate";
-import { CHALLENGES } from "../../lib/challenges";
-import { GoBack } from "../../components/GoBack";
-import { Layout } from "../../components/Layout";
-import { Header } from "../../components/Header";
-import { Seo } from "../../components/Seo";
+import { Challenge } from "../../components/challenge/Challenge";
+import { Heading } from "../../components/ui/Heading";
+import { Animate } from "../../components/layout/Animate";
+import { CHALLENGES } from "../../lib/data/challenges";
+import { GoBack } from "../../components/layout/GoBack";
+import { Layout } from "../../components/layout/Layout";
+import { Header } from "../../components/layout/Header";
+import { Seo } from "../../components/layout/Seo";
 
 // Next.js
 import { NextPage } from "next";
@@ -22,7 +22,7 @@ const ChallengePage: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={false}>
-              <Heading style={{ marginBottom: 0 }}>Challenge</Heading>
+              <Heading as="h1" style={{ marginBottom: 0 }}>Challenge</Heading>
             </Header>
             <div className="flex flex-col mb-4">
               {CHALLENGES.filter((challenge) => challenge.active).map(
