@@ -1,4 +1,4 @@
-import { PostSection } from "../lib/remark-section-meta";
+import { PostSection } from "../lib/remark/section-meta";
 
 export interface Post {
   last_updated_date: string;

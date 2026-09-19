@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { CHALLENGES } from "../../lib/challenges";
+import { CHALLENGES } from "../../lib/data/challenges";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const query = req.query as { name: string; content: string; day: string };

@@ -1,5 +1,5 @@
 import { FULL_NAME } from "../../lib/constants";
-import { readTime } from "../../lib/read-time";
+import { readTime } from "../../lib/utils/read-time";
 import type { NextRequest } from "next/server";
 
 // Next.js

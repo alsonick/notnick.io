@@ -1,14 +1,14 @@
 import { FULL_NAME, PROFESSION, SWITCH_FRIEND_CODE } from "../../lib/constants";
-import { SWITCH_GAMES } from "../../lib/switch-games";
-import { Animate } from "../../components/Animate";
-import { Heading } from "../../components/Heading";
-import { Layout } from "../../components/Layout";
-import { Header } from "../../components/Header";
-import { GoBack } from "../../components/GoBack";
+import { SWITCH_GAMES } from "../../lib/data/switch-games";
+import { Animate } from "../../components/layout/Animate";
+import { Heading } from "../../components/ui/Heading";
+import { Layout } from "../../components/layout/Layout";
+import { Header } from "../../components/layout/Header";
+import { GoBack } from "../../components/layout/GoBack";
 import { FiExternalLink } from "react-icons/fi";
-import { LinkT } from "../../components/Link";
-import { Text } from "../../components/Text";
-import { Seo } from "../../components/Seo";
+import { LinkT } from "../../components/ui/Link";
+import { Text } from "../../components/ui/Text";
+import { Seo } from "../../components/layout/Seo";
 import { page } from "../../lib/page";
 
 const Games = () => {
@@ -22,7 +22,7 @@ const Games = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={true}>
-              <Heading style={{ marginBottom: 0 }}>
+              <Heading as="h1" style={{ marginBottom: 0 }}>
                 {page.switch.games.title}
               </Heading>
             </Header>

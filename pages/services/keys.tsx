@@ -1,14 +1,22 @@
-import { Layout } from "../../components/Layout";
-import { PageUnderConstruction } from "../../components/PageUnderConstruction";
+import { Layout } from "../../components/layout/Layout";
+import { PageUnderConstruction } from "../../components/ui/PageUnderConstruction";
+import { FULL_NAME, PROFESSION } from "../../lib/constants";
+import { Seo } from "../../components/layout/Seo";
 
 // Next.js
 import { NextPage } from "next";
 
 const HelloWorld: NextPage = () => {
   return (
-    <Layout>
-      <PageUnderConstruction />
-    </Layout>
+    <>
+      <Seo
+        title={`Keys • ${FULL_NAME}`}
+        description={`${FULL_NAME} - ${PROFESSION}`}
+      />
+      <Layout>
+        <PageUnderConstruction />
+      </Layout>
+    </>
   );
 };
 

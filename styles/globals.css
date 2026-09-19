@@ -24,6 +24,10 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
+    /* Brand green, used by Tailwind's `primary`. The signature #30D158 is only
+       2:1 against white, so light mode uses a deeper green that clears the
+       4.5:1 WCAG AA minimum for text (and white text on top of it). */
+    --color-primary: 21 128 61;
   }
 
   .dark {
@@ -46,6 +50,9 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    /* #30D158 is 10:1 against black. Text sitting on a primary fill should be
+       black in dark mode, since white on #30D158 is only 2:1. */
+    --color-primary: 48 209 88;
   }
 }
 
@@ -281,7 +288,7 @@
   white-space: pre;
   text-align: right;
   user-select: none;
-  color: #9ca3af;
+  color: #6a737d;
   border-right: 1px solid #e5e7eb;
   transition: color 0.3s, border-color 0.3s;
 }
@@ -301,8 +308,47 @@
   line-height: 1;
 }
 
-.prose pre:hover .copy-button {
+.prose pre:hover .copy-button,
+.prose pre:focus-within .copy-button {
   opacity: 1;
+}
+
+/* Keyboard users land on the copy button and on code blocks wide enough to
+   scroll (Post.tsx makes those focusable), so both need a visible focus ring. */
+.copy-button:focus-visible,
+.prose pre code:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+}
+
+/* github.css's keyword, built-in and tag colours fall under 4.5:1 on the light
+   code background, so swap in GitHub's newer accessible Primer shades. */
+html:not(.dark) .hljs-doctag,
+html:not(.dark) .hljs-keyword,
+html:not(.dark) .hljs-meta .hljs-keyword,
+html:not(.dark) .hljs-template-tag,
+html:not(.dark) .hljs-template-variable,
+html:not(.dark) .hljs-type,
+html:not(.dark) .hljs-variable.language_ {
+  color: #cf222e;
+}
+
+html:not(.dark) .hljs-built_in,
+html:not(.dark) .hljs-symbol {
+  color: #953800;
+}
+
+html:not(.dark) .hljs-name,
+html:not(.dark) .hljs-quote,
+html:not(.dark) .hljs-selector-tag,
+html:not(.dark) .hljs-selector-pseudo {
+  color: #116329;
+}
+
+html:not(.dark) .hljs-comment,
+html:not(.dark) .hljs-code,
+html:not(.dark) .hljs-formula {
+  color: #59636e;
 }
 
 .copy-button:hover {
@@ -411,6 +457,38 @@
   animation: slideUpAndFade 200ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Toasts (Toast.tsx) slide in from the right and back out the same way, on
+   the same ease-out curve and 300ms as the site's other transitions. */
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+
+.toast-enter {
+  animation: toastIn 300ms cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+.toast-exit {
+  animation: toastOut 300ms cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
 /* Captions — a `[caption="…"]` line renders as small muted text tucked under
    the image, embed or link it follows */
 .prose .post-caption {
@@ -451,7 +529,7 @@
   margin-bottom: 1.5rem;
   padding: 1rem;
   border: 1px solid #ccfbf1;
-  border-left: 4px solid #30d158;
+  border-left: 4px solid rgb(var(--color-primary));
   border-radius: 0.5rem;
   background-color: rgba(240, 253, 244, 0.6);
   transition: background-color 0.3s, border-color 0.3s;
@@ -459,7 +537,7 @@
 
 .dark .prose .post-note {
   border-color: #134e4a;
-  border-left-color: #30d158;
+  border-left-color: rgb(var(--color-primary));
   background-color: rgba(16, 22, 26, 0.5);
 }
 
@@ -503,9 +581,28 @@
   height: 1rem;
   margin-right: 0.5rem;
   flex-shrink: 0;
-  background-color: #30d158;
+  background-color: rgb(var(--color-primary));
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='16' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'/%3E%3C/svg%3E")
     center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='12' y1='16' x2='12' y2='12'/%3E%3Cline x1='12' y1='8' x2='12.01' y2='8'/%3E%3C/svg%3E")
     center / contain no-repeat;
+}
+
+/* Honour the OS "reduce motion" setting: stop the looping wave, the dropdown
+   and lightbox animations, hover scaling and smooth scrolling. A near-zero
+   duration (rather than `none`) keeps animationend/transitionend firing for
+   anything that waits on them. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .wave {
+    animation: none;
+  }
 }

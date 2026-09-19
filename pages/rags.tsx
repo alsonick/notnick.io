@@ -1,22 +1,22 @@
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { TdChildren } from "../components/TdChildren";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
+import { TdChildren } from "../components/ui/TdChildren";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
 import { ICON } from "../lib/tailwindcss/icon";
-import { Layout } from "../components/Layout";
-import { Button } from "../components/Button";
-import { GoBack } from "../components/GoBack";
-import { Header } from "../components/Header";
+import { Layout } from "../components/layout/Layout";
+import { Button } from "../components/ui/Button";
+import { GoBack } from "../components/layout/GoBack";
+import { Header } from "../components/layout/Header";
 import { useState, useEffect } from "react";
-import { Table } from "../components/Table";
-import { LinkT } from "../components/Link";
+import { Table } from "../components/ui/Table";
+import { LinkT } from "../components/ui/Link";
 import { FiRepeat } from "react-icons/fi";
-import { Text } from "../components/Text";
-import { Note } from "../components/Note";
-import { Seo } from "../components/Seo";
-import { Td } from "../components/Td";
-import { Th } from "../components/Th";
-import { RAGS } from "../lib/rags";
+import { Text } from "../components/ui/Text";
+import { Note } from "../components/ui/Note";
+import { Seo } from "../components/layout/Seo";
+import { Td } from "../components/ui/Td";
+import { Th } from "../components/ui/Th";
+import { RAGS } from "../lib/data/rags";
 import { page } from "../lib/page";
 
 // Next.js
@@ -55,7 +55,7 @@ const Rags: NextPage = () => {
       >
         <Animate>
           <Header column={false} singleItem={false}>
-            <Heading style={{ marginBottom: "0.5rem" }}>
+            <Heading as="h1" style={{ marginBottom: "0.5rem" }}>
               {page.rags.title}
             </Heading>
           </Header>

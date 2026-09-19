@@ -1,12 +1,12 @@
-import { PlaylistCover } from "../components/PlaylistCover";
+import { PlaylistCover } from "../components/music/PlaylistCover";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { Seo } from "../components/Seo";
-import { MUSIC } from "../lib/music";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { Seo } from "../components/layout/Seo";
+import { MUSIC } from "../lib/data/music";
 import { page } from "../lib/page";
 
 // Next.js
@@ -23,7 +23,9 @@ const Music = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={false}>
-              <Heading style={{ marginBottom: 0 }}>{page.music.title}</Heading>
+              <Heading as="h1" style={{ marginBottom: 0 }}>
+                {page.music.title}
+              </Heading>
             </Header>
             <div className="mb-4 grid md:grid-cols-3 gap-4 sm:grid-cols-2">
               {MUSIC.map((playlist) => (

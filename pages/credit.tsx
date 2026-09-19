@@ -1,13 +1,13 @@
 import { DOMAIN, FULL_NAME } from "../lib/constants";
-import { Heading } from "../components/Heading";
-import { GoBack } from "../components/GoBack";
-import { Header } from "../components/Header";
-import { Layout } from "../components/Layout";
-import { social } from "../lib/social-links";
-import { LinkT } from "../components/Link";
-import { Text } from "../components/Text";
-import { Key } from "../components/Key";
-import { Seo } from "../components/Seo";
+import { Heading } from "../components/ui/Heading";
+import { GoBack } from "../components/layout/GoBack";
+import { Header } from "../components/layout/Header";
+import { Layout } from "../components/layout/Layout";
+import { social } from "../lib/data/social-links";
+import { LinkT } from "../components/ui/Link";
+import { Text } from "../components/ui/Text";
+import { Key } from "../components/ui/Key";
+import { Seo } from "../components/layout/Seo";
 import { page } from "../lib/page";
 
 // Next.js
@@ -22,7 +22,9 @@ const Credit: NextPage = () => {
       />
       <Layout>
         <Header singleItem={true}>
-          <Heading style={{ marginBottom: 0 }}>{page.credit.title}</Heading>
+          <Heading as="h1" style={{ marginBottom: 0 }}>
+            {page.credit.title}
+          </Heading>
         </Header>
         <Text>
           The source code to this site is{" "}

@@ -1,32 +1,32 @@
-import { findSlugAndAssociatedContent } from "../../lib/find-slug-and-associated-content";
-import { DownloadCodeProject } from "../../components/DownloadCodeProject";
-import { returnChallengeStatus } from "../../lib/return-challenge-status";
-import { ContentUnavailable } from "../../components/ContentUnavailable";
-import { generateRandomId } from "../../lib/generate-random-id";
-import { StatusMessage } from "../../components/StatusMessage";
+import { findSlugAndAssociatedContent } from "../../lib/utils/find-slug-and-associated-content";
+import { DownloadCodeProject } from "../../components/challenge/DownloadCodeProject";
+import { returnChallengeStatus } from "../../lib/utils/return-challenge-status";
+import { ContentUnavailable } from "../../components/ui/ContentUnavailable";
+import { generateRandomId } from "../../lib/utils/generate-random-id";
+import { StatusMessage } from "../../components/ui/StatusMessage";
 import { FULL_NAME, PROFESSION } from "../../lib/constants";
-import { TdChildren } from "../../components/TdChildren";
-import { Heading } from "../../components/Heading";
-import { Animate } from "../../components/Animate";
-import { CHALLENGES } from "../../lib/challenges";
+import { TdChildren } from "../../components/ui/TdChildren";
+import { Heading } from "../../components/ui/Heading";
+import { Animate } from "../../components/layout/Animate";
+import { CHALLENGES } from "../../lib/data/challenges";
 import { ICON } from "../../lib/tailwindcss/icon";
-import { GoBack } from "../../components/GoBack";
-import { Header } from "../../components/Header";
-import { Layout } from "../../components/Layout";
-import { Button } from "../../components/Button";
-import { Switch } from "../../components/Switch";
+import { GoBack } from "../../components/layout/GoBack";
+import { Header } from "../../components/layout/Header";
+import { Layout } from "../../components/layout/Layout";
+import { Button } from "../../components/ui/Button";
+import { Switch } from "../../components/ui/Switch";
 import { fireworks } from "../../lib/fireworks";
-import { Table } from "../../components/Table";
-import { LinkT } from "../../components/Link";
-import { Note } from "../../components/Note";
-import { Text } from "../../components/Text";
+import { Table } from "../../components/ui/Table";
+import { LinkT } from "../../components/ui/Link";
+import { Note } from "../../components/ui/Note";
+import { Text } from "../../components/ui/Text";
 import { FiDownload } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import { Tag } from "../../components/Tag";
-import { Seo } from "../../components/Seo";
-import { Key } from "../../components/Key";
-import { Th } from "../../components/Th";
-import { Td } from "../../components/Td";
+import { Tag } from "../../components/ui/Tag";
+import { Seo } from "../../components/layout/Seo";
+import { Key } from "../../components/ui/Key";
+import { Th } from "../../components/ui/Th";
+import { Td } from "../../components/ui/Td";
 import { page } from "../../lib/page";
 import { saveAs } from "file-saver";
 
@@ -83,7 +83,7 @@ const Slug: NextPage = () => {
       >
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>{challenge?.name}</Heading>{" "}
+            <Heading as="h1" style={{ marginBottom: 0 }}>{challenge?.name}</Heading>{" "}
             <Tag
               title={returnChallengeStatus(challenge)}
               type={challenge?.active ? "success" : "error"}
@@ -110,7 +110,11 @@ const Slug: NextPage = () => {
               <Key>Toggle</Key>
               <div className="flex items-center justify-between">
                 <Text>{challenge.toggle.text}</Text>
-                <Switch enabled={enabled} setEnabled={toggle} />
+                <Switch
+                  enabled={enabled}
+                  setEnabled={toggle}
+                  label={challenge.toggle.text}
+                />
               </div>
             </div>
           ) : null}

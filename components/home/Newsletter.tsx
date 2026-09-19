@@ -1,0 +1,136 @@
+import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
+import { EMAIL_ADDRESS } from "../../lib/constants";
+import { StatusMessage } from "../ui/StatusMessage";
+import { ICON } from "../../lib/tailwindcss/icon";
+import { social } from "../../lib/data/social-links";
+import { useState, useEffect } from "react";
+import { FiMail } from "react-icons/fi";
+import { Heading } from "../ui/Heading";
+import { Section } from "../layout/Section";
+import { Button } from "../ui/Button";
+import { Avatar } from "../ui/Avatar";
+import { Input } from "../ui/Input";
+import { Text } from "../ui/Text";
+import { Form } from "../ui/Form";
+
+// Next.js
+import Link from "next/link";
+
+interface Props {
+  formHeading?: string;
+  showStats?: boolean;
+  showTitle?: boolean;
+  title?: string;
+  note?: boolean;
+}
+
+export const NewsLetter = (props: Props) => {
+  const [successMessage, setSuccessMessage] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const [email, setEmail] = useState<string>("");
+  const [subs, setSubs] = useState<number>(0);
+
+  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setErrorMessage("Revue has shut down.");
+  };
+
+  useEffect(() => {}, []);
+
+  return (
+    <Section>
+      {props.showTitle && (
+        <>
+          {props.title ? (
+            <Heading>{props.title}</Heading>
+          ) : (
+            <Heading>Newsletter 📰</Heading>
+          )}
+        </>
+      )}
+      <Form onSubmit={subscribe} action="POST" hoverBorder={true}>
+        <Heading
+          as={props.showTitle ? "h3" : "h2"}
+          style={{ fontSize: "1.2rem", marginBottom: 0 }}
+        >
+          {props.formHeading ? props.formHeading : "Subscribe to my newsletter"}
+        </Heading>
+        <Text>Subscribe if you&apos;re interested in networking.</Text>
+        <div className="flex md:flex-row flex-col w-full md:items-center items-start rounded-lg justify-between mt-2 mb-2">
+          <div className="flex-1 md:w-fit w-full mr-3 mb-3 md:mb-0">
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email address
+            </label>
+            <Input
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={`${EMAIL_ADDRESS}`}
+              style={{ width: "100%" }}
+              required={true}
+              value={email}
+              name="email"
+              type="email"
+              id="newsletter-email"
+            />
+          </div>
+          <div className="flex md:w-fit w-full">
+            <Button
+              style={{ width: "100%" }}
+              onClick={() => setErrorMessage("Revue has shut down.")}
+              title="Subscribe"
+            >
+              Subscribe <FiMail className={ICON} />
+            </Button>
+          </div>
+        </div>
+        {props.showStats && (
+          <div className="flex md:items-center items-start justify-between mt-2 md:flex-row flex-col">
+            <div className="flex text-sm items-center text-gray-600 dark:text-gray-300">
+              <span className="font-bold text-black dark:text-white">
+                {subs ?? 0}&nbsp;
+              </span>{" "}
+              {subs === 1 ? "subscriber" : "subscribers"} &bull;&nbsp;
+              <Link
+                className={`hover:underline focus:ring-4 ring-0 ring-primary outline-none duration-300
+                  focus:ring-offset-2 dark:ring-offset-black rounded`}
+                href={social.revue.link}
+                rel="noreferrer"
+                target="_blank"
+                title="View my published issues"
+              >
+                View all issues
+              </Link>
+              &nbsp; &bull;&nbsp;
+              <Avatar border={true} width={20} height={20} />
+            </div>
+          </div>
+        )}
+        {successMessage && (
+          <div className="flex items-center">
+            <HiBadgeCheck className="mr-1 mt-[1px] text-green-500" />
+            <StatusMessage message={successMessage} type="success" />
+          </div>
+        )}
+        {errorMessage && (
+          <div className="flex mt-2 items-center">
+            <HiExclamationCircle className="mr-1 mt-[1px] text-red-500" />
+            <StatusMessage message={errorMessage} type="error" />
+          </div>
+        )}
+        {loading && <Text style={{ fontSize: "0.9rem" }}>Loading...</Text>}
+      </Form>
+      {/* <div className="mt-6">
+        {props.note && (
+          <Note>
+            {social.revue.name} has <b>shut down</b> so you won&apos;t be able
+            to subscribe. I&apos;ll make sure to find another newsletter
+            alternative in the meantime. 👍{" "}
+          </Note>
+        )}
+      </div> */}
+    </Section>
+  );
+};

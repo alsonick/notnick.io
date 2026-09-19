@@ -1,9 +1,5 @@
 import { page } from "./page";
 
-export const API_URL =
-  process.env.NODE_ENV === "development"
-    ? "https://localhost:3000/api"
-    : "https://notnick.io/api";
 export const SUBJECT_OF_STUDY = "Computer Science (Software Engineering)";
 export const STUDYING_UNTIL = new Date("2027-07-01T00:00:00Z");
 export const WEBSOCKET_URL = "wss://api.lanyard.rest/socket";
@@ -16,22 +12,16 @@ export const CDN = "https://cdn.notnick.io/images";
 export const BLOGS_DIR = `posts${page.blog.path}`;
 export const NOTES_DIR = `posts${page.note.path}`;
 export const DISCORD_ID = "463449066672619520";
-export const DISCORD_INVITE_CODE = "EAMyNzBSZT";
 export const SECONDARY_THEME_COLOR = "#25A244";
 export const EMAIL_ADDRESS = "hi@notnick.io";
 export const YEAR_STARTED_PROGRAMMING = 2019;
-export const BLOGS_URL_PATH = page.blog.path;
-export const NOTES_URL_PATH = page.note.path;
 export const AVATAR_FILE_EXTENSION = "png";
 export const FULL_NAME = "Nicholas Njoki";
 export const LONG_POST_LINE_COUNT = 1000;
 export const LOCATED = "United Kingdom";
-export const LOOKING_FOR_WORK = false;
-export const CACHE_TOKEN = "nas-dsf";
 export const FIRST_NAME = "Nicholas";
 export const DOMAIN = "notnick.io";
-export const LAST_NAME = "Njoki";
 export const CITY = "Canterbury";
 export const PRONOUNS = "he/him";
 export const THEME = "#30D158";
-export const COUNTRY = "UK";
+export const MAIN_CONTENT_ID = "main-content";

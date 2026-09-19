@@ -1,0 +1,183 @@
+import { AVATAR, AVATAR_FILE_EXTENSION, CDN } from "../../lib/constants";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { createPortal } from "react-dom";
+import { FiX } from "react-icons/fi";
+import { Border } from "./Border";
+
+// Next.js
+import Image from "next/image";
+
+interface Props {
+  clickable?: boolean;
+  border?: boolean;
+  height: number;
+  width: number;
+}
+
+const STYLES = `
+  @keyframes fade-in  { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes fade-out { from { opacity: 1 } to { opacity: 0 } }
+  @keyframes scale-in  { from { opacity: 0; transform: scale(0.75) } to { opacity: 1; transform: scale(1) } }
+  @keyframes scale-out { from { opacity: 1; transform: scale(1) } to { opacity: 0; transform: scale(0.75) } }
+  .lb-enter { animation: fade-in 250ms ease forwards }
+  .lb-leave { animation: fade-out 250ms ease forwards }
+  .lb-img-enter { animation: scale-in 280ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards }
+  .lb-img-leave { animation: scale-out 220ms ease forwards }
+`;
+
+interface LightboxProps {
+  onClose: () => void;
+  closing: boolean;
+  src: string;
+}
+
+const Lightbox = (props: LightboxProps) => {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Close is the only control in the dialog, so it takes focus (and keeps it,
+  // see the Tab handling in Avatar) while the dialog is open.
+  useEffect(() => {
+    closeRef.current?.focus();
+  }, []);
+
+  const content = (
+    <div
+      className={props.closing ? "lb-leave" : "lb-enter"}
+      style={{
+        backgroundColor: "rgba(0,0,0,0.75)",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "fixed",
+        display: "flex",
+        outline: "none",
+        zIndex: 9999,
+        inset: 0,
+      }}
+      aria-label="My Signature Avatar"
+      onClick={props.onClose}
+      aria-modal="true"
+      role="dialog"
+    >
+      <style>{STYLES}</style>
+      <button
+        ref={closeRef}
+        className="fixed top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full bg-white/20 border border-white/30 text-white cursor-pointer outline-none focus-visible:ring-4 ring-primary active:bg-white/30 transition-none"
+        onClick={props.onClose}
+        aria-label="Close"
+      >
+        <FiX size={16} />
+      </button>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className={props.closing ? "lb-img-leave" : "lb-img-enter"}
+      >
+        <Image
+          src={props.src}
+          alt="My Signature Avatar"
+          className="rounded-full aspect-square object-cover"
+          style={{ maxWidth: "90vw", maxHeight: "90vh" }}
+          height={500}
+          width={500}
+          quality={100}
+        />
+      </div>
+    </div>
+  );
+
+  return createPortal(content, document.body);
+};
+
+export const Avatar = (props: Props) => {
+  const [closing, setClosing] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  const src = `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const close = useCallback(() => {
+    setClosing(true);
+    setTimeout(() => {
+      setClosing(false);
+      setOpen(false);
+      // Put keyboard focus back where it was before the lightbox opened.
+      triggerRef.current?.focus();
+    }, 250);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+
+    document.body.style.overflow = "hidden";
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") close();
+      if (e.key === "Tab") e.preventDefault();
+    };
+
+    document.addEventListener("keydown", onKey);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open, close]);
+
+  const img = (
+    <Image
+      className="rounded-full z-10 aspect-square object-cover sm:hover:scale-105 sm:transition-transform sm:duration-300"
+      title="My Signature Avatar"
+      alt="My Signature Avatar"
+      height={props.height}
+      width={props.width}
+      quality={100}
+      src={src}
+    />
+  );
+
+  const trigger = props.clickable ? (
+    <button
+      ref={triggerRef}
+      // Inside a Border the ring is drawn by the Border (see below), since the
+      // circle would clip one drawn here.
+      className={`rounded-full outline-none cursor-default sm:cursor-pointer overflow-hidden ${
+        props.border
+          ? ""
+          : "duration-300 ring-primary ring-offset-2 dark:ring-offset-black focus-visible:ring-4"
+      }`}
+      onClick={() => {
+        if (window.matchMedia("(min-width: 640px)").matches) setOpen(true);
+      }}
+      aria-label="View avatar full size"
+      aria-haspopup="dialog"
+      type="button"
+      style={{
+        background: "none",
+        display: "block",
+        border: "none",
+        padding: 0,
+      }}
+    >
+      {img}
+    </button>
+  ) : (
+    img
+  );
+
+  return (
+    <>
+      {props.border ? (
+        <Border focusRing={props.clickable}>{trigger}</Border>
+      ) : (
+        trigger
+      )}
+      {props.clickable && mounted && open && (
+        <Lightbox src={src} closing={closing} onClose={close} />
+      )}
+    </>
+  );
+};

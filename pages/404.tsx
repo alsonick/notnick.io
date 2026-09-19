@@ -1,5 +1,5 @@
 import { FULL_NAME } from "../lib/constants";
-import { E } from "../components/E";
+import { E } from "../components/layout/E";
 
 // Next.js
 import { NextPage } from "next";

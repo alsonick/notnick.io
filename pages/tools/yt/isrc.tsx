@@ -1,22 +1,22 @@
 import { ISRCResponse, SpotifyAccessToken } from "../../../types/spotify";
-import { CharacterLimit } from "../../../components/CharacterLimit";
-import { StatusMessage } from "../../../components/StatusMessage";
+import { CharacterLimit } from "../../../components/ui/CharacterLimit";
+import { StatusMessage } from "../../../components/ui/StatusMessage";
 import { FULL_NAME, PROFESSION } from "../../../lib/constants";
 import { FiCopy, FiSearch, FiCheck } from "react-icons/fi";
-import { Heading } from "../../../components/Heading";
-import { Animate } from "../../../components/Animate";
-import { Loading } from "../../../components/Loading";
+import { Heading } from "../../../components/ui/Heading";
+import { Animate } from "../../../components/layout/Animate";
+import { Loading } from "../../../components/ui/Loading";
 import { ICON } from "../../../lib/tailwindcss/icon";
-import { Layout } from "../../../components/Layout";
-import { GoBack } from "../../../components/GoBack";
-import { Header } from "../../../components/Header";
-import { Button } from "../../../components/Button";
-import { Label } from "../../../components/Label";
-import { Input } from "../../../components/Input";
-import { LinkT } from "../../../components/Link";
-import { Text } from "../../../components/Text";
-import { Form } from "../../../components/Form";
-import { Seo } from "../../../components/Seo";
+import { Layout } from "../../../components/layout/Layout";
+import { GoBack } from "../../../components/layout/GoBack";
+import { Header } from "../../../components/layout/Header";
+import { Button } from "../../../components/ui/Button";
+import { Label } from "../../../components/ui/Label";
+import { Input } from "../../../components/ui/Input";
+import { LinkT } from "../../../components/ui/Link";
+import { Text } from "../../../components/ui/Text";
+import { Form } from "../../../components/ui/Form";
+import { Seo } from "../../../components/layout/Seo";
 import { FaSpotify } from "react-icons/fa";
 import { page } from "../../../lib/page";
 import copy from "copy-to-clipboard";
@@ -127,7 +127,7 @@ const ISRC: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header column={false} singleItem={false}>
-              <Heading style={{ marginBottom: "0.5rem" }}>
+              <Heading as="h1" style={{ marginBottom: "0.5rem" }}>
                 {page.isrc.title2}
               </Heading>
             </Header>
@@ -146,12 +146,13 @@ const ISRC: NextPage = () => {
                 <div className="w-full">
                   <div className="mb-3">
                     <div className="mb-1">
-                      <Label text="soundtrack" />
+                      <Label text="soundtrack" htmlFor="soundtrack" />
                     </div>
                     <Input
                       placeholder="https://open.spotify.com/track/6JrFlbV1Ehnigcp71vtiI1?si=e99533332a6a4b81"
                       style={{ width: "100%" }}
                       required={true}
+                      id="soundtrack"
                       value={soundtrackTitle}
                       onChange={(e) => {
                         setSoundtrackTitle(e.target.value);

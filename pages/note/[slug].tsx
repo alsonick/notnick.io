@@ -1,7 +1,7 @@
 import { getAllPostSlugs, getPostData } from "../../lib/post";
 import { NOTES_DIR } from "../../lib/constants";
 import { Post as P } from "../../types/post";
-import { Post } from "../../components/Post";
+import { Post } from "../../components/posts/Post";
 
 // Next.js
 import { GetStaticProps, NextPage } from "next";

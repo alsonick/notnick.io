@@ -1,14 +1,14 @@
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { Header } from "../components/Header";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { Header } from "../components/layout/Header";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
 import { FULL_NAME } from "../lib/constants";
-import { Text } from "../components/Text";
-import { Seo } from "../components/Seo";
-import { Tag } from "../components/Tag";
-import { Key } from "../components/Key";
-import { SPECS } from "../lib/specs";
+import { Text } from "../components/ui/Text";
+import { Seo } from "../components/layout/Seo";
+import { Tag } from "../components/ui/Tag";
+import { Key } from "../components/ui/Key";
+import { SPECS } from "../lib/data/specs";
 import { page } from "../lib/page";
 
 // Next.js
@@ -25,14 +25,16 @@ const Specs: NextPage = () => {
         <Animate>
           <div className="flex flex-col min-h-[calc(100vh-8rem)]">
             <Header singleItem={true}>
-              <Heading style={{ marginBottom: 0 }}>{page.specs.title}</Heading>
+              <Heading as="h1" style={{ marginBottom: 0 }}>
+                {page.specs.title}
+              </Heading>
             </Header>
             {SPECS.map((spec) => (
               <div className="flex flex-col w-full mb-8" key={spec.id}>
                 {spec.sellingSoon && <Tag title="Selling soon" />}
-                <h1 className="dark:text-white hover:no-underline sm:text-3xl text-2xl font-bold mb-0">
+                <h2 className="dark:text-white hover:no-underline sm:text-3xl text-2xl font-bold mb-0">
                   {spec.title}
-                </h1>
+                </h2>
                 <ul className="mt-3">
                   {spec.list.map((item) => (
                     <li className="mb-1" key={item.id}>

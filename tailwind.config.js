@@ -2,12 +2,14 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./lib/*.{js,ts,jsx,tsx}",
+    "./lib/{data,remark,utils,tailwindcss}/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        primary: "#30D158",
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -38,10 +40,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require("@headlessui/tailwindcss"),
     require("@headlessui/tailwindcss")({ prefix: "ui" }),
   ],
-  variants: {
-    scrollbar: ["rounded"],
-  },
 };

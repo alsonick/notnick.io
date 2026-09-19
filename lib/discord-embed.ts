@@ -16,10 +16,10 @@ import {
   LINK_BUTTON_STYLE,
   ComponentType,
 } from "../types/discord-embed";
-import { truncateText } from "./truncate-text";
-import { social } from "./social-links";
-import { readTime } from "./read-time";
-import { convertDate } from "./date";
+import { truncateText } from "./utils/truncate-text";
+import { social } from "./data/social-links";
+import { readTime } from "./utils/read-time";
+import { convertDate } from "./utils/date";
 import { page } from "./page";
 
 // Discord reads the payload from a script tag with exactly this id, and only
@@ -48,7 +48,7 @@ const hexToAccentColor = (hex: string) => {
 const ACCENT_COLOR = hexToAccentColor(THEME);
 
 /** Discord fetches these itself, so relative paths are no use to it. */
-export const toAbsoluteUrl = (url: string) => {
+const toAbsoluteUrl = (url: string) => {
   const absolute = url.startsWith("http") ? url : `https://${DOMAIN}${url}`;
   return absolute.startsWith("https://") ? absolute : null;
 };
@@ -58,7 +58,7 @@ export const toAbsoluteUrl = (url: string) => {
  * frontmatter has to be neutered before it lands in the payload — an unpaired
  * bracket in a title would otherwise eat the link around it.
  */
-export const escapeMarkdown = (text: string) =>
+const escapeMarkdown = (text: string) =>
   text.replace(/([\\*_~`|[\]<>])/g, "\\$1");
 
 const text = (content: string): TextDisplay => ({

@@ -1,20 +1,20 @@
-import { CharacterLimit } from "../../../components/CharacterLimit";
+import { CharacterLimit } from "../../../components/ui/CharacterLimit";
 import { HiBadgeCheck, HiExclamationCircle } from "react-icons/hi";
 import { EMAIL_ADDRESS, FULL_NAME } from "../../../lib/constants";
-import { StatusMessage } from "../../../components/StatusMessage";
-import { TextArea } from "../../../components/TextArea";
-import { Animate } from "../../../components/Animate";
-import { Heading } from "../../../components/Heading";
-import { Loading } from "../../../components/Loading";
+import { StatusMessage } from "../../../components/ui/StatusMessage";
+import { TextArea } from "../../../components/ui/TextArea";
+import { Animate } from "../../../components/layout/Animate";
+import { Heading } from "../../../components/ui/Heading";
+import { Loading } from "../../../components/ui/Loading";
 import { ICON } from "../../../lib/tailwindcss/icon";
-import { Header } from "../../../components/Header";
-import { Layout } from "../../../components/Layout";
-import { Button } from "../../../components/Button";
-import { Label } from "../../../components/Label";
-import { Input } from "../../../components/Input";
-import { Form } from "../../../components/Form";
-import { Text } from "../../../components/Text";
-import { Seo } from "../../../components/Seo";
+import { Header } from "../../../components/layout/Header";
+import { Layout } from "../../../components/layout/Layout";
+import { Button } from "../../../components/ui/Button";
+import { Label } from "../../../components/ui/Label";
+import { Input } from "../../../components/ui/Input";
+import { Form } from "../../../components/ui/Form";
+import { Text } from "../../../components/ui/Text";
+import { Seo } from "../../../components/layout/Seo";
 import { page } from "../../../lib/page";
 import { FiSend } from "react-icons/fi";
 import { useState } from "react";
@@ -96,7 +96,7 @@ const Feedback: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={false}>
-            <Heading style={{ marginBottom: 0 }}>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
               {page.feedback.lyricsTagsGenerator.title}
             </Heading>
           </Header>
@@ -107,7 +107,7 @@ const Feedback: NextPage = () => {
             <Text>Send feedback to help us improve.</Text>
             <div className="flex flex-col my-2 justify-center w-full">
               <div className="mb-1">
-                <Label text="email" />
+                <Label text="email" htmlFor="email" />
               </div>
               <Input
                 onChange={(e) => setEmail(e.target.value)}
@@ -120,7 +120,7 @@ const Feedback: NextPage = () => {
                 id="email"
               />
               <div className="mb-1 mt-2">
-                <Label text="feedback" />
+                <Label text="feedback" htmlFor="feedback" />
               </div>
               <TextArea
                 onChange={(e) => {
@@ -130,6 +130,7 @@ const Feedback: NextPage = () => {
                   }
                 }}
                 placeholder="Your feedback..."
+                id="feedback"
                 value={feedback}
                 required={true}
                 rows={8}

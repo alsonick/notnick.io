@@ -4,7 +4,7 @@ import {
   AGENTIC_TOOLS_OPTIONS,
   GRADE_OPTIONS,
   STACK_OPTIONS,
-} from "../../../lib/apply-options";
+} from "../../../lib/data/apply-options";
 import { THEME } from "../../../lib/constants";
 
 const rateLimitStore: { [key: string]: number } = {};

@@ -1,23 +1,23 @@
-import { ResponsiveFilterListBoxWrapper } from "../components/ResponsiveFilterListBoxWrapper";
-import { MappedExperienceCardList } from "../components/MappedExperienceCardList";
+import { ResponsiveFilterListBoxWrapper } from "../components/ui/ResponsiveFilterListBoxWrapper";
+import { MappedExperienceCardList } from "../components/experience/MappedExperienceCardList";
 import { EMAIL_ADDRESS, FULL_NAME, PROFESSION } from "../lib/constants";
-import { capitalizeFirstLetter } from "../lib/capitalize-first-letter";
-import { generateRandomId } from "../lib/generate-random-id";
-import { FilterListBox } from "../components/FilterListBox";
-import { removeDuplicates } from "../lib/remove-duplicates";
+import { capitalizeFirstLetter } from "../lib/utils/capitalize-first-letter";
+import { generateRandomId } from "../lib/utils/generate-random-id";
+import { FilterListBox } from "../components/ui/FilterListBox";
+import { removeDuplicates } from "../lib/utils/remove-duplicates";
 import { Experience as E } from "../types/experience";
-import { Heading } from "../components/Heading";
-import { Animate } from "../components/Animate";
-import { LinkTag } from "../components/LinkTag";
-import { EXPERIENCE } from "../lib/experience";
-import { GoBack } from "../components/GoBack";
-import { Layout } from "../components/Layout";
-import { Header } from "../components/Header";
-import { social } from "../lib/social-links";
-import { Text } from "../components/Text";
-import { Note } from "../components/Note";
-import { Seo } from "../components/Seo";
-import { Key } from "../components/Key";
+import { Heading } from "../components/ui/Heading";
+import { Animate } from "../components/layout/Animate";
+import { LinkTag } from "../components/ui/LinkTag";
+import { EXPERIENCE } from "../lib/data/experience";
+import { GoBack } from "../components/layout/GoBack";
+import { Layout } from "../components/layout/Layout";
+import { Header } from "../components/layout/Header";
+import { social } from "../lib/data/social-links";
+import { Text } from "../components/ui/Text";
+import { Note } from "../components/ui/Note";
+import { Seo } from "../components/layout/Seo";
+import { Key } from "../components/ui/Key";
 import { page } from "../lib/page";
 import { useState } from "react";
 
@@ -89,7 +89,7 @@ const Experience: NextPage = () => {
       <Layout>
         <Animate>
           <Header singleItem={false} mobileColumnLayout={true}>
-            <Heading style={{ marginBottom: 0 }}>
+            <Heading as="h1" style={{ marginBottom: 0 }}>
               {page.experience.title}
             </Heading>
             <ResponsiveFilterListBoxWrapper>
@@ -98,6 +98,7 @@ const Experience: NextPage = () => {
                 selectedItem={selected}
                 onChange={setSelected}
                 fullWidth={true}
+                label="Filter experience by type"
               />
             </ResponsiveFilterListBoxWrapper>
           </Header>
