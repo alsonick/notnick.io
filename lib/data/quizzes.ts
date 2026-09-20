@@ -246,6 +246,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-18-part-3---vlans": {
+      id: "day-18-part-3---vlans",
+      topic: "Day 18 (Part 3 - VLANs)",
+      question:
+        "SW2 is a multilayer switch. You create interface vlan 10 and interface vlan 20, give each an IP address and enable them with no shutdown, but hosts in VLAN 10 still can't reach VLAN 20. What is missing?",
+      options: [
+        "The ip routing command, which the switch needs before it will route between VLANs",
+        "A no switchport command on each SVI, to turn it into a Layer 3 interface",
+        "A subinterface for each VLAN, because SVIs can only be used for management",
+        "Nothing, hosts in different VLANs always need a separate router to communicate",
+      ],
+      correctIndex: 0,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-19"
+last_updated_date: "2026-09-20"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -2059,5 +2059,124 @@ Key points:
 ---
 
 ### Day 18 (Part 3 - VLANs)
+
+---
+
+finished: true
+
+---
+
+#### Native VLAN on a router (ROAS)
+
+There are **2 methods** of configuring the native VLAN on a router:
+
+- Use the command `encapsulation dot1q vlan-id native` on the router subinterface.
+- Configure the IP address for the native VLAN on the router's physical interfaces.
+
+First method example:
+
+```
+R1(config)#int g0/0.10
+R1(config-subif)#encapsulation dot1q 10 native
+R1(config-subif)#
+```
+
+Second method example:
+
+```
+R1(config)#no interface g0/0.10
+R1(config)#interface g0/0
+R1(config-if)#ip address 192.168.1.62 255.255.255.192
+R1(config-if)#
+```
+
+Note: `no interface g0/0.10` deletes the subinterface.
+
+---
+
+#### Layer 3 (Multilayer) Switches
+
+- Multilayer switches are capable of both _switching_ and _routing_.
+- Operates both at layer 2 (Data Link layer) and layer 3 (Network layer).
+- You can assign IP addresses to its interfaces, like a router.
+- You can create virtual interfaces for each VLAN, and assign IP addresses to those interfaces.
+- You can configure routes on it.
+- It can be used for inter-VLAN routing.
+
+---
+
+#### Inter-VLAN Routing via SVI
+
+- SVIs (Switch Virtual Interfaces) are the virtual interfaces you can assign IP addresses to in a multilayer switch.
+- You can configure hosts to use SVI as their gateway address.
+- To send traffic to different subnets/VLANs, hosts will send traffic to the switch, and the switch will route the traffic.
+
+```
+R1(config)#no interface g0/0.10
+R1(config)#no interface g0/0.20
+R1(config)#no interface g0/0.30
+R1(config)#default interface g0/0
+Interface GigabitEthernet0/0 set to default configuration
+R1(config)#do show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     unassigned      YES NVRAM  up                    up
+GigabitEthernet0/0.10  unassigned      YES manual deleted               down
+GigabitEthernet0/0.20  unassigned      YES manual deleted               down
+GigabitEthernet0/0.30  unassigned      YES manual deleted               down
+GigabitEthernet0/1     unassigned      YES NVRAM  administratively down down
+GigabitEthernet0/2     unassigned      YES NVRAM  administratively down down
+GigabitEthernet0/3     unassigned      YES NVRAM  administratively down down
+R1(config)#
+```
+
+This removes the old router-on-a-stick setup from R1, so the multilayer switch can do the inter-VLAN routing instead.
+
+- `no interface g0/0.10` deletes a subinterface. You need one command per subinterface.
+- `default interface g0/0` resets the physical interface back to its default settings, wiping any config on it.
+
+```
+SW2(config)#default interface g0/1
+Interface GigabitEthernet0/1 set to default configuration
+SW2(config)#ip routing
+SW2(config)#interface g0/1
+SW2(config-if)#no switchport
+SW2(config-if)#ip address 192.168.1.193 255.255.255.252
+SW2(config-if)#do show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     unassigned      YES unset  up                    up
+GigabitEthernet0/2     unassigned      YES unset  up                    up
+GigabitEthernet0/3     unassigned      YES unset  up                    up
+GigabitEthernet0/1     192.168.1.193   YES manual up                    up
+```
+
+This turns a port on the multilayer switch into a **routed port**, so it behaves like a router interface.
+
+- `ip routing` turns on routing. A multilayer switch won't route between VLANs without it.
+- `no switchport` changes the port from a Layer 2 switchport into a Layer 3 routed port.
+- Once it's a routed port, you can give it an `ip address` just like you would on a router.
+- In the output, G0/1 now has an IP address while the other ports show `unassigned`, because they're still normal switchports.
+
+```
+SW2(config)#interface vlan10
+SW2(config-if)#ip address 192.168.1.62 255.255.255.192
+SW2(config-if)#no shutdown
+```
+
+This creates an **SVI** for VLAN 10, which acts as the gateway for the hosts in that VLAN.
+
+- `interface vlan10` creates the virtual interface for VLAN 10. You make one per VLAN you want to route.
+- The `ip address` you give it is what the hosts in VLAN 10 use as their **default gateway**.
+- `no shutdown` turns the SVI on. SVIs are shut down by default.
+
+The conditions required for an SVI to be configured:
+
+1. The VLAN must exist on the switch.
+2. The switch must have at least one access port in the VLAN in an up/up state, AND/OR one trunk port that allows the VLAN that is in an up/up state.
+3. The VLAN must not be shutdown.
+4. The SVI must not be shutdown.
+
+---
+
+### Day 19
 
 <div data-embed="scrollup"></div>
