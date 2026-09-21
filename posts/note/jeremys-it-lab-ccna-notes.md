@@ -2175,6 +2175,8 @@ The conditions required for an SVI to be configured:
 3. The VLAN must not be shutdown.
 4. The SVI must not be shutdown.
 
+[lab=Day 18 Lab - Multilayer Switching.pkt]
+
 ---
 
 ### Day 19
