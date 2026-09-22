@@ -503,6 +503,12 @@ html:not(.dark) .hljs-formula {
   color: #94a3b8;
 }
 
+/* A caption that is a source credit is often a bare URL, which has nowhere to
+   wrap on a narrow screen. */
+.prose .post-caption a {
+  overflow-wrap: anywhere;
+}
+
 /* Drop the captioned element's own bottom margin so nothing sits between the
    two. An image carries its margin inside the paragraph wrapping it, so that
    one has to be zeroed as well. */

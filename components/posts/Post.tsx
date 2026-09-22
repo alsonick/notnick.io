@@ -8,6 +8,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { social } from "../../lib/data/social-links";
 import { FaXTwitter } from "react-icons/fa6";
 import { FiArrowLeft } from "react-icons/fi";
+import { DownloadSection } from "./DownloadSection";
 import { DownloadLab } from "./DownloadLab";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { CommunityCard } from "../home/Community";
@@ -48,6 +49,10 @@ export const Post = (props: Props) => {
   const articleRef = useRef<HTMLDivElement>(null);
   const [isNoticeDismissed, setIsNoticeDismissed] = useState(false);
   const [isPromptOpen, setIsPromptOpen] = useState(false);
+
+  // The notice wraps to a second line on a narrow window and is hidden outright
+  // on a phone, so the nav follows its measured height rather than a set one.
+  const [noticeHeight, setNoticeHeight] = useState(0);
 
   // The saved answer lives in localStorage, which can't be read until after
   // hydration, so `null` here means "we don't know yet" and holds the notice
@@ -92,7 +97,7 @@ export const Post = (props: Props) => {
     if (!props.post.contentHtml) return null;
 
     const embedRegex =
-      /<div data-embed="(tweet|github|community|scrollup|quiz|video|lab)"[^>]*><\/div>/g;
+      /<div data-embed="(tweet|github|community|scrollup|quiz|video|lab|download)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -166,6 +171,25 @@ export const Post = (props: Props) => {
             <DownloadLab key={`lab-${index}`} href={labHref} file={labFile} />,
           );
         }
+      } else if (type === "download") {
+        // Without a section the button is for the whole post, which the post's
+        // own title names.
+        const sectionId = getAttr(matchStr, "data-download-section");
+        const topic =
+          getAttr(matchStr, "data-download-name") ?? props.post.title;
+        const params = new URLSearchParams({
+          type: props.type,
+          slug: props.post.slug,
+        });
+        if (sectionId) params.set("section", sectionId);
+        parts.push(
+          <DownloadSection
+            key={`download-${sectionId ?? "post"}-${index}`}
+            href={`/api/post-section?${params.toString()}`}
+            isSection={Boolean(sectionId)}
+            topic={topic}
+          />,
+        );
       } else if (type === "community") {
         parts.push(<CommunityCard key={`community-${index}`} />);
       } else if (type === "scrollup") {
@@ -195,7 +219,7 @@ export const Post = (props: Props) => {
     }
 
     return <>{parts}</>;
-  }, [props.post.contentHtml, props.post.slug, props.type]);
+  }, [props.post.contentHtml, props.post.title, props.post.slug, props.type]);
 
   // Add line numbers and copy button to code blocks
   useEffect(() => {
@@ -346,7 +370,10 @@ export const Post = (props: Props) => {
         cover={ogCover}
       />
       {isNoticeVisible ? (
-        <LongPostThemeNotice onDismiss={handleNoticeDismiss} />
+        <LongPostThemeNotice
+          onDismiss={handleNoticeDismiss}
+          onHeight={setNoticeHeight}
+        />
       ) : null}
       {isPromptOpen ? (
         <LongPostThemeNoticePrompt
@@ -356,7 +383,7 @@ export const Post = (props: Props) => {
       ) : null}
       <Layout
         searchableContentHtml={isLongPost ? props.post.contentHtml : undefined}
-        hasTopNotice={isNoticeVisible}
+        topNoticeHeight={isNoticeVisible ? noticeHeight : 0}
       >
         <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
           {props.post.title}

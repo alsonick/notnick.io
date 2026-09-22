@@ -1,5 +1,6 @@
 import { remarkHeadingAnchors } from "./remark/heading-anchors";
 import { remarkSuperscript } from "./remark/superscript";
+import { remarkSectionDownload } from "./remark/section-download";
 import { remarkSectionMeta, PostSection } from "./remark/section-meta";
 import { remarkGithub } from "./remark/github";
 import { remarkCaption } from "./remark/caption";
@@ -14,6 +15,7 @@ import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { unified } from "unified";
+import { LONG_POST_LINE_COUNT } from "./constants";
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
@@ -77,10 +79,17 @@ export const getPostData = async (slug: string, dir: string) => {
 
   const matterResult = matter(fileContents);
 
+  // Long posts are read a section at a time, so they get a download per
+  // section; the rest get one for the whole post.
+  const lineCount = matterResult.content.split("\n").length;
+
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkSectionMeta)
+    .use(remarkSectionDownload, {
+      perSection: lineCount >= LONG_POST_LINE_COUNT,
+    })
     .use(remarkCaption)
     .use(remarkTweet)
     .use(remarkGithub)
@@ -102,7 +111,7 @@ export const getPostData = async (slug: string, dir: string) => {
     slug,
     contentHtml,
     sections,
-    lineCount: matterResult.content.split("\n").length,
+    lineCount,
     ...matterResult.data,
   };
 };
