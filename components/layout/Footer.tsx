@@ -6,7 +6,7 @@ import { FooterLink } from "./FooterLink";
 export const Footer = () => {
   return (
     <footer className="flex items-center justify-between pb-1 border-t mt-5 border-teal-100 dark:border-teal-900 pt-10">
-      <div className="flex flex-col">
+      <div className="flex flex-col opacity-50">
         <p className="sm:text-lg text-base font-bold text-gray-600 dark:text-gray-400">
           {FULL_NAME}
         </p>
