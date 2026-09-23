@@ -8,11 +8,6 @@ import fs from "fs";
 // Next.js
 import type { NextApiRequest, NextApiResponse } from "next";
 
-const DIRECTORIES: Record<string, string> = {
-  [page.blog.name]: BLOGS_DIR,
-  [page.note.name]: NOTES_DIR,
-};
-
 /** Post slugs and section ids are both slugs, so anything else is a bad request. */
 const SLUG = /^[a-z0-9-]+$/;
 
@@ -28,8 +23,17 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     section?: string;
   };
 
-  const directory = type ? DIRECTORIES[type] : undefined;
-  if (!directory || !slug || !SLUG.test(slug)) {
+  // Each branch names its directory outright. Looking one up by `type` would
+  // leave the file tracer unable to work out what this path is, at which point
+  // it gives up and bundles the whole project directory into the function.
+  const folder =
+    type === page.blog.name
+      ? path.join(process.cwd(), BLOGS_DIR)
+      : type === page.note.name
+        ? path.join(process.cwd(), NOTES_DIR)
+        : null;
+
+  if (!folder || !slug || !SLUG.test(slug)) {
     return res.status(400).send("Missing or unknown post.");
   }
 
@@ -40,7 +44,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   // Take the file name from the directory listing rather than building a path
   // out of the query: what reaches `readFileSync` is then a name the posts
   // folder actually holds, so nothing the caller sends can point outside it.
-  const folder = path.join(process.cwd(), directory);
   const file = fs.readdirSync(folder).find((entry) => entry === `${slug}.md`);
   if (!file) {
     return res.status(404).send("No such post.");
