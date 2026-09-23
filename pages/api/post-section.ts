@@ -37,12 +37,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return res.status(400).send("Missing or unknown post.");
   }
 
-  const file = path.join(process.cwd(), directory, `${slug}.md`);
-  if (!fs.existsSync(file)) {
+  // Take the file name from the directory listing rather than building a path
+  // out of the query: what reaches `readFileSync` is then a name the posts
+  // folder actually holds, so nothing the caller sends can point outside it.
+  const folder = path.join(process.cwd(), directory);
+  const file = fs.readdirSync(folder).find((entry) => entry === `${slug}.md`);
+  if (!file) {
     return res.status(404).send("No such post.");
   }
 
-  const post = matter(fs.readFileSync(file, "utf8"));
+  const post = matter(fs.readFileSync(path.join(folder, file), "utf8"));
 
   const found = section
     ? getPostSection(post.content, section)
