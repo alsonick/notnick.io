@@ -12,8 +12,12 @@ interface Props {
   isDisplaySpotify?: boolean;
   longLayoutFormat?: boolean;
   showBackButton?: boolean;
-  /** Drops the nav to clear a fixed notice bar pinned to the top of the viewport. */
-  hasTopNotice?: boolean;
+  /**
+   * Height of a notice bar pinned to the top of the viewport. The nav drops
+   * below it, and the page content drops with the nav so the gap between the
+   * two stays what it is on every other page.
+   */
+  topNoticeHeight?: number;
 }
 
 export const Layout = (props: Props) => {
@@ -45,14 +49,15 @@ export const Layout = (props: Props) => {
         >
           <Nav
             searchableContentHtml={props.searchableContentHtml}
-            hasTopNotice={props.hasTopNotice}
+            topNoticeHeight={props.topNoticeHeight}
             isDisplaySpotify={props.isDisplaySpotify}
             longLayoutFormat={props.longLayoutFormat}
           />
           <div className="flex flex-col h-screen justify-between">
             <main
               id={MAIN_CONTENT_ID}
-              className="flex flex-col flex-grow outline-none"
+              className="flex flex-col flex-grow outline-none duration-300"
+              style={{ paddingTop: props.topNoticeHeight || undefined }}
               tabIndex={-1}
             >
               {props.children}

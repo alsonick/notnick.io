@@ -1,7 +1,13 @@
+import { useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 
 interface Props {
   onDismiss: () => void;
+  /**
+   * The bar's height, reported whenever it changes, so the nav can clear it.
+   * Zero once the bar is gone, or while it is hidden on a phone.
+   */
+  onHeight: (height: number) => void;
 }
 
 /**
@@ -10,24 +16,44 @@ interface Props {
  * Warn readers up front instead of leaving them to wonder, and let them close
  * the warning once they've read it.
  *
- * The height is fixed at `h-7` so the nav can be offset by a known amount when
- * this is on screen; keep it in sync with `NOTICE_NAV_OFFSET` in Nav.tsx.
+ * Hidden on phones, where a warning this long would cost more of the screen
+ * than the toggle it is warning about is worth.
+ *
+ * The height is measured rather than fixed: the wording wraps to a second line
+ * on a narrow window and back to one on a wide one, and the nav has to sit
+ * under whichever it is.
  */
 export const LongPostThemeNotice = (props: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { onHeight } = props;
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const report = () => onHeight(element.getBoundingClientRect().height);
+    report();
+
+    const observer = new ResizeObserver(report);
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+      // The bar is on its way out, so let the nav move back up.
+      onHeight(0);
+    };
+  }, [onHeight]);
+
   return (
     <div
-      className="fixed inset-x-0 top-0 z-50 flex h-7 items-center justify-center
-      bg-primary px-8 text-center font-semibold leading-4 text-white dark:text-black"
+      className="fixed inset-x-0 top-0 z-50 hidden min-h-7 sm:flex items-center justify-center
+      bg-primary px-8 py-1.5 text-center font-semibold leading-4 text-white dark:text-black"
       role="status"
+      ref={ref}
     >
-      <p className="text-[11px] sm:text-xs">
-        <span className="sm:hidden">
-          Theme switching is slow on long posts.
-        </span>
-        <span className="hidden sm:inline">
-          This post is long, so switching themes will be slower and less smooth
-          than usual.
-        </span>
+      <p className="text-xs">
+        WARNING: Theme switching is slower on long posts because the fade has to
+        cross every element on the page (lots of elements).
       </p>
       <button
         onClick={props.onDismiss}

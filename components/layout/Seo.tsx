@@ -37,7 +37,9 @@ export const Seo = (props: Props) => {
   const { query, asPath } = useRouter();
   const date = new Date();
   const ogImage = props.cover || "/og.png";
-  const ogImageUrl = ogImage.startsWith("http") ? ogImage : `https://${DOMAIN}${ogImage}`;
+  const ogImageUrl = ogImage.startsWith("http")
+    ? ogImage
+    : `https://${DOMAIN}${ogImage}`;
   const pagePath = asPath.split(/[?#]/)[0];
   const pageUrl = `https://${DOMAIN}${pagePath === "/" ? "" : pagePath}`;
   const avatarUrl = `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`;
@@ -83,7 +85,8 @@ export const Seo = (props: Props) => {
     },
   ];
   const month = date.getMonth() + 1;
-  const showSnow = (month >= 12 && date.getDate() >= 1) || query.decoration === "christmas";
+  const showSnow =
+    (month >= 12 && date.getDate() >= 1) || query.decoration === "christmas";
 
   if (typeof window === "object") {
     if (
@@ -122,28 +125,29 @@ export const Seo = (props: Props) => {
           name="twitter:site"
           content={`@${FULL_NAME.split(" ")[0].toLowerCase()}`}
         />
-        {componentEmbedJson ? (
-          <script
-            dangerouslySetInnerHTML={{ __html: componentEmbedJson }}
-            id={COMPONENT_EMBED_SCRIPT_ID}
-            key={COMPONENT_EMBED_SCRIPT_ID}
-            type="application/json"
-          />
-        ) : null}
-        {pagePath === "/"
-          ? structuredData.map((schema) => (
-              <script
-                key={`ld-json-${schema["@type"]}`}
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-              />
-            ))
-          : null}
       </Head>
-      <Script async defer src="https://buttons.github.io/buttons.js" />
-      {showSnow ? (
-        <Script src="https://app.embed.im/snow.js" defer />
+      {/* Both of these hold data rather than code, so they render in the body:
+          a `<script>` inside `next/head` is unsupported, and a crawler reads
+          them from anywhere in the document. */}
+      {componentEmbedJson ? (
+        <script
+          dangerouslySetInnerHTML={{ __html: componentEmbedJson }}
+          id={COMPONENT_EMBED_SCRIPT_ID}
+          key={COMPONENT_EMBED_SCRIPT_ID}
+          type="application/json"
+        />
       ) : null}
+      {pagePath === "/"
+        ? structuredData.map((schema) => (
+            <script
+              key={`ld-json-${schema["@type"]}`}
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+            />
+          ))
+        : null}
+      <Script async defer src="https://buttons.github.io/buttons.js" />
+      {showSnow ? <Script src="https://app.embed.im/snow.js" defer /> : null}
     </>
   );
 };

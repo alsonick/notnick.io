@@ -30,7 +30,8 @@ const CAPTION_LINE = /^\[\s*caption\s*=\s*(?:"(.*)"|'(.*)'|([^\]]*?))\s*\]$/i;
  * so those keep matching the paragraph shapes they already understand. A
  * caption sitting alone in its own paragraph captions the block above it,
  * which is how a table or a code block gets one. `[caption=""]` is dropped
- * rather than rendered as an empty line.
+ * rather than rendered as an empty line. Bare URLs in the caption become
+ * links, so a source credit under an image is clickable.
  */
 export function remarkCaption() {
   return (tree: Node) => {
@@ -51,7 +52,7 @@ export function remarkCaption() {
         ? [
             {
               type: "html",
-              value: `<p class="post-caption">${escapeHtml(text)}</p>`,
+              value: `<p class="post-caption">${renderCaption(text)}</p>`,
             } as Node,
           ]
         : [];
@@ -126,6 +127,31 @@ function toRawText(children: Array<Node>): string {
       }
     })
     .join("");
+}
+
+/** A bare `http(s)://…` run, e.g. the source credit under an image. */
+const URL_IN_CAPTION = /https?:\/\/[^\s<>"]+/g;
+
+/**
+ * The caption is written as plain text rather than markdown, so the autolinking
+ * the rest of the post gets never reaches it. Link the URLs here instead, and
+ * escape everything either side of them.
+ */
+function renderCaption(value: string): string {
+  let html = "";
+  let index = 0;
+
+  for (const match of value.matchAll(URL_IN_CAPTION)) {
+    // Punctuation closing the sentence isn't part of the URL: `see
+    // https://example.com/a.` links `https://example.com/a` and keeps the stop.
+    const url = match[0].replace(/[.,;:!?]+$/, "");
+
+    html += escapeHtml(value.slice(index, match.index));
+    html += `<a href="${escapeHtml(url)}">${escapeHtml(url)}</a>`;
+    index = match.index + url.length;
+  }
+
+  return html + escapeHtml(value.slice(index));
 }
 
 function escapeHtml(value: string): string {

@@ -30,7 +30,7 @@ export interface PostSection {
 // A metadata line looks like "finished: true"
 const META_LINE = /^[\w-]+\s*:\s*.+$/;
 
-function getText(node: Node): string {
+export function getText(node: Node): string {
   let text = "";
   visit(node, "text", (child: TextNode) => {
     text += child.value;
@@ -68,7 +68,7 @@ function parseLines(lines: string[]): Record<string, SectionMetaValue> {
  * parses as thematicBreak / heading instead — both shapes are handled.
  * Returns null (leaving the tree untouched) for real horizontal rules.
  */
-function matchMetaBlock(
+export function matchMetaBlock(
   children: Node[],
   start: number,
 ): { meta: Record<string, SectionMetaValue>; nodeCount: number } | null {
@@ -112,11 +112,28 @@ function matchMetaBlock(
 }
 
 /** Matches the `<div data-embed="scrollup">` a post ends with. */
-function isScrollUp(node: Node): boolean {
+export function isScrollUp(node: Node): boolean {
   return (
     node.type === "html" &&
     (node as HtmlNode).value.includes('data-embed="scrollup"')
   );
+}
+
+/**
+ * A `###` section runs until the next `##`/`###` heading. The scroll-up button
+ * is authored as the last thing in a post, so it ends the final section too.
+ */
+export function isSectionEnd(node: Node): boolean {
+  const heading = node as HeadingNode;
+  if (heading.type === "heading" && heading.depth <= 3) return true;
+  return isScrollUp(node);
+}
+
+/** Index of the first node past the section that starts before `from`. */
+export function findSectionEnd(children: Node[], from: number): number {
+  let end = from;
+  while (end < children.length && !isSectionEnd(children[end])) end++;
+  return end;
 }
 
 /**
@@ -143,18 +160,9 @@ export function remarkSectionMeta() {
       sections.push({ id, topic, meta: block.meta });
 
       if (block.meta.finished === true) {
-        // Insert the quiz placeholder at the end of the section (right
-        // before the next `##`/`###` heading, or at the end of the post).
-        // The scroll-up button is authored as the last thing in a post, so
-        // it ends a section too — otherwise the final section's quiz would
-        // land underneath it.
-        let end = i + 1;
-        while (end < root.children.length) {
-          const sibling = root.children[end] as HeadingNode;
-          if (sibling.type === "heading" && sibling.depth <= 3) break;
-          if (isScrollUp(sibling)) break;
-          end++;
-        }
+        // Insert the quiz placeholder at the end of the section, so it lands
+        // under the section's content rather than in the middle of it.
+        const end = findSectionEnd(root.children, i + 1);
         root.children.splice(end, 0, {
           type: "html",
           value: `<div data-embed="quiz" data-quiz-id="${id}"></div>`,
