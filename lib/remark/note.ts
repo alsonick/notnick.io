@@ -12,26 +12,41 @@ interface TextNode extends Node {
   value: string;
 }
 
-/** `Note:` (any case) opening a line, plus the space after it. */
-const NOTE_PREFIX = /^\s*note:\s*/i;
+interface Kind {
+  /** The opening prefix, matched at the start of a line in any case. */
+  prefix: RegExp;
+  /** Heading shown at the top of the box. */
+  label: string;
+  /** Classes that style it. `post-note` carries the shared box styling. */
+  className: Array<string>;
+}
+
+const KINDS: Array<Kind> = [
+  { prefix: /^\s*note:\s*/i, label: "Note", className: ["post-note"] },
+  {
+    prefix: /^\s*warning:\s*/i,
+    label: "Warning",
+    className: ["post-note", "post-warning"],
+  },
+];
 
 /**
- * Turns a line starting with `Note:` or `note:` into a boxed aside for the
- * reader, styled to match the `info` Callout:
+ * Turns a line opening with `Note:` or `Warning:` into a boxed aside for the
+ * reader, styled to match the Callout component:
  *
- *   Note: Switchports which carry multiple VLANs are called 'trunk ports'.
+ *   Warning: VLAN 1 and VLANs 1002-1005 cannot be deleted.
  *
  * becomes
  *
- *   <div class="post-note" role="note">
- *     <p class="post-note-label">Note</p>
- *     <p>Switchports which carry multiple VLANs are called 'trunk ports'.</p>
+ *   <div class="post-note post-warning" role="note">
+ *     <p class="post-note-label">Warning</p>
+ *     <p>VLAN 1 and VLANs 1002-1005 cannot be deleted.</p>
  *   </div>
  *
  * Inline formatting after the prefix (bold, code, links) is kept. Soft-wrapped
- * lines that follow stay with the note, and a `Note:` line partway through a
+ * lines that follow stay with the aside, and a prefixed line partway through a
  * paragraph is split out so the text above it still renders as normal. Only
- * top-level paragraphs count — a `- Note:` bullet or `> Note:` quote starts
+ * top-level paragraphs count — a `- Note:` bullet or `> Warning:` quote starts
  * with something else and already has its own styling.
  */
 export function remarkNote() {
@@ -41,20 +56,24 @@ export function remarkNote() {
       if (root?.type !== "root" || typeof index !== "number") return;
 
       const lines = splitLines(node.children);
-      const starts = lines.flatMap((line, i) => (isNoteLine(line) ? [i] : []));
+      const starts = lines.flatMap((line, i) => {
+        const kind = matchKind(line);
+        return kind ? [{ at: i, kind }] : [];
+      });
       if (starts.length === 0) return;
 
       const blocks: Array<Node> = [];
 
-      if (starts[0] > 0) {
+      if (starts[0].at > 0) {
         blocks.push({
           ...node,
-          children: joinLines(lines.slice(0, starts[0])),
+          children: joinLines(lines.slice(0, starts[0].at)),
         } as ParagraphNode);
       }
 
-      starts.forEach((start, i) => {
-        blocks.push(toNote(lines.slice(start, starts[i + 1] ?? lines.length)));
+      starts.forEach(({ at, kind }, i) => {
+        const end = starts[i + 1]?.at ?? lines.length;
+        blocks.push(toAside(lines.slice(at, end), kind));
       });
 
       root.children.splice(index, 1, ...blocks);
@@ -63,33 +82,34 @@ export function remarkNote() {
   };
 }
 
-/** A line opening with the prefix and holding something after it. */
-function isNoteLine(line: Array<Node>): boolean {
+/** The kind a line opens with, as long as it holds something after the prefix. */
+function matchKind(line: Array<Node>): Kind | undefined {
   const [first, ...rest] = line;
-  if (first?.type !== "text") return false;
+  if (first?.type !== "text") return undefined;
 
   const value = (first as TextNode).value;
-  return (
-    NOTE_PREFIX.test(value) &&
-    (value.replace(NOTE_PREFIX, "") !== "" || rest.length > 0)
+  return KINDS.find(
+    (kind) =>
+      kind.prefix.test(value) &&
+      (value.replace(kind.prefix, "") !== "" || rest.length > 0),
   );
 }
 
-function toNote(lines: Array<Array<Node>>): Node {
+function toAside(lines: Array<Array<Node>>, kind: Kind): Node {
   const [first, ...rest] = joinLines(lines) as [TextNode, ...Array<Node>];
-  const text = first.value.replace(NOTE_PREFIX, "");
+  const text = first.value.replace(kind.prefix, "");
 
   return {
-    type: "note",
+    type: "aside",
     data: {
       hName: "div",
-      hProperties: { className: ["post-note"], role: "note" },
+      hProperties: { className: kind.className, role: "note" },
     },
     children: [
       {
         type: "paragraph",
         data: { hProperties: { className: ["post-note-label"] } },
-        children: [{ type: "text", value: "Note" }],
+        children: [{ type: "text", value: kind.label }],
       },
       {
         type: "paragraph",

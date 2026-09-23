@@ -594,6 +594,32 @@ html:not(.dark) .hljs-formula {
     center / contain no-repeat;
 }
 
+/* Warnings — a line starting with `Warning:` takes the same box in the repo's
+   warning orange. The shades follow StatusMessage.tsx: -700 clears 4.5:1 on
+   white, -500 does on black. */
+.prose .post-warning {
+  border-color: #ffedd5;
+  border-left-color: #c2410c;
+  background-color: rgba(255, 247, 237, 0.6);
+}
+
+.dark .prose .post-warning {
+  border-color: #7c2d12;
+  border-left-color: #f97316;
+  background-color: rgba(16, 22, 26, 0.5);
+}
+
+/* Feather's alert-triangle, swapped in for the info icon. */
+.prose .post-warning > .post-note-label::before {
+  background-color: #c2410c;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z'/%3E%3Cline x1='12' y1='9' x2='12' y2='13'/%3E%3Cline x1='12' y1='17' x2='12.01' y2='17'/%3E%3C/svg%3E");
+}
+
+.dark .prose .post-warning > .post-note-label::before {
+  background-color: #f97316;
+}
+
 /* Honour the OS "reduce motion" setting: stop the looping wave, the dropdown
    and lightbox animations, hover scaling and smooth scrolling. A near-zero
    duration (rather than `none`) keeps animationend/transitionend firing for

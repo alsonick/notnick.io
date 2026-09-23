@@ -108,7 +108,10 @@ export const Quiz = (props: Props) => {
   };
 
   return (
-    <div className="not-prose my-8 rounded-lg border border-teal-100 dark:border-teal-900 sm:hover:border-primary sm:dark:hover:border-primary duration-300 p-5">
+    <div
+      className="not-prose my-8 rounded-lg border border-teal-100 dark:border-teal-900
+      bg-white dark:bg-[#10161a]/50 sm:hover:border-primary sm:dark:hover:border-primary duration-300 p-5"
+    >
       <Label text="Quiz" />
       <p className="font-bold mt-2 text-gray-900 dark:text-white">
         {props.quiz.question}

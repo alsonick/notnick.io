@@ -259,6 +259,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 0,
     },
+    "day-19": {
+      id: "day-19",
+      topic: "Day 19",
+      question:
+        "SW1's Gi0/0 is left in dynamic auto mode, and it connects to SW2's Gi0/0, which is also in dynamic auto. What operational mode does the link end up in?",
+      options: [
+        "A trunk, because both ends are willing to negotiate one",
+        "A trunk, but only if both switches support ISL encapsulation",
+        "The link stays down until one end is configured manually",
+        "An access port, because neither end actively starts the negotiation",
+      ],
+      correctIndex: 3,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

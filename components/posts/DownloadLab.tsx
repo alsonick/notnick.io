@@ -16,7 +16,7 @@ export const DownloadLab = (props: Props) => {
     <a
       className="not-prose group flex items-center my-6 border border-teal-100 dark:border-teal-900 rounded-lg p-4
       bg-white dark:bg-[#10161a]/50 hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
-      dark:ring-offset-black outline-none transition-colors duration-200"
+      dark:ring-offset-black outline-none duration-300"
       title={`Download the Cisco Packet Tracer lab "${name}"`}
       download={file}
       href={props.href}

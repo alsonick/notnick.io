@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-20"
+last_updated_date: "2026-09-23"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -1945,6 +1945,10 @@ These commands make **Gi0/0** a **trunk port**, which carries traffic for multip
 
 Note: On switches that only support 802.1Q, you can skip the encapsulation command and just use `switchport mode trunk`.
 
+To set the native VLAN:
+
+Note: `switchport trunk native vlan vlan-id`
+
 ---
 
 ```
@@ -2180,5 +2184,159 @@ The conditions required for an SVI to be configured:
 ---
 
 ### Day 19
+
+---
+
+finished: true
+
+---
+
+#### DTP (Dynamic Trunking Protocol)
+
+- It's a Cisco proprietary protocol that allows Cisco switches to dynamically determine their interface status (`access` or `trunk`) without manual configuration.
+- It's enabled by default on all Cisco switch interfaces.
+- For security purposes, manual configuration is recommended.
+- DTP should be disabled on all switchports.
+
+```
+SW2(config-if)#switchport mode dynamic ?
+  auto       Set trunking mode dynamic negotiation parameter to AUTO
+  desirable  Set trunking mode dynamic negotiation parameter to DESIRABLE
+```
+
+- A switchport in **dynamic desirable** mode will actively try to form a trunk with other Cisco switches. It will form a trunk if connected to another switchport in the following modes:
+  - `switchport mode trunk`
+  - `switchport mode dynamic desirable`
+  - `switchport mode dynamic auto`
+
+- A switchport in **dynamic auto** mode will not actively try to form a trunk with other Cisco switches, however it will form a trunk if the switch connected to it is actively trying to form a trunk. It will form a trunk with a switchport in the following modes:
+  - `switchport mode trunk`
+  - `switchport mode dynamic desirable`
+
+| Administrative Mode | Trunk | Dynamic Desirable | Access | Dynamic Auto |
+| ------------------- | ----- | ----------------- | ------ | ------------ |
+| Trunk               | Trunk | Trunk             | X      | Trunk        |
+| Dynamic Desirable   | Trunk | Trunk             | Access | Trunk        |
+| Access              | X     | Access            | Access | Access       |
+| Dynamic Auto        | Trunk | Trunk             | Access | Access       |
+
+Note: DTP will not form a trunk with a router, PC, etc. The switchport will be in access mode.
+
+More key points:
+
+- On older switches, `switchport mode dynamic desirable` is the default administrative mode.
+- On newer switches, `switchport mode dynamic auto` is the default administrative mode.
+- You can disable DTP negotiation on an active interface with this command: `switchport nonegotiate`.
+- Configuring an access port with **switchport mode access** also disables DTP negotiation on an interface.
+- It is recommended that you disable DTP on all switchports and manually configure them as access or trunk ports.
+- Switches that support both **802.1Q** and **ISL** trunk encapsulations can use DTP to negotiate the encapsulation they will use.
+- **ISL** is favored over **802.1Q**, so if both switches support ISL it will be selected.
+- DTP frames are sent in VLAN1 when using **ISL**, or in the native VLAN when using **802.1Q**.
+
+SW1 output:
+
+```
+SW1(config-if)#switchport mode dynamic desirable
+SW1(config-if)#do show interfaces g0/0 switchport
+Name: Gi0/0
+Switchport: Enabled
+Administrative Mode: dynamic desirable
+Operational Mode: trunk
+Administrative Trunking Encapsulation: negotiate
+Operational Trunking Encapsulation: isl
+Negotiation of Trunking: On
+```
+
+---
+
+#### VTP (VLAN Trunking Protocol)
+
+- VTP allows you to configure VLANs on a central VTP server switch, and other switches (VTP clients) will synchronize their VLAN database to the server.
+- It is designed for large networks with many VLANs, so that you don't have to configure each VLAN on every switch.
+- Not recommended that you use it.
+- It is rarely used.
+- There are three VTP versions: 1, 2, and 3.
+- There are three VTP modes: **server**, **client**, and **transparent**.
+- Cisco switches operate in VTP server mode by default.
+
+VTP Servers:
+
+- They can add/modify/delete VLANs.
+- Store the VLAN database in non-volatile RAM (NVRAM).
+- Will increase the **revision number** every time a VLAN is added/modified/deleted.
+
+Note: The revision number is used to determine the newest version of the VLAN database that the switches will synchronize to.
+
+- They will advertise the latest version of the VLAN database on trunk interfaces.
+- VTP servers also function as VTP clients.
+  - Therefore, a VTP server will synchronize to another VTP server with a higher revision number.
+
+VTP Clients:
+
+- They cannot add/modify/delete VLANs.
+- They don't store the VLAN database in NVRAM. **(in VTPv3, they do)**
+- Will synchronize their VLAN database to the server with the highest revision number in their VTP domain.
+- Will advertise their VLAN database, and forward VTP advertisements to other clients over their trunk ports.
+
+Note: Use the `show vtp status` command to show the status of VTP.
+Note: The `vtp mode client` sets the VTP mode for the switch to client.
+
+```
+SW1#show vtp status
+VTP Version capable             : 1 to 3
+VTP version running             : 1
+VTP Domain Name                 :
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0c09.f956.1300
+Configuration last modified by 0.0.0.0 at 0-0-00 00:00:00
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN:
+--------------
+VTP Operating Mode              : Server
+Maximum VLANs supported locally : 1005
+Number of existing VLANs        : 5
+Configuration Revision          : 0
+MD5 digest                      : 0x57 0xCD 0x40 0x65 0x63 0x59 0x47 0xBD
+                                  0x56 0x9D 0x4A 0x3E 0xA5 0x69 0x35 0xBC
+```
+
+Note: VTPv1/v2 do not support the extended VLAN range (1006-4094). Only VTPv3 supports them.
+
+```
+SW1(config)#vtp domain cisco
+Changing VTP domain name from NULL to cisco
+SW1(config)#
+*May  4 02:14:47.276: %SW_VLAN-6-VTP_DOMAIN_NAME_CHG: VTP domain name changed to cisco.
+SW1(config)#vlan 10
+SW1(config-vlan)#name engineering
+SW1(config-vlan)#exit
+```
+
+The `vtp domain` command set the VTP domain name for the switch.
+
+Note: If a switch with no VTP domain (domain NULL) receives a VTP advertisement with a VTP domain name, it will automatically join that VTP domain.
+
+Note: If a switch receives a VTP advertisement in the same VTP domain with a higher revision number, it will update it's VLAN database to match.
+
+Warning: If you connect an old switch with a higher revision number to your network (and the VTP domain name matches), all switches in the domain will sync their VLAN database to that switch.
+
+https://www.youtube.com/watch?v=JtQV_0Sjszg&t=1281
+[preview=true]
+
+VTP Transparent mode:
+
+- Does not participate in the VTP domain.
+- Maintains its own VLAN database in NVRAM. It can add/modify/delete VLANs, but they won't be advertised to other switches.
+- Will forward VTP advertisements that are in the same domain as it.
+
+Note: The `vtp mode transparent` sets the VTP mode for the switch to transparent.
+Note: Changing the VTP domain to an unused domain will reset the revision domain to 0.
+Note: Changing the VTP mode to transparent will also reset the revision number to 0.
+
+---
+
+### Day 20 (Part 1 - Spanning Tree Protocol)
 
 <div data-embed="scrollup"></div>
