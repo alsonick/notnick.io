@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-23"
+last_updated_date: "2026-09-24"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -2334,6 +2334,8 @@ VTP Transparent mode:
 Note: The `vtp mode transparent` sets the VTP mode for the switch to transparent.
 Note: Changing the VTP domain to an unused domain will reset the revision domain to 0.
 Note: Changing the VTP mode to transparent will also reset the revision number to 0.
+
+[lab=Day 19 Lab - DTP & VTP.pkt]
 
 ---
 
