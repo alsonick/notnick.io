@@ -6,6 +6,7 @@ import { remarkGithub } from "./remark/github";
 import { remarkCaption } from "./remark/caption";
 import rehypeStringify from "rehype-stringify";
 import rehypeHighlight from "rehype-highlight";
+import { remarkLinkEmbed } from "./remark/link-embed";
 import { remarkVideo } from "./remark/video";
 import { remarkTweet } from "./remark/tweet";
 import { remarkNote } from "./remark/note";
@@ -94,6 +95,7 @@ export const getPostData = async (slug: string, dir: string) => {
     .use(remarkTweet)
     .use(remarkGithub)
     .use(remarkVideo)
+    .use(remarkLinkEmbed)
     .use(remarkLab, { dir: matterResult.data.labs })
     .use(remarkNote)
     .use(remarkHeadingAnchors)

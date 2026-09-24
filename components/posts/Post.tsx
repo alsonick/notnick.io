@@ -11,6 +11,7 @@ import { FiArrowLeft } from "react-icons/fi";
 import { DownloadSection } from "./DownloadSection";
 import { DownloadLab } from "./DownloadLab";
 import { GitHubEmbed } from "./GitHubEmbed";
+import { LinkEmbed } from "./LinkEmbed";
 import { CommunityCard } from "../home/Community";
 import {
   LongPostNoticePreference,
@@ -97,7 +98,7 @@ export const Post = (props: Props) => {
     if (!props.post.contentHtml) return null;
 
     const embedRegex =
-      /<div data-embed="(tweet|github|community|scrollup|quiz|video|lab|download)"[^>]*><\/div>/g;
+      /<div data-embed="(tweet|github|community|scrollup|quiz|video|lab|download|link)"[^>]*><\/div>/g;
     const matches = [...props.post.contentHtml.matchAll(embedRegex)];
 
     if (matches.length === 0) {
@@ -148,6 +149,11 @@ export const Post = (props: Props) => {
         const ghUrl = getAttr(matchStr, "data-github-url");
         if (ghUrl) {
           parts.push(<GitHubEmbed key={`github-${index}`} url={ghUrl} />);
+        }
+      } else if (type === "link") {
+        const linkUrl = getAttr(matchStr, "data-link-url");
+        if (linkUrl) {
+          parts.push(<LinkEmbed key={`link-${index}`} url={linkUrl} />);
         }
       } else if (type === "video") {
         const videoId = getAttr(matchStr, "data-video-id");

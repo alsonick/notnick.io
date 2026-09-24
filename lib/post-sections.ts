@@ -136,19 +136,20 @@ const EMBED_LINE = /^[ \t]*<div\s+data-embed="[^"]*"[^>]*><\/div>[ \t]*$\n?/gm;
 
 /** A line holding one of the post directives the remark plugins act on. */
 const DIRECTIVE_LINE =
-  /^[ \t]*\[\s*(?:caption|lab|preview)\s*=[^\]]*\][ \t]*$\n?/gim;
+  /^[ \t]*\[\s*(?:caption|lab|preview|embed)\s*=[^\]]*\][ \t]*$\n?/gim;
 
 /**
  * Takes out what only makes sense on the site:
  *
  *   - the `<div data-embed="...">` placeholders standing in for the tweet,
  *     video, lab, quiz, community and scroll-up components;
- *   - the `[caption=…]`, `[lab=…]` and `[preview=true]` directives the remark
- *     plugins act on, which are instructions to the site rather than prose.
+ *   - the `[caption=…]`, `[lab=…]`, `[preview=true]` and `[embed=true]`
+ *     directives the remark plugins act on, which are instructions to the site
+ *     rather than prose.
  *
- * What those directives decorate stays: the image above a caption, and the
- * video URL a `[preview=true]` sits under. Other HTML in a post (`<sup>`,
- * `<img>`, `<audio>`) is content, so it stays as well.
+ * What those directives decorate stays: the image above a caption, and the URL
+ * a `[preview=true]` or `[embed=true]` sits under. Other HTML in a post
+ * (`<sup>`, `<img>`, `<audio>`) is content, so it stays as well.
  *
  * Then closes up the gaps: cutting the metadata fence, the placeholders and the
  * directives out leaves blank lines behind, and the `---` dividing one section
