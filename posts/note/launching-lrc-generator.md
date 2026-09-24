@@ -38,11 +38,6 @@ Here's the link:
 https://lrc.notnick.io/
 [embed=true]
 
-Like I said everything is open source, please submit pull requests that fix any bugs or issues with the site, here's the link to the GitHub repository:
-
-https://github.com/alsonick/lrc.notnick.io
-[embed=true]
-
 ### Conclusion
 
 That's pretty much it. The tool is free to use, so if you make lyric videos or you just need synced lyrics for something, give it a go. I'm still adding to it, so if there's a feature you'd like to see or something isn't working right, there's a feedback form on the site, or you can [shoot me an email](mailto:hi@notnick.io). As always, thanks for reading!
