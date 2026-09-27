@@ -1,4 +1,4 @@
-import Tippy from "@tippyjs/react";
+import { Tooltip } from "../ui/Tooltip";
 import { Text } from "../ui/Text";
 
 interface Props {
@@ -31,13 +31,13 @@ export const Authors = (props: Props) => {
       {label}&nbsp;
       <div className="flex">
         {props.authors.length > 1 ? (
-          <Tippy content={props.authors.slice(1).join(", ")}>
+          <Tooltip content={props.authors.slice(1).join(", ")}>
             <div className="flex">
               <Text>
                 {props.authors[0]} (+{props.authors.length - 1})
               </Text>
             </div>
-          </Tippy>
+          </Tooltip>
         ) : (
           <Text>{props.authors[0]}</Text>
         )}

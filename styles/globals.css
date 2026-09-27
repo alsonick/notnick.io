@@ -516,7 +516,8 @@ html:not(.dark) .hljs-formula {
   margin-bottom: 0;
 }
 
-.prose p:has(+ .post-caption) > img {
+.prose p:has(+ .post-caption) > img,
+.prose p:has(+ .post-caption) > .image-preview-trigger {
   margin-bottom: 0;
 }
 
@@ -635,6 +636,135 @@ html:not(.dark) .hljs-formula {
   }
 
   .wave {
+    animation: none;
+  }
+}
+
+/* Tooltips (components/ui/Tooltip.tsx), styled like the site's cards. */
+.tippy-box[data-theme~="site"] {
+  background-color: #ffffff;
+  color: #4b5563;
+  border: 1px solid #ccfbf1;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.08);
+}
+
+.tippy-box[data-theme~="site"] .tippy-content {
+  padding: 0.5rem 0.75rem;
+}
+
+.dark .tippy-box[data-theme~="site"] {
+  background-color: #10161a;
+  color: #d1d5db;
+  border-color: #134e4a;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.5);
+}
+
+/* Tooltip fade: eases in while drifting up a touch, and back out the same way. */
+.tippy-box[data-animation="site"] {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tippy-box[data-animation="site"][data-state="hidden"] {
+  opacity: 0;
+  transform: translateY(4px) scale(0.97);
+}
+
+.tippy-box[data-animation="site"][data-placement^="bottom"][data-state="hidden"] {
+  transform: translateY(-4px) scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tippy-box[data-animation="site"][data-state="hidden"] {
+    transform: none;
+  }
+}
+
+/* Post images open full size on click (components/ui/ImagePreview.tsx). The
+   trigger button takes over the image's prose margins so its focus ring hugs
+   the image. */
+.image-preview-trigger {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 2em 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  /* Same ring as the site's buttons and links (focus:ring-4 ring-offset-2
+     duration-300), growing in from nothing rather than snapping on. */
+  box-shadow:
+    0 0 0 0 #fff,
+    0 0 0 0 rgb(var(--color-primary) / 0);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-preview-trigger:focus-visible {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 6px rgb(var(--color-primary));
+}
+
+.dark .image-preview-trigger:focus-visible {
+  box-shadow:
+    0 0 0 2px #000,
+    0 0 0 6px rgb(var(--color-primary));
+}
+
+.image-preview-trigger img {
+  margin: 0;
+  transition: opacity 200ms ease;
+}
+
+.image-preview-trigger:hover img {
+  opacity: 0.9;
+}
+
+@keyframes image-preview-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes image-preview-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes image-preview-zoom-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes image-preview-zoom-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.92); }
+}
+
+.image-preview-enter {
+  animation: image-preview-fade-in 200ms ease forwards;
+}
+
+.image-preview-leave {
+  animation: image-preview-fade-out 200ms ease forwards;
+}
+
+.image-preview-enter .image-preview-img {
+  animation: image-preview-zoom-in 250ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.image-preview-leave .image-preview-img {
+  animation: image-preview-zoom-out 200ms ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-preview-enter .image-preview-img,
+  .image-preview-leave .image-preview-img {
     animation: none;
   }
 }

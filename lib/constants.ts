@@ -24,5 +24,4 @@ export const FIRST_NAME = "Nicholas";
 export const DOMAIN = "notnick.io";
 export const LAST_NAME = "Njoki";
 export const CITY = "Canterbury";
-export const PRONOUNS = "he/him";
 export const THEME = "#30D158";

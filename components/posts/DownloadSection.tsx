@@ -17,17 +17,17 @@ export const DownloadSection = (props: Props) => {
   return (
     <a
       className="not-prose group flex items-center my-6 border border-teal-100 dark:border-teal-900 rounded-lg p-4
-      bg-white dark:bg-[#10161a]/50 hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
+      bg-white dark:bg-[#10161a]/50 sm:hover:border-primary sm:dark:hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
       dark:ring-offset-black outline-none duration-300"
       title={`Download "${topic}" as a Markdown file`}
       download={`${topic}.md`}
       href={props.href}
     >
       <span
-        className="w-8 h-8 mr-3 shrink-0 flex items-center justify-center rounded border
-        border-teal-100 dark:border-teal-900 text-gray-600 dark:text-gray-300 group-hover:text-primary duration-300"
+        className="w-8 h-8 mr-3 shrink-0 flex items-center justify-center
+        text-gray-600 dark:text-gray-300 group-hover:text-primary md:group-hover:scale-110 duration-300"
       >
-        <FiFileText className="text-lg" />
+        <FiFileText className="text-2xl" />
       </span>
       <span className="flex flex-col min-w-0">
         <span className="font-bold text-base text-primary group-hover:underline">
@@ -37,7 +37,7 @@ export const DownloadSection = (props: Props) => {
           {topic}.md
         </span>
       </span>
-      <FiDownload className="ml-auto pl-3 text-3xl shrink-0 text-gray-600 dark:text-gray-300 group-hover:text-primary duration-300" />
+      <FiDownload className="ml-auto pl-3 text-3xl shrink-0 text-gray-600 dark:text-gray-300 group-hover:text-primary md:group-hover:scale-110 duration-300" />
     </a>
   );
 };

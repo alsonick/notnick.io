@@ -1,10 +1,10 @@
 import { PlaylistCover } from "../components/music/PlaylistCover";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { Heading } from "../components/ui/Heading";
 import { Animate } from "../components/layout/Animate";
 import { GoBack } from "../components/layout/GoBack";
 import { Layout } from "../components/layout/Layout";
 import { Header } from "../components/layout/Header";
+import { Heading } from "../components/ui/Heading";
 import { Seo } from "../components/layout/Seo";
 import { MUSIC } from "../lib/data/music";
 import { page } from "../lib/page";

@@ -17,7 +17,6 @@ import { social } from "../lib/data/social-links";
 import { Text } from "../components/ui/Text";
 import { Note } from "../components/ui/Note";
 import { Seo } from "../components/layout/Seo";
-import { Key } from "../components/ui/Key";
 import { page } from "../lib/page";
 import { useState } from "react";
 
@@ -144,23 +143,6 @@ const Experience: NextPage = () => {
               Freelance work and jobs that are not related to any profession
               that I&apos;m not interested in will not be listed.
             </Note>
-          </div>
-          <div className="w-full flex">
-            <Text style={{ marginLeft: "auto" }}>
-              <Key>
-                {selected !== capitalizeFirstLetter("all")
-                  ? filteredBlogsList.length
-                  : EXPERIENCE.length}
-              </Key>{" "}
-              {filteredBlogsList.length && (
-                <>
-                  {filteredBlogsList.length === 1 &&
-                  filteredBlogsList[0].filter !== "All"
-                    ? "item"
-                    : "items"}
-                </>
-              )}
-            </Text>
           </div>
           {selected !== capitalizeFirstLetter("all") ? (
             <>

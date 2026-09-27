@@ -7,6 +7,7 @@ import { ProgressNotice } from "./ProgressNotice";
 import { FiExternalLink } from "react-icons/fi";
 import { social } from "../../lib/data/social-links";
 import { FaXTwitter } from "react-icons/fa6";
+import { FiLinkedin } from "react-icons/fi";
 import { FiArrowLeft } from "react-icons/fi";
 import { DownloadSection } from "./DownloadSection";
 import { DownloadLab } from "./DownloadLab";
@@ -29,6 +30,7 @@ import { ScrollUp } from "./ScrollUp";
 import { LinkTag } from "../ui/LinkTag";
 import { page } from "../../lib/page";
 import { Layout } from "../layout/Layout";
+import { ImagePreview } from "../ui/ImagePreview";
 import { Avatar } from "../ui/Avatar";
 import { Label } from "../ui/Label";
 import { Tweet } from "./Tweet";
@@ -50,6 +52,11 @@ export const Post = (props: Props) => {
   const articleRef = useRef<HTMLDivElement>(null);
   const [isNoticeDismissed, setIsNoticeDismissed] = useState(false);
   const [isPromptOpen, setIsPromptOpen] = useState(false);
+  const [preview, setPreview] = useState<{
+    src: string;
+    alt: string;
+    trigger: HTMLElement;
+  } | null>(null);
 
   // The notice wraps to a second line on a narrow window and is hidden outright
   // on a phone, so the nav follows its measured height rather than a set one.
@@ -103,7 +110,10 @@ export const Post = (props: Props) => {
 
     if (matches.length === 0) {
       return (
-        <div dangerouslySetInnerHTML={{ __html: props.post.contentHtml }} />
+        <div
+          data-post-html
+          dangerouslySetInnerHTML={{ __html: props.post.contentHtml }}
+        />
       );
     }
 
@@ -128,6 +138,7 @@ export const Post = (props: Props) => {
         parts.push(
           <div
             key={`html-${index}`}
+            data-post-html
             dangerouslySetInnerHTML={{ __html: htmlBefore }}
           />,
         );
@@ -220,7 +231,11 @@ export const Post = (props: Props) => {
     if (lastIndex < props.post.contentHtml.length) {
       const htmlAfter = props.post.contentHtml.substring(lastIndex);
       parts.push(
-        <div key="html-end" dangerouslySetInnerHTML={{ __html: htmlAfter }} />,
+        <div
+          key="html-end"
+          data-post-html
+          dangerouslySetInnerHTML={{ __html: htmlAfter }}
+        />,
       );
     }
 
@@ -293,6 +308,39 @@ export const Post = (props: Props) => {
     updateScrollableCode();
     window.addEventListener("resize", updateScrollableCode);
     return () => window.removeEventListener("resize", updateScrollableCode);
+  }, [contentWithEmbeds]);
+
+  // Images in the post's own content open full size on click. Each is wrapped
+  // in a button so it can be reached and opened from the keyboard too. Images
+  // already in a link or button (including ones wrapped here before) are left.
+  useEffect(() => {
+    const article = articleRef.current;
+    if (!article) return;
+
+    article
+      .querySelectorAll<HTMLImageElement>("[data-post-html] img")
+      .forEach((img) => {
+        if (img.closest("a, button")) return;
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "image-preview-trigger";
+        button.setAttribute("aria-haspopup", "dialog");
+        button.setAttribute(
+          "aria-label",
+          img.alt ? `View image full size: ${img.alt}` : "View image full size",
+        );
+        button.addEventListener("click", () =>
+          setPreview({
+            src: img.currentSrc || img.src,
+            alt: img.alt,
+            trigger: button,
+          }),
+        );
+
+        img.replaceWith(button);
+        button.appendChild(img);
+      });
   }, [contentWithEmbeds]);
 
   // Add click handlers to h2, h3 and h4 headings
@@ -420,6 +468,20 @@ export const Post = (props: Props) => {
                     text-xl hover:text-black hover:dark:text-white duration-300"
                   />
                 </Link>
+                <Link
+                  className={`ml-2 focus:ring-4 hover:scale-110 ring-primary focus:ring-offset-2 dark:ring-offset-black rounded outline-none duration-300`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+                    `https://${DOMAIN}/${props.type}/${props.post.slug}`,
+                  )}`}
+                  title={`Share "${props.post.title}" on LinkedIn.`}
+                  aria-label={`Share "${props.post.title}" on LinkedIn`}
+                  target="_blank"
+                >
+                  <FiLinkedin
+                    className="text-gray-600 dark:text-gray-300 cursor-pointer
+                    text-xl hover:text-black hover:dark:text-white duration-300"
+                  />
+                </Link>
               </div>
             ) : null}
           </div>
@@ -463,6 +525,17 @@ export const Post = (props: Props) => {
           </>
         ) : (
           <ProgressNotice />
+        )}
+        {preview && (
+          <ImagePreview
+            src={preview.src}
+            alt={preview.alt}
+            onClose={() => {
+              // Put keyboard focus back on the image that opened the preview.
+              preview.trigger.focus();
+              setPreview(null);
+            }}
+          />
         )}
         <div className="mt-8 pt-4 border-t border-teal-100 dark:border-teal-900">
           <NewsLetter formHeading="Enjoyed the post?" showStats />

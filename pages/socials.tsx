@@ -8,7 +8,7 @@ import { Text } from "../components/ui/Text";
 import { SOCIALS } from "../lib/data/socials";
 import { FiCopy } from "react-icons/fi";
 import { Seo } from "../components/layout/Seo";
-import { Tooltip } from "react-tippy";
+import { Tooltip } from "../components/ui/Tooltip";
 import copy from "copy-to-clipboard";
 import { page } from "../lib/page";
 import { useState } from "react";
@@ -60,12 +60,7 @@ const Socials: NextPage = () => {
                   >
                     {social.username}
                   </Link>
-                  <Tooltip
-                    title={copyText}
-                    hideOnClick={false}
-                    position="top"
-                    animation="shift"
-                  >
+                  <Tooltip content={copyText} hideOnClick={false}>
                     <button
                       type="button"
                       aria-label={`Copy ${social.title} link`}
