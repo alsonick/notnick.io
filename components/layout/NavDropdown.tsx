@@ -55,7 +55,7 @@ export const NavDropdown = (props: Props) => {
                     ? router.pathname === item.to
                     : router.pathname.includes(item.to)
                 )
-                  ? "bg-gray-100 dark:bg-gray-800"
+                  ? "bg-gray-100 dark:bg-gray-800 dark:hover:bg-primary dark:focus:bg-primary"
                   : ""
               }`}
             >

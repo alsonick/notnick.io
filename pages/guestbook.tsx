@@ -18,6 +18,7 @@ import { Button } from "../components/ui/Button";
 import { getSession } from "../lib/session";
 import { FaDiscord } from "react-icons/fa";
 import { Text } from "../components/ui/Text";
+import { Note } from "../components/ui/Note";
 import { Seo } from "../components/layout/Seo";
 import { prisma } from "../lib/prisma";
 import { page } from "../lib/page";
@@ -31,12 +32,6 @@ import { GetServerSideProps, NextPage } from "next";
 dayjs.extend(relativeTime);
 
 const CHARACTER_LIMIT = 200;
-
-// Usernames that get a verified checkmark next to their name.
-const VERIFIED_USERNAMES = ["heynickn", "reikolul"];
-
-const isVerified = (username: string) =>
-  VERIFIED_USERNAMES.includes(username.toLowerCase());
 
 export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   const session = getSession(ctx.req);
@@ -159,6 +154,13 @@ const Guestbook: NextPage<Props> = ({
               ) : (
                 <Text>Sign in with Discord to leave a message.</Text>
               )}
+              <div className="mt-4">
+                <Note>
+                  Please keep it respectful. Messages that are inappropriate,
+                  offensive, spammy or promotional will be removed, and repeat
+                  offenders may be blocked from signing the guestbook.
+                </Note>
+              </div>
             </div>
             {session && !hasPosted && (
               <form
@@ -175,12 +177,6 @@ const Guestbook: NextPage<Props> = ({
                   <div className="flex flex-col">
                     <span className="flex items-center gap-1 font-semibold text-base dark:text-white">
                       {session.name}
-                      {isVerified(session.username) && (
-                        <HiBadgeCheck
-                          className="text-primary"
-                          title="Verified"
-                        />
-                      )}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
                       @{session.username}
@@ -245,12 +241,6 @@ const Guestbook: NextPage<Props> = ({
                     <div className="flex items-center gap-2 flex-wrap">
                       <span className="flex items-center gap-1 font-semibold text-base dark:text-white">
                         {entry.name}
-                        {isVerified(entry.username) && (
-                          <HiBadgeCheck
-                            className="text-primary"
-                            title="Verified"
-                          />
-                        )}
                       </span>
                       <span className="text-sm text-gray-500 dark:text-gray-400">
                         @{entry.username}

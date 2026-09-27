@@ -3,7 +3,7 @@ import { ICON } from "../../lib/tailwindcss/icon";
 import { Project } from "../../types/project";
 import { LinkButton } from "../ui/LinkButton";
 import { FaGithub } from "react-icons/fa";
-import { Tooltip } from "react-tippy";
+import { Tooltip } from "../ui/Tooltip";
 import { LinkT } from "../ui/Link";
 
 // Next.js
@@ -98,11 +98,7 @@ export const ProjectCard = (props: Project) => {
             {remaining > 0 && (
               <>
                 {" and "}
-                <Tooltip
-                  title={props.tech.join(", ")}
-                  position="top"
-                  animation="shift"
-                >
+                <Tooltip content={props.tech.join(", ")}>
                   <span
                     tabIndex={0}
                     className="font-medium text-gray-700 dark:text-gray-200 cursor-default border-b border-dotted outline-none focus-visible:ring-2 ring-primary rounded-sm border-gray-400 dark:border-gray-500"

@@ -1,7 +1,6 @@
 import {
   FIRST_NAME,
   PROFESSION,
-  PRONOUNS,
   STUDYING_UNTIL,
 } from "../../lib/constants";
 import { TypeAnimation } from "react-type-animation";
@@ -48,7 +47,6 @@ export const Main = () => {
     <>
       <div className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
-          <p className="text-sm opacity-65 mb-1">{PRONOUNS}</p>
           <Heading
             as="h1"
             style={{

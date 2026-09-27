@@ -15,7 +15,7 @@ export const DownloadLab = (props: Props) => {
   return (
     <a
       className="not-prose group flex items-center my-6 border border-teal-100 dark:border-teal-900 rounded-lg p-4
-      bg-white dark:bg-[#10161a]/50 hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
+      bg-white dark:bg-[#10161a]/50 sm:hover:border-primary sm:dark:hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
       dark:ring-offset-black outline-none duration-300"
       title={`Download the Cisco Packet Tracer lab "${name}"`}
       download={file}
@@ -23,7 +23,7 @@ export const DownloadLab = (props: Props) => {
     >
       <picture>
         <img
-          className="w-8 mr-3 shrink-0"
+          className="w-8 mr-3 shrink-0 md:group-hover:scale-110 duration-300"
           src="/assets/ciscopackettracer.png"
           alt=""
         />
@@ -36,7 +36,7 @@ export const DownloadLab = (props: Props) => {
           {name}
         </span>
       </span>
-      <FiDownload className="ml-auto pl-3 text-3xl shrink-0 text-gray-600 dark:text-gray-300 group-hover:text-primary duration-300" />
+      <FiDownload className="ml-auto pl-3 text-3xl shrink-0 text-gray-600 dark:text-gray-300 group-hover:text-primary md:group-hover:scale-110 duration-300" />
     </a>
   );
 };

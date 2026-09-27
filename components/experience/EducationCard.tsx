@@ -3,7 +3,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { Education } from "../../types/education";
 import { ICON } from "../../lib/tailwindcss/icon";
 import { LinkButton } from "../ui/LinkButton";
-import { Tooltip } from "react-tippy";
+import { Tooltip } from "../ui/Tooltip";
 import { Border } from "../ui/Border";
 import { Text } from "../ui/Text";
 
@@ -77,11 +77,7 @@ export const EducationCard = (props: Props) => {
             {remaining > 0 && (
               <>
                 {" and "}
-                <Tooltip
-                  title={props.education.skills.join(", ")}
-                  position="top"
-                  animation="shift"
-                >
+                <Tooltip content={props.education.skills.join(", ")}>
                   <span
                     tabIndex={0}
                     className="font-medium text-gray-700 dark:text-gray-200 cursor-default border-b border-dotted outline-none focus-visible:ring-2 ring-primary rounded-sm border-gray-400 dark:border-gray-500"

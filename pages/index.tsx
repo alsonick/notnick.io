@@ -7,6 +7,7 @@ import { Projects } from "../components/projects/Projects";
 import { FULL_NAME, PROFESSION } from "../lib/constants";
 import { Community } from "../components/home/Community";
 import { Listening } from "../components/home/Listening";
+import { ScrollUp } from "../components/posts/ScrollUp";
 import { Animate } from "../components/layout/Animate";
 import { License } from "../components/home/License";
 import { Contact } from "../components/home/Contact";
@@ -42,6 +43,9 @@ const Home: NextPage = () => {
           <Contact />
           <License />
           <Listening setActive={setPresenceActive} />
+          <div className="mb-5">
+            <ScrollUp align="right" />
+          </div>
         </Animate>
       </Layout>
     </>

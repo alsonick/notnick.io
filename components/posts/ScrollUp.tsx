@@ -2,9 +2,17 @@ import { FiArrowUp } from "react-icons/fi";
 import { MAIN_CONTENT_ID } from "../../lib/constants";
 import { ICON } from "../../lib/tailwindcss/icon";
 
-export const ScrollUp = () => {
+interface Props {
+  align?: "left" | "right";
+}
+
+export const ScrollUp = (props: Props) => {
   return (
-    <div className="not-prose flex w-full justify-start">
+    <div
+      className={`not-prose flex w-full ${
+        props.align === "right" ? "justify-end" : "justify-start"
+      }`}
+    >
       <button
         className="flex items-center text-base p-2 rounded-lg justify-center px-6 text-black
     dark:text-white duration-300 font-semibold focus:ring-offset-2 dark:ring-offset-black bg-gray-100 md:hover:bg-gray-200

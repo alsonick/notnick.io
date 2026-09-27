@@ -53,7 +53,8 @@ export const FilterListBox = <T extends unknown>(props: Props<T>) => {
           {props.selectedItem} <FiChevronDown />
         </DropdownMenuTrigger>
         <DropdownMenuContent
-          className="w-[--radix-dropdown-menu-trigger-width] bg-white border border-teal-100 dark:bg-[#10161a]/100 dark:border-teal-900"
+          // Below the fixed nav (z-50), so it scrolls under it like the trigger does.
+          className="z-40 w-[--radix-dropdown-menu-trigger-width] bg-white border border-teal-100 dark:bg-[#10161a]/100 dark:border-teal-900"
           align="start"
         >
           <DropdownMenuRadioGroup

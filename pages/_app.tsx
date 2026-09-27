@@ -5,7 +5,6 @@ import "../lib/navigation-history";
 import { useEffect, useRef } from "react";
 import { IconContext } from "react-icons";
 import "highlight.js/styles/github.css";
-import "react-tippy/dist/tippy.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import "tippy.js/dist/tippy.css";

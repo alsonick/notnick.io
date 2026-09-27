@@ -57,7 +57,13 @@ export const Nav = (props: Props) => {
             current={isCurrent(nav.to)}
             to={nav.to}
           >
-            {nav.text}
+            {nav.to === "/" ? (
+              <span className="inline-block duration-150 md:hover:scale-110">
+                {nav.text}
+              </span>
+            ) : (
+              nav.text
+            )}
           </NavLinkTag>
         ))}
       </div>
