@@ -5,7 +5,7 @@ description: "My explanation on the merge sort algorithm."
 finished: true
 tag: "Data Structures & Algorithms"
 mins: "8"
-last_updated_date: "2026-06-16"
+last_updated_date: "2026-09-27"
 filter: "Data Structures & Algorithms"
 ---
 
@@ -13,7 +13,7 @@ Recently I came across a problem on Leetcode [(912. Sort an Array)](https://leet
 
 I remember my professor covering the [Merge Sort](https://en.wikipedia.org/wiki/Merge_sort) algorithm, but I'd forgotten it, so I had to relearn the concept again. In this note I'm going to explain it to reinforce my own learning. I'm going to start doing this for any algorithm I pick up to really lock in my understanding. If you spot any mistakes in my explanation then please edit this document (scroll down and click the "Edit this page on GitHub" link).
 
-## Divide and Conquer
+### Divide and Conquer
 
 ---
 
