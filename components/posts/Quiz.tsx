@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { FiCheck, FiX } from "react-icons/fi";
+import { FiCheck, FiRotateCcw, FiSend, FiX, FiXCircle } from "react-icons/fi";
 import {
   QuizQuestion,
   StoredQuizAnswer,
   StoredQuizAnswers,
 } from "../../types/quiz";
+import { ICON } from "../../lib/tailwindcss/icon";
 import { Label } from "../ui/Label";
 
 const STORAGE_KEY = "quiz-answers";
 
-const SECONDARY_BUTTON = `rounded-lg border border-teal-100 dark:border-teal-900 px-4 py-2
-  text-sm font-bold text-gray-600 dark:text-gray-300 outline-none duration-300
+const SECONDARY_BUTTON = `inline-flex h-10 items-center rounded-lg border border-teal-100 dark:border-teal-900 px-6
+  text-base font-semibold text-gray-600 dark:text-gray-300 outline-none duration-300
   hover:border-primary hover:text-black dark:hover:text-white focus:ring-4 ring-primary
   focus:ring-offset-2 dark:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed
   disabled:hover:border-teal-100 dark:disabled:hover:border-teal-900`;
@@ -183,7 +184,7 @@ export const Quiz = (props: Props) => {
             title="Forget this answer and try the question again."
             className={`${SECONDARY_BUTTON} mt-3`}
           >
-            Reset
+            Reset <FiRotateCcw className={ICON} />
           </button>
         </>
       ) : (
@@ -191,12 +192,11 @@ export const Quiz = (props: Props) => {
           <button
             onClick={handleSubmit}
             disabled={selected === null}
-            className="rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white dark:text-black
-              outline-none duration-300 focus:ring-4 ring-primary focus:ring-offset-2
-              dark:ring-offset-black hover:scale-105 disabled:opacity-50
-              disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="inline-flex h-10 items-center rounded-lg bg-primary px-6 text-base font-semibold text-white
+              dark:text-black outline-none duration-300 focus:ring-4 ring-primary focus:ring-offset-2
+              dark:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Submit
+            Submit <FiSend className={ICON} />
           </button>
           <button
             onClick={() => setSelected(null)}
@@ -204,7 +204,7 @@ export const Quiz = (props: Props) => {
             title="Clear your selection."
             className={SECONDARY_BUTTON}
           >
-            Clear
+            Clear <FiXCircle className={ICON} />
           </button>
         </div>
       )}

@@ -272,6 +272,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 3,
     },
+    "day-20-part-1---spanning-tree-protocol": {
+      id: "day-20-part-1---spanning-tree-protocol",
+      topic: "Day 20 (Part 1 - Spanning Tree Protocol)",
+      question:
+        "Three switches in VLAN 1 are electing a root bridge. SW1 has a bridge priority of 32769 and MAC address 0000.0000.0001, SW2 has 24577 and 0000.0000.00FF, and SW3 has 36865 and 0000.0000.000A. Which switch becomes the root bridge?",
+      options: [
+        "SW1, because it has the lowest MAC address",
+        "SW3, because it has the highest bridge priority",
+        "SW2, because the bridge priority is compared first, and it has the lowest",
+        "Whichever switch powered on first, because each switch assumes it's the root bridge when it boots",
+      ],
+      correctIndex: 2,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

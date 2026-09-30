@@ -250,6 +250,35 @@
   overflow-wrap: break-word;
 }
 
+/* Nested ordered lists — numbered after their parent item (1.1, 1.2, 2.1…)
+   instead of restarting at 1. The label hangs in the list's left padding,
+   right-aligned like a regular list marker */
+.prose ol:has(> li > ol) {
+  counter-reset: parent-item;
+}
+
+.prose ol:has(> li > ol) > li {
+  counter-increment: parent-item;
+}
+
+.prose ol > li > ol {
+  list-style: none;
+  counter-reset: child-item;
+}
+
+.prose ol > li > ol > li {
+  position: relative;
+  counter-increment: child-item;
+}
+
+.prose ol > li > ol > li::before {
+  content: counter(parent-item) "." counter(child-item);
+  position: absolute;
+  right: 100%;
+  margin-right: 0.5em;
+  color: var(--tw-prose-counters);
+}
+
 /* Syntax highlighting */
 .hljs {
   background: transparent;
