@@ -598,6 +598,94 @@ html:not(.dark) .hljs-formula {
   color: #d1d5db;
 }
 
+/* Text sizes — a `[size=…]` line resizes the text above it. Set in em so a
+   sized block scales what's inside it: a code block or table stays a touch
+   smaller than the prose around it, as it is at the normal size. */
+.prose .post-size-small {
+  font-size: 0.875em;
+  line-height: 1.7;
+}
+
+.prose .post-size-base {
+  font-size: 1em;
+  line-height: 1.75;
+}
+
+.prose .post-size-medium {
+  font-size: 1.25em;
+  line-height: 1.6;
+}
+
+.prose .post-size-large {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.prose .post-size-extralarge {
+  font-size: 1.875em;
+  line-height: 1.4;
+}
+
+/* Colours — a `[chars=…,color=…]` line colours a range of the text above it.
+   Each name pairs a shade clearing 4.5:1 on white with one that does on black;
+   a hex colour sets only `--post-color`, so it's used as written in both. */
+.prose .post-color {
+  color: var(--post-color);
+}
+
+.dark .prose .post-color {
+  color: var(--post-color-dark, var(--post-color));
+}
+
+.prose .post-color-red {
+  --post-color: #dc2626;
+  --post-color-dark: #f87171;
+}
+
+.prose .post-color-orange {
+  --post-color: #c2410c;
+  --post-color-dark: #fb923c;
+}
+
+.prose .post-color-yellow {
+  --post-color: #a16207;
+  --post-color-dark: #facc15;
+}
+
+.prose .post-color-green {
+  --post-color: #15803d;
+  --post-color-dark: #4ade80;
+}
+
+.prose .post-color-teal {
+  --post-color: #0f766e;
+  --post-color-dark: #2dd4bf;
+}
+
+.prose .post-color-blue {
+  --post-color: #2563eb;
+  --post-color-dark: #60a5fa;
+}
+
+.prose .post-color-purple {
+  --post-color: #9333ea;
+  --post-color-dark: #c084fc;
+}
+
+.prose .post-color-pink {
+  --post-color: #be185d;
+  --post-color-dark: #f472b6;
+}
+
+.prose .post-color-gray {
+  --post-color: #6b7280;
+  --post-color-dark: #9ca3af;
+}
+
+.prose .post-color-primary {
+  --post-color: rgb(var(--color-primary));
+}
+
 /* Exponents — `2^12` in a post renders as a raised 12. Positioned rather than
    left on `vertical-align: super`, which pushes the line it sits on further
    from the line above and unevenly spaces a paragraph of body text. */

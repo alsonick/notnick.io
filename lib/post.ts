@@ -10,6 +10,8 @@ import { remarkLinkEmbed } from "./remark/link-embed";
 import { remarkVideo } from "./remark/video";
 import { remarkTweet } from "./remark/tweet";
 import { remarkNote } from "./remark/note";
+import { remarkSize } from "./remark/size";
+import { remarkChars } from "./remark/chars";
 import { remarkLab } from "./remark/lab";
 import remarkRehype from "remark-rehype";
 import remarkParse from "remark-parse";
@@ -98,8 +100,10 @@ export const getPostData = async (slug: string, dir: string) => {
     .use(remarkLinkEmbed)
     .use(remarkLab, { dir: matterResult.data.labs })
     .use(remarkNote)
+    .use(remarkSize)
     .use(remarkHeadingAnchors)
     .use(remarkSuperscript)
+    .use(remarkChars)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeHighlight, { plainText: ["diagram"] })

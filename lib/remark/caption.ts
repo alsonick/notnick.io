@@ -110,7 +110,7 @@ export function joinLines(lines: Array<Array<Node>>): Array<Node> {
 }
 
 /** Rebuilds the source text of one line's inline nodes. */
-function toRawText(children: Array<Node>): string {
+export function toRawText(children: Array<Node>): string {
   return children
     .map((child: any) => {
       switch (child.type) {
