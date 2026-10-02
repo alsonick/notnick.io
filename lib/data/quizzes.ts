@@ -301,6 +301,16 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       correctIndex: 1,
     },
   },
+  "subnetting-explained-in-computer-networking": {
+    conclusion: {
+      id: "conclusion",
+      topic: "Conclusion",
+      question:
+        "A new LAN has 10 PCs and a router. What's the smallest subnet that can fit all of them?",
+      options: ["/27", "/28", "/29", "/30"],
+      correctIndex: 1,
+    },
+  },
 };
 
 export const getQuiz = (

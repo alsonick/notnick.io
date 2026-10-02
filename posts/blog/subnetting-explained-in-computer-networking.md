@@ -1,11 +1,11 @@
 ---
 title: "Subnetting explained in Computer Networking"
-date: "2026-09-28"
-description: "Why subnetting is a crucial aspect in networking."
+date: "2026-10-02"
+description: "Learn how subnetting works by splitting a real network into subnets, step by step."
 tag: "Networking"
-mins: "7"
-finished: false
-last_updated_date: "2026-09-28"
+mins: "8"
+finished: true
+last_updated_date: "2026-10-2"
 filter: "Networking"
 ---
 
@@ -90,3 +90,184 @@ And there's our answer: the `192.168.1.0/24` network can support up to **254 dev
 ---
 
 ### The problem
+
+To see what problems come up when a network isn't split into subnets, let's look at the example network topology below:
+
+![](/post/subnetting-explained-in-computer-networking/network-topology.png)
+
+In the topology we have two separate Local Area Networks (LANs), LAN1 and LAN2. Each LAN has its own router, and the two routers are connected to each other, which links the LANs together. Within each LAN, a switch is connected to the router, and the end hosts (the PCs) are connected to the switch.
+
+Let's say LAN1 is given the network `192.168.1.0/24` and LAN2 is given `192.168.2.0/24`. That gives each LAN 254 usable addresses, but each one only needs 3 of them: 2 for the PCs and 1 for the router, which acts as the default gateway. That leaves **251 addresses** in each LAN going unused, or **502 wasted addresses** across both!
+
+Note: A **default gateway** is the device (usually a router) that hosts send their traffic to whenever it's meant for a different network. The gateway then forwards that traffic on towards its destination.
+
+So how do we fix this? This is where subnetting comes in. Instead of giving each LAN its own `/24`, we can take a single network, `192.168.1.0/24`, and split it into smaller **subnets**, each with only as many addresses as a LAN actually needs.
+
+---
+
+### Subnetting
+
+Before we split the network into subnets, we need to understand the **broadcast domains** in our topology.
+
+Note: From Wikipedia: A broadcast domain is a logical division of a computer network, in which all nodes can reach each other by broadcast at the data link layer.
+[caption=https://en.wikipedia.org/wiki/Broadcast_domain]
+
+Here's the same topology again, but this time with each broadcast domain highlighted:
+
+![](/post/subnetting-explained-in-computer-networking/network-topology-broadcast-domains.png)
+
+There are three broadcast domains in the topology: one for LAN1 (pink), one for LAN2 (yellow), and one for the link between the two routers (blue). That router-to-router link is known as a **point-to-point** connection, since it only ever connects two devices. Each broadcast domain needs its own subnet, so we'll need **3 subnets** in total.
+
+#### LAN1
+
+Let's start with LAN1. First, let's bring back the binary representation of `192.168.1.0/24`:
+
+11000000 10101000 00000001 00000000
+[size=extralarge]
+[chars=0-25,color=red]
+[chars=27-end,color=blue]
+
+To split this network, we'll have to **borrow** some of the host bits and turn them into network bits. We can't borrow from the network portion, because those bits identify the network we've been given (`192.168.1`), and changing them would give us a completely different network.
+
+I've already done the math, and we're going to need a `/29` subnet for both LAN1 and LAN2. But why `/29`, and how did I come up with that? Well, first let's look at what `/29` means. What's the difference between 29 and 24? It's 5, so we've borrowed **5 bits** from the host portion. But that still doesn't explain why we picked 29. To see why, let's look at the binary representation of `192.168.1.0` again, this time with the borrowed bits highlighted:
+
+11000000 10101000 00000001 00000000
+[size=extralarge]
+[chars=0-25,color=red]
+[chars=27-31,color=green]
+[chars=32-end,color=blue]
+
+The green bits are the 5 we've borrowed, which leaves us with just **3 host bits** (blue). Now let's plug that into our formula from earlier to see how many usable addresses that gives LAN1:
+
+2^3-2=6
+[size=extralarge]
+
+Remember, we subtract 2 because the first and last addresses are reserved for the network and broadcast addresses. So technically this subnet gives us 8 addresses (2^3), but only 6 of them can actually be used. That means LAN1's subnet will be:
+
+192.168.1.0/29
+[size=extralarge]
+
+Here's what LAN1 looks like with its new subnet:
+
+![](/post/subnetting-explained-in-computer-networking/lan1.png)
+
+| Device  | IP Address  | Role              |
+| ------- | ----------- | ----------------- |
+| -       | 192.168.1.0 | Network address   |
+| Router1 | 192.168.1.6 | Default gateway   |
+| PC0     | 192.168.1.1 | End host          |
+| PC1     | 192.168.1.2 | End host          |
+| -       | 192.168.1.7 | Broadcast address |
+
+Note: This subnet gives us 8 addresses in total (including the network and broadcast addresses), and we're using 5 of them, which leaves 3 spare (`192.168.1.3` to `192.168.1.5`). That's completely fine! Subnets always come in powers of 2, so you'll rarely be able to fit the exact number of hosts you need. If anything, those spare addresses give us some breathing room in case we want to add a few more devices later.
+
+---
+
+#### LAN2
+
+Since LAN2 has the same number of devices as LAN1, it can use the same `/29` prefix. First, we need to find its network address. LAN1 has already taken the addresses from `192.168.1.0` to `192.168.1.7`, so LAN2's network address is simply the next address after LAN1's broadcast address: `192.168.1.8`. Great, that's our network address sorted, but we still need to find the broadcast address.
+
+To find the broadcast address, we need to set all the host bits to 1. So let's look at `192.168.1.8` in binary:
+
+11000000 10101000 00000001 00001000
+[size=extralarge]
+[chars=0-25,color=red]
+[chars=27-31,color=green]
+[chars=32-end,color=blue]
+
+The host bits are the ones in blue, so let's set them all to 1:
+
+11000000 10101000 00000001 00001111
+[size=extralarge]
+[chars=0-25,color=red]
+[chars=27-31,color=green]
+[chars=32-end,color=blue]
+
+The first 3 octets haven't changed, so we only need to focus on the last one, which is now:
+
+00001111
+[size=extralarge]
+[chars=0-4,color=green]
+[chars=5-end,color=blue]
+
+Converting `00001111` to decimal gives us **15** (8 + 4 + 2 + 1), so LAN2's broadcast address is `192.168.1.15`.
+
+Now that we have both the network and broadcast addresses, everything in between (`192.168.1.9` to `192.168.1.14`) can be used for the devices in LAN2.
+
+Here's what LAN2 looks like with its new subnet:
+
+![](/post/subnetting-explained-in-computer-networking/lan2.png)
+
+| Device  | IP Address   | Role              |
+| ------- | ------------ | ----------------- |
+| -       | 192.168.1.8  | Network address   |
+| Router0 | 192.168.1.14 | Default gateway   |
+| PC2     | 192.168.1.9  | End host          |
+| PC3     | 192.168.1.10 | End host          |
+| -       | 192.168.1.15 | Broadcast address |
+
+---
+
+#### Point-to-Point
+
+We have one more broadcast domain to cover: the link between the two routers. This point-to-point connection is different from the LANs because there are no PCs or switches on it, just the two routers, each connected by one of its interfaces. Since we only need 2 usable addresses (one for each router), we're going to use a `/30` prefix for this subnet. That means borrowing 6 bits from the original host portion (30 - 24), one more than the `/29`s we used for the LANs, which leaves us with just **2 host bits**.
+
+Now that we know the size of the subnet, let's find its network address. Just like with LAN2, we start from the next address after the previous subnet's broadcast address. LAN2's broadcast address was `192.168.1.15`, so this subnet's network address is `192.168.1.16`:
+
+192.168.1.16/30
+[size=extralarge]
+
+Next up is the broadcast address. Same as before, we need to set all the host bits to 1, so let's look at `192.168.1.16` in binary:
+
+11000000 10101000 00000001 00010000
+[size=extralarge]
+[chars=0-25,color=red]
+[chars=27-32,color=green]
+[chars=33-end,color=blue]
+
+This time 6 bits are green (borrowed) and only 2 are blue (host bits). Let's set those 2 host bits to 1:
+
+11000000 10101000 00000001 00010011
+[size=extralarge]
+[chars=0-25,color=red]
+[chars=27-32,color=green]
+[chars=33-end,color=blue]
+
+Again, only the last octet has changed:
+
+00010011
+[size=extralarge]
+[chars=0-5,color=green]
+[chars=6-end,color=blue]
+
+Converting `00010011` to decimal gives us **19** (16 + 2 + 1), so the broadcast address is `192.168.1.19`. That leaves `192.168.1.17` and `192.168.1.18` as our usable addresses, which is exactly what our formula gives us:
+
+2^2-2=2
+[size=extralarge]
+
+That's one address for each router, with none left over. Unlike the LANs, this subnet is a perfect fit, which is why `/30` is a common choice for point-to-point links.
+
+Here's what the point-to-point link looks like with its new subnet:
+
+![](/post/subnetting-explained-in-computer-networking/ptp.png)
+
+| Device  | IP Address   | Role                     |
+| ------- | ------------ | ------------------------ |
+| -       | 192.168.1.16 | Network address          |
+| Router1 | 192.168.1.17 | Point-to-point interface |
+| Router0 | 192.168.1.18 | Point-to-point interface |
+| -       | 192.168.1.19 | Broadcast address        |
+
+Note: Notice how we did the two `/29`s first and left the `/30` until last? When you're splitting a network into subnets of different sizes, always start with the biggest. A subnet's network address has to be a multiple of its size, so if we'd given the link `192.168.1.0/30` first, the next `/29` couldn't start at `.4` (4 isn't a multiple of 8). We'd have to skip ahead to `.8`, wasting `.4` to `.7`.
+
+---
+
+### Conclusion
+
+---
+
+finished: true
+
+---
+
+And that's subnetting covered! This blog doesn't cover absolutely everything about subnetting, but it does cover a good chunk of it. Anyway, I hope you enjoyed the read! If you spot any mistakes, please click the "Edit this page on GitHub" link and open a PR with your corrections. I've also put together a quiz below to test your knowledge. Good luck!

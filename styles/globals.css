@@ -582,6 +582,13 @@ html:not(.dark) .hljs-formula {
   margin-bottom: 0;
 }
 
+/* A caption under a note tucks in beneath the box as it does under an image.
+   The general `*:has(+ .post-caption)` rule ties with `.post-note` on
+   specificity and comes first, so the note's own margin would win. */
+.prose .post-note:has(+ .post-caption) {
+  margin-bottom: 0;
+}
+
 .prose .post-note > .post-note-label {
   display: flex;
   align-items: center;
