@@ -22,6 +22,7 @@ export const LONG_POST_LINE_COUNT = 1000;
 export const LOCATED = "United Kingdom";
 export const FIRST_NAME = "Nicholas";
 export const DOMAIN = "notnick.io";
+export const OG_IMAGE = "/og.png";
 export const LAST_NAME = "Njoki";
 export const CITY = "Canterbury";
 export const THEME = "#30D158";

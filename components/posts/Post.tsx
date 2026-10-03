@@ -1,4 +1,9 @@
-import { DOMAIN, FULL_NAME, LONG_POST_LINE_COUNT } from "../../lib/constants";
+import {
+  DOMAIN,
+  FULL_NAME,
+  LONG_POST_LINE_COUNT,
+  OG_IMAGE,
+} from "../../lib/constants";
 import { LongPostThemeNoticePrompt } from "./LongPostThemeNoticePrompt";
 import { LongPostThemeNotice } from "./LongPostThemeNotice";
 import { TableOfContents } from "./TableOfContents";
@@ -371,23 +376,7 @@ export const Post = (props: Props) => {
     }
   }, [contentWithEmbeds]);
 
-  const ogCover = useMemo(() => {
-    if (props.post.cover) return props.post.cover;
-    const params = new URLSearchParams({ title: props.post.title });
-    if (props.post.description)
-      params.set("description", props.post.description);
-    if (props.post.tag) params.set("tag", props.post.tag);
-    if (props.post.date) params.set("date", props.post.date);
-    if (props.post.mins) params.set("mins", props.post.mins);
-    return `/api/og?${params.toString()}`;
-  }, [
-    props.post.cover,
-    props.post.title,
-    props.post.description,
-    props.post.tag,
-    props.post.date,
-    props.post.mins,
-  ]);
+  const ogCover = props.post.cover || OG_IMAGE;
 
   // The Discord link preview leans on the same card the Open Graph image uses,
   // so a post shared in a chat reads the way it does on a timeline.

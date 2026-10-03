@@ -6,6 +6,7 @@ import {
   DOMAIN,
   EMAIL_ADDRESS,
   FULL_NAME,
+  OG_IMAGE,
   PROFESSION,
   THEME,
 } from "../../lib/constants";
@@ -36,7 +37,7 @@ interface Props {
 export const Seo = (props: Props) => {
   const { query, asPath } = useRouter();
   const date = new Date();
-  const ogImage = props.cover || "/og.png";
+  const ogImage = props.cover || OG_IMAGE;
   const ogImageUrl = ogImage.startsWith("http")
     ? ogImage
     : `https://${DOMAIN}${ogImage}`;
