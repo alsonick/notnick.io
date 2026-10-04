@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-09-30"
+last_updated_date: "2026-10-04"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: false
@@ -2453,5 +2453,7 @@ Note: The NEIGHBOR switch's port ID is used to break the tie, not the local swit
 | 10 Gbps  | 2        |
 
 Note: Each interface has an associated Spanning Tree cost.
+
+[lab=Day 20 Lab - Analyzing STP.pkt]
 
 <div data-embed="scrollup"></div>
