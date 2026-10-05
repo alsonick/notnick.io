@@ -892,3 +892,41 @@ html:not(.dark) .hljs-formula {
     animation: none;
   }
 }
+
+/* Halloween pumpkins (lib/pumpkins.ts) falling over the page through October.
+   Each one sets its own column, drift and spin as custom properties. */
+#pumpkins {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 9999999;
+  pointer-events: none;
+  user-select: none;
+}
+
+#pumpkins > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 1;
+  will-change: transform;
+  animation: pumpkin-fall linear infinite;
+}
+
+@keyframes pumpkin-fall {
+  from {
+    transform: translate(var(--x), -2em) rotate(0deg);
+  }
+  to {
+    transform: translate(calc(var(--x) + var(--drift)), calc(100vh + 2em))
+      rotate(var(--spin));
+  }
+}
+
+/* The blanket rule above would run the fall once in an instant and leave every
+   pumpkin stacked in the top corner, so drop the overlay altogether. */
+@media (prefers-reduced-motion: reduce) {
+  #pumpkins {
+    display: none;
+  }
+}
