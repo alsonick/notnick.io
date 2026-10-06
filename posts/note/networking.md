@@ -7,7 +7,7 @@ tag: "Networking"
 mins: "C"
 last_updated_date: "2026-07-24"
 filter: "Networking"
-pinned: true
+pinned: false
 ---
 
 ## Computer Networking
