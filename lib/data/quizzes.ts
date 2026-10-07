@@ -285,6 +285,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 2,
     },
+    "day-21-part-2---spanning-tree-protocol": {
+      id: "day-21-part-2---spanning-tree-protocol",
+      topic: "Day 21 (Part 2 - Spanning Tree Protocol)",
+      question:
+        "A non-designated port on SW2 is in the Blocking state when it stops receiving BPDUs. SW2 then picks that port as its new root port. With the default STP timers, how long after the last BPDU arrived does the port start forwarding regular traffic?",
+      options: [
+        "15 seconds, the length of the Forward delay timer",
+        "20 seconds, as soon as the Max Age timer runs out",
+        "30 seconds, 15 in Listening and then 15 in Learning",
+        "50 seconds, 20 for Max Age, then 15 each in Listening and Learning",
+      ],
+      correctIndex: 3,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
