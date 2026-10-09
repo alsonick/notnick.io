@@ -298,6 +298,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 3,
     },
+    "day-21-part-1---portfast-stp-toolkit": {
+      id: "day-21-part-1---portfast-stp-toolkit",
+      topic: "Day 21 (Part 1 - PortFast) STP Toolkit",
+      question:
+        "SW1's G0/1 is a trunk port connected to a router doing router-on-a-stick. You enter spanning-tree portfast on G0/1, but the port still spends 30 seconds in Listening and Learning before it forwards. What do you need to do?",
+      options: [
+        "Enter spanning-tree portfast default in global configuration mode, which enables PortFast on every port",
+        "Enter spanning-tree portfast trunk on G0/1, because the standard command only works on access ports",
+        "Enter spanning-tree bpduguard enable on G0/1, because PortFast needs BPDU Guard before it takes effect",
+        "Nothing, PortFast can never be enabled on a trunk port",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

@@ -2722,4 +2722,78 @@ This lists the Spanning Tree settings you can change on an interface for VLAN 1.
 - `cost` changes the interface's Spanning Tree cost in that VLAN. A lower cost makes the interface more likely to be chosen as the root port.
 - `port-priority` changes the interface's port priority, the first part of its STP port ID (128 by default). A lower port priority is preferred when the port ID is used to break a tie.
 
+---
+
+### Day 21 (Part 1 - PortFast) STP Toolkit
+
+---
+
+finished: true
+
+---
+
+#### PortFast - The Problem
+
+When an end host connects to a switch port, the port becomes **up/up** but can't send/receive data yet. It is a **Designated port** but will take 30 seconds before it enters the **Forwarding** state:
+
+- 15 seconds in **Listening**
+- 15 seconds in **Learning**
+
+The problem:
+
+- This leads to a poor user experience.
+  - The user probably doesn't even know STP exists.
+  - The wait is unnecessary, because there is no risk of a Layer 2 loop occurring between a switch/PC.
+
+---
+
+#### PortFast - The Solution
+
+- When **PortFast** is configured on a port, the port immediately enters the **Forwarding** state when connected to another device.
+  - It bypasses **Listening/Learning** and send/receive data right away.
+
+---
+
+#### PortFast Configuration
+
+There are two ways you can configure PortFast:
+
+1. `spanning-tree portfast`
+   1. This enables PortFast only on the individual interface.
+2. `spanning-tree portfast default`
+   1. This enables PortFast on _all access ports_.
+
+Note: Connections between switches are almost always **trunk** links.
+
+Note: Connections to end hosts are almost always **access** links.
+
+The command to show details about the spanning tree interface:
+
+```
+show spanning-tree interface interface-name detail
+```
+
+---
+
+#### PortFast on trunk ports
+
+- The standard PortFast configuration commands only enable PortFast on access ports.
+- In some cases, you might want to enable PortFast on a trunk port:
+  - A port connected to a virtualization server with virtual machines (VMs) in different VLANs.
+  - A port connected to a router via router-on-a-stick (ROAS).
+
+The command to configure PortFast on a trunk:
+
+```
+spanning-tree portfast trunk
+```
+
+---
+
+#### PortFast edge
+
+- In modern Cisco switches, the device will automatically add the **edge** keyword to the configuration.
+
+Note: `spanning-tree portfast disable` doesn't use the **edge** keyword.
+
 <div data-embed="scrollup"></div>
