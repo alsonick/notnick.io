@@ -73,9 +73,14 @@ export const ExperienceCard = (props: Props) => {
           {props.description} &bull; {getEmploymentTypeString(props)} &bull;{" "}
           {props.remote ? "Remote" : "On-Site"}
         </Text>
-        <div className="relative mt-2">
-          <Text>{props.task}</Text>
-        </div>
+        <ul
+          className="mt-2 mb-4 sm:mb-0 list-disc pl-5 space-y-1 text-left text-base
+          text-gray-600 dark:text-gray-300 marker:text-primary"
+        >
+          {props.task.map((point) => (
+            <li key={point}>{point}</li>
+          ))}
+        </ul>
         {props.showCurrentStatus && (
           <div className="mt-2">{props.note && <Note>{props.note}</Note>}</div>
         )}

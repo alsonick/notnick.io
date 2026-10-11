@@ -51,7 +51,7 @@ export interface Experience {
   logo?: string;
   note?: string;
   slug: string;
-  task: string;
+  task: string[];
   link: string;
   name: string;
   id?: number;

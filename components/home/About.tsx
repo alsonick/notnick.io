@@ -7,6 +7,7 @@ import {
 } from "../../lib/constants";
 import { Heading } from "../ui/Heading";
 import { Section } from "../layout/Section";
+import { Highlight } from "../ui/Highlight";
 import { LinkTag } from "../ui/LinkTag";
 import Tippy from "@tippyjs/react";
 import { page } from "../../lib/page";
@@ -18,21 +19,24 @@ export const About = () => {
       p1: (
         <Text>
           <Tippy animation="fade" content={"4th March 2003"}></Tippy>
-          <b>{PROFESSION}</b> located in the <b>{LOCATED}</b>, currently
-          pursuing a degree in <b>{SUBJECT_OF_STUDY}</b>. I&apos;m working
-          towards a career in <b>Computer Networking</b>. I also have{" "}
-          <b>
+          <Highlight>{PROFESSION}</Highlight> located in the{" "}
+          <Highlight>{LOCATED}</Highlight>, currently in my{" "}
+          <Highlight>final year</Highlight> of a degree in{" "}
+          <Highlight>{SUBJECT_OF_STUDY}</Highlight>. I&apos;m working towards a
+          career in <Highlight>Computer Networking</Highlight>. I also have{" "}
+          <Highlight>
             {new Date().getFullYear() - YEAR_STARTED_PROGRAMMING_PROFESSIONALLY}{" "}
             years
-          </b>{" "}
-          of hands-on experience building software with <b>React</b>,{" "}
-          <b>Python</b>, <b>Java</b> & <b>TypeScript</b>.
+          </Highlight>{" "}
+          of hands-on experience building software with{" "}
+          <Highlight>React</Highlight>, <Highlight>Python</Highlight>,{" "}
+          <Highlight>Java</Highlight> & <Highlight>TypeScript</Highlight>.
         </Text>
       ),
       p2: (
         <Text>
-          Outside of work, I enjoy watching <b>anime</b> in my spare time. Some
-          of my favorites are{" "}
+          Outside of work, I enjoy watching <Highlight>anime</Highlight> in my
+          spare time. Some of my favorites are{" "}
           <LinkTag
             href="https://anilist.co/anime/21/ONE-PIECE/"
             target="_blank"
@@ -67,12 +71,12 @@ export const About = () => {
           >
             here
           </LinkTag>
-          . I also play the <b>piano</b>, with{" "}
+          . I also play the <Highlight>piano</Highlight>, with{" "}
           <LinkTag href="https://en.wikipedia.org/wiki/Ragtime" target="_blank">
             Ragtime
           </LinkTag>{" "}
           being my favorite genre to play, and I&apos;m a big fan of{" "}
-          <b>gaming</b> whenever I get the chance.
+          <Highlight>gaming</Highlight> whenever I get the chance.
         </Text>
       ),
 

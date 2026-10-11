@@ -16,7 +16,7 @@ export const Projects = () => {
           <ProjectCard
             active={project.active}
             github={project.github}
-            desc={project.desc}
+            desc={project.desc.slice(0, 2)}
             name={project.name}
             logo={project.logo}
             link={project.link}

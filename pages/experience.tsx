@@ -3,6 +3,7 @@ import { MappedExperienceCardList } from "../components/experience/MappedExperie
 import { EMAIL_ADDRESS, FULL_NAME, PROFESSION } from "../lib/constants";
 import { capitalizeFirstLetter } from "../lib/utils/capitalize-first-letter";
 import { generateRandomId } from "../lib/utils/generate-random-id";
+import { AvailabilityLabel } from "../components/ui/AvailabilityLabel";
 import { FilterListBox } from "../components/ui/FilterListBox";
 import { removeDuplicates } from "../lib/utils/remove-duplicates";
 import { Experience as E } from "../types/experience";
@@ -41,7 +42,7 @@ const Experience: NextPage = () => {
       startYear: 0,
       endYear: 0,
       name: "",
-      task: "",
+      task: [],
       link: "",
       logo: "",
       slug: "",
@@ -87,6 +88,7 @@ const Experience: NextPage = () => {
       />
       <Layout>
         <Animate>
+          <AvailabilityLabel className="mt-5" />
           <Header singleItem={false} mobileColumnLayout={true}>
             <Heading as="h1" style={{ marginBottom: 0 }}>
               {page.experience.title}

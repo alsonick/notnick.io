@@ -4,9 +4,25 @@ import { AVATAR, AVATAR_FILE_EXTENSION, CDN } from "../constants";
 
 export const PROJECTS: Project[] = [
   {
+    logo: "/project/branding/lrc-generator.png",
+    name: "LRC Generator",
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "shadcn/ui"],
+    id: generateRandomId(),
+    site: "lrc.notnick.io",
+    kind: "website",
+    link: "https://lrc.notnick.io/",
+    github: "https://github.com/alsonick/lrc.notnick.io",
+    active: true,
+    oss: true,
+    desc: [
+      "A browser-based tool for creating synced, timestamped lyric files in the LRC format.",
+      "Lets you sync each line to the song in real time with a single key press.",
+    ],
+  },
+  {
     logo: "/project/branding/lyrics-tags-generator.png",
     name: "Lyrics Tags Generator",
-    tech: ["Next.js", "TypeScript", "TailwindCSS"],
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Gemini API"],
     id: generateRandomId(),
     site: "tags.notnick.io",
     kind: "website",
@@ -14,7 +30,10 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/alsonick/tags.notnick.io",
     active: true,
     oss: true,
-    desc: "A YouTube utility metadata generator service that builds clean, formatted metadata for your lyric videos in seconds.",
+    desc: [
+      "Generates SEO-friendly YouTube metadata for lyric videos, including tags, titles, hashtags, and keywords.",
+      "Comes with a free, documented public API that returns the same metadata for you to use in your own apps.",
+    ],
   },
   {
     logo: "/project/branding/daily-walks.png",
@@ -26,7 +45,10 @@ export const PROJECTS: Project[] = [
     kind: "app",
     active: true,
     oss: false,
-    desc: "A simple healthcare app to track your daily walks, log your progress over time, and stay motivated to keep moving every day.",
+    desc: [
+      "A free iPhone app for setting a daily step goal and sticking to it, with only one goal change allowed per day.",
+      "Shows trends for steps, distance, and calories, along with every goal you've hit.",
+    ],
   },
   {
     logo: `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`,
@@ -39,19 +61,9 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/alsonick/notnick.io",
     active: true,
     oss: true,
-    desc: "You're currently on it right now! This is my own personal site where I share my projects, writing, and a little about who I am.",
-  },
-  {
-    logo: `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`,
-    name: "pics.notnick.io",
-    tech: ["Next.js", "TypeScript", "TailwindCSS"],
-    id: generateRandomId(),
-    site: "pics.notnick.io",
-    kind: "website",
-    link: "https://pics.notnick.io/",
-    github: "https://github.com/alsonick/pics.notnick.io",
-    active: true,
-    oss: true,
-    desc: "A personal photo gallery to showcase my pictures, collecting my favourite shots and moments in one clean, simple space.",
+    desc: [
+      "The site you're on right now, where I share my projects, experience, and writing.",
+      "Designed and built from scratch, with a focus on accessibility.",
+    ],
   },
 ];

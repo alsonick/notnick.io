@@ -40,7 +40,7 @@ export const Experience = () => {
             name={experience.name}
             link={experience.link}
             logo={experience.logo}
-            task={experience.task}
+            task={experience.task.slice(0, 2)}
             slug={experience.slug}
             key={experience.id}
           />

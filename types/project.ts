@@ -6,7 +6,7 @@ export interface Project {
   kind: string;
   logo: string;
   name: string;
-  desc: string;
+  desc: string[];
   site: string;
   oss: boolean;
   id: number;

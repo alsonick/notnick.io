@@ -1,10 +1,7 @@
-import {
-  FIRST_NAME,
-  PROFESSION,
-  STUDYING_UNTIL,
-} from "../../lib/constants";
+import { FIRST_NAME, PROFESSION, STUDYING_UNTIL } from "../../lib/constants";
 import { TypeAnimation } from "react-type-animation";
 import { useEffect, useState } from "react";
+import { AvailabilityLabel } from "../ui/AvailabilityLabel";
 import { fireworks } from "../../lib/fireworks";
 import { Heading } from "../ui/Heading";
 import { Button } from "../ui/Button";
@@ -16,7 +13,11 @@ export const Main = () => {
 
   const isStudent = date < STUDYING_UNTIL;
 
-  const roles = [PROFESSION, "Programmer", ...(isStudent ? ["Student"] : [])];
+  const roles = [
+    PROFESSION,
+    ...(isStudent ? ["Final-Year CS Student"] : []),
+    "Software Developer",
+  ];
 
   // The typing loop never stops, so readers who ask their OS to reduce motion
   // get the first role as plain text instead.
@@ -47,6 +48,7 @@ export const Main = () => {
     <>
       <div className="flex md:flex-row md:flex-start flex-col-reverse items-start md:items-center w-full justify-between mb-12 mt-20">
         <div className="flex flex-col">
+          <AvailabilityLabel className="mb-4" />
           <Heading
             as="h1"
             style={{
