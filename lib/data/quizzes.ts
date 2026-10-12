@@ -311,6 +311,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 1,
     },
+    "day-21-part-2---bpdu-guard-bpdu-filter-stp-toolkit": {
+      id: "day-21-part-2---bpdu-guard-bpdu-filter-stp-toolkit",
+      topic: "Day 21 (Part 2 - BPDU Guard & BPDU Filter) STP Toolkit",
+      question:
+        "SW3's G0/1 has PortFast and BPDU Guard enabled, and BPDU Filter is enabled with spanning-tree portfast bpdufilter default in global configuration mode. Someone plugs a switch into G0/1 and the port receives a BPDU. What happens?",
+      options: [
+        "BPDU Filter is disabled on the port, then BPDU Guard puts it in the err-disabled state",
+        "The BPDU is ignored and the port keeps forwarding, so BPDU Guard is never triggered",
+        "PortFast and BPDU Filter are disabled, and the port carries on as a normal STP port",
+        "Nothing, because BPDU Guard and BPDU Filter can't be enabled on the same port",
+      ],
+      correctIndex: 0,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

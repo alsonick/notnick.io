@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-10-07"
+last_updated_date: "2026-10-11"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: false
@@ -2795,5 +2795,194 @@ spanning-tree portfast trunk
 - In modern Cisco switches, the device will automatically add the **edge** keyword to the configuration.
 
 Note: `spanning-tree portfast disable` doesn't use the **edge** keyword.
+
+---
+
+### Day 21 (Part 2 - BPDU Guard & BPDU Filter) STP Toolkit
+
+---
+
+finished: true
+
+---
+
+#### BPDU Guard
+
+- **BPDU Guard** protects the network from unauthorized switches being connected to ports intended for end hosts.
+- It can be configured separately from **PortFast**, but both features are usually used together.
+  - They both enhance STP's functionality on ports intended for end hosts.
+- A BPDU Guard-enabled port continues to send BPDUs, but if it receives a BPDU it enters the **error-disabled** state.
+  - In effect, this disables the port.
+
+---
+
+#### BPDU Guard configuration
+
+There are two ways you can configure BPDU Guard:
+
+Per Port:
+
+```
+SW3(config)# interface g0/1
+SW3(config-if)# spanning-tree bpduguard enable
+SW3(config-if)# do show spanning-tree interface g0/1 detail
+ Port 2 (GigabitEthernet0/1) of VLAN0001 is designated forwarding
+   Port path cost 4, Port priority 128, Port Identifier 128.2.
+   Designated root has priority 24577, address 5254.001a.9d29
+   Designated bridge has priority 32769, address 5254.0006.448f
+   Designated port id is 128.2, designated path cost 4
+   Timers: message age 0, forward delay 0, hold 0
+   Number of transitions to forwarding state: 1
+   The port is in the portfast edge mode
+   Link type is point-to-point by default
+   Bpdu guard is enabled
+   BPDU: sent 93, received 0
+```
+
+```
+spanning-tree bpduguard enable
+```
+
+Default:
+
+```
+SW3(config)# spanning-tree portfast bpduguard default
+SW3(config)# do show spanning-tree interface g0/1 detail
+ Port 2 (GigabitEthernet0/1) of VLAN0001 is designated forwarding
+   Port path cost 4, Port priority 128, Port Identifier 128.2.
+   Designated root has priority 24577, address 5254.001a.9d29
+   Designated bridge has priority 32769, address 5254.0006.448f
+   Designated port id is 128.2, designated path cost 4
+   Timers: message age 0, forward delay 0, hold 0
+   Number of transitions to forwarding state: 1
+   The port is in the portfast edge mode
+   Link type is point-to-point by default
+   Bpdu guard is enabled by default
+   BPDU: sent 165, received 0
+```
+
+```
+spanning-tree portfast bpduguard default
+```
+
+Note: When enabled by default, **BPDU Guard** is activated on _all Portfast-enabled ports_.
+
+Note: Use `spanning-tree bpduguard disable` in interface config-mode to disable it on specific ports.
+
+---
+
+#### ErrDisable
+
+**ErrDisable** is a Cisco switch feature that disables a port under certain conditions, such as a BPDU Guard violation.
+
+- To re-enable an err-disabled port, _first solve the underlying issue_.
+  - If you re-enable the port without fixing the issue, it will just be err-disabled again.
+- You can re-enable an err-disabled port in two ways:
+  1. Manual: use **`shutdown`** and **`no shutdown`** to reset the disabled port.
+  2. Automatic: **ErrDisable Recovery**
+
+---
+
+#### ErrDisable Recovery
+
+**ErrDisable Recovery** is a feature that automatically re-enables err-disabled port after a certain period of time.
+
+To show the status of **ErrDisable Recovery**:
+
+```
+SW3# show errdisable recovery
+ErrDisable Reason            Timer Status
+-----------------            --------------
+arp-inspection               Disabled
+bpduguard                    Disabled
+channel-misconfig (STP)      Disabled
+!output omitted
+
+Timer interval: 300 seconds
+
+Interfaces that will be enabled at the next timeout:
+```
+
+Note: ErrDisable Recovery is disabled by default. The default recovery timer is 300 seconds (5 minutes). Err-disabled interfaces will be automatically re-enabled after 5 minutes.
+
+Note: `errdisable recovery interval seconds` modifies the interval.
+
+Use `errdisable recovery cause` cause to enable ErrDisable Recovery for ports disabled by a particular cause.
+
+```
+SW3(config)# errdisable recovery cause bpduguard
+SW3(config)# do show errdisable recovery
+ErrDisable Reason            Timer Status
+-----------------            --------------
+arp-inspection               Disabled
+bpduguard                    Enabled
+channel-misconfig (STP)      Disabled
+
+Timer interval: 300 seconds
+
+Interfaces that will be enabled at the next timeout:
+
+Interface       Errdisable reason       Time left(sec)
+---------       -----------------       --------------
+Gi0/1                  bpduguard          296
+```
+
+Note: The cause is typically listed under "ErrDisable Reason".
+
+---
+
+#### BPDU Filter - the problem
+
+- A switch port connected to an end host continues sending BPDUs every 2 seconds.
+  - Regardless of whether PortFast and/or BPDU Guard are enabled.
+- If the port doesn't connect to a switch, sending BPDUs is unnecessary and undesirable for a couple of reasons:
+  1. Sending BPDUs uses some bandwidth and processing power on the switch (although it's minimal).
+  2. BPDUs contain information about the LANs STP topology.
+  3. If maximum security is a concern, you should avoid sending this info to user devices.
+- **BPDU Filter** solves this by preventing a port from sending BPDUs.
+
+---
+
+#### BPDU Filter - the solution
+
+- **BPDU Filter** stops a port from sending BPDUs.
+  - Unlike BPDU Guard, it does not disable the port if it receives a BPDU.
+
+BPDU Filter can be enabled in two ways:
+
+Per Port:
+
+```
+spanning-tree bpdufilter enable
+```
+
+- The port will not send BPDUs.
+- The port will ignore any BPDUs it receives.
+- It disables STP on the port.
+
+Warning: **Use with caution!** BPDU Filter enabled can cause permanent Layer 2 loops.
+
+Default (global configuration mode):
+
+```
+spanning-tree portfast bpdufilter default
+```
+
+- BPDU Filter will be activated on _all PortFast-enabled ports_.
+- You can use `spanning-tree bpdufilter disable` to disable it on specific ports.
+- The port will not send BPDUs.
+- If the port receives a BPDU, PortFast and BPDU Filter are disabled, and it operates as a normal STP port.
+
+**BPDU Guard** and **BPDU Filter** can be enabled on the same port at the same time:
+
+- If BPDU Filter is enabled in _global config mode_ and the port receives a BPDU:
+  1. BPDU Filter will be disabled.
+  2. BPDU Guard will be triggered (and err-disable the interface).
+
+---
+
+- If BPDU Filter is enabled in _interface config mode_ and the port receives a BPDU:
+  1. The BPDU will be ignored.
+  2. BPDU Guard will **not** be triggered.
 
 <div data-embed="scrollup"></div>
