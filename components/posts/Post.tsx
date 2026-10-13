@@ -26,6 +26,7 @@ import {
 } from "../../lib/long-post-notice";
 import { buildPostEmbed } from "../../lib/discord-embed";
 import { scrollToElement } from "../../lib/utils/scroll-to-element";
+import { decodeEntities } from "../../lib/utils/decode-entities";
 import { readTime } from "../../lib/utils/read-time";
 import { VideoEmbed } from "./VideoEmbed";
 import { NewsLetter } from "../home/Newsletter";
@@ -124,7 +125,9 @@ export const Post = (props: Props) => {
 
     const getAttr = (str: string, name: string) => {
       const m = str.match(new RegExp(`${name}="([^"]+)"`));
-      return m ? m[1] : null;
+      // The value is still HTML-escaped here (an "&" reads "&#x26;"), since it
+      // was lifted straight out of the serialized markup.
+      return m ? decodeEntities(m[1]) : null;
     };
 
     const parts: JSX.Element[] = [];

@@ -10,8 +10,6 @@ interface Props {
 }
 
 export const DownloadSection = (props: Props) => {
-  // The topic arrives escaped, since it rides along in an HTML attribute.
-  const topic = props.topic.replace(/&quot;/g, '"').replace(/&amp;/g, "&");
   const what = props.isSection ? "section" : "post";
 
   return (
@@ -19,8 +17,8 @@ export const DownloadSection = (props: Props) => {
       className="not-prose group flex items-center my-6 border border-teal-100 dark:border-teal-900 rounded-lg p-4
       bg-white dark:bg-[#10161a]/50 sm:hover:border-primary sm:dark:hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
       dark:ring-offset-black outline-none duration-300"
-      title={`Download "${topic}" as a Markdown file`}
-      download={`${topic}.md`}
+      title={`Download "${props.topic}" as a Markdown file`}
+      download={`${props.topic}.md`}
       href={props.href}
     >
       <span
@@ -34,7 +32,7 @@ export const DownloadSection = (props: Props) => {
           Download this {what}
         </span>
         <span className="text-sm text-gray-600 dark:text-gray-300 truncate">
-          {topic}.md
+          {props.topic}.md
         </span>
       </span>
       <FiDownload className="ml-auto pl-3 text-3xl shrink-0 text-gray-600 dark:text-gray-300 group-hover:text-primary md:group-hover:scale-110 duration-300" />

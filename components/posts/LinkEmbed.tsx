@@ -14,8 +14,7 @@ interface Props {
  * publishes no tags, or can't be reached, falls back to the plain link.
  */
 export const LinkEmbed = (props: Props) => {
-  // The URL arrives escaped, since it rides along in an HTML attribute.
-  const url = props.url.replace(/&quot;/g, '"').replace(/&amp;/g, "&");
+  const url = props.url;
 
   const [preview, setPreview] = useState<LinkPreview | null>(null);
   const [loading, setLoading] = useState(true);

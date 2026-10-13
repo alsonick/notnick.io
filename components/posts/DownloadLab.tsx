@@ -8,9 +8,7 @@ interface Props {
 }
 
 export const DownloadLab = (props: Props) => {
-  // The file name arrives escaped, since it rides along in an HTML attribute.
-  const file = props.file.replace(/&quot;/g, '"').replace(/&amp;/g, "&");
-  const name = file.replace(/\.pkt$/i, "");
+  const name = props.file.replace(/\.pkt$/i, "");
 
   return (
     <a
@@ -18,7 +16,7 @@ export const DownloadLab = (props: Props) => {
       bg-white dark:bg-[#10161a]/50 sm:hover:border-primary sm:dark:hover:border-primary focus:ring-4 focus:ring-primary focus:ring-offset-2
       dark:ring-offset-black outline-none duration-300"
       title={`Download the Cisco Packet Tracer lab "${name}"`}
-      download={file}
+      download={props.file}
       href={props.href}
     >
       <picture>

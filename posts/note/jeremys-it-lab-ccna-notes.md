@@ -5,7 +5,7 @@ description: ""
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-10-11"
+last_updated_date: "2026-10-13"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: false
@@ -2984,5 +2984,80 @@ spanning-tree portfast bpdufilter default
 - If BPDU Filter is enabled in _interface config mode_ and the port receives a BPDU:
   1. The BPDU will be ignored.
   2. BPDU Guard will **not** be triggered.
+
+---
+
+### Day 21 (Part 3 - Root Guard) STP Toolkit
+
+---
+
+finished: true
+
+---
+
+#### Root Guard: the problem
+
+Within your own LAN, you can easily control the root bridge by setting it priority to **0**. But there are cases where you might connect your LAN to other switches outside your direct control:
+
+- A service provider offering [Metro Ethernet](https://en.wikipedia.org/wiki/Metro_Ethernet) service to your customers.
+  - Often used to connect sites within a MAN (Metropolitan Area Network)
+
+Even if you set your root bridge's priority to 0, its role can be taken by another switch with a lower MAC address.
+
+---
+
+**Root Guard** can be configured to protect your STP topology by preventing your switches from accepting **superior BPDUs** from switches outside your control.
+
+**Superior BPDU** = a BPDU that is superior in the STP algorithm (e.g. claiming a better root bridge ID).
+
+---
+
+#### Root Guard: the solution
+
+- If you want to ensure that the root bridge remains in your LAN, you can configure **Root Guard** on the ports connected to switches outside your control.
+
+The command to enable Root Guard on an interface:
+
+```
+spanning-tree guard root
+```
+
+- This enables Root Guard on the port.
+  - There is no command to enable it by default from global config mode.
+- If a Root Guard-enabled port receives a BPDU, it will enter the **Broken** (Root Inconsistent) state, effectively disabling it.
+
+---
+
+- To re-enable a port disabled by Root Guard, you must solve the issue that disabled the port.
+  - The disabled port must stop receiving superior BPDUs.
+  - Tell the customer to increase the priority value of their switch.
+
+![](/post/jeremys-it-lab-ccna-notes/root-guard-final-topology.png)
+[caption=The example STP network topology.]
+
+- Once the superior BPDUs received by SW2 G0/2 and SW3 G0/3 age out, the ports will automatically be re-enabled.
+  - A BPDU's Max Age is 20 seconds by default.
+
+---
+
+#### Root Guard: CLI demonstration
+
+```
+SW2(config)# interface g0/2
+SW2(config-if)# spanning-tree guard root
+*Sep 21 08:38:56.314: %SPANTREE-2-ROOTGUARD_CONFIG_CHANGE: Root guard enabled on port GigabitEthernet0/2.
+*Sep 21 08:38:56.321: %SPANTREE-2-ROOTGUARD_BLOCK: Root guard blocking port GigabitEthernet0/2 on VLAN0001.
+SW2(config-if)# do show spanning-tree
+!output omitted
+Interface           Role Sts Cost      Prio.Nbr Type
+------------------- ---- --- --------- -------- --------------------------------
+Gi0/0               Root FWD 4         128.1    P2p
+Gi0/1               Desg FWD 4         128.2    P2p
+Gi0/2               Desg BKN*4         128.3    P2p *ROOT_Inc
+```
+
+BKN = Broken
+
+ROOT_Inc = Root Inconsistent
 
 <div data-embed="scrollup"></div>

@@ -324,6 +324,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 0,
     },
+    "day-21-part-3---root-guard-stp-toolkit": {
+      id: "day-21-part-3---root-guard-stp-toolkit",
+      topic: "Day 21 (Part 3 - Root Guard) STP Toolkit",
+      question:
+        "SW2's G0/2 connects to a customer's switch and has Root Guard enabled. The customer's switch starts sending superior BPDUs, so G0/2 goes into the Broken (Root Inconsistent) state. The customer then raises the priority value of their switch. How does G0/2 start forwarding again?",
+      options: [
+        "You reset it manually with shutdown and no shutdown, the same as an err-disabled port",
+        "ErrDisable Recovery re-enables it once its 300 second timer runs out",
+        "It re-enables itself automatically once the superior BPDUs it received age out",
+        "It can't, until Root Guard is removed from the port with no spanning-tree guard root",
+      ],
+      correctIndex: 2,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {
