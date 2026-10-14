@@ -3,7 +3,7 @@ import { FiX } from "react-icons/fi";
 
 const PRIMARY_BUTTON = `rounded-lg bg-primary px-4 py-2 text-sm font-bold text-white dark:text-black
   outline-none duration-300 focus:ring-4 ring-primary focus:ring-offset-2
-  dark:ring-offset-black hover:scale-105`;
+  dark:ring-offset-black`;
 
 const SECONDARY_BUTTON = `rounded-lg border border-teal-100 dark:border-teal-900 px-4 py-2
   text-sm font-bold text-gray-600 dark:text-gray-300 outline-none duration-300

@@ -1,5 +1,5 @@
 ---
-title: "Plans for the summer break"
+title: "Plans for the summer break before my final year of university"
 date: "2026-06-05"
 description: "My second year of university is finally coming to an end, here are my plans for the summer break."
 finished: true
@@ -9,7 +9,7 @@ last_updated_date: "2026-06-15"
 filter: "Life"
 ---
 
-## Plans for the summer break
+## Plans for the summer break before my final year of university
 
 My second year of university is now coming to an end, and the well-deserved summer break is fast approaching. In this post, I'd like to share what I'll be getting up to over the summer and some of the goals and opportunities I'm looking forward to during the break.
 

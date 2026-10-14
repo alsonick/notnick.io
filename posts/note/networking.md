@@ -1,5 +1,5 @@
 ---
-title: "Computer Networking"
+title: "Computer Networking: how devices communicate"
 date: "2026-06-20"
 description: "My computer networking notes."
 finished: true
@@ -7,10 +7,10 @@ tag: "Networking"
 mins: "C"
 last_updated_date: "2026-07-24"
 filter: "Networking"
-pinned: false
+pinned: true
 ---
 
-## Computer Networking
+## Computer Networking fundamentals: how devices connect and communicate
 
 Computer networking has always been an interest of mine besides Software Engineering, it's actually the reason I studied IT in college, which covered a lot of networking concepts. Becoming a Network Engineer was always a career option for me, and I'm on a journey to learn as much as I can about it. I'm going to use this note to write about everything I pick up along the way. It'll be a continuous thing, so I'll be adding bits to it pretty much every day. If you spot any mistakes in my notes, please feel free to edit this note (scroll down for details).
 

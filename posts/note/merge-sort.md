@@ -1,5 +1,5 @@
 ---
-title: "Merge Sort"
+title: "Merge Sort: Divide and Conquer"
 date: "2026-06-16"
 description: "My explanation on the merge sort algorithm."
 finished: true

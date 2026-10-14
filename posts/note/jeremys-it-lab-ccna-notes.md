@@ -1,14 +1,14 @@
 ---
 title: "Jeremy's IT Lab CCNA Notes"
 date: "2026-08-10"
-description: ""
+description: "My complete notes from Jeremy's IT Lab CCNA course."
 finished: true
 tag: "Networking"
 mins: "C"
 last_updated_date: "2026-10-13"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
-pinned: false
+pinned: true
 ---
 
 ## Free CCNA v1.1 200-301 | Complete Course 2026

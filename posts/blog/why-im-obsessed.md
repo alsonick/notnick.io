@@ -1,5 +1,5 @@
 ---
-title: "Why I'm obsessed"
+title: "Why I'm obsessed with programming, and where that drive comes from"
 date: "2026-06-10"
 description: "What drives my obsession with programming, from my upbringing to my goals."
 finished: true

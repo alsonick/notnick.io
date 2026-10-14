@@ -45,17 +45,19 @@ export const getSortedPostData = (dir: string) => {
     };
   });
 
-  // Sort posts: pinned ones first, then by date
+  // Sort posts: pinned ones first, oldest first so they read in the order they
+  // were started; everything else newest first.
   return allNotesData.sort((a: any, b: any) => {
     const aPinned = a.pinned === true;
     const bPinned = b.pinned === true;
     if (aPinned !== bPinned) {
       return aPinned ? -1 : 1;
     }
+    const order = aPinned ? -1 : 1;
     if (a.date < b.date) {
-      return 1;
+      return order;
     } else if (a.date > b.date) {
-      return -1;
+      return -order;
     } else {
       return 0;
     }

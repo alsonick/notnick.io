@@ -1,4 +1,5 @@
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Decorations } from "../components/layout/Decorations";
 import { MAIN_CONTENT_ID } from "../lib/constants";
 // Registers the router listeners GoBack relies on; must load on every page.
 import "../lib/navigation-history";
@@ -54,6 +55,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           Skip to content
         </a>
         <Component {...pageProps} />
+        <Decorations />
         {new Date().getMonth() + 1 !== 12 ? null : null}
         <SpeedInsights />
       </div>

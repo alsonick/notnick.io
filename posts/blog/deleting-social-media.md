@@ -1,5 +1,5 @@
 ---
-title: "Deleting social media"
+title: "The main benefits from deleting social media apps every so often"
 date: "2026-07-23"
 description: "Why I'm quitting social media."
 finished: true
@@ -9,7 +9,7 @@ last_updated_date: "2026-07-23"
 filter: "Life"
 ---
 
-## Deleting social media
+## The main benefits from deleting social media apps every so often
 
 Lately I've started to notice that I'm spending way too much time on social media and on my phone in general. A decent chunk of my day just disappears into scrolling, and I want to change that.
 

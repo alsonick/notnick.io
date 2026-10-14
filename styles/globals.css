@@ -925,27 +925,37 @@ html:not(.dark) .hljs-formula {
   }
 }
 
-/* Halloween pumpkins (lib/pumpkins.ts) falling over the page through October.
-   Each one sets its own column, drift and spin as custom properties. */
-#pumpkins {
+/* Seasonal decorations (lib/decorations.ts): pumpkins through October, snow
+   through December. Each piece sets its own column, drift and spin as custom
+   properties, and the whole overlay fades when the reader toggles it. */
+#decorations {
   position: fixed;
   inset: 0;
   overflow: hidden;
   z-index: 9999999;
   pointer-events: none;
   user-select: none;
+  transition: opacity 700ms ease;
 }
 
-#pumpkins > span {
+#decorations[data-hidden] {
+  opacity: 0;
+}
+
+#decorations > span {
   position: absolute;
   top: 0;
   left: 0;
   line-height: 1;
   will-change: transform;
-  animation: pumpkin-fall linear infinite;
+  animation: decoration-fall linear infinite;
 }
 
-@keyframes pumpkin-fall {
+#decorations > .snowflake {
+  border-radius: 9999px;
+}
+
+@keyframes decoration-fall {
   from {
     transform: translate(var(--x), -2em) rotate(0deg);
   }
@@ -956,9 +966,9 @@ html:not(.dark) .hljs-formula {
 }
 
 /* The blanket rule above would run the fall once in an instant and leave every
-   pumpkin stacked in the top corner, so drop the overlay altogether. */
+   piece stacked in the top corner, so drop the overlay altogether. */
 @media (prefers-reduced-motion: reduce) {
-  #pumpkins {
+  #decorations {
     display: none;
   }
 }

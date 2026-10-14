@@ -18,9 +18,7 @@ import {
 import { ComponentEmbed } from "../../types/discord-embed";
 import { seoKeywords } from "../../lib/data/seo-keywords";
 import { fireworks } from "../../lib/fireworks";
-import { pumpkins } from "../../lib/pumpkins";
 import { social } from "../../lib/data/social-links";
-import { useEffect } from "react";
 
 // Next.js
 import { useRouter } from "next/router";
@@ -37,7 +35,7 @@ interface Props {
 }
 
 export const Seo = (props: Props) => {
-  const { query, asPath } = useRouter();
+  const { asPath } = useRouter();
   const date = new Date();
   const ogImage = props.cover || OG_IMAGE;
   const ogImageUrl = ogImage.startsWith("http")
@@ -88,14 +86,6 @@ export const Seo = (props: Props) => {
     },
   ];
   const month = date.getMonth() + 1;
-  const showSnow =
-    (month >= 12 && date.getDate() >= 1) || query.decoration === "christmas";
-  const showPumpkins = month === 10 || query.decoration === "halloween";
-
-  useEffect(() => {
-    if (showPumpkins) pumpkins();
-  }, [showPumpkins]);
-
   if (typeof window === "object") {
     if (
       (month === 1 && date.getDate() === 1) ||
@@ -155,7 +145,6 @@ export const Seo = (props: Props) => {
           ))
         : null}
       <Script async defer src="https://buttons.github.io/buttons.js" />
-      {showSnow ? <Script src="https://app.embed.im/snow.js" defer /> : null}
     </>
   );
 };

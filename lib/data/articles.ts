@@ -106,12 +106,24 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
-
   {
     id: generateRandomId(),
     title: "Computer Networking",
     type: "Networking",
     link: "https://notnick.io/note/networking",
+    authors: ["Nicholas Njoki"],
+    tags: [
+      {
+        id: generateRandomId(),
+        filter: "Networking",
+      },
+    ],
+  },
+  {
+    id: generateRandomId(),
+    title: "Subnetting explained in Computer Networking",
+    type: "Networking",
+    link: "https://notnick.io/note/subnetting-explained-in-computer-networking",
     authors: ["Nicholas Njoki"],
     tags: [
       {
