@@ -337,6 +337,19 @@ const quizzes: Record<string, Record<string, QuizQuestion>> = {
       ],
       correctIndex: 2,
     },
+    "day-21-part-3---loop-guard-stp-toolkit": {
+      id: "day-21-part-3---loop-guard-stp-toolkit",
+      topic: "Day 21 (Part 3 - Loop Guard) STP Toolkit",
+      question:
+        "A Loop Guard-enabled port stops receiving BPDUs. What happens when its Max Age timer reaches 0?",
+      options: [
+        "It becomes a Designated port and starts transitioning to Forwarding",
+        "It enters the Broken (Loop Inconsistent) state until it receives BPDUs again",
+        "It enters the err-disabled state until it's manually reset",
+        "It shuts down until ErrDisable Recovery re-enables it",
+      ],
+      correctIndex: 1,
+    },
   },
   "merge-sort": {
     "divide-and-conquer": {

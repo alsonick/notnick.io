@@ -1,11 +1,11 @@
 ---
-title: "Jeremy's IT Lab CCNA Notes"
+title: "Jeremy's IT Lab CCNA Notes - Free CCNA v1.1 200-301: Networking"
 date: "2026-08-10"
 description: "My complete notes from Jeremy's IT Lab CCNA course."
 finished: true
 tag: "Networking"
 mins: "C"
-last_updated_date: "2026-10-13"
+last_updated_date: "2026-10-16"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
@@ -3059,5 +3059,100 @@ Gi0/2               Desg BKN*4         128.3    P2p *ROOT_Inc
 BKN = Broken
 
 ROOT_Inc = Root Inconsistent
+
+---
+
+### Day 21 (Part 3 - Loop Guard) STP Toolkit
+
+---
+
+finished: true
+
+---
+
+Loop Guard protects the network from loops by disabling a port if it unexpectedly stops receiving BPDUs, ensuring it does not mistakenly enter the Forwarding state.
+
+---
+
+#### Unidirectional links
+
+![](/post/jeremys-it-lab-ccna-notes/unidirectional-link.png)
+
+- A **unidirectional link** is a network link where data transmission occurs in only one direction.
+  - E.g. SW1 can send frames to SW2, but SW2 can't send frames to SW1.
+
+---
+
+- Unidirectional links are typically caused by Layer 1 (Physical) issues.
+  - Damaged cables
+  - Faulty connectors or transceivers (e.g. SFP modules)
+- Unidirectional links are more common with fiber-optic cables than copper UTP.
+  - Fiber optic connections typically use two separate fibers.
+    - If one fiber is damaged, it can disrupt data flow in one direction while the other remains unaffected.
+  - More vulnerable to physical damage than copper UTP cables.
+
+---
+
+- For a fiber-optic interface to be **up/up**, both fibers must be connected and functional.
+- If there is a physical problem with either fiber, the devices _should_ be able to detect it and disable their interfaces.
+- If the devices fail to detect the physical problem, it can result in a **unidirectional link**.
+
+---
+
+#### Loop Guard - the problem
+
+https://www.youtube.com/watch?v=uJ5_Klha0ig&t=264s
+[preview=true]
+
+Note: Loop Guard doesn't prevent unidirectional links, but it can protect against the negative effects that a unidirectional link has on STP.
+
+---
+
+#### Loop Guard - the solution
+
+- When a **Loop Guard**-enabled port's Max Age timer counts to 0, it doesn't become a Designated port and start transitioning to Forwarding.
+  - It enters the **Broken** (_Loop Inconsistent_) state.
+  - Like **Broken** (_Root Inconsistent_) state triggered by a Root Guard violation, this blocks the port.
+
+Note: In both cases, the port remains **up/up**, but STP _blocks_ it.
+
+- If the port starts receiving BPDUs again, it will be automatically re-enabled.
+
+Loop Guard can be enabled in two ways:
+
+Per port:
+
+```
+spanning-tree guard loop
+```
+
+Default (Global Configuration Mode):
+
+```
+spanning-tree loopguard default
+```
+
+- `spanning-tree loopguard default` enables Loop Guard on all ports.
+- `spanning-tree guard none` to disable it on specific ports if needed.
+
+Note: **Loop Guard** should be enabled on Root and Non-Designated ports (ports that are supposed to receive BPDUs).
+
+---
+
+#### Loop Guard & Root Guard
+
+- **Loop Guard** and **Root Guard** are mutually exclusive.
+  - They can't be enabled on the same port at the same time.
+  - **Root Guard** is meant to prevent _Designated ports_ from becoming _Root ports_
+  - **Loop Guard** is meant to prevent _Non-Designated or Root ports_ from becoming _Designated ports_.
+
+---
+
+- If Loop Guard is configured on a port (`spanning-tree guard loop`) and you then configure Root Guard (`spanning-tree guard root`), then Loop Guard will be disabled on the port and vise versa.
+
+---
+
+- If Loop Guard is enabled by default (`spanning-tree loopguard default`) and you then configure Root Guard on a port, Loop Guard will be disabled on the port.
+  - The more specific configuration (interface vs global) takes effect.
 
 <div data-embed="scrollup"></div>
