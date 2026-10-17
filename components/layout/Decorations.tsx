@@ -141,12 +141,15 @@ export const Decorations = () => {
       </p>
       {hint === "hidden" ? null : (
         <div
-          className={`liquid-glass fixed bottom-4 right-4 z-50 w-[min(20rem,calc(100vw-2rem))]
+          className={`liquid-glass fixed right-4 z-50 w-[min(20rem,calc(100vw-2rem))]
           rounded-lg p-4 duration-300 ${
             hint === "shown"
               ? "translate-y-0 opacity-100"
               : "translate-y-4 opacity-0"
           }`}
+          // Sits above the rags mini player while that's open, which would
+          // otherwise cover its volume and speed controls.
+          style={{ bottom: "var(--bottom-bar-inset, 1rem)" }}
           aria-label="Seasonal decorations tip"
           role="region"
         >

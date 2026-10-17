@@ -63,6 +63,14 @@ export const Layout = (props: Props) => {
               {props.children}
             </main>
             <Footer />
+            {/* Room for a bar pinned to the bottom of the viewport (the rags
+                mini player, which sets this), so the end of the page can
+                still scroll clear of it. Zero everywhere else. */}
+            <div
+              aria-hidden="true"
+              className="shrink-0 duration-300"
+              style={{ height: "var(--bottom-bar-inset, 0px)" }}
+            />
           </div>
         </div>
       </div>
