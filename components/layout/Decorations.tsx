@@ -141,15 +141,16 @@ export const Decorations = () => {
       </p>
       {hint === "hidden" ? null : (
         <div
-          className={`liquid-glass fixed right-4 z-50 w-[min(20rem,calc(100vw-2rem))]
-          rounded-lg p-4 duration-300 ${
+          // Sits above the rags mini player while that's open, which would
+          // otherwise cover its volume and speed controls. From 1344px (84rem)
+          // the 40rem player (centred) leaves room for this 20rem tip plus its
+          // 1rem margin and a 1rem gap on either side, so it stays put.
+          className={`liquid-glass fixed bottom-[var(--bottom-bar-inset,1rem)] right-4 z-50
+          w-[min(20rem,calc(100vw-2rem))] rounded-lg p-4 duration-300 min-[1344px]:bottom-4 ${
             hint === "shown"
               ? "translate-y-0 opacity-100"
               : "translate-y-4 opacity-0"
           }`}
-          // Sits above the rags mini player while that's open, which would
-          // otherwise cover its volume and speed controls.
-          style={{ bottom: "var(--bottom-bar-inset, 1rem)" }}
           aria-label="Seasonal decorations tip"
           role="region"
         >

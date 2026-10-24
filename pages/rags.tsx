@@ -1,20 +1,20 @@
-import { FULL_NAME, PROFESSION } from "../lib/constants";
-import { TdChildren } from "../components/ui/TdChildren";
-import { Heading } from "../components/ui/Heading";
-import { Animate } from "../components/layout/Animate";
-import { ICON } from "../lib/tailwindcss/icon";
-import { Layout } from "../components/layout/Layout";
-import { Button } from "../components/ui/Button";
-import { GoBack } from "../components/layout/GoBack";
-import { Header } from "../components/layout/Header";
 import { MiniPlayer, keepFocus } from "../components/ui/MiniPlayer";
 import { FiPause, FiPlay, FiRepeat } from "react-icons/fi";
-import { useState, useEffect } from "react";
+import { FULL_NAME, PROFESSION } from "../lib/constants";
+import { TdChildren } from "../components/ui/TdChildren";
+import { Animate } from "../components/layout/Animate";
+import { Layout } from "../components/layout/Layout";
+import { GoBack } from "../components/layout/GoBack";
+import { Header } from "../components/layout/Header";
+import { Heading } from "../components/ui/Heading";
+import { Button } from "../components/ui/Button";
+import { ICON } from "../lib/tailwindcss/icon";
 import { Table } from "../components/ui/Table";
+import { Seo } from "../components/layout/Seo";
 import { LinkT } from "../components/ui/Link";
 import { Text } from "../components/ui/Text";
 import { Note } from "../components/ui/Note";
-import { Seo } from "../components/layout/Seo";
+import { useState, useEffect } from "react";
 import { Td } from "../components/ui/Td";
 import { Th } from "../components/ui/Th";
 import { RAGS } from "../lib/data/rags";
@@ -161,7 +161,7 @@ const Rags: NextPage = () => {
               >
                 waltzes
               </LinkT>
-              , and a few of those are in here too.
+              , and a few of those are in here.
             </Note>
           </div>
           <div className="my-4">
