@@ -13,7 +13,7 @@ export const LinkTag = (props: Props) => {
   return (
     <Link
       className={`font-bold text-base focus:ring-offset-2 dark:ring-offset-black rounded inline-flex items-center w-fit text-primary
-      hover:underline focus:ring-4 ring-primary outline-none duration-300`}
+      hover:underline focus:ring-4 ring-primary outline-none duration-300 group`}
       style={props.style}
       target={props.target}
       href={props.href}

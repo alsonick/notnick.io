@@ -26,7 +26,8 @@ export const GoBack = (props: Props) => {
         }
       }}
     >
-      <FiArrowLeft className="text-lg mr-1" /> Go back
+      <FiArrowLeft className="text-lg mr-1 md:group-hover:-translate-x-1 duration-300" />{" "}
+      Go back
     </LinkT>
   );
 };

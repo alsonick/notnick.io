@@ -552,7 +552,8 @@ export const Post = (props: Props) => {
           </div>
         </div>
         <LinkTag href={`/${props.type}`} style={{ marginTop: "2rem" }}>
-          <FiArrowLeft className="text-lg mr-1" /> Go back to{" "}
+          <FiArrowLeft className="text-lg mr-1 md:group-hover:-translate-x-1 duration-300" />{" "}
+          Go back to{" "}
           {props.type === page.blog.name ? page.blog.name : page.note.name}
         </LinkTag>
       </Layout>
