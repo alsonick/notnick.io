@@ -18,6 +18,7 @@ import { social } from "../lib/data/social-links";
 import { Text } from "../components/ui/Text";
 import { Note } from "../components/ui/Note";
 import { Seo } from "../components/layout/Seo";
+import { FiMapPin } from "react-icons/fi";
 import { page } from "../lib/page";
 import { useState } from "react";
 
@@ -140,10 +141,14 @@ const Experience: NextPage = () => {
               and I&apos;ll get back to you with my complete CV.
             </Text>
           </div>
-          <div className="mb-5">
+          <div className="mb-5 space-y-3">
             <Note>
               Freelance work and jobs that are not related to any profession
               that I&apos;m not interested in will not be listed.
+            </Note>
+            <Note icon={FiMapPin}>
+              Locations show where each company is based, not where I was
+              working from.
             </Note>
           </div>
           {selected !== capitalizeFirstLetter("all") ? (

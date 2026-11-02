@@ -20,8 +20,9 @@ export const About = () => {
       p1: (
         <Text>
           <Tippy animation="fade" content={"4th March 2003"}></Tippy>
-          <Highlight>{PROFESSION}</Highlight> based in the {LOCATED}, currently
-          in my <Highlight>final year</Highlight> of a{" "}
+          <Highlight>{PROFESSION}</Highlight> based in the{" "}
+          <Highlight>{LOCATED}</Highlight>, currently in my{" "}
+          <Highlight>final year</Highlight> of a{" "}
           <Highlight>{SUBJECT_OF_STUDY}</Highlight> degree at the{" "}
           <Highlight>{UNIVERSITY}</Highlight>. I also have{" "}
           <Highlight>
