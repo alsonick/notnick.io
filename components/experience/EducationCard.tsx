@@ -9,6 +9,7 @@ import { Text } from "../ui/Text";
 
 // Next.js
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   education: Education;
@@ -51,7 +52,19 @@ export const EducationCard = (props: Props) => {
               }`}</Text>{" "}
             </div>
             <h3 className="text-2xl font-bold dark:text-white">
-              {props.education.name}
+              {props.education.link ? (
+                <Link
+                  className="rounded outline-none sm:hover:text-primary focus:ring-4 focus:ring-primary
+                  focus:ring-offset-2 dark:ring-offset-black duration-300"
+                  title={props.education.name}
+                  href={props.education.link}
+                  target="_blank"
+                >
+                  {props.education.name}
+                </Link>
+              ) : (
+                props.education.name
+              )}
             </h3>
             <Text>
               {props.education.degree}, {props.education.course}

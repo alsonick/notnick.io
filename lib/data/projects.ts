@@ -16,13 +16,14 @@ export const PROJECTS: Project[] = [
     oss: true,
     desc: [
       "A browser-based tool for creating synced, timestamped lyric files in the LRC format.",
+      "Used by multiple big creators in the music space on YouTube (https://lrc.notnick.io/usage).",
       "Lets you sync each line to the song in real time with a single key press.",
     ],
   },
   {
     logo: "/project/branding/lyrics-tags-generator.png",
     name: "Lyrics Tags Generator",
-    tech: ["Next.js", "TypeScript", "TailwindCSS", "Gemini API"],
+    tech: ["TypeScript", "Next.js", "TailwindCSS", "shadcn/ui"],
     id: generateRandomId(),
     site: "tags.notnick.io",
     kind: "website",
@@ -63,7 +64,8 @@ export const PROJECTS: Project[] = [
     oss: true,
     desc: [
       "The site you're on right now, where I share my projects, experience, and writing.",
-      "Designed and built from scratch, with a focus on accessibility.",
+      "View https://github.com/alsonick/notnick.io/tree/main/public/archive to see all the previous iterations of my site throughout the years.",
+      "Designed and built entirely from scratch.",
     ],
   },
 ];

@@ -2,9 +2,9 @@ import { MUSIC_STREAMING_PLATFORM } from "../../lib/constants";
 import { PlaylistCover } from "./PlaylistCover";
 import { FiArrowRight } from "react-icons/fi";
 import { MUSIC } from "../../lib/data/music";
+import { Section } from "../layout/Section";
 import { Heading } from "../ui/Heading";
 import { LinkTag } from "../ui/LinkTag";
-import { Section } from "../layout/Section";
 import { page } from "../../lib/page";
 import { Text } from "../ui/Text";
 
@@ -19,7 +19,8 @@ export const Music = () => {
       <Heading>Music 🎶</Heading>
       <Text>
         If you&apos;re curious about the type of music I listen to, be sure to
-        check out some of my {MUSIC_STREAMING_PLATFORM} playlists below.
+        check out some of my {MUSIC_STREAMING_PLATFORM} playlists below. Enjoy
+        the tunes!
       </Text>
       <div className="sm:flex hidden mt-12 mb-6 flex-col md:flex-row justify-between">
         {featured.map((playlist, index) => {

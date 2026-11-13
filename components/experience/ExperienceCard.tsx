@@ -11,6 +11,7 @@ import { Tag } from "../ui/Tag";
 
 // Next.js
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props extends Experience {
   /** h3 inside the home page section; h2 when listed straight under a page title. */
@@ -47,7 +48,19 @@ export const ExperienceCard = (props: Props) => {
           <div className="flex items-center sm:flex-row flex-col justify-center sm:justify-start">
             <div className="flex items-center justify-center">
               <HeadingTag className="text-2xl font-bold dark:text-white">
-                {props.name}
+                {props.link ? (
+                  <Link
+                    className="rounded outline-none sm:hover:text-primary focus:ring-4 focus:ring-primary
+                    focus:ring-offset-2 dark:ring-offset-black duration-300"
+                    title={props.name}
+                    target="_blank"
+                    href={props.link}
+                  >
+                    {props.name}
+                  </Link>
+                ) : (
+                  props.name
+                )}
               </HeadingTag>
               {props.showCurrentStatus ? (
                 <div className="ml-3">

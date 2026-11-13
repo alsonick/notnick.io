@@ -1,6 +1,5 @@
 import { FiArrowUp } from "react-icons/fi";
 import { MAIN_CONTENT_ID } from "../../lib/constants";
-import { ICON } from "../../lib/tailwindcss/icon";
 
 interface Props {
   align?: "left" | "right";
@@ -16,7 +15,7 @@ export const ScrollUp = (props: Props) => {
       <button
         className="flex items-center text-base p-2 rounded-lg justify-center px-6 text-black
     dark:text-white duration-300 font-semibold focus:ring-offset-2 dark:ring-offset-black bg-gray-100 md:hover:bg-gray-200
-    dark:bg-gray-800 md:dark:hover:bg-gray-900 outline-none focus:ring-4 ring-primary w-fit"
+    dark:bg-gray-800 md:dark:hover:bg-gray-900 outline-none focus:ring-4 ring-primary w-fit group"
         onClick={() => {
           const reducedMotion = window.matchMedia(
             "(prefers-reduced-motion: reduce)",
@@ -32,7 +31,8 @@ export const ScrollUp = (props: Props) => {
         }}
         title="Scroll to the top of the page."
       >
-        Scroll Up <FiArrowUp className={ICON} />
+        Scroll Up{" "}
+        <FiArrowUp className="text-xl ml-2 transition-transform duration-500 ease-in-out md:group-hover:-translate-y-0.5 motion-reduce:transition-none" />
       </button>
     </div>
   );

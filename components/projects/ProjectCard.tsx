@@ -1,5 +1,7 @@
-import { FiExternalLink, FiCameraOff, FiCode } from "react-icons/fi";
+import { FiExternalLink, FiCameraOff } from "react-icons/fi";
+import { RiVipDiamondFill } from "react-icons/ri";
 import { ICON } from "../../lib/tailwindcss/icon";
+import { linkify } from "../../lib/utils/linkify";
 import { Project } from "../../types/project";
 import { LinkButton } from "../ui/LinkButton";
 import { FaGithub } from "react-icons/fa";
@@ -79,7 +81,7 @@ export const ProjectCard = (props: Props) => {
             text-gray-600 dark:text-gray-300 marker:text-primary"
           >
             {props.desc.map((point) => (
-              <li key={point}>{point}</li>
+              <li key={point}>{linkify(point)}</li>
             ))}
           </ul>
         </div>
@@ -87,7 +89,7 @@ export const ProjectCard = (props: Props) => {
       <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-4 mt-5 pt-5 border-t border-teal-100 dark:border-teal-900">
         {props.tech.length > 0 && (
           <p className="text-gray-600 dark:text-gray-300 text-base text-center sm:text-left">
-            <FiCode
+            <RiVipDiamondFill
               title="Technologies"
               className="inline align-[-0.125em] text-primary text-base mr-3 md:hover:scale-110 transition-transform duration-200 ease-out"
             />
