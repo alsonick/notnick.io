@@ -11,7 +11,7 @@ filter: "Technology"
 
 ## Technologies I'm learning in 2023
 
-There are a lot of things technologies that I didn't get to learn throughout 2022, so this year I'm making it a goal to learn the following technologies and tools.
+There are a lot of technologies that I didn't get to learn throughout 2022, so this year I'm making it a goal to learn the following technologies and tools.
 
 ### Programming Languages
 
