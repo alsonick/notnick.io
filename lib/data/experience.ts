@@ -6,7 +6,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Aviato",
-    description: "Software Engineer",
+    description: "Software Engineer Intern",
     startYear: 2023,
     endYear: 2023,
     startMonth: "jan",
@@ -31,7 +31,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Lyrics Tags Generator",
-    description: "Software Engineer",
+    description: "Founder & Software Engineer",
     startYear: 2025,
     startMonth: "jan",
     endYear: 2026,
@@ -80,7 +80,7 @@ export const EXPERIENCE: Experience[] = [
   {
     id: generateRandomId(),
     name: "Penn Elcom",
-    description: "Engineering Apprentice",
+    description: "Work Experience Placement",
     startYear: 2018,
     endYear: 2018,
     startMonth: "jun",

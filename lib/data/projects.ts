@@ -51,6 +51,24 @@ export const PROJECTS: Project[] = [
       "Shows trends for steps, distance, and calories, along with every goal you've hit.",
     ],
   },
+
+  {
+    logo: "/project/branding/crystal-sounds.png",
+    name: "Crystal Sounds",
+    // TODO: closed source, so the stack could not be verified - fill this in.
+    tech: [],
+    id: generateRandomId(),
+    site: "",
+    kind: "app",
+    active: false,
+    link: "https://youtube.com/@collabmusicgroup?si=DG-K80tVYHL7r7aq",
+    oss: false,
+    desc: [
+      "Started a promotional music channel during secondary school which had grown to over 40k+ subscribers and gained 10 million+ views on YouTube.",
+      "Decided to sell the channel to focus on a career in technology.",
+    ],
+  },
+
   {
     logo: `${CDN}/branding/${AVATAR}.${AVATAR_FILE_EXTENSION}`,
     name: "notnick.io",
