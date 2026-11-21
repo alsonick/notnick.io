@@ -4,7 +4,7 @@ date: "2026-06-16"
 description: "My explanation on the merge sort algorithm."
 finished: true
 tag: "Data Structures & Algorithms"
-mins: "8"
+mins: "6"
 last_updated_date: "2026-09-27"
 filter: "Data Structures & Algorithms"
 ---

@@ -9,6 +9,7 @@ last_updated_date: "2026-10-16"
 labs: "networking/jeremys-it-lab/labs"
 filter: "Networking"
 pinned: true
+audio: false
 ---
 
 ## Free CCNA v1.1 200-301 | Complete Course 2026

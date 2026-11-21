@@ -4,7 +4,7 @@ date: "2026-06-05"
 description: "My second year of university is finally coming to an end, here are my plans for the summer break."
 finished: true
 tag: "Life"
-mins: "6"
+mins: "3"
 last_updated_date: "2026-06-15"
 filter: "Life"
 ---

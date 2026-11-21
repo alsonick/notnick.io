@@ -3,7 +3,7 @@ title: "Reflecting on 2025"
 date: "2025-12-11"
 description: "Reflecting on this year"
 tag: "Reflecting"
-mins: "4"
+mins: "1"
 finished: true
 last_updated_date: "2026-01-30"
 filter: "Reflecting"

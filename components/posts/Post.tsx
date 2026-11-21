@@ -15,6 +15,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FiLinkedin } from "react-icons/fi";
 import { FiArrowLeft } from "react-icons/fi";
 import { DownloadSection } from "./DownloadSection";
+import { ListenToArticle } from "./ListenToArticle";
 import { DownloadLab } from "./DownloadLab";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { LinkEmbed } from "./LinkEmbed";
@@ -488,6 +489,12 @@ export const Post = (props: Props) => {
                 : "No description."}
             </Text>
           </div>
+          {props.post.audio ? (
+            <ListenToArticle
+              audio={props.post.audio}
+              title={props.post.title}
+            />
+          ) : null}
           {process.env.NODE_ENV === "development" ? (
             <div className="flex items-center mb-4">
               <Tag

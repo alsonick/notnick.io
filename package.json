@@ -7,7 +7,8 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "audio": "node scripts/generate-audio.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
