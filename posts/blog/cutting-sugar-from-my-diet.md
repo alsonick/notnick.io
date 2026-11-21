@@ -4,7 +4,7 @@ date: "2026-01-29"
 description: "Why I'm cutting out sugar from my diet."
 finished: true
 tag: "Life"
-mins: "5"
+mins: "1"
 last_updated_date: "2026-01-29"
 filter: "Life"
 ---

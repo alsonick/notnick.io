@@ -4,7 +4,7 @@ date: "2026-06-10"
 description: "What drives my obsession with programming, from my upbringing to my goals."
 finished: true
 tag: "Life"
-mins: "5"
+mins: "2"
 last_updated_date: "2026-06-10"
 filter: "Life"
 ---

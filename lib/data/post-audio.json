@@ -1,0 +1,77 @@
+{
+  "blog/reflecting-on-2025": {
+    "hash": "3d1662843d04e4d5",
+    "duration": 119,
+    "src": "/audio/blog/reflecting-on-2025.mp3"
+  },
+  "blog/cutting-sugar-from-my-diet": {
+    "hash": "9433458f26bd2dd7",
+    "duration": 116,
+    "src": "/audio/blog/cutting-sugar-from-my-diet.mp3"
+  },
+  "blog/deleting-social-media": {
+    "hash": "507ab756eb7ae3ea",
+    "duration": 154,
+    "src": "/audio/blog/deleting-social-media.mp3"
+  },
+  "blog/how-i-learn-programming": {
+    "hash": "11eb9171e918ddd1",
+    "duration": 133,
+    "src": "/audio/blog/how-i-learn-programming.mp3"
+  },
+  "blog/how-i-wake-up-at-5am": {
+    "hash": "dddc1b9a8727f2ad",
+    "duration": 154,
+    "src": "/audio/blog/how-i-wake-up-at-5am.mp3"
+  },
+  "blog/my-thoughts-on-artificial-intelligence": {
+    "hash": "cd3bc6769292902a",
+    "duration": 140,
+    "src": "/audio/blog/my-thoughts-on-artificial-intelligence.mp3"
+  },
+  "blog/my-thoughts-on-the-whole-tailwindcss-situation": {
+    "hash": "290da4414c71a0a6",
+    "duration": 183,
+    "src": "/audio/blog/my-thoughts-on-the-whole-tailwindcss-situation.mp3"
+  },
+  "blog/plans-for-the-summer-break": {
+    "hash": "234bd09444643f4a",
+    "duration": 183,
+    "src": "/audio/blog/plans-for-the-summer-break.mp3"
+  },
+  "blog/reflecting-on-2022": {
+    "hash": "41c04f54bd92c9f5",
+    "duration": 81,
+    "src": "/audio/blog/reflecting-on-2022.mp3"
+  },
+  "blog/reflecting-on-2024": {
+    "hash": "f3e584b1e377acd2",
+    "duration": 80,
+    "src": "/audio/blog/reflecting-on-2024.mp3"
+  },
+  "blog/technologies-im-learning-in-2023": {
+    "hash": "d5ab6acfdb3b1c44",
+    "duration": 78,
+    "src": "/audio/blog/technologies-im-learning-in-2023.mp3"
+  },
+  "blog/what-you-should-do-in-university-to-prepare-for-the-job-market": {
+    "hash": "e42cc0dd2adf25a3",
+    "duration": 203,
+    "src": "/audio/blog/what-you-should-do-in-university-to-prepare-for-the-job-market.mp3"
+  },
+  "blog/why-im-obsessed": {
+    "hash": "99566788acb6d092",
+    "duration": 133,
+    "src": "/audio/blog/why-im-obsessed.mp3"
+  },
+  "note/merge-sort": {
+    "hash": "1f41390fceabb7c4",
+    "duration": 360,
+    "src": "/audio/note/merge-sort.mp3"
+  },
+  "note/subnetting-explained-in-computer-networking": {
+    "hash": "675b46367328308a",
+    "duration": 852,
+    "src": "/audio/note/subnetting-explained-in-computer-networking.mp3"
+  }
+}

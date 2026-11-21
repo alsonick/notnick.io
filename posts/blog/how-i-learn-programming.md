@@ -4,7 +4,7 @@ date: "2022-07-09"
 description: "My notes on how I learn programming."
 finished: true
 tag: "Learn"
-mins: "5"
+mins: "2"
 last_updated_date: "2022-07-09"
 filter: "Learn"
 ---

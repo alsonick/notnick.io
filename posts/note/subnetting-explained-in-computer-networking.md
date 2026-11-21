@@ -3,7 +3,7 @@ title: "Subnetting explained in Computer Networking"
 date: "2026-10-02"
 description: "Learn how subnetting works by splitting a real network into subnets, step by step."
 tag: "Networking"
-mins: "8"
+mins: "14"
 finished: true
 last_updated_date: "2026-10-2"
 filter: "Networking"

@@ -3,7 +3,7 @@ title: "What you should do in University to prepare for the job market"
 date: "2026-04-19"
 description: "The job market is cooked, but only if you don't do these things."
 tag: "Thoughts"
-mins: "5"
+mins: "3"
 finished: true
 last_updated_date: "2026-04-19"
 filter: "Thoughts"

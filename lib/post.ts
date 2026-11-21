@@ -19,6 +19,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { unified } from "unified";
 import { LONG_POST_LINE_COUNT } from "./constants";
+import { PostAudio } from "../types/post";
 import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
@@ -121,5 +122,21 @@ export const getPostData = async (slug: string, dir: string) => {
     sections,
     lineCount,
     ...matterResult.data,
+    // After the frontmatter, so its `audio: false` opt-out can't take the slot.
+    audio: getPostAudio(`${path.basename(dir)}/${slug}`),
   };
+};
+
+// Written by `yarn audio` (scripts/generate-audio.mjs). Posts without a
+// recording get null, since Next can't serialize undefined props.
+const getPostAudio = (key: string): PostAudio | null => {
+  try {
+    const manifest = JSON.parse(
+      fs.readFileSync(getDirectory("lib/data/post-audio.json"), "utf8"),
+    );
+    const entry = manifest[key];
+    return entry ? { src: entry.src, duration: entry.duration } : null;
+  } catch {
+    return null;
+  }
 };

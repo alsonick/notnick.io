@@ -4,7 +4,7 @@ date: "2026-07-23"
 description: "Why I'm quitting social media."
 finished: true
 tag: "Life"
-mins: "6"
+mins: "2"
 last_updated_date: "2026-07-23"
 filter: "Life"
 ---

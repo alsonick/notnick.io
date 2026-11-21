@@ -8,6 +8,7 @@ mins: "C"
 last_updated_date: "2026-07-24"
 filter: "Networking"
 pinned: true
+audio: false
 ---
 
 ## Computer Networking fundamentals: how devices connect and communicate
