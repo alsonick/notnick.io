@@ -1,6 +1,8 @@
 import {
   FiSkipForward,
   FiSkipBack,
+  FiRotateCcw,
+  FiRotateCw,
   FiVolumeX,
   FiVolume1,
   FiVolume2,
@@ -26,9 +28,19 @@ interface Props {
   track: Track | null;
   isPlaying: boolean;
   onTogglePlay: () => void;
-  onPrevious: () => void;
-  onNext: () => void;
+  /**
+   * Skipping between tracks. Leave both out for a single track, like a post
+   * read aloud, and the buttons jump back and ahead 15 seconds instead.
+   */
+  onPrevious?: () => void;
+  onNext?: () => void;
+  /** More buttons, shown before the speed control. */
+  extraControls?: React.ReactNode;
 }
+
+// How far the rewind and skip-ahead buttons jump when there are no tracks to
+// skip between.
+const JUMP_STEP = 15;
 
 // How far the left and right arrow keys jump, in seconds.
 const SEEK_STEP = 5;
@@ -43,7 +55,7 @@ const SPEED_PRESETS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 // and anything that has to sit above it.
 const GAP = 16;
 
-const ICON_BUTTON = `flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-600 dark:text-gray-300
+export const ICON_BUTTON = `flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-600 dark:text-gray-300
   outline-none duration-300 hover:bg-black/5 hover:text-black dark:hover:bg-white/10 dark:hover:text-white
   focus-visible:ring-4 ring-primary`;
 
@@ -233,9 +245,9 @@ export const MiniPlayer = (props: Props) => {
   useEffect(() => {
     if (!audio || !("mediaSession" in navigator)) return;
 
-    const handlers: [MediaSessionAction, MediaSessionActionHandler][] = [
-      ["previoustrack", onPrevious],
-      ["nexttrack", onNext],
+    const handlers: [MediaSessionAction, MediaSessionActionHandler | null][] = [
+      ["previoustrack", onPrevious ?? null],
+      ["nexttrack", onNext ?? null],
       ["seekbackward", (d) => seekBy(audio, -(d.seekOffset ?? SEEK_STEP))],
       ["seekforward", (d) => seekBy(audio, d.seekOffset ?? SEEK_STEP)],
     ];
@@ -275,7 +287,10 @@ export const MiniPlayer = (props: Props) => {
       className="player-enter liquid-glass fixed inset-x-0 bottom-4 z-50 mx-auto w-[95%] rounded-lg px-4 pb-2 pt-3
       sm:w-[40rem]"
     >
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
+      {/* Equal side columns keep the play controls dead centre, but on a
+          phone the right-hand buttons can outgrow half of what's left, so
+          there they take what they need and the title gives way. */}
+      <div className="grid grid-cols-[minmax(0,1fr)_auto_auto] items-center gap-3 sm:grid-cols-[1fr_auto_1fr] sm:gap-4">
         <div className="min-w-0">
           <p className="truncate font-semibold text-black dark:text-white">
             {track.title}
@@ -286,14 +301,26 @@ export const MiniPlayer = (props: Props) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={onPrevious}
-            onMouseDown={keepFocus}
-            aria-label="Previous"
-            className={ICON_BUTTON}
-          >
-            <FiSkipBack fill="currentColor" />
-          </button>
+          {onPrevious ? (
+            <button
+              onClick={onPrevious}
+              onMouseDown={keepFocus}
+              aria-label="Previous"
+              className={ICON_BUTTON}
+            >
+              <FiSkipBack fill="currentColor" />
+            </button>
+          ) : (
+            <button
+              onClick={() => seekBy(audio, -JUMP_STEP)}
+              onMouseDown={keepFocus}
+              aria-label={`Back ${JUMP_STEP} seconds`}
+              title={`Back ${JUMP_STEP} seconds`}
+              className={ICON_BUTTON}
+            >
+              <FiRotateCcw />
+            </button>
+          )}
           <button
             onClick={props.onTogglePlay}
             onMouseDown={keepFocus}
@@ -312,17 +339,30 @@ export const MiniPlayer = (props: Props) => {
               <span className="absolute -inset-1 animate-spin rounded-full border-2 border-primary/25 border-t-primary" />
             ) : null}
           </button>
-          <button
-            onClick={onNext}
-            onMouseDown={keepFocus}
-            aria-label="Next"
-            className={ICON_BUTTON}
-          >
-            <FiSkipForward fill="currentColor" />
-          </button>
+          {onNext ? (
+            <button
+              onClick={onNext}
+              onMouseDown={keepFocus}
+              aria-label="Next"
+              className={ICON_BUTTON}
+            >
+              <FiSkipForward fill="currentColor" />
+            </button>
+          ) : (
+            <button
+              onClick={() => seekBy(audio, JUMP_STEP)}
+              onMouseDown={keepFocus}
+              aria-label={`Ahead ${JUMP_STEP} seconds`}
+              title={`Ahead ${JUMP_STEP} seconds`}
+              className={ICON_BUTTON}
+            >
+              <FiRotateCw />
+            </button>
+          )}
         </div>
 
         <div className="flex items-center justify-end gap-1">
+          {props.extraControls}
           <SpeedControl
             speed={speed}
             onChange={setSpeed}

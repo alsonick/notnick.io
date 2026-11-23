@@ -5,6 +5,8 @@ export interface PostAudio {
   src: string;
   /** Length in seconds. */
   duration: number;
+  /** When each word is read, for following along. Null until timed. */
+  timings: string | null;
 }
 
 export interface Post {

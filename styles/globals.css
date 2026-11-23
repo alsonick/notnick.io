@@ -189,6 +189,61 @@
   background: #5050ff;
 }
 
+/* Following along with a post read aloud (useFollowAlong): the sentence being
+   read gets a faint wash of the brand green, the word a stronger one. Plain
+   values rather than var(--color-primary), which custom highlights don't
+   reliably pick up in every browser. */
+/* The four layers never overlap (see Layers in useFollowAlong), so each sets
+   everything about its text: what's been read fades back (gray-400 /
+   gray-500), and the word's text goes full strength so it stays crisp on the
+   green rather than grey on green. */
+::highlight(follow-read) {
+  color: #9ca3af;
+}
+
+::highlight(follow-sentence-read) {
+  color: #9ca3af;
+  background-color: rgb(21 128 61 / 0.08);
+}
+
+::highlight(follow-word) {
+  color: #000;
+  background-color: rgb(21 128 61 / 0.2);
+}
+
+::highlight(follow-sentence) {
+  background-color: rgb(21 128 61 / 0.08);
+}
+
+.dark ::highlight(follow-read) {
+  color: #6b7280;
+}
+
+.dark ::highlight(follow-sentence-read) {
+  color: #6b7280;
+  background-color: rgb(48 209 88 / 0.1);
+}
+
+.dark ::highlight(follow-word) {
+  color: #fff;
+  background-color: rgb(48 209 88 / 0.28);
+}
+
+.dark ::highlight(follow-sentence) {
+  background-color: rgb(48 209 88 / 0.1);
+}
+
+/* Flipped to make text repaint as the highlight moves (see flip in
+   useFollowAlong). Two different shadows, both fully transparent, so the
+   change is always there and never seen. */
+[data-follow-repaint="a"] {
+  text-shadow: 0 0 0 transparent;
+}
+
+[data-follow-repaint="b"] {
+  text-shadow: 0 0 1px transparent;
+}
+
 #tsparticles {
   z-index: -1 !important;
   pointer-events: none;

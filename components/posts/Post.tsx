@@ -16,6 +16,7 @@ import { FiLinkedin } from "react-icons/fi";
 import { FiArrowLeft } from "react-icons/fi";
 import { DownloadSection } from "./DownloadSection";
 import { ListenToArticle } from "./ListenToArticle";
+import { ReadingProgress } from "./ReadingProgress";
 import { DownloadLab } from "./DownloadLab";
 import { GitHubEmbed } from "./GitHubEmbed";
 import { LinkEmbed } from "./LinkEmbed";
@@ -422,6 +423,12 @@ export const Post = (props: Props) => {
           onHeight={setNoticeHeight}
         />
       ) : null}
+      {/* Just under the long-post notice while it's up, since both are
+          brand green. */}
+      <ReadingProgress
+        target={articleRef}
+        top={isNoticeVisible ? noticeHeight : 0}
+      />
       {isPromptOpen ? (
         <LongPostThemeNoticePrompt
           onClose={() => setIsPromptOpen(false)}
@@ -432,7 +439,12 @@ export const Post = (props: Props) => {
         searchableContentHtml={isLongPost ? props.post.contentHtml : undefined}
         topNoticeHeight={isNoticeVisible ? noticeHeight : 0}
       >
-        <h1 className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white">
+        {/* data-follow-root: where the read-aloud highlighting looks for
+            the words being read (see useFollowAlong). */}
+        <h1
+          data-follow-root
+          className="font-bold sm:text-4xl text-3xl mt-6 dark:text-white"
+        >
           {props.post.title}
         </h1>
         <div className="flex md:flex-row md:items-center items-start flex-col mt-4 mb-6 justify-between text-base">
@@ -491,6 +503,9 @@ export const Post = (props: Props) => {
           </div>
           {props.post.audio ? (
             <ListenToArticle
+              // A fresh player per post, so moving to another post doesn't
+              // carry over the last one's progress or mini player.
+              key={props.post.slug}
               audio={props.post.audio}
               title={props.post.title}
             />
@@ -508,6 +523,7 @@ export const Post = (props: Props) => {
           <>
             <article
               ref={articleRef}
+              data-follow-root
               className={`
             prose max-w-none mt-2 text-base dark:prose-invert prose-a:text-primary
             prose-a:no-underline hover:prose-a:underline
