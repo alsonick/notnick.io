@@ -135,7 +135,17 @@ const getPostAudio = (key: string): PostAudio | null => {
       fs.readFileSync(getDirectory("lib/data/post-audio.json"), "utf8"),
     );
     const entry = manifest[key];
-    return entry ? { src: entry.src, duration: entry.duration } : null;
+    return entry
+      ? {
+          src: entry.src,
+          duration: entry.duration,
+          // Only if they were made from the recording that's there now.
+          timings:
+            entry.timings && entry.timingsFor === entry.hash
+              ? entry.timings
+              : null,
+        }
+      : null;
   } catch {
     return null;
   }

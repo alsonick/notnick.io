@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",
-    "audio": "node scripts/generate-audio.mjs"
+    "audio": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/generate-audio.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^1.6.4",
